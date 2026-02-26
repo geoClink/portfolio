@@ -6,6 +6,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.media-grid-item .image.fit {
+				margin-bottom: 0.5em;
+			}
+			.media-caption {
+				font-size: 0.9em;
+				color: #666;
+				margin: 0 0 1.25em 0;
+				line-height: 1.45;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -14,11 +25,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
+								<li><a href="index.html" class="button">Home</a></li>
 								<li><a href="about.html" class="button">About</a></li>
-								<li><a href="case-studies.html" class="button">Case Studies</a></li>
+								<li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
@@ -30,25 +42,91 @@
 							<header>
 								<div class="title">
 									<h2>Common Sight</h2>
-									<p>Design system and component library focused on accessibility.</p>
+									<p>A role-based community engagement platform that connects neighborhood reporting, mapping, campaigns, stories, events, and direct messaging.</p>
 								</div>
 							</header>
 
 							<section>
 								<h3>Overview</h3>
-								<p>Common Sight is a component library and documentation set intended to help teams ship accessible UI faster.</p>
+								<p>Common Sight is a neighborhood intelligence and coordination platform. Residents and partners document real-world conditions, visualize assets and observations on a shared map, collaborate through campaigns and story cards, and communicate through direct messaging.</p>
+
+								<h3>Project Snapshot</h3>
+								<ul class="alt">
+									<li><strong>Platform:</strong> iOS (SwiftUI + Firebase)</li>
+									<li><strong>Type:</strong> Civic/community collaboration app</li>
+									<li><strong>Focus:</strong> Role-based workflows, shared data, community storytelling</li>
+									<li><strong>Engagement:</strong> Internship project supporting a small business owner's investor demo</li>
+									<li><strong>Team:</strong> Small collaboration</li>
+									<li><strong>Duration:</strong> Multi-phase initiative</li>
+								</ul>
+
 
 								<h3>Role</h3>
-								<p>Design system engineer — components, documentation, accessibility guidelines.</p>
+								<p>Product designer and iOS engineer — information architecture, feature flow design, SwiftUI implementation, and Firebase data integration.</p>
+
+								<h3>My Contributions</h3>
+								<ul>
+									<li>Implemented app-level navigation state with gated flows (splash, onboarding, invite/login, profile setup, main experience)</li>
+									<li>Built role-based access patterns across modules for residents, partners, and admins</li>
+									<li>Developed Firestore-backed workflows for observations, campaigns, users, and thread notifications</li>
+									<li>Implemented direct messaging thread UX with unread indicators and attachment support</li>
+									<li>Designed and shipped the narrative pipeline that transforms selected observations into story cards</li>
+								</ul>
+
+								<h3>Timeline</h3>
+								<p>Multi-phase design system initiative</p>
+
+								<h3>Problem</h3>
+								<p>Community insight is often fragmented across siloed tools, making it hard to move from issue reporting to collective action. We needed one workflow where field observations could become organized campaigns and shared narratives.</p>
+
+								<h3>Challenge</h3>
+								<p>Create a single app that supports different user roles and responsibilities while keeping the UX understandable: report conditions, map context, coordinate campaigns, and communicate directly without losing continuity.</p>
 
 								<h3>Approach</h3>
 								<ul>
-									<li>Built accessible, reusable components</li>
-									<li>Documented behaviour and usage examples</li>
+									<li>Structured the product into five core tabs: Dashboard, Commons Atlas, Groundtruth, Narrative Alchemy, and Calendar</li>
+									<li>Connected authentication and invite-code logic to role/community-aware app behavior</li>
+									<li>Used Firestore listeners for near real-time updates to campaigns, users, and message notifications</li>
+									<li>Kept map/report/story modules loosely coupled through shared data models and environment-driven view models</li>
 								</ul>
 
+								<h3>Core Features</h3>
+								<ul>
+									<li>Groundtruth observation capture with category tagging, geolocation context, and optional photo evidence</li>
+									<li>Commons Atlas map overlay for community assets and observations with filter toggles and detail sheets</li>
+									<li>Narrative Alchemy story generation from selected observations and campaign orchestration tools</li>
+									<li>Community-scoped direct messaging with unread thread indicators and attachment support</li>
+									<li>Dashboard summaries for upcoming events, module entry points, and recent activity context</li>
+								</ul>
+
+								<h3>Technical Highlights</h3>
+								<ul>
+									<li>FirebaseAuth + Firestore integration with normalized community scoping for multi-user collaboration</li>
+									<li>Document listeners for campaigns/users/threads to keep UI in sync without manual refresh loops</li>
+									<li>Stable thread ID strategy and local read-state handling for reliable unread badge behavior</li>
+									<li>Typed model layer (`User`, `Campaign`, `Observation`, `Message`, `StoryCard`) for safer feature composition</li>
+								</ul>
+
+								<h3>Media</h3>
+								<p><strong>Demo video:</strong> Replace this source with your full community workflow walkthrough.</p>
+								<video controls playsinline width="100%" poster="images/pic03.jpg">
+									<source src="images/common-sight-demo.mp4" type="video/mp4" />
+									Your browser does not support the video tag.
+								</video>
+								<p><strong>Key screens:</strong> Swap these with your real dashboard, map, and campaign management captures.</p>
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-4 media-grid-item"><span class="image fit"><img src="images/pic03.jpg" alt="Common Sight screen 1 placeholder" /></span><p class="media-caption">Role-aware dashboard with module shortcuts and recent activity.</p></div>
+										<div class="col-4 media-grid-item"><span class="image fit"><img src="images/pic04.jpg" alt="Common Sight screen 2 placeholder" /></span><p class="media-caption">Groundtruth intake flow for category, location, and optional photo evidence.</p></div>
+										<div class="col-4 media-grid-item"><span class="image fit"><img src="images/pic05.jpg" alt="Common Sight screen 3 placeholder" /></span><p class="media-caption">Narrative/campaign layer turning observations into organized advocacy.</p></div>
+									</div>
+								</div>
+
 								<h3>Outcome</h3>
-								<p>Increased development velocity and consistency across products; accessibility regressions reduced.</p>
+								<p>Common Sight evolved into a unified civic workflow rather than separate utilities. The app demonstrates full-stack product thinking on iOS—combining data capture, geospatial context, collaboration, and campaign storytelling into one coherent experience.</p>
+
+								<h3>Next Iteration</h3>
+								<p>Planned next steps include richer analytics for campaign impact, stronger moderation workflows, and deeper offline resilience for field reporting scenarios.</p>
 
 								<ul class="actions">
 									<li><a href="case-studies.html" class="button">Back to Case Studies</a></li>

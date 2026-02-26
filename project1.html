@@ -6,6 +6,118 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.media-grid-item .image.fit {
+				margin-bottom: 0.5em;
+			}
+			.media-grid-item .iphone17-bezel {
+				display: block;
+				position: relative;
+				margin: 0 auto 0.5em;
+				max-width: 270px;
+				padding: 7px;
+				border-radius: 34px;
+				background: #222;
+				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+			}
+			.media-grid-item .iphone17-bezel::before {
+				content: '';
+				position: absolute;
+				top: 13px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 34%;
+				height: 16px;
+				border-radius: 999px;
+				background: linear-gradient(180deg, #1b1b1b 0%, #0f0f0f 100%);
+				box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.45);
+				z-index: 2;
+			}
+			.media-grid-item .iphone17-bezel img {
+				display: block;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 9 / 19.5;
+				object-fit: cover;
+				border-radius: 27px;
+			}
+			.media-grid-item .ipad17-bezel {
+				display: block;
+				position: relative;
+				margin: 0 0 0.5em 0;
+				max-width: 420px;
+				padding: 14px 6px 6px;
+				border-radius: 22px;
+				background: #222;
+				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+			}
+			.media-grid-item .ipad17-bezel::before {
+				content: '';
+				position: absolute;
+				top: 4px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: radial-gradient(circle at 30% 30%, #3f4f67 0%, #111 70%);
+				box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+				z-index: 3;
+			}
+			.media-grid-item .ipad17-bezel img {
+				display: block;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				border-radius: 15px;
+			}
+			.media-group-title {
+				margin: 0.8em 0 0.7em;
+			}
+			.ipad-video-bezel {
+				display: block;
+				position: relative;
+				margin: 0 auto 1.2em;
+				max-width: 760px;
+				padding: 14px 6px 6px;
+				border-radius: 22px;
+				background: #222;
+				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+			}
+			.ipad-video-bezel::before {
+				content: '';
+				position: absolute;
+				top: 4px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: radial-gradient(circle at 30% 30%, #3f4f67 0%, #111 70%);
+				box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+				z-index: 3;
+			}
+			.ipad-video-bezel video {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 15px;
+			}
+			.media-caption {
+				font-size: 0.9em;
+				color: #666;
+				margin: 0 0 1.25em 0;
+				line-height: 1.45;
+			}
+			.code-snippet-label {
+				font-size: 0.78em;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: #777;
+				margin: 0 0 0.6em;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -14,11 +126,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
+								<li><a href="index.html" class="button">Home</a></li>
 								<li><a href="about.html" class="button">About</a></li>
-								<li><a href="case-studies.html" class="button">Case Studies</a></li>
+								<li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
@@ -30,29 +143,173 @@
 							<header>
 								<div class="title">
 									<h2>Stamped! — A City Passport</h2>
-									<p>Accessibility-first redesign of a city passport e-commerce experience.</p>
+									<p>A SwiftUI travel discovery app that gamifies architecture exploration with passport stamps, city mastery, and AI-curated itineraries.</p>
 								</div>
 							</header>
 
 							<section>
-								<h3>Overview</h3>
-								<p>Stamped! is a city passport product that required an accessible, performant storefront. I led the front-end audit, refactor, and accessibility remediation to meet WCAG 2.1 AA standards.</p>
+								<h3>Demo Video</h3>
+								<p><strong>Demo video:</strong> Stamped iPad walkthrough.</p>
+								<div class="ipad-video-bezel">
+									<video controls playsinline width="100%" poster="images/QUIZLIGHTMODE.PNG">
+										<source src="images/Stamped!IpadScreenRecording.MP4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
 
-								<h3>Role</h3>
-								<p>Front-end engineer — audit, implementation, QA, accessibility testing.</p>
+								<h3>Overview</h3>
+								<p>Stamped! is an iOS app designed to solve what I call "architectural blindness"—the tendency to pass through cities without understanding their built history. The app turns landmark discovery into a progression system: users explore cities, mark buildings as visited, earn passport stamps, and unlock mastery tiers.</p>
+
+								<h3>Project Snapshot</h3>
+								<ul class="alt">
+									<li><strong>Platform:</strong> iOS (SwiftUI)</li>
+									<li><strong>Type:</strong> Educational travel companion</li>
+									<li><strong>Focus:</strong> Gamified learning, accessibility, offline-first content</li>
+									<li><strong>Team:</strong> Solo</li>
+									<li><strong>Duration:</strong> 4 months</li>
+									<li><strong>Role:</strong> Product designer and iOS engineer</li>
+									<li><strong>Timeline:</strong> November 2025 - February 2026</li>
+								</ul>
+
+								<h3>My Contributions</h3>
+								<ul>
+									<li>Designed and implemented the end-to-end product flow from onboarding through mastery progression</li>
+									<li>Built modular SwiftUI feature surfaces across city exploration, passport tracking, quiz interactions, and settings</li>
+									<li>Implemented shared state/persistence managers for progress, media capture, and user preferences</li>
+									<li>Integrated Apple Intelligence itinerary generation with robust fallback behavior for unsupported environments</li>
+									<li>Shipped accessibility-focused UX including high contrast, reduced motion, audio/haptic controls, and dark mode support</li>
+								</ul>
+
+								<h3>Problem</h3>
+								<p>Most travel tools prioritize logistics over context. I wanted to create an experience where users could learn a city's architecture, track progress, and stay motivated through game-like feedback instead of checklist fatigue.</p>
 
 								<h3>Challenge</h3>
-								<p>Legacy markup and poor keyboard navigation were preventing some users from completing purchases.</p>
+								<p>Build a feature-rich experience (city discovery, quizzes, stamps, custom photos, settings, and itineraries) without overwhelming users, and ensure the app works well across iPhone and iPad form factors.</p>
 
 								<h3>Approach</h3>
 								<ul>
-									<li>Semantic HTML restructure</li>
-									<li>Keyboard and screen reader testing</li>
-									<li>Performance audits and lazy-loading images</li>
+									<li>Designed a modular SwiftUI architecture with feature-based folders (City List, Detail, Passport, Quiz, Itinerary, Settings)</li>
+									<li>Used shared observable managers for progress, haptics, sound, speech, and navigation state</li>
+									<li>Implemented a progression loop: visit landmarks → complete city → trigger celebration → persist stamp history</li>
+									<li>Built with local data registries and persistence so core flows remain usable without network dependency</li>
 								</ul>
 
+								<h3>Core Features</h3>
+								<ul>
+									<li>Global city explorer with hierarchical grouping (continent → country → city) and mixed search (cities, landmarks, architects)</li>
+									<li>Passport gallery with mastery tiers, completion tracking, and celebratory stamp animations</li>
+									<li>City detail module with landmark check-ins, custom photo capture/upload, and local travel information</li>
+									<li>Interactive quiz mode with multiple question types, hints, high-score persistence, streak logic, voice input, haptics, and audio feedback</li>
+									<li>AI-curated itinerary cards with Apple Intelligence integration and graceful fallback content when unavailable</li>
+									<li>Offline currency conversion support using embedded rate mappings for travel context</li>
+								</ul>
+
+								<h3>Accessibility Decisions</h3>
+								<ul>
+									<li>System + manual support for high contrast and reduced motion, applied across major flows</li>
+									<li>Full dark mode compatibility across app surfaces, interactive controls, and readability states</li>
+									<li>Voice and screen-reader feedback in quiz interactions (including spoken correctness announcements)</li>
+									<li>Configurable sensory settings (sound, haptics, motion) in-app rather than hard-coded defaults</li>
+									<li>Adaptive UI behavior between iPhone and iPad, including orientation and split-view patterns</li>
+								</ul>
+
+								<h3>Technical Highlights</h3>
+								<ul>
+									<li>State persistence with AppStorage/UserDefaults and disk-backed image storage for user-captured landmark photos</li>
+									<li>Single source of truth for visited landmarks through a shared global progress manager</li>
+									<li>Conditional AI path: FoundationModels session on supported OS versions with deterministic fallback generation</li>
+									<li>Custom app icon system built in Icon Composer with Light, Dark, Clear, and Tinted variants</li>
+									<li>Feature toggles and reset controls for testability and content maintenance</li>
+								</ul>
+
+								<h3>Code Highlights</h3>
+								<p>Selected snippets from my Stamped Swift source showing AI fallback handling, persistence, and user-configurable accessibility settings.</p>
+
+								<p class="code-snippet-label">Itinerary / AI + Fallback</p>
+								<pre><code>func generateAIContent(previousZip: String? = nil) async {
+	self.isGenerating = true
+
+	#if canImport(FoundationModels)
+	if #available(iOS 18.0, *) {
+		if let aiResponse = await tryRunAppleIntelligence(time: self.timeSlot, hint: distanceHint) {
+			self.curatedActivity = aiResponse.activity
+			self.icon = aiResponse.icon
+			self.foodSuggestion = aiResponse.food
+			self.isGenerating = false
+			return
+		}
+	}
+	#endif
+
+	try? await Task.sleep(nanoseconds: 600_000_000)
+	self.curatedActivity = "\(distanceHint) Admire the \(building.buildingStyle) details at \(building.address)."
+	self.icon = "mappin.and.ellipse"
+	self.foodSuggestion = building.foodSpots.randomElement() ?? "Local Favorite"
+	self.isGenerating = false
+}</code></pre>
+
+								<p class="code-snippet-label">Managers / Global Progress Persistence</p>
+								<pre><code>@Published var visitedIDs: Set&lt;String&gt; = [] {
+	didSet { save() }
+}
+
+private let saveKey = "GlobalVisitedBuildingsKey"
+
+private init() {
+	if let savedData = UserDefaults.standard.array(forKey: saveKey) as? [String] {
+		self.visitedIDs = Set(savedData)
+	}
+	loadImagesFromDisk()
+}
+
+private func save() {
+	UserDefaults.standard.set(Array(visitedIDs), forKey: saveKey)
+}</code></pre>
+
+								<p class="code-snippet-label">Settings / Accessibility + Preferences</p>
+								<pre><code>@AppStorage("reduce_motion") var reduceMotion = false
+@AppStorage("high_contrast_mode") var highContrast = false
+@AppStorage("haptics_enabled") var hapticsEnabled = true
+@AppStorage("is_sound_enabled") var isSoundEnabled = true
+
+func resetAllContent() {
+	if let domain = Bundle.main.bundleIdentifier {
+		UserDefaults.standard.removePersistentDomain(forName: domain)
+	}
+
+	GlobalProgressManager.shared.resetAllProgress()
+
+	reduceMotion = false
+	highContrast = false
+	hapticsEnabled = true
+	isSoundEnabled = true
+}</code></pre>
+
+								<h3>Key Screens</h3>
+								<p><strong>Key screens:</strong> iPhone and iPad UI states from Stamped.</p>
+								<h4 class="media-group-title">iPhone Screens</h4>
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-4 media-grid-item"><span class="iphone17-bezel"><img src="images/iPhoneLightMode.png" alt="Stamped light mode city list view" /></span><p class="media-caption">Light mode city list flow in the Stamped travel discovery experience.</p></div>
+										<div class="col-4 media-grid-item"><span class="iphone17-bezel"><img src="images/iPhoneDarkMode.png" alt="Stamped dark mode city list view" /></span><p class="media-caption">Dark mode interface preserving hierarchy and readability across key interactions.</p></div>
+										<div class="col-4 media-grid-item"><span class="iphone17-bezel"><img src="images/IphoneHighContrastCityListView.png" alt="Stamped high contrast city list view" /></span><p class="media-caption">High contrast city list view supporting accessibility-first visual clarity.</p></div>
+									</div>
+								</div>
+
+								<h4 class="media-group-title">iPad Screens</h4>
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-12 media-grid-item"><span class="ipad17-bezel"><img src="images/QUIZLIGHTMODE.PNG" alt="Stamped quiz light mode iPad view" /></span><p class="media-caption">Quiz flow in light mode optimized for iPad screen space and readability.</p></div>
+										<div class="col-12 media-grid-item"><span class="ipad17-bezel"><img src="images/TRAVELDOSSIERHIGHCONTRAST.PNG" alt="Stamped travel dossier high contrast iPad view" /></span><p class="media-caption">Travel dossier in high contrast mode for improved visual accessibility on iPad.</p></div>
+										<div class="col-12 media-grid-item"><span class="ipad17-bezel"><img src="images/AICURATEDDARKMODE.PNG" alt="Stamped AI curated dark mode iPad view" /></span><p class="media-caption">AI-curated itinerary experience in dark mode for low-light planning workflows.</p></div>
+									</div>
+								</div>
+
 								<h3>Outcome</h3>
-								<p>Improved conversion and accessibility; reduced page load time by 32% and remediated key WCAG issues.</p>
+								<p>The final product is a cohesive, production-style SwiftUI app that balances learning, exploration, and progression. It demonstrates end-to-end product execution—from concept framing through interaction design and implementation—while maintaining accessibility as a first-class requirement.</p>
+
+								<h3>Next Iteration</h3>
+								<p>Next steps include integrating a full in-app translator for international travel, shipping a fully network-connected currency converter with real-time rate updates, and expanding the content library with more cities and landmark datasets.</p>
 
 								<ul class="actions">
 									<li><a href="case-studies.html" class="button">Back to Case Studies</a></li>

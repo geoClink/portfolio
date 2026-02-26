@@ -9,6 +9,14 @@
 		<title>George Clinkscales</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="George Clinkscales portfolio featuring SwiftUI case studies in travel discovery, game systems, and civic technology." />
+		<meta property="og:title" content="George Clinkscales | Portfolio" />
+		<meta property="og:description" content="SwiftUI case studies spanning travel discovery, game systems, and civic technology." />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="images/logo.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="George Clinkscales | Portfolio" />
+		<meta name="twitter:description" content="SwiftUI case studies spanning travel discovery, game systems, and civic technology." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
 			.testimonials-section {
@@ -118,7 +126,7 @@
 				top: 50%;
 				transform: translateY(-50%);
 				background: white;
-				color: var(--accent-start);
+				color: var(--accent-start) !important;
 				border: 2px solid var(--accent-start);
 				padding: 10px 14px;
 				font-size: 18px;
@@ -133,9 +141,17 @@
 				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 			.testimonial-nav:hover {
-				background: var(--accent-start);
-				color: white;
-				box-shadow: 0 4px 8px rgba(96,68,63,0.25);
+				background: var(--accent-start) !important;
+				color: #ffffff !important;
+				border-color: var(--accent-start) !important;
+				box-shadow: 0 4px 8px rgba(96,68,63,0.25) !important;
+			}
+			.testimonial-nav:focus,
+			.testimonial-nav:active {
+				color: #ffffff !important;
+				background: var(--accent-start) !important;
+				border-color: var(--accent-start) !important;
+				box-shadow: 0 4px 8px rgba(96,68,63,0.25) !important;
 			}
 			.testimonial-nav.prev {
 				left: 0;
@@ -253,6 +269,15 @@
 				margin: 0;
 				font-style: italic;
 			}
+			.intro-section .intro-support {
+				margin-top: 0.55em;
+				font-size: 0.98em;
+				font-style: normal;
+				color: #6f6f6f;
+				max-width: 46ch;
+				margin-left: auto;
+				margin-right: auto;
+			}
 			/* Hero CTA */
 			.intro-section .actions { margin-top: 1.25em; }
 			.intro-section .button.primary {
@@ -274,11 +299,119 @@
 				gap: 1.5em;
 				align-items: start;
 			}
+			.featured-projects .project {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
 			.featured-projects .project .image img {
 				width: 100%;
 				height: 220px;
 				object-fit: cover;
 				border-radius: 8px;
+			}
+			.featured-projects .project .image {
+				margin-bottom: 1em;
+			}
+			.featured-projects .project p {
+				margin-bottom: 1.2em;
+			}
+			.featured-projects .project .actions {
+				margin-top: auto;
+			}
+			.featured-projects .project .image.placeholder-gradient {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 220px;
+				border-radius: 8px;
+				background: var(--accent-gradient);
+				color: #fff;
+				text-decoration: none;
+				font-weight: 700;
+				letter-spacing: 0.02em;
+				padding: 1em;
+				text-align: center;
+			}
+			.featured-projects .project .image.placeholder-gradient .placeholder-label {
+				line-height: 1.4;
+			}
+			.featured-projects .project .image.iphone-bezel,
+			.featured-projects .project .image.ipad-bezel {
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				padding: 10px;
+				margin-bottom: 1.5em;
+				background: #222;
+				box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+				cursor: pointer;
+				will-change: transform;
+				transition: transform 0.24s ease, box-shadow 0.24s ease;
+			}
+			.featured-projects .project .image.iphone-bezel {
+				max-width: 270px;
+				border-radius: 38px;
+			}
+			.featured-projects .project .image.ipad-bezel {
+				max-width: 340px;
+				border-radius: 28px;
+				padding: 12px;
+			}
+			.featured-projects .project .image.iphone-bezel:hover,
+			.featured-projects .project .image.ipad-bezel:hover,
+			.featured-projects .project:hover .image.iphone-bezel,
+			.featured-projects .project:hover .image.ipad-bezel,
+			.featured-projects .project .image.iphone-bezel:focus-visible {
+				transform: translateY(-10px) scale(1.015);
+				box-shadow: 0 22px 36px rgba(0,0,0,0.28);
+			}
+			.featured-projects .project .image.ipad-bezel:focus-visible {
+				transform: translateY(-10px) scale(1.015);
+				box-shadow: 0 22px 36px rgba(0,0,0,0.28);
+			}
+			.featured-projects .project .image.iphone-bezel::before {
+				content: '';
+				position: absolute;
+				top: 17px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 38%;
+				height: 20px;
+				border-radius: 999px;
+				background: linear-gradient(180deg, #1b1b1b 0%, #0f0f0f 100%);
+				box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.45);
+				z-index: 2;
+			}
+			.featured-projects .project .image.iphone-bezel img {
+				display: block;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 9 / 19.5;
+				object-fit: cover;
+				border-radius: 30px;
+			}
+			.featured-projects .project .image.ipad-bezel::before {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 9px;
+				height: 9px;
+				border-radius: 50%;
+				background: radial-gradient(circle at 30% 30%, #3f4f67 0%, #111 70%);
+				box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+				z-index: 3;
+			}
+			.featured-projects .project .image.ipad-bezel img {
+				display: block;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				border-radius: 18px;
 			}
 			@media (max-width: 980px) {
 				.featured-projects .projects { grid-template-columns: repeat(2, 1fr); }
@@ -322,62 +455,19 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
+								<li><a href="index.html" class="button active" aria-current="page">Home</a></li>
 								<li><a href="about.html" class="button">About</a></li>
 								<li><a href="case-studies.html" class="button">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
-						<nav class="main">
-							<ul>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
+					
 					</header>
 
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
-										</a>
-									</li>
-								</ul>
-							</section>
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
+				
 
 					</section>
 
@@ -389,7 +479,8 @@
 							<a href="index.html" class="logo"><img src="images/logo.jpg" alt="George Clinkscales" /></a>
 							<header>
 								<h2>George Clinkscales</h2>
-								<p>Building accessible digital experiences</p>
+								<p>SwiftUI developer building accessible, user-centered products.</p>
+								<p class="intro-support">I design and ship practical experiences across travel, game systems, and civic technology.</p>
 								
 							</header>
 						</section>
@@ -399,21 +490,21 @@
 							<h2>Featured Case Studies</h2>
 							<div class="projects">
 								<article class="project">
-									<a href="project1.html" class="image"><img src="images/pic01.jpg" alt="Stamped! project image" /></a>
+									<a href="project1.html" class="image placeholder-gradient"></a>
 									<h3>Stamped! — A City Passport</h3>
-									<p>An all-in-one travel companion that gamifies global exploration. By blending interactive education and curated local insights with essential utility tools like real-time currency conversion, and itineraries curated by on device Apple Intelligence it transforms every journey into an immersive, rewarding adventure.</p>
+									<p>A SwiftUI travel discovery app that turns Global architecture into a collectible city-passport experience with progress tracking and AI-assisted itinerary support.</p>
 									<ul class="actions"><li><a href="project1.html" class="button">View Case Study</a></li></ul>
 								</article>
 								<article class="project">
 									<a href="project2.html" class="image"><img src="images/pic02.jpg" alt="Take Flight project image" /></a>
 									<h3>Take Flight — A Bird's Life</h3>
-									<p>A Belle Isle survival experience made up of four different mini-games built in SpriteKit.</p>
+									<p>A SpriteKit survival game available on iPad and macOS, with full keyboard compatibility as players build and defend a nest across Belle Isle mini-games.</p>
 									<ul class="actions"><li><a href="project2.html" class="button">View Case Study</a></li></ul>
 								</article>
 								<article class="project">
 									<a href="project3.html" class="image"><img src="images/pic03.jpg" alt="Common Sight project image" /></a>
 									<h3>Common Sight</h3>
-									<p>Created a design system and component library for consistent accessibility.</p>
+									<p>A role-based civic platform built during an internship with a small business owner to deliver an investor-ready demo for neighborhood reporting, campaigns, and direct communication.</p>
 									<ul class="actions"><li><a href="project3.html" class="button">View Case Study</a></li></ul>
 								</article>
 							</div>

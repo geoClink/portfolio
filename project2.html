@@ -6,6 +6,55 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.media-grid-item .image.fit {
+				margin-bottom: 0.5em;
+			}
+			.media-grid-item .image.fit img {
+				display: block;
+				width: 100%;
+				height: 240px;
+				object-fit: cover;
+			}
+			.ipad-video-bezel {
+				display: block;
+				position: relative;
+				margin: 0 auto 1.2em;
+				max-width: 760px;
+				padding: 14px 6px 6px;
+				border-radius: 22px;
+				background: #222;
+				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+			}
+			.ipad-video-bezel::before {
+				content: '';
+				position: absolute;
+				top: 4px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: radial-gradient(circle at 30% 30%, #3f4f67 0%, #111 70%);
+				box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+				z-index: 3;
+			}
+			.ipad-video-bezel video {
+				display: block;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				background: #111;
+				border-radius: 15px;
+			}
+			.media-caption {
+				font-size: 0.9em;
+				color: #666;
+				margin: 0 0 1.25em 0;
+				line-height: 1.45;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -14,11 +63,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
+								<li><a href="index.html" class="button">Home</a></li>
 								<li><a href="about.html" class="button">About</a></li>
-								<li><a href="case-studies.html" class="button">Case Studies</a></li>
+								<li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
@@ -30,25 +80,178 @@
 							<header>
 								<div class="title">
 									<h2>Take Flight — A Bird's Life</h2>
-									<p>Progressive web app with performance and accessibility focus.</p>
+									<p>A SpriteKit survival game for iPad and macOS with full keyboard support, where players build a nest, protect their flock, and escape Belle Isle through connected mini-games.</p>
 								</div>
 							</header>
 
 							<section>
+								<h3>Demo Video</h3>
+								<p><strong>Demo video:</strong> Replace this source with your gameplay walkthrough clip.</p>
+								<ul class="actions">
+									<li><a href="https://testflight.apple.com/join/vwcyPcTW" class="button" target="_blank" rel="noopener noreferrer">View on TestFlight</a></li>
+								</ul>
+								<div class="ipad-video-bezel">
+									<video controls playsinline width="100%" poster="images/TakeFlightBuildNestMiniGame.jpeg">
+										<source src="images/TakeFlightGameTrailer.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
+
 								<h3>Overview</h3>
-								<p>Take Flight is an engaging web app showcasing birding content with offline capabilities and responsive imagery.</p>
+								<p>Take Flight is an iOS survival game where the player controls a bird navigating Belle Isle. The core loop blends exploration and resource management with mini-game challenges: gather food, avoid predators, build a nest, feed the baby, and ultimately escape the island.</p>
+
+								<h3>Project Snapshot</h3>
+								<ul class="alt">
+									<li><strong>Platform:</strong> iPadOS + macOS (SpriteKit)</li>
+									<li><strong>Type:</strong> Narrative survival game</li>
+									<li><strong>Focus:</strong> Multi-mode gameplay loop, persistence, controller/input support</li>
+									<li><strong>Input:</strong> Full keyboard compatibility, plus touch and motion where applicable</li>
+									<li><strong>Team:</strong> Small collaboration</li>
+									<li><strong>Duration:</strong> Jan 12, 2026 - Feb 20, 2026</li>
+								</ul>
+
 
 								<h3>Role</h3>
-								<p>Lead front-end developer — PWA setup, service worker integration, accessibility.</p>
+								<p>Gameplay engineer and designer — built SwiftUI + SpriteKit architecture, implemented scene systems, tuned mini-game mechanics, and integrated persistence/achievements.</p>
+
+								<h3>My Contributions</h3>
+								<ul>
+									<li>Implemented the root app flow between main menu and game using a state-driven SwiftUI coordinator</li>
+									<li>Built major SpriteKit mini-game logic, including predator timing, feed loops, and escape-state handling</li>
+									<li>Integrated persistence for game/session state and resume behavior with SwiftData models</li>
+									<li>Connected Game Center authentication and achievement reporting into gameplay milestones</li>
+									<li>Designed onboarding/instruction gating so tutorial prompts appear contextually without interrupting flow</li>
+								</ul>
+
+								<h3>Timeline</h3>
+								<p>Jan 12, 2026 - Feb 20, 2026</p>
+
+								<h3>Problem</h3>
+								<p>Many prototype games have isolated mechanics but weak continuity. The goal here was to create a connected progression model where each challenge meaningfully impacts player state and long-term success.</p>
+
+								<h3>Challenge</h3>
+								<p>Design five distinct mini-games with different interaction patterns while keeping controls understandable, transitions smooth, and player feedback consistent across the full experience.</p>
 
 								<h3>Approach</h3>
 								<ul>
-									<li>Progressive enhancement for offline support</li>
-									<li>Responsive images and SVG optimization</li>
+									<li>Built a root SwiftUI coordinator (`menu` / `game`) for clean state transitions and replayability</li>
+									<li>Used SwiftData models (`GameState`, `GameSettings`) to persist progress, inventory, and player state</li>
+									<li>Implemented a central view model to coordinate HUD, tutorials, mini-game flow, and world scene updates</li>
+									<li>Created instruction gating so tutorials appear contextually once, then get out of the player’s way</li>
 								</ul>
 
+								<h3>Core Features</h3>
+								<ul>
+									<li>Five mini-games with unique mechanics: predator escape timing, nest-building memory drag/drop, self-feeding catch system, rope-cut baby feeding, and Flappy-style island escape</li>
+									<li>Multi-input support including keyboard, touch, and tilt modes where relevant</li>
+									<li>Persistent inventory and score systems tied to in-world objectives</li>
+									<li>Haptics/audio feedback layers for success, danger, and state transitions</li>
+									<li>Game Center achievements integration for milestone progression</li>
+								</ul>
+
+								<h3>Technical Highlights</h3>
+								<ul>
+									<li>SpriteKit scene composition split into focused files (player, camera, map, predators, nest, updates) for maintainability</li>
+									<li>Physics-based mini-game interactions (rope links, falling items, contact categories) tuned for responsiveness</li>
+									<li>State-safe mini-game pausing and resuming during instructional overlays</li>
+									<li>Dynamic menu behavior with resume/new game paths based on persisted save state</li>
+								</ul>
+
+								<h3>Code Highlights</h3>
+								<p><strong>SwiftData persistence model:</strong> game state was modeled to persist world position, progression flags, inventory, and baby-bird lifecycle across sessions.</p>
+								<pre><code>@Model
+	final class GameState {
+		var id: UUID
+		var birdXPos: Double
+		var birdYPos: Double
+		var birdZPos: Double
+
+		var hasNest: Bool
+		var hasFedBabyBird: Bool
+		var hasEscapedIsland: Bool
+		var hungerLevel: Double
+
+		var inventoryFood: Int
+
+		var babyBirdHungerLevel: Double
+		var hasBabyBird: Bool
+		var hasHatchedBabyBird: Bool
+
+		init(
+			id: UUID = UUID(),
+			birdXPos: Double = 0,
+			birdYPos: Double = 0,
+			birdZPos: Double = 0,
+			hasNest: Bool = false,
+			hasFedBabyBird: Bool = false,
+			hasEscapedIsland: Bool = false,
+			hungerLevel: Double = 100,
+			inventoryFood: Int = 0,
+			babyBirdHungerLevel: Double = 100,
+			hasBabyBird: Bool = false,
+			hasHatchedBabyBird: Bool = false
+		) {
+			self.id = id
+			self.birdXPos = birdXPos
+			self.birdYPos = birdYPos
+			self.birdZPos = birdZPos
+			self.hasNest = hasNest
+			self.hasFedBabyBird = hasFedBabyBird
+			self.hasEscapedIsland = hasEscapedIsland
+			self.hungerLevel = hungerLevel
+			self.inventoryFood = inventoryFood
+			self.babyBirdHungerLevel = babyBirdHungerLevel
+			self.hasBabyBird = hasBabyBird
+			self.hasHatchedBabyBird = hasHatchedBabyBird
+		}
+	}</code></pre>
+
+								<p><strong>Main update loop orchestration:</strong> each frame applies survival decay, persists state at intervals, and routes proximity interactions into mini-game transitions.</p>
+								<pre><code>func update(currentTime: TimeInterval) {
+		if isPausedForMiniGame { return }
+
+		let deltaTime = (lastUpdateTime == 0) ? 0 : currentTime - lastUpdateTime
+		lastUpdateTime = currentTime
+
+		timeSinceLastSave += deltaTime
+		if timeSinceLastSave >= saveInterval {
+			saveCurrentState()
+			timeSinceLastSave = 0
+		}
+
+		decreaseHealthOverTime(deltaTime: deltaTime)
+
+		if !isInInteractionRange,
+		   let player = cameraNode.childNode(withName: "//player") {
+			checkProximityToNestAndPredator(playerNode: player)
+		}
+
+		if isNearNest { handleNestInteraction() }
+
+		if isNearPredator {
+			isNearPredator = false
+			startFlyAwayMiniGame()
+		}
+
+		checkForFoodCollection()
+	}</code></pre>
+
+								<h3>Key Screens</h3>
+								<p><strong>Key screens:</strong> Nest-building, predator, feed, and island-escape mini-game moments from the shipped build.</p>
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-6 media-grid-item"><span class="image fit"><img src="images/TakeFlightBuildNestMiniGame.jpeg" alt="Take Flight build-nest mini-game screen" /></span><p class="media-caption">Build Nest mini-game where players assemble materials under pressure to unlock core progression.</p></div>
+										<div class="col-6 media-grid-item"><span class="image fit"><img src="images/TakeFlightPredatorMiniGame.jpeg" alt="Take Flight predator mini-game screen" /></span><p class="media-caption">Predator mini-game where players react quickly to evade threats and preserve survival state.</p></div>
+										<div class="col-6 media-grid-item"><span class="image fit"><img src="images/TakeFlightFeedUserMiniGame.jpeg" alt="Take Flight feed mini-game screen" /></span><p class="media-caption">Feed mini-game focused on timing and resource collection to maintain hunger and progression.</p></div>
+										<div class="col-6 media-grid-item"><span class="image fit"><img src="images/TakeFlightLeaveIslandMiniGame.png" alt="Take Flight leave-island mini-game screen" /></span><p class="media-caption">Leave Island mini-game sequence where players complete the final escape challenge.</p></div>
+									</div>
+								</div>
+
 								<h3>Outcome</h3>
-								<p>Improved engagement and offline usage; performance budgets met across devices.</p>
+								<p>The final build delivers a cohesive survival experience rather than disconnected mini-games. It demonstrates system-level thinking, robust scene orchestration, and practical game architecture choices in SwiftUI + SpriteKit.</p>
+
+								<h3>Next Iteration</h3>
+								<p>Next improvements would include adaptive difficulty scaling, expanded narrative beats between milestones, and richer telemetry for balancing challenge pacing across input modes.</p>
 
 								<ul class="actions">
 									<li><a href="case-studies.html" class="button">Back to Case Studies</a></li>

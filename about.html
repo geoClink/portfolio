@@ -79,8 +79,22 @@
 				.about-text p {
 					margin-bottom: 1.1em;
 				}
+				.about-section {
+					background: #fff;
+					padding: 1.35em 1.25em 1.15em;
+					border-radius: 8px;
+					box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+					margin-bottom: 1.2em;
+				}
+				.about-section h3 {
+					margin-top: 0;
+					margin-bottom: 0.65em;
+				}
+				.about-section p:last-child {
+					margin-bottom: 0;
+				}
 				.about-highlights {
-					margin: 0.5em 0 1.5em;
+					margin: 0.6em 0 0.1em;
 					padding-left: 1.2em;
 				}
 				.about-highlights li {
@@ -93,6 +107,9 @@
 						max-width: 340px;
 						margin: 0 0 0.9em;
 					}
+					.about-section {
+						padding: 1.1em 1em 0.95em;
+					}
 				}
 		</style>
 	</head>
@@ -103,64 +120,16 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
-								<li><a href="about.html" class="button">About</a></li>
+								<li><a href="index.html" class="button">Home</a></li>
+								<li><a href="about.html" class="button active" aria-current="page">About</a></li>
 								<li><a href="case-studies.html" class="button">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
-						<nav class="main">
-							<ul>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
 					</header>
-
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="contact.html">
-											<h3>Contact</h3>
-											<p>Get in touch with me</p>
-										</a>
-									</li>
-									<li>
-										<a href="about.html">
-											<h3>About</h3>
-											<p>Learn more about me</p>
-										</a>
-									</li>
-									<li>
-										<a href="case-studies.html">
-											<h3>Case Studies</h3>
-											<p>View my work</p>
-										</a>
-									</li>
-									<li>
-										<a href="index.html">
-											<h3>Home</h3>
-											<p>Back to main page</p>
-										</a>
-									</li>
-								</ul>
-							</section>
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="index.html" class="button large fit">Home</a></li>
-								</ul>
-							</section>
-
-					</section>
 
 				<!-- Main -->
 					<div id="main">
@@ -170,7 +139,7 @@
 								<header>
 									<div class="title">
 										<h2>About Me</h2>
-										<p>My background and passion</p>
+										<p>My background, technical focus, and product approach</p>
 									</div>
 								</header>
 
@@ -180,36 +149,43 @@
 											<img src="images/myself.jpg" alt="George Clinkscales" />
 										</div>
 										<div class="about-text">
-											<h3>My Story</h3>
-											<p>I’m a 2022 Colorado State University graduate in Agricultural Business, and I’m currently enrolled in the Apple Developer Academy. My path into product and development has been shaped by curiosity, people, and a love for practical problem-solving.</p>
-											<p>I grew up in Houston, studied in Fort Collins, spent a season in San Francisco, and now call Detroit home. Living in different cities taught me to notice how differently people move through spaces, systems, and technology.</p>
-											<p>I’m especially drawn to educational entertainment and digital experiences that feel clear, inviting, and intuitive. Outside of projects, I enjoy biking, visiting new cities, spending time with my parents, and trying new food at least once.</p>
+											<div class="about-section">
+												<h3>My Story</h3>
+												<p>I’m a Colorado State University graduate and current Apple Developer Academy learner focused on building products that are useful, inclusive, and technically strong. My transition into software has been driven by curiosity and a hands-on approach to solving real problems.</p>
+												<p>My recent work spans travel discovery, game systems, and civic technology. Through projects like Stamped!, Take Flight, and Common Sight, I’ve learned how to translate ideas into polished user flows, production-ready features, and clear product narratives.</p>
+												<p>I’m currently contributing through an internship where I’m helping a small business owner shape an investor-ready demo. That experience has sharpened how I balance speed, clarity, and user trust in every build.</p>
+												<p>I also coded this portfolio myself as my first HTML, CSS, and JavaScript project, which reflects my growing interest in web development alongside iOS.</p>
+											</div>
 
-											<h3>What I Build</h3>
-											<p>I focus on front-end development, user experience, and accessibility-first design. I care about interfaces that are both polished and practical.</p>
-											<ul class="about-highlights">
-												<li>Semantic HTML, modern CSS, and JavaScript-driven interactions</li>
-												<li>Responsive layouts that adapt naturally across devices</li>
-												<li>Inclusive, WCAG-minded decisions from day one</li>
-											</ul>
+											<div class="about-section">
+												<h3>What I Build</h3>
+												<p>I build SwiftUI-first experiences with an emphasis on accessibility, interaction design, and maintainable architecture. I care about products that feel intuitive on day one and scale with real user needs.</p>
+													<ul class="about-highlights">
+													<li>SwiftUI app development with Firebase, SpriteKit, and persistent data workflows</li>
+													<li>Cross-platform UX decisions for iPad and macOS, including full keyboard compatibility</li>
+													<li>Accessibility-minded product decisions and interaction patterns from the start</li>
+													</ul>
+											</div>
 										</div>
 									</div>
 
-										<h3>What Guides Me</h3>
-										<p>My approach is simple: make technology feel human. Accessibility, clarity, and thoughtful details are not extras; they are the work.</p>
-									<div class="beliefs-grid">
-										<div class="belief-card">
-												<p>I believe great products begin with empathy, then follow through with clean, maintainable code.</p>
-										</div>
-										<div class="belief-card">
-												<p>I believe design should reduce friction and reveal order, not add noise.</p>
-										</div>
-										<div class="belief-card">
-												<p>I believe accessibility is a foundation, not a feature to tack on later.</p>
-										</div>
-										<div class="belief-card">
-												<p>I believe great software respects each device and meets people where they are.</p>
-										</div>
+										<div class="about-section">
+											<h3>What Guides Me</h3>
+											<p>My approach is simple: understand the user context, build with intention, and ship work that is clear to both users and stakeholders. Accessibility, clarity, and thoughtful details are not extras; they are the work.</p>
+											<div class="beliefs-grid">
+												<div class="belief-card">
+													<p>I believe strong products start with user empathy and are sustained by clean, reliable implementation.</p>
+												</div>
+												<div class="belief-card">
+													<p>I believe design should reduce friction, clarify decisions, and make complex systems feel simple.</p>
+												</div>
+												<div class="belief-card">
+													<p>I believe accessibility should be integrated from the first prototype through final iteration.</p>
+												</div>
+												<div class="belief-card">
+													<p>I believe great software respects platform strengths and meets people where they are across devices.</p>
+												</div>
+											</div>
 									</div>
 
 

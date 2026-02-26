@@ -9,7 +9,80 @@
 		<title>Case Studies - George Clinkscales</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Case studies by George Clinkscales covering Stamped, Take Flight, and Common Sight with SwiftUI, SpriteKit, and Firebase." />
+		<meta property="og:title" content="Case Studies | George Clinkscales" />
+		<meta property="og:description" content="Explore case studies in SwiftUI travel discovery, game systems, and civic technology." />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="images/logo.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Case Studies | George Clinkscales" />
+		<meta name="twitter:description" content="Explore case studies in SwiftUI travel discovery, game systems, and civic technology." />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.case-study-cards {
+				display: grid;
+				gap: 1.2em;
+				margin-top: 1.25em;
+			}
+			.case-study-card {
+				display: block;
+				background: #fff;
+				border: 1px solid rgba(160, 160, 160, 0.25);
+				border-radius: 8px;
+				padding: 1.35em 1.35em 1.1em;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+				text-decoration: none;
+				color: inherit;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.case-study-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+			}
+			.case-study-card:focus-visible {
+				outline: 2px solid var(--accent-start);
+				outline-offset: 2px;
+			}
+			.case-study-card h3 {
+				margin-bottom: 0.7em;
+			}
+			.case-study-card p {
+				margin-bottom: 1.1em;
+			}
+			.tech-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.45em;
+				margin: 0 0 1em;
+			}
+			.tech-tag {
+				display: inline-block;
+				padding: 0.38em 0.68em;
+				font-size: 0.58em;
+				line-height: 1;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-weight: 700;
+				color: #60443f;
+				background: rgba(136, 124, 115, 0.12);
+				border: 1px solid rgba(136, 124, 115, 0.35);
+				border-radius: 999px;
+			}
+			.case-study-card .card-cta {
+				display: inline-block;
+				border: 1px solid rgba(160, 160, 160, 0.35);
+				border-radius: 999px;
+				padding: 0.55em 1em;
+				font-size: 0.62em;
+				font-family: "Raleway", Helvetica, sans-serif;
+				font-weight: 800;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				line-height: 1;
+				margin-bottom: 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -18,64 +91,16 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">George Clinkscales</a></h1>
+						<h1>George Clinkscales</h1>
 						<nav class="links">
 							<ul>
+								<li><a href="index.html" class="button">Home</a></li>
 								<li><a href="about.html" class="button">About</a></li>
-								<li><a href="case-studies.html" class="button">Case Studies</a></li>
+								<li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
 								<li><a href="contact.html" class="button">Contact</a></li>
 							</ul>
 						</nav>
-						<nav class="main">
-							<ul>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
 					</header>
-
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="contact.html">
-											<h3>Contact</h3>
-											<p>Get in touch with me</p>
-										</a>
-									</li>
-									<li>
-										<a href="about.html">
-											<h3>About</h3>
-											<p>Learn more about me</p>
-										</a>
-									</li>
-									<li>
-										<a href="case-studies.html">
-											<h3>Case Studies</h3>
-											<p>View my work</p>
-										</a>
-									</li>
-									<li>
-										<a href="index.html">
-											<h3>Home</h3>
-											<p>Back to main page</p>
-										</a>
-									</li>
-								</ul>
-							</section>
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="index.html" class="button large fit">Home</a></li>
-								</ul>
-							</section>
-
-					</section>
 
 				<!-- Main -->
 					<div id="main">
@@ -85,32 +110,47 @@
 								<header>
 									<div class="title">
 										<h2>Case Studies</h2>
-										<p>Showcasing my work and approach</p>
+										<p>What began as a curiosity has evolved into a dedicated pursuit of excellence. As I prepare to graduate the Apple Developer Academy in Detroit, MI, I’m proud of the foundations I’ve laid, but even more motivated by the challenges ahead. What defines my approach isn't just the code—it’s the intention behind it. I thrive on understanding the 'why' before building the 'how,' ensuring every solution I create serves a clear, human purpose.</p>
 									</div>
 								</header>
 
 								<section>
 									<h3>My Portfolio</h3>
 									<p>Below are some of my recent projects. Each case study demonstrates my approach to solving design and development challenges while prioritizing accessibility and user experience.</p>
+									<div class="case-study-cards">
+										<a href="project1.html" class="case-study-card">
+											<h3>Stamped! A City Passport</h3>
+											<p>A SwiftUI travel discovery app that turns Detroit architecture into a collectible city-passport experience with progress tracking and AI-assisted itinerary support.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">SwiftUI</span>
+												<span class="tech-tag">AI Itinerary</span>
+												<span class="tech-tag">iOS</span>
+											</div>
+											<span class="card-cta">View Case Study</span>
+										</a>
 
-									<h3>Stamped! A City Passport</h3>
-									<p>A redesigned e-commerce platform focusing on WCAG 2.1 AA compliance. The project involved auditing existing code, implementing semantic HTML5, improving keyboard navigation, and testing with assistive technologies.</p>
-									<ul class="actions">
-										<li><a href="project1.html" class="button">View Case Study</a></li>
+										<a href="project2.html" class="case-study-card">
+											<h3>Take Flight - A Bird's Life</h3>
+											<p>A SpriteKit survival game available on iPad and macOS, with full keyboard compatibility as players build and defend a nest across Belle Isle mini-games.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">SpriteKit</span>
+												<span class="tech-tag">iPadOS</span>
+												<span class="tech-tag">macOS</span>
+											</div>
+											<span class="card-cta">View Case Study</span>
+										</a>
 
-									</ul>
-
-									<h3>Take Flight - A Bird's Life</h3>
-									<p>Developed a progressive web app with a focus on performance and accessibility. Implemented responsive design patterns, SVG optimizations, and comprehensive error handling.</p>
-									<ul class="actions">
-										<li><a href="project2.html" class="button">View Case Study</a></li>
-									</ul>
-
-									<h3>Common Sight</h3>
-									<p>Created a comprehensive component library and design system documentation. Established accessibility guidelines, component patterns, and contributed to improved development velocity across teams.</p>
-									<ul class="actions">
-										<li><a href="project3.html" class="button">View Case Study</a></li>
-									</ul>
+										<a href="project3.html" class="case-study-card">
+											<h3>Common Sight</h3>
+											<p>A role-based civic platform built during an internship with a small business owner to deliver an investor-ready demo for neighborhood reporting, campaigns, and direct communication.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">SwiftUI</span>
+												<span class="tech-tag">Firebase</span>
+												<span class="tech-tag">Civic Tech</span>
+											</div>
+											<span class="card-cta">View Case Study</span>
+										</a>
+									</div>
 								</section>
 
 							</article>
