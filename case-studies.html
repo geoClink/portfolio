@@ -207,6 +207,9 @@
 					<li><a href="mailto:gclinkscales25@msu.idserve.net" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<p class="copyright">&copy; George Clinkscales. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+				<p style="font-size:1em; color:#60443f; margin-top:0.5em;">
+					<strong>Local Developer Time:</strong> <span id="local-time"></span> (Eastern Time Zone)<br>
+				</p>
 			</section>
 
 		<!-- Scripts -->
@@ -215,6 +218,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			function updateLocalTime() {
+				const now = new Date();
+				let offset = -5;
+				const jan = new Date(now.getFullYear(), 0, 1);
+				const jul = new Date(now.getFullYear(), 6, 1);
+				const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+				if (now.getTimezoneOffset() < stdTimezoneOffset) offset = -4;
+				const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+				const est = new Date(utc + (3600000 * offset));
+				const timeString = est.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+				document.getElementById('local-time').textContent = timeString;
+			}
+			setInterval(updateLocalTime, 1000);
+			updateLocalTime();
+			</script>
 
 	</body>
 </html>
