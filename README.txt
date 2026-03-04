@@ -29,3 +29,31 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+Portfolio Website README
+=======================
+
+This is a personal portfolio website project. It showcases case studies, projects, resume, and contact information. The site is built using HTML, CSS (with SASS), and JavaScript, and is based on the Future Imperfect template by HTML5 UP.
+
+## Structure
+- index.html: Homepage
+- about.html: About section
+- case-studies.html: Case studies
+- contact.html: Contact form
+- resume.html: Resume
+- project1.html, project2.html, project3.html, project4.html: Individual project pages
+- assets/
+  - css/: Compiled CSS files
+  - js/: JavaScript files
+  - sass/: SASS source files
+  - images/: Image assets
+
+## Features
+- Responsive design
+- Flexbox layout
+- Font Awesome icons
+- SASS for modular styles
+- jQuery for interactivity
+
+## Usage
+Open index.html in your browser to view the portfolio. Edit HTML and SASS files to customize content and styles.
