@@ -1,3 +1,47 @@
+/* Hamburger menu styles */
+.menuToggle {
+	display: none;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	width: 2em;
+	height: 2em;
+	cursor: pointer;
+	z-index: 10003;
+}
+.menuToggle span,
+.menuToggle span:before,
+.menuToggle span:after {
+	display: block;
+	position: absolute;
+	height: 0.2em;
+	width: 2em;
+	background: #333;
+	border-radius: 2px;
+	transition: all 0.3s ease;
+}
+.menuToggle span {
+	top: 50%;
+	left: 0;
+	margin-top: -0.1em;
+}
+.menuToggle span:before {
+	content: '';
+	top: -0.6em;
+}
+.menuToggle span:after {
+	content: '';
+	top: 0.6em;
+}
+
+@media screen and (max-width: 736px) {
+	#header .links {
+		display: none;
+	}
+	.menuToggle {
+		display: block;
+	}
+}
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
