@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 736px) {
 	#header .links {
-		display: none;
+		display: none !important;
 	}
 	.menuToggle {
 		display: block;
