@@ -1,3 +1,22 @@
+// Mobile sidebar menu toggle
+$(function() {
+	var $menuBtn = $('#menuToggle');
+	var $sidebarMenu = $('#sidebarMenu');
+	$menuBtn.on('click', function(e) {
+		e.preventDefault();
+		$sidebarMenu.toggleClass('visible');
+	});
+	$sidebarMenu.on('click', function(e) {
+		if ($(e.target).is('a') || $(e.target).is('#sidebarMenu')) {
+			$sidebarMenu.removeClass('visible');
+		}
+	});
+	$(document).on('click', function(e) {
+		if (!$(e.target).closest('#sidebarMenu, #menuToggle').length) {
+			$sidebarMenu.removeClass('visible');
+		}
+	});
+});
 (function($) {
 	// ...existing code...
 
@@ -34,18 +53,7 @@
 			}, 100);
 		});
 
-	// Menu.
-		// Custom hamburger menu toggle
-		$('#menuToggle').on('click', function(e) {
-			e.preventDefault();
-			$('#menu').toggleClass('visible');
-		});
-		// Hide menu when clicking outside or on a menu link
-		$('#menu').on('click', function(e) {
-			if ($(e.target).is('#menu') || $(e.target).is('a')) {
-				$('#menu').removeClass('visible');
-			}
-		});
+	// ...existing code...
 
 	// Intro.
 		var $intro = $('#intro');
@@ -59,4 +67,5 @@
 				$intro.prependTo($sidebar);
 			});
 
+});
 })(jQuery);

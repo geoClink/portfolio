@@ -1,3 +1,132 @@
+/* Mobile menu button and sidebar */
+.menu-btn {
+	display: none;
+	position: absolute;
+	top: 0.7rem;
+	right: 1rem;
+	z-index: 10010;
+	background: #fff;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+	padding: 0.15em;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	outline: none;
+}
+.menu-btn:focus {
+	outline: 2px solid #0078d7;
+}
+.menu-icon {
+	display: block;
+	width: 20px;
+	height: 16px;
+	position: relative;
+	margin: 0 auto;
+	background: none;
+}
+.menu-icon span,
+.menu-icon:before,
+.menu-icon:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 2px;
+	background: linear-gradient(90deg, #60443f 60%, #c2b8b2 100%);
+	border-radius: 2px;
+	transition: background 0.2s;
+}
+.menu-icon span {
+	top: 9px;
+}
+.menu-icon:before {
+	top: 2px;
+}
+.menu-icon:after {
+	top: 16px;
+}
+.sidebar-menu {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80vw;
+	max-width: 400px;
+	height: 100vh;
+	background: #fff;
+	box-shadow: 2px 0 16px rgba(0,0,0,0.12);
+	z-index: 10009;
+	padding: 2em 1em;
+	transition: transform 0.3s;
+	transform: translateX(-100%);
+	opacity: 1;
+}
+.sidebar-menu.visible {
+	display: flex;
+	transform: translateX(0);
+}
+.sidebar-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;
+}
+.sidebar-menu li {
+	margin: 0;
+}
+.sidebar-menu a {
+	}
+	.sidebar-menu a.active,
+	.sidebar-menu a[aria-current="page"] {
+		background: linear-gradient(90deg, #0078d7 80%, #c2b8b2 100%);
+		color: #fff;
+		font-weight: bold;
+		box-shadow: 0 4px 16px rgba(0,120,215,0.12);
+		border-radius: 12px;
+	display: block;
+	font-size: 1.25em;
+	color: #60443f;
+	text-decoration: none;
+	background: #f7f7f7;
+	border-radius: 8px;
+	padding: 0.7em 3em;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+	width: 100%;
+	margin: 0;
+	max-width: 100vw;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.sidebar-menu a:hover,
+.sidebar-menu a:active {
+	background: linear-gradient(90deg, #60443f 80%, #c2b8b2 100%);
+	color: #fff;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+	transform: scale(1.03);
+}
+@media screen and (max-width: 736px) {
+	.menu-btn {
+		display: block;
+	}
+	nav.links {
+		display: none !important;
+	}
+}
+@media screen and (min-width: 737px) {
+	.menu-btn {
+		display: none !important;
+	}
+	.sidebar-menu {
+		display: none !important;
+	}
+	nav.links {
+		display: block;
+	}
+}
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
