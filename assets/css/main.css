@@ -3704,6 +3704,19 @@ input, select, textarea {
 		pointer-events: none;
 		opacity: 0;
 		transition: transform 0.5s ease, visibility 0.5s, opacity 0.5s;
+	}
+
+	/* Pure CSS hamburger menu toggle */
+	#menuToggle:checked ~ #menu {
+		-moz-transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+		visibility: visible;
+		z-index: 10005;
+		pointer-events: auto;
+		opacity: 1;
+	}
 		width: 25em;
 		z-index: 10002;
 	}
