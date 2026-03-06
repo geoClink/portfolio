@@ -3769,6 +3769,10 @@ input, select, textarea {
 			-ms-transform: translateX(0);
 			transform: translateX(0);
 			visibility: visible;
+			z-index: 10005;
+			pointer-events: auto;
+			opacity: 1;
+		}
 		}
 
 		@media screen and (max-width: 736px) {
