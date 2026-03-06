@@ -45,7 +45,7 @@
 				resetForms: true,
 				side: 'right',
 				target: $body,
-				visibleClass: 'is-menu-visible'
+				visibleClass: 'visible'
 			});
 
 	// Intro.
