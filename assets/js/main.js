@@ -35,18 +35,17 @@
 		});
 
 	// Menu.
-		$menu
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'visible'
-			});
+		// Custom hamburger menu toggle
+		$('#menuToggle').on('click', function(e) {
+			e.preventDefault();
+			$('#menu').toggleClass('visible');
+		});
+		// Hide menu when clicking outside or on a menu link
+		$('#menu').on('click', function(e) {
+			if ($(e.target).is('#menu') || $(e.target).is('a')) {
+				$('#menu').removeClass('visible');
+			}
+		});
 
 	// Intro.
 		var $intro = $('#intro');
