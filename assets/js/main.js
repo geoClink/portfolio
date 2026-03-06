@@ -1,19 +1,7 @@
 (function($) {
 	// ...existing code...
 
-	// Hamburger menu click handler
-	$(document).ready(function() {
-		$('#menuToggle').on('click', function(e) {
-			e.preventDefault();
-			$('body').addClass('is-menu-visible');
-		});
-		// Hide menu when clicking outside or on a menu link
-		$('#menu').on('click', function(e) {
-			if ($(e.target).is('#menu') || $(e.target).is('a')) {
-				$('body').removeClass('is-menu-visible');
-			}
-		});
-	});
+	// ...existing code...
 
 	// ...existing code...
 /*
