@@ -18,6 +18,7 @@
 		<meta name="twitter:title" content="George Clinkscales | Portfolio" />
 		<meta name="twitter:description" content="SwiftUI-focused iOS developer portfolio with case studies in travel, game systems, and civic technology." />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<style>
 			.testimonials-section {
 				margin: 4em 0;
@@ -174,7 +175,7 @@
 				transition: all 0.3s ease;
 			}
 			.indicator-dot.active {
-				background: var(--accent-start);
+				background: #60443f;
 				transform: scale(1.2);
 			}
 			.indicator-dot:hover {
@@ -436,8 +437,11 @@
 			}
 			.featured-projects .project .image.ipad-bezel {
 				max-width: 340px;
-				border-radius: 28px;
-				padding: 12px;
+				border-radius: 12px;
+				padding: 0px; /* all edges equally thin */
+			}
+			.featured-projects .project .image.ipad-bezel::before {
+				display: none; /* remove camera notch for uniform thinness */
 			}
 			.featured-projects .project .image.iphone-bezel:hover,
 			.featured-projects .project .image.ipad-bezel:hover,
@@ -605,7 +609,7 @@
 								<ul style="margin-top:0.5em;">
 									<li><a href="project1.html">Stamped! <span style="font-size:0.85em;color:#887c73;font-weight:400;">SwiftUI</span></a></li>
 									<li><a href="project2.html">Take Flight <span style="font-size:0.85em;color:#887c73;font-weight:400;">SwiftUI</span></a></li>
-									<li><a href="project3.html">Common Sight <span style="font-size:0.85em;color:#887c73;font-weight:400;">SwiftUI</span></a></li>
+									<li><a href="project3.html">Common Sight <span style="font-size:0.8em;color:#60443f;font-weight:500;">(Internship: Small Business)</span></a></li>
 									<li><a href="project4.html">LearnToCode <span style="font-size:0.85em;color:#887c73;font-weight:400;">Web Dev</span></a></li>
 								</ul>
 							</nav>
@@ -626,9 +630,10 @@
 								<div class="intro-card-inner">
 									<a href="index.html" class="logo"><img src="images/logo.jpg" alt="George Clinkscales" /></a>
 									<div class="intro-copy">
-									<h1 style="font-size:2.2em;letter-spacing:0.03em;font-weight:900;color:#222;margin-bottom:0.35em;">George Clinkscales</h1>
-									<div style="font-size:1.25em;font-weight:700;color:#60443f;margin-bottom:0.5em;line-height:1.3;">SwiftUI-Focused iOS Developer</div>
-									<div style="font-size:1.08em;color:#222;margin-bottom:0.7em;line-height:1.5;">Building accessible, polished app experiences for real users.</div>
+									<h1 style="font-size:2.2em;letter-spacing:0.03em;font-weight:900;color:#222;margin-bottom:0.25em;">George Clinkscales</h1>
+									<div style="color:#60443f;font-size:1em;margin-bottom:0.2em;">Detroit, MI</div>
+									<div style="font-size:1.35em;font-weight:700;color:#60443f;margin-bottom:0.4em;">SwiftUI-Focused iOS Developer</div>
+									<div style="font-size:1.08em;color:#222;margin-bottom:0.5em;">Building accessible, polished app experiences for real users.</div>
 									<div style="font-size:1.08em;color:#3c3b3b;line-height:1.5;">I design and ship practical products<br><span style="color:#60443f;font-weight:500;">with strong UX thinking and clean implementation.</span></div>
 									</div>
 								</div>
@@ -1054,8 +1059,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 										</div>
 									</div>
 									<h4>Left &amp; Right</h4>
-									<p><span class="image left"><img src="images/pic07.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									<p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+									<p><span class="image left"><img src="images/pic07.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</p>
+									<p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
 								</section>
 
 							</article>
