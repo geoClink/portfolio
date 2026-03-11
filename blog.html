@@ -63,7 +63,6 @@
         <h1>George Clinkscales</h1>
         <nav class="links">
             <ul>
-                <li><a href="index.html" class="button">Home</a></li>
                 <li><a href="about.html" class="button">About</a></li>
                 <li><a href="case-studies.html" class="button">Case Studies</a></li>
                 <li><a href="resume.html" class="button">Resume</a></li>
@@ -78,12 +77,25 @@
             <p>Thoughts on product, accessibility, and tech trends from George Clinkscales.</p>
         </div>
         <div class="blog-grid">
+                                    <div class="blog-card">
+                                        <div class="blog-meta">Career Experience | March 2026</div>
+                                        <h3>My Journey at Apple Developer Academy Detroit</h3>
+                                                        <p>Attending the Apple Developer Academy in Detroit has been a transformative experience. I’ve worked alongside talented peers, learned from industry mentors, and built real-world apps from concept to launch. The Academy’s hands-on approach pushed me to grow as a developer, designer, and collaborator. I gained deep skills in Swift, UI/UX, accessibility, and teamwork—plus exposure to Apple’s latest tools and frameworks. The Detroit community is vibrant and supportive, and the Academy’s focus on inclusivity and innovation inspired me to build products that make a difference. If you’re considering the Academy, expect to be challenged, supported, and empowered to create your best work.<br><br><a href="https://developeracademy.msu.edu" target="_blank" rel="noopener">Apple Developer Academy at MSU (Detroit)</a></p>
+                                        <a href="#" class="read-more">Expand</a>
+                                    </div>
+                        <div class="blog-card">
+                            <div class="blog-meta">Tools & IDE | March 2026</div>
+                            <h3>My Thoughts on Xcode 26.3</h3>
+                            <p>Xcode 26.3 feels like a mature, polished IDE for Apple developers. The new features—especially improved SwiftUI previews, faster build times, and enhanced accessibility tools—make daily development smoother and more productive. I appreciate the stability and performance improvements, as well as the expanded support for Apple Intelligence APIs. The UI is cleaner, and the debugging experience is more intuitive. One standout is how Xcode is starting to support agentic coding: workflows where AI and automation help generate, refactor, and test code alongside the developer. This shift makes coding more collaborative and efficient, letting me focus on creative problem-solving while routine tasks are handled by smart tools. While there are still areas for improvement (like simulator speed and occasional SwiftUI quirks), Xcode 26.3 is a strong step forward. It’s a tool I rely on every day, and it keeps getting better.<br><br><a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">Learn more about Xcode</a></p>
+                            <a href="#" class="read-more">Expand</a>
+                        </div>
             <div class="blog-card">
-                <div class="blog-meta">Accessibility | March 2026</div>
-                <h3>Designing for Everyone: Accessibility Wins in SwiftUI</h3>
-                <p>This is sample preview text for Accessibility. Click <strong>Expand</strong> to read the full post inline.</p>
+                <div class="blog-meta">App Launch | March 2026</div>
+                <h3>My First App on the App Store</h3>
+                <p>Launching <strong>Stamped!—a city passport app</strong> on the App Store was a milestone in my developer journey. Stamped! lets users explore cities, check in at landmarks, and collect digital stamps for their travel adventures. From initial concept to shipping, I learned how to design engaging progression loops, polish UI/UX for accessibility, and navigate Apple's review process. Responding to real user feedback helped me iterate quickly and improve the experience. Seeing Stamped! live and available to travelers worldwide was both exciting and humbling—and it inspired me to keep building and improving. If you're working toward your first launch, stay curious, keep learning, and celebrate every step!</p>
                 <a href="#" class="read-more">Expand</a>
             </div>
+            <!-- Existing blog cards below -->
             <div class="blog-card">
                 <div class="blog-meta">Product Thinking | March 2026</div>
                 <h3>Shipping MVPs That Matter</h3>
@@ -146,6 +158,14 @@
             </div>
         </div>
     </div>
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+        </ul>
+        <p class="copyright">&copy; George Clinkscales. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+        <p style="font-size:0.95em;color:#60443f;margin-top:0.5em;">Local Developer Time: <span id="local-time"></span></p>
+    </section>
     <script>
 const fullPosts = [
   'Dynamic Type, VoiceOver, and high-contrast modes are essential for accessible apps. In SwiftUI, I use .accessibilityLabel, .accessibilityHint, and .accessibilityTraits to ensure every element is usable. Testing with Accessibility Inspector helps catch issues early.',
@@ -185,6 +205,28 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+});
+// Add local developer time to blog footer
+function updateLocalTime() {
+    const now = new Date();
+    // Format: 02:11:34 AM (Eastern Time Zone)
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // 0 should be 12
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm} (Eastern Time Zone)`;
+    var timeSpan = document.getElementById('local-time');
+    if (timeSpan) {
+        timeSpan.textContent = timeString;
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    updateLocalTime();
+    setInterval(updateLocalTime, 1000);
 });
 </script>
 </body>

@@ -6,6 +6,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Prism.js syntax highlighting -->
+		<link rel="stylesheet" href="assets/css/prism-xcode-stamped.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
 		<style>
 			.media-grid-item .image.fit {
 				margin-bottom: 0.5em;
@@ -212,7 +217,7 @@
 
 								<h3>Code Highlights</h3>
 								<p><strong>SwiftData persistence model:</strong> game state was modeled to persist world position, progression flags, inventory, and baby-bird lifecycle across sessions.</p>
-								<pre><code>@Model
+								<pre class="stamped-xcode-code"><code class="language-swift">@Model
 	final class GameState {
 		var id: UUID
 		var birdXPos: Double
@@ -260,7 +265,7 @@
 	}</code></pre>
 
 								<p><strong>Main update loop orchestration:</strong> each frame applies survival decay, persists state at intervals, and routes proximity interactions into mini-game transitions.</p>
-								<pre><code>func update(currentTime: TimeInterval) {
+								<pre class="stamped-xcode-code"><code class="language-swift">func update(currentTime: TimeInterval) {
 		if isPausedForMiniGame { return }
 
 		let deltaTime = (lastUpdateTime == 0) ? 0 : currentTime - lastUpdateTime

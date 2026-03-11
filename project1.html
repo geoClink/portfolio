@@ -6,6 +6,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Prism.js syntax highlighting -->
+		<link rel="stylesheet" href="assets/css/prism-xcode-stamped.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
 		<style>
 			.media-grid-item .image.fit {
 				margin-bottom: 0.5em;
@@ -247,7 +252,7 @@
 								<p>Selected snippets from my Stamped Swift source showing AI fallback handling, persistence, and user-configurable accessibility settings.</p>
 
 								<p class="code-snippet-label">Itinerary / AI + Fallback</p>
-								<pre><code>func generateAIContent(previousZip: String? = nil) async {
+								<pre class="stamped-xcode-code"><code class="language-swift">func generateAIContent(previousZip: String? = nil) async {
 	self.isGenerating = true
 
 	#if canImport(FoundationModels)
@@ -270,7 +275,7 @@
 }</code></pre>
 
 								<p class="code-snippet-label">Managers / Global Progress Persistence</p>
-								<pre><code>@Published var visitedIDs: Set&lt;String&gt; = [] {
+								<pre class="stamped-xcode-code"><code class="language-swift">@Published var visitedIDs: Set<String> = [] {
 	didSet { save() }
 }
 
@@ -288,7 +293,7 @@ private func save() {
 }</code></pre>
 
 								<p class="code-snippet-label">Settings / Accessibility + Preferences</p>
-								<pre><code>@AppStorage("reduce_motion") var reduceMotion = false
+								<pre class="stamped-xcode-code"><code class="language-swift">@AppStorage("reduce_motion") var reduceMotion = false
 @AppStorage("high_contrast_mode") var highContrast = false
 @AppStorage("haptics_enabled") var hapticsEnabled = true
 @AppStorage("is_sound_enabled") var isSoundEnabled = true

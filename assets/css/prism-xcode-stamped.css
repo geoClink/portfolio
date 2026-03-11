@@ -1,0 +1,69 @@
+/* PrismJS Xcode-inspired theme overrides for stamped */
+.stamped-xcode-code {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 1.2em 1em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  border: 1px solid #2c2c2e;
+  position: relative;
+}
+.stamped-xcode-code code {
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+/* PrismJS syntax colors */
+.stamped-xcode-code .token.comment,
+.stamped-xcode-code .token.prolog,
+.stamped-xcode-code .token.doctype,
+.stamped-xcode-code .token.cdata {
+  color: #6a9955;
+}
+.stamped-xcode-code .token.punctuation {
+  color: #d4d4d4;
+}
+.stamped-xcode-code .token.property,
+.stamped-xcode-code .token.tag,
+.stamped-xcode-code .token.constant,
+.stamped-xcode-code .token.symbol,
+.stamped-xcode-code .token.deleted {
+  color: #569cd6;
+}
+.stamped-xcode-code .token.boolean,
+.stamped-xcode-code .token.number {
+  color: #b5cea8;
+}
+.stamped-xcode-code .token.selector,
+.stamped-xcode-code .token.attr-name,
+.stamped-xcode-code .token.string,
+.stamped-xcode-code .token.char,
+.stamped-xcode-code .token.builtin,
+.stamped-xcode-code .token.inserted {
+  color: #ce9178;
+}
+.stamped-xcode-code .token.operator,
+.stamped-xcode-code .token.entity,
+.stamped-xcode-code .token.url {
+  color: #d4d4d4;
+}
+.stamped-xcode-code .token.atrule,
+.stamped-xcode-code .token.keyword {
+  color: #c586c0;
+}
+.stamped-xcode-code .token.function {
+  color: #dcdcaa;
+}
+.stamped-xcode-code .token.regex,
+.stamped-xcode-code .token.important {
+  color: #fdc700;
+}
+.stamped-xcode-code .token.variable {
+  color: #9cdcfe;
+}
