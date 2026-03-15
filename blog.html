@@ -61,6 +61,12 @@
 <body>
     <header id="header">
         <h1>George Clinkscales</h1>
+        <!-- Menu button for mobile -->
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon">
+                <span></span>
+            </span>
+        </button>
         <nav class="links">
             <ul>
                 <li><a href="index.html" class="button">Home</a></li>
@@ -71,6 +77,19 @@
                 <li><a href="blog.html" class="button active" aria-current="page">Blog</a></li>
             </ul>
         </nav>
+        <!-- Sidebar menu -->
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </aside>
     </header>
     <div class="blog-section">
         <div class="blog-header">
@@ -167,6 +186,9 @@
         <p class="copyright">&copy; George Clinkscales. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
         <p style="font-size:0.95em;color:#60443f;margin-top:0.5em;">Local Developer Time: <span id="local-time"></span></p>
     </section>
+    <!-- Scripts for mobile menu functionality -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>
 const fullPosts = [
   'Dynamic Type, VoiceOver, and high-contrast modes are essential for accessible apps. In SwiftUI, I use .accessibilityLabel, .accessibilityHint, and .accessibilityTraits to ensure every element is usable. Testing with Accessibility Inspector helps catch issues early.',

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<!-- SlotParking Case Study: Detailed breakdown of the SlotParking iOS project -->
+<html>
+<head>
+    <title>SlotParking | Case Study</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Case study for SlotParking, a SwiftUI-based parking management app." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/prism-xcode-stamped.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <h1>George Clinkscales</h1>
+            <!-- Menu button for mobile -->
+            <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+                <span class="menu-icon"><span></span></span>
+            </button>
+            <nav class="links">
+                <ul>
+                    <li><a href="index.html" class="button">Home</a></li>
+                    <li><a href="about.html" class="button">About</a></li>
+                    <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                    <li><a href="resume.html" class="button">Resume</a></li>
+                    <li><a href="contact.html" class="button">Contact</a></li>
+                    <li><a href="blog.html" class="button">Blog</a></li>
+                </ul>
+            </nav>
+            <!-- Sidebar menu -->
+            <aside id="sidebarMenu" class="sidebar-menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+        <div id="main">
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2>SlotParking — Case Study</h2>
+                        <p>SwiftUI-based parking management app for iOS</p>
+                    </div>
+                </header>
+                <section>
+                    <img src="images/slotparking-placeholder.png" alt="SlotParking app screenshot" style="width:120px;height:120px;border-radius:12px;margin-bottom:1em;object-fit:cover;" />
+                    <h3>Project Overview</h3>
+                    <p>SlotParking is an iOS app built with SwiftUI to help drivers and parking lot managers efficiently track and manage parking slots. Unlike my other projects, SlotParking requires direct engagement with private lot owners in Detroit. The project will begin as an MVP, and I will personally visit lots to pitch participation, gather feedback, and test the app in real-world conditions. This hands-on approach is essential for validating the product and building partnerships for future expansion.</p>
+                    <p>SlotParking is designed so that drivers looking for a parking spot can use the app to see the remaining spots and cost of lots in the area—information that is currently unavailable. The app also shows how close each parking lot is to major entertainment venues in downtown Detroit, making it easier for drivers to find convenient and affordable parking.</p>
+
+                    <h3>Detroit Context & Brand Positioning</h3>
+                    <ul>
+                        <li><strong>Core Identity:</strong> The "Utility Tool." Slot honors Detroit's industrial roots and is designed for speed and efficiency.</li>
+                        <li><strong>The Vibe:</strong> Industrial, Efficient, Honest. High-visibility signage, giant buttons, and a UI built for attendants in gloves or bright sunlight.</li>
+                        <li><strong>Color Palette:</strong> Safety Orange (#FF5F1F), Concrete Gray (#808588), Matte Black (#1A1A1B).</li>
+                        <li><strong>Typography:</strong> Monospace or heavy "Workman" fonts (e.g., Roboto Mono or Impact).</li>
+                        <li><strong>Localized Slogan:</strong> Built for the Detroit grind.</li>
+                        <li><strong>Market Strategy:</strong> Target high-traffic areas like Woodward Ave and the Renaissance Center, using the orange and gray palette to feel "native" to Detroit's construction and industrial aesthetic.</li>
+                        <li><strong>Attendant Experience:</strong> Extreme focus on speed. Giant buttons. Designed for real-world use by attendants.</li>
+                    </ul>
+
+                    <h3>Unique MVP Launch Approach</h3>
+                    <p>SlotParking will start as a pilot in Detroit, focusing on private lots managed by individuals. The app gives attendants a digital "Full" sign visible to drivers citywide. The MVP will be tested in the field, and lot owners will be invited to join the pilot program. Flyers, demo videos, and direct outreach will be used to build partnerships and validate the product.</p>
+
+                    <h3>Detroit "Smart Lot" Partnership Pitch</h3>
+                    <p><em>To: [Lot Owner Name / Management Company like Bedrock or Park Rite]</em><br>
+                    <strong>Subject:</strong> Digitalizing [Lot Location] for Detroit Event Season (313-Parking-Innovation)<br>
+                    With the 2026 event season heating up at Ford Field and Little Caesars Arena, the biggest headache for private lot owners in Detroit isn’t filling spaces—it’s managing the chaos at the entrance and the "is the lot full?" traffic jams on Woodward and Jefferson.<br>
+                    I’m launching SlotParking, a real-time parking inventory app designed for the Detroit grid. We’re looking for "Founding Lots" to join our pilot program.<br>
+                    <strong>How SlotParking works for [Lot Name]:</strong>
+                    <ol>
+                        <li>Attendant App: Your attendant gets a dead-simple interface. One tap for every car that enters, one tap for every car that leaves.</li>
+                        <li>Live Broadcast: That data is instantly broadcast to Detroit drivers searching for a spot. They see "[Lot Name]: 12 Spots Open" and head straight to you.</li>
+                        <li>Scam Prevention: By being a "Verified SlotParking Lot," you protect your reputation against parking scams. Drivers trust your lot because your inventory is live and digital.</li>
+                    </ol>
+                    <strong>Why partner now?</strong>
+                    <ul>
+                        <li>Zero Hardware: No expensive sensors or gates. It’s all handled on the attendant’s smartphone.</li>
+                        <li>Reduced Congestion: Stop the "is it full?" conversations that block your entrance. If the app says 0, they don't turn in.</li>
+                        <li>Data for 2027: Get a report showing your peak occupancy times and turnover rates, helping you optimize pricing for Detroit Grand Prix and Auto Show.</li>
+                    </ul>
+                    We’d love to include [Lot Name] in our Detroit launch map. Do you have 10 minutes this Thursday for a quick demo at the lot?<br>
+                    Best,<br>
+                    [Your Name] Founder, SlotParking Detroit Born. Mobility Driven.
+                    </p>
+
+                    <h3>Production Tips for Detroit Look</h3>
+                    <ul>
+                        <li>Film at recognizable local lots (Eastern Market, Belt).</li>
+                        <li>Use a Motown-meets-Modern-Techno beat for the soundtrack.</li>
+                        <li>Show high-brightness UI for clarity.</li>
+                        <li>For Slot: Use fast cuts, handheld "shaky cam" for energy, and film during the day.</li>
+                    </ul>
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Real-time slot reservation and availability tracking</li>
+                        <li>Parking history and analytics for users</li>
+                        <li>Admin dashboard for lot managers</li>
+                        <li>SwiftUI interface with accessibility support</li>
+                        <li>Push notifications for reservation reminders</li>
+                        <li>Integration with Apple Maps for navigation</li>
+                    </ul>
+                    <h3>Technical Approach</h3>
+                    <ul>
+                        <li>MVVM architecture for scalable codebase</li>
+                        <li>SwiftUI for UI and user interaction</li>
+                        <li>CoreData for local storage</li>
+                        <li>Firebase for real-time updates and syncing spot counts across devices</li>
+                        <li>Custom animations for slot selection and feedback</li>
+                    </ul>
+                    <h3>Challenges & Solutions</h3>
+                    <ul>
+                        <li><strong>Challenge:</strong> Ensuring real-time slot availability across multiple users.<br><strong>Solution:</strong> Used CloudKit subscriptions and push notifications to sync slot status instantly.</li>
+                        <li><strong>Challenge:</strong> Designing for accessibility and ease-of-use.<br><strong>Solution:</strong> Applied SwiftUI accessibility modifiers and tested with VoiceOver and Dynamic Type.</li>
+                    </ul>
+                    <h3>Outcome</h3>
+                    <p>SlotParking provides a robust, user-friendly solution for parking management. The app is ready for further expansion, including payment integration and advanced analytics for lot owners.</p>
+                    <div class="tech-tags" style="margin-top:1em;">
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">iOS</span>
+                        <span class="tech-tag">CoreData</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Accessibility</span>
+                    </div>
+                </section>
+                <h3>Code Highlights</h3>
+                <p>Selected snippets from SlotParking showing real-time spot tracking, Firebase sync, and attendant UI logic.</p>
+
+                <p class="code-snippet-label">SPOT COUNT MANAGER</p>
+                <p class="code-snippet-desc">Swift class for tracking and updating available parking spots.</p>
+                <pre class="stamped-xcode-code"><code class="language-swift">class SpotCountManager: ObservableObject {
+    @Published var availableSpots: Int = 0
+
+    func increment() {
+        availableSpots += 1
+        syncWithFirebase()
+    }
+
+    func decrement() {
+        if availableSpots > 0 {
+            availableSpots -= 1
+            syncWithFirebase()
+        }
+    }
+
+    private func syncWithFirebase() {
+        // Firebase update logic here
+    }
+}
+</code></pre>
+
+                <p class="code-snippet-label">FIREBASE REAL-TIME SYNC</p>
+                <p class="code-snippet-desc">Swift function for listening to spot count changes in Firebase.</p>
+                <pre class="stamped-xcode-code"><code class="language-swift">func listenForSpotUpdates() {
+    let ref = Database.database().reference(withPath: "lots/detroitLot1/spots")
+    ref.observe(.value) { snapshot in
+        if let count = snapshot.value as? Int {
+            self.availableSpots = count
+        }
+    }
+}
+</code></pre>
+
+                <p class="code-snippet-label">ATTENDANT UI BUTTONS</p>
+                <p class="code-snippet-desc">SwiftUI view for attendant controls with large, high-contrast buttons.</p>
+                <pre class="stamped-xcode-code"><code class="language-swift">struct AttendantControls: View {
+    @ObservedObject var manager: SpotCountManager
+
+    var body: some View {
+        HStack(spacing: 32) {
+            Button(action: { manager.increment() }) {
+                Text("+")
+                    .font(.system(size: 48, weight: .bold, design: .monospaced))
+                    .frame(width: 80, height: 80)
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+            }
+            Button(action: { manager.decrement() }) {
+                Text("-")
+                    .font(.system(size: 48, weight: .bold, design: .monospaced))
+                    .frame(width: 80, height: 80)
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+            }
+        }
+        .padding()
+    }
+}
+</code></pre>
+            </article>
+        </div>
+        <!-- Scripts for mobile menu functionality -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </div>
+</body>
+</html>
