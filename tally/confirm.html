@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/tally/confirm.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Email confirmation for Tally - Time Tracker." />
+    <meta name="robots" content="noindex, nofollow">
+    <title>Email Confirmed — Tally</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f4f0;
+        }
+        main {
+            max-width: 420px;
+            width: 90%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            padding: 2.5em 2em;
+            text-align: center;
+        }
+        .app-label {
+            display: inline-block;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #2ebaae;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            color: #60443f;
+            font-size: 1.6em;
+            margin: 0.25em 0 0.5em;
+        }
+        .status-icon {
+            font-size: 2.5em;
+            margin-bottom: 0.25em;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0.5em 0;
+        }
+        .fallback {
+            margin-top: 1.5em;
+            padding: 1em 1.25em;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 3px solid #2ebaae;
+            font-size: 0.9em;
+            text-align: left;
+        }
+        .fallback p {
+            margin: 0;
+            color: #666;
+        }
+        #status {
+            font-weight: 600;
+            color: #60443f;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <span class="app-label">Tally</span>
+        <div class="status-icon">&#10003;</div>
+        <h1>Email Confirmed!</h1>
+        <p id="status">Opening Tally&hellip;</p>
+
+        <div class="fallback">
+            <p>If the app didn&rsquo;t open automatically, go back to Tally and sign in with your email and password.</p>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const hash = window.location.hash;
+
+            if (hash && hash.length > 1) {
+                window.location.href = "tally://login-callback" + hash;
+            } else {
+                document.getElementById("status").textContent = "Your email has been confirmed.";
+            }
+        })();
+    </script>
+</body>
+</html>
