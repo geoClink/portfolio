@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<!-- Tally — Time Tracker Case Study -->
+<html lang="en">
+<head>
+    <title>Tally — Time Tracker Case Study | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/tally.html" />
+    <meta property="og:title" content="Tally — Time Tracker Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Case study: Tally — A cross-platform SaaS time tracker for freelancers and small teams, built with SwiftUI, React, Supabase, StoreKit, and Stripe." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/tally.html" />
+    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tally — Time Tracker Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Case study: Tally — A cross-platform SaaS time tracker for freelancers and small teams, built with SwiftUI, React, Supabase, StoreKit, and Stripe." />
+    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="description" content="Case study: Tally — A cross-platform SaaS time tracker for freelancers and small teams, built with SwiftUI, React, Supabase, StoreKit, and Stripe." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
+    <style>
+        #main { padding-top: 2.5em; }
+
+        .platform-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6em;
+            margin: 1em 0 1.5em 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #f0f4f8;
+            border: 1px solid #dde3ea;
+            border-radius: 20px;
+            padding: 0.3em 0.9em;
+            font-size: 0.82em;
+            font-weight: 600;
+            color: #444;
+            letter-spacing: 0.02em;
+        }
+        .badge-highlight {
+            background: #e8f4f0;
+            border-color: #b0d4c8;
+            color: #1a5c3a;
+        }
+        .badge-pending {
+            background: #fff8e6;
+            border-color: #f5d87a;
+            color: #7a5800;
+        }
+
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            margin: 1.5em 0;
+        }
+        .stat-block {
+            flex: 1;
+            min-width: 130px;
+            text-align: center;
+            background: #f8fafb;
+            border: 1px solid #e5eaee;
+            border-radius: 12px;
+            padding: 1.2em 1em;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: 800;
+            color: #60443f;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.2em;
+        }
+        .stat-label {
+            font-size: 0.78em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2em;
+            margin: 1.5em 0;
+        }
+        .feature-card {
+            background: #f8fafb;
+            border: 1px solid #e5eaee;
+            border-radius: 12px;
+            padding: 1.2em 1.4em;
+        }
+        .feature-card h4 {
+            margin: 0 0 0.4em 0;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #60443f;
+        }
+        .feature-card p {
+            margin: 0;
+            font-size: 0.88em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .tech-stack-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin: 1em 0;
+        }
+        .tech-tag {
+            background: #1a1a2e;
+            color: #e0edef;
+            border-radius: 6px;
+            padding: 0.25em 0.75em;
+            font-size: 0.8em;
+            font-family: monospace;
+            font-weight: 600;
+        }
+
+        .pricing-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2em;
+            margin: 1.5em 0;
+        }
+        .pricing-card {
+            flex: 1;
+            min-width: 180px;
+            background: #f8fafb;
+            border: 1px solid #e5eaee;
+            border-radius: 12px;
+            padding: 1.4em 1.4em;
+        }
+        .pricing-card.highlight {
+            background: #edf7f5;
+            border-color: #9dd0c5;
+        }
+        .pricing-card h4 {
+            margin: 0 0 0.2em 0;
+            font-size: 1em;
+            color: #222;
+        }
+        .pricing-card .price {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #60443f;
+            margin-bottom: 0.4em;
+        }
+        .pricing-card ul {
+            margin: 0;
+            padding: 0 0 0 1.2em;
+            font-size: 0.85em;
+            color: #555;
+            line-height: 1.7;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "MobileApplication",
+       "name": "Tally — Time Tracker",
+       "description": "A cross-platform SaaS time tracker for freelancers and small teams, available on iOS, watchOS, macOS, and the web.",
+       "applicationCategory": "BusinessApplication",
+       "operatingSystem": "iOS, macOS, Web",
+       "author": {
+          "@type": "Person",
+          "name": "George Clinkscales Jr.",
+          "url": "https://geoclink.github.io/portfolio/"
+       }
+    }
+    </script>
+</head>
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <h1>Tally</h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="contributions.html" class="button">Open Source</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+                <li><a href="blog.html" class="button">Blog</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contributions.html">Open Source</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <div id="main" role="main">
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2>Tally — Time Tracker</h2>
+                    <p>A cross-platform SaaS time tracker for freelancers and small teams — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a full React web dashboard, both running on a shared Supabase backend. One account, every platform, one subscription that works everywhere.</p>
+                    <hr>
+
+                    <div class="platform-badges">
+                        <span class="badge badge-highlight">Web Live on Vercel</span>
+                        <span class="badge badge-pending">iOS — App Store Review</span>
+                        <span class="badge">Swift · SwiftUI · SwiftData</span>
+                        <span class="badge">React · Vite</span>
+                        <span class="badge">Supabase</span>
+                        <span class="badge">StoreKit</span>
+                        <span class="badge">Stripe</span>
+                        <span class="badge">Resend</span>
+                        <span class="badge">Vercel</span>
+                        <span class="badge">iOS · watchOS · macOS · Web</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat-block">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Platforms</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Payment Systems</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-number">$9.99</span>
+                            <span class="stat-label">Pro — One-Time</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Pricing Tiers</span>
+                        </div>
+                    </div>
+
+                    <h3>Problem</h3>
+                    <p>Freelancers and small teams needed a simple way to track billable hours, set client goals, and generate invoices — without paying $10–20/month like most competitors charge. The market is full of over-engineered enterprise tools and subscription-heavy apps that charge monthly for features a solo freelancer uses once a week. The goal was to build something that works everywhere a freelancer works — phone, watch, laptop, browser — at a price that doesn't eat into their margins.</p>
+
+                    <h3>Solution</h3>
+                    <p>A native iOS app for iPhone, Apple Watch, and Mac (via Catalyst) paired with a full web dashboard built in React. Both run on a shared Supabase backend — same database, same auth, same subscription status. One account unlocks everything everywhere. The Pro tier is a one-time $9.99 purchase instead of a recurring subscription, which is the core product differentiator.</p>
+
+                    <h3>Pricing</h3>
+                    <div class="pricing-row">
+                        <div class="pricing-card">
+                            <h4>Free</h4>
+                            <div class="price">$0</div>
+                            <ul>
+                                <li>1 client</li>
+                                <li>7-day history</li>
+                                <li>Live timer + manual entry</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card highlight">
+                            <h4>Pro</h4>
+                            <div class="price">$9.99 <span style="font-size:0.5em;font-weight:400;color:#555;">one-time</span></div>
+                            <ul>
+                                <li>Unlimited clients</li>
+                                <li>Full history</li>
+                                <li>Reports &amp; charts</li>
+                                <li>Invoice generation</li>
+                                <li>CSV export</li>
+                                <li>Works on all platforms</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h4>Business</h4>
+                            <div class="price">$4.99 <span style="font-size:0.5em;font-weight:400;color:#555;">/month</span></div>
+                            <ul>
+                                <li>Everything in Pro</li>
+                                <li>Team workspaces</li>
+                                <li>Admin/member roles</li>
+                                <li>Combined team dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:1em;flex-wrap:wrap;margin:1em 0 1.5em 0;">
+                        <a href="https://tally-web-nu.vercel.app" class="button" target="_blank" rel="noopener noreferrer">Visit Web App <i class="fas fa-external-link-alt" style="margin-left:4px;"></i></a>
+                        <a href="https://github.com/geoClink/tally-web" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="fab fa-github" style="margin-left:4px;"></i></a>
+                    </div>
+                </div>
+            </header>
+
+            <section>
+                <!-- Tech Stack -->
+                <h3>Tech Stack</h3>
+                <p style="font-size:0.9em;color:#777;margin-bottom:0.5em;">iOS</p>
+                <div class="tech-stack-row">
+                    <span class="tech-tag">Swift</span>
+                    <span class="tech-tag">SwiftUI</span>
+                    <span class="tech-tag">SwiftData</span>
+                    <span class="tech-tag">StoreKit 2</span>
+                    <span class="tech-tag">Supabase Swift</span>
+                    <span class="tech-tag">watchOS</span>
+                    <span class="tech-tag">Mac Catalyst</span>
+                </div>
+                <p style="font-size:0.9em;color:#777;margin-bottom:0.5em;margin-top:1em;">Web</p>
+                <div class="tech-stack-row">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Supabase JS</span>
+                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">Chart.js</span>
+                    <span class="tech-tag">Vercel</span>
+                </div>
+                <p style="font-size:0.9em;color:#777;margin-bottom:0.5em;margin-top:1em;">Backend</p>
+                <div class="tech-stack-row">
+                    <span class="tech-tag">Supabase (PostgreSQL)</span>
+                    <span class="tech-tag">Supabase Auth</span>
+                    <span class="tech-tag">Supabase Edge Functions</span>
+                    <span class="tech-tag">Resend</span>
+                </div>
+
+                <!-- Project Snapshot -->
+                <h3>Project Snapshot</h3>
+                <ul class="alt">
+                    <li><strong>Platforms:</strong> iOS (iPhone), watchOS, macOS (Catalyst), Web</li>
+                    <li><strong>Status:</strong> Web live on Vercel · iOS under App Store review</li>
+                    <li><strong>Type:</strong> Cross-platform SaaS — real product, not a portfolio demo</li>
+                    <li><strong>Team:</strong> Solo</li>
+                    <li><strong>Role:</strong> Full-stack developer — iOS, web, backend, payments, deployment</li>
+                </ul>
+
+                <!-- Key Features -->
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Cross-Platform Subscription Sync</h4>
+                        <p>Buy Pro on iOS via StoreKit, unlock it on the web — and vice versa. Supabase is the single source of truth for subscription status. A StoreKit transaction listener on iOS and a Stripe webhook on the web both write to the same <code>profiles</code> table. Both platforms check that record, not the payment system directly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Live Timer + Manual Entry</h4>
+                        <p>Start and stop a live timer or add sessions manually with a start/end time. Works on iPhone, Apple Watch, and the web dashboard. Sessions sync to Supabase in real time so switching platforms mid-session doesn't lose data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Client Reports &amp; Charts</h4>
+                        <p>Hours and earnings broken down by client, rendered with Chart.js on web and SwiftUI Charts on iOS. Filter by date range, see totals vs. goals, and identify which clients are consuming the most time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Invoice Generation</h4>
+                        <p>Generate a professional invoice directly from tracked sessions for a given client and date range. Pulls in session data, calculates totals, and produces a downloadable PDF — no manual entry required.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Team Workspaces</h4>
+                        <p>Business tier users can create a workspace, invite members, and see a combined dashboard showing hours across the whole team. Admins can view or edit any member's sessions; members only see their own.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Voice Control (Web)</h4>
+                        <p>Start and stop the timer by speaking — "start timer" / "stop timer" — using the Web Speech API. No button tap required when your hands are occupied. Falls back silently on browsers that don't support it.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>CSV Export</h4>
+                        <p>Export any date range of sessions to CSV for use in spreadsheets or accounting software. Headers match common invoice tools so the data drops in cleanly without reformatting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Dark Mode</h4>
+                        <p>Both platforms follow system appearance automatically. On iOS, SwiftUI's environment-based color scheme handling covers it. On the web, <code>prefers-color-scheme</code> CSS media query plus a manual toggle stored in <code>localStorage</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Decisions -->
+                <h3>Technical Decisions</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Supabase as Subscription Source of Truth</h4>
+                        <p>Rather than verifying Apple receipts or querying Stripe on every request, both payment systems write their results to a <code>profiles</code> table in Supabase. The app checks one record, not two separate payment APIs. This also makes adding a third platform (e.g., Android) straightforward — just write to the same table.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Edge Functions vs. a Dedicated Backend</h4>
+                        <p>The web frontend is static on Vercel and has no Node server. All server-side logic — Stripe webhooks, email via Resend, team invite handling — runs in Supabase Edge Functions (Deno). The tradeoff is cold start latency on infrequent calls, but it eliminates a whole server to maintain and deploy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>StoreKit 2 over StoreKit 1</h4>
+                        <p>StoreKit 2's async/await API and <code>Transaction.currentEntitlements</code> make it significantly simpler to verify what a user has purchased without managing receipt data manually. The listener-based model also means entitlement changes (refunds, upgrades) are reflected immediately without polling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>One-Time Pricing as a Product Decision</h4>
+                        <p>The $9.99 one-time Pro tier is a deliberate differentiator — most time-tracker competitors charge monthly. This required using StoreKit's non-consumable IAP on iOS (not a subscription) and a one-time Stripe payment on the web, not <code>mode: "subscription"</code>. Both write to the same <code>is_pro</code> flag in Supabase.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>SwiftData for Local Persistence</h4>
+                        <p>Active sessions and recent data are stored locally in SwiftData so the app is usable offline and snappy on first open. Supabase is synced on network availability. SwiftData's <code>@Model</code> macro and <code>ModelContainer</code> make this straightforward compared to CoreData boilerplate.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>React + Vite over Next.js</h4>
+                        <p>A time tracker dashboard has no SEO requirements and no pages that need server-side rendering. Vite's fast dev server and simple build output was the right call — no SSR complexity, no framework overhead, just a React SPA deployed as static files on Vercel.</p>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <h3>Challenges</h3>
+
+                <section class="case-study-section">
+                    <h4>Cross-Platform Subscription Sync — Two Payment Systems, One Source of Truth</h4>
+                    <p>The hardest part of building Tally wasn't the timer or the charts — it was making a purchase on iOS unlock the web app, and a purchase on the web unlock the iOS app. Apple and Stripe are completely separate systems with no awareness of each other.</p>
+                    <p>The solution is using Supabase as the single source of truth. When a user buys Pro on iOS, StoreKit verifies the transaction and calls a Supabase Edge Function that updates <code>is_pro = true</code> on their profile. When they buy on the web, Stripe's webhook calls a different Edge Function that writes the same flag. Both the iOS app and the web dashboard read only from Supabase — they never check Apple or Stripe directly at runtime.</p>
+                    <div class="code-snippet">
+                        <span class="code-snippet-label" style="font-weight:700;">STRIPE WEBHOOK — Edge Function (Deno)</span>
+                        <pre><code class="language-javascript">Deno.serve(async (req) => {
+  const signature = req.headers.get('stripe-signature');
+  const body = await req.text();
+  const event = await stripe.webhooks.constructEventAsync(body, signature, webhookSecret);
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const userId = session.metadata.supabase_user_id;
+    const plan = session.metadata.plan; // 'pro' or 'business'
+
+    await supabase
+      .from('profiles')
+      .update({ is_pro: true, plan, plan_updated_at: new Date().toISOString() })
+      .eq('id', userId);
+  }
+
+  return new Response(JSON.stringify({ received: true }), { status: 200 });
+});</code></pre>
+                    </div>
+                    <div class="code-snippet" style="margin-top:1.2em;">
+                        <span class="code-snippet-label" style="font-weight:700;">STOREKIT TRANSACTION LISTENER — Swift</span>
+                        <pre><code class="language-swift">func listenForTransactions() -> Task&lt;Void, Error&gt; {
+    Task.detached {
+        for await result in Transaction.updates {
+            guard case .verified(let transaction) = result else { continue }
+
+            if transaction.productID == "com.chstudios.tally.pro" {
+                await self.unlockPro(userId: currentUserId)
+                await transaction.finish()
+            }
+        }
+    }
+}
+
+func unlockPro(userId: String) async {
+    try? await supabase
+        .from("profiles")
+        .update(["is_pro": true, "plan": "pro"])
+        .eq("id", userId)
+        .execute()
+}</code></pre>
+                    </div>
+                </section>
+
+                <section class="case-study-section">
+                    <h4>One-Time IAP + Web Subscription Interop</h4>
+                    <p>Apple's App Store treats a one-time purchase (non-consumable IAP) completely differently from a subscription. On the web, Stripe also distinguishes between <code>mode: "payment"</code> and <code>mode: "subscription"</code>. The Business tier is a recurring monthly charge on both platforms; Pro is a one-time purchase on both.</p>
+                    <p>This meant maintaining two separate Stripe Price objects and two separate StoreKit product IDs, with the webhook and transaction listener both mapping product identifiers to the correct <code>plan</code> value before writing to Supabase. Getting the mapping wrong would grant the wrong tier silently — a user paying $9.99 one-time could end up on Business, or vice versa.</p>
+                </section>
+
+                <section class="case-study-section">
+                    <h4>Team Role Enforcement at the Database Level</h4>
+                    <p>Team workspaces need admin/member separation: admins can see and edit all sessions in the workspace; members can only see their own. Enforcing this only in the UI is not security — a member with the right API call could read anyone's data.</p>
+                    <p>Supabase Row Level Security (RLS) policies enforce the access rules at the database level. The policy on <code>sessions</code> checks the caller's role in the <code>workspace_members</code> table before allowing a read. Admins pass; members only get rows where <code>user_id = auth.uid()</code>. The API never returns rows the caller isn't allowed to see, regardless of what the client requests.</p>
+                </section>
+
+                <!-- What I Learned -->
+                <h3>What I Learned</h3>
+                <ul>
+                    <li>How StoreKit 2 works — non-consumable IAP, transaction verification, and the entitlement listener pattern</li>
+                    <li>How to wire two completely different payment systems (StoreKit + Stripe) to a single shared database record</li>
+                    <li>Supabase Edge Functions in Deno — structuring serverless functions for Stripe webhooks and transactional email</li>
+                    <li>Row Level Security — writing RLS policies in Supabase to enforce access rules at the database layer, not just the UI</li>
+                    <li>SwiftData's <code>@Model</code> and <code>ModelContainer</code> — local persistence with offline support</li>
+                    <li>Mac Catalyst — extending an iOS app to macOS with minimal additional code and the tradeoffs in that approach</li>
+                    <li>Web Speech API — browser-native voice input and graceful fallback for unsupported environments</li>
+                    <li>Chart.js on the web vs. SwiftUI Charts on iOS — similar mental models, very different APIs</li>
+                </ul>
+
+                <!-- Next Iteration -->
+                <h3>Next Iteration</h3>
+                <ul>
+                    <li>App Store approval pending — once live, add the App Store badge and link to this page</li>
+                    <li>Add screenshots and a short demo video once the iOS app is publicly available</li>
+                    <li>Apple Watch complication for current timer state visible on the watch face</li>
+                    <li>Stripe Customer Portal for Business subscribers to manage and cancel their subscription without contacting support</li>
+                    <li>Webhook idempotency guard — current Stripe webhook handler doesn't deduplicate retries; adding a check against a <code>processed_events</code> table would make it bulletproof on retry storms</li>
+                </ul>
+
+                <!-- Outcome -->
+                <div class="outcome-snapshot">
+                    <span class="snap-stat"><strong>Solo project</strong></span>
+                    <span class="snap-divider">·</span>
+                    <span class="snap-stat">Swift · React · Supabase</span>
+                    <span class="snap-divider">·</span>
+                    <span class="snap-live">Web Live · iOS in Review</span>
+                </div>
+
+                <h3>Outcome</h3>
+                <p>Tally is the most architecturally complex thing I've built. Not because any single piece is difficult — timers, charts, and invoices are each manageable in isolation — but because making them work together across four platforms with two payment systems and a shared backend requires every layer to be correct at once. The cross-platform subscription sync is the part I'm most proud of: it's the kind of system that fails silently if you get it wrong, and getting it right required understanding how StoreKit, Stripe, Supabase Auth, and RLS all interact. Coming from iOS-only development, building the full-stack web side in parallel forced me to think about the product as a unified system rather than platform-specific features.</p>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <style>
+    #footer { background: #f9f9f9; border-top: 1px solid #e5e5e5; margin-top: 4em; padding: 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5em; padding: 2em 2.5em; max-width: 1100px; margin: 0 auto; }
+    .footer-brand { display: flex; flex-direction: column; gap: 0.25em; }
+    .footer-brand strong { font-size: 1em; color: #222; }
+    .footer-brand span { font-size: 0.82em; color: #888; }
+    .footer-nav { display: flex; gap: 1.5em; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.88em; color: #555; text-decoration: none; border-bottom: none; }
+    .footer-nav a:hover { color: #60443f; }
+    .footer-social { display: flex; gap: 1em; list-style: none; margin: 0; padding: 0; }
+    .footer-social li a { font-size: 1.3em; color: #888; }
+    .footer-social li a:hover { color: #60443f; }
+    .footer-bottom { border-top: 1px solid #e5e5e5; text-align: center; padding: 0.9em 2em; }
+    .footer-bottom p { margin: 0; font-size: 0.82em; color: #aaa; }
+    .footer-bottom a { color: #aaa; text-decoration: underline; }
+    @media (max-width: 700px) { .footer-inner { flex-direction: column; align-items: flex-start; padding: 1.5em; } .footer-nav { gap: 1em; } }
+    </style>
+    <section id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="contributions.html">Open Source</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <ul class="footer-social icons">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
