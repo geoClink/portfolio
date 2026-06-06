@@ -243,6 +243,15 @@
 
                 <tr>
                     <td>TandoorRecipes/recipes</td>
+                    <td>Fixed <code>JSONDecodeError</code> when using Claude as an AI provider — stripped markdown code fences from the AI response before <code>json.loads()</code> in both the <code>aiproperties</code> and AI import endpoints · Python</td>
+                    <td><span class="contribution-type type-bug">Bug</span></td>
+                    <td><span class="contribution-status status-open">Open</span></td>
+                    <td class="contribution-date">Jun 2026</td>
+                    <td><a href="https://github.com/TandoorRecipes/recipes/pull/4693" class="pr-link" target="_blank" rel="noopener noreferrer">#4693 ↗</a></td>
+                </tr>
+
+                <tr>
+                    <td>TandoorRecipes/recipes</td>
                     <td>Fixed crash on Mealie import when any recipe has a null description — <code>mealie1.py</code> sliced <code>r['description']</code> without a None check, crashing the entire import · Python</td>
                     <td><span class="contribution-type type-bug">Bug</span></td>
                     <td><span class="contribution-status status-open">Open</span></td>
