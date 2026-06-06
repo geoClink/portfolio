@@ -242,6 +242,24 @@
             <tbody>
 
                 <tr>
+                    <td>TandoorRecipes/recipes</td>
+                    <td>Fixed crash on Mealie import when any recipe has a null description — <code>mealie1.py</code> sliced <code>r['description']</code> without a None check, crashing the entire import · Python</td>
+                    <td><span class="contribution-type type-bug">Bug</span></td>
+                    <td><span class="contribution-status status-open">Open</span></td>
+                    <td class="contribution-date">Jun 2026</td>
+                    <td><a href="https://github.com/TandoorRecipes/recipes/pull/4692" class="pr-link" target="_blank" rel="noopener noreferrer">#4692 ↗</a></td>
+                </tr>
+
+                <tr>
+                    <td>TandoorRecipes/recipes</td>
+                    <td>Fixed Pantry page ignoring items-per-page setting — <code>InventoryEntryTable.vue</code> was not passing <code>page</code> and <code>pageSize</code> to the API call, so pagination had no effect · Vue.js · TypeScript</td>
+                    <td><span class="contribution-type type-bug">Bug</span></td>
+                    <td><span class="contribution-status status-open">Open</span></td>
+                    <td class="contribution-date">Jun 2026</td>
+                    <td><a href="https://github.com/TandoorRecipes/recipes/pull/4691" class="pr-link" target="_blank" rel="noopener noreferrer">#4691 ↗</a></td>
+                </tr>
+
+                <tr>
     <td>TandoorRecipes/recipes</td>
     <td>Added missing Back button to the Ingredient Editor page, matching the navigation pattern used across the app · Vue.js · TypeScript</td>
     <td><span class="contribution-type type-feature">Feature</span></td>
@@ -250,15 +268,6 @@
     <td><a href="https://github.com/TandoorRecipes/recipes/pull/4650" class="pr-link" target="_blank" rel="noopener noreferrer">#4650 ↗</a></td>
 </tr>
                 
-
-                <tr>
-                    <td>hmn/hmn</td>
-                    <td>Refined project blog index logic to properly handle single-post states and audited typography utility classes (<code>f3</code> to <code>f5</code>) for UI consistency · Go · HTML Templates · CSS</td>
-                    <td><span class="contribution-type type-bug">Bug</span></td>
-                    <td><span class="contribution-status status-open">Open</span></td>
-                    <td class="contribution-date">Apr 2026</td>
-                    <td><a href="https://github.com/geoClink/hmn/tree/fix-blog-index-issue-35" class="pr-link" target="_blank" rel="noopener noreferrer">#37 ↗</a></td>
-                </tr>
 
                 <tr>
                     <td>streamlit/streamlit</td>
