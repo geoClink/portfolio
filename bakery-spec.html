@@ -110,6 +110,11 @@
             gap: 0.5em;
             margin: 1em 0;
         }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 1em 0 1.5em; font-size: 0.9em; }
+        .tech-table th { text-align: left; padding: 0.5em 0.75em; background: rgba(136,124,115,0.1); color: #60443f; font-weight: 700; font-size: 0.78em; letter-spacing: 0.08em; text-transform: uppercase; }
+        .tech-table td { padding: 0.55em 0.75em; border-bottom: 1px solid rgba(160,160,160,0.15); vertical-align: top; }
+        .tech-table td:first-child { font-weight: 700; white-space: nowrap; color: #333; width: 160px; }
+        .tech-table tr:last-child td { border-bottom: none; }
         .tech-tag {
             background: #1a1a2e;
             color: #e0edef;
@@ -171,7 +176,7 @@
             <header>
                 <div class="title">
                     <h2>The Bakery Co.</h2>
-                    <p>A full-stack bakery ordering and business management platform — two Stripe payment flows, Claude MCP ordering, WebMCP browser-native AI tools, a loyalty rewards program, gift cards, subscription billing, collaborative filtering upsell, and a complete admin dashboard. Deployed on Render.</p>
+                    <p>The customer website, admin dashboard, and Supabase backend for a full business platform built with CH Studios. A business owner logs into the admin dashboard, updates the menu, and the change goes live instantly on the website and across the iOS apps — no code, no redeploy, no developer needed. Two Stripe payment flows, Claude MCP ordering, WebMCP browser-native AI tools, a loyalty rewards program, gift cards, subscription billing, collaborative filtering upsell, and a complete admin CMS. Deployed on Render.</p>
                     <hr>
 
                     <div class="platform-badges">
@@ -218,6 +223,24 @@
                         </div>
                     </div>
 
+                    <!-- Platform Architecture -->
+                    <h3>Platform Architecture</h3>
+                    <p>The Bakery Co. is one surface of a five-part business platform built collaboratively at CH Studios. All five surfaces share the same Supabase database — a change made in the admin dashboard propagates to every connected app in real time.</p>
+                    <div class="feature-grid" style="margin-bottom:1.5em;">
+                        <div class="feature-card">
+                            <h4>George — Website + Admin + Database</h4>
+                            <p><strong>Customer website</strong> — database-driven storefront, fuzzy search, cart, checkout, product pages with dynamic OG tags<br><br>
+                            <strong>Admin dashboard</strong> — the business owner's control panel: menu CMS, inventory, orders, refunds, coupons, analytics, CSV export, thermal receipt printing<br><br>
+                            <strong>Supabase backend</strong> — Postgres schema, RLS policies, Edge Functions, Realtime channels, Auth</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>CH Studios Co-founder — iOS Apps</h4>
+                            <p><strong>iOS POS system</strong> — in-store point of sale, linked to the same order and inventory database<br><br>
+                            <strong>iOS customer app</strong> — customer-facing mobile ordering, reflects database changes instantly via Supabase Realtime</p>
+                        </div>
+                    </div>
+                    <p style="font-size:0.93em;color:#555;margin-bottom:1.5em;">The owner's workflow: log into the admin dashboard → update the menu (add, edit, delete), adjust inventory, change hours, post open job roles, or review event inquiries → the website, iOS customer app, and POS all reflect it immediately. No code. No redeploy. No developer on call.</p>
+
                     <!-- Demo Video -->
                     <h3>Demo</h3>
                     <div style="margin:0 0 1.5em;">
@@ -237,9 +260,9 @@
                     <ul class="alt">
                         <li><strong>Platform:</strong> Full-stack web app hosted on Render</li>
                         <li><strong>Stack:</strong> HTML · CSS · JavaScript · Node.js · Express · Supabase · Stripe · Resend · Twilio · Chart.js · GTM/GA4</li>
-                        <li><strong>Type:</strong> Portfolio project built to production-level completeness</li>
-                        <li><strong>Team:</strong> Solo</li>
-                        <li><strong>Role:</strong> Full-stack developer — frontend, backend, database, payments, email/SMS, deployment</li>
+                        <li><strong>Type:</strong> Production platform — live client deployment</li>
+                        <li><strong>Team:</strong> CH Studios LLC — George (website, admin dashboard, database) · Jaiden Henley (iOS POS, iOS customer app)</li>
+                        <li><strong>Role:</strong> Full-stack developer — customer website, admin dashboard, Supabase database, payments, email/SMS, MCP server, deployment</li>
                     </ul>
 
                     <div style="display:flex;gap:1em;flex-wrap:wrap;margin:1em 0 1.5em 0;">
@@ -330,7 +353,7 @@
                     </div>
                     <div class="feature-card">
                         <h4>Admin Dashboard</h4>
-                        <p>Order management, revenue analytics with Chart.js, menu CMS with image uploads, inventory management, one-click refunds, coupon management, CSV export, and thermal receipt printing (80mm format) — all behind JWT + email-verified admin auth.</p>
+                        <p>16-section business control panel — menu CMS, orders, revenue analytics, inventory, customers, gift cards, subscriptions, coupons, event inquiries, job applications, staff PINs, prep list, and more. Every change reflects live on the website and iOS apps. No code. No developer needed. Full breakdown below.</p>
                     </div>
                     <div class="feature-card">
                         <h4>Coupon System</h4>
@@ -364,6 +387,46 @@
                     <li><strong>Session token proactive refresh</strong> — at checkout initialization, if the Supabase session expires within 60 seconds, <code>refreshSession()</code> is called before the user ever hits an auth error. On a 401 from <code>/api/points</code>, the frontend retries with a refreshed token, then signs out if the refresh also fails — no stuck states.</li>
                     <li><strong>Bidirectional paired items</strong> — when an admin edits a menu item's <code>paired_items</code> array, the server diffs old vs. new pairs and writes the reverse relationship on all affected items. Removing a pair also cleans up the reverse link. The recommendation graph stays consistent without the admin having to manually maintain both directions.</li>
                 </ul>
+
+                <!-- Admin Dashboard Full Breakdown -->
+                <section class="case-study-section">
+                    <h3>Admin Dashboard — Full Feature Set</h3>
+                    <p>The dashboard is the core product. A business owner logs in once and controls their entire operation — the website and iOS apps reflect every change in real time. No code. No redeploy. No developer on call.</p>
+                    <table class="tech-table">
+                        <tr><th>Section</th><th>What It Does</th></tr>
+                        <tr><td>Dashboard</td><td>Stat cards (today's orders, revenue, pending, out of stock), upcoming pickups sorted by time, low stock alerts, unread message badges</td></tr>
+                        <tr><td>Orders</td><td>View all orders, search by name/email/phone/order#, filter by all/pending/fulfilled/today, mark fulfilled, print 80mm thermal receipt, export CSV</td></tr>
+                        <tr><td>Revenue</td><td><strong>Overview:</strong> today's revenue, all-time, AOV, tips, refunds, 7-day bar chart. <strong>Insights:</strong> best day of week, fulfillment split, MoM growth %, coupon impact, top sellers by period. <strong>Profit &amp; Tax:</strong> item margin table, tax report generator with CSV export</td></tr>
+                        <tr><td>Menu CMS</td><td>Add/edit/delete items, image upload or URL, sale pricing with % discount auto-calc, cost field for margin tracking, allergens/size/serves/badges — changes reflect live on website and iOS apps</td></tr>
+                        <tr><td>Inventory</td><td>Set stock quantities, low stock and sold-out badges, toggle availability, auto-reduces on every order</td></tr>
+                        <tr><td>Coupons</td><td>Create % or flat-rate codes, optional expiry, usage tracking</td></tr>
+                        <tr><td>Hero</td><td>Edit homepage heading, subtext, and image — no code</td></tr>
+                        <tr><td>Hours</td><td>Set open/close per day, hours note — reflects on website and iOS apps instantly</td></tr>
+                        <tr><td>Banner</td><td>Announcement text, color, link, show/hide toggle</td></tr>
+                        <tr><td>Store Settings</td><td>Tax rate, low stock threshold</td></tr>
+                        <tr><td>Gift Cards</td><td>View all issued cards, remaining balance with progress bar, active vs. used count</td></tr>
+                        <tr><td>Subscriptions</td><td>Create/edit/delete plans with linked menu items, pricing, weekly or monthly interval, view all subscribers, MRR estimate, cancel individual subscriptions</td></tr>
+                        <tr><td>Customers</td><td>All registered accounts, loyalty points balance, search, manual points adjustment</td></tr>
+                        <tr><td>Messages</td><td>Contact form submissions, unread badge, mark as read</td></tr>
+                        <tr><td>Event Inquiries</td><td>Dessert table, milkshake party, wedding, and corporate event inquiries — unread badge, mark as read</td></tr>
+                        <tr><td>Applications</td><td>Job applications with position, availability, and message — owner sets which roles they're hiring for, unread badge, mark as read</td></tr>
+                        <tr><td>Prep List</td><td>Auto-aggregates items across all pending orders for a given date into one production list — no manual counting</td></tr>
+                        <tr><td>Staff &amp; POS PINs</td><td>Add employees with name, role, and permission level — set and change 4-digit PINs, deactivate staff</td></tr>
+                    </table>
+                </section>
+
+                <!-- iOS Surfaces -->
+                <section class="case-study-section">
+                    <h3>How the iOS Apps Connect</h3>
+                    <p>The backend is a plain REST API — every iOS app is just an HTTP client against the same endpoints the website uses. No special integration layer, no duplication. Three surfaces, one API.</p>
+                    <table class="tech-table">
+                        <tr><th>iOS App</th><th>How It Uses the Backend</th></tr>
+                        <tr><td>Customer App</td><td>Supabase Auth for accounts → <code>GET /api/menu</code> to browse → <code>POST /api/checkout</code> with Stripe iOS SDK → loyalty points, subscriptions, ratings, event inquiries, coupons — all existing endpoints</td></tr>
+                        <tr><td>Employee App</td><td><code>POST /api/employees/verify-pin</code> to log in → <code>GET /api/orders</code> to view queue → <code>PATCH /api/orders/:id/status</code> to mark fulfilled → <code>GET /api/menu</code> for availability</td></tr>
+                        <tr><td>POS (co-founder)</td><td><code>GET /api/menu</code> for the order grid → <code>POST /api/orders</code> to submit → coupon/gift card validation → customer loyalty lookup → Stripe Terminal SDK for in-person card reader</td></tr>
+                    </table>
+                    <p style="font-size:0.9em;color:#666;">Built by CH Studios — George (website, admin dashboard, API, database) · Jaiden Henley (iOS POS, iOS customer app). The API was designed from the start to serve all three iOS surfaces without modification.</p>
+                </section>
 
                 <!-- Challenges -->
                 <h3>Challenges</h3>
@@ -468,7 +531,7 @@ cron.schedule('0 8 * * *', sendBirthdayCoupons);</code></pre>
 
                 <!-- Outcome -->
                 <div class="outcome-snapshot">
-                    <span class="snap-stat"><strong>Solo project</strong></span>
+                    <span class="snap-stat"><strong>CH Studios LLC</strong></span>
                     <span class="snap-divider">·</span>
                     <span class="snap-stat">Node.js · Supabase · Stripe</span>
                     <span class="snap-divider">·</span>
@@ -476,7 +539,7 @@ cron.schedule('0 8 * * *', sendBirthdayCoupons);</code></pre>
                 </div>
 
                 <h3>Outcome</h3>
-                <p>The Bakery Co. is the most technically complete project I've shipped as a web developer. It covers the full stack — frontend UX, backend API design, relational database, real payments, transactional messaging, and automated operations — and it's built around a real problem that real businesses have. Every feature required understanding how the pieces connect, not just how to write code in isolation. Coming from iOS, it gave me hands-on experience with the parts of web engineering that don't exist in the mobile world: server-side auth, webhook event handling, and scheduled background jobs.</p>
+                <p>The Bakery Co. is the most technically complete project I've shipped as a web developer — and it's part of a live production platform serving a real client. I owned the website, admin dashboard, and the entire Supabase backend that connects all five surfaces. The admin dashboard is the piece I'm most proud of: a business owner can update their menu, adjust inventory, or change hours and every connected app — the website, the iOS customer app, the POS — reflects it immediately with no code and no developer involved. That's the whole point. Coming from iOS, this project gave me hands-on experience with the parts of web engineering that don't exist in the mobile world: server-side auth, webhook event handling, scheduled background jobs, and building a backend that multiple clients can consume.</p>
 
                 <h3>What I Learned</h3>
                 <ul>
@@ -495,7 +558,24 @@ cron.schedule('0 8 * * *', sendBirthdayCoupons);</code></pre>
                     <li>Stripe webhook idempotency keys — the current webhook handler doesn't guard against duplicate deliveries on Stripe retries; adding an idempotency check before writing to Supabase would make it bulletproof</li>
                     <li>Move the co-purchase pair tracking job off the request path — currently runs synchronously on every order save; at scale this should be a background job so it doesn't add latency to checkout confirmation</li>
                     <li>Automated integration tests for the checkout flow — the payment-first architecture is correct but untested at the webhook layer; a test suite with Stripe CLI webhook forwarding would catch regressions</li>
+                    <li>Stripe Terminal integration for the iOS POS — in-person card reader payments via the Stripe Terminal iOS SDK; the order and payment endpoints already exist, Terminal is the only missing piece</li>
                 </ul>
+
+                <h3>What This Scales To</h3>
+                <p>The Bakery Co. is tenant <code>#1</code>. Every database table has <code>tenant_id</code>. Every API route scopes to the current tenant. Nothing in the backend is bakery-specific — the platform already supports any food or service business.</p>
+                <p>The Salon Co. and Sports Bar Co. are already in progress under the same architecture. Onboarding a second client in the same vertical means one row in the <code>tenants</code> table and a frontend deploy — the API, admin dashboard, and iOS apps are already built. The first client in a vertical is expensive. Every client after that is nearly free.</p>
+                <div style="background:#f8fafb;border:1px solid #e5eaee;border-radius:10px;padding:1.2em 1.4em;font-family:monospace;font-size:0.82em;line-height:1.8;margin:1em 0;">
+                    platform-api<br>
+                    ├── vertical: food &amp; bakery<br>
+                    │&nbsp;&nbsp;&nbsp;├── The Bakery Co. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← live<br>
+                    │&nbsp;&nbsp;&nbsp;└── next client &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← one DB row + deploy<br>
+                    ├── vertical: salon<br>
+                    │&nbsp;&nbsp;&nbsp;├── The Salon Co. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← in progress<br>
+                    │&nbsp;&nbsp;&nbsp;└── next client &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← one DB row + deploy<br>
+                    └── vertical: bar &amp; restaurant<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── The Sports Bar Co. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← in progress<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── next client &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← one DB row + deploy
+                </div>
             </section>
         </article>
     </div>

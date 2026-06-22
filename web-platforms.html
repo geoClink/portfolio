@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<!-- Live Web Platforms — Hub Page -->
+<html lang="en">
+<head>
+    <title>Live Web Platforms — Case Study | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/web-platforms.html" />
+    <meta property="og:title" content="Live Web Platforms | George Clinkscales Jr." />
+    <meta property="og:description" content="A suite of production-ready websites built for small businesses competing with Toast and Squarespace — bakery, salon, and sports bar, each with Stripe payments, working forms, and live search." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/web-platforms.html" />
+    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Live Web Platforms | George Clinkscales Jr." />
+    <meta name="twitter:description" content="A suite of production-ready websites for small businesses competing with Toast and Squarespace." />
+    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="description" content="A suite of production-ready small business websites — bakery, salon, and sports bar — built with vanilla HTML, CSS, and JavaScript as an alternative to Toast and Squarespace." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        #main { padding-top: 2.5em; }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2em;
+            margin-top: 1.5em;
+        }
+        .platform-card {
+            background: #fff;
+            border: 1px solid rgba(160,160,160,0.25);
+            border-radius: 12px;
+            padding: 1.8em 2em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .platform-card.live {
+            border-top: 3px solid #2ebaae;
+        }
+        .platform-card.in-progress {
+            border-top: 3px solid #f5a623;
+        }
+        .platform-card.coming-soon {
+            border-top: 3px solid #ccc;
+            opacity: 0.72;
+        }
+        .platform-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2em;
+            margin-bottom: 1em;
+        }
+        .platform-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            font-size: 0.55em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .platform-card-meta h3 {
+            margin: 0 0 0.2em 0;
+            font-size: 1.15em;
+        }
+        .status-badge {
+            display: inline-block;
+            font-size: 0.68em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.25em 0.7em;
+            border-radius: 999px;
+            line-height: 1.4;
+        }
+        .status-live { background: #e6f8f6; color: #1a7a6e; }
+        .status-progress { background: #fff8e6; color: #7a5800; }
+        .status-soon { background: #f2f2f2; color: #888; }
+
+        .platform-card p {
+            margin: 0.6em 0 1em;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45em;
+            margin-bottom: 1.2em;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 0.38em 0.68em;
+            font-size: 0.58em;
+            line-height: 1;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-family: "Raleway", Helvetica, sans-serif;
+            font-weight: 700;
+            color: #60443f;
+            background: rgba(136,124,115,0.12);
+            border: 1px solid rgba(136,124,115,0.35);
+            border-radius: 999px;
+        }
+        .platform-actions {
+            display: flex;
+            gap: 0.75em;
+            flex-wrap: wrap;
+        }
+        .concept-block {
+            background: rgba(136,124,115,0.07);
+            border-left: 3px solid #60443f;
+            border-radius: 0 8px 8px 0;
+            padding: 1em 1.2em;
+            margin: 1.5em 0 2em;
+            font-size: 0.95em;
+            line-height: 1.65;
+        }
+        @media (max-width: 680px) {
+            .platform-card { padding: 1.3em 1.2em; }
+            .platform-card-header { gap: 0.8em; }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <h1>Live Web Platforms</h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="contributions.html" class="button">Open Source</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contributions.html">Open Source</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <div id="main" role="main">
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2>Live Web Platforms</h2>
+                    <p>A suite of production-ready websites built for small businesses that can't afford Toast or Squarespace — or shouldn't have to.</p>
+                    <hr>
+
+                    <div class="concept-block">
+                        <strong>The idea:</strong> Small businesses — bakeries, salons, sports bars — are paying $30–150/month for platforms that weren't built for them. These three sites are purpose-built alternatives: fast, branded, fully functional, and owned outright. Each one is backed by an admin dashboard where the owner controls everything — menu items (add, edit, delete), business hours, inventory, event inquiries, contact form submissions, job applications, and financial insights like best sellers. Every change reflects live on the website and connected iOS apps. No code. No developer. No monthly platform fee.
+                    </div>
+
+                    <h3>What Each Site Has</h3>
+                    <ul>
+                        <li>Custom design built to each business's brand — no templates</li>
+                        <li>Working forms via Formspree (contact, wholesale, reservations)</li>
+                        <li>Client-side fuzzy search with Fuse.js across full product/menu catalogs</li>
+                        <li>Scroll-driven animations with IntersectionObserver</li>
+                        <li>Mobile-first, fully responsive — no framework</li>
+                        <li>Deployed to a live domain, no CMS overhead</li>
+                    </ul>
+                </div>
+            </header>
+
+            <section>
+                <div class="platform-grid">
+
+                    <!-- The Bakery Co. -->
+                    <div class="platform-card live">
+                        <div class="platform-card-header">
+                            <div class="platform-icon" style="background:linear-gradient(135deg,#fff8f0 0%,#ffe8cc 60%,#f5d0a0 100%);color:#7a4a1e;">THE<br>BAKERY</div>
+                            <div class="platform-card-meta">
+                                <h3>The Bakery Co.</h3>
+                                <span class="status-badge status-live">Live</span>
+                            </div>
+                        </div>
+                        <p>The customer website, admin dashboard, and Supabase backend for a full business platform built at CH Studios. The owner logs into the admin dashboard, updates the menu or inventory, and the change reflects instantly on the website and across the iOS apps — no code, no redeploy. Stripe payments, JWT-authenticated admin CMS, transactional email and SMS, a production MCP server for Claude AI ordering, and WebMCP browser integration shipped the week Google announced it at I/O 2026. The iOS POS and customer app were built by CH Studios co-founder Jaiden Henley on the same database.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5 · CSS3 · JS</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">MCP Server</span>
+                            <span class="tech-tag">Fuse.js</span>
+                            <span class="tech-tag">Formspree</span>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="bakery-spec.html" class="button">View Case Study</a>
+                            <a href="https://geoclink.github.io/the-bakery-co/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
+                        </div>
+                    </div>
+
+                    <!-- The Salon Co. -->
+                    <div class="platform-card in-progress">
+                        <div class="platform-card-header">
+                            <div class="platform-icon" style="background:linear-gradient(135deg,#1a2e1a 0%,#2d4a2d 60%,#c8a96e 100%);color:#f5f0e8;">THE<br>SALON</div>
+                            <div class="platform-card-meta">
+                                <h3>The Salon Co.</h3>
+                                <span class="status-badge status-progress">Finishing Touches</span>
+                            </div>
+                        </div>
+                        <p>A 14-page marketing and booking site for a luxury hair salon — scroll-based sticky header, auto-rotating reviews carousel, FAQ accordion, gallery with filters, and a mobile hamburger menu. Built as a direct alternative to Squarespace for salon owners who want something custom without the monthly fee.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5 · CSS3 · JS</span>
+                            <span class="tech-tag">CSS Custom Properties</span>
+                            <span class="tech-tag">Formspree</span>
+                            <span class="tech-tag">IntersectionObserver</span>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="salon-co.html" class="button">View Case Study</a>
+                            <a href="https://the-salon-co.onrender.com/index.html" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
+                        </div>
+                    </div>
+
+                    <!-- Sports Bar Co. -->
+                    <div class="platform-card coming-soon">
+                        <div class="platform-card-header">
+                            <div class="platform-icon" style="background:linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 60%,#c8a020 100%);color:#f5f0e8;">SPORTS<br>BAR</div>
+                            <div class="platform-card-meta">
+                                <h3>The Sports Bar Co.</h3>
+                                <span class="status-badge status-soon">In Progress</span>
+                            </div>
+                        </div>
+                        <p>A reservation and events platform for a Detroit sports bar — full menu, weekly events calendar, table reservations, and a private party inquiry form. Built as a Toast alternative for bar owners who want to own their web presence outright.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5 · CSS3 · JS</span>
+                            <span class="tech-tag">Formspree</span>
+                            <span class="tech-tag">Events Calendar</span>
+                        </div>
+                        <div class="platform-actions">
+                            <span style="font-size:0.85em;color:#999;font-style:italic;">Case study coming soon</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <section class="case-study-section" style="margin-top:2.5em;">
+                    <h3>Why No Framework</h3>
+                    <p>All three sites are hand-written HTML, CSS, and JavaScript — no React, no Next.js, no CMS. The decision is deliberate: a small business owner shouldn't need a developer on retainer to update their hours. The sites load fast, cost nothing to host beyond a domain, and can be handed off as static files. The technical complexity (fuzzy search, Stripe integration, MCP server) lives in the JavaScript — not in a framework dependency tree that goes stale in six months.</p>
+                </section>
+            </section>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <style>
+    #footer {
+        background: #f9f9f9;
+        border-top: 1px solid #e5e5e5;
+        margin-top: 4em;
+        padding: 0;
+    }
+    .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        padding: 2em 2.5em;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 0.25em; }
+    .footer-brand strong { font-size: 1em; color: #222; }
+    .footer-brand span { font-size: 0.82em; color: #888; }
+    .footer-nav { display: flex; gap: 1.5em; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.88em; color: #555; text-decoration: none; border-bottom: none; }
+    .footer-nav a:hover { color: #60443f; }
+    .footer-social { display: flex; gap: 1em; list-style: none; margin: 0; padding: 0; }
+    .footer-social li a { font-size: 1.3em; color: #888; }
+    .footer-social li a:hover { color: #60443f; }
+    .footer-bottom { border-top: 1px solid #e5e5e5; text-align: center; padding: 0.9em 2em; }
+    .footer-bottom p { margin: 0; font-size: 0.82em; color: #aaa; }
+    .footer-bottom a { color: #aaa; text-decoration: underline; }
+    @media (max-width: 700px) {
+        .footer-inner { flex-direction: column; align-items: flex-start; padding: 1.5em; }
+        .footer-nav { gap: 1em; }
+    }
+    </style>
+    <section id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="contributions.html">Open Source</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <ul class="footer-social icons">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    function updateLocalTime() {
+        const now = new Date();
+        let offset = -5;
+        const jan = new Date(now.getFullYear(), 0, 1);
+        const jul = new Date(now.getFullYear(), 6, 1);
+        const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+        if (now.getTimezoneOffset() < stdTimezoneOffset) offset = -4;
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const est = new Date(utc + (3600000 * offset));
+        const timeString = est.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById('local-time').textContent = timeString;
+    }
+    setInterval(updateLocalTime, 1000);
+    updateLocalTime();
+    </script>
+</body>
+</html>
