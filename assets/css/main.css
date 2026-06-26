@@ -131,24 +131,17 @@ a:link, a:visited {
 	}
 	.menu-btn::before {
 		content: 'George Clinkscales Jr.';
-		font-size: 0.78rem;
-		font-weight: 500;
+		font-size: 0.85rem;
+		font-weight: 700;
 		color: var(--color-on-dark);
-		letter-spacing: 0.01em;
+		letter-spacing: -0.01em;
 	}
 	.menu-btn::after {
-		content: '+';
-		font-size: 1.1rem;
-		font-weight: 300;
-		color: var(--color-on-dark-subtle);
-		line-height: 1;
-		display: inline-block;
-		transform-origin: center center;
-		transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
-	}
-	.menu-btn.open::after {
-		transform: rotate(45deg) scale(1.1);
+		content: '☰';
+		font-size: 1.2rem;
 		color: var(--color-on-dark);
+		line-height: 1;
+		transition: opacity 0.2s ease;
 	}
 	.menu-icon {
 		display: none !important;
