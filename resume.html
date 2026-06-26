@@ -104,6 +104,15 @@
             overflow-wrap: break-word;
             word-break: break-word;
         }
+        .resume-item-title a {
+            color: var(--color-heading);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+            transition: border-bottom-color 0.2s ease;
+        }
+        .resume-item-title a:hover {
+            border-bottom-color: var(--color-heading);
+        }
 
         .resume-item-meta {
             font-size: 0.82em;
@@ -225,6 +234,11 @@
             letter-spacing: normal !important;
             white-space: normal !important;
             cursor: default;
+        }
+        .resume-accordion-header:hover {
+            background: none !important;
+            color: inherit !important;
+            box-shadow: none !important;
         }
 
         .resume-accordion-header > div {
@@ -477,7 +491,7 @@
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
                             <a href="https://testflight.apple.com/join/bHcPj25S" target="_blank" rel="noopener noreferrer">View on TestFlight</a>
-                            <a href="https://github.com/geoClink/MichiganAPIWeather" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            <a href="https://github.com/geoClink/MichiganAPIWeather" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
                         <p>Shipped iOS frontend for a 54-beach conditions platform with Python FastAPI backend; built custom map clustering, weighted scoring engine, and on-device CoreML/XGBoost crowd prediction with 12 engineered features, covered by a Swift Testing suite with 120+ parameterized test cases. Added Siri Shortcuts, WidgetKit, Dynamic Island Live Activities, and a three-tier BGTaskScheduler notification system.</p>
                     </div>
@@ -493,7 +507,7 @@
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
                             <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">View Live Demo</a>
-                            <a href="https://github.com/geoClink/DetroitSportChatBot" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            <a href="https://github.com/geoClink/DetroitSportChatBot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
                         <p>Built an agentic AI analyst using LLM tool-calling and few-shot prompt templates to orchestrate real-time REST API fetches and extract structured data from unstructured responses — deployed on Render with a Streamlit frontend.</p>
                     </div>
@@ -509,7 +523,7 @@
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
                             <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">App Store</a>
-                            <a href="https://github.com/geoClink/BirdSimC4" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://github.com/geoClink/BirdSimC4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
                         <p>Architected a 5-in-1 SpriteKit survival game with full keyboard support, haptic feedback, and granular audio management — shipped to App Store for iPad and macOS.</p>
                     </div>
@@ -525,7 +539,7 @@
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
                             <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">App Store</a>
-                            <a href="https://github.com/geoClink/Stamped-A-City-Passport" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://github.com/geoClink/Stamped-A-City-Passport" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
                         <p>Developed an i18n travel app with live API data syncing and offline caching for reliable use in low-signal areas.</p>
                     </div>

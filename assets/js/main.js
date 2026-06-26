@@ -41,4 +41,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.body.classList.remove('is-preload');
+
+    // Scroll reveal
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const revealSelectors = [
+            '.project',
+            '.cs-card',
+            '.case-section',
+            '.platform-card',
+            '.about-section',
+            '.timeline-card',
+            '.belief-card',
+            '.resume-section > li',
+            '.appstore-app',
+            '.contrib-item'
+        ].join(', ');
+
+        const revealEls = document.querySelectorAll(revealSelectors);
+
+        revealEls.forEach(function (el, i) {
+            el.classList.add('sr-hidden');
+            // Stagger siblings in the same parent
+            const siblings = el.parentElement.querySelectorAll(':scope > .sr-hidden');
+            const idx = Array.from(siblings).indexOf(el);
+            el.style.transitionDelay = (idx * 0.07) + 's';
+        });
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('sr-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+        revealEls.forEach(function (el) { observer.observe(el); });
+    }
 });

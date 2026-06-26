@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+/* ─── Scroll Reveal ──────────────────────────────────────────── */
+.sr-hidden {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sr-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
 	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
@@ -3565,13 +3576,15 @@ input, select, textarea {
 					background: transparent;
 					box-shadow: none;
 					color: var(--color-text-muted) !important;
+					border-bottom: 2px solid transparent !important;
+					transition: color 0.2s ease, border-bottom-color 0.2s ease !important;
 				}
 
 				#header .links ul li a.button:hover {
 					background: transparent !important;
 					box-shadow: none !important;
 					color: var(--color-accent) !important;
-					border-bottom: 2px solid var(--color-accent) !important;
+					border-bottom-color: var(--color-accent) !important;
 				}
 
 				#header .links ul li a.button.active,

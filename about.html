@@ -198,11 +198,19 @@
         }
 
         .timeline-details {
-            display: none;
-            margin-top: 0.75em;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
             font-size: 0.9em;
             color: var(--color-text);
             line-height: 1.7;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+        }
+
+        .timeline-details.open {
+            max-height: 600px;
+            opacity: 1;
+            margin-top: 0.75em;
             border-top: 1px solid var(--color-border);
             padding-top: 0.75em;
         }
@@ -609,8 +617,8 @@
             card.addEventListener('click', function () {
                 const details = card.querySelector('.timeline-details');
                 const arrow = card.querySelector('.timeline-arrow');
-                const isOpen = details.style.display === 'block';
-                details.style.display = isOpen ? 'none' : 'block';
+                const isOpen = details.classList.contains('open');
+                details.classList.toggle('open', !isOpen);
                 arrow.textContent = isOpen ? '+' : '×';
                 arrow.classList.toggle('open', !isOpen);
             });
