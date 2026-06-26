@@ -91,15 +91,19 @@ a:link, a:visited {
 @media screen and (max-width: 736px) {
 	#header {
 		padding: 0 !important;
+		height: 3.5em !important;
 		background: var(--color-nav-mobile-bg) !important;
 		border-bottom: none !important;
-		box-shadow: none !important;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+		overflow: visible !important;
 	}
 	nav.links {
 		display: none !important;
 	}
 	.menu-btn {
-		display: flex !important;
+		display: grid !important;
+		grid-template-columns: 1fr auto 1fr !important;
+		align-items: center !important;
 		position: static !important;
 		top: auto !important;
 		right: auto !important;
@@ -111,22 +115,28 @@ a:link, a:visited {
 		padding: 0 1.25em !important;
 		border: none !important;
 		cursor: pointer !important;
-		align-items: center;
-		justify-content: space-between;
 	}
 	.menu-btn::before {
 		content: 'George Clinkscales Jr.';
-		font-size: 0.85rem;
+		grid-column: 2;
+		font-size: 0.82rem;
 		font-weight: 700;
 		color: var(--color-on-dark);
-		letter-spacing: -0.01em;
+		letter-spacing: 0.01em;
+		text-transform: none;
+		text-align: center;
 	}
 	.menu-btn::after {
-		content: '☰';
-		font-size: 1.2rem;
-		color: var(--color-on-dark);
+		content: '↓';
+		grid-column: 3;
+		font-size: 0.7rem;
+		color: rgba(255, 255, 255, 0.5);
+		text-align: right;
 		line-height: 1;
-		transition: opacity 0.2s ease;
+		transition: content 0.2s ease;
+	}
+	.menu-btn.open::after {
+		content: '↑';
 	}
 	.menu-icon {
 		display: none !important;
@@ -134,9 +144,9 @@ a:link, a:visited {
 
 	/* Full-screen overlay */
 	.sidebar-menu {
-		top: 0 !important;
-		height: 100vh !important;
-		max-height: 100vh !important;
+		top: 3.5em !important;
+		height: calc(100vh - 3.5em) !important;
+		max-height: calc(100vh - 3.5em) !important;
 		overflow: hidden !important;
 		padding: 0 !important;
 		background: var(--color-overlay-bg) !important;
@@ -148,14 +158,16 @@ a:link, a:visited {
 		justify-content: center !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
-		transition: opacity 0.35s ease, visibility 0.35s ease !important;
+		transform: translateY(-16px) !important;
+		transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 		pointer-events: none !important;
 	}
 	.sidebar-menu.visible {
 		opacity: 1 !important;
 		visibility: visible !important;
+		transform: translateY(0) !important;
 		pointer-events: auto !important;
-		max-height: 100vh !important;
+		max-height: calc(100vh - 3.5em) !important;
 		padding: 0 !important;
 	}
 	/* Grain texture */
@@ -202,7 +214,7 @@ a:link, a:visited {
 	}
 	.sidebar-menu a {
 		display: block !important;
-		font-size: 2.4em !important;
+		font-size: 1.9em !important;
 		font-weight: 700 !important;
 		color: var(--color-on-dark-muted) !important;
 		letter-spacing: -0.02em !important;
@@ -210,8 +222,8 @@ a:link, a:visited {
 		border-bottom: none !important;
 		text-decoration: none !important;
 		opacity: 0;
-		transform: translateY(14px);
-		transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease !important;
+		transform: translateY(-8px);
+		transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease !important;
 	}
 	.sidebar-menu a.active {
 		color: var(--color-on-dark) !important;
@@ -220,12 +232,18 @@ a:link, a:visited {
 		opacity: 1 !important;
 		transform: translateY(0) !important;
 	}
-	.sidebar-menu.visible li:nth-child(1) a { transition-delay: 0.07s; }
-	.sidebar-menu.visible li:nth-child(2) a { transition-delay: 0.13s; }
-	.sidebar-menu.visible li:nth-child(3) a { transition-delay: 0.19s; }
-	.sidebar-menu.visible li:nth-child(4) a { transition-delay: 0.25s; }
-	.sidebar-menu.visible li:nth-child(5) a { transition-delay: 0.31s; }
-	.sidebar-menu.visible li:nth-child(6) a { transition-delay: 0.37s; }
+	.sidebar-menu.visible li:nth-child(1) a { transition-delay: 0.06s; }
+	.sidebar-menu.visible li:nth-child(2) a { transition-delay: 0.11s; }
+	.sidebar-menu.visible li:nth-child(3) a { transition-delay: 0.16s; }
+	.sidebar-menu.visible li:nth-child(4) a { transition-delay: 0.21s; }
+	.sidebar-menu.visible li:nth-child(5) a { transition-delay: 0.26s; }
+	.sidebar-menu.visible li:nth-child(6) a { transition-delay: 0.31s; }
+	.sidebar-menu.closing li:nth-child(6) a { transition-delay: 0s; }
+	.sidebar-menu.closing li:nth-child(5) a { transition-delay: 0.04s; }
+	.sidebar-menu.closing li:nth-child(4) a { transition-delay: 0.08s; }
+	.sidebar-menu.closing li:nth-child(3) a { transition-delay: 0.12s; }
+	.sidebar-menu.closing li:nth-child(2) a { transition-delay: 0.16s; }
+	.sidebar-menu.closing li:nth-child(1) a { transition-delay: 0.2s; }
 	.sidebar-menu a:hover {
 		color: var(--color-on-dark-hover) !important;
 	}
@@ -3413,25 +3431,22 @@ footer#footer .footer-copy {
 }
 
 /* Header brand name */
-#header h1 {
-    display: block !important;
-    font-size: 0.85em;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--color-heading);
-    margin: 0;
-    padding: 0;
-    line-height: inherit;
-    flex-shrink: 0;
-}
-#header h1 a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: none;
-}
-@media screen and (max-width: 736px) {
+@media screen and (min-width: 737px) {
     #header h1 {
-        display: none !important;
+        display: block;
+        font-size: 0.85em;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--color-heading);
+        margin: 0;
+        padding: 0;
+        line-height: inherit;
+        flex-shrink: 0;
+    }
+    #header h1 a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: none;
     }
 }
 
@@ -3469,4 +3484,8 @@ footer#footer .footer-copy {
 
 @media (max-width: 736px) {
     .page-cta { padding: 2.5em 1.25em; }
+}
+
+@media screen and (max-width: 736px) {
+    #header h1 { display: none !important; }
 }

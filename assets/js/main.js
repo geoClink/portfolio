@@ -23,16 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         function closeMenu() {
-            sidebarMenu.classList.remove('visible');
+            sidebarMenu.classList.add('closing');
             menuBtn.classList.remove('open');
             document.body.style.overflow = '';
+            setTimeout(function () {
+                sidebarMenu.classList.remove('visible');
+                sidebarMenu.classList.remove('closing');
+            }, 320);
         }
 
         menuBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            var isOpen = sidebarMenu.classList.toggle('visible');
-            menuBtn.classList.toggle('open');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (sidebarMenu.classList.contains('visible')) {
+                closeMenu();
+            } else {
+                sidebarMenu.classList.remove('closing');
+                sidebarMenu.classList.add('visible');
+                menuBtn.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
         });
 
         sidebarMenu.addEventListener('click', function () {

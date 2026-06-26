@@ -78,17 +78,17 @@
         }
 
         .about-avatar {
-            display: none;
-            width: 56px;
-            height: 56px;
+            display: block;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             object-position: top center;
-            margin-bottom: 1em;
+            margin: 0 0 2em 0;
         }
 
         @media (max-width: 600px) {
-            .about-avatar { display: block; }
+            .about-avatar { margin: 0 auto 1.75em; }
             .about-title { font-size: 1.8em; }
         }
 
@@ -346,9 +346,9 @@
 
     <div id="main" role="main">
 
-        <img src="assets/images/myself.webp" alt="George Clinkscales Jr." class="about-avatar" width="800" height="1199" />
         <h2 class="about-title">About Me</h2>
         <p class="about-tagline">iOS &amp; full-stack engineer and co-founder of CH Studios LLC, based in Detroit.</p>
+        <img src="assets/images/myself.webp" alt="George Clinkscales Jr." class="about-avatar" width="800" height="1199" />
 
         <section class="about-section">
             <h3>My Story</h3>
