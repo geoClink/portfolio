@@ -92,21 +92,18 @@
             border-bottom-color: var(--color-heading);
         }
 
-        .intro-ctas a.button:hover {
-            background: #333 !important;
-            color: var(--color-on-dark) !important;
-            box-shadow: none !important;
-        }
-
         .intro-ctas {
             display: flex;
-            flex-direction: column;
-            gap: 0.6em;
-            margin-top: 1.1em;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 1.5em;
+            row-gap: 0.75em;
+            margin-top: 1.4em;
+            flex-wrap: wrap;
         }
 
-        .intro-ctas a.button {
-            display: flex !important;
+        .intro-ctas a.button.primary {
+            display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
             height: auto !important;
@@ -115,8 +112,45 @@
             font-weight: 600 !important;
             text-transform: none !important;
             letter-spacing: 0.04em !important;
-            padding: 0.75em 1.2em !important;
-            border-radius: 4px !important;
+            padding: 0.7em 1.5em !important;
+            border-radius: 6px !important;
+            background: var(--color-heading) !important;
+            color: var(--color-on-dark) !important;
+            box-shadow: none !important;
+            border: none !important;
+            transition: opacity 0.2s ease !important;
+        }
+        .intro-ctas a.button.primary:hover {
+            opacity: 0.82 !important;
+            background: var(--color-heading) !important;
+            color: var(--color-on-dark) !important;
+            box-shadow: none !important;
+        }
+
+        .intro-ctas a.button:not(.primary) {
+            display: inline-flex !important;
+            align-items: center !important;
+            align-self: center !important;
+            font-size: 0.88em !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            letter-spacing: 0.04em !important;
+            padding: 0 !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            color: var(--color-text-muted) !important;
+            text-decoration: underline !important;
+            text-decoration-color: var(--color-border) !important;
+            text-underline-offset: 3px !important;
+            text-decoration-thickness: 1px !important;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease !important;
+        }
+        .intro-ctas a.button:not(.primary):hover {
+            background: transparent !important;
+            color: var(--color-heading) !important;
+            box-shadow: none !important;
+            text-decoration-color: var(--color-heading) !important;
         }
 
         @media (max-width: 768px) {
@@ -261,6 +295,15 @@
 
         .featured-projects .project .actions li {
             margin: 0;
+            text-align: left !important;
+            width: auto !important;
+            flex-grow: 0 !important;
+            flex-shrink: 0 !important;
+            padding: 0 !important;
+        }
+
+        .featured-projects .project .actions li > * {
+            width: auto !important;
         }
 
         .featured-projects .project .actions .button {
@@ -531,32 +574,42 @@
         .strengths-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1em;
+            gap: 0;
         }
 
         .strength-card {
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: 1.1em 1em;
+            padding: 1.4em 1.4em 1.4em 0;
+            border-left: 2px solid var(--color-border);
+            padding-left: 1.2em;
+        }
+
+        .strength-card-num {
+            font-size: 0.65em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+            margin-bottom: 0.6em;
+            display: block;
         }
 
         .strength-card h3 {
             font-size: 0.95em;
             font-weight: 700;
             color: var(--color-heading);
-            margin: 0 0 0.45em;
+            margin: 0 0 0.5em;
+            line-height: 1.35;
         }
 
         .strength-card p {
             margin: 0;
-            font-size: 0.9em;
-            line-height: 1.55;
+            font-size: 0.88em;
+            line-height: 1.6;
             color: var(--color-text-muted);
         }
 
         @media (max-width: 768px) {
-            .strengths-grid { grid-template-columns: 1fr; }
+            .strengths-grid { grid-template-columns: 1fr; gap: 0.75em; }
+            .strength-card { padding: 1em 0 1em 1em; }
         }
 
         /* ── CTA ───────────────────────────────────────────────── */
@@ -717,7 +770,7 @@
                 <p class="intro-desc">Co-founder of <a href="https://geoclink.github.io/ch-studios/index.html" target="_blank" rel="noopener noreferrer">CH Studios LLC</a>, three App Store apps shipped, and production AI integrations live in the wild — including a WebMCP integration the week Google announced it at I/O 2026.</p>
                 <div class="intro-ctas">
                     <a href="case-studies.html" class="button primary">View My Work</a>
-                    <a href="assets/docs/Resume.pdf" class="button" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                    <a href="assets/docs/Resume.pdf" class="button" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
                 </div>
             </div>
         </section>
@@ -893,14 +946,17 @@
             <h2>What I Offer Teams</h2>
             <div class="strengths-grid">
                 <article class="strength-card">
+                    <span class="strength-card-num">01</span>
                     <h3>Accessibility from day one</h3>
                     <p>I design and build with VoiceOver, Dynamic Type, contrast, and usability in mind from the first iteration.</p>
                 </article>
                 <article class="strength-card">
+                    <span class="strength-card-num">02</span>
                     <h3>End-to-end product ownership</h3>
                     <p>I can move from concept to shipped experience, including user flows, architecture, implementation, and iteration.</p>
                 </article>
                 <article class="strength-card">
+                    <span class="strength-card-num">03</span>
                     <h3>Cross-functional communication</h3>
                     <p>I translate technical decisions into clear product tradeoffs that stakeholders and teammates can align on quickly.</p>
                 </article>
@@ -936,7 +992,7 @@
     <script>
         // Testimonial slider — auto-advance, pause on hover, swipe support
         (function () {
-            const DURATION = 6000;
+            const DURATION = 9000;
             let current = 0;
             let timer = null;
             let paused = false;
