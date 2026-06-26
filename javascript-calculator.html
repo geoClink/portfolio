@@ -1,191 +1,29 @@
 <!DOCTYPE HTML>
-<!-- JavaScript Calculator Case Study -->
 <html lang="en">
 <head>
     <title>JavaScript Calculator — Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="https://geoclink.github.io/portfolio/javascript-calculator.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Case study: A vanilla JavaScript calculator with Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle." />
     <meta property="og:title" content="JavaScript Calculator — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Case study: A vanilla JavaScript calculator built for The Odin Project featuring Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle." />
+    <meta property="og:description" content="Vanilla JavaScript calculator with procedural audio, voice input, keyboard shortcuts, and a hidden power toggle — built for The Odin Project." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/javascript-calculator.html" />
-    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JavaScript Calculator — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: A vanilla JavaScript calculator with Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle." />
-    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-    <meta name="description" content="Case study: A vanilla JavaScript calculator built for The Odin Project featuring Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="twitter:description" content="Vanilla JavaScript calculator with procedural audio, voice input, keyboard shortcuts, and a hidden power toggle." />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/og-preview.jpg" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/prism-xcode-stamped.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
-    <style>
-        #main { padding-top: 2.5em; }
-
-        .platform-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6em;
-            margin: 1em 0 1.5em 0;
-        }
-        .badge {
-            display: inline-block;
-            background: #f0f4f8;
-            border: 1px solid #dde3ea;
-            border-radius: 20px;
-            padding: 0.3em 0.9em;
-            font-size: 0.82em;
-            font-weight: 600;
-            color: #444;
-            letter-spacing: 0.02em;
-        }
-        .badge-highlight {
-            background: #eef2ff;
-            border-color: #b0bef5;
-            color: #1a3a8a;
-        }
-
-        .stat-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
-            margin: 1.5em 0;
-        }
-        .stat-block {
-            flex: 1;
-            min-width: 130px;
-            text-align: center;
-            background: #f8fafb;
-            border: 1px solid #e5eaee;
-            border-radius: 12px;
-            padding: 1.2em 1em;
-        }
-        .stat-number {
-            font-size: 2em;
-            font-weight: 800;
-            color: #1a2d5a;
-            display: block;
-            line-height: 1;
-            margin-bottom: 0.2em;
-        }
-        .stat-label {
-            font-size: 0.78em;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.2em;
-            margin: 1.5em 0;
-        }
-        .feature-card {
-            background: #f8fafb;
-            border: 1px solid #e5eaee;
-            border-radius: 12px;
-            padding: 1.2em 1.4em;
-        }
-        .feature-card h4 {
-            margin: 0 0 0.4em 0;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #1a2d5a;
-        }
-        .feature-card p {
-            margin: 0;
-            font-size: 0.88em;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .tech-stack-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-            margin: 1em 0;
-        }
-        .tech-tag {
-            background: #1a1a2e;
-            color: #e0edef;
-            border-radius: 6px;
-            padding: 0.25em 0.75em;
-            font-size: 0.8em;
-            font-family: monospace;
-            font-weight: 600;
-        }
-
-        .outcome-snapshot {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-            align-items: center;
-            background: #f0f4ff;
-            border: 1px solid #c5d0f0;
-            border-radius: 10px;
-            padding: 0.9em 1.2em;
-            margin: 1.5em 0 1em;
-            font-size: 0.88em;
-            color: #333;
-        }
-        .snap-live { color: #1a3a8a; font-weight: 700; }
-        .snap-divider { color: #bbb; }
-
-        .case-study-section {
-            margin-bottom: 2em;
-        }
-        .case-study-section h4 {
-            color: #1a2d5a;
-            margin-bottom: 0.5em;
-        }
-
-        .code-snippet {
-            background: #1e1e2e;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 1em 0;
-        }
-        .code-snippet-label {
-            display: block;
-            background: #2a2a3e;
-            color: #a0a8c0;
-            font-size: 0.72em;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.55em 1.1em;
-            font-family: monospace;
-        }
-        .code-snippet pre {
-            margin: 0;
-            padding: 1em 1.2em;
-            overflow-x: auto;
-            font-size: 0.82em;
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-       "@context": "https://schema.org",
-       "@type": "WebSite",
-       "name": "JavaScript Calculator",
-       "description": "A vanilla JavaScript calculator with Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle — built for The Odin Project.",
-       "url": "https://geoclink.github.io/javascript-calculator/",
-       "author": {
-          "@type": "Person",
-          "name": "George Clinkscales Jr.",
-          "url": "https://geoclink.github.io/portfolio/"
-       }
-    }
-    </script>
 </head>
 <body class="is-preload">
+
     <!-- Header -->
     <header id="header">
-        <h1>JavaScript Calculator</h1>
+        <h1><a href="index.html">George Clinkscales Jr.</a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -214,340 +52,67 @@
     </header>
 
     <div id="main" role="main">
-        <article class="post">
-            <header>
-                <div class="title">
-                    <h2>JavaScript Calculator</h2>
-                    <p>A vanilla HTML/CSS/JavaScript calculator built for The Odin Project Foundations curriculum — with Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle.</p>
-                    <hr>
 
-                    <div class="platform-badges">
-                        <span class="badge badge-highlight">Live on GitHub Pages</span>
-                        <span class="badge">HTML</span>
-                        <span class="badge">CSS</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">Web Audio API</span>
-                        <span class="badge">Web Speech API</span>
-                        <span class="badge">The Odin Project</span>
-                    </div>
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-                    <div class="stat-row">
-                        <div class="stat-block">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Browser APIs</span>
-                        </div>
-                        
-                        <div class="stat-block">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Core Features</span>
-                        </div>
-                    </div>
+        <h2 class="case-title">JavaScript Calculator</h2>
+        <p class="case-tagline">A vanilla HTML/CSS/JavaScript calculator built for The Odin Project — with procedurally generated click sounds, voice input that animates every button press, full keyboard support, and a long-press power toggle. No libraries. No audio files.</p>
 
-                    <!-- Screenshot -->
-                    <h3>Screenshot</h3>
-                    <div style="margin:0 0 1.5em;">
-                        <img src="assets/images/javascript-calc-image.png" alt="JavaScript Calculator screenshot showing the green LCD display, dark keypad, orange operator buttons, blue equals button, and red mic button" style="width:100%;max-width:500px;display:block;margin:0 auto;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,0.12);" />
-                        <div class="media-caption" style="margin-top:0.6em; text-align: center;">The calculator — green LCD screen, dark keypad, orange operators, blue equals, red mic button.</div>
-                    </div>
+        <div class="case-links">
+            <a href="https://geoclink.github.io/javascript-calculator/" class="button" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+            <a href="https://github.com/geoClink/javascript-calculator" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
 
-                    <h3>Problem</h3>
-                    <p>The Odin Project's calculator assignment is intentionally open-ended: build a working calculator with the four operations. The baseline is straightforward. The goal I set for myself was to go further — make it feel like a real piece of hardware. That meant click sounds, keyboard input, and eventually a voice interface that animates every button press as if someone is physically operating it.</p>
+        <div class="case-meta">HTML · CSS · Vanilla JavaScript · Web Audio API · Web Speech API · The Odin Project · GitHub Pages</div>
 
-                    <h3>Challenge-Based Learning</h3>
-                    <p><strong>Challenge:</strong> Build a calculator that goes beyond the spec — tactile sounds, keyboard control, a spoken input pipeline, and a hidden power toggle — using nothing but the browser's own APIs.</p>
-                    <p><strong>Approach:</strong> Used the Web Audio API to generate click sounds procedurally, the Web Speech API's <code>SpeechRecognition</code> and <code>SpeechSynthesis</code> to build a voice round-trip, and a <code>setTimeout</code> chain to animate each button press in sequence.</p>
-                    <p><strong>Outcome:</strong> A calculator that responds to your voice, reads the result back to you, and plays a tactile click on every key — all without a single external file or library.</p>
+        <div class="case-section">
+            <h3>The Problem</h3>
+            <p>The Odin Project's calculator assignment is intentionally open-ended: build a working calculator with the four operations. The baseline is straightforward. The goal I set was to go further — make it feel like a real piece of hardware. That meant click sounds, keyboard input, and a voice interface that animates every button press as if someone is physically operating it.</p>
+        </div>
 
-                    <h3>Project Snapshot</h3>
-                    <ul class="alt">
-                        <li><strong>Platform:</strong> Static site hosted on GitHub Pages</li>
-                        <li><strong>Stack:</strong> HTML · CSS · Vanilla JavaScript · Web Audio API · Web Speech API</li>
-                        <li><strong>Type:</strong> Curriculum project (The Odin Project Foundations) with extended features</li>
-                        <li><strong>Team:</strong> Solo</li>
-                        <li><strong>Role:</strong> Designer and developer — layout, logic, audio, and voice pipeline</li>
-                    </ul>
+        <div class="case-section">
+            <h3>Try It</h3>
+            <iframe
+                src="https://geoclink.github.io/javascript-calculator/"
+                title="JavaScript Calculator"
+                style="width: 100%; height: 560px; border: 1px solid var(--color-border); border-radius: 8px; display: block;"
+                loading="lazy"
+            ></iframe>
+        </div>
 
-                    <div style="display:flex;gap:1em;flex-wrap:wrap;margin:1em 0 1.5em 0;">
-                        <a href="https://geoclink.github.io/javascript-calculator/" class="button" target="_blank" rel="noopener noreferrer">View Live Site <i class="fas fa-external-link-alt" style="margin-left:4px;"></i></a>
-                        <a href="https://github.com/geoClink/javascript-calculator" class="button" target="_blank" rel="noopener noreferrer">View on GitHub <i class="fab fa-github" style="margin-left:4px;"></i></a>
-                    </div>
-                </div>
-            </header>
+        <div class="case-section">
+            <h3>The Approach</h3>
+            <p>Every click sound is synthesized on the fly using the Web Audio API — 20ms of white noise run through a gain node with an exponential ramp. No audio files, no fetch requests. The result is a sharp mechanical click that fades immediately, like a physical key. The same <code>AudioContext</code> fires on mouse clicks, touch events, and keyboard presses.</p>
 
-            <section>
-                <!-- Tech Stack -->
-                <h3>Tech Stack</h3>
-                <div class="tech-stack-row">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Web Audio API</span>
-                    <span class="tech-tag">Web Speech API</span>
-                    <span class="tech-tag">SpeechRecognition</span>
-                    <span class="tech-tag">SpeechSynthesis</span>
-                    <span class="tech-tag">GitHub Pages</span>
-                </div>
+            <p>The voice pipeline uses the Web Speech API's <code>SpeechRecognition</code> to capture a spoken calculation ("five plus three"), maps each word to its symbol via a <code>wordMap</code>, then staggers button clicks 300ms apart so every key animates and plays its click sound in real time. After all presses complete, <code>SpeechSynthesisUtterance</code> reads the result back aloud. The long-press power toggle uses a <code>setTimeout</code> on <code>mousedown</code> that cancels on <code>mouseup</code> if released too quickly — the whole calculator goes dark and ignores all input while off.</p>
+        </div>
 
-                <!-- Key Features -->
-                <h3>Key Features</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h4>Voice Input</h4>
-                        <p>Speak a calculation ("5 plus 3") and every button animates and plays a click sound in sequence — then the result is read back aloud using <code>SpeechSynthesis</code>. A word map converts spoken words to symbols before the key-press sequence fires.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Web Audio Click Sounds</h4>
-                        <p>Every key press generates a short synthesized click using the <code>AudioContext</code> API — no audio files, no fetch requests. A 20ms buffer of white noise runs through a gain node with an exponential ramp, producing the sharp mechanical click of a physical key.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Keyboard Support</h4>
-                        <p>All calculator operations are mapped to keyboard shortcuts so the calculator works without touching the mouse. Number keys, operators, <kbd>Enter</kbd> for equals, <kbd>Backspace</kbd>, and <kbd>Escape</kbd> for clear all wire up to the same button-click handlers.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Long Press Power Toggle</h4>
-                        <p>Hold the Clear button for 1 second to turn the calculator on or off — the screen goes black and all input is silently ignored while it's off. Implemented with a <code>setTimeout</code> on <code>mousedown</code> that cancels on <code>mouseup</code> if released too quickly.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Chained Calculations</h4>
-                        <p>After evaluating a result, pressing an operator continues from that result rather than starting fresh. A state flag tracks whether the last action was an equals press so the display and operand are handled correctly in sequence.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Decimal & Backspace</h4>
-                        <p>Decimal input guards against duplicate dots on the same number. Backspace removes the last character from the display — or clears the whole operand if only one digit remains — giving the user an easy way to correct a single mis-press.</p>
-                    </div>
-                </div>
+        <div class="case-section">
+            <h3>The Outcome</h3>
+            <p>A calculator that responds to your voice, reads the result back to you, clicks on every key press, and hides a power toggle — built entirely with browser-native APIs and zero dependencies. The Odin Project spec asked for a calculator. This one feels like hardware.</p>
+        </div>
 
-                <!-- Challenges -->
-                <h3>Challenges</h3>
+    </div>
 
-                <section class="case-study-section">
-                    <h4>Voice Input — Orchestrating a Button-Press Sequence</h4>
-                    <p>The hardest part wasn't recognizing speech — it was what to do with it afterward. <code>SpeechRecognition</code> returns a full transcript as a string ("five plus three"). The transcript is split into words and each word is looked up in a <code>wordMap</code> — so "divided" becomes "/" and "by" is dropped (mapped to an empty string). Spoken digits like "five" become "5" the same way.</p>
-                    <p>Each mapped character is then matched against every button's <code>textContent</code> and clicked with a 300ms stagger — so the animation and audio play out in real time. An <code>=</code> is pushed to the end automatically. A single <code>setTimeout</code> fires after all presses complete and reads the display value aloud with <code>SpeechSynthesisUtterance</code>.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">VOICE INPUT — script.js</span>
-                        <pre><code class="language-javascript">const wordMap = {
-    'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
-    'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9',
-    'plus': '+', 'minus': '-', 'times': '*', 'divided': '/', 'by': '',
-    'equals': '=', 'equal': '='
-};
-
-recognition.onresult = function(event) {
-    const transcript = event.results[0][0].transcript;
-    const words = transcript.toLowerCase().split(' ');
-    const characters = [];
-
-    words.forEach(function(word) {
-        const mapped = wordMap[word] !== undefined ? wordMap[word] : word;
-        mapped.split('').forEach(function(char) {
-            if (char !== '') characters.push(char);
-        });
-    });
-
-    characters.push('=');
-
-    characters.forEach(function(char, index) {
-        setTimeout(function() {
-            document.querySelectorAll('button').forEach(function(button) {
-                if (button.textContent.trim() === char) {
-                    button.classList.add('pressed');
-                    button.click();
-                    setTimeout(function() { button.classList.remove('pressed'); }, 100);
-                }
-            });
-        }, index * 300);
-    });
-
-    const speakDelay = characters.length * 300 + 400;
-    setTimeout(function() {
-        const utterance = new SpeechSynthesisUtterance(answerScreen.textContent);
-        window.speechSynthesis.speak(utterance);
-    }, speakDelay);
-};</code></pre>
-                    </div>
-                    <p>The <code>speakDelay</code> calculation waits for all button animations to finish before the readback fires. Without the extra 400ms buffer, the speech would start before the equals press had time to update the display.</p>
-                </section>
-
-                <section class="case-study-section">
-                    <h4>Web Audio API — White Noise Click Without Audio Files</h4>
-                    <p>Using an oscillator produces a tonal pitch that sounds more like a beep than a click. The real mechanical feel comes from noise — a short burst of random samples that has no frequency, just percussive texture. The Web Audio API can generate this entirely in memory with no files and no network request.</p>
-                    <p><code>createBuffer</code> allocates 20ms of audio data. A loop fills every sample with a random value between -1 and 1 (pure white noise). A gain node then ramps the volume from 0.3 down to near-silence over those same 20ms — so the click is sharp at the front and dies immediately, just like a physical key.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">CLICK SOUND — script.js</span>
-                        <pre><code class="language-javascript">function playClick() {
-    const audioCtx = new AudioContext();
-    const bufferSize = audioCtx.sampleRate * 0.02; // 20ms of samples
-    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-    const data = buffer.getChannelData(0);
-
-    for (let i = 0; i &lt; bufferSize; i++) {
-        data[i] = Math.random() * 2 - 1; // white noise
-    }
-
-    const source = audioCtx.createBufferSource();
-    const gainNode = audioCtx.createGain();
-
-    source.buffer = buffer;
-    source.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.02);
-
-    source.start();
-}</code></pre>
-                    </div>
-                    <p>One browser constraint: <code>AudioContext</code> requires a user gesture before it can produce sound. Since <code>playClick()</code> only ever runs inside a button click handler, this is always satisfied — no special handling needed.</p>
-                </section>
-
-                <section class="case-study-section">
-                    <h4>Long Press — Distinguishing a Tap from a Hold</h4>
-                    <p>The Clear button doubles as a power button: a normal tap clears the display; holding it for 1 second toggles the calculator off — the screen goes black and every subsequent key press silently returns early. Hold again to turn it back on.</p>
-                    <p>A <code>setTimeout</code> fires on <code>mousedown</code> and is cancelled on <code>mouseup</code> if released too soon. The <code>isOff</code> flag is read at the top of every button click handler, so no input reaches the calculator logic while it's off.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">LONG PRESS TOGGLE — script.js</span>
-                        <pre><code class="language-javascript">let powerTimer;
-let isOff = false;
-
-clearButton.addEventListener("mousedown", function() {
-    playClick();
-    powerTimer = setTimeout(function() {
-        isOff = !isOff;
-        if (isOff) {
-            answerScreen.style.backgroundColor = "black";
-            answerScreen.textContent = "";
-        } else {
-            answerScreen.style.backgroundColor = "#c8f5c8";
-            answerScreen.textContent = "0";
-        }
-    }, 1000);
-});
-
-clearButton.addEventListener("mouseup", function() {
-    clearTimeout(powerTimer);
-});
-
-// At the top of every button click handler:
-if (isOff) return;</code></pre>
-                    </div>
-                    <p>The click sound plays on <code>mousedown</code> rather than <code>click</code> so the audio fires immediately when the finger lands — matching the physical feel of pressing a key before you hear what it does.</p>
-                </section>
-
-                <section class="case-study-section">
-                    <h4>Chained Calculations — Managing State After Equals</h4>
-                    <p>State lives in three module-level variables: <code>num1</code> and <code>num2</code> are strings that accumulate digits as the user types, and <code>operator</code> holds the pending operation. A <code>resultDisplayed</code> flag tracks whether the last action was an equals press.</p>
-                    <p>When equals fires, the result is written back into <code>num1</code> and the flag is set. On the next digit press, the flag causes <code>num1</code> to reset before the new digit appends — so the user starts fresh. On the next operator press the flag just resets, leaving <code>num1</code> as-is so the chain continues from the result.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">CHAINED CALC STATE — script.js</span>
-                        <pre><code class="language-javascript">let num1 = "";
-let operator = null;
-let num2 = "";
-let resultDisplayed = false;
-
-// "=" button
-let result = operate(num1, operator, num2);
-result = parseFloat(result.toFixed(4));
-answerScreen.textContent = result;
-num1 = result;
-operator = null;
-num2 = "";
-resultDisplayed = true;
-
-// Digit button (operator is null, so we're building num1)
-if (resultDisplayed === true) {
-    num1 = "";          // start fresh after a result
-    resultDisplayed = false;
-}
-num1 = num1 + buttonValue;
-
-// Operator button — just store it; num1 already holds the result
-operator = buttonValue;
-// resultDisplayed is implicitly reset because the next digit press checks it
-
-// Display always shows the active operand
-answerScreen.textContent = operator === null ? num1 : num2;</code></pre>
-                    </div>
-                    <p>The display line at the bottom is the whole rendering logic: if no operator has been set yet we're still building <code>num1</code>, otherwise we're building <code>num2</code>. One line handles all display updates.</p>
-                </section>
-
-                <!-- Outcome -->
-                <div class="outcome-snapshot">
-                    <span class="snap-stat"><strong>Solo project</strong></span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-stat">HTML · CSS · JavaScript</span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-stat">Web Audio API · Web Speech API</span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-live">Live on GitHub Pages</span>
-                </div>
-
-                <h3>Outcome</h3>
-                <p>What started as a standard Odin Project assignment became a deep dive into two browser APIs that most beginner projects never touch. Building the voice input pipeline — recognition, normalization, animated playback, and speech synthesis — in pure JavaScript clarified exactly how the browser's event loop and <code>setTimeout</code> scheduling work in practice. Every feature that felt like a stretch ended up being the most instructive part of the project.</p>
-
-                <h3>What I Learned</h3>
-                <ul>
-                    <li>How the Web Audio API generates sound procedurally — white noise buffers, gain nodes, and exponential ramps — without any external files</li>
-                    <li>The Web Speech API's two halves: <code>SpeechRecognition</code> for input and <code>SpeechSynthesis</code> for output, and how to chain them into a round-trip voice pipeline</li>
-                    <li>How <code>setTimeout</code> scheduling creates the appearance of sequential animation — and why each step must complete before the next fires</li>
-                    <li>Long press detection: using <code>mousedown</code>/<code>mouseup</code> timers and a flag to separate a tap from a hold without both actions firing</li>
-                    <li>Calculator state management — specifically the edge cases around chaining operations after an equals press</li>
-                    <li>Why browsers require a user gesture before allowing audio playback, and how to structure code around that constraint</li>
-                </ul>
-
-                <h3>Next Iteration</h3>
-                <ul>
-                    <li>Add parentheses support for proper order-of-operations in complex expressions</li>
-                    <li>Improve voice recognition robustness — handle compound numbers ("twenty five") and add an undo command</li>
-                    <li>Persist the last result in <code>localStorage</code> so it survives a page refresh</li>
-                    <li>Add a calculation history panel that shows recent expressions and lets you tap one to reuse it</li>
-                    <li>Explore the <code>AudioWorklet</code> API for lower-latency sound generation as an upgrade from <code>AudioContext</code></li>
-                </ul>
-            </section>
-        </article>
+    <!-- CTA Band -->
+    <div class="page-cta">
+        <strong>Currently open</strong> to full-time roles, freelance, and contract work — <a href="contact.html">reach out if you'd like to work together</a>.
     </div>
 
     <!-- Footer -->
-    <style>
-    #footer { background: #f9f9f9; border-top: 1px solid #e5e5e5; margin-top: 4em; padding: 0; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5em; padding: 2em 2.5em; max-width: 1100px; margin: 0 auto; }
-    .footer-brand { display: flex; flex-direction: column; gap: 0.25em; }
-    .footer-brand strong { font-size: 1em; color: #222; }
-    .footer-brand span { font-size: 0.82em; color: #888; }
-    .footer-nav { display: flex; gap: 1.5em; flex-wrap: wrap; }
-    .footer-nav a { font-size: 0.88em; color: #555; text-decoration: none; border-bottom: none; }
-    .footer-nav a:hover { color: #1a2d5a; }
-    .footer-social { display: flex; gap: 1em; list-style: none; margin: 0; padding: 0; }
-    .footer-social li a { font-size: 1.3em; color: #888; }
-    .footer-social li a:hover { color: #1a2d5a; }
-    .footer-bottom { border-top: 1px solid #e5e5e5; text-align: center; padding: 0.9em 2em; }
-    .footer-bottom p { margin: 0; font-size: 0.82em; color: #aaa; }
-    .footer-bottom a { color: #aaa; text-decoration: underline; }
-    @media (max-width: 700px) { .footer-inner { flex-direction: column; align-items: flex-start; padding: 1.5em; } .footer-nav { gap: 1em; } }
-    </style>
-    <section id="footer">
+    <footer id="footer">
         <div class="footer-inner">
-            <div class="footer-brand">
+            <div class="footer-name">
                 <strong>George Clinkscales Jr.</strong>
-                <span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
+                <span>Detroit, MI &middot; iOS &amp; Full Stack Engineer</span>
             </div>
-            <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="case-studies.html">Case Studies</a>
-                <a href="contributions.html">Open Source</a>
-                <a href="resume.html">Resume</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <ul class="footer-social icons">
+            <ul class="footer-social">
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
                 <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
             </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
-        </div>
-    </section>
+        <p class="footer-copy">&copy; 2026 George Clinkscales Jr.</p>
+    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

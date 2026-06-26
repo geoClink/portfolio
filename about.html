@@ -72,40 +72,24 @@
             margin-bottom: 0.5em;
         }
 
-        /* Story image */
-        .story-inner {
-            display: flex;
-            gap: 2em;
-            align-items: flex-start;
-        }
-
-        .story-inner img {
-            width: 180px;
-            height: 220px;
-            border-radius: 8px;
-            object-fit: cover;
-            object-position: top center;
-            flex-shrink: 0;
-        }
-
         .story-text {
             flex: 1;
             min-width: 0;
         }
 
+        .about-avatar {
+            display: none;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            margin-bottom: 1em;
+        }
+
         @media (max-width: 600px) {
-            .story-inner {
-                flex-direction: column;
-            }
-
-            .story-inner img {
-                width: 100%;
-                height: 260px;
-            }
-
-            .about-title {
-                font-size: 1.8em;
-            }
+            .about-avatar { display: block; }
+            .about-title { font-size: 1.8em; }
         }
 
         /* Seeking callout */
@@ -148,9 +132,9 @@
         }
 
         .about-btn:hover {
-            background: #333 !important;
-            color: #fff !important;
-            box-shadow: inset 0 0 0 1.5px #333 !important;
+            background: var(--color-heading) !important;
+            color: var(--color-on-dark) !important;
+            box-shadow: inset 0 0 0 1.5px var(--color-heading) !important;
         }
 
         /* Timeline */
@@ -362,20 +346,18 @@
 
     <div id="main" role="main">
 
+        <img src="assets/images/myself.webp" alt="George Clinkscales Jr." class="about-avatar" width="800" height="1199" />
         <h2 class="about-title">About Me</h2>
         <p class="about-tagline">iOS &amp; full-stack engineer and co-founder of CH Studios LLC, based in Detroit.</p>
 
         <section class="about-section">
             <h3>My Story</h3>
-            <div class="story-inner">
-                <img src="assets/images/myself.webp" alt="George Clinkscales Jr." width="800" height="1199" />
-                <div class="story-text">
+            <div class="story-text">
                     <p>I'm a Colorado State University graduate turned full-stack engineer, recently graduated from the MSU Apple Developer Academy in Detroit. My transition into software was driven by curiosity and a desire to build things that are genuinely useful — products that feel intuitive, accessible, and well-crafted from day one.</p>
                     <p>In under a year I've shipped three apps to the App Store, contributed to open source projects across Python, Go, TypeScript, and Vue.js, and built production AI integrations that put real businesses inside conversational AI interfaces. I co-founded CH Studios LLC to build vertical SaaS platforms for Detroit small businesses — and shipped WebMCP the same week Google announced it at I/O 2026.</p>
                     <p>My most distinctive work sits at the intersection of AI and product: I architected an MCP server that lets customers browse menus and place orders through Claude, and a WebMCP integration that makes storefronts queryable by Gemini directly from Chrome — no API connection required.</p>
                     <p>Outside of code I ride bikes, explore Detroit restaurants, volunteer at local food banks, and plant trees with The Greening of Detroit.</p>
                     <p class="seeking-callout"><strong>Currently seeking</strong> full-time web or iOS developer roles — ideally on teams building products that serve real people. <a href="contact.html">Let's connect.</a></p>
-                </div>
             </div>
         </section>
 
@@ -596,6 +578,11 @@
 
     </div>
 
+    <!-- CTA Band -->
+    <div class="page-cta">
+        <strong>Currently open</strong> to full-time roles, freelance, and contract work — <a href="contact.html">reach out if you'd like to work together</a>.
+    </div>
+
     <!-- Footer -->
     <footer id="footer">
         <div class="footer-inner">
@@ -607,9 +594,6 @@
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
                 <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
             </ul>
-        </div>
-        <div class="footer-cta">
-            <p>Open to freelance &amp; full-time roles &mdash; <a href="contact.html">Get in touch &rarr;</a></p>
         </div>
         <p class="footer-copy">&copy; 2026 George Clinkscales Jr.</p>
     </footer>

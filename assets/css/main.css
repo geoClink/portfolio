@@ -3295,7 +3295,6 @@ input, select, textarea {
    ============================================================ */
 
 footer#footer {
-    border-top: 1px solid var(--color-on-dark-border);
     background: var(--color-footer-bg);
     margin-top: 0;
     padding: 3em 2em 2.5em;
@@ -3430,4 +3429,40 @@ footer#footer .footer-copy {
     #header h1 {
         display: none !important;
     }
+}
+
+/* ── Page CTA Band ───────────────────────────────────────────── */
+.page-cta {
+    width: 100%;
+    padding: 3.5em max(2em, calc((100% - 720px) / 2 + 2em));
+    font-size: 0.95em;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    text-align: left;
+    background: var(--color-surface);
+    box-sizing: border-box;
+}
+
+@media (max-width: 736px) {
+    .page-cta { padding: 2.5em 1.25em; }
+}
+
+.page-cta strong {
+    color: var(--color-heading);
+}
+
+.page-cta a {
+    color: var(--color-heading);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-color 0.2s ease;
+}
+
+.page-cta a:hover {
+    border-bottom-color: var(--color-heading);
+}
+
+@media (max-width: 736px) {
+    .page-cta { padding: 2.5em 1.25em; }
 }
