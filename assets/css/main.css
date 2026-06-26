@@ -2237,8 +2237,9 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px var(--color-accent);
-			color: var(--color-accent) !important;
+			background: #333 !important;
+			color: #fff !important;
+			box-shadow: inset 0 0 0 1.5px #333 !important;
 		}
 
 			input[type="submit"]:hover:active,

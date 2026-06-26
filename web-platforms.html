@@ -218,7 +218,7 @@
                         </div>
                         <div class="platform-actions">
                             <a href="salon-co.html" class="button">View Case Study</a>
-                            <a href="https://the-salon-co.onrender.com/index.html" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
+                            <a href="https://the-salon-1dtfufonz-geoclinks-projects.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
                         </div>
                     </div>
 
@@ -238,28 +238,29 @@
                             <span class="tech-tag">Events Calendar</span>
                         </div>
                         <div class="platform-actions">
-                            <span style="font-size:0.85em;color:#999;font-style:italic;">Case study coming soon</span>
+                            <a href="https://the-sports-6pi7zqnjg-geoclinks-projects.vercel.app/index.html" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
                         </div>
                     </div>
 
                     <!-- The Wellness Co. -->
-                    <div class="platform-card coming-soon">
+                    <div class="platform-card in-progress">
                         <div class="platform-card-header">
                             <div class="platform-icon" style="background:linear-gradient(135deg,#1a2a2e 0%,#2a404a 60%,#7abcb0 100%);color:#f5f0f8;">WELL<br>NESS</div>
                             <div class="platform-card-meta">
                                 <h3>The Wellness Co.</h3>
-                                <span class="status-badge status-soon">In Progress</span>
+                                <span class="status-badge status-progress">In Progress</span>
                             </div>
                         </div>
-                        <p>A booking and membership platform for wellness studios — massage, yoga, fitness. Service menu, practitioner profiles, appointment booking, and membership management. Built as an alternative to Mindbody for studios that want a custom presence without the overhead.</p>
+                        <p>The customer website, admin dashboard, and Supabase backend for a full wellness studio platform built at CH Studios. The owner logs into the admin dashboard to manage services, practitioners, availability, and memberships — changes reflect instantly on the customer site with no code or redeploy. Stripe powers session bookings, recurring memberships, and gift card purchases. Practitioner profiles, a service menu with filtering, appointment scheduling, and a client portal are all included. Built as a direct alternative to Mindbody for studios that want a custom presence without the monthly overhead.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">HTML5 · CSS3 · JS</span>
                             <span class="tech-tag">Supabase</span>
                             <span class="tech-tag">Stripe</span>
                             <span class="tech-tag">Formspree</span>
+                            <span class="tech-tag">JWT Auth</span>
                         </div>
                         <div class="platform-actions">
-                            <span style="font-size:0.85em;color:#999;font-style:italic;">Case study coming soon</span>
+                            <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
                         </div>
                     </div>
 
@@ -328,21 +329,5 @@
 
 
     <script src="assets/js/main.js"></script>
-    <script>
-    function updateLocalTime() {
-        const now = new Date();
-        let offset = -5;
-        const jan = new Date(now.getFullYear(), 0, 1);
-        const jul = new Date(now.getFullYear(), 6, 1);
-        const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-        if (now.getTimezoneOffset() < stdTimezoneOffset) offset = -4;
-        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-        const est = new Date(utc + (3600000 * offset));
-        const timeString = est.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        document.getElementById('local-time').textContent = timeString;
-    }
-    setInterval(updateLocalTime, 1000);
-    updateLocalTime();
-    </script>
 </body>
 </html>
