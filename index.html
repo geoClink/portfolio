@@ -94,12 +94,10 @@
 
         .intro-ctas {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            column-gap: 1.5em;
-            row-gap: 0.75em;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5em;
             margin-top: 1.4em;
-            flex-wrap: wrap;
         }
 
         .intro-ctas a.button.primary {
@@ -118,6 +116,7 @@
             color: var(--color-on-dark) !important;
             box-shadow: none !important;
             border: none !important;
+            margin: 0 !important;
             transition: opacity 0.2s ease !important;
         }
         .intro-ctas a.button.primary:hover {
@@ -130,7 +129,7 @@
         .intro-ctas a.button:not(.primary) {
             display: inline-flex !important;
             align-items: center !important;
-            align-self: center !important;
+            margin: 0 !important;
             font-size: 0.88em !important;
             font-weight: 600 !important;
             text-transform: none !important;
@@ -158,6 +157,11 @@
             .intro-card { padding: 1.2em 1.05em 1em; border-radius: 12px; }
             .intro-name { font-size: 1.35em; }
             .intro-role { font-size: 0.95em; }
+            .index-cta { text-align: left !important; }
+            .testimonial-indicators { justify-content: flex-start; }
+            .intro-ctas a.button.primary {
+                width: auto !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -480,7 +484,7 @@
         }
 
         .testimonial-slide.active .slide-progress {
-            animation: slideProgress 6s linear forwards;
+            animation: slideProgress 9s linear forwards;
         }
 
         .testimonials-section.paused .testimonial-slide.active .slide-progress {
@@ -635,6 +639,17 @@
             border-bottom-color: var(--color-heading);
         }
 
+        /* ── Live Web Strip (always single column) ────────────── */
+        .web-strip .appstore-apps {
+            flex-direction: column !important;
+            flex-wrap: nowrap !important;
+        }
+        .web-strip .appstore-app {
+            flex: unset !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+
         /* ── App Store Strip ───────────────────────────────────── */
         .appstore-strip {
             margin: 0 auto 2.5em;
@@ -707,9 +722,14 @@
             color: var(--color-text-muted);
         }
 
-        @media (max-width: 540px) {
-            .appstore-apps { flex-direction: column; }
-            .appstore-app { flex: unset; }
+        .appstore-apps {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        .appstore-app {
+            flex: unset;
+            width: 100%;
+            min-width: 0;
         }
 
         /* ── Scroll fade-in ────────────────────────────────────── */
@@ -729,7 +749,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1>George Clinkscales Jr.</h1>
+        <h1><a href="index.html">George Clinkscales Jr.</a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -775,6 +795,41 @@
             </div>
         </section>
 
+        <!-- Live Web Projects Strip -->
+        <section class="appstore-strip web-strip">
+            <div class="appstore-strip-label">Live on the Web</div>
+            <div class="appstore-apps">
+                <a href="https://the-bakery-co.vercel.app/index.html" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <div class="appstore-app-icon" style="background:linear-gradient(135deg,#fff8f0,#f5d0a0);display:flex;align-items:center;justify-content:center;font-size:0.45em;font-weight:700;font-family:'Courier New',monospace;letter-spacing:0.06em;color:#7a4a1e;">BAKERY</div>
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">The Bakery Co.</span>
+                        <span class="appstore-app-sub">Full-stack ordering platform</span>
+                    </div>
+                </a>
+                <a href="https://the-salon-1dtfufonz-geoclinks-projects.vercel.app/" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <div class="appstore-app-icon" style="background:linear-gradient(135deg,#1a2e1a,#c8a96e);display:flex;align-items:center;justify-content:center;font-size:0.45em;font-weight:700;font-family:'Courier New',monospace;letter-spacing:0.06em;color:#f5f0e8;">SALON</div>
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">The Salon Co.</span>
+                        <span class="appstore-app-sub">Luxury salon website</span>
+                    </div>
+                </a>
+                <a href="https://the-sports-6pi7zqnjg-geoclinks-projects.vercel.app/index.html" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <div class="appstore-app-icon" style="background:linear-gradient(135deg,#1a1a2e,#c8a020);display:flex;align-items:center;justify-content:center;font-size:0.45em;font-weight:700;font-family:'Courier New',monospace;letter-spacing:0.06em;color:#f5f0e8;">SPORTS<br>BAR</div>
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">The Sports Bar Co.</span>
+                        <span class="appstore-app-sub">Reservations &amp; events</span>
+                    </div>
+                </a>
+                <a href="https://the-wellness-co.vercel.app/" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <div class="appstore-app-icon" style="background:linear-gradient(135deg,#1a2a2e,#7abcb0);display:flex;align-items:center;justify-content:center;font-size:0.45em;font-weight:700;font-family:'Courier New',monospace;letter-spacing:0.06em;color:#f5f0f8;">WELL<br>NESS</div>
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">The Wellness Co.</span>
+                        <span class="appstore-app-sub">Studio booking platform</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <!-- App Store Strip -->
         <section class="appstore-strip">
             <div class="appstore-strip-label">On the App Store</div>
@@ -800,58 +855,6 @@
                         <span class="appstore-app-sub">Bird life game · iPad · macOS</span>
                     </div>
                 </a>
-            </div>
-        </section>
-
-        <!-- Cross-Platform Products -->
-        <section class="featured-projects fade-in">
-            <h2>Cross-Platform Products</h2>
-            <div class="projects">
-                <article class="project main-project">
-                    <div class="image" style="background: linear-gradient(135deg, #0d1b2e 0%, #1a3a5c 55%, #1e4a4a 100%); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-family:'Courier New',monospace; font-size:0.9em; letter-spacing:0.06em; opacity:0.9;">Tally — Time Tracker</div>
-                    <h3>Tally — Time Tracker</h3>
-                    <p>Cross-platform SaaS for freelancers and small teams to track billable hours, generate invoices, and manage client goals — at a one-time price while competitors charge $10–20/month. Native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend with cross-platform subscription sync via StoreKit and Stripe.</p>
-                    <ul class="actions">
-                        <li><a href="tally.html" class="button primary-btn">View Case Study</a></li>
-                        <li><a href="https://tally-web-nu.vercel.app" class="btn-link" target="_blank" rel="noopener noreferrer">Web App ↗</a></li>
-                        <li><a href="https://github.com/geoClink/tally-web" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- Web & Full Stack -->
-        <section class="featured-projects fade-in">
-            <h2>Web &amp; Full Stack Projects</h2>
-            <div class="projects">
-                <article class="project main-project">
-                    <div class="image" style="background: linear-gradient(135deg, #3d1f0d 0%, #7a3b1e 50%, #c8832a 100%); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-family:'Courier New',monospace; font-size:0.9em; letter-spacing:0.06em; opacity:0.9;">The Bakery Co.</div>
-                    <h3>The Bakery Co. — Full Stack Ordering Platform</h3>
-                    <p>Full-stack ordering platform with Stripe payments, Supabase, JWT-authenticated admin dashboard, transactional email/SMS, and a production MCP server so customers can place orders through Claude AI. Shipped WebMCP integration the week Google announced it at I/O 2026.</p>
-                    <ul class="actions">
-                        <li><a href="https://the-bakery-co.vercel.app/index.html" class="button primary-btn" target="_blank" rel="noopener noreferrer">Visit Site ↗</a></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- iOS Projects -->
-        <section class="featured-projects fade-in">
-            <h2>iOS Projects</h2>
-            <div class="projects">
-                <article class="project main-project">
-                    <a href="michiganapiweather.html" class="image">
-                        <img fetchpriority="high" src="assets/images/coastcastScreenshot.webp" alt="CoastCast app screenshot" style="object-position: 50% 20%;" width="1206" height="2622" />
-                    </a>
-                    <h3>CoastCast</h3>
-                    <p>iOS app with a Python FastAPI backend delivering real-time conditions for 54 Michigan beaches. Built with on-device CoreML/XGBoost crowd prediction, Dynamic Island Live Activities, Siri Shortcuts, WidgetKit, and a Swift Testing suite with 120+ parameterized test cases.</p>
-                    <ul class="actions">
-                        <li><a href="michiganapiweather.html" class="button primary-btn">View Case Study</a></li>
-                        <li><a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer"><img src="assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36"></a></li>
-                    </ul>
-                </article>
-                <!-- Stamped! card hidden for now — App Store: https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336 -->
-                <!-- TakeFlight card hidden for now — App Store: https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964 -->
             </div>
         </section>
 
