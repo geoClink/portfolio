@@ -47,6 +47,9 @@
 a:link, a:visited {
 	color: var(--color-link);
 }
+.hero-bio a:link, .hero-bio a:visited {
+    color: var(--color-on-dark);
+}
 /* Ensure footer is always full width */
 #footer {
 	width: 100%;
@@ -3303,16 +3306,16 @@ footer#footer {
 }
 footer#footer .footer-inner {
     max-width: 720px;
-    margin: 0 auto 2em;
+    margin: 0 auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1.5em;
 }
 footer#footer .footer-name strong {
     display: block;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 600;
     color: var(--color-on-dark);
     margin-bottom: 0.2em;
@@ -3365,6 +3368,7 @@ footer#footer .footer-copy {
     margin: 0 auto;
     font-size: 0.75em;
     color: var(--color-on-dark-muted);
+    text-align: left;
 }
 @media (max-width: 600px) {
     footer#footer {

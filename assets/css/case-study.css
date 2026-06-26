@@ -97,6 +97,22 @@
     margin-bottom: 0;
 }
 
+.iframe-note {
+    font-size: 0.78em;
+    color: var(--color-text-muted);
+    margin: 0.75em 0 0;
+    line-height: 1.5;
+    font-style: italic;
+    padding-left: 0.75em;
+    border-left: 2px solid var(--color-border);
+}
+.iframe-note-mobile { display: none; }
+
+@media (max-width: 600px) {
+    .iframe-note-desktop { display: none; }
+    .iframe-note-mobile { display: block; }
+}
+
 .screenshot-placeholder {
     border: 1.5px dashed var(--color-border);
     border-radius: 8px;
