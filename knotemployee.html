@@ -1,83 +1,26 @@
 <!DOCTYPE HTML>
-<!-- KnotEmployee Case Study -->
 <html lang="en">
 <head>
     <title>KnotEmployee — Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="https://geoclink.github.io/portfolio/knotemployee.html" />
     <meta property="og:title" content="KnotEmployee — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Case study: KnotEmployee — A multi-tenant iOS employee scheduling app for small businesses. Replaces paper schedules and group texts with a purpose-built workforce management tool built on SwiftUI, Supabase, and Deno Edge Functions." />
+    <meta property="og:description" content="Case study: KnotEmployee — A multi-tenant iOS employee scheduling app for small businesses." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/knotemployee.html" />
     <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="KnotEmployee — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: KnotEmployee — A multi-tenant iOS scheduling app replacing paper schedules and group texts for small businesses." />
+    <meta name="twitter:description" content="Case study: KnotEmployee — A multi-tenant iOS employee scheduling app for small businesses." />
     <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-    <meta name="description" content="Case study: KnotEmployee — A multi-tenant iOS employee scheduling app built with SwiftUI, Supabase Realtime, APNs Edge Functions, and a custom KnotTheme design system." />
+    <meta name="description" content="Case study: KnotEmployee — A multi-tenant iOS employee scheduling app for small businesses." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/prism-xcode-stamped.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
-    <style>
-        #main { padding-top: 2.5em; }
-        .tech-table { width: 100%; border-collapse: collapse; margin: 1em 0 1.5em; font-size: 0.93em; }
-        .tech-table th { text-align: left; padding: 0.5em 0.75em; background: rgba(136,124,115,0.1); color: #60443f; font-weight: 700; font-size: 0.8em; letter-spacing: 0.08em; text-transform: uppercase; }
-        .tech-table td { padding: 0.5em 0.75em; border-bottom: 1px solid rgba(160,160,160,0.15); }
-        .tech-table tr:last-child td { border-bottom: none; }
-
-        .role-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2em;
-            margin: 1.2em 0 1.5em;
-        }
-        .role-card {
-            background: #f8fafb;
-            border: 1px solid #e5eaee;
-            border-radius: 10px;
-            padding: 1.1em 1.3em;
-        }
-        .role-card h4 {
-            margin: 0 0 0.5em 0;
-            font-size: 0.88em;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #60443f;
-        }
-        .role-card ul {
-            margin: 0;
-            padding-left: 1.2em;
-            font-size: 0.92em;
-        }
-        .role-card li {
-            margin-bottom: 0.3em;
-        }
-        @media (max-width: 680px) {
-            .role-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-       "@context": "https://schema.org",
-       "@type": "SoftwareApplication",
-       "name": "KnotEmployee",
-       "description": "A multi-tenant iOS employee scheduling app for small businesses built with SwiftUI, Supabase, and Apple Push Notifications.",
-       "applicationCategory": "MobileApplication",
-       "operatingSystem": "iOS",
-       "url": "https://geoclink.github.io/portfolio/knotemployee.html",
-       "author": {
-          "@type": "Person",
-          "name": "George Clinkscales Jr.",
-          "url": "https://geoclink.github.io/portfolio/"
-       }
-    }
-    </script>
 </head>
 <body class="is-preload">
+
     <!-- Header -->
     <header id="header">
         <h1>KnotEmployee</h1>
@@ -109,398 +52,59 @@
     </header>
 
     <div id="main" role="main">
-        <article class="post">
-            <header>
-                <div class="title">
-                    <h2>KnotEmployee</h2>
-                    <p>A multi-tenant iOS employee scheduling app for small businesses — handling the full workforce management loop from scheduling and time tracking to shift swaps, time off, and team messaging.</p>
-                    <hr>
-                    <div class="value-prop" style="color:#000;font-weight:600;margin-bottom:0.5em;">Unique Value: Paper schedules and group texts were the only options. KnotEmployee gives small business owners a purpose-built tool that handles every step of the employee lifecycle in one app.</div>
 
-                    <h3>Problem</h3>
-                    <p>Small businesses — bakeries, salons, cafes — manage their staff with paper schedules pinned to the wall and group texts that bury shift changes in noise. There's no record of who clocked in late, no approval trail for time off, no way to pick up an open shift without calling someone. KnotEmployee replaces all of it: a single app where managers build schedules, approve requests, and see labor costs in real time, while staff clock in, swap shifts, and message the team — live, on their phones.</p>
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-                    <h3>Challenge-Based Learning</h3>
-                    <p><strong>Challenge:</strong> Build a production-grade, multi-tenant scheduling system where two distinct user roles have entirely different surfaces, while keeping all business data completely isolated between tenants and pushing real-time updates to every connected device.<br>
-                    <strong>Approach:</strong> Every database table carries <code>tenant_id NOT NULL</code>, the JWT carries tenant claims so reads are row-level-policy enforced, and all inserts reference <code>Config.tenantId</code> — the app is architecturally incapable of leaking one tenant's data to another. Real-time sync uses Supabase Realtime websockets so schedule changes, new messages, and approval updates arrive without polling. Push notifications flow through a Deno Edge Function triggered by a database INSERT, which calls APNs directly — no third-party SDK needed.<br>
-                    <strong>Outcome:</strong> A TestFlight-ready iOS app with two complete role surfaces, real-time sync, server-side push notifications, a labor cost report with CSV export, and a custom design system — no external UI libraries, no third-party analytics SDK.</p>
+        <h2 class="case-title">KnotEmployee</h2>
+        <p class="case-tagline">Employee scheduling for small businesses — built to replace the paper schedule and the group text.</p>
 
-                    <h3>Project Snapshot</h3>
-                    <ul class="alt">
-                        <li><strong>Platform:</strong> iOS 17+ (SwiftUI)</li>
-                        <li><strong>Stack:</strong> SwiftUI · @Observable · Supabase (Postgres, Auth, Realtime, Edge Functions) · APNs · MetricKit</li>
-                        <li><strong>Focus:</strong> Multi-tenancy, real-time sync, push notifications, role-based UX, custom design system</li>
-                        <li><strong>Part of:</strong> The Bakery Co. platform — shares the same Supabase backend as the website, admin dashboard, iOS POS, and iOS customer app</li>
-                        <li><strong>Team:</strong> CH Studios LLC — George (KnotEmployee iOS app, database) · Jaiden Henley (iOS POS, iOS customer app)</li>
-                        <li><strong>Role:</strong> iOS developer, Supabase database setup, Edge Functions, product design</li>
-                        <li><strong>Status:</strong> TestFlight — targeting App Store after Terms of Service page goes live</li>
-                    </ul>
+        <div class="case-links">
+            <a href="https://testflight.apple.com/join/8uHKMexj" class="button" target="_blank" rel="noopener noreferrer">View on TestFlight</a>
+        </div>
 
-                    <h3>Key Features by Role</h3>
-                    <div class="role-grid">
-                        <div class="role-card">
-                            <h4>Manager</h4>
-                            <ul>
-                                <li>Drag-and-drop weekly schedule builder (7-column grid)</li>
-                                <li>Template system — save any week, reuse anytime</li>
-                                <li>Labor cost report with daily breakdown and CSV export</li>
-                                <li>Approve/deny time off with conflict detection</li>
-                                <li>Approve/deny shift swaps and open shift pickups</li>
-                                <li>Team directory with live clock-in status</li>
-                                <li>Broadcast messaging to all staff</li>
-                                <li>Real-time alerts (overtime warnings, pending approvals)</li>
-                            </ul>
-                        </div>
-                        <div class="role-card">
-                            <h4>Staff</h4>
-                            <ul>
-                                <li>Clock in/out with break tracking</li>
-                                <li>Weekly schedule view — tap shifts for detail</li>
-                                <li>Request time off (PTO, sick, personal) with balance tracking</li>
-                                <li>Request shift swaps with teammates</li>
-                                <li>Pick up open shifts offered by coworkers</li>
-                                <li>Direct messaging with manager and teammates</li>
-                                <li>Earnings estimate based on scheduled hours</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </header>
+        <div class="case-meta">iOS · SwiftUI · Supabase · CH Studios LLC · 2026 · TestFlight</div>
 
-            <section>
-                <div style="display:flex;gap:1em;flex-wrap:wrap;margin:0 0 1.5em 0;">
-                    <a href="https://testflight.apple.com/join/8uHKMexj" class="button" target="_blank" rel="noopener noreferrer">View on TestFlight <i class="fa fa-plane" style="margin-left:4px;"></i></a>
-                </div>
+        <div class="case-section">
+            <h3>The Problem</h3>
+            <p>Small businesses manage their staff with paper schedules and group texts. There's no record of who clocked in late, no approval trail for time-off requests, no way to pick up a shift without calling around. For an owner managing 10–20 employees, it's constant overhead with no accountability and nothing to look back on.</p>
+        </div>
 
-                <div class="outcome-snapshot">
-                    <span class="snap-stat"><strong>Solo project</strong></span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-stat">2026</span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-stat">SwiftUI · Supabase · @Observable</span>
-                    <span class="snap-divider">·</span>
-                    <span class="snap-live">iOS · TestFlight</span>
-                </div>
+        <div class="case-section">
+            <h3>The Approach</h3>
+            <p>KnotEmployee is two complete experiences in one binary — a full manager surface and a staff surface, gated by role from the moment of sign-in. The manager gets a drag-and-drop weekly schedule builder, a labor cost report with CSV export, and real-time alerts for overtime warnings and pending approvals. Staff get clock-in and out with break tracking, time-off requests with balance tracking, shift swaps, and direct messaging — every workflow that previously happened over text.</p>
 
-                <!-- Tech Stack Table -->
-                <section class="case-study-section">
-                    <h3>Tech Stack</h3>
-                    <table class="tech-table">
-                        <tr><th>Layer</th><th>Technology</th></tr>
-                        <tr><td>UI</td><td>SwiftUI — <code>@Observable</code>, <code>@AppStorage</code>, <code>@Environment</code></td></tr>
-                        <tr><td>Database</td><td>Supabase (Postgres) — row-level security, <code>tenant_id NOT NULL</code> on all tables</td></tr>
-                        <tr><td>Auth</td><td>Supabase Auth — JWT carries tenant claims for server-side read enforcement</td></tr>
-                        <tr><td>Real-time</td><td>Supabase Realtime — websocket channels per tenant for schedule, messages, and notifications</td></tr>
-                        <tr><td>Push Notifications</td><td>APNs (production) — triggered by Deno Edge Function on <code>kn_notifications</code> INSERT</td></tr>
-                        <tr><td>Crash Reporting</td><td>MetricKit — no third-party SDK</td></tr>
-                        <tr><td>Design System</td><td>KnotTheme (custom) with BakeryCoTheme — adaptive <code>Color(UIColor { traits in … })</code> pairs</td></tr>
-                        <tr><td>Onboarding</td><td>3-page <code>TabView</code>, shown once via <code>@AppStorage</code></td></tr>
-                    </table>
-                </section>
+            <p>The backend is built on Supabase with multi-tenancy enforced at the database level. Every table carries a tenant ID, and row-level security policies ensure a JWT can only read rows belonging to its tenant. Adding a second business is a configuration change, not a code change.</p>
 
-                <!-- Architecture -->
-                <section class="case-study-section">
-                    <h3>Architecture</h3>
-                    <p>The app has two entirely separate view hierarchies gated by the authenticated user's role:</p>
-                    <ul>
-                        <li><strong>Manager surface</strong> — schedule builder, template library, labor report, approval queues (time off + shift swaps), team directory, broadcast messaging</li>
-                        <li><strong>Staff surface</strong> — clock in/out with break tracking, weekly schedule, time off requests, shift swap requests, open shift board, direct messaging, earnings estimate</li>
-                    </ul>
-                    <p>Supporting systems:</p>
-                    <ul>
-                        <li><strong>Config</strong> — app-level singleton holding <code>tenantId</code>; every database write reads from here, making cross-tenant writes structurally impossible</li>
-                        <li><strong>KnotTheme / BakeryCoTheme</strong> — design system with adaptive color pairs, <code>UINavigationBarAppearance</code> configured with adaptive <code>UIColor</code> for full dark mode support</li>
-                        <li><strong>Realtime channels</strong> — one channel per tenant per data type (schedule, messages, notifications) subscribed on session start and torn down on sign-out</li>
-                        <li><strong>BackgroundLock</strong> — cream overlay with lock icon applied via <code>scenePhase</code> when the authenticated app leaves the foreground</li>
-                        <li><strong>Push notification pipeline</strong> — app event → <code>kn_notifications</code> INSERT → Supabase Edge Function → APNs production server → device</li>
-                    </ul>
-                </section>
+            <p>Push notifications flow entirely through the database — an insert into a notifications table triggers a Deno Edge Function that calls APNs directly, with no third-party SDK. Schedule changes and messages sync live via Supabase Realtime websocket channels scoped per tenant, so every connected device updates the instant a row changes.</p>
+        </div>
 
-                <!-- Multi-tenancy -->
-                <section class="case-study-section">
-                    <h3>Multi-Tenant Architecture — Built In from Day One</h3>
-                    <p>Every table in the database has <code>tenant_id NOT NULL</code>. Row-level security policies enforce that a JWT can only read rows where <code>tenant_id</code> matches the claim in the token. On the app side, every INSERT pulls <code>Config.tenantId</code> — there is no code path that can write to the wrong tenant.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">MULTI-TENANT INSERT — ShiftService.swift</span>
-                        <span class="code-snippet-desc" style="margin-left:0.7em;color:#60443f;">All inserts carry tenant_id from Config — no code path can write to the wrong tenant.</span>
-                        <pre><code class="language-swift">func createShift(_ shift: Shift) async throws {
-    try await supabase
-        .from("shifts")
-        .insert([
-            "tenant_id": Config.tenantId,
-            "employee_id": shift.employeeId,
-            "start_time": shift.startTime.iso8601String,
-            "end_time": shift.endTime.iso8601String,
-            "role": shift.role
-        ])
-        .execute()
-}
-</code></pre>
-                    </div>
-                    <p>Row-level security on the Supabase side ensures reads are equally locked down — the JWT tenant claim is checked server-side on every query, so even a malformed request can't read another tenant's rows.</p>
-                </section>
+        <div class="screenshot-placeholder">Screenshots and demo video coming soon.</div>
 
-                <!-- Real-time -->
-                <section class="case-study-section">
-                    <h3>Real-Time Updates via Supabase Realtime</h3>
-                    <p>Schedule changes, new messages, and incoming notifications all update live without any polling. The app subscribes to a per-tenant Realtime channel on sign-in and tears it down on sign-out. When a Postgres row changes, the channel fires and the view model reloads only the affected data.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">REALTIME SUBSCRIPTION — ScheduleViewModel.swift</span>
-                        <span class="code-snippet-desc" style="margin-left:0.7em;color:#60443f;">Per-tenant websocket channel — schedule updates push live to every connected device.</span>
-                        <pre><code class="language-swift">func subscribeToSchedule() {
-    supabase.realtime
-        .channel("schedule-\(Config.tenantId)")
-        .on(
-            .postgresChanges,
-            filter: .init(event: .all, schema: "public", table: "shifts")
-        ) { [weak self] _ in
-            Task { await self?.loadCurrentWeek() }
-        }
-        .subscribe()
-}
-</code></pre>
-                    </div>
-                </section>
+        <div class="case-section">
+            <h3>The Outcome</h3>
+            <p>KnotEmployee is live on TestFlight with The Bakery Co. as its first client — built collaboratively at CH Studios LLC. It handles every step of the employee management loop from scheduling and clock-in to time-off approvals and team messaging, with a fully custom design system and no third-party UI libraries.</p>
+        </div>
 
-                <!-- Push Notifications -->
-                <section class="case-study-section">
-                    <h3>Push Notifications — No Third-Party SDK</h3>
-                    <p>Push notifications are driven entirely by the database: the app writes an INSERT into <code>kn_notifications</code>, a Deno Edge Function subscribed to that table picks it up, and the function calls the APNs production server directly with the device token. No Firebase, no OneSignal — just the native pipeline.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">PUSH NOTIFICATION TRIGGER — NotificationService.swift</span>
-                        <span class="code-snippet-desc" style="margin-left:0.7em;color:#60443f;">INSERT into kn_notifications → Edge Function picks up the row → APNs delivery.</span>
-                        <pre><code class="language-swift">func notify(userId: String, title: String, body: String) async throws {
-    try await supabase
-        .from("kn_notifications")
-        .insert([
-            "tenant_id": Config.tenantId,
-            "user_id": userId,
-            "title": title,
-            "body": body,
-            "sent": false
-        ])
-        .execute()
-    // Deno Edge Function watches this table and calls APNs
-}
-</code></pre>
-                    </div>
-                    <p>The Edge Function approach decouples notification delivery from the iOS app entirely — adding a web dashboard later would send push notifications through the exact same pipeline without any app changes.</p>
-                </section>
-
-                <!-- Background Lock + Dark Mode -->
-                <section class="case-study-section">
-                    <h3>Background Lock &amp; Full Dark Mode</h3>
-                    <p>When the authenticated app leaves the foreground, a cream overlay with a lock icon covers the screen immediately — no authenticated content is visible in the app switcher. This is handled with a single <code>scenePhase</code> change observer applied at the root view level.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">BACKGROUND LOCK — RootView.swift</span>
-                        <span class="code-snippet-desc" style="margin-left:0.7em;color:#60443f;">scenePhase observer covers authenticated content whenever the app is not active.</span>
-                        <pre><code class="language-swift">struct RootView: View {
-    @Environment(\.scenePhase) private var scenePhase
-    @State private var isLocked = false
-
-    var body: some View {
-        ZStack {
-            MainTabView()
-            if isLocked {
-                BackgroundLockOverlay()
-            }
-        }
-        .onChange(of: scenePhase) { _, newPhase in
-            isLocked = (newPhase != .active)
-        }
-    }
-}
-</code></pre>
-                    </div>
-                    <p>Dark mode uses a custom <code>KnotTheme</code> with adaptive color pairs defined via <code>Color(UIColor { traits in … })</code>. Navigation bars are updated with <code>UINavigationBarAppearance</code> using adaptive <code>UIColor</code> — so every surface flips correctly without any explicit <code>colorScheme</code> checks in individual views.</p>
-                    <div class="code-snippet">
-                        <span class="code-snippet-label" style="font-weight:700;">ADAPTIVE COLORS — KnotTheme.swift</span>
-                        <span class="code-snippet-desc" style="margin-left:0.7em;color:#60443f;">Adaptive Color pairs — every surface flips correctly without per-view colorScheme checks.</span>
-                        <pre><code class="language-swift">extension Color {
-    static let knotSurface = Color(UIColor { traits in
-        traits.userInterfaceStyle == .dark
-            ? UIColor(hex: "#1C1410")  // deep espresso
-            : UIColor(hex: "#FDF8F2")  // warm cream
-    })
-    static let knotAccent = Color(UIColor { traits in
-        traits.userInterfaceStyle == .dark
-            ? UIColor(hex: "#E8C87A")  // soft gold
-            : UIColor(hex: "#B8960C")  // rich gold
-    })
-}
-</code></pre>
-                    </div>
-                </section>
-
-                <!-- Key Decisions -->
-                <section class="case-study-section">
-                    <h3>Key Decisions</h3>
-                    <ul>
-                        <li>Multi-tenant from the start — <code>tenant_id NOT NULL</code> on every table, JWT claims enforced server-side with row-level security, and <code>Config.tenantId</code> on every app-side insert. Adding a second business client requires no schema changes and no code changes.</li>
-                        <li>Supabase Realtime over polling — websocket channels eliminate the latency and battery cost of repeat HTTP requests; schedule and message updates are pushed the instant the database row changes.</li>
-                        <li>Database-triggered push notifications via a Deno Edge Function — keeps push delivery logic on the server, avoids any third-party SDK dependency, and works identically from a future web dashboard without touching the iOS app.</li>
-                        <li>MetricKit only for crash reporting — no third-party analytics or crash SDK installed; crash data flows through Apple's native infrastructure with no external data sharing.</li>
-                        <li>Custom KnotTheme design system with a client-specific BakeryCoTheme — warm cream, espresso, rose, and gold with Cormorant Garamond and monospace type. Onboarding, navigation bars, and every view surface adapt automatically through the adaptive color layer.</li>
-                        <li>@Observable over ObservableObject — the new Swift observation macro reduces boilerplate and doesn't require <code>@Published</code> on every property; view updates are more granular and the code is easier to read.</li>
-                        <li>No external UI libraries — all components are custom SwiftUI. This keeps the bundle small, avoids SDK compatibility issues across iOS versions, and means every pixel matches the KnotTheme spec exactly.</li>
-                    </ul>
-                </section>
-
-                <div id="outcome-next-bottom"></div>
-            </section>
-
-            <section class="case-study-section" style="margin-top:2em;">
-                <h3>Outcome</h3>
-                <p>KnotEmployee demonstrates a production-quality multi-tenant iOS application: real-time websocket sync, server-driven push notifications through a custom Edge Function pipeline, role-based access across two complete user surfaces, drag-and-drop scheduling with a labor cost report, and a fully custom design system — all with no third-party UI libraries or analytics SDKs. The first client, The Bakery Co., is piloting the app in TestFlight.</p>
-
-                <h3>What I Learned</h3>
-                <ul>
-                    <li>Designing a multi-tenant data model where tenancy is enforced at both the database layer (RLS) and the app layer (<code>Config.tenantId</code>)</li>
-                    <li>Setting up and managing Supabase Realtime websocket channels per tenant with proper subscribe/unsubscribe lifecycle</li>
-                    <li>Writing a Deno Edge Function that responds to Postgres INSERTs and calls the APNs production HTTP/2 API directly</li>
-                    <li>Building adaptive color systems using <code>Color(UIColor { traits in … })</code> pairs that cover full dark mode without per-view checks</li>
-                    <li>Using <code>@Observable</code> instead of <code>ObservableObject</code> — the newer macro-based observation model and when it's the right choice</li>
-                    <li>Implementing a background lock via <code>scenePhase</code> to prevent sensitive data from appearing in the iOS app switcher</li>
-                    <li>Designing for two distinct user roles within a single binary — gating entire view hierarchies by role without leaking one surface into the other</li>
-                </ul>
-
-                <h3>Next Iteration</h3>
-                <ul>
-                    <li>App Store submission after Terms of Service page is live</li>
-                    <li>Second client onboarding — the multi-tenant architecture means adding a new business is a configuration change, not a code change</li>
-                    <li>Manager analytics dashboard — overtime trends, attendance patterns, and labor cost projections over time</li>
-                    <li>iPad scheduling view — the 7-column grid maps naturally to a wider canvas</li>
-                    <li>Payroll export integration (Gusto or ADP) via the existing labor cost data</li>
-                </ul>
-            </section>
-        </article>
     </div>
 
     <!-- Footer -->
-    <style>
-    #footer {
-        background: #f9f9f9;
-        border-top: 1px solid #e5e5e5;
-        margin-top: 4em;
-        padding: 0;
-    }
-    .footer-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1.5em;
-        padding: 2em 2.5em;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-    .footer-brand {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25em;
-    }
-    .footer-brand strong {
-        font-size: 1em;
-        color: #222;
-    }
-    .footer-brand span {
-        font-size: 0.82em;
-        color: #888;
-    }
-    .footer-nav {
-        display: flex;
-        gap: 1.5em;
-        flex-wrap: wrap;
-    }
-    .footer-nav a {
-        font-size: 0.88em;
-        color: #555;
-        text-decoration: none;
-        border-bottom: none;
-    }
-    .footer-nav a:hover {
-        color: #60443f;
-    }
-    .footer-social {
-        display: flex;
-        gap: 1em;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    .footer-social li a {
-        font-size: 1.3em;
-        color: #888;
-    }
-    .footer-social li a:hover {
-        color: #60443f;
-    }
-    .footer-bottom {
-        border-top: 1px solid #e5e5e5;
-        text-align: center;
-        padding: 0.9em 2em;
-    }
-    .footer-bottom p {
-        margin: 0;
-        font-size: 0.82em;
-        color: #aaa;
-    }
-    .footer-bottom a {
-        color: #aaa;
-        text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-        .footer-inner {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1.5em;
-        }
-        .footer-nav {
-            gap: 1em;
-        }
-    }
-    </style>
-    <section id="footer">
+    <footer id="footer">
         <div class="footer-inner">
-            <div class="footer-brand">
+            <div class="footer-name">
                 <strong>George Clinkscales Jr.</strong>
-                <span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
+                <span>Detroit, MI &middot; iOS & Full Stack Engineer</span>
             </div>
-            <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="case-studies.html">Case Studies</a>
-                <a href="contributions.html">Open Source</a>
-                <a href="resume.html">Resume</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <ul class="footer-social icons">
+            <ul class="footer-social">
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
                 <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
             </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
+        <div class="footer-cta">
+            <p>Open to freelance &amp; full-time roles &mdash; <a href="contact.html">Get in touch &rarr;</a></p>
         </div>
-    </section>
+        <p class="footer-copy">&copy; 2026 George Clinkscales Jr.</p>
+    </footer>
 
-    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-    function updateLocalTime() {
-        const now = new Date();
-        let offset = -5;
-        const jan = new Date(now.getFullYear(), 0, 1);
-        const jul = new Date(now.getFullYear(), 6, 1);
-        const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-        if (now.getTimezoneOffset() < stdTimezoneOffset) offset = -4;
-        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-        const est = new Date(utc + (3600000 * offset));
-        const timeString = est.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        document.getElementById('local-time').textContent = timeString;
-    }
-    setInterval(updateLocalTime, 1000);
-    updateLocalTime();
-    </script>
 </body>
 </html>

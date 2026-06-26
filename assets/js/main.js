@@ -1,73 +1,44 @@
-// Mobile sidebar menu toggle
-// This script enables the mobile sidebar menu toggle functionality.
-$(function() {
-	var $menuBtn = $('#menuToggle');
-	var $sidebarMenu = $('#sidebarMenu');
-	$menuBtn.on('click', function(e) {
-		e.preventDefault();
-		$sidebarMenu.toggleClass('visible');
-	});
-	$sidebarMenu.on('click', function(e) {
-		if ($(e.target).is('a') || $(e.target).is('#sidebarMenu')) {
-			$sidebarMenu.removeClass('visible');
-		}
-	});
-	$(document).on('click', function(e) {
-		if (!$(e.target).closest('#sidebarMenu, #menuToggle').length) {
-			$sidebarMenu.removeClass('visible');
-		}
-	});
+document.addEventListener('DOMContentLoaded', function () {
+    var header = document.getElementById('header');
+    if (header) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    }
+
+    var menuBtn = document.getElementById('menuToggle');
+    var sidebarMenu = document.getElementById('sidebarMenu');
+
+    if (menuBtn && sidebarMenu) {
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        sidebarMenu.querySelectorAll('a').forEach(function (link) {
+            var href = link.getAttribute('href');
+            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+
+        function closeMenu() {
+            sidebarMenu.classList.remove('visible');
+            menuBtn.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var isOpen = sidebarMenu.classList.toggle('visible');
+            menuBtn.classList.toggle('open');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        sidebarMenu.addEventListener('click', function () {
+            closeMenu();
+        });
+    }
+
+    document.body.classList.remove('is-preload');
 });
-// The following code handles breakpoints and layout adjustments for responsive design.
-(function($) {
-	// ...existing code...
-
-	// ...existing code...
-
-	// ...existing code...
-/*
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-(function($) {
-
-	var	$window = $(window),
-		$body = $('body'),
-		$menu = $('#menu'),
-		$sidebar = $('#sidebar'),
-		$main = $('#main');
-
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// ...existing code...
-
-	// Intro.
-		var $intro = $('#intro');
-
-		// Move to main on <=large, back to sidebar on >large.
-			breakpoints.on('<=large', function() {
-				$intro.prependTo($main);
-			});
-
-			breakpoints.on('>large', function() {
-				$intro.prependTo($sidebar);
-			});
-
-});
-})(jQuery);

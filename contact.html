@@ -1,536 +1,335 @@
 <!DOCTYPE HTML>
-<!-- Contact page: Connect with George Clinkscales Jr. for opportunities or questions. -->
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-    <!-- Template credits and license info. -->
 <html lang="en">
-<!-- The <head> section contains metadata, page title, and links to stylesheets. -->
-	<head>
-		<title>Contact | George Clinkscales Jr.</title>
-		<meta charset="utf-8" />
-		<link rel="canonical" href="https://geoclink.github.io/portfolio/contact.html" />
-		<meta property="og:title" content="Contact | George Clinkscales Jr." />
-		<meta property="og:description" content="Contact George Clinkscales Jr. for junior iOS and product-focused software opportunities; currently growing web development skills." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://geoclink.github.io/portfolio/contact.html" />
-		<meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Contact | George Clinkscales Jr." />
-		<meta name="twitter:description" content="Contact George Clinkscales Jr. for junior iOS and product-focused software opportunities; currently growing web development skills." />
-		<meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Contact George Clinkscales Jr. for junior iOS and product-focused software opportunities; currently growing web development skills." />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-		<style>
-        /* Custom styles for contact call-to-action and buttons. */
-			.contact-cta {
-				margin: 1.1em 0 1.5em;
-			}
-			.contact-cta .button {
-				margin-right: 0.55em;
-				margin-bottom: 0.6em;
-			}
-		</style>
-		<script type="application/ld+json">
-		{
-		   "@context": "https://schema.org",
-		   "@type": "Person",
-		   "name": "George Clinkscales Jr.",
-		   "jobTitle": "Software Engineer",
-		   "url": "https://geoclink.github.io/portfolio/contact.html",
-		   "sameAs": [
-		      "https://github.com/geoClink",
-		      "https://www.linkedin.com/in/george-clinkscales/"
-		   ],
-		   "knowsAbout": [
-		      "iOS Development",
-		      "SwiftUI",
-		      "Python",
-		      "FastAPI",
-		      "CoreML",
-		      "Web Development"
-		   ]
-		}
-		</script>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Contact | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/contact.html" />
+    <meta property="og:title" content="Contact | George Clinkscales Jr." />
+    <meta property="og:description" content="Get in touch with George Clinkscales Jr. for iOS, full stack, or freelance opportunities." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/contact.html" />
+    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Get in touch with George Clinkscales Jr. for iOS, full stack, or freelance opportunities." />
+    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Get in touch with George Clinkscales Jr. for iOS, full stack, or freelance opportunities." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        #main {
+            max-width: 600px !important;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        .contact-title {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 0.3em;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Contact</h1>
-						<!-- Menu button for mobile -->
-						<button id="menuToggle" aria-label="Open menu" class="menu-btn">
-							<span class="menu-icon">
-								<span></span>
-							</span>
-						</button>
-						<nav class="links">
-						<ul>
-						<li><a href="index.html" class="button">Home</a></li>
-						<li><a href="about.html" class="button">About</a></li>
-						<li><a href="case-studies.html" class="button">Case Studies</a></li>
-						<li><a href="contributions.html" class="button">Open Source</a></li>
-						<li><a href="resume.html" class="button">Resume</a></li>
-						<li><a href="contact.html" class="button active" aria-current="page">Contact</a></li>
-</ul>
-						</nav>
-						<!-- Sidebar menu -->
-						<aside id="sidebarMenu" class="sidebar-menu">
-						<nav>
-						<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="case-studies.html">Case Studies</a></li>
-						<li><a href="contributions.html">Open Source</a></li>
-						<li><a href="resume.html">Resume</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						</ul>
-						</nav>
-						</aside>
-					</header>
+        .contact-tagline {
+            font-size: 1.05em;
+            color: var(--color-text-muted);
+            margin: 0 0 2em;
+            line-height: 1.6;
+        }
 
-				<!-- Main -->
-					<div id="main" role="main">
+        .contact-links {
+            display: flex;
+            gap: 0.75em;
+            flex-wrap: wrap;
+            margin-bottom: 3em;
+            padding-bottom: 3em;
+            border-bottom: 1px solid var(--color-border);
+        }
 
-						<!-- Contact Section -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2>Contact Me</h2>
-										<p>I’d love to connect with teams hiring for iOS, SwiftUI, user-centered product roles, or freelance work. You can email me directly, review my resume, or use the form below.</p>
-									</div>
-								</header>
+        .contact-links a.button {
+            display: inline-flex !important;
+            align-items: center !important;
+            height: auto !important;
+            line-height: normal !important;
+            font-size: 0.9em !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            letter-spacing: 0.04em !important;
+            padding: 0.7em 1.2em !important;
+            border-radius: 4px !important;
+            box-shadow: inset 0 0 0 1.5px var(--color-border) !important;
+            gap: 0.45em;
+        }
+        .contact-links a.button .icon {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 1em;
+        }
+        .contact-links a[href*="linkedin"] {
+            background: var(--color-linkedin) !important;
+            color: var(--color-on-dark) !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+        .contact-links a[href*="linkedin"]:hover {
+            background: var(--color-linkedin-hover) !important;
+            color: var(--color-on-dark) !important;
+        }
 
-								<section>
-									<!-- Contact buttons removed as requested -->
-<ul class="actions">
-    <li>
-        <a href="https://www.linkedin.com/in/george-clinkscales/" class="button" target="_blank" rel="noopener noreferrer">
-				Visit LinkedIn <span class="icon brands fa-linkedin" style="margin-left:0.5em;"></span>
-        </a>
-    </li>
-    <li>
-        <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">
-				Visit GitHub <span class="icon brands fa-github" style="margin-left:0.5em;"></span>
-        </a>
-    </li>
-</ul>
-									<form id="contactForm">
-										<div id="form-success" style="display:none;margin-bottom:1em;padding:1em 1.2em;background:#e6f9ed;color:#256029;border:1px solid #b7e4c7;border-radius:7px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.04);text-align:center;transition:opacity 0.3s;">Message sent! I’ll reply soon.</div>
-										<div class="row gtr-uniform">
-											
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="name" id="name" placeholder="Your Name" />
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="email" name="email" id="email" placeholder="Your Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" id="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
-											</div>
-											<!-- Project brief upload field removed. -->
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Send Message" /></li>
-													<li><input type="reset" value="Clear" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</section>
+        .contact-form-label {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            display: block;
+            margin-bottom: 1.5em;
+        }
 
-								<!-- Social buttons: LinkedIn and GitHub -->
-								
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8em 1em;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-family: var(--font-sans);
+            background: #ffffff;
+            color: var(--color-text);
+            margin-bottom: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+            -webkit-appearance: none;
+        }
 
-								<script>
-									(function () {
-										const form = document.getElementById('contactForm');
-										const successMsg = document.getElementById('form-success');
-										if (!form) return;
-										form.addEventListener('submit', function (e) {
-											e.preventDefault();
-											const name = (document.getElementById('name') || {}).value || '';
-											const email = (document.getElementById('email') || {}).value || '';
-											const subject = (document.getElementById('subject') || {}).value || 'Contact from website';
-											const message = (document.getElementById('message') || {}).value || '';
-											if (!email || !message) {
-												alert('Please provide at least your email and a message.');
-												return;
-											}
-											const recipient = 'gclinkscales25@msu.idserve.net';
-											const bodyLines = [];
-											if (name) bodyLines.push('Name: ' + name);
-											bodyLines.push('Email: ' + email);
-											if (subject) bodyLines.push('Subject: ' + subject);
-											bodyLines.push('');
-											bodyLines.push(message);
-											const body = encodeURIComponent(bodyLines.join('\n'));
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-heading);
+        }
+        .contact-form input.error,
+        .contact-form textarea.error {
+            border-color: #c0392b;
+            background: #fff8f8;
+        }
 
-											// Mailto logic removed. Use Firebase backend for form submission only.
-											successMsg.style.display = 'block';
-										});
-									})();
-								</script>
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
 
+        .contact-form input[type="submit"] {
+            display: inline-block !important;
+            width: auto !important;
+            height: auto !important;
+            line-height: normal !important;
+            background: #111111 !important;
+            color: #ffffff !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 4px !important;
+            font-size: 0.9em !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.06em !important;
+            text-transform: none !important;
+            padding: 0.8em 1.75em !important;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
 
-							</article>
+        .contact-form input[type="submit"]:hover {
+            background: #333333;
+        }
 
-					</div>
+        .form-success {
+            display: none;
+        }
+        .form-success-heading {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--color-heading);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 0.3em;
+        }
+        .form-success-sub {
+            font-size: 1.05em;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
 
-				<!-- Sidebar -->
-					<section id="sidebar">
+        @media (max-width: 600px) {
+            #main {
+                padding-top: 4em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
+            .contact-title {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "George Clinkscales Jr.",
+        "jobTitle": "Software Engineer",
+        "url": "https://geoclink.github.io/portfolio/contact.html",
+        "sameAs": [
+            "https://github.com/geoClink",
+            "https://www.linkedin.com/in/george-clinkscales/"
+        ]
+    }
+    </script>
+</head>
+<body class="is-preload">
 
-					</section>
+    <!-- Header -->
+    <header id="header">
+        <h1>Contact</h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button">Case Studies</a></li>
+                <li><a href="contributions.html" class="button">Open Source</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button active" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contributions.html">Open Source</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
 
-			</div>
+    <div id="main" role="main">
 
-		<!-- Footer -->
-			<section id="footer">
-	<div class="footer-inner">
-		<div class="footer-brand">
-			<strong>George Clinkscales Jr.</strong>
-			<span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
-		</div>
-		<nav class="footer-nav">
-			<a href="index.html">Home</a>
-			<a href="about.html">About</a>
-			<a href="case-studies.html">Case Studies</a>
-			<a href="contributions.html">Open Source</a>
-			<a href="resume.html">Resume</a>
-			<a href="contact.html">Contact</a>
-		</nav>
-		<ul class="footer-social icons">
-			<li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-			<li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-		</ul>
-	</div>
-	<div class="footer-bottom">
-		<p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
-	</div>
-</section>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-tagline">Open to full-time iOS and full stack roles, freelance projects, and collaborations. Reach out directly or use the form below.</p>
 
-<style>
-#footer {
-	background: #f9f9f9;
-	border-top: 1px solid #e5e5e5;
-	margin-top: 4em;
-	padding: 0;
-}
-.footer-inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 1.5em;
-	padding: 2em 2.5em;
-	max-width: 1100px;
-	margin: 0 auto;
-}
-.footer-brand {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25em;
-}
-.footer-brand strong {
-	font-size: 1em;
-	color: #222;
-}
-.footer-brand span {
-	font-size: 0.82em;
-	color: #888;
-}
-.footer-nav {
-	display: flex;
-	gap: 1.5em;
-	flex-wrap: wrap;
-}
-.footer-nav a {
-	font-size: 0.88em;
-	color: #555;
-	text-decoration: none;
-	border-bottom: none;
-}
-.footer-nav a:hover {
-	color: #60443f;
-}
-.footer-social {
-	display: flex;
-	gap: 1em;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.footer-social li a {
-	font-size: 1.3em;
-	color: #888;
-}
-.footer-social li a:hover {
-	color: #60443f;
-}
-.footer-bottom {
-	border-top: 1px solid #e5e5e5;
-	text-align: center;
-	padding: 0.9em 2em;
-}
-.footer-bottom p {
-	margin: 0;
-	font-size: 0.82em;
-	color: #aaa;
-}
-.footer-bottom a {
-	color: #aaa;
-	text-decoration: underline;
-}
-@media (max-width: 700px) {
-	.footer-inner {
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 1.5em;
-	}
-	.footer-nav {
-		gap: 1em;
-	}
-}
-</style>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/george-clinkscales/" class="button" target="_blank" rel="noopener noreferrer">LinkedIn <i class="icon brands fa-linkedin"></i></a>
+            <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="icon brands fa-github"></i></a>
+        </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-    <!-- Firebase SDK and config -->
-    <script type="module">
-			// Import the functions you need from the SDKs you need
-			import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-			import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
-			import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+        <span class="contact-form-label">Send a message</span>
 
-			// Your web app's Firebase configuration
-			const firebaseConfig = {
-				apiKey: "AIzaSyCxL4L3o5xwq1EC6J1tv29QydvRwOsWcCY",
-				authDomain: "myportfolio-ca535.firebaseapp.com",
-				projectId: "myportfolio-ca535",
-				storageBucket: "myportfolio-ca535.firebasestorage.app",
-				messagingSenderId: "195896949757",
-				appId: "1:195896949757:web:8f754054fb2df5dba1b794"
-			};
+        <div id="form-success" class="form-success">
+            <p class="form-success-heading">Thanks, I'll be in touch.</p>
+            <p class="form-success-sub">I typically respond within a day or two.</p>
+        </div>
 
-			// Initialize Firebase
-			const app = initializeApp(firebaseConfig);
-			const db = getFirestore(app);
-			const analytics = getAnalytics(app);
+        <form id="contactForm" class="contact-form">
+            <input type="text" name="name" id="name" placeholder="Your Name" />
+            <input type="email" name="email" id="email" placeholder="Your Email" />
+            <input type="text" name="subject" id="subject" placeholder="Subject" />
+            <textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+            <input type="submit" value="Send Message" />
+        </form>
 
-			// Handle contact form submission and custom analytics events
-			document.addEventListener('DOMContentLoaded', () => {
-				const form = document.getElementById('contactForm');
-				const analytics = getAnalytics(app);
-				// Track form submission
-				if (form) {
-					form.addEventListener('submit', async (e) => {
-						e.preventDefault();
-						const name = document.getElementById('name').value;
-						const email = document.getElementById('email').value;
-						const subject = document.getElementById('subject').value;
-						const message = document.getElementById('message').value;
-						try {
-							await addDoc(collection(db, 'contacts'), {
-								name,
-								email,
-								subject,
-								message,
-								timestamp: serverTimestamp()
-							});
-							// Track form submission event
-							if (window.firebase && window.firebase.analytics) {
-								window.firebase.analytics().logEvent('contact_form_submitted', {
-									name,
-									email,
-									subject
-								});
-							}
-							const successMsg = document.getElementById('form-success');
-							if (successMsg) {
-								successMsg.style.display = 'block';
-								successMsg.style.opacity = '1';
-								setTimeout(() => {
-									successMsg.style.opacity = '0';
-									setTimeout(() => { successMsg.style.display = 'none'; }, 400);
-								}, 3500);
-							}
-							form.reset();
-						} catch (err) {
-							alert('Error sending message: ' + err.message);
-						}
-					});
-				}
-				// Track button clicks
-				document.querySelectorAll('a.button').forEach(btn => {
-					btn.addEventListener('click', () => {
-						if (window.firebase && window.firebase.analytics) {
-							window.firebase.analytics().logEvent('button_click', {
-								label: btn.textContent.trim()
-							});
-						}
-					});
-				});
-				// Track file uploads
-				// Project brief upload logic removed.
-				// Track blog post views (example for blog.html)
-				if (window.location.pathname.includes('blog-post')) {
-					if (window.firebase && window.firebase.analytics) {
-						window.firebase.analytics().logEvent('blog_post_view', {
-							url: window.location.pathname
-						});
-					}
-				}
-			});
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Detroit, MI &middot; iOS &amp; Full Stack Engineer</span>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+        <div class="footer-cta">
+            <p>Open to freelance &amp; full-time roles &mdash; <a href="contact.html">Get in touch &rarr;</a></p>
+        </div>
+        <p class="footer-copy">&copy; 2026 George Clinkscales Jr.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        function sanitize(value, maxLength) {
+            return value
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#x27;')
+                .trim()
+                .slice(0, maxLength);
+        }
+
+        const requiredFields = ['email', 'message'];
+        requiredFields.forEach(function (id) {
+            document.getElementById(id).addEventListener('input', function () {
+                this.classList.remove('error');
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            let valid = true;
+            requiredFields.forEach(function (id) {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    valid = false;
+                }
+            });
+            if (!valid) return;
+
+            const data = {
+                name:    sanitize(document.getElementById('name').value, 100),
+                email:   sanitize(document.getElementById('email').value, 200),
+                subject: sanitize(document.getElementById('subject').value, 200),
+                message: sanitize(document.getElementById('message').value, 2000)
+            };
+            try {
+                const res = await fetch('https://formspree.io/f/mgojabvq', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (res.ok) {
+                    const form = e.target;
+                    const successMsg = document.getElementById('form-success');
+                    form.style.transition = 'opacity 0.3s ease';
+                    form.style.opacity = '0';
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        document.querySelector('.contact-form-label').style.display = 'none';
+                        successMsg.style.display = 'block';
+                        successMsg.style.opacity = '0';
+                        successMsg.style.transition = 'opacity 0.4s ease';
+                        requestAnimationFrame(() => { successMsg.style.opacity = '1'; });
+                    }, 300);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                alert('Could not send message. Check your connection and try again.');
+            }
+        });
     </script>
 
-		<!-- Scroll depth and time-on-page tracking -->
-			<script>
-			let maxScroll = 0;
-			let startTime = Date.now();
-			window.addEventListener('scroll', () => {
-				const scrollDepth = window.scrollY + window.innerHeight;
-				if (scrollDepth > maxScroll) {
-					maxScroll = scrollDepth;
-				}
-			});
-			function sendUserMetrics() {
-				const endTime = Date.now();
-				const timeOnScreen = Math.round((endTime - startTime) / 1000);
-				if (window.firebase && window.firebase.firestore) {
-					try {
-						const db = window.firebase.firestore();
-						db.collection('userMetrics').add({
-							scrollDepth: maxScroll,
-							timeOnScreen: timeOnScreen,
-							timestamp: new Date(),
-							page: document.title,
-							device: navigator.userAgent,
-							screen: { width: window.innerWidth, height: window.innerHeight }
-						});
-					} catch (err) {}
-				}
-				if (typeof addDoc === 'function' && typeof collection === 'function' && typeof db !== 'undefined') {
-					addDoc(collection(db, 'userMetrics'), {
-						scrollDepth: maxScroll,
-						timeOnScreen: timeOnScreen,
-						timestamp: new Date().toISOString(),
-						page: document.title,
-						device: navigator.userAgent,
-						screen: { width: window.innerWidth, height: window.innerHeight }
-					}).catch(() => {});
-				}
-				if (typeof analytics !== 'undefined' && analytics && typeof analytics.logEvent === 'function') {
-					analytics.logEvent('user_metrics', {
-						scroll_depth: maxScroll,
-						time_on_screen: timeOnScreen,
-						page: document.title,
-						device: navigator.userAgent,
-						screen_width: window.innerWidth,
-						screen_height: window.innerHeight
-					});
-				}
-			}
-			window.addEventListener('beforeunload', sendUserMetrics);
-
-			// Button click tracking
-			function trackButtonClick(e) {
-				if (window.firebase && window.firebase.firestore) {
-					try {
-						const db = window.firebase.firestore();
-						db.collection('userEvents').add({
-							event: 'button_click',
-							label: e.target.textContent.trim(),
-							page: document.title,
-							timestamp: new Date()
-						});
-					} catch (err) {}
-				}
-			}
-			document.querySelectorAll('button, .button, .card-cta').forEach(btn => {
-				btn.addEventListener('click', trackButtonClick);
-			});
-
-			// External link click tracking
-			function trackExternalLink(e) {
-				const href = e.target.href || e.target.closest('a')?.href;
-				if (href && (href.includes('github.com') || href.includes('linkedin.com') || href.includes('apps.apple.com') || href.includes('testflight.apple.com'))) {
-					if (window.firebase && window.firebase.firestore) {
-						try {
-							const db = window.firebase.firestore();
-							db.collection('userEvents').add({
-								event: 'external_link_click',
-								url: href,
-								label: e.target.textContent.trim(),
-								page: document.title,
-								timestamp: new Date()
-							});
-						} catch (err) {}
-					}
-				}
-			}
-			document.querySelectorAll('a').forEach(link => {
-				link.addEventListener('click', trackExternalLink);
-			});
-
-			// Section visibility tracking
-			function trackSectionVisibility(sectionId) {
-				if (window.firebase && window.firebase.firestore) {
-					try {
-						const db = window.firebase.firestore();
-						db.collection('userEvents').add({
-							event: 'section_visible',
-							section: sectionId,
-							page: document.title,
-							timestamp: new Date()
-						});
-					} catch (err) {}
-				}
-			}
-			['testimonials-section','featured-projects','contact-section','intro-section'].forEach(id => {
-				const section = document.getElementById(id);
-				if (section) {
-					const observer = new IntersectionObserver(entries => {
-						entries.forEach(entry => {
-							if (entry.isIntersecting) {
-								trackSectionVisibility(id);
-							}
-						});
-					}, { threshold: 0.2 });
-					observer.observe(section);
-				}
-			});
-
-			// Form submission tracking
-			function trackFormSubmit(e) {
-				if (window.firebase && window.firebase.firestore) {
-					try {
-						const db = window.firebase.firestore();
-						db.collection('userEvents').add({
-							event: 'form_submit',
-							form: e.target.id || e.target.name || 'unknown',
-							page: document.title,
-							timestamp: new Date()
-						});
-					} catch (err) {}
-				}
-			}
-			document.querySelectorAll('form').forEach(form => {
-				form.addEventListener('submit', trackFormSubmit);
-			});
-			</script>
-
-	</body>
+</body>
 </html>

@@ -1,704 +1,621 @@
 <!DOCTYPE HTML>
-<!-- About page: Learn more about George Clinkscales Jr., his values, and background. -->
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-    Template credits and license info.
--->
 <html lang="en">
-<!-- The <head> section contains metadata, page title, and links to stylesheets. -->
-	<head>
-		<title>About | George Clinkscales Jr.</title>
-		<meta charset="utf-8" />
-		<link rel="canonical" href="https://geoclink.github.io/portfolio/about.html" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="About George Clinkscales Jr. — Software Engineer, co-founder of CH Studios LLC, and iOS/web engineer based in Detroit. CSU graduate, Apple Developer Academy." />
-		<meta property="og:title" content="About | George Clinkscales Jr." />
-		<meta property="og:description" content="Software Engineer and co-founder of CH Studios LLC. CSU graduate turned iOS and web engineer, building accessible products in Detroit." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://geoclink.github.io/portfolio/about.html" />
-		<meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="About | George Clinkscales Jr." />
-		<meta name="twitter:description" content="Software Engineer and co-founder of CH Studios LLC. CSU graduate turned iOS and web engineer, building accessible products in Detroit." />
-		<meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-		<style>
-        /* Custom styles for beliefs grid and cards. */
-			.beliefs-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1.5em;
-				margin-top: 2em;
-			}
-			.belief-card {
-				background: white;
-				position: relative;
-				padding: 2em 2em 2em 1.25em;
-				border-radius: 8px;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-				transition: all 0.3s ease;
-			}
-			.belief-card::before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 8px;
-				bottom: 8px;
-				width: 8px;
-				border-radius: 4px;
-				background: var(--accent-gradient);
-			}
-			.belief-card:hover {
-				box-shadow: 0 4px 16px rgba(0, 132, 214, 0.15);
-				transform: translateY(-2px);
-			}
-			.belief-card p {
-				margin: 0;
-				font-size: 1.05em;
-				line-height: 1.6;
-				color: #333;
-			}
-			@media (max-width: 768px) {
-				.beliefs-grid {
-					grid-template-columns: 1fr;
-					gap: 1.2em;
-				}
-				.belief-card {
-					padding: 1.5em;
-				}
-			}
+<head>
+    <title>About | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/about.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About George Clinkscales Jr. — Software Engineer, co-founder of CH Studios LLC, and iOS/web engineer based in Detroit." />
+    <meta property="og:title" content="About | George Clinkscales Jr." />
+    <meta property="og:description" content="Software Engineer and co-founder of CH Studios LLC. CSU graduate turned iOS and web engineer, building accessible products in Detroit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/about.html" />
+    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Software Engineer and co-founder of CH Studios LLC. CSU graduate turned iOS and web engineer, building accessible products in Detroit." />
+    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/logo.jpg" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .about-title {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 0.3em;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
 
-				/* About page: two-column layout for image + text */
-				.about-grid {
-					margin-top: 1em;
-				}
-				.about-image {
-					display: none;
-				}
-				.story-inner::after {
-					content: '';
-					display: table;
-					clear: both;
-				}
-				.story-inner img {
-					float: left;
-					width: 220px;
-					height: 260px;
-					margin-right: 1.5em;
-					margin-bottom: 0.5em;
-					border-radius: 8px;
-					box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-					object-fit: cover;
-					object-position: top center;
-				}
-				@media (max-width: 600px) {
-					.story-inner img {
-						float: none;
-						width: 100%;
-						height: auto;
-						margin-right: 0;
-					}
-				}
-				.about-image img {
-					width: 100%;
-					height: auto;
-					border-radius: 8px;
-					box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-				}
-				.about-text p {
-					margin-bottom: 1.1em;
-				}
-				.about-section {
-					background: #fff;
-					padding: 1.35em 1.25em 1.15em;
-					border-radius: 8px;
-					box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-					margin-bottom: 1.2em;
-				}
-				.about-section h3 {
-					margin-top: 0;
-					margin-bottom: 0.65em;
-					font-size: 1.25em;
-				}
-				.about-section p {
-					font-size: 1em;
-				}
-				
-				.about-section p:last-child {
-					margin-bottom: 0;
-				}
-				.about-highlights {
-					margin: 0.6em 0 0.1em;
-					padding-left: 1.2em;
-				}
-				.about-highlights li {
-					margin-bottom: 0.5em;
-				}
-				@media (max-width: 880px) {
-					.about-image {
-						float: none;
-						width: 100%;
-						max-width: 340px;
-						margin: 0 0 0.9em;
-					}
-					.about-section {
-						padding: 1.1em 1em 0.95em;
-					}
-				}
-		.seeking-callout {
-				background: #f5fffe;
-				border-left: 3px solid #2ebaae;
-				border-radius: 0 6px 6px 0;
-				padding: 0.75em 1em;
-				margin-top: 1.2em;
-			}
-			.seeking-callout a {
-				color: #2ebaae;
-				font-weight: 600;
-			}
-		</style>
-		<script type="application/ld+json">
-		{
-		   "@context": "https://schema.org",
-		   "@type": "Person",
-		   "name": "George Clinkscales Jr.",
-		   "jobTitle": "Software Engineer",
-		   "url": "https://geoclink.github.io/portfolio/about.html",
-		   "sameAs": [
-		      "https://github.com/geoClink",
-		      "https://www.linkedin.com/in/george-clinkscales/"
-		   ],
-		   "knowsAbout": [
-		      "iOS Development",
-		      "SwiftUI",
-		      "Python",
-		      "FastAPI",
-		      "CoreML",
-		      "Web Development"
-		   ]
-		}
-		</script>
-	</head>
-	<body class="is-preload">
+        .about-tagline {
+            font-size: 1.05em;
+            color: var(--color-text-muted);
+            margin: 0 0 3em;
+            line-height: 1.6;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        .about-section {
+            margin-bottom: 3em;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<h1>About</h1>
-						<!-- Menu button for mobile -->
-						<button id="menuToggle" aria-label="Open menu" class="menu-btn">
-							<span class="menu-icon">
-								<span></span>
-							</span>
-						</button>
-						<nav class="links">
-							<ul>
-<li><a href="index.html" class="button">Home</a></li>
-<li><a href="about.html" class="button active" aria-current="page">About</a></li>
-<li><a href="case-studies.html" class="button">Case Studies</a></li>
-<li><a href="contributions.html" class="button">Open Source</a></li>
-<li><a href="resume.html" class="button">Resume</a></li>
-							<li><a href="contact.html" class="button">Contact</a></li>
-							</ul>
-						</nav>
-						<!-- Sidebar menu -->
-						<aside id="sidebarMenu" class="sidebar-menu">
-							<nav>
-								<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="case-studies.html">Case Studies</a></li>
-<li><a href="contributions.html">Open Source</a></li>
-<li><a href="resume.html">Resume</a></li>
-							<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</nav>
-						</aside>
-					</header>
+        .about-section h3 {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin: 0 0 1.25em;
+            padding-bottom: 0.75em;
+            border-bottom: 1px solid var(--color-border);
+        }
 
-				<!-- Main -->
-					<div id="main" role="main">
+        .about-section p {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin: 0 0 1em;
+        }
 
-						<!-- About Section -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2>About Me</h2>
-									</div>
-								</header>
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
 
-								<section>
-									<div class="about-grid">
-										<div class="about-image">
-											<img src="assets/images/myself.webp" alt="George Clinkscales Jr." width="800" height="1199" />
-										</div>
-										<div class="about-text">
-											<div class="about-section">
-												<div class="story-inner">
-												<img src="assets/images/myself.webp" alt="George Clinkscales Jr." width="800" height="1199" />
-												<div>
-												<h3 style="margin-top:0;">My Story</h3>
-																								<p>I’m a Colorado State University graduate turned full-stack engineer, recently graduated from the MSU Apple Developer Academy in Detroit. My transition into software was driven by curiosity and a desire to build things that are genuinely useful — products that feel intuitive, accessible, and well-crafted from day one.</p>
+        .about-section ul {
+            font-size: 0.95em;
+            line-height: 1.75;
+            color: var(--color-text);
+            padding-left: 1.25em;
+            margin: 0 0 1em;
+        }
 
-												<p>In under a year I’ve shipped three apps to the App Store, contributed to open source projects across Python, Go, TypeScript, and Vue.js, and built production AI integrations that put real businesses inside conversational AI interfaces. I co-founded CH Studios LLC to build vertical SaaS platforms for Detroit small businesses — and shipped WebMCP the same week Google announced it at I/O 2026.</p>
+        .about-section li {
+            margin-bottom: 0.5em;
+        }
 
-												<p>My most distinctive work sits at the intersection of AI and product: I architected an MCP server that lets customers browse menus and place orders through Claude, and a WebMCP integration that makes storefronts queryable by Gemini directly from Chrome — no API connection required. I also contract as a cross-platform engineer at Tripsetta, maintaining and shipping features across iOS, Android, and web for an early-stage travel startup.</p>
+        /* Story image */
+        .story-inner {
+            display: flex;
+            gap: 2em;
+            align-items: flex-start;
+        }
 
-																					<p>Outside of code I ride bikes, explore Detroit restaurants, volunteer at local food banks, and plant trees with The Greening of Detroit — experiences that keep me connected to the community I’m building for.</p>
+        .story-inner img {
+            width: 180px;
+            height: 220px;
+            border-radius: 8px;
+            object-fit: cover;
+            object-position: top center;
+            flex-shrink: 0;
+        }
 
-												<p class="seeking-callout"><strong>Currently seeking</strong> full-time web or iOS developer roles — ideally on teams building products that serve real people. <a href="contact.html">Let’s connect.</a></p>
-												</div>
-												</div>
+        .story-text {
+            flex: 1;
+            min-width: 0;
+        }
 
-												</div>
+        @media (max-width: 600px) {
+            .story-inner {
+                flex-direction: column;
+            }
 
-												<div class="about-section">
-													<h3>Working With Me</h3>
-													<ul style="margin-bottom:1em;">
-														<li><strong>Operating Environment:</strong> Adaptable, comfortable in open/public spaces, and value flow state. Punctual and respectful of team time.</li>
-														<li><strong>Hours:</strong> Generally 9:30 AM – 5:30 PM, but flexible for project needs.</li>
-														<li><strong>Communication:</strong> Mobile-first (text is fastest), I prefer written feedback, and values clear, actionable direction.</li>
-														<li><strong>Learning Style:</strong> Visual, hands-on, and self-sufficient. I love cheat sheets and trial-and-error until mastery.</li>
-														<li><strong>Strengths:</strong> Adaptability, reliability, and organization.</li>
-														<li><strong>Struggles:</strong> Vague instructions and instant mastery without examples.</li>
-														<li><strong>Philosophy:</strong> “To be early is to be on time.” “Measure twice, cut once.”</li>
-														<li><strong>Personal Interests:</strong> Cycling, food, Detroit Tigers, Zelda, and music (Billie Eilish, Eminem, more).</li>
-													</ul>
-													<a href="assets/docs/USERMANUAL.pdf" class="button" target="_blank" rel="noopener">Download PDF User Manual <i class='fa fa-download' style='margin-left:4px;'></i></a>
-												</div>
+            .story-inner img {
+                width: 100%;
+                height: 260px;
+            }
 
-												<div class="about-section">
-													<h3>What I Build</h3>
-														<p>I build full-stack web platforms and SwiftUI iOS apps with an emphasis on accessibility, interaction design, and maintainable architecture. I care about products that feel intuitive on day one and scale with real user needs.</p>
-														<p><strong>Web and backend:</strong></p>
-														<ul class="about-highlights">
-															<li>Full-stack Node.js/Express platforms with Supabase, PostgreSQL, Stripe, and Twilio</li>
-															<li>AI-accessible systems using Anthropic MCP SDK and Google WebMCP</li>
-															<li>Admin dashboards covering orders, inventory, analytics, CMS, and customer management</li>
-															<li>Payment flows including subscriptions, gift cards, deposits, and webhook-driven fulfillment</li>
-														</ul>
-														<p><strong>iOS:</strong></p>
-														<ul class="about-highlights">
-															<li>SwiftUI app development with CoreML, SpriteKit, SwiftData, and WidgetKit</li>
-															<li>Cross-platform UX for iPad and macOS including full keyboard compatibility</li>
-															<li>Accessibility-first development with VoiceOver, Dynamic Type, and Live Activities</li>
-															<li>On-device ML inference with XGBoost and ONNX</li>
-														</ul>
-													</div>
-											</div>
+            .about-title {
+                font-size: 1.8em;
+            }
+        }
 
-											<div class="about-section">
-												<h3>How I Learned</h3>
-												<p>I didn’t learn from a formal curriculum — I learned by doing. I’ve spent hours in browser DevTools inspecting how real sites work, breaking things apart and rebuilding them. I watch tutorials, then immediately apply what I learned to real projects. When I hit a wall, I don’t stop — I dig in, try every angle, and figure it out. That’s how I’ve picked up SwiftUI, web development, AI tooling, and everything in between.</p>
-											</div>
-											<div class="about-section">
-												<h3>My Tech Journey</h3>
-													<ul class="simple-timeline" style="list-style:none;padding-left:0;margin:2em 0;">
-																										<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-																											<span style="font-size:2em;margin-right:1em;">✈️</span>
-																											<div>
-																												<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Apr 2026: Turned pro</div>
-																												<div style="color:#887c73;font-size:1em;">First paid software contract. Brought on as Cross-Platform Engineer at Tripsetta to maintain and ship features across iOS, Android, and web for a live travel startup.</div>
-																												<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																													<strong>Company:</strong> <a href="https://tripsetta.com/" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">Tripsetta</a><br>
-																													<strong>Role:</strong> Cross-Platform Engineer<br>
-																													<strong>Location:</strong> Detroit, MI<br>
-																													<strong>Type:</strong> Part-time contract<br>
-																													<strong>About:</strong> Contracted to maintain and deliver feature updates across iOS, Android, and web, working directly with the founder across the full product surface.<br>
-																													<strong>Significance:</strong> First paid software contract — first time being trusted to keep a real company’s live products running for real users.
-																												</div>
-																											</div>
-																											<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-																										</li>
+        /* Seeking callout */
+        .seeking-callout {
+            font-size: 0.9em !important;
+            color: var(--color-text-muted) !important;
+            border-left: 2px solid var(--color-heading);
+            padding-left: 1em;
+            margin-top: 1.5em !important;
+        }
 
-																										<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-																											<span style="font-size:2em;margin-right:1em;">🏢</span>
-																											<div>
-																												<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Apr 2026: Co-founded CH Studios Detroit</div>
-																												<div style="color:#887c73;font-size:1em;">Software Studio · Est. 2026</div>
-																												<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																													<strong>Studio:</strong> <a href="https://geoclink.github.io/ch-studios/index.html" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">CH Studios Detroit</a><br>
-																													<strong>Type:</strong> LLC · Software Studio<br>
-																													<strong>Location:</strong> Detroit, Michigan<br>
-																													<strong>Founded:</strong> 2026<br>
-																													<strong>About:</strong> A Detroit-based software studio crafting mobile apps and full stack products.<br>
-																													<strong>Role:</strong> Co-founder
-																												</div>
-																											</div>
-																											<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-																										</li>
+        .seeking-callout a {
+            color: var(--color-heading);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+            transition: border-color 0.2s ease;
+        }
 
-																										<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-																											<span style="font-size:2em;margin-right:1em;">🐦</span>
-																											<div>
-																												<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Apr 2026: Published TakeFlight to the App Store</div>
-																												<div style="color:#887c73;font-size:1em;">Second app live — a SpriteKit survival game for iPad and macOS.</div>
-																												<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																													<a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">TakeFlight — A Bird's Life</a><br>
-																													<strong>Platform:</strong> iPadOS &amp; macOS (SpriteKit)<br>
-																													<strong>Type:</strong> Survival game where players build a nest, protect their flock, and escape Belle Isle through four interconnected mini-games.<br>
-																													<strong>Role:</strong> Co-developer on a small team — game systems, mini-game design, and release.<br>
-																													<strong>Key Features:</strong>
-																													<ul style="margin:0 0 0 1em;padding:0;">
-																														<li>Four connected mini-games in a cohesive survival narrative</li>
-																														<li>Full keyboard support for iPad and macOS</li>
-																														<li>SpriteKit physics and game loop architecture</li>
-																														<li>Cross-platform design: iPadOS and macOS from a single codebase</li>
-																													</ul>
-																													<strong>Outcome:</strong> Second app shipped to the App Store — now with two live iOS/macOS apps as an early-career developer.
-																												</div>
-																											</div>
-																											<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-																										</li>
-																																						   <li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-																																							   <span style="font-size:2em;margin-right:1em;">📜</span>
-																																							   <div>
-																																								   <div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Mar 2026: Earned Apple Ads Certification</div>
-																																								   <div style="color:#887c73;font-size:1em;">Completed the Apple Ads Certification exam and earned my official certificate.</div>
-																																								   <div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																																									<strong>Certificate:</strong> <a href="https://searchads.apple.com/certification/" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">Apple Ads Certification (Official Site)</a><br>
-																																										<strong>Date:</strong> March 2026<br>
-																																										<strong>Focus:</strong> App Store marketing, campaign setup, optimization, and analytics.<br>
-																																										<strong>Outcome:</strong> Gained expertise in driving app growth and visibility through Apple Ads, supporting future product launches and marketing efforts.<br>
-																																										<div style="margin-top:1em;">
-																																										  <img src="assets/images/Apple_Ads_Certification.png" alt="Apple Ads Certification badge" style="width:150px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:0.7em;display:block;margin-left:auto;margin-right:auto;" width="13750" height="10625" />
-																																										  <div style="font-size:1em;color:#222;font-weight:500;text-align:center;">Apple Ads Certification Badge</div>
-																																										</div>
-																																								   </div>
-																																							   </div>
-																																							   <span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-																																						   </li>
-													<!-- ...existing code... -->
-													<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-																	<script>
-																	function openAppleAcademyTimeline() {
-																		var card = document.getElementById('apple-academy-timeline');
-																		if (card) {
-																			card.scrollIntoView({behavior:'smooth',block:'center'});
-																			var details = card.querySelector('.timeline-details');
-																			if (details && details.style.display !== 'block') {
-																				details.style.display = 'block';
-																			}
-																			var arrow = card.querySelector('.timeline-arrow');
-																			if (arrow) {
-																				arrow.textContent = '-';
-																			}
-																		}
-																	}
-																	</script>
-														<span style="font-size:2em;margin-right:1em;">📱</span>
-														<div>
-															<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Mar 2026: Published first app to App Store</div>
-															<div style="color:#887c73;font-size:1em;">Launched my first iOS app for real users.</div>
-															<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																<a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">Stamped! A City Passport</a><br>
-																<strong>Platform:</strong> iOS (SwiftUI)<br>
-																<strong>Type:</strong> Educational travel companion focused on architecture discovery and gamified learning.<br>
-																<strong>Role:</strong> Solo product designer and iOS developer (concept, design, implementation, release).<br>
-																<strong>Timeline:</strong> Nov 2025 - Feb 2026<br>
-																<strong>Key Features:</strong>
-																<ul style="margin:0 0 0 1em;padding:0;">
-																	<li>Global city explorer with hierarchical grouping and mixed search</li>
-																	<li>Passport gallery with mastery tiers and celebratory stamp animations</li>
-																	<li>City detail module with landmark check-ins, custom photo capture/upload, and local travel info</li>
-																	<li>Interactive quiz mode with multiple question types, hints, high-score persistence, streak logic, voice input, haptics, and audio feedback</li>
-																	<li>AI-curated itinerary cards with Apple Intelligence integration and graceful fallback content</li>
-																	<li>Offline currency conversion support</li>
-																	<li>Accessibility-focused UX: high contrast, reduced motion, audio/haptic controls, dark mode</li>
-																</ul>
-																<strong>Technical Highlights:</strong> Modular SwiftUI architecture, state persistence, AI integration, adaptive UI for iPhone/iPad.<br>
-																<strong>Outcome:</strong> Shipped as a cohesive, production-style app with full product ownership, accessibility-first settings, and TestFlight distribution.
-															</div>
-														</div>
-														<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-													</li>
-													<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-														<span style="font-size:2em;margin-right:1em;">🏆</span>
-														<div>
-															<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Feb 2026: Portfolio launched</div>
-															<div style="color:#887c73;font-size:1em;">Open to new opportunities.</div>
-															<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																<strong>Project:</strong> Personal Portfolio Website<br>
-																<strong>Platform:</strong> HTML, CSS, JavaScript<br>
-																<strong>Role:</strong> Designed and developed entire site<br>
-																<strong>Timeline:</strong> Feb 2026 - Mar 2026<br>
-																<strong>Key Actions:</strong>
-																<ul style="margin:0 0 0 1em;padding:0;">
-																	<li>Designed responsive layouts for desktop, tablet, and mobile</li>
-																	<li>Created project case studies with images, tech tags, and descriptions</li>
-																	<li>Built interactive tech journey timeline with expand/collapse milestones</li>
-																	<li>Optimized footer with social links (LinkedIn, GitHub, email)</li>
-																	<li>Enhanced styling, color hierarchy, and accessibility</li>
-																</ul>
-																<strong>Technical Highlights:</strong> Custom CSS for modern UI, Font Awesome icons, image optimization, mobile usability, iterative design.<br>
-																<strong>Outcome:</strong> Launched a professional, visually engaging portfolio to showcase projects, skills, and freelance offerings. Improved iteratively through real-world feedback and collaboration.
-															</div>
-														</div>
-														<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-													</li>
-													<li class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-														<span style="font-size:2em;margin-right:1em;">💼</span>
-														<div>
-															<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Feb 2026: Contributed to CommonSight iOS app</div>
-															<div style="color:#887c73;font-size:1em;">First professional iOS contribution; program discontinued due to funding.</div>
-															<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																<strong>Role:</strong> iOS Contributor<br>
-																<strong>Organization:</strong> We Change Community Consulting (WCCC)<br>
-																<strong>Duration:</strong> Feb 2026 – Apr 2026 · Program discontinued due to funding loss<br>
-																<strong>Project:</strong> <a href="commonsight.html" style="color:#60443f;font-weight:bold;text-decoration:underline;" target="_blank">CommonSight — Civic Infrastructure iOS App</a><br>
-																<strong>Technical Skillset:</strong> SwiftUI, Firebase, Firestore, role-based navigation, real-time document listeners, typed model layer, geolocation context, and community collaboration features.<br>
-																<strong>Key Contribution:</strong> Helped build an app demo for a business owner to show investors.
-															</div>
-														</div>
-														<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-													</li>
-													<li id="apple-academy-timeline" class="timeline-card" style="margin-bottom:2em;display:flex;align-items:flex-start;background:#f7f7f7;border-radius:10px;box-shadow:0 2px 8px rgba(96,68,63,0.08);padding:1.2em 1em;cursor:pointer;position:relative;">
-														<span style="font-size:2em;margin-right:1em;">🍏</span>
-														<div>
-															<div style="font-weight:bold;color:#60443f;font-size:1.1em;margin-bottom:0.2em;">Sep 2025: Started at Apple Developer Academy</div>
-															<div style="color:#887c73;font-size:1em;">Began formal tech education and app development journey.</div>
-															<div class="timeline-details" style="display:none;margin-top:0.7em;color:#333;font-size:0.98em;">
-																<div style="margin-bottom:0.7em;">
-																	<strong>Program:</strong> 9-month, in-person in downtown Detroit<br>
-																	<strong>Focus:</strong> Coding, design, and business fundamentals using Apple tools<br>
-																	<strong>Schedule:</strong> 20 hours/week, hands-on projects and teamwork<br>
-																</div>
-																<div style="margin-bottom:0.7em;">
-																	<span style="color:#222;font-size:0.97em;"><strong>Mentorship & CBL:</strong> The Academy emphasizes mentorship and Challenge Based Learning (CBL), encouraging students to solve real-world problems through guided teamwork and hands-on experience.</span>
-																</div>
-																<div style="margin-bottom:0.7em;">
-																	<strong>Skills:</strong> Learned Swift, UI/UX basics, collaborated on team projects in <strong>Detroit, Michigan</strong>
-																</div>
-																<div>
-																	<a href="https://developeracademy.msu.edu" target="_blank" style="color:#60443f;font-weight:bold;text-decoration:underline;">Learn more at Apple Developer Academy Detroit</a>
-																</div>
-																<div style="margin-top:1.2em;margin-bottom:0.7em;font-weight:600;color:#60443f;font-size:1.08em;">Apple Developer Academy Badges Earned:</div>
-																<div style="display:flex;flex-wrap:wrap;gap:1.5em;justify-content:center;margin-bottom:1.2em;">
-																	<div style="text-align:center;max-width:140px;">
-																		<img src="assets/images/introduction-to-game-development.webp" alt="Introduction to Game Development badge" style="width:110px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:0.5em;" width="1200" height="1200" />
-																		<div style="font-size:0.98em;color:#222;font-weight:500;">Introduction to Game Development</div>
-																	</div>
-																	<div style="text-align:center;max-width:140px;">
-																		<img src="assets/images/introduction-to-ios-app-development.webp" alt="Introduction to iOS App Development badge" style="width:110px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:0.5em;" width="1200" height="1200" />
-																		<div style="font-size:0.98em;color:#222;font-weight:500;">Introduction to iOS App Development</div>
-																	</div>
-																	<div style="text-align:center;max-width:140px;">
-																		<img src="assets/images/introduction-to-ui-design-and-swift-fundamentals.webp" alt="Fundamentals of UI Design and Swift UI badge" style="width:110px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:0.5em;" width="1200" height="1200" />
-																		<div style="font-size:0.98em;color:#222;font-weight:500;">Fundamentals of UI Design and Swift UI</div>
-																	</div>
-																	<div style="text-align:center;max-width:140px;">
-																		<img src="assets/images/introduction-to-user-centered-development.webp" alt="Introduction to User Centered Development badge" style="width:110px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:0.5em;" width="600" height="600" />
-																		<div style="font-size:0.98em;color:#222;font-weight:500;">Introduction to User Centered Development</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<span class="timeline-arrow" style="position:absolute;right:1em;top:1.2em;font-size:1.2em;color:#887c73;">+</span>
-													</li>
-												</ul>
-											</div>
+        .seeking-callout a:hover {
+            border-bottom-color: var(--color-heading);
+        }
 
-										<div class="about-section">
-											<h3>What Guides Me</h3>
-											<p>My approach is simple: understand the user context, build with intention, and ship work that is clear to both users and stakeholders. Accessibility, clarity, and thoughtful details are not extras; they are the work.</p>
-											<div class="beliefs-grid">
-												<div class="belief-card">
-													<p>I believe strong products start with user empathy and are sustained by clean, reliable implementation.</p>
-												</div>
-												<div class="belief-card">
-													<p>I believe design should reduce friction, clarify decisions, and make complex systems feel simple.</p>
-												</div>
-												<div class="belief-card">
-													<p>I believe accessibility should be integrated from the first prototype through final iteration.</p>
-												</div>
-												<div class="belief-card">
-													<p>I believe great software respects platform strengths and meets people where they are across devices.</p>
-												</div>
-											</div>
-									</div>
+        /* Download button */
+        .about-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            height: auto !important;
+            line-height: normal !important;
+            font-size: 0.9em !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            letter-spacing: 0.04em !important;
+            padding: 0.7em 1.2em !important;
+            border-radius: 4px !important;
+            box-shadow: inset 0 0 0 1.5px var(--color-border) !important;
+            gap: 0.45em;
+            margin-top: 1.25em;
+            transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+        }
 
+        .about-btn:hover {
+            background: #333 !important;
+            color: #fff !important;
+            box-shadow: inset 0 0 0 1.5px #333 !important;
+        }
 
-								</section>
+        /* Timeline */
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-							</article>
+        .timeline-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+            background: var(--color-surface);
+            border-radius: 8px;
+            padding: 1.1em 2.5em 1.1em 1.1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            position: relative;
+            transition: box-shadow 0.2s ease;
+        }
 
-					</div>
+        .timeline-card:hover {
+            box-shadow: 0 4px 12px var(--color-shadow);
+        }
 
-<!-- Footer -->
-<section id="footer">
-	<div class="footer-inner">
-		<div class="footer-brand">
-			<strong>George Clinkscales Jr.</strong>
-			<span>Full Stack Engineer &middot; CH Studios LLC &middot; Detroit, MI</span>
-		</div>
-		<nav class="footer-nav">
-			<a href="index.html">Home</a>
-			<a href="about.html">About</a>
-			<a href="case-studies.html">Case Studies</a>
-			<a href="contributions.html">Open Source</a>
-			<a href="resume.html">Resume</a>
-			<a href="contact.html">Contact</a>
-		</nav>
-		<ul class="footer-social icons">
-			<li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-			<li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-		</ul>
-	</div>
-	<div class="footer-bottom">
-		<p>&copy; George Clinkscales Jr. &middot; <a href="privacy.html">Privacy Policy</a></p>
-	</div>
-</section>
+        .timeline-icon {
+            font-size: 1.6em;
+            flex-shrink: 0;
+            line-height: 1;
+            margin-top: 0.1em;
+        }
 
-<style>
-#footer {
-	background: #f9f9f9;
-	border-top: 1px solid #e5e5e5;
-	margin-top: 4em;
-	padding: 0;
-}
-.footer-inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 1.5em;
-	padding: 2em 2.5em;
-	max-width: 1100px;
-	margin: 0 auto;
-}
-.footer-brand {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25em;
-}
-.footer-brand strong {
-	font-size: 1em;
-	color: #222;
-}
-.footer-brand span {
-	font-size: 0.82em;
-	color: #888;
-}
-.footer-nav {
-	display: flex;
-	gap: 1.5em;
-	flex-wrap: wrap;
-}
-.footer-nav a {
-	font-size: 0.88em;
-	color: #555;
-	text-decoration: none;
-	border-bottom: none;
-}
-.footer-nav a:hover {
-	color: #60443f;
-}
-.footer-social {
-	display: flex;
-	gap: 1em;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.footer-social li a {
-	font-size: 1.3em;
-	color: #888;
-}
-.footer-social li a:hover {
-	color: #60443f;
-}
-.footer-bottom {
-	border-top: 1px solid #e5e5e5;
-	text-align: center;
-	padding: 0.9em 2em;
-}
-.footer-bottom p {
-	margin: 0;
-	font-size: 0.82em;
-	color: #aaa;
-}
-.footer-bottom a {
-	color: #aaa;
-	text-decoration: underline;
-}
-@media (max-width: 700px) {
-	.footer-inner {
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 1.5em;
-	}
-	.footer-nav {
-		gap: 1em;
-	}
-}
-</style>
+        .timeline-title {
+            font-weight: 700;
+            color: var(--color-heading);
+            font-size: 0.95em;
+            margin-bottom: 0.2em;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script type="module">
-				import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-				import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-				const firebaseConfig = {
-					apiKey: "AIzaSyCxL4L3o5xwq1EC6J1tv29QydvRwOsWcCY",
-					authDomain: "myportfolio-ca535.firebaseapp.com",
-					projectId: "myportfolio-ca535",
-					storageBucket: "myportfolio-ca535.firebasestorage.app",
-					messagingSenderId: "195896949757",
-					appId: "1:195896949757:web:8f754054fb2df5dba1b794"
-				};
-				const app = initializeApp(firebaseConfig);
-				const analytics = getAnalytics(app);
-				// Track about page view
-				document.addEventListener('DOMContentLoaded', () => {
-					if (window.firebase && window.firebase.analytics) {
-						window.firebase.analytics().logEvent('about_page_view', {
-							url: window.location.pathname
-						});
-					}
-				});
-			</script>
-			<script>
-			function updateLocalTime() {
-				const now = new Date();
-				let offset = -5;
-				const jan = new Date(now.getFullYear(), 0, 1);
-				const jul = new Date(now.getFullYear(), 6, 1);
-				const stdTimezoneOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-				if (now.getTimezoneOffset() < stdTimezoneOffset) offset = -4;
-				const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-				const est = new Date(utc + (3600000 * offset));
-				const timeString = est.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-				document.getElementById('local-time').textContent = timeString;
-			}
-			setInterval(updateLocalTime, 1000);
-			updateLocalTime();
-			</script>
-			<script>
-// Timeline card click: toggle details
-var cards = document.querySelectorAll('.timeline-card');
-cards.forEach(function(card) {
-  card.addEventListener('click', function() {
-    var details = card.querySelector('.timeline-details');
-    var arrow = card.querySelector('.timeline-arrow');
-    if (details.style.display === 'none') {
-      details.style.display = 'block';
-      arrow.textContent = '-';
-    } else {
-      details.style.display = 'none';
-      arrow.textContent = '+';
+        .timeline-sub {
+            color: var(--color-text-muted);
+            font-size: 0.88em;
+            line-height: 1.5;
+        }
+
+        .timeline-details {
+            display: none;
+            margin-top: 0.75em;
+            font-size: 0.9em;
+            color: var(--color-text);
+            line-height: 1.7;
+            border-top: 1px solid var(--color-border);
+            padding-top: 0.75em;
+        }
+
+        .timeline-details strong {
+            color: var(--color-heading);
+        }
+
+        .timeline-details a {
+            color: var(--color-heading);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+            transition: border-color 0.2s ease;
+        }
+
+        .timeline-details a:hover {
+            border-bottom-color: var(--color-heading);
+        }
+
+        .timeline-details ul {
+            margin: 0.4em 0 0.4em 1.25em;
+            padding: 0;
+        }
+
+        .timeline-arrow {
+            position: absolute;
+            right: 1em;
+            top: 1.1em;
+            font-size: 1.1em;
+            color: var(--color-text-muted);
+            font-weight: 400;
+            user-select: none;
+            transition: color 0.2s ease;
+        }
+
+        .timeline-arrow.open {
+            color: var(--color-heading);
+        }
+
+        /* Beliefs grid */
+        .beliefs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            margin-top: 1.25em;
+        }
+
+        .belief-card {
+            background: var(--color-surface);
+            padding: 1.25em;
+            border-radius: 8px;
+            border-left: 2px solid var(--color-heading);
+        }
+
+        .belief-card p {
+            margin: 0;
+            font-size: 0.92em;
+            line-height: 1.65;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 600px) {
+            .beliefs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Badge grid */
+        .badge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        .badge-item {
+            text-align: center;
+            max-width: 130px;
+        }
+
+        .badge-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 0.5em;
+        }
+
+        .badge-item span {
+            font-size: 0.85em;
+            color: var(--color-text-muted);
+            line-height: 1.4;
+            display: block;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "George Clinkscales Jr.",
+        "jobTitle": "Software Engineer",
+        "url": "https://geoclink.github.io/portfolio/about.html",
+        "sameAs": [
+            "https://github.com/geoClink",
+            "https://www.linkedin.com/in/george-clinkscales/"
+        ],
+        "knowsAbout": [
+            "iOS Development", "SwiftUI", "Python", "FastAPI", "CoreML", "Web Development"
+        ]
     }
-  });
-});
-</script>
+    </script>
+</head>
+<body class="is-preload">
 
-	</body>
+    <!-- Header -->
+    <header id="header">
+        <h1>About</h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button active" aria-current="page">About</a></li>
+                <li><a href="case-studies.html" class="button">Case Studies</a></li>
+                <li><a href="contributions.html" class="button">Open Source</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contributions.html">Open Source</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <div id="main" role="main">
+
+        <h2 class="about-title">About Me</h2>
+        <p class="about-tagline">Full-stack engineer and co-founder of CH Studios LLC, based in Detroit.</p>
+
+        <section class="about-section">
+            <h3>My Story</h3>
+            <div class="story-inner">
+                <img src="assets/images/myself.webp" alt="George Clinkscales Jr." width="800" height="1199" />
+                <div class="story-text">
+                    <p>I'm a Colorado State University graduate turned full-stack engineer, recently graduated from the MSU Apple Developer Academy in Detroit. My transition into software was driven by curiosity and a desire to build things that are genuinely useful — products that feel intuitive, accessible, and well-crafted from day one.</p>
+                    <p>In under a year I've shipped three apps to the App Store, contributed to open source projects across Python, Go, TypeScript, and Vue.js, and built production AI integrations that put real businesses inside conversational AI interfaces. I co-founded CH Studios LLC to build vertical SaaS platforms for Detroit small businesses — and shipped WebMCP the same week Google announced it at I/O 2026.</p>
+                    <p>My most distinctive work sits at the intersection of AI and product: I architected an MCP server that lets customers browse menus and place orders through Claude, and a WebMCP integration that makes storefronts queryable by Gemini directly from Chrome — no API connection required.</p>
+                    <p>Outside of code I ride bikes, explore Detroit restaurants, volunteer at local food banks, and plant trees with The Greening of Detroit.</p>
+                    <p class="seeking-callout"><strong>Currently seeking</strong> full-time web or iOS developer roles — ideally on teams building products that serve real people. <a href="contact.html">Let's connect.</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h3>Working With Me</h3>
+            <ul>
+                <li><strong>Operating environment:</strong> Adaptable, comfortable in open/public spaces, and value flow state. Punctual and respectful of team time.</li>
+                <li><strong>Hours:</strong> Generally 9:30 AM – 5:30 PM, flexible for project needs.</li>
+                <li><strong>Communication:</strong> Mobile-first (text is fastest), I prefer written feedback and clear, actionable direction.</li>
+                <li><strong>Learning style:</strong> Visual, hands-on, and self-sufficient. I love cheat sheets and trial-and-error until mastery.</li>
+                <li><strong>Strengths:</strong> Adaptability, reliability, and organization.</li>
+                <li><strong>Struggles:</strong> Vague instructions and expected instant mastery without examples.</li>
+                <li><strong>Philosophy:</strong> "To be early is to be on time." "Measure twice, cut once."</li>
+                <li><strong>Personal interests:</strong> Cycling, food, Detroit Tigers, Zelda, and music.</li>
+            </ul>
+            <a href="assets/docs/USERMANUAL.pdf" class="button about-btn" target="_blank" rel="noopener">Download User Manual <i class="fa fa-download"></i></a>
+        </section>
+
+        <section class="about-section">
+            <h3>What I Build</h3>
+            <p>I build full-stack web platforms and SwiftUI iOS apps with an emphasis on accessibility, interaction design, and maintainable architecture.</p>
+            <p><strong>Web and backend:</strong></p>
+            <ul>
+                <li>Full-stack Node.js/Express platforms with Supabase, PostgreSQL, Stripe, and Twilio</li>
+                <li>AI-accessible systems using Anthropic MCP SDK and Google WebMCP</li>
+                <li>Admin dashboards covering orders, inventory, analytics, CMS, and customer management</li>
+                <li>Payment flows including subscriptions, gift cards, deposits, and webhook-driven fulfillment</li>
+            </ul>
+            <p><strong>iOS:</strong></p>
+            <ul>
+                <li>SwiftUI app development with CoreML, SpriteKit, SwiftData, and WidgetKit</li>
+                <li>Cross-platform UX for iPad and macOS including full keyboard compatibility</li>
+                <li>Accessibility-first development with VoiceOver, Dynamic Type, and Live Activities</li>
+                <li>On-device ML inference with XGBoost and ONNX</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h3>How I Learned</h3>
+            <p>I didn't learn from a formal curriculum — I learned by doing. I've spent hours in browser DevTools inspecting how real sites work, breaking things apart and rebuilding them. I watch tutorials, then immediately apply what I learned to real projects. When I hit a wall, I don't stop — I dig in, try every angle, and figure it out. That's how I've picked up SwiftUI, web development, AI tooling, and everything in between.</p>
+        </section>
+
+        <section class="about-section">
+            <h3>My Tech Journey</h3>
+            <ul class="timeline-list">
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">🎓</span>
+                    <div>
+                        <div class="timeline-title">Jun 2026: Graduated Apple Developer Academy</div>
+                        <div class="timeline-sub">Completed Apple's official developer program — iOS, Swift, and the full Apple platform stack.</div>
+                        <div class="timeline-details">
+                            <strong>Program:</strong> Apple Developer Academy<br>
+                            <strong>Completed:</strong> June 2026<br>
+                            <strong>Focus:</strong> Swift, SwiftUI, UIKit, Xcode, App Store distribution, and Apple design principles.<br>
+                            <strong>Significance:</strong> Formal recognition of the skills I'd been building through real shipped apps — a full-stack iOS developer certified by Apple itself.
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">✈️</span>
+                    <div>
+                        <div class="timeline-title">Apr 2026: Turned pro</div>
+                        <div class="timeline-sub">First paid software contract — Cross-Platform Engineer at Tripsetta.</div>
+                        <div class="timeline-details">
+                            <strong>Company:</strong> <a href="https://tripsetta.com/" target="_blank" rel="noopener noreferrer">Tripsetta</a><br>
+                            <strong>Role:</strong> Cross-Platform Engineer<br>
+                            <strong>Location:</strong> Detroit, MI &middot; Part-time contract<br>
+                            <strong>About:</strong> Contracted to maintain and deliver feature updates across iOS, Android, and web, working directly with the founder across the full product surface.<br>
+                            <strong>Significance:</strong> First paid software contract — first time being trusted to keep a real company's live products running for real users.
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">🏢</span>
+                    <div>
+                        <div class="timeline-title">Apr 2026: Co-founded CH Studios Detroit</div>
+                        <div class="timeline-sub">Software Studio · Est. 2026</div>
+                        <div class="timeline-details">
+                            <strong>Studio:</strong> <a href="https://geoclink.github.io/ch-studios/index.html" target="_blank" rel="noopener noreferrer">CH Studios Detroit</a><br>
+                            <strong>Type:</strong> LLC · Software Studio<br>
+                            <strong>Location:</strong> Detroit, Michigan<br>
+                            <strong>About:</strong> A Detroit-based software studio crafting mobile apps and full stack products.<br>
+                            <strong>Role:</strong> Co-founder
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">🐦</span>
+                    <div>
+                        <div class="timeline-title">Apr 2026: Published TakeFlight to the App Store</div>
+                        <div class="timeline-sub">Second app live — a SpriteKit survival game for iPad and macOS.</div>
+                        <div class="timeline-details">
+                            <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">TakeFlight — A Bird's Life</a><br>
+                            <strong>Platform:</strong> iPadOS &amp; macOS (SpriteKit)<br>
+                            <strong>Role:</strong> Co-developer — game systems, mini-game design, and release.<br>
+                            <strong>Key features:</strong>
+                            <ul>
+                                <li>Four connected mini-games in a cohesive survival narrative</li>
+                                <li>Full keyboard support for iPad and macOS</li>
+                                <li>SpriteKit physics and game loop architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">📜</span>
+                    <div>
+                        <div class="timeline-title">Mar 2026: Earned Apple Ads Certification</div>
+                        <div class="timeline-sub">Completed the Apple Ads Certification exam.</div>
+                        <div class="timeline-details">
+                            <strong>Certificate:</strong> <a href="https://searchads.apple.com/certification/" target="_blank" rel="noopener noreferrer">Apple Ads Certification</a><br>
+                            <strong>Focus:</strong> App Store marketing, campaign setup, optimization, and analytics.<br>
+                            <strong>Outcome:</strong> Gained expertise in driving app growth and visibility through Apple Ads.
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">📱</span>
+                    <div>
+                        <div class="timeline-title">Mar 2026: Published first app to App Store</div>
+                        <div class="timeline-sub">Launched Stamped! A City Passport for real users.</div>
+                        <div class="timeline-details">
+                            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City Passport</a><br>
+                            <strong>Platform:</strong> iOS (SwiftUI)<br>
+                            <strong>Role:</strong> Solo product designer and iOS developer.<br>
+                            <strong>Key features:</strong>
+                            <ul>
+                                <li>Global city explorer with hierarchical grouping and mixed search</li>
+                                <li>Passport gallery with mastery tiers and stamp animations</li>
+                                <li>AI-curated itinerary cards with Apple Intelligence integration</li>
+                                <li>Accessibility-focused: high contrast, reduced motion, dark mode</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li class="timeline-card">
+                    <span class="timeline-icon">💼</span>
+                    <div>
+                        <div class="timeline-title">Feb 2026: Contributed to CommonSight iOS app</div>
+                        <div class="timeline-sub">First professional iOS contribution; program discontinued due to funding.</div>
+                        <div class="timeline-details">
+                            <strong>Role:</strong> iOS Contributor<br>
+                            <strong>Organization:</strong> We Change Community Consulting<br>
+                            <strong>Duration:</strong> Feb 2026 – Apr 2026 · Program discontinued due to funding loss<br>
+                            <strong>Key contribution:</strong> Helped build an app demo for a business owner to show investors.
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+                <li id="apple-academy-timeline" class="timeline-card">
+                    <span class="timeline-icon">🍏</span>
+                    <div>
+                        <div class="timeline-title">Sep 2025: Started at Apple Developer Academy</div>
+                        <div class="timeline-sub">Began formal tech education in Detroit.</div>
+                        <div class="timeline-details">
+                            <strong>Program:</strong> 9-month, in-person in downtown Detroit<br>
+                            <strong>Focus:</strong> Coding, design, and business fundamentals using Apple tools<br>
+                            <strong>Schedule:</strong> 20 hours/week, hands-on projects and teamwork<br>
+                            <a href="https://developeracademy.msu.edu" target="_blank" rel="noopener noreferrer">Apple Developer Academy Detroit</a>
+                            <div class="badge-grid">
+                                <div class="badge-item">
+                                    <img src="assets/images/introduction-to-game-development.webp" alt="Introduction to Game Development badge" width="1200" height="1200" />
+                                    <span>Introduction to Game Development</span>
+                                </div>
+                                <div class="badge-item">
+                                    <img src="assets/images/introduction-to-ios-app-development.webp" alt="Introduction to iOS App Development badge" width="1200" height="1200" />
+                                    <span>Introduction to iOS App Development</span>
+                                </div>
+                                <div class="badge-item">
+                                    <img src="assets/images/introduction-to-ui-design-and-swift-fundamentals.webp" alt="UI Design and Swift Fundamentals badge" width="1200" height="1200" />
+                                    <span>UI Design &amp; Swift Fundamentals</span>
+                                </div>
+                                <div class="badge-item">
+                                    <img src="assets/images/introduction-to-user-centered-development.webp" alt="User Centered Development badge" width="600" height="600" />
+                                    <span>User Centered Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="timeline-arrow">+</span>
+                </li>
+
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h3>What Guides Me</h3>
+            <p>My approach is simple: understand the user context, build with intention, and ship work that is clear to both users and stakeholders. Accessibility, clarity, and thoughtful details are not extras — they are the work.</p>
+            <div class="beliefs-grid">
+                <div class="belief-card">
+                    <p>I believe strong products start with user empathy and are sustained by clean, reliable implementation.</p>
+                </div>
+                <div class="belief-card">
+                    <p>I believe design should reduce friction, clarify decisions, and make complex systems feel simple.</p>
+                </div>
+                <div class="belief-card">
+                    <p>I believe accessibility should be integrated from the first prototype through final iteration.</p>
+                </div>
+                <div class="belief-card">
+                    <p>I believe great software respects platform strengths and meets people where they are across devices.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Detroit, MI &middot; iOS &amp; Full Stack Engineer</span>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+        <div class="footer-cta">
+            <p>Open to freelance &amp; full-time roles &mdash; <a href="contact.html">Get in touch &rarr;</a></p>
+        </div>
+        <p class="footer-copy">&copy; 2026 George Clinkscales Jr.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.querySelectorAll('.timeline-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                const details = card.querySelector('.timeline-details');
+                const arrow = card.querySelector('.timeline-arrow');
+                const isOpen = details.style.display === 'block';
+                details.style.display = isOpen ? 'none' : 'block';
+                arrow.textContent = isOpen ? '+' : '×';
+                arrow.classList.toggle('open', !isOpen);
+            });
+        });
+    </script>
+
+</body>
 </html>
