@@ -69,6 +69,22 @@
             color: inherit;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 2px 6px var(--color-shadow);
+            position: relative;
+        }
+
+        .cs-card-featured-chip {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            font-size: 0.6em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-heading);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: 0.25em 0.6em;
         }
 
         .cs-card:hover {
@@ -253,6 +269,8 @@
             <h3 class="cs-group-label">Business OS</h3>
             <div class="cs-cards">
                 <a href="knot.html" class="cs-card">
+                    <span class="cs-card-featured-chip">Flagship</span>
+                    <img src="assets/images/knot/favicon.svg" alt="Knot" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Knot — Small Business Operating System</div>
                         <p class="cs-card-desc">A full business OS competing with Toast, Square, and 7shifts — customer website, 17-module admin dashboard, iOS customer app, iOS POS, and an employee scheduling app, all on one Node/Express API and one Supabase database. Live across four verticals. Built at CH Studios LLC.</p>
@@ -292,20 +310,6 @@
             </div>
         </div>
 
-        <!-- iOS SaaS -->
-        <div class="cs-group">
-            <h3 class="cs-group-label">iOS SaaS</h3>
-            <div class="cs-cards">
-                <a href="knotemployee.html" class="cs-card">
-                    <img src="assets/images/knotemployee/appicon.png" alt="KnotEmployee app icon" class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">KnotEmployee — Employee Scheduling</div>
-                        <p class="cs-card-desc">Multi-tenant iOS employee scheduling app — manager drag-and-drop schedule builder, staff clock-in/out, shift swaps, time off approvals, and team messaging. Real-time updates via Supabase Realtime websockets. Push notifications via a custom Deno Edge Function calling APNs directly.</p>
-                        <span class="cs-cta">View Case Study →</span>
-                    </div>
-                </a>
-            </div>
-        </div>
 
         <!-- iOS Apps -->
         <div class="cs-group">
