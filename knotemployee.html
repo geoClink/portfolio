@@ -153,5 +153,11 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        if (new URLSearchParams(window.location.search).get('from') === 'knot') {
+            const backLink = document.querySelector('.back-link');
+            if (backLink) { backLink.href = 'knot.html'; backLink.textContent = '← Knot'; }
+        }
+    </script>
 </body>
 </html>

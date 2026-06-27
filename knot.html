@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Knot — Business OS Case Study | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/knot.html" />
+    <meta property="og:title" content="Knot — Business OS Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Case study: Knot — A full business operating system for small businesses, competing with Toast, Square, and 7shifts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/knot.html" />
+    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/site/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Knot — Business OS Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Case study: Knot — A full business operating system for small businesses, competing with Toast, Square, and 7shifts." />
+    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/site/logo.jpg" />
+    <meta name="description" content="Case study: Knot — A full business operating system for small businesses. Customer website, admin dashboard, iOS apps, and employee scheduling on one shared backend." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .knot-surface-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85em;
+            margin: 1.25em 0 0;
+        }
+
+        .knot-surface-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1em 1.1em;
+        }
+
+        .knot-surface-label {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin: 0 0 0.35em;
+        }
+
+        .knot-surface-name {
+            font-size: 0.92em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 0.2em;
+        }
+
+        .knot-surface-by {
+            font-size: 0.75em;
+            color: var(--color-text-muted);
+        }
+
+        .knot-admin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4em 1.5em;
+            margin: 1em 0 0;
+        }
+
+        .knot-admin-grid li {
+            font-size: 0.88em;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            list-style: none;
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .knot-admin-grid li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--color-text-muted);
+        }
+
+        .knot-deployments {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75em;
+            margin: 1.25em 0 0;
+        }
+
+        .knot-deployment {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 0.9em 1.1em;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .knot-deployment:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--color-shadow);
+        }
+
+        .knot-deployment-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .knot-deployment-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .knot-deployment-name {
+            font-size: 0.92em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 0.1em;
+        }
+
+        .knot-deployment-replaces {
+            font-size: 0.75em;
+            color: var(--color-text-muted);
+        }
+
+        .knot-deployment-cta {
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 0.4em 0.85em;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            color: var(--color-heading);
+            box-shadow: inset 0 0 0 1.5px var(--color-border);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .knot-deployment:hover .knot-deployment-cta {
+            background: var(--color-heading);
+            color: var(--color-on-dark);
+        }
+
+        @media (max-width: 600px) {
+            .knot-surface-grid { grid-template-columns: 1fr; }
+            .knot-admin-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <header id="header">
+        <h1><a href="index.html">George Clinkscales Jr.</a></h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="contributions.html" class="button">Open Source</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contributions.html">Open Source</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <div id="main" role="main">
+
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
+
+        <h2 class="case-title">Knot</h2>
+        <p class="case-tagline">A full business operating system for small businesses — competing directly with Toast, Square, and 7shifts. One backend, one database, every surface a business needs to run.</p>
+
+        <div class="case-meta">Node.js · Express · Supabase · Stripe · SwiftUI · Chart.js · Resend · Twilio · MCP Server · CH Studios LLC · 2026 · Live</div>
+
+        <div class="case-section">
+            <h3>The Problem</h3>
+            <p>Small businesses run on fragmented tools — a POS from one vendor, a website from another, employee scheduling from a third. Toast charges $200–500/month. Square charges per transaction and per feature. 7shifts charges per employee just to manage a schedule. None of them connect. None were built for the independent business owner who needs everything to work without a developer on call.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>The Platform</h3>
+            <p>Knot is one Node/Express API serving every surface a business needs — customer website, customer account portal, admin dashboard, iOS customer app, iOS POS, and iOS employee app — all reading from one Supabase database. A change made anywhere propagates everywhere instantly. Menu update from the admin? The website, the customer app, and the kitchen display reflect it in real time. No redeploy. No developer required.</p>
+
+            <div class="knot-surface-grid">
+                <div class="knot-surface-card">
+                    <div class="knot-surface-label">Customer-facing</div>
+                    <div class="knot-surface-name">Website + Account Portal</div>
+                    <div class="knot-surface-by">Built by George</div>
+                </div>
+                <div class="knot-surface-card">
+                    <div class="knot-surface-label">Operations</div>
+                    <div class="knot-surface-name">Admin Dashboard</div>
+                    <div class="knot-surface-by">Built by George</div>
+                </div>
+                <div class="knot-surface-card">
+                    <div class="knot-surface-label">iOS</div>
+                    <div class="knot-surface-name">Customer App + POS</div>
+                    <div class="knot-surface-by">Built by Jaiden Henley</div>
+                </div>
+                <div class="knot-surface-card">
+                    <div class="knot-surface-label">Employee Management</div>
+                    <div class="knot-surface-name">KnotEmployee iOS App</div>
+                    <div class="knot-surface-by">Built by George</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>The Admin Dashboard</h3>
+            <p>A protected single-page dashboard that gives the business owner full control over their storefront without touching code or a database. Every admin route verifies a JWT server-side — the security lives on the server, not in the browser.</p>
+
+            <ul class="knot-admin-grid">
+                <li>Live order and revenue overview</li>
+                <li>Order management and fulfillment</li>
+                <li>Revenue charts and breakdowns</li>
+                <li>Menu CMS — items, photos, sale pricing</li>
+                <li>Inventory tracking per item</li>
+                <li>Coupon creation and management</li>
+                <li>Hero image and banner CMS</li>
+                <li>Store hours editor</li>
+                <li>Feature toggles — ordering, subscriptions</li>
+                <li>Gift card management</li>
+                <li>Subscription management</li>
+                <li>Customer list and purchase history</li>
+                <li>Contact form submissions</li>
+                <li>Event booking inquiries</li>
+                <li>Employment applications</li>
+                <li>Staff accounts and roles</li>
+                <li>Kitchen prep list from pending orders</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h3>The Employee Layer</h3>
+            <p>KnotEmployee is the staff management surface of Knot — a native iOS app that handles everything 7shifts charges per seat for. Managers get a drag-and-drop schedule builder, overtime alerts, and labor cost reporting. Staff get clock-in/out with break tracking, shift swaps, time-off requests, and direct messaging. All real-time via Supabase Realtime websockets, push notifications via a custom Deno Edge Function calling APNs directly.</p>
+            <p><a href="knotemployee.html?from=knot">View the KnotEmployee case study →</a></p>
+        </div>
+
+        <div class="case-section">
+            <h3>Deployments</h3>
+            <p>Knot is multi-tenant from day one — every table carries a <code>tenant_id</code>, so onboarding a new business is one database row and a frontend deploy. Currently live across four verticals.</p>
+
+            <div class="knot-deployments">
+                <a href="bakery-spec.html" class="knot-deployment">
+                    <img src="assets/images/thebakeryco/favicon.svg" alt="The Bakery Co." class="knot-deployment-icon" />
+                    <div class="knot-deployment-info">
+                        <div class="knot-deployment-name">The Bakery Co.</div>
+                        <div class="knot-deployment-replaces">Replaces Square / Toast — online ordering, subscriptions, loyalty</div>
+                    </div>
+                    <span class="knot-deployment-cta">Case Study →</span>
+                </a>
+                <a href="salon-co.html" class="knot-deployment">
+                    <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co." class="knot-deployment-icon" />
+                    <div class="knot-deployment-info">
+                        <div class="knot-deployment-name">The Salon Co.</div>
+                        <div class="knot-deployment-replaces">Replaces Squarespace / Vagaro — booking and marketing site</div>
+                    </div>
+                    <span class="knot-deployment-cta">Case Study →</span>
+                </a>
+                <a href="sports-bar-co.html" class="knot-deployment">
+                    <img src="assets/images/thesportsbarco/favicon.svg" alt="The Sports Bar Co." class="knot-deployment-icon" />
+                    <div class="knot-deployment-info">
+                        <div class="knot-deployment-name">The Sports Bar Co.</div>
+                        <div class="knot-deployment-replaces">Replaces Toast / OpenTable — reservations and events</div>
+                    </div>
+                    <span class="knot-deployment-cta">Case Study →</span>
+                </a>
+                <a href="wellness-co.html" class="knot-deployment">
+                    <img src="assets/images/thewellnessco/favicon.svg" alt="The Wellness Co." class="knot-deployment-icon" />
+                    <div class="knot-deployment-info">
+                        <div class="knot-deployment-name">The Wellness Co.</div>
+                        <div class="knot-deployment-replaces">Replaces Mindbody / ClassPass — memberships and bookings</div>
+                    </div>
+                    <span class="knot-deployment-cta">Case Study →</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>The Outcome</h3>
+            <p>Zero commission per order versus 15–30% on delivery platforms. Zero monthly platform fee versus $200–500/month for Toast or Square. The admin dashboard gives a business owner complete control over their storefront, staff, and customer relationships from a single screen. Four businesses are live on the platform today. Every new deployment is one database row and a frontend deploy.</p>
+        </div>
+
+    </div>
+
+    <!-- CTA Band -->
+    <div class="page-cta">
+        <strong>Currently open</strong> to full-time roles, freelance, and contract work — <a href="contact.html">reach out if you'd like to work together</a>.
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Detroit, MI &middot; iOS &amp; Full Stack Engineer &middot; &copy; 2026</span>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
