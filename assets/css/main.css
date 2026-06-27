@@ -3457,7 +3457,7 @@ footer#footer .footer-copy {
     font-size: 0.95em;
     color: var(--color-text-muted);
     line-height: 1.6;
-    text-align: left;
+    text-align: center;
     background: var(--color-surface);
     box-sizing: border-box;
 }

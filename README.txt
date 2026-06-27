@@ -1,65 +1,59 @@
 
-Portfolio Website README
-=======================
+Portfolio — George Clinkscales Jr.
+===================================
 
-#Visit Website : https://geoclink.github.io/portfolio/index.html
+Live site: https://geoclink.github.io/portfolio/index.html
 
-This is a personal portfolio website project. It showcases case studies, projects, resume, and contact information. The site is built using HTML, CSS (with SASS), and JavaScript, and is based on the Future Imperfect template by HTML5 UP.
+Personal portfolio for George Clinkscales Jr., iOS & full-stack engineer and
+co-founder of CH Studios LLC based in Detroit, MI.
 
-## Structure
-- index.html: Homepage
-- about.html: About section
-- case-studies.html: Case studies
-- contact.html: Contact form
-- resume.html: Resume
-- project1.html, project2.html, project3.html, project4.html: Individual project pages
-- assets/
-  - css/: Compiled CSS files
-  - js/: JavaScript files
-  - sass/: SASS source files
-  - images/: Image assets
+Built from scratch on top of the HTML5 UP Future Imperfect template (heavily
+customized — custom design system, mobile nav, animations, and all content).
 
-## Features
-- Responsive design
-- Flexbox layout
-- Font Awesome icons
-- SASS for modular styles
-- jQuery for interactivity
 
-## Usage
-Open index.html in your browser to view the portfolio. Edit HTML and SASS files to customize content and styles.
+## Pages
+
+- index.html          Homepage with hero, project cards, and live web apps
+- about.html          Bio, interactive timeline, Apple Developer Academy badges
+- case-studies.html   Case study index
+- resume.html         Interactive accordion resume (mobile) / full resume (desktop)
+- contact.html        Contact form (Formspree), LinkedIn, GitHub
+- contributions.html  Open source contributions
+- web-platforms.html  CH Studios small business platform suite
+
+Case studies:
+- tally.html, knotemployee.html, ratechecker.html, stamped.html
+- detroitsportschatbot.html, michiganapiweather.html, takeflight.html
+- bakery-spec.html, salon-co.html, sports-bar-co.html, wellness-co.html
+
+
+## Tech Stack
+
+- HTML5, CSS3, vanilla JavaScript — no frameworks or build tools
+- CSS custom properties for the full design system (colors, fonts, spacing)
+- Mobile-first responsive design
+- Font Awesome for icons
+- Formspree for contact form handling
+- Hosted on GitHub Pages
+
+
+## Key Features
+
+- Custom mobile nav bar with full-screen overlay menu and staggered animations
+- Resume accordion (mobile: tap to expand, desktop: always visible)
+- Scroll reveal animations
+- Apple Developer Academy badge grid
+- Favicon (laptop icon SVG)
+- Open Graph / Twitter card meta on every page
+
 
 ## Connect
-LinkedIn: https://www.linkedin.com/in/georgeclinkscales/
+
+LinkedIn: https://www.linkedin.com/in/george-clinkscales/
+GitHub:   https://github.com/geoClink
+
 
 ---
 
-Future Imperfect by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-It's been a long time coming, but I've finally gotten around to creating a brand new
-blog-style template (and the first since Striped, which came out waaaaay back in 2013).
-Anyway, Future Imperfect features a clean, expansive layout, a toggleable search box,
-and -- because pretty much all modern browsers can use it now -- a whole lot of flexbox
-action. Enjoy it :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Base template: Future Imperfect by HTML5 UP (html5up.net | @ajlkn)
+License: CCA 3.0 (html5up.net/license)
