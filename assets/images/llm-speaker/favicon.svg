@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#111827"/>
+
+  <!-- Microphone body -->
+  <rect x="206" y="96" width="100" height="180" rx="50" fill="#ffffff"/>
+
+  <!-- Microphone arc -->
+  <path d="M 156 276 Q 156 376 256 376 Q 356 376 356 276" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Stem -->
+  <line x1="256" y1="376" x2="256" y2="420" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Base -->
+  <line x1="196" y1="420" x2="316" y2="420" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+</svg>
