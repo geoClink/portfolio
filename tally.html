@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .screenshot-scroll-track { display: flex; gap: 1.8em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 1em 0.5em 1.5em; margin: 0 -0.5em 1.5em; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
+        .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
+        .screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+        .screenshot-scroll-item { flex: 0 0 auto; width: 260px; scroll-snap-align: start; }
+        .screenshot-scroll-item p { font-size: 0.75em; color: var(--color-text-muted); margin-top: 0.65em; text-align: center; font-style: italic; line-height: 1.4; }
+        .screenshot-bezel { max-width: 100% !important; }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -80,6 +88,54 @@
         </div>
 
         
+
+        <div class="case-section">
+            <h3>Try It Live</h3>
+            <iframe
+                src="https://tally-web-nu.vercel.app/demo"
+                width="100%"
+                height="680"
+                style="border: 1px solid var(--color-border); border-radius: 8px; display: block;"
+                title="Tally — Live Demo"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="case-section">
+            <h3>iOS App</h3>
+            <div class="screenshot-scroll-track">
+                <div class="screenshot-scroll-item">
+                    <div class="image iphone-bezel screenshot-bezel">
+                        <img loading="lazy" src="assets/images/tallyios/tallyiostimerview.png" alt="Tally iOS timer view" />
+                    </div>
+                    <p>Timer — one-tap tracking with client and project tagging, runs in background via SwiftData.</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="image iphone-bezel screenshot-bezel">
+                        <img loading="lazy" src="assets/images/tallyios/tallyioscalendar.png" alt="Tally iOS calendar view" />
+                    </div>
+                    <p>Calendar — visual day and week breakdown of logged sessions across all clients.</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="image iphone-bezel screenshot-bezel">
+                        <img loading="lazy" src="assets/images/tallyios/tallyiosreportview.png" alt="Tally iOS report view" />
+                    </div>
+                    <p>Reports — earnings summary by client with CSV export, synced to the web dashboard.</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="image iphone-bezel screenshot-bezel">
+                        <img loading="lazy" src="assets/images/tallyios/tallyiosaccountview.png" alt="Tally iOS account view" />
+                    </div>
+                    <p>Account — subscription status, cross-platform sync, and settings all in one place.</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="image iphone-bezel screenshot-bezel">
+                        <img loading="lazy" src="assets/images/tallyios/tallyiosworkspacesubscriptionpage.png" alt="Tally iOS workspace subscription page" />
+                    </div>
+                    <p>Workspace — Business tier team management, handled by StoreKit on iOS and Stripe on web.</p>
+                </div>
+            </div>
+        </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
