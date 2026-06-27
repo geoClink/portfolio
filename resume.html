@@ -107,11 +107,11 @@
         .resume-item-title a {
             color: var(--color-heading);
             text-decoration: none;
-            border-bottom: 1px solid var(--color-border);
-            transition: border-bottom-color 0.2s ease;
+            border-bottom: 1.5px solid var(--color-heading);
+            transition: opacity 0.2s ease;
         }
-        .resume-item-title a:hover {
-            border-bottom-color: var(--color-heading);
+.resume-item-title a:hover {
+            opacity: 0.65;
         }
 
         .resume-item-meta {
@@ -138,13 +138,13 @@
 
         .resume-item-links a {
             font-size: 0.82em;
-            color: var(--color-text-muted);
+            color: var(--color-heading);
             text-decoration: none;
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1.5px solid var(--color-heading);
+            transition: opacity 0.2s ease;
         }
-
         .resume-item-links a:hover {
-            border-bottom-color: var(--color-heading);
+            opacity: 0.65;
         }
 
         .resume-contact-links {
@@ -279,14 +279,9 @@
                 float: none !important;
                 clear: both !important;
                 padding: 0 !important;
-                margin: 0 !important;
-                border-top: 1px solid var(--color-border) !important;
-                border-bottom: none !important;
+                margin: 0 0 0.25em !important;
+                border: none !important;
                 box-sizing: border-box !important;
-            }
-
-            .resume-section .resume-accordion-list > li:first-child {
-                border-top: none !important;
             }
 
             /* Accordion toggle button */
@@ -329,11 +324,10 @@
 
             /* Expanded body */
             .resume-accordion-header.open + .resume-accordion-body {
-                padding-left: 1em;
+                padding-left: 0;
                 padding-top: 0.25em;
                 padding-bottom: 1em;
-                border-left: 2px solid var(--color-border);
-                margin-top: 0.5em;
+                margin-top: 0.25em;
                 margin-bottom: 0.25em;
             }
 
