@@ -697,6 +697,34 @@
             min-width: 0;
         }
 
+        .appstore-app { position: relative; cursor: pointer; }
+        .appstore-app-cover {
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            z-index: 0;
+        }
+        .appstore-case-btn {
+            margin-left: auto;
+            position: relative;
+            z-index: 1;
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 0.4em 0.85em;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--color-heading);
+            box-shadow: inset 0 0 0 1.5px var(--color-border);
+            transition: background 0.2s ease, color 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .appstore-case-btn:hover {
+            background: var(--color-heading);
+            color: var(--color-on-dark);
+        }
+
         /* ── Scroll fade-in ────────────────────────────────────── */
         .fade-in {
             opacity: 0;
@@ -764,30 +792,46 @@
         <section class="appstore-strip web-strip">
             <div class="appstore-strip-label">Live on the Web</div>
             <div class="appstore-apps">
-                <a href="https://the-bakery-co.vercel.app/index.html" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                <div class="appstore-app">
+                    <a href="https://the-bakery-co.vercel.app/index.html" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Visit The Bakery Co."></a>
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Bakery Co.</span>
                         <span class="appstore-app-sub">Full-stack ordering platform</span>
                     </div>
-                </a>
-                <a href="https://the-salon-co.vercel.app/" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <a href="bakery-spec.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://the-salon-co.vercel.app/" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Visit The Salon Co."></a>
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Salon Co.</span>
                         <span class="appstore-app-sub">Luxury salon website</span>
                     </div>
-                </a>
-                <a href="https://the-sports-bar.vercel.app/" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <a href="salon-co.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://the-sports-bar.vercel.app/" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Visit The Sports Bar Co."></a>
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Sports Bar Co.</span>
                         <span class="appstore-app-sub">Reservations &amp; events</span>
                     </div>
-                </a>
-                <a href="https://the-wellness-co.vercel.app/" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <a href="sports-bar-co.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://the-wellness-co.vercel.app/" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Visit The Wellness Co."></a>
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Wellness Co.</span>
                         <span class="appstore-app-sub">Studio booking platform</span>
                     </div>
-                </a>
+                    <a href="wellness-co.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://tally-web-nu.vercel.app" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Visit Tally"></a>
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">Tally</span>
+                        <span class="appstore-app-sub">Cross-platform time tracker</span>
+                    </div>
+                    <a href="tally.html" class="appstore-case-btn">Case Study →</a>
+                </div>
             </div>
         </section>
 
@@ -795,27 +839,33 @@
         <section class="appstore-strip">
             <div class="appstore-strip-label">On the App Store</div>
             <div class="appstore-apps">
-                <a href="https://apps.apple.com/us/app/coastcast/id6760917476" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                <div class="appstore-app">
+                    <a href="https://apps.apple.com/us/app/coastcast/id6760917476" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="CoastCast on the App Store"></a>
                     <img src="assets/images/coastcast/coastcast-app-icon.png" alt="CoastCast app icon" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">CoastCast</span>
                         <span class="appstore-app-sub">Beach conditions · iOS</span>
                     </div>
-                </a>
-                <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <a href="coastcast.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="Stamped! on the App Store"></a>
                     <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! app icon" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Stamped!</span>
                         <span class="appstore-app-sub">City passport · iPhone · iPad</span>
                     </div>
-                </a>
-                <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" class="appstore-app" target="_blank" rel="noopener noreferrer">
+                    <a href="stamped.html" class="appstore-case-btn">Case Study →</a>
+                </div>
+                <div class="appstore-app">
+                    <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" class="appstore-app-cover" target="_blank" rel="noopener noreferrer" aria-label="TakeFlight on the App Store"></a>
                     <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight app icon" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">TakeFlight</span>
                         <span class="appstore-app-sub">Bird life game · iPhone · iPad · macOS</span>
                     </div>
-                </a>
+                    <a href="takeflight.html" class="appstore-case-btn">Case Study →</a>
+                </div>
             </div>
         </section>
 
