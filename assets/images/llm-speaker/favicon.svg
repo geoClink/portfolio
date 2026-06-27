@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" fill="#111827"/>
+  <rect width="512" height="512" fill="#6B3FA0"/>
 
   <!-- Microphone body -->
   <rect x="206" y="96" width="100" height="180" rx="50" fill="#ffffff"/>
