@@ -249,6 +249,38 @@
             display: block;
         }
 
+        .skill-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25em;
+        }
+
+        .skill-group-label {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4em;
+        }
+
+        .skill-tag {
+            font-size: 0.8em;
+            font-weight: 500;
+            color: var(--color-heading);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: 0.3em 0.7em;
+            line-height: 1.4;
+        }
+
         .resume-accordion-header > div {
             display: flex;
             flex-direction: column;
@@ -660,12 +692,66 @@
 
         <section class="resume-section">
             <h3>Skills</h3>
-            <ul>
-                <li><span class="resume-item-title">iOS:</span> Swift, SwiftUI, UIKit, Foundation, Apple Intelligence, SwiftData, MVVM, SpriteKit, CoreML</li>
-                <li><span class="resume-item-title">Web &amp; Backend:</span> Node.js, Express, HTML/CSS/JS, Python (FastAPI/Flask), Supabase, PostgreSQL, Stripe, Twilio, REST APIs, Webhooks, Cron Jobs, Render</li>
-                <li><span class="resume-item-title">AI &amp; ML:</span> Anthropic MCP SDK, Claude API, WebMCP, Agentic Tool-Calling, Few-Shot Prompting, CoreML, XGBoost, ONNX, on-device inference, Ollama</li>
-                <li><span class="resume-item-title">Tools:</span> VSCode, Git, Claude Code, Docker, Xcode, TestFlight, Accessibility (VoiceOver/Dynamic Type)</li>
-            </ul>
+            <div class="skill-groups">
+                <div>
+                    <div class="skill-group-label">iOS</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">UIKit</span>
+                        <span class="skill-tag">Foundation</span>
+                        <span class="skill-tag">Apple Intelligence</span>
+                        <span class="skill-tag">SwiftData</span>
+                        <span class="skill-tag">MVVM</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Web &amp; Backend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">HTML / CSS / JS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Stripe</span>
+                        <span class="skill-tag">Twilio</span>
+                        <span class="skill-tag">Deno Edge Functions</span>
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Render</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">AI &amp; ML</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Anthropic MCP SDK</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">WebMCP</span>
+                        <span class="skill-tag">Agentic Tool-Calling</span>
+                        <span class="skill-tag">CoreML</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">ONNX</span>
+                        <span class="skill-tag">Ollama</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Tools</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Xcode</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">TestFlight</span>
+                        <span class="skill-tag">VoiceOver</span>
+                        <span class="skill-tag">Dynamic Type</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="resume-section">

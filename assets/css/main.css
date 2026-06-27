@@ -3331,6 +3331,9 @@ footer#footer .footer-inner {
     flex-wrap: wrap;
     gap: 1.5em;
 }
+footer#footer .footer-name {
+    text-align: left;
+}
 footer#footer .footer-name strong {
     display: block;
     font-size: 0.8em;

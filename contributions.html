@@ -81,23 +81,19 @@
 
         .contrib-badge {
             display: inline-block;
-            font-size: 0.68em;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 0.2em 0.6em;
-            border-radius: 999px;
+            font-size: 0.72em;
+            font-weight: 500;
+            color: var(--color-text-muted);
             white-space: nowrap;
         }
 
-        .type-bug    { background: #fff0f0; color: #c0392b; border: 1px solid rgba(192,57,43,0.2); }
-        .type-feature { background: #f0f9ff; color: #2471a3; border: 1px solid rgba(36,113,163,0.2); }
-        .type-docs   { background: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); }
-        .type-refactor { background: #f0fff4; color: #1e8449; border: 1px solid rgba(30,132,73,0.2); }
+        .contrib-badge + .contrib-badge::before {
+            content: '·';
+            margin: 0 0.35em;
+        }
 
-        .status-merged { background: #f3f0ff; color: #6c3483; border: 1px solid rgba(108,52,131,0.2); }
-        .status-open   { background: #f0fff4; color: #1e8449; border: 1px solid rgba(30,132,73,0.2); }
-        .status-closed { background: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); }
+        .type-bug, .type-feature, .type-docs, .type-refactor,
+        .status-merged, .status-open, .status-closed { background: none; border: none; padding: 0; }
 
         .contrib-desc {
             font-size: 0.9em;
@@ -136,10 +132,13 @@
             color: var(--color-heading);
             text-decoration: none;
             letter-spacing: 0.02em;
+            border-bottom: 1.5px solid transparent;
+            transition: border-bottom-color 0.15s ease, opacity 0.15s ease;
         }
 
         .contrib-pr-link:hover {
             border-bottom-color: var(--color-heading);
+            opacity: 0.7;
         }
 
         @media (max-width: 600px) {
@@ -195,7 +194,7 @@
     <div id="main" role="main">
 
         <h2 class="os-title">Open Source</h2>
-        <p class="os-tagline">Pull requests, bug fixes, and patches I've submitted to public repositories.</p>
+        <p class="os-tagline">Pull requests, bug fixes, and patches submitted to production open source projects — pending maintainer review.</p>
 
         <h3 class="os-group-label">TandoorRecipes / recipes</h3>
         <div class="contrib-list">
@@ -204,7 +203,7 @@
                 <div class="contrib-card-top">
                     <span class="contrib-repo">TandoorRecipes/recipes</span>
                     <span class="contrib-badge type-bug">Bug Fix</span>
-                    <span class="contrib-badge status-open">Open</span>
+                    <span class="contrib-badge status-open">Pending Review</span>
                 </div>
                 <p class="contrib-desc">Fixed 500 crash when syncing a disallowed local path — <code>local.py</code> returned <code>False</code> instead of a <code>SyncLog</code> object, causing <code>SyncLogSerializer</code> to crash with <code>AttributeError</code> · Python · Django</p>
                 <div class="contrib-card-bottom">
@@ -217,7 +216,7 @@
                 <div class="contrib-card-top">
                     <span class="contrib-repo">TandoorRecipes/recipes</span>
                     <span class="contrib-badge type-bug">Bug Fix</span>
-                    <span class="contrib-badge status-open">Open</span>
+                    <span class="contrib-badge status-open">Pending Review</span>
                 </div>
                 <p class="contrib-desc">Fixed <code>JSONDecodeError</code> when using Claude as an AI provider — stripped markdown code fences from the AI response before <code>json.loads()</code> in both the <code>aiproperties</code> and AI import endpoints · Python</p>
                 <div class="contrib-card-bottom">
@@ -230,7 +229,7 @@
                 <div class="contrib-card-top">
                     <span class="contrib-repo">TandoorRecipes/recipes</span>
                     <span class="contrib-badge type-bug">Bug Fix</span>
-                    <span class="contrib-badge status-open">Open</span>
+                    <span class="contrib-badge status-open">Pending Review</span>
                 </div>
                 <p class="contrib-desc">Fixed crash on Mealie import when any recipe has a null description — <code>mealie1.py</code> sliced <code>r['description']</code> without a None check, crashing the entire import · Python</p>
                 <div class="contrib-card-bottom">
@@ -243,7 +242,7 @@
                 <div class="contrib-card-top">
                     <span class="contrib-repo">TandoorRecipes/recipes</span>
                     <span class="contrib-badge type-bug">Bug Fix</span>
-                    <span class="contrib-badge status-open">Open</span>
+                    <span class="contrib-badge status-open">Pending Review</span>
                 </div>
                 <p class="contrib-desc">Fixed Pantry page ignoring items-per-page setting — <code>InventoryEntryTable.vue</code> was not passing <code>page</code> and <code>pageSize</code> to the API call, so pagination had no effect · Vue.js · TypeScript</p>
                 <div class="contrib-card-bottom">
@@ -256,7 +255,7 @@
                 <div class="contrib-card-top">
                     <span class="contrib-repo">TandoorRecipes/recipes</span>
                     <span class="contrib-badge type-feature">Feature</span>
-                    <span class="contrib-badge status-open">Open</span>
+                    <span class="contrib-badge status-open">Pending Review</span>
                 </div>
                 <p class="contrib-desc">Added missing Back button to the Ingredient Editor page, matching the navigation pattern used across the app · Vue.js · TypeScript</p>
                 <div class="contrib-card-bottom">
