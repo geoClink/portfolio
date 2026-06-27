@@ -101,9 +101,9 @@ a:link, a:visited {
 		display: none !important;
 	}
 	.menu-btn {
-		display: grid !important;
-		grid-template-columns: 1fr auto 1fr !important;
+		display: flex !important;
 		align-items: center !important;
+		justify-content: center !important;
 		position: static !important;
 		top: auto !important;
 		right: auto !important;
@@ -115,10 +115,10 @@ a:link, a:visited {
 		padding: 0 1.25em !important;
 		border: none !important;
 		cursor: pointer !important;
+		animation: nav-pulse 1.8s ease-in-out 1.2s 1 !important;
 	}
 	.menu-btn::before {
 		content: 'George Clinkscales Jr.';
-		grid-column: 2;
 		font-size: 0.82rem;
 		font-weight: 700;
 		color: var(--color-on-dark);
@@ -127,16 +127,11 @@ a:link, a:visited {
 		text-align: center;
 	}
 	.menu-btn::after {
-		content: '↓';
-		grid-column: 3;
-		font-size: 0.7rem;
-		color: rgba(255, 255, 255, 0.5);
-		text-align: right;
-		line-height: 1;
-		transition: content 0.2s ease;
+		content: none !important;
 	}
-	.menu-btn.open::after {
-		content: '↑';
+	@keyframes nav-pulse {
+		0%, 100% { opacity: 1; }
+		45% { opacity: 0.55; }
 	}
 	.menu-icon {
 		display: none !important;

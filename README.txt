@@ -23,7 +23,7 @@ customized — custom design system, mobile nav, animations, and all content).
 
 Case studies:
 - tally.html, knotemployee.html, ratechecker.html, stamped.html
-- detroitsportschatbot.html, michiganapiweather.html, takeflight.html
+- detroitsportschatbot.html, coastcast.html, takeflight.html
 - bakery-spec.html, salon-co.html, sports-bar-co.html, wellness-co.html
 
 
