@@ -984,7 +984,7 @@
 
             if (section) {
                 section.addEventListener('mouseenter', function () { paused = true; section.classList.add('paused'); });
-                section.addEventListener('mouseleave', function () { paused = false; section.classList.remove('paused'); });
+                section.addEventListener('mouseleave', function () { paused = false; section.classList.remove('paused'); startTimer(); });
             }
 
             let touchX = 0;
