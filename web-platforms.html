@@ -55,58 +55,67 @@
 
         /* ── Platform card ─────────────────────────────────────── */
         .wp-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.1em;
             background: var(--color-bg);
             border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: 1.25em;
-            box-shadow: 0 2px 6px var(--color-shadow);
-            text-decoration: none;
-            color: inherit;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--color-shadow);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .wp-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--color-shadow);
+        }
+
+.wp-card-body {
+            padding: 1.4em 1.4em 1.25em;
+            display: flex;
+            gap: 1em;
+            align-items: flex-start;
         }
 
         .wp-card-icon {
             width: 48px;
             height: 48px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.5em;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-align: center;
-            line-height: 1.4;
+            object-fit: cover;
             flex-shrink: 0;
         }
 
-        .wp-card-body {
+        .wp-card-content {
             flex: 1;
             min-width: 0;
         }
 
-        .wp-card-name {
-            font-size: 1em;
-            font-weight: 700;
-            color: var(--color-heading);
-            margin: 0 0 0.2em;
+        .wp-card-header {
             display: flex;
-            align-items: center;
-            gap: 0.5em;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1em;
+            margin-bottom: 0.25em;
             flex-wrap: wrap;
         }
 
+        .wp-card-name {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0;
+        }
+
+        .wp-card-replaces {
+            font-size: 0.72em;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+        }
 
         .wp-card-desc {
             font-size: 0.88em;
-            line-height: 1.65;
+            line-height: 1.7;
             color: var(--color-text-muted);
-            margin: 0 0 0.85em;
+            margin: 0.6em 0 1em;
         }
-
 
         .wp-actions {
             display: flex;
@@ -120,12 +129,22 @@
             font-size: 0.78em;
             font-weight: 700;
             letter-spacing: 0.04em;
-            padding: 0.5em 1em;
+            padding: 0.5em 1.1em;
             border-radius: 4px;
             text-decoration: none;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
             box-shadow: inset 0 0 0 1.5px var(--color-border);
             color: var(--color-heading);
+        }
+
+        .wp-btn.primary {
+            background: var(--color-heading);
+            color: var(--color-on-dark);
+            box-shadow: none;
+        }
+
+        .wp-btn.primary:hover {
+            opacity: 0.85;
         }
 
         .wp-btn:hover {
@@ -206,13 +225,15 @@
 
             <!-- The Bakery Co. -->
             <div class="wp-card">
+
                 <div class="wp-card-body">
-                    <div class="wp-card-name">
-                        The Bakery Co.
+                    <div class="wp-card-header">
+                        <div class="wp-card-name">The Bakery Co.</div>
+                        <span class="wp-card-replaces">Replaces Square / Toast</span>
                     </div>
-                    <p class="wp-card-desc">Full business platform — customer website, admin dashboard, and Supabase backend. Owner manages menu, inventory, and orders from the dashboard; changes reflect instantly on the site and iOS apps. Stripe payments, JWT-authenticated CMS, transactional email and SMS, a production MCP server for Claude AI ordering, and WebMCP integration shipped the week Google announced it at I/O 2026.</p>
+                    <p class="wp-card-desc">Full business platform — customer website, admin dashboard, and Supabase backend. Owner manages menu, inventory, and orders from the dashboard; changes reflect instantly on the site. Stripe payments, JWT-authenticated CMS, transactional email and SMS, a production MCP server for Claude AI ordering, and WebMCP integration shipped the week Google announced it at I/O 2026.</p>
                     <div class="wp-actions">
-                        <a href="bakery-spec.html" class="wp-btn">View Case Study</a>
+                        <a href="bakery-spec.html" class="wp-btn primary">Case Study →</a>
                         <a href="https://the-bakery-co.vercel.app/index.html" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
                     </div>
                 </div>
@@ -221,26 +242,32 @@
             <!-- The Salon Co. -->
             <div class="wp-card">
                 <div class="wp-card-body">
-                    <div class="wp-card-name">
-                        The Salon Co.
-                    </div>
-                    <p class="wp-card-desc">14-page marketing and booking site for a luxury hair salon. Scroll-based sticky header, auto-rotating reviews carousel, FAQ accordion, gallery with filters, and a mobile hamburger menu. Built as a direct alternative to Squarespace for salon owners who want something custom without the monthly fee.</p>
-                    <div class="wp-actions">
-                        <a href="salon-co.html" class="wp-btn">View Case Study</a>
-                        <a href="https://the-salon-co.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+                    <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co." class="wp-card-icon" />
+                    <div class="wp-card-content">
+                        <div class="wp-card-header">
+                            <div class="wp-card-name">The Salon Co.</div>
+                            <span class="wp-card-replaces">Replaces Squarespace / Vagaro</span>
+                        </div>
+                        <p class="wp-card-desc">14-page marketing and booking site for a luxury hair salon. Scroll-based sticky header, auto-rotating reviews carousel, FAQ accordion, gallery with filters, and a mobile hamburger menu. Custom-designed from scratch — no templates, no monthly platform fee.</p>
+                        <div class="wp-actions">
+                            <a href="salon-co.html" class="wp-btn primary">Case Study →</a>
+                            <a href="https://the-salon-co.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- The Sports Bar Co. -->
             <div class="wp-card">
+
                 <div class="wp-card-body">
-                    <div class="wp-card-name">
-                        The Sports Bar Co.
+                    <div class="wp-card-header">
+                        <div class="wp-card-name">The Sports Bar Co.</div>
+                        <span class="wp-card-replaces">Replaces Toast / OpenTable</span>
                     </div>
-                    <p class="wp-card-desc">Reservation and events platform for a Detroit sports bar — full menu, weekly events calendar, table reservations, and a private party inquiry form. Built as a Toast alternative for bar owners who want to own their web presence outright.</p>
+                    <p class="wp-card-desc">Reservation and events platform for a Detroit sports bar — full menu, weekly events calendar, table reservations, and a private party inquiry form. Owners control everything without a developer on retainer.</p>
                     <div class="wp-actions">
-                        <a href="sports-bar-co.html" class="wp-btn">View Case Study</a>
+                        <a href="sports-bar-co.html" class="wp-btn primary">Case Study →</a>
                         <a href="https://the-sports-bar.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
                     </div>
                 </div>
@@ -249,18 +276,20 @@
             <!-- The Wellness Co. -->
             <div class="wp-card">
                 <div class="wp-card-body">
-                    <div class="wp-card-name">
-                        The Wellness Co.
-                    </div>
-                    <p class="wp-card-desc">Customer website, admin dashboard, and Supabase backend for a full wellness studio platform. Owner manages services, practitioners, availability, and memberships from the dashboard. Stripe powers session bookings, recurring memberships, and gift card purchases. Built as a Mindbody alternative for studios that want a custom presence without the monthly overhead.</p>
-                    <div class="wp-actions">
-                        <a href="wellness-co.html" class="wp-btn">View Case Study</a>
-                        <a href="https://the-wellness-co.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+                    <img src="assets/images/thewellnessco/favicon.svg" alt="The Wellness Co." class="wp-card-icon" />
+                    <div class="wp-card-content">
+                        <div class="wp-card-header">
+                            <div class="wp-card-name">The Wellness Co.</div>
+                            <span class="wp-card-replaces">Replaces Mindbody / ClassPass</span>
+                        </div>
+                        <p class="wp-card-desc">Customer website, admin dashboard, and Supabase backend for a full wellness studio. Owner manages services, practitioners, availability, and memberships. Stripe powers session bookings, recurring memberships, and gift card purchases.</p>
+                        <div class="wp-actions">
+                            <a href="wellness-co.html" class="wp-btn primary">Case Study →</a>
+                            <a href="https://the-wellness-co.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Add more platform cards here -->
 
         </div>
 

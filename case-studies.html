@@ -84,6 +84,24 @@
             flex-shrink: 0;
         }
 
+        .calc-mini-wrap {
+            width: 80px;
+            height: 132px;
+            overflow: hidden;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border: 1px solid var(--color-border);
+            position: relative;
+        }
+        .calc-mini-wrap iframe {
+            width: 340px;
+            height: 560px;
+            border: none;
+            transform: scale(0.235);
+            transform-origin: top left;
+            pointer-events: auto;
+        }
+
         .cs-card-icon-placeholder {
             width: 48px;
             height: 48px;
@@ -236,9 +254,9 @@
             <div class="cs-cards">
                 <a href="web-platforms.html" class="cs-card">
                     <div class="cs-card-body">
-                        <div class="cs-card-name">Live Web Platforms — Small Business Suite</div>
-                        <p class="cs-card-desc">Three production-ready websites for small businesses — a Detroit bakery, salon, and sports bar — each backed by a full admin dashboard. Stripe payments, MCP server for Claude AI ordering, and WebMCP integration. Built at CH Studios.</p>
-                        <span class="cs-cta">View Case Study →</span>
+                        <div class="cs-card-name">Small Business Platform Suite</div>
+                        <p class="cs-card-desc">Four production-ready platforms for small businesses — bakery, salon, sports bar, and wellness studio — each with a custom website, admin dashboard, and Supabase backend. Stripe payments, MCP server for Claude AI ordering, and WebMCP integration. Built at CH Studios LLC.</p>
+                        <span class="cs-cta">Explore 4 Case Studies →</span>
                     </div>
                 </a>
             </div>
@@ -249,6 +267,7 @@
             <h3 class="cs-group-label">Cross-Platform Products</h3>
             <div class="cs-cards">
                 <a href="tally.html" class="cs-card">
+                    <img src="assets/images/tallyios/appicon.png" alt="Tally app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Tally — Time Tracker</div>
                         <p class="cs-card-desc">Cross-platform SaaS for freelancers and small teams — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard. Cross-platform subscription sync via StoreKit and Stripe. $9.99 one-time vs. $10–20/month competitors.</p>
@@ -263,6 +282,7 @@
             <h3 class="cs-group-label">iOS SaaS</h3>
             <div class="cs-cards">
                 <a href="knotemployee.html" class="cs-card">
+                    <img src="assets/images/knotemployee/appicon.png" alt="KnotEmployee app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">KnotEmployee — Employee Scheduling</div>
                         <p class="cs-card-desc">Multi-tenant iOS employee scheduling app — manager drag-and-drop schedule builder, staff clock-in/out, shift swaps, time off approvals, and team messaging. Real-time updates via Supabase Realtime websockets. Push notifications via a custom Deno Edge Function calling APNs directly.</p>
@@ -295,6 +315,7 @@
             <h3 class="cs-group-label">JavaScript</h3>
             <div class="cs-cards">
                 <a href="javascript-calculator.html" class="cs-card">
+                    <img src="assets/images/calculator-icon.png" alt="JavaScript Calculator" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">JavaScript Calculator</div>
                         <p class="cs-card-desc">Vanilla JavaScript calculator with procedurally generated click sounds via the Web Audio API, voice input that animates every button press in real time, full keyboard support, and a hidden long-press power toggle. No libraries. No audio files.</p>
