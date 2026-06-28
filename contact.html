@@ -83,6 +83,18 @@
             box-shadow: inset 0 0 0 1.5px var(--color-heading) !important;
         }
 
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         .contact-form-label {
             font-size: 0.7em;
             font-weight: 700;
@@ -242,9 +254,13 @@
         </div>
 
         <form id="contactForm" class="contact-form">
+            <label for="name" class="sr-only">Your Name</label>
             <input type="text" name="name" id="name" placeholder="Your Name" />
+            <label for="email" class="sr-only">Your Email</label>
             <input type="email" name="email" id="email" placeholder="Your Email" />
+            <label for="subject" class="sr-only">Subject</label>
             <input type="text" name="subject" id="subject" placeholder="Subject" />
+            <label for="message" class="sr-only">Your Message</label>
             <textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
             <input type="submit" value="Send Message" />

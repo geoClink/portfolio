@@ -813,14 +813,18 @@
     <script src="assets/js/main.js"></script>
     <script>
         document.querySelectorAll('.resume-accordion-header').forEach(function (header) {
+            header.setAttribute('aria-expanded', 'false');
             header.addEventListener('click', function () {
                 const body = this.closest('li').querySelector('.resume-accordion-body');
                 const isOpen = this.classList.toggle('open');
+
+                this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
                 if (isOpen) {
                     document.querySelectorAll('.resume-accordion-header.open').forEach(function (other) {
                         if (other !== header) {
                             other.classList.remove('open');
+                            other.setAttribute('aria-expanded', 'false');
                             other.closest('li').querySelector('.resume-accordion-body').style.maxHeight = '0';
                         }
                     });

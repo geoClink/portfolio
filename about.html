@@ -385,7 +385,7 @@
             <h3>My Tech Journey</h3>
             <ul class="timeline-list">
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">🎓</span>
                     <div>
                         <div class="timeline-title">May 2026: Graduated Apple Developer Academy</div>
@@ -401,7 +401,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">🏖️</span>
                     <div>
                         <div class="timeline-title">May 2026: Published CoastCast to the App Store</div>
@@ -421,7 +421,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">✈️</span>
                     <div>
                         <div class="timeline-title">Apr 2026: Turned pro</div>
@@ -437,7 +437,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">🏢</span>
                     <div>
                         <div class="timeline-title">Apr 2026: Co-founded CH Studios Detroit</div>
@@ -453,7 +453,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">🐦</span>
                     <div>
                         <div class="timeline-title">Apr 2026: Published TakeFlight to the App Store</div>
@@ -473,7 +473,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">📜</span>
                     <div>
                         <div class="timeline-title">Mar 2026: Earned Apple Ads Certification</div>
@@ -492,7 +492,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">📱</span>
                     <div>
                         <div class="timeline-title">Mar 2026: Published first app to App Store</div>
@@ -513,7 +513,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card">
+                <li class="timeline-card" role="button" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">💼</span>
                     <div>
                         <div class="timeline-title">Feb 2026: Contributed to CommonSight iOS app</div>
@@ -598,22 +598,31 @@
 
     <script src="assets/js/main.js"></script>
     <script>
+        function toggleTimelineCard(card) {
+            const details = card.querySelector('.timeline-details');
+            const arrow = card.querySelector('.timeline-arrow');
+            const isOpen = details.classList.contains('open');
+
+            document.querySelectorAll('.timeline-card').forEach(function (other) {
+                if (other !== card) {
+                    other.querySelector('.timeline-details').classList.remove('open');
+                    other.querySelector('.timeline-arrow').classList.remove('open');
+                    other.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            details.classList.toggle('open', !isOpen);
+            arrow.classList.toggle('open', !isOpen);
+            card.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+        }
+
         document.querySelectorAll('.timeline-card').forEach(function (card) {
-            card.addEventListener('click', function () {
-                const details = card.querySelector('.timeline-details');
-                const arrow = card.querySelector('.timeline-arrow');
-                const isOpen = details.classList.contains('open');
-
-                // Close all others
-                document.querySelectorAll('.timeline-card').forEach(function (other) {
-                    if (other !== card) {
-                        other.querySelector('.timeline-details').classList.remove('open');
-                        other.querySelector('.timeline-arrow').classList.remove('open');
-                    }
-                });
-
-                details.classList.toggle('open', !isOpen);
-                arrow.classList.toggle('open', !isOpen);
+            card.addEventListener('click', function () { toggleTimelineCard(card); });
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleTimelineCard(card);
+                }
             });
         });
     </script>
