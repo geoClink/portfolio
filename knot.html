@@ -56,9 +56,8 @@
         }
 
         .knot-admin-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.4em 1.5em;
+            columns: 2;
+            column-gap: 1.5em;
             margin: 1em 0 0;
         }
 
@@ -69,6 +68,8 @@
             list-style: none;
             padding-left: 1em;
             position: relative;
+            break-inside: avoid;
+            margin-bottom: 0.4em;
         }
 
         .knot-admin-grid li::before {
