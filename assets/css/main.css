@@ -14,6 +14,16 @@
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
 	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+
+	/* 8px spacing scale (rem-based so values are absolute, not font-relative) */
+	--space-1: 0.5rem;   /* 8px */
+	--space-2: 1rem;     /* 16px */
+	--space-3: 1.5rem;   /* 24px */
+	--space-4: 2rem;     /* 32px */
+	--space-5: 2.5rem;   /* 40px */
+	--space-6: 3rem;     /* 48px */
+	--space-8: 4rem;     /* 64px */
+
 	--color-bg:           #ffffff;
 	--color-surface:      #f7f7f7;
 	--color-border:       rgba(0, 0, 0, 0.1);
@@ -3277,9 +3287,9 @@ input, select, textarea {
 .ipad-video-bezel {
 	display: block;
 	position: relative;
-	margin: 0 auto 1.2em;
+	margin: 0 auto var(--space-2);
 	max-width: 760px;
-	padding: 14px 6px 6px;
+	padding: 16px 8px 8px;
 	border-radius: 22px;
 	background: var(--color-heading);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
@@ -3307,9 +3317,9 @@ input, select, textarea {
 .ipad-bezel {
 	display: block;
 	position: relative;
-	margin: 0 0 0.5em;
+	margin: 0 0 var(--space-1);
 	max-width: 640px;
-	padding: 10px;
+	padding: var(--space-1);
 	border-radius: 20px;
 	overflow: hidden;
 	background: var(--color-heading);
@@ -3331,8 +3341,8 @@ input, select, textarea {
 	background: var(--color-surface);
 	border-left: 3px solid var(--color-accent);
 	border-radius: 0 6px 6px 0;
-	padding: 0.65em 1em;
-	margin: 0 0 1.75em;
+	padding: var(--space-1) var(--space-2);
+	margin: 0 0 var(--space-4);
 	font-size: 0.9em;
 }
 .outcome-snapshot .snap-stat {
@@ -3358,7 +3368,7 @@ input, select, textarea {
 footer#footer {
     background: var(--color-footer-bg);
     margin-top: 0;
-    padding: 3em 2em 2.5em;
+    padding: var(--space-6) var(--space-4) var(--space-5);
     width: 100%;
     box-sizing: border-box;
 }
@@ -3369,7 +3379,7 @@ footer#footer .footer-inner {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.5em;
+    gap: var(--space-3);
 }
 footer#footer .footer-name {
     text-align: left;
@@ -3387,8 +3397,8 @@ footer#footer .footer-name span {
 }
 footer#footer .footer-cta {
     max-width: 720px;
-    margin: 0 auto 2em;
-    padding-top: 1.75em;
+    margin: 0 auto var(--space-4);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--color-on-dark-border);
 }
 footer#footer .footer-cta p {
@@ -3433,14 +3443,14 @@ footer#footer .footer-copy {
 }
 @media (max-width: 600px) {
     footer#footer {
-        padding: 2.5em 1.5em;
+        padding: var(--space-5) var(--space-3);
         text-align: center;
     }
     footer#footer .footer-inner {
         flex-direction: column;
         align-items: center;
-        gap: 1em;
-        margin-bottom: 1.75em;
+        gap: var(--space-2);
+        margin-bottom: var(--space-4);
     }
     footer#footer .footer-social {
         justify-content: center;
@@ -3463,13 +3473,13 @@ footer#footer .footer-copy {
     max-width: 720px !important;
     width: auto !important;
     margin: 0 auto !important;
-    padding: 1.5em 2em 3em !important;
+    padding: var(--space-3) var(--space-4) var(--space-6) !important;
     box-sizing: border-box !important;
     flex: none !important;
 }
 @media (max-width: 600px) {
     #main {
-        padding: 1em 1.25em 3em !important;
+        padding: var(--space-2) var(--space-2) var(--space-6) !important;
     }
 }
 
@@ -3496,7 +3506,7 @@ footer#footer .footer-copy {
 /* ── Page CTA Band ───────────────────────────────────────────── */
 .page-cta {
     width: 100%;
-    padding: 3.5em max(2em, calc((100% - 720px) / 2 + 2em));
+    padding: var(--space-6) max(var(--space-4), calc((100% - 720px) / 2 + var(--space-4)));
     font-size: 0.95em;
     color: var(--color-text-muted);
     line-height: 1.6;
@@ -3506,7 +3516,7 @@ footer#footer .footer-copy {
 }
 
 @media (max-width: 736px) {
-    .page-cta { padding: 2.5em 1.25em; }
+    .page-cta { padding: var(--space-5) var(--space-2); }
 }
 
 .page-cta strong {
@@ -3526,6 +3536,6 @@ footer#footer .footer-copy {
 }
 
 @media (max-width: 736px) {
-    .page-cta { padding: 2.5em 1.25em; }
+    .page-cta { padding: var(--space-5) var(--space-2); }
 }
 
