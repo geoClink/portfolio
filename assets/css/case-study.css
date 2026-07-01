@@ -108,10 +108,13 @@
 }
 .iframe-note-mobile { display: none; }
 
+.mobile-only { display: none; }
+
 @media (max-width: 600px) {
     .iframe-note-desktop { display: none; }
     .iframe-note-mobile { display: block; }
     .desktop-only { display: none; }
+    .mobile-only { display: block; }
 }
 
 .screenshot-placeholder {
@@ -129,13 +132,14 @@
     display: flex;
     justify-content: center;
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 /* iPhone mockup — frame comes from box-shadow rings, not padding */
 .phone-mockup {
     width: 280px;
     background: #111113;
-    border-radius: 44px;
+    border-radius: 40px;
     /* ultra-thin bezels: 4px sides, 4px top, 6px bottom chin */
     padding: 4px 4px 6px;
     position: relative;
@@ -150,6 +154,55 @@
         0 0 0 5px #3e3e43,
         /* subtle drop shadow */
         0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* Power / lock button — right side, positioned beyond the 5px box-shadow frame */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 145px;
+    width: 4px;
+    height: 58px;
+    background: #4a4a50;
+    border-radius: 0 3px 3px 0;
+    z-index: 15;
+}
+
+/* Left side buttons: mute switch */
+.phone-btns-left {
+    position: absolute;
+    left: -8px;
+    top: 92px;
+    width: 4px;
+    height: 10px;
+    background: #4a4a50;
+    border-radius: 3px 0 0 3px;
+    z-index: 15;
+}
+
+/* Volume up */
+.phone-btns-left::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 4px;
+    height: 34px;
+    background: #4a4a50;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Volume down */
+.phone-btns-left::after {
+    content: '';
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 4px;
+    height: 34px;
+    background: #4a4a50;
+    border-radius: 3px 0 0 3px;
 }
 
 /* Dynamic island — sits right at the top of the screen */
@@ -168,7 +221,7 @@
 }
 
 .phone-screen {
-    border-radius: 40px;
+    border-radius: 36px;
     overflow: hidden;
     height: 580px;
     display: flex;
@@ -228,6 +281,246 @@
     border: 1px solid var(--color-border);
     display: block;
     margin-bottom: 0.75em;
+}
+
+/* Desktop / Mobile view toggle — small pill links */
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.25em;
+}
+
+.view-toggle-btn {
+    padding: 0.28em 0.75em;
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1.5px solid var(--color-border);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: border-color 0.15s ease, color 0.15s ease;
+    font-family: var(--font-sans);
+}
+
+.view-toggle-btn.active {
+    border-color: var(--color-heading);
+    color: var(--color-heading);
+}
+
+.view-toggle-btn:hover:not(.active) {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+}
+
+.toggle-panel { display: none; }
+.toggle-panel.active { display: block; }
+.toggle-panel.phone-panel.active { display: flex; justify-content: center; }
+
+@media (max-width: 600px) {
+    .view-toggle { display: none; }
+    .toggle-panel { display: none !important; }
+    .toggle-panel.mobile-default { display: flex !important; justify-content: center; padding-bottom: 1.5em; }
+}
+
+/* Attribution line for iOS screens built by collaborators */
+.ios-attribution {
+    font-size: 0.72em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0.75em 0 0;
+}
+
+/* Three iPhones side by side — reuses .phone-mockup, scaled to 190px */
+.device-showcase-grid {
+    display: flex;
+    gap: 1.25em;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+.device-showcase-grid .phone-mockup {
+    width: 190px;
+    border-radius: 28px;
+    flex-shrink: 0;
+}
+
+/* Power button — rescaled */
+.device-showcase-grid .phone-mockup::before {
+    right: -7px;
+    top: 98px;
+    height: 40px;
+    width: 4px;
+}
+
+/* Dynamic island — rescaled */
+.device-showcase-grid .phone-mockup::after {
+    top: 6px;
+    height: 12px;
+    border-radius: 6px;
+}
+
+/* Mute switch — rescaled */
+.device-showcase-grid .phone-btns-left {
+    left: -7px;
+    top: 62px;
+    height: 7px;
+}
+
+/* Volume up — rescaled */
+.device-showcase-grid .phone-btns-left::before {
+    top: 20px;
+    height: 23px;
+    width: 4px;
+}
+
+/* Volume down — rescaled */
+.device-showcase-grid .phone-btns-left::after {
+    top: 51px;
+    height: 23px;
+    width: 4px;
+}
+
+/* Static image phone screen — no status bar row, height driven by image */
+.phone-screen-static {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.phone-screen-static img {
+    width: 100%;
+    display: block;
+}
+
+/* iPad mockup — landscape, matching iPhone bezel style */
+.ipad-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+
+.ipad-mockup {
+    position: relative;
+    background: #111113;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.1),
+        0 0 0 1.5px #5c5c61,
+        0 0 0 3.5px #111113,
+        0 0 0 5px #3e3e43,
+        0 8px 24px rgba(0,0,0,0.18);
+}
+
+.ipad-screen {
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.ipad-screen img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .device-showcase-grid { gap: 0.6em; }
+
+    .device-showcase-grid .phone-mockup {
+        width: 130px;
+        border-radius: 20px;
+    }
+    .device-showcase-grid .phone-mockup::before {
+        right: -6px;
+        top: 67px;
+        height: 27px;
+    }
+    .device-showcase-grid .phone-mockup::after {
+        top: 5px;
+        height: 9px;
+        border-radius: 5px;
+    }
+    .device-showcase-grid .phone-btns-left {
+        left: -6px;
+        top: 43px;
+        height: 5px;
+    }
+    .device-showcase-grid .phone-btns-left::before {
+        top: 14px;
+        height: 16px;
+    }
+    .device-showcase-grid .phone-btns-left::after {
+        top: 35px;
+        height: 16px;
+    }
+    .phone-screen-static { border-radius: 17px; }
+
+    .ipad-mockup { border-radius: 10px; }
+}
+
+
+/* Browser window chrome for desktop embeds */
+.browser-mockup {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.browser-bar {
+    background: var(--color-surface);
+    height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 12px;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.browser-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+.browser-dot.close    { background: #ff5f57; }
+.browser-dot.minimize { background: #febc2e; }
+.browser-dot.maximize { background: #28c840; }
+
+.browser-url {
+    flex: 1;
+    max-width: 340px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.06);
+    border-radius: 6px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 11.5px;
+    color: var(--color-text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.1px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.browser-mockup iframe {
+    width: 100%;
+    height: 640px;
+    border: none;
+    display: block;
 }
 
 @media (max-width: 600px) {

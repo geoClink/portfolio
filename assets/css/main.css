@@ -102,7 +102,7 @@ a:link, a:visited {
 	}
 	#header h1 {
 		display: block !important;
-		font-size: 0.82rem !important;
+		font-size: 0.95rem !important;
 		font-weight: 700 !important;
 		color: var(--color-on-dark) !important;
 		letter-spacing: 0.01em !important;
@@ -3109,11 +3109,12 @@ input, select, textarea {
 				#header .links ul {
 					justify-content: flex-end;
 					padding-right: 0.4em;
+					gap: 0.75em;
 				}
 
 				#header .links ul li a.button {
-					padding: 0.85em 1.05em;
-					font-size: 0.56em;
+					padding: 0.85em 0.7em;
+					font-size: 0.7em;
 				}
 
 		}
