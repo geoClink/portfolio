@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://geoclink.github.io/portfolio/wellness-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: The Wellness Co. — A full-stack wellness platform with service booking, practitioner profiles, memberships, and Stripe payments. Built as a Mindbody alternative." />
+    <meta name="description" content="Case study: The Wellness Co. — A full-stack booking platform for acupuncture and energy healing practices with webhook-driven payments, self-serve cancellation, and multi-tenant architecture. Built as a white-label Mindbody alternative." />
     <meta property="og:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Full-stack wellness platform with service booking, practitioner profiles, memberships, and Stripe — built as a Mindbody alternative." />
+    <meta property="og:description" content="Full-stack booking platform for solo wellness practitioners — webhook-driven Stripe payments, tiered refunds, and a multi-tenant admin dashboard. Built as a white-label Mindbody alternative." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/wellness-co.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Full-stack wellness platform with service booking, practitioner profiles, and memberships." />
+    <meta name="twitter:description" content="Full-stack booking platform for solo wellness practitioners — webhook-driven Stripe payments, tiered refunds, and a multi-tenant admin dashboard." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/case-study.css" />
@@ -57,7 +57,7 @@
         <a href="web-platforms.html" class="back-link">← Small Business Suite</a>
 
         <h2 class="case-title">The Wellness Co.</h2>
-        <p class="case-tagline">A full-stack wellness platform for spas, yoga studios, and massage practices — service booking, practitioner profiles, membership tiers, and Stripe payments, all in one. Built as a Mindbody alternative without the $150/month price tag.</p>
+        <p class="case-tagline">A full-stack booking platform for acupuncture and energy healing practices — service discovery, appointment scheduling, self-serve cancellation and rescheduling, and Stripe payments, all in one. Built as a white-label alternative to Mindbody without the monthly fees.</p>
 
         <div class="case-links">
             <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
@@ -79,17 +79,20 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Wellness businesses — spas, yoga studios, massage practices — are paying $100–200/month for Mindbody or Vagaro, platforms that were built for gyms and feel like it. The scheduling UX is clunky, the fees are high, and the branding is the platform's, not the business's. The goal was a custom-branded alternative that handles the whole workflow: discovery, booking, payment, and membership — owned by the business.</p>
+            <p>Solo wellness practitioners — acupuncturists, energy healers, Reiki providers — are paying $100–200/month for platforms like Mindbody or Vagaro that were built for large gyms and feel like it. The booking UX is generic, the branding belongs to the platform, and the features they're paying for go mostly unused. The goal was a fully custom-branded booking experience the practitioner owns outright, with no ongoing software cost.</p>
         </div>
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Built on the same Supabase backend architecture as the Bakery Co., adapted for appointment-based businesses. Practitioners have individual profiles with their services and availability. Clients book a time slot, pay through Stripe, and receive a confirmation email via Resend. Membership tiers are managed through Stripe subscriptions — the database checks the membership status before unlocking member pricing. The admin dashboard lets the owner manage practitioners, services, and appointments without a developer.</p>
+            <p>The booking confirmation flow is webhook-driven rather than tied to the booking endpoint — Stripe fires a webhook after payment clears, which writes the appointment to Supabase and sends the confirmation email via Resend. This means a failed or abandoned payment never results in a confirmed appointment in the database.</p>
+            <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
+            <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Practitioners can manage services, appointments, availability, blocked dates, and reviews — and connect their own Stripe and Resend accounts — without touching code. Password reset is handled through a tokenized email flow that lands back on the dashboard.</p>
+            <p>The architecture is multi-tenant from day one. A single middleware reads a <code>TENANT_SLUG</code> environment variable and scopes every database query to that tenant's data. Onboarding a new practitioner means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A wellness platform that gives small practices the same feature set as Mindbody — service discovery, practitioner booking, Stripe payments, and memberships — at zero monthly software cost after handoff. Part of the CH Studios Small Business Platform Suite.</p>
+            <p>A booking platform that gives solo wellness practitioners a professional, fully branded client experience — service discovery, live availability scheduling, Stripe payments, and automated refunds — at zero monthly software cost after handoff. Part of the CH Studios Small Business Platform Suite.</p>
         </div>
 
     </div>
