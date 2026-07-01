@@ -109,30 +109,23 @@
         <div class="case-section">
             <h3>Admin Dashboard</h3>
 
-            <div class="view-toggle">
-                <button class="view-toggle-btn active" data-panel="admin-desktop-panel">Desktop</button>
-                <button class="view-toggle-btn" data-panel="admin-mobile-panel">Mobile</button>
-            </div>
-
-            <div id="admin-desktop-panel" class="toggle-panel active">
-                <div class="browser-mockup">
-                    <div class="browser-bar">
-                        <div class="browser-dots">
-                            <div class="browser-dot close"></div>
-                            <div class="browser-dot minimize"></div>
-                            <div class="browser-dot maximize"></div>
-                        </div>
-                        <div class="browser-url">the-wellness-co.vercel.app/admin</div>
+            <div class="browser-mockup desktop-only">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot close"></div>
+                        <div class="browser-dot minimize"></div>
+                        <div class="browser-dot maximize"></div>
                     </div>
-                    <iframe
-                        src="https://the-wellness-co.vercel.app/admin.html?demo=true"
-                        title="The Wellness Co. — Admin Dashboard Demo"
-                        loading="lazy"
-                    ></iframe>
+                    <div class="browser-url">the-wellness-co.vercel.app/admin</div>
                 </div>
+                <iframe
+                    src="https://the-wellness-co.vercel.app/admin.html?demo=true"
+                    title="The Wellness Co. — Admin Dashboard Demo"
+                    loading="lazy"
+                ></iframe>
             </div>
 
-            <div id="admin-mobile-panel" class="toggle-panel phone-panel mobile-default">
+            <div class="phone-showcase">
                 <div class="phone-mockup">
                     <div class="phone-btns-left"></div>
                     <div class="phone-screen">
@@ -195,16 +188,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        document.querySelectorAll('.view-toggle-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var section = btn.closest('.case-section');
-                section.querySelectorAll('.view-toggle-btn').forEach(function(b) { b.classList.remove('active'); });
-                section.querySelectorAll('.toggle-panel').forEach(function(p) { p.classList.remove('active'); });
-                btn.classList.add('active');
-                section.querySelector('#' + btn.dataset.panel).classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
