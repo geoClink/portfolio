@@ -111,6 +111,7 @@
 @media (max-width: 600px) {
     .iframe-note-desktop { display: none; }
     .iframe-note-mobile { display: block; }
+    .desktop-only { display: none; }
 }
 
 .screenshot-placeholder {
@@ -122,4 +123,136 @@
     font-size: 0.85em;
     letter-spacing: 0.04em;
     margin: 3em 0;
+}
+
+.phone-showcase {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+/* iPhone mockup — frame comes from box-shadow rings, not padding */
+.phone-mockup {
+    width: 280px;
+    background: #111113;
+    border-radius: 44px;
+    /* ultra-thin bezels: 4px sides, 4px top, 6px bottom chin */
+    padding: 4px 4px 6px;
+    position: relative;
+    box-shadow:
+        /* glass edge highlight */
+        inset 0 0 0 1px rgba(255,255,255,0.1),
+        /* titanium bright edge */
+        0 0 0 1.5px #5c5c61,
+        /* dark body gap */
+        0 0 0 3.5px #111113,
+        /* outer titanium band */
+        0 0 0 5px #3e3e43,
+        /* subtle drop shadow */
+        0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* Dynamic island — sits right at the top of the screen */
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 18px;
+    background: #111113;
+    border-radius: 9px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.phone-screen {
+    border-radius: 40px;
+    overflow: hidden;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-bar {
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px 0 26px;
+    pointer-events: none;
+    position: relative;
+    z-index: 5;
+    background: #f3edea;
+}
+
+.status-time {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1c1c1e;
+    letter-spacing: -0.2px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* iframe rendered at 390px iPhone width, scaled down to fit the phone frame.
+   Scale = (280px phone - 4px padding × 2) / 390px viewport = 272/390 ≈ 0.697 */
+.phone-demo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 390px;
+    height: 832px;
+    border: none;
+    transform: scale(0.6974);
+    transform-origin: top left;
+}
+
+.case-video {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: block;
+    margin-bottom: 0.75em;
+}
+
+@media (max-width: 600px) {
+    .phone-mockup {
+        width: 240px;
+    }
+    .phone-screen {
+        height: 500px;
+    }
+    /* scale = (240 - 8) / 390 = 232/390 ≈ 0.595 */
+    .phone-demo {
+        transform: scale(0.595);
+    }
+    .status-bar {
+        height: 22px;
+        padding: 0 21px 0 26px;
+    }
+    .status-time {
+        font-size: 10px;
+    }
+    .status-icons {
+        gap: 3px;
+    }
+    .status-icons svg {
+        transform: scale(0.8);
+        transform-origin: center;
+    }
 }
