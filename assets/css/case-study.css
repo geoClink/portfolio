@@ -477,46 +477,19 @@
 }
 
 @media (max-width: 600px) {
-    .device-showcase-grid { gap: var(--space-2); }
-    /* Live iframe phones at 155px on mobile: scale = (155 - 8) / 390 = 147/390 ≈ 0.377
-       Screen height = 832 × 0.377 + 20px status bar = 334px (no cutoff) */
-    .device-showcase-grid .phone-screen { height: 334px; border-radius: 20px; }
-    .device-showcase-grid .phone-demo { transform: scale(0.377); }
+    .device-showcase-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+    }
+    /* Live iframe phones at 240px stacked on mobile — same size as desktop */
+    .device-showcase-grid .phone-screen { height: 520px; border-radius: 30px; }
+    .device-showcase-grid .phone-demo { transform: scale(0.595); }
 
     .device-showcase-grid .phone-mockup {
-        width: 155px;
-        border-radius: 24px;
+        width: 240px;
+        border-radius: 34px;
     }
-    .device-showcase-grid .phone-mockup::before {
-        right: -7px;
-        top: 80px;
-        height: 32px;
-    }
-    .device-showcase-grid .phone-mockup::after {
-        top: 6px;
-        height: 10px;
-        border-radius: 6px;
-    }
-    .device-showcase-grid .phone-btns-left {
-        left: -7px;
-        top: 51px;
-        height: 6px;
-    }
-    .device-showcase-grid .phone-btns-left::before {
-        top: 17px;
-        height: 19px;
-    }
-    .device-showcase-grid .phone-btns-left::after {
-        top: 44px;
-        height: 19px;
-    }
-    .device-showcase-grid .status-bar {
-        height: 20px;
-        padding: 0 10px 0 14px;
-    }
-    .device-showcase-grid .status-time { font-size: 10px; }
-    .device-showcase-grid .status-icons { gap: 3px; }
-    .device-showcase-grid .status-icons svg { transform: scale(0.75); }
     .phone-screen-static { border-radius: 17px; }
 
     .ipad-mockup { border-radius: 10px; }
