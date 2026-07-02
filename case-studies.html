@@ -230,9 +230,18 @@
             color: var(--color-text-muted);
         }
 
+        .cs-card-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin-top: auto;
+            padding-top: 0.85em;
+        }
+
         @media (max-width: 600px) {
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
+            .cs-card-btns { padding-top: 0.6em; }
         }
     </style>
     <script type="application/ld+json">
@@ -298,9 +307,9 @@
                     <div class="cs-card-body">
                         <div class="cs-card-name">Knot — Small Business Operating System</div>
                         <p class="cs-card-desc">A full business OS in the category of Toast, Square, and 7shifts — customer website, 17-module admin dashboard, iOS customer app, iOS POS, and an employee scheduling app, all on one Node/Express API and one Supabase database. Built at CH Studios LLC.</p>
-                        <div style="display:flex;gap:1em;align-items:center;margin-top:auto;">
+                        <div class="cs-card-btns">
                             <a href="knot.html" class="cs-cta">Case Study →</a>
-                            <a href="https://knot-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Visit Site ↗</a>
+                            <a href="https://knot-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
                         </div>
                     </div>
                 </div>
@@ -327,38 +336,50 @@
         <div class="cs-group">
             <h3 class="cs-group-label">Small Business Suite</h3>
             <div class="cs-cards">
-                <a href="wellness-co.html" class="cs-card">
+                <div class="cs-card">
                     <img src="assets/images/thewellnessco/favicon.svg" alt="The Wellness Co." class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">The Wellness Co. — Real Client Deployment</div>
                         <p class="cs-card-desc">A full booking platform replacing Mindbody for a real solo wellness practitioner — currently in final handoff. Webhook-driven Stripe payments, self-serve cancellation with tiered refunds, and a live interactive admin dashboard demo. One of four live deployments built on Knot.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="wellness-co.html" class="cs-cta">Case Study →</a>
+                            <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                        </div>
                     </div>
-                </a>
-                <a href="bakery-spec.html" class="cs-card">
+                </div>
+                <div class="cs-card">
                     <img src="assets/images/thebakeryco/favicon.svg" alt="The Bakery Co." class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">The Bakery Co.</div>
                         <p class="cs-card-desc">Five-surface ordering platform — customer website, admin dashboard, iOS POS, iOS customer app, and an AI ordering layer via MCP and WebMCP. All surfaces share one Supabase database. Zero commission per order versus 15–30% on delivery platforms.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="bakery-spec.html" class="cs-cta">Case Study →</a>
+                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                        </div>
                     </div>
-                </a>
-                <a href="salon-co.html" class="cs-card">
+                </div>
+                <div class="cs-card">
                     <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co." class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">The Salon Co.</div>
                         <p class="cs-card-desc">14-page marketing and booking site for a luxury hair salon — built as a direct alternative to Squarespace for owners who want something custom without the monthly fee. Scroll-based sticky header, auto-rotating reviews, FAQ accordion, and gallery with filters.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="salon-co.html" class="cs-cta">Case Study →</a>
+                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                        </div>
                     </div>
-                </a>
-                <a href="sports-bar-co.html" class="cs-card">
+                </div>
+                <div class="cs-card">
                     <img src="assets/images/thesportsbarco/favicon.svg" alt="The Sports Bar Co." class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">The Sports Bar Co.</div>
                         <p class="cs-card-desc">Full-stack reservations and events platform — table booking, live events calendar, and party inquiry form. Built as a direct alternative to Toast for owners who want a custom web presence without platform lock-in.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="sports-bar-co.html" class="cs-cta">Case Study →</a>
+                            <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
@@ -366,14 +387,17 @@
         <div class="cs-group">
             <h3 class="cs-group-label">Cross-Platform Products</h3>
             <div class="cs-cards">
-                <a href="tally.html" class="cs-card">
+                <div class="cs-card">
                     <img src="assets/images/tallyios/appicon.png" alt="Tally app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Tally — Time Tracker</div>
                         <p class="cs-card-desc">Cross-platform SaaS for freelancers and small teams — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard. Cross-platform subscription sync via StoreKit and Stripe. $9.99 one-time vs. $10–20/month competitors.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="tally.html" class="cs-cta">Case Study →</a>
+                            <a href="https://tally-web-nu.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
@@ -382,14 +406,17 @@
         <div class="cs-group">
             <h3 class="cs-group-label">iOS Apps</h3>
             <div class="cs-cards">
-                <a href="coastcast.html" class="cs-card">
+                <div class="cs-card">
                     <img src="assets/images/coastcast/coastcast-app-icon.png" alt="CoastCast app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">CoastCast</div>
                         <p class="cs-card-desc">SwiftUI iOS app with a Python FastAPI backend delivering real-time conditions for 54 Michigan beaches. On-device CoreML/XGBoost crowd prediction, Dynamic Island Live Activities, Siri Shortcuts, WidgetKit, and a Swift Testing suite with 120+ parameterized test cases.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="coastcast.html" class="cs-cta">Case Study →</a>
+                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View on App Store ↗</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
@@ -397,14 +424,17 @@
         <div class="cs-group">
             <h3 class="cs-group-label">JavaScript</h3>
             <div class="cs-cards">
-                <a href="javascript-calculator.html" class="cs-card">
+                <div class="cs-card">
                     <img src="assets/images/calculator-icon.png" alt="JavaScript Calculator" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">JavaScript Calculator</div>
                         <p class="cs-card-desc">Vanilla JavaScript calculator with procedurally generated click sounds via the Web Audio API, voice input that animates every button press in real time, full keyboard support, and a hidden long-press power toggle. No libraries. No audio files.</p>
-                        <span class="cs-cta">Case Study →</span>
+                        <div class="cs-card-btns">
+                            <a href="javascript-calculator.html" class="cs-cta">Case Study →</a>
+                            <a href="https://geoclink.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Live Demo ↗</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
 
