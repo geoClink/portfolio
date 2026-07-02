@@ -115,6 +115,10 @@
     .iframe-note-mobile { display: block; }
     .desktop-only { display: none; }
     .mobile-only { display: block; }
+    .case-meta {
+        letter-spacing: 0.05em;
+        font-size: 0.68em;
+    }
 }
 
 .screenshot-placeholder {
@@ -286,84 +290,117 @@
 
 /* Attribution line for iOS screens built by collaborators */
 .ios-attribution {
-    font-size: 0.72em;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 0.75em;
     color: var(--color-text-muted);
     margin: var(--space-1) 0 0;
+    font-style: italic;
+    line-height: 1.5;
 }
 
-/* Three iPhones side by side — reuses .phone-mockup, scaled to 190px */
+/* Horizontal screenshot scroll track — matches CoastCast pattern */
+.screenshot-scroll-track {
+    display: flex;
+    gap: 1.8em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 1em 0.5em 1.5em;
+    margin: 0 -0.5em 1.5em;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+.screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
+.screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+.screenshot-scroll-item {
+    flex: 0 0 auto;
+    width: 260px;
+    scroll-snap-align: start;
+}
+.screenshot-scroll-item p {
+    font-size: 0.75em;
+    color: var(--color-text-muted);
+    margin-top: 0.65em;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+/* Lets iphone-bezel fill the scroll item instead of capping at 270px */
+.screenshot-bezel { max-width: 100% !important; }
+
+/* Two iPhones side by side — reuses .phone-mockup, scaled to 240px */
 .device-showcase-grid {
     display: flex;
     gap: var(--space-5);
     justify-content: center;
     margin-top: var(--space-3);
+    margin-bottom: var(--space-3);
 }
 
 .device-showcase-grid .phone-mockup {
-    width: 190px;
-    border-radius: 28px;
+    width: 240px;
+    border-radius: 34px;
     flex-shrink: 0;
 }
 
 /* Power button — rescaled */
 .device-showcase-grid .phone-mockup::before {
-    right: -7px;
-    top: 98px;
-    height: 40px;
+    right: -8px;
+    top: 124px;
+    height: 50px;
     width: 4px;
 }
 
 /* Dynamic island — rescaled */
 .device-showcase-grid .phone-mockup::after {
-    top: 6px;
-    height: 12px;
-    border-radius: 6px;
+    top: 7px;
+    height: 15px;
+    border-radius: 8px;
 }
 
 /* Mute switch — rescaled */
 .device-showcase-grid .phone-btns-left {
-    left: -7px;
-    top: 62px;
-    height: 7px;
+    left: -8px;
+    top: 79px;
+    height: 9px;
 }
 
 /* Volume up — rescaled */
 .device-showcase-grid .phone-btns-left::before {
-    top: 20px;
-    height: 23px;
+    top: 24px;
+    height: 29px;
     width: 4px;
 }
 
 /* Volume down — rescaled */
 .device-showcase-grid .phone-btns-left::after {
-    top: 51px;
-    height: 23px;
+    top: 62px;
+    height: 29px;
     width: 4px;
 }
 
-/* Live iframe phones inside device-showcase-grid (190px wide)
-   Scale = (190 - 8px padding) / 390px iPhone width = 182/390 ≈ 0.467 */
+/* Live iframe phones inside device-showcase-grid (240px wide)
+   Scale = (240 - 8px padding) / 390px = 232/390 ≈ 0.595
+   Screen height = 832px iframe × 0.595 + 24px status bar = 519px → 520px (no cutoff) */
 .device-showcase-grid .phone-screen {
-    height: 392px;
-    border-radius: 24px;
+    height: 520px;
+    border-radius: 30px;
 }
 .device-showcase-grid .phone-demo {
-    transform: scale(0.467);
+    transform: scale(0.595);
 }
 .device-showcase-grid .status-bar {
-    height: 20px;
-    padding: 0 10px 0 14px;
+    height: 24px;
+    padding: 0 13px 0 16px;
 }
 .device-showcase-grid .status-time {
-    font-size: 10px;
+    font-size: 11px;
 }
 .device-showcase-grid .status-icons {
-    gap: 3px;
+    gap: 4px;
 }
 .device-showcase-grid .status-icons svg {
-    transform: scale(0.75);
+    transform: scale(0.85);
     transform-origin: right center;
 }
 
@@ -394,12 +431,26 @@
     display: block;
 }
 
-/* iPad mockup — landscape, matching iPhone bezel style */
+/* iPad mockup — landscape, horizontal scroll track */
 .ipad-showcase-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
     gap: var(--space-3);
-    margin-top: var(--space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5em 0.25em 1.25em;
+    margin: var(--space-3) -0.25em 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+
+.ipad-showcase-grid::-webkit-scrollbar { height: 6px; }
+.ipad-showcase-grid::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+.ipad-showcase-grid .ipad-mockup {
+    flex: 0 0 auto;
+    width: 420px;
+    scroll-snap-align: start;
 }
 
 .ipad-mockup {
@@ -426,38 +477,46 @@
 }
 
 @media (max-width: 600px) {
-    .device-showcase-grid { gap: var(--space-1); }
-    /* Live iframe phones at 130px: scale = (130 - 8) / 390 = 122/390 ≈ 0.313 */
-    .device-showcase-grid .phone-screen { height: 264px; border-radius: 17px; }
-    .device-showcase-grid .phone-demo { transform: scale(0.313); }
+    .device-showcase-grid { gap: var(--space-2); }
+    /* Live iframe phones at 155px on mobile: scale = (155 - 8) / 390 = 147/390 ≈ 0.377
+       Screen height = 832 × 0.377 + 20px status bar = 334px (no cutoff) */
+    .device-showcase-grid .phone-screen { height: 334px; border-radius: 20px; }
+    .device-showcase-grid .phone-demo { transform: scale(0.377); }
 
     .device-showcase-grid .phone-mockup {
-        width: 130px;
-        border-radius: 20px;
+        width: 155px;
+        border-radius: 24px;
     }
     .device-showcase-grid .phone-mockup::before {
-        right: -6px;
-        top: 67px;
-        height: 27px;
+        right: -7px;
+        top: 80px;
+        height: 32px;
     }
     .device-showcase-grid .phone-mockup::after {
-        top: 5px;
-        height: 9px;
-        border-radius: 5px;
+        top: 6px;
+        height: 10px;
+        border-radius: 6px;
     }
     .device-showcase-grid .phone-btns-left {
-        left: -6px;
-        top: 43px;
-        height: 5px;
+        left: -7px;
+        top: 51px;
+        height: 6px;
     }
     .device-showcase-grid .phone-btns-left::before {
-        top: 14px;
-        height: 16px;
+        top: 17px;
+        height: 19px;
     }
     .device-showcase-grid .phone-btns-left::after {
-        top: 35px;
-        height: 16px;
+        top: 44px;
+        height: 19px;
     }
+    .device-showcase-grid .status-bar {
+        height: 20px;
+        padding: 0 10px 0 14px;
+    }
+    .device-showcase-grid .status-time { font-size: 10px; }
+    .device-showcase-grid .status-icons { gap: 3px; }
+    .device-showcase-grid .status-icons svg { transform: scale(0.75); }
     .phone-screen-static { border-radius: 17px; }
 
     .ipad-mockup { border-radius: 10px; }

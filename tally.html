@@ -79,17 +79,6 @@
         </div>
 
         <div class="case-section">
-            <h3>The Approach</h3>
-            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same <code>is_pro</code> flag in the database, so the app never has to check two payment systems.</p>
-
-            <p>Sessions are stored locally in SwiftData so the app works offline and opens instantly. Supabase syncs when the network is available. The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI.</p>
-
-            <p>Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy. The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead.</p>
-        </div>
-
-        
-
-        <div class="case-section">
             <h3>Try It Live</h3>
             <iframe
                 src="https://tally-web-nu.vercel.app/demo"
@@ -135,6 +124,15 @@
                     <p>Workspace — Business tier team management, handled by StoreKit on iOS and Stripe on web.</p>
                 </div>
             </div>
+        </div>
+
+        <div class="case-section">
+            <h3>The Approach</h3>
+            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same <code>is_pro</code> flag in the database, so the app never has to check two payment systems.</p>
+
+            <p>Sessions are stored locally in SwiftData so the app works offline and opens instantly. Supabase syncs when the network is available. The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI.</p>
+
+            <p>Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy. The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead.</p>
         </div>
 
         <div class="case-section">
