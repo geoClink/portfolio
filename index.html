@@ -737,6 +737,26 @@
             color: var(--color-text-muted);
         }
 
+        @media (max-width: 736px) {
+            .appstore-app {
+                flex-wrap: wrap;
+            }
+            .appstore-app-info {
+                flex: 1 0 0;
+            }
+            .appstore-case-btn {
+                flex: 1 0 100%;
+                text-align: center;
+                margin-top: 0.25em;
+            }
+            .appstore-app-desc {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
         /* ── Scroll fade-in ────────────────────────────────────── */
         .fade-in {
             opacity: 0;

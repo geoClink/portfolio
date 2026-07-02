@@ -195,9 +195,12 @@ a:link, a:visited {
 	.menu-overlay {
 		display: block;
 		position: fixed;
-		inset: 0;
+		top: 3.5em;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		background: rgba(0, 0, 0, 0);
-		z-index: 10015;
+		z-index: 9999;
 		transition: background 0.28s ease;
 		pointer-events: none;
 	}
@@ -252,7 +255,7 @@ a:link, a:visited {
 		right: 0;
 		text-align: center;
 		font-size: 0.58rem;
-		color: var(--color-on-dark-dim);
+		color: var(--color-on-dark-subtle);
 		letter-spacing: 0.18em;
 		text-transform: uppercase;
 		pointer-events: none;
