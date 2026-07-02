@@ -640,7 +640,7 @@
 
         .appstore-app {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.75em;
             background: var(--color-bg);
             border: 1px solid var(--color-border);
@@ -672,6 +672,7 @@
             flex-direction: column;
             gap: 0.15em;
             min-width: 0;
+            flex: 1;
         }
 
         .appstore-app-name {
@@ -688,6 +689,13 @@
             color: var(--color-text-muted);
         }
 
+        .appstore-app-desc {
+            font-size: 0.73em;
+            color: var(--color-text-muted);
+            line-height: 1.55;
+            margin: 0.3em 0 0;
+        }
+
         .appstore-apps {
             flex-direction: column;
             flex-wrap: nowrap;
@@ -698,17 +706,14 @@
             min-width: 0;
         }
 
-        .appstore-app { position: relative; cursor: pointer; }
-        .appstore-app-cover {
-            position: absolute;
-            inset: 0;
-            border-radius: 10px;
-            z-index: 0;
+        .appstore-app-btns {
+            display: flex;
+            gap: 0.5em;
+            flex-wrap: wrap;
+            margin-top: 0.75em;
         }
         .appstore-case-btn {
-            margin-left: auto;
-            position: relative;
-            z-index: 1;
+            display: inline-block;
             font-size: 0.72em;
             font-weight: 700;
             letter-spacing: 0.04em;
@@ -719,11 +724,17 @@
             box-shadow: inset 0 0 0 1.5px var(--color-border);
             transition: background 0.2s ease, color 0.2s ease;
             white-space: nowrap;
-            flex-shrink: 0;
         }
         .appstore-case-btn:hover {
             background: var(--color-heading);
             color: var(--color-on-dark);
+        }
+        .appstore-case-btn-secondary {
+            color: var(--color-text-muted);
+        }
+        .appstore-case-btn-secondary:hover {
+            background: var(--color-surface);
+            color: var(--color-text-muted);
         }
 
         /* ── Scroll fade-in ────────────────────────────────────── */
@@ -771,6 +782,8 @@
         </aside>
     </header>
 
+    <div id="menuOverlay" class="menu-overlay"></div>
+
     <!-- Hero -->
     <section class="hero-dark">
         <div class="hero-inner">
@@ -799,6 +812,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Knot</span>
                         <span class="appstore-app-sub">Small business OS</span>
+                        <p class="appstore-app-desc">A full business OS in the category of Toast, Square, and 7shifts — customer website, 17-module admin dashboard, iOS customer app, iOS POS, and an employee scheduling app, all on one Node/Express API and one Supabase database.</p>
                     </div>
                     <a href="knot.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -808,6 +822,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Wellness Co.</span>
                         <span class="appstore-app-sub">Real client · Built on Knot</span>
+                        <p class="appstore-app-desc">Full booking platform replacing Mindbody for a solo wellness practitioner — webhook-driven Stripe payments, self-serve cancellation with tiered refunds, and a JWT-protected admin dashboard.</p>
                     </div>
                     <a href="wellness-co.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -817,6 +832,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Bakery Co.</span>
                         <span class="appstore-app-sub">Built on Knot</span>
+                        <p class="appstore-app-desc">Five-surface ordering platform — customer website, admin dashboard, iOS POS, iOS customer app, and an AI ordering layer via MCP and WebMCP. Zero commission per order versus 15–30% on delivery platforms.</p>
                     </div>
                     <a href="bakery-spec.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -826,6 +842,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Salon Co.</span>
                         <span class="appstore-app-sub">Built on Knot</span>
+                        <p class="appstore-app-desc">14-page marketing and booking site built as a direct alternative to Squarespace — custom branding, sticky header, auto-rotating reviews, FAQ accordion, and gallery with filters. No monthly platform fee.</p>
                     </div>
                     <a href="salon-co.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -835,6 +852,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">The Sports Bar Co.</span>
                         <span class="appstore-app-sub">Built on Knot</span>
+                        <p class="appstore-app-desc">Full-stack reservations and events platform — table booking, live events calendar, and party inquiry form. Built as a direct alternative to Toast for owners who want a custom web presence without platform lock-in.</p>
                     </div>
                     <a href="sports-bar-co.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -850,6 +868,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Tally</span>
                         <span class="appstore-app-sub">Cross-platform time tracker</span>
+                        <p class="appstore-app-desc">SaaS for freelancers and small teams — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard. Cross-platform subscription sync via StoreKit and Stripe. $9.99 one-time vs. $10–20/month competitors.</p>
                     </div>
                     <a href="tally.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -866,6 +885,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">CoastCast</span>
                         <span class="appstore-app-sub">Beach conditions · iOS</span>
+                        <p class="appstore-app-desc">SwiftUI app with a Python FastAPI backend delivering real-time conditions for 54 Michigan beaches — on-device CoreML crowd prediction, Dynamic Island Live Activities, Siri Shortcuts, and WidgetKit.</p>
                     </div>
                     <a href="coastcast.html" class="appstore-case-btn">Case Study →</a>
                 </div>
@@ -875,6 +895,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Stamped!</span>
                         <span class="appstore-app-sub">City passport · iPhone · iPad</span>
+                        <p class="appstore-app-desc">i18n travel app with live API data syncing and offline caching for reliable use in low-signal areas. Tracks landmarks and local spots across cities.</p>
                     </div>
                 </div>
                 <div class="appstore-app">
@@ -883,6 +904,7 @@
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">TakeFlight</span>
                         <span class="appstore-app-sub">Bird life game · iPhone · iPad · macOS</span>
+                        <p class="appstore-app-desc">5-in-1 SpriteKit survival game with full keyboard support, haptic feedback, and granular audio management. Ships on iPhone, iPad, and macOS.</p>
                     </div>
                 </div>
             </div>

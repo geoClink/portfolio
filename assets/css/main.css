@@ -192,6 +192,19 @@ a:link, a:visited {
 	}
 
 	/* Full-screen overlay */
+	.menu-overlay {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0);
+		z-index: 10015;
+		transition: background 0.28s ease;
+		pointer-events: none;
+	}
+	.menu-overlay.visible {
+		background: rgba(0, 0, 0, 0.45);
+		pointer-events: auto;
+	}
 	.sidebar-menu {
 		top: 3.5em !important;
 		height: calc(100vh - 3.5em) !important;

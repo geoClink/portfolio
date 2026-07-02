@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var menuBtn = document.getElementById('menuToggle');
     var sidebarMenu = document.getElementById('sidebarMenu');
+    var menuOverlay = document.getElementById('menuOverlay');
 
     if (menuBtn && sidebarMenu) {
         var currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sidebarMenu.classList.add('closing');
             menuBtn.classList.remove('open');
             document.body.style.overflow = '';
+            if (menuOverlay) menuOverlay.classList.remove('visible');
             setTimeout(function () {
                 sidebarMenu.classList.remove('visible');
                 sidebarMenu.classList.remove('closing');
@@ -41,12 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 sidebarMenu.classList.add('visible');
                 menuBtn.classList.add('open');
                 document.body.style.overflow = 'hidden';
+                if (menuOverlay) menuOverlay.classList.add('visible');
             }
         });
 
         sidebarMenu.addEventListener('click', function () {
             closeMenu();
         });
+
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', function () {
+                closeMenu();
+            });
+        }
     }
 
     document.body.classList.remove('is-preload');
