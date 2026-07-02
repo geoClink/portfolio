@@ -523,16 +523,33 @@
                 <li>
                     <button class="resume-accordion-header">
                         <div>
-                            <div class="resume-item-title">Tally — Time Tracker</div>
-                            <div class="resume-item-meta">SwiftUI · Catalyst · React · Vite · Supabase · StoreKit · Stripe &middot; 2026 · In Review</div>
+                            <div class="resume-item-title">The Wellness Co. — Real Client</div>
+                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel &middot; Jun 2026 · ~2 weeks start to handoff</div>
                         </div>
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
-                            <a href="tally.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="wellness-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Built a cross-platform time tracker — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React/Vite web dashboard on a shared Supabase backend. StoreKit and Stripe both write to the same <code>is_pro</code> flag so purchasing on one platform unlocks all. Business tier adds multi-user team workspaces with row-level security. All backend logic (webhooks, email, team invites) runs in Deno Edge Functions with no Node server to maintain.</p>
+                        <p>Built a full booking platform for a solo wellness practitioner replacing a $100–200/month Mindbody subscription. Stripe payment flow is webhook-driven — charges are confirmed before appointments are written to Supabase, so no unpaid booking can enter the system. Each appointment gets a UUID cancel token at insert time; the confirmation email carries that token so clients can self-serve cancel or reschedule with no login. Refund tier (full, 50%, or zero) is calculated server-side based on time remaining. Admin dashboard is JWT-protected with a rate-limited login and password reset via tokenized email. Multi-tenant architecture from day one — onboarding a new practitioner is one database row and a Vercel deploy. 100/100/100 Lighthouse scores.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title">The Bakery Co.</div>
+                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · MCP · WebMCP &middot; May 2026</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="bakery-spec.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                        </div>
+                        <p>Built a full-stack bakery ordering platform with Node.js/Express, Supabase, and Stripe featuring an admin dashboard covering order management, inventory, revenue analytics, menu CMS, loyalty program, staff scheduling, coupon management, digital gift cards, and subscription billing, deployed to Render. Implemented MCP server using Anthropic SDK so customers can browse menus, place orders, and receive Stripe checkout links through Claude AI conversation. Shipped WebMCP the week Google announced it at I/O 2026, enabling Gemini to query menu and cart data in Chrome with no API connection required.</p>
                     </div>
                 </li>
                 <li>
@@ -553,16 +570,16 @@
                 <li>
                     <button class="resume-accordion-header">
                         <div>
-                            <div class="resume-item-title">The Bakery Co.</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · MCP · WebMCP &middot; May 2026</div>
+                            <div class="resume-item-title">Tally — Time Tracker</div>
+                            <div class="resume-item-meta">SwiftUI · Catalyst · React · Vite · Supabase · StoreKit · Stripe &middot; 2026 · In Review</div>
                         </div>
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
-                            <a href="https://geoclink.github.io/the-bakery-co/" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+                            <a href="tally.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                         </div>
-                        <p>Built a full-stack bakery ordering platform with Node.js/Express, Supabase, and Stripe featuring an admin dashboard covering order management, inventory, revenue analytics, menu CMS, loyalty program, staff scheduling, coupon management, digital gift cards, and subscription billing, deployed to Render. Implemented MCP server using Anthropic SDK so customers can browse menus, place orders, and receive Stripe checkout links through Claude AI conversation. Shipped WebMCP the week Google announced it at I/O 2026, enabling Gemini to query menu and cart data in Chrome with no API connection required.</p>
+                        <p>Built a cross-platform time tracker — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React/Vite web dashboard on a shared Supabase backend. StoreKit and Stripe both write to the same <code>is_pro</code> flag so purchasing on one platform unlocks all. Business tier adds multi-user team workspaces with row-level security. All backend logic (webhooks, email, team invites) runs in Deno Edge Functions with no Node server to maintain.</p>
                     </div>
                 </li>
                 <li>
@@ -575,7 +592,8 @@
                     </button>
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
-                            <a href="https://geoclink.github.io/the-salon-co/" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+                            <a href="salon-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
                         <p>Building salon vertical of CH Studios platform with appointment booking, stylist scheduling, automated SMS reminders, client formula storage, no-show deposit enforcement via Stripe, and rebooking automation.</p>
                     </div>
@@ -590,7 +608,7 @@
                     </button>
                     <div class="resume-accordion-body">
                         <div class="resume-item-links">
-                            <a href="https://testflight.apple.com/join/bHcPj25S" target="_blank" rel="noopener noreferrer">View on TestFlight</a>
+                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">App Store ↗</a>
                             <a href="https://github.com/geoClink/MichiganAPIWeather" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
                         <p>Shipped iOS frontend for a 54-beach conditions platform with Python FastAPI backend; built custom map clustering, weighted scoring engine, and on-device CoreML/XGBoost crowd prediction with 12 engineered features, covered by a Swift Testing suite with 120+ parameterized test cases. Added Siri Shortcuts, WidgetKit, Dynamic Island Live Activities, and a three-tier BGTaskScheduler notification system.</p>
