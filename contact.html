@@ -35,8 +35,53 @@
         .contact-tagline {
             font-size: 1.05em;
             color: var(--color-text-muted);
-            margin: 0 0 2em;
+            margin: 0 0 1em;
             line-height: 1.6;
+        }
+
+        .contact-intro {
+            font-size: 1em;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin: 0 0 1.5em;
+        }
+
+        .contact-open-to {
+            margin: 0 0 2em;
+            padding: 1.25em 1.5em;
+            background: var(--color-surface);
+            border-radius: 8px;
+            border-left: 3px solid var(--color-heading);
+        }
+
+        .contact-open-to-label {
+            font-size: 0.68em;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin: 0 0 0.75em;
+            display: block;
+        }
+
+        .contact-open-to ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+        }
+
+        .contact-open-to li {
+            font-size: 0.9em;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .contact-open-to li::before {
+            content: '→ ';
+            color: var(--color-text-muted);
         }
 
         .contact-links {
@@ -240,7 +285,11 @@
     <div id="main" role="main">
 
         <h2 class="contact-title">Get in touch</h2>
-        <p class="contact-tagline">Open to full-time iOS and full stack roles, freelance projects, and collaborations. Reach out directly or use the form below.</p>
+        <p class="contact-tagline">Detroit-based iOS and full-stack engineer, co-founder of CH Studios LLC.</p>
+
+        <p class="contact-intro">I build complete products — from the iOS app to the backend API to the admin dashboard — and I've shipped real software for real clients. I work best with small teams and founders who need someone who can own a problem end-to-end. I have a background in UI/UX design and care about the details: clean interfaces, fast load times, and software that holds up in production.</p>
+
+        <p class="contact-intro">Currently looking for full-time iOS or full-stack roles, remote or in Detroit. Also open to freelance through CH Studios — web platforms, iOS apps, AI integrations. If what you're building sounds like a fit, reach out.</p>
 
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/george-clinkscales/" class="button" target="_blank" rel="noopener noreferrer">LinkedIn <i class="icon brands fa-linkedin"></i></a>
