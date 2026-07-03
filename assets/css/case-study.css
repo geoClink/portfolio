@@ -511,6 +511,14 @@ p.ipad-item-label {
     .phone-screen-static { border-radius: 17px; }
 
     .ipad-mockup { border-radius: 10px; }
+
+    /* iPad scroll — one item fills most of screen width so you see one at a time */
+    .ipad-showcase-grid .ipad-item {
+        width: calc(100vw - 3.5rem);
+    }
+    .ipad-showcase-grid > .ipad-item:first-child {
+        margin-left: 1rem;
+    }
 }
 
 
