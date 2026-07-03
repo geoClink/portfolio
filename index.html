@@ -143,10 +143,10 @@
         }
 
         @media (max-width: 736px) {
-            .hero-dark { padding: 2.5em 0 3em; }
+            .hero-dark { padding: 2em 0 2.25em; }
             .hero-inner { padding: 0 1.25em; }
             .hero-name { font-size: 2.1em; }
-            .hero-ctas { flex-direction: column; align-items: flex-start; gap: 1em; }
+            .hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.6em; }
             .testimonial-indicators { justify-content: flex-start; }
         }
 
@@ -708,6 +708,7 @@
 
         .appstore-app-btns {
             display: flex;
+            flex-wrap: wrap;
             gap: 0.5em;
             margin-top: 0.75em;
         }
@@ -742,6 +743,10 @@
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+            }
+            .appstore-case-btn {
+                padding: 0.35em 0.6em;
+                font-size: 0.68em;
             }
         }
 
