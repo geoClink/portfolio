@@ -300,27 +300,42 @@
 /* Horizontal screenshot scroll track — matches CoastCast pattern */
 .screenshot-scroll-track {
     display: flex;
-    gap: 1.8em;
+    gap: 2.4em;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 1em 0.5em 1.5em;
-    margin: 0 -0.5em 1.5em;
+    padding: 1em 2em 1.5em 0;
+    margin: 0 0 1.5em;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
+}
+.screenshot-scroll-track > .screenshot-scroll-item:first-child {
+    margin-left: 1.5em;
 }
 .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
 .screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 
 .screenshot-scroll-item {
     flex: 0 0 auto;
-    width: 260px;
+    width: 280px;
     scroll-snap-align: start;
 }
-.screenshot-scroll-item p {
+/* Phone mockup fills the scroll item width */
+.screenshot-scroll-item .phone-mockup {
+    width: 100%;
+}
+/* Suppress CSS Dynamic Island — static screenshots already have it baked in */
+.screenshot-scroll-item .phone-mockup::after {
+    display: none;
+}
+.screenshot-scroll-item .phone-screen-static {
+    border-radius: 30px;
+}
+.screenshot-scroll-item p,
+p.ipad-item-label {
     font-size: 0.75em;
     color: var(--color-text-muted);
-    margin-top: 0.65em;
+    margin: 0.65em 0 0;
     text-align: center;
     font-style: italic;
     line-height: 1.4;
@@ -438,18 +453,21 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 0.5em 0.25em 1.25em;
-    margin: var(--space-3) -0.25em 0;
+    padding: 0.5em 2em 1.25em 0;
+    margin: var(--space-3) 0 1.5em;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
+}
+.ipad-showcase-grid > .ipad-item:first-child {
+    margin-left: 1.5em;
 }
 
 .ipad-showcase-grid::-webkit-scrollbar { height: 6px; }
 .ipad-showcase-grid::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 
-.ipad-showcase-grid .ipad-mockup {
+.ipad-showcase-grid .ipad-item {
     flex: 0 0 auto;
-    width: 420px;
+    width: 520px;
     scroll-snap-align: start;
 }
 
