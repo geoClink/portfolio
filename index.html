@@ -737,8 +737,14 @@
             color: var(--color-text-muted);
         }
 
+        .knot-platform-card {
+            padding: 1.25em;
+        }
         .knot-deployments {
             margin-top: 0.75em;
+        }
+        .knot-deployments-card {
+            width: 100%;
         }
         .knot-deploy-label {
             font-size: 0.65em;
@@ -807,7 +813,6 @@
         .knot-deploy-btns {
             display: flex;
             gap: 0.4em;
-            flex-wrap: wrap;
         }
 
         @media (max-width: 736px) {
@@ -826,6 +831,13 @@
             .appstore-case-btn {
                 padding: 0.35em 0.6em;
                 font-size: 0.68em;
+            }
+            .knot-deploy-btns .appstore-case-btn {
+                flex: 1;
+                text-align: center;
+                min-width: 0;
+                padding: 0.35em 0.45em;
+                font-size: 0.65em;
             }
         }
 
@@ -898,7 +910,7 @@
         <section class="appstore-strip web-strip">
             <div class="appstore-strip-label">Knot Platform</div>
             <div class="appstore-apps">
-                <div class="appstore-app">
+                <div class="appstore-app knot-platform-card" style="flex-wrap: wrap;">
                     <img src="assets/images/knot/favicon.svg" alt="Knot" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Knot</span>
@@ -908,7 +920,8 @@
                             <a href="knot.html" class="appstore-case-btn">Case Study →</a>
                             <a href="https://knot-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
                         </div>
-                        <div class="knot-deployments">
+                    </div>
+                    <div class="knot-deployments knot-deployments-card">
                             <div class="knot-deploy-label">Live Deployments</div>
                             <div class="knot-deploy-list">
                                 <div class="knot-deploy-item">
@@ -979,7 +992,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
