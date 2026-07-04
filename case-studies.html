@@ -242,6 +242,95 @@
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
             .cs-card-btns { padding-top: 0.6em; }
+            .knot-deploy-desc {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+
+        .knot-deploy-group {
+            margin-top: 0.85em;
+        }
+        .knot-deploy-label {
+            font-size: 0.65em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 0.6em;
+        }
+        .knot-deploy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35em;
+        }
+        .knot-deploy-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65em;
+            padding: 0.7em 0.85em;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+        .knot-deploy-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 0.1em;
+        }
+        .knot-deploy-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+            flex: 1;
+            min-width: 0;
+        }
+        .knot-deploy-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            flex-wrap: wrap;
+        }
+        .knot-deploy-name {
+            font-size: 0.82em;
+            font-weight: 600;
+            color: var(--color-heading);
+        }
+        .knot-deploy-tag {
+            font-size: 0.6em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 0.2em 0.55em;
+            white-space: nowrap;
+        }
+        .knot-deploy-desc {
+            font-size: 0.73em;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .knot-deploy-btns {
+            display: flex;
+            gap: 0.4em;
+        }
+        .knot-deploy-btns .cs-cta {
+            flex: 1;
+            text-align: center;
+            min-width: 0;
+        }
+        @media (max-width: 600px) {
+            .knot-deploy-btns .cs-cta {
+                padding: 0.35em 0.45em;
+                font-size: 0.65em;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -311,6 +400,77 @@
                             <a href="knot.html" class="cs-cta">Case Study →</a>
                             <a href="https://knot-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
                         </div>
+                        <div class="knot-deploy-group">
+                            <div class="knot-deploy-label">Live Deployments</div>
+                            <div class="knot-deploy-list">
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thewellnessco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Wellness Co.</span>
+                                            <span class="knot-deploy-tag">Real client</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Booking platform replacing Mindbody — webhook-driven Stripe payments, tiered refunds, and a live admin dashboard demo.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="wellness-co.html" class="cs-cta">Case Study →</a>
+                                            <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thebakeryco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Bakery Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Five-surface ordering platform — customer site, admin dashboard, iOS POS, iOS customer app, and AI ordering via MCP.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="bakery-spec.html" class="cs-cta">Case Study →</a>
+                                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thesalonco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Salon Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">14-page marketing and booking site — custom branding, sticky header, auto-rotating reviews, FAQ accordion, and gallery.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="salon-co.html" class="cs-cta">Case Study →</a>
+                                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thesportsbarco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Sports Bar Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Reservations and events platform — table booking, live events calendar, and party inquiry form.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="sports-bar-co.html" class="cs-cta">Case Study →</a>
+                                            <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/theinnco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Inn Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Direct booking platform for a boutique Detroit hotel — Stripe payments, 48hr cancellation policy, and owner admin dashboard.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="inn-co.html" class="cs-cta">Case Study →</a>
+                                            <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,68 +491,6 @@
             </div>
         </div>
         -->
-
-        <!-- Small Business Suite -->
-        <div class="cs-group">
-            <h3 class="cs-group-label">Small Business Suite</h3>
-            <div class="cs-cards">
-                <div class="cs-card">
-                    <img src="assets/images/thewellnessco/favicon.svg" alt="The Wellness Co." class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">The Wellness Co. — Real Client Deployment</div>
-                        <p class="cs-card-desc">A full booking platform replacing Mindbody for a real solo wellness practitioner — currently in final handoff. Webhook-driven Stripe payments, self-serve cancellation with tiered refunds, and a live interactive admin dashboard demo. One of four live deployments built on Knot.</p>
-                        <div class="cs-card-btns">
-                            <a href="wellness-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
-                    <img src="assets/images/thebakeryco/favicon.svg" alt="The Bakery Co." class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">The Bakery Co.</div>
-                        <p class="cs-card-desc">Five-surface ordering platform — customer website, admin dashboard, iOS POS, iOS customer app, and an AI ordering layer via MCP and WebMCP. All surfaces share one Supabase database. Zero commission per order versus 15–30% on delivery platforms.</p>
-                        <div class="cs-card-btns">
-                            <a href="bakery-spec.html" class="cs-cta">Case Study →</a>
-                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
-                    <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co." class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">The Salon Co.</div>
-                        <p class="cs-card-desc">14-page marketing and booking site for a luxury hair salon — hand-coded from scratch, custom branding, owned outright with no monthly fee. Scroll-based sticky header, auto-rotating reviews, FAQ accordion, and gallery with filters.</p>
-                        <div class="cs-card-btns">
-                            <a href="salon-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
-                    <img src="assets/images/thesportsbarco/favicon.svg" alt="The Sports Bar Co." class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">The Sports Bar Co.</div>
-                        <p class="cs-card-desc">Full-stack reservations and events platform — table booking, live events calendar, and party inquiry form. Built as a direct alternative to Toast for owners who want a custom web presence without platform lock-in.</p>
-                        <div class="cs-card-btns">
-                            <a href="sports-bar-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
-                    <img src="assets/images/theinnco/favicon.svg" alt="The Inn Co." class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">The Inn Co. — Real Client Deployment</div>
-                        <p class="cs-card-desc">Full-stack direct booking platform for a boutique Detroit hotel — Stripe payments, self-serve cancellation with 48hr policy enforcement, confirmation emails, and a complete owner admin dashboard. Multi-tenant architecture; zero OTA commission per booking.</p>
-                        <div class="cs-card-btns">
-                            <a href="inn-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Cross-Platform -->
         <div class="cs-group">

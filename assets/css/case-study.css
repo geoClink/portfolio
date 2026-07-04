@@ -303,14 +303,17 @@
     gap: 2.4em;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-left: 1.5em;
     -webkit-overflow-scrolling: touch;
     padding: 1em 2em 1.5em 0;
     margin: 0 0 1.5em;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
 }
-.screenshot-scroll-track > .screenshot-scroll-item:first-child {
-    margin-left: 1.5em;
+.screenshot-scroll-track::before {
+    content: '';
+    flex: 0 0 1.5em;
+    min-width: 1.5em;
 }
 .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
 .screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
@@ -452,14 +455,17 @@ p.ipad-item-label {
     gap: var(--space-3);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-left: 1.5em;
     -webkit-overflow-scrolling: touch;
     padding: 0.5em 2em 1.25em 0;
     margin: var(--space-3) 0 1.5em;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
 }
-.ipad-showcase-grid > .ipad-item:first-child {
-    margin-left: 1.5em;
+.ipad-showcase-grid::before {
+    content: '';
+    flex: 0 0 1.5em;
+    min-width: 1.5em;
 }
 
 .ipad-showcase-grid::-webkit-scrollbar { height: 6px; }
@@ -516,8 +522,12 @@ p.ipad-item-label {
     .ipad-showcase-grid .ipad-item {
         width: calc(100vw - 3.5rem);
     }
-    .ipad-showcase-grid > .ipad-item:first-child {
-        margin-left: 1rem;
+    .ipad-showcase-grid {
+        scroll-padding-left: 1rem;
+    }
+    .ipad-showcase-grid::before {
+        flex: 0 0 1rem;
+        min-width: 1rem;
     }
 }
 

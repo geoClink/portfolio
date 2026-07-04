@@ -755,27 +755,38 @@
         }
         .knot-deploy-item {
             display: flex;
-            align-items: center;
-            gap: 0.6em;
-            padding: 0.55em 0.75em;
+            align-items: flex-start;
+            gap: 0.65em;
+            padding: 0.7em 0.85em;
             background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 8px;
         }
         .knot-deploy-icon {
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             border-radius: 6px;
             flex-shrink: 0;
+            margin-top: 0.1em;
+        }
+        .knot-deploy-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+            flex: 1;
+            min-width: 0;
+        }
+        .knot-deploy-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            flex-wrap: wrap;
         }
         .knot-deploy-name {
             font-size: 0.82em;
             font-weight: 600;
             color: var(--color-heading);
-            text-decoration: none;
-            flex: 1;
         }
-        .knot-deploy-name:hover { text-decoration: underline; }
         .knot-deploy-tag {
             font-size: 0.6em;
             font-weight: 700;
@@ -787,18 +798,26 @@
             padding: 0.2em 0.55em;
             white-space: nowrap;
         }
-        .knot-deploy-ext {
-            font-size: 0.78em;
-            font-weight: 600;
+        .knot-deploy-desc {
+            font-size: 0.73em;
             color: var(--color-text-muted);
-            text-decoration: none;
-            flex-shrink: 0;
-            padding: 0.2em 0.4em;
+            line-height: 1.5;
+            margin: 0;
         }
-        .knot-deploy-ext:hover { color: var(--color-heading); }
+        .knot-deploy-btns {
+            display: flex;
+            gap: 0.4em;
+            flex-wrap: wrap;
+        }
 
         @media (max-width: 736px) {
             .appstore-app-desc {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .knot-deploy-desc {
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
@@ -883,73 +902,82 @@
                     <img src="assets/images/knot/favicon.svg" alt="Knot" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Knot</span>
-                        <span class="appstore-app-sub">5 live deployments for real clients</span>
+                        <span class="appstore-app-sub">1 real client · 4 spec deployments across 5 verticals</span>
                         <p class="appstore-app-desc">A full business OS in the category of Toast, Square, and 7shifts — customer website, 17-module admin dashboard, iOS customer app, iOS POS, and an employee scheduling app, all on one Node/Express API and one Supabase database.</p>
                         <div class="appstore-app-btns">
                             <a href="knot.html" class="appstore-case-btn">Case Study →</a>
                             <a href="https://knot-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="knot-deployments">
-                <div class="knot-deploy-label">Live Deployments</div>
-                <div class="knot-deploy-list">
-                    <div class="knot-deploy-item">
-                        <img src="assets/images/thewellnessco/favicon.svg" alt="" class="knot-deploy-icon" />
-                        <a href="wellness-co.html" class="knot-deploy-name">The Wellness Co.</a>
-                        <span class="knot-deploy-tag">Real client</span>
-                        <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="knot-deploy-ext">↗</a>
-                    </div>
-                    <div class="knot-deploy-item">
-                        <img src="assets/images/thebakeryco/favicon.svg" alt="" class="knot-deploy-icon" />
-                        <a href="bakery-spec.html" class="knot-deploy-name">The Bakery Co.</a>
-                        <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="knot-deploy-ext">↗</a>
-                    </div>
-                    <div class="knot-deploy-item">
-                        <img src="assets/images/thesalonco/favicon.svg" alt="" class="knot-deploy-icon" />
-                        <a href="salon-co.html" class="knot-deploy-name">The Salon Co.</a>
-                        <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="knot-deploy-ext">↗</a>
-                    </div>
-                    <div class="knot-deploy-item">
-                        <img src="assets/images/thesportsbarco/favicon.svg" alt="" class="knot-deploy-icon" />
-                        <a href="sports-bar-co.html" class="knot-deploy-name">The Sports Bar Co.</a>
-                        <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="knot-deploy-ext">↗</a>
-                    </div>
-                    <div class="knot-deploy-item">
-                        <img src="assets/images/theinnco/favicon.svg" alt="" class="knot-deploy-icon" />
-                        <a href="inn-co.html" class="knot-deploy-name">The Inn Co.</a>
-                        <span class="knot-deploy-tag">Real client</span>
-                        <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="knot-deploy-ext">↗</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="appstore-strip web-strip">
-            <div class="appstore-strip-label">Also on the Web</div>
-            <div class="appstore-apps">
-                <div class="appstore-app">
-                    <img src="assets/images/tallyios/appicon.png" alt="Tally" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">Tally</span>
-                        <span class="appstore-app-sub">Cross-platform time tracker</span>
-                        <p class="appstore-app-desc">SaaS for freelancers and small teams — native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard. Cross-platform subscription sync via StoreKit and Stripe. $9.99 one-time vs. $10–20/month competitors.</p>
-                        <div class="appstore-app-btns">
-                            <a href="tally.html" class="appstore-case-btn">Case Study →</a>
-                            <a href="https://tally-web-nu.vercel.app" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="appstore-app">
-                    <img src="assets/images/calculator-icon.png" alt="JavaScript Calculator" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">JavaScript Calculator</span>
-                        <span class="appstore-app-sub">Vanilla JS · Web</span>
-                        <p class="appstore-app-desc">Vanilla JavaScript calculator with procedurally generated click sounds via the Web Audio API, voice input that animates every button press in real time, full keyboard support, and a hidden long-press power toggle. No libraries. No audio files.</p>
-                        <div class="appstore-app-btns">
-                            <a href="javascript-calculator.html" class="appstore-case-btn">Case Study →</a>
-                            <a href="https://geoclink.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Live Demo ↗</a>
+                        <div class="knot-deployments">
+                            <div class="knot-deploy-label">Live Deployments</div>
+                            <div class="knot-deploy-list">
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thewellnessco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Wellness Co.</span>
+                                            <span class="knot-deploy-tag">Real client</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Detroit's first Knot client — went from zero online presence to a fully live booking platform with Stripe payments and an owner admin dashboard.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="wellness-co.html" class="appstore-case-btn">Case Study →</a>
+                                            <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thebakeryco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Bakery Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Five-surface ordering platform — customer site, admin dashboard, iOS POS, iOS customer app, and AI ordering via MCP.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="bakery-spec.html" class="appstore-case-btn">Case Study →</a>
+                                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thesalonco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Salon Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">14-page marketing and booking site — custom branding, sticky header, auto-rotating reviews, FAQ accordion, and gallery.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="salon-co.html" class="appstore-case-btn">Case Study →</a>
+                                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/thesportsbarco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Sports Bar Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Reservations and events platform — table booking, live events calendar, and party inquiry form.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="sports-bar-co.html" class="appstore-case-btn">Case Study →</a>
+                                            <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="knot-deploy-item">
+                                    <img src="assets/images/theinnco/favicon.svg" alt="" class="knot-deploy-icon" />
+                                    <div class="knot-deploy-content">
+                                        <div class="knot-deploy-header">
+                                            <span class="knot-deploy-name">The Inn Co.</span>
+                                        </div>
+                                        <p class="knot-deploy-desc">Direct booking platform for a boutique Detroit hotel — Stripe payments, 48hr cancellation policy, and owner admin dashboard.</p>
+                                        <div class="knot-deploy-btns">
+                                            <a href="inn-co.html" class="appstore-case-btn">Case Study →</a>
+                                            <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">View Website ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
