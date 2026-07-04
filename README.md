@@ -30,6 +30,7 @@ Built from scratch on top of the HTML5 UP Future Imperfect template (heavily cus
 | `wellness-co.html` | The Wellness Co. — booking and payments platform |
 | `salon-co.html` | The Salon Co. — 14-page marketing and booking site |
 | `sports-bar-co.html` | The Sports Bar Co. — reservations and events platform |
+| `inn-co.html` | The Inn Co. — boutique hotel direct booking platform |
 | `ratechecker.html` | RateChecker — SwiftUI savings rate comparison app |
 | `coastcast.html` | CoastCast — beach conditions iOS app with Core ML |
 | `tally.html` | Tally — iOS counter app |
