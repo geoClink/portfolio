@@ -58,13 +58,13 @@
         <a href="web-platforms.html" class="back-link">← Small Business Suite</a>
 
         <h2 class="case-title">The Wellness Co.</h2>
-        <p class="case-tagline">A full-stack booking platform for acupuncture and energy healing practices — service discovery, appointment scheduling, self-serve cancellation and rescheduling, and Stripe payments, all in one. Built as a white-label alternative to Mindbody without the monthly fees.</p>
+        <p class="case-tagline">A full-stack booking platform for acupuncture and energy healing practices — service discovery, appointment scheduling, self-serve cancellation and rescheduling, and Stripe payments, all in one.</p>
 
         <div class="case-links">
             <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
         </div>
 
-        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · CH Studios LLC · Vercel · ~2 weeks start to handoff</div>
+        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel · Live client</div>
 
         <div class="case-section">
             <h3>The Problem</h3>
@@ -94,7 +94,8 @@
         <div class="case-section">
             <h3>Admin Dashboard</h3>
 
-            <p>Practitioners manage every aspect of the business from a protected dashboard — service descriptions and pricing, real-time availability and blocked date configuration, appointment history, a review moderation queue with approve and feature controls, SEO metadata per page, and direct Stripe and Resend account configuration from the UI. No code. No developer on call. Every change reflects on the live site immediately. Live read-only demo below, no login needed.</p>
+            <p>Practitioners manage every aspect of the business from a protected dashboard — service descriptions and pricing, real-time availability and blocked date configuration, appointment history, a review moderation queue with approve and feature controls, SEO metadata per page, and direct Stripe and Resend account configuration from the UI. No code. No developer on call. Every change reflects on the live site immediately.</p>
+            <p>First-time setup is guided by a 7-step onboarding wizard that walks non-technical owners through every configuration in the right order: business info, connecting Stripe, connecting Resend (with a live test email), adding their first service, setting weekly availability, and optionally connecting a custom domain. The domain step uses the Cloudflare API to add DNS records automatically — the owner pastes an API token and the wizard handles the rest. Live read-only demo below, no login needed.</p>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -166,12 +167,12 @@
             <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
             <p>Service pages, the booking flow, and the homepage each get unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server. Search engines and link previewers see complete, page-specific metadata without any client-side JavaScript — which matters for a local service business where discoverability drives bookings. The practitioner can edit all SEO copy directly from the admin dashboard.</p>
             <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
-            <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads a <code>TENANT_SLUG</code> environment variable and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks.</p>
+            <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session.</p>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>Built for a real client and currently in final handoff — a solo wellness practitioner replacing a $100–200/month Mindbody subscription with a platform they own outright. The multi-tenant architecture means white-labeling for additional practitioners requires no code changes: insert a row, deploy a Vercel project, done. The goal is to grow this into a full white-label suite under CH Studios. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the CH Studios Small Business Platform Suite.</p>
+            <p>Live with a real client — a solo wellness practitioner who replaced a $100–200/month Mindbody subscription with a platform she owns outright. The multi-tenant architecture means white-labeling for additional practitioners requires no code changes: insert a row, deploy a Vercel project, done. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the Small Business Platform Suite.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">

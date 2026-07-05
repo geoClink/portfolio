@@ -296,11 +296,30 @@
                 </div>
             </div>
 
+            <!-- The Inn Co. -->
+            <div class="wp-card">
+                <div class="wp-card-body">
+                    <img src="assets/images/theinnco/favicon.svg" alt="The Inn Co." class="wp-card-icon" />
+                    <div class="wp-card-content">
+                        <div class="wp-card-header">
+                            <div class="wp-card-name">The Inn Co.</div>
+                            <span class="wp-card-replaces">Replaces Booking.com / Expedia</span>
+                        </div>
+                        <p class="wp-card-desc">Direct booking platform for a Detroit boutique hotel — room listings, availability management, Stripe-powered reservations, and a full admin dashboard. Boutique properties typically pay 15–25% commission on every third-party booking. This eliminates that entirely with a one-time build and no ongoing fees.</p>
+                        <div class="wp-actions">
+                            <a href="inn-co.html" class="wp-btn primary">Case Study →</a>
+                            <a href="https://the-inn-co.vercel.app/" class="wp-btn" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="wp-why">
-            <h3>Why No Framework</h3>
-            <p>All four sites are hand-written HTML, CSS, and JavaScript — no React, no Next.js, no CMS. The decision is deliberate: a small business owner shouldn't need a developer on retainer to update their hours. The sites load fast, cost nothing to host beyond a domain, and can be handed off as static files. The technical complexity (fuzzy search, Stripe integration, MCP server) lives in the JavaScript — not in a framework dependency tree that goes stale in six months.</p>
+            <h3>One API Server. Every Vertical.</h3>
+            <p>As the platform grew from one client to five, maintaining separate backends became unsustainable. The solution was <strong>webplatform-api</strong> — a single Express/Supabase server that powers every frontend above. Each client is a tenant row in the database. Every fetch request includes an <code>X-Tenant-Slug</code> header; the server resolves the tenant, scopes all queries by <code>tenant_id</code>, and routes to the right vertical logic.</p>
+            <p style="margin-top:1em;">Per-tenant Stripe and Resend keys live in the database — not in environment variables — so adding a new client means inserting a row, not redeploying a server. A step-by-step onboarding wizard walks non-technical owners through connecting Stripe, Resend, and a custom domain via the Cloudflare API, which adds DNS records automatically. The same wizard ships to every vertical with vertical-specific steps swapped in.</p>
         </div>
 
     </div>
