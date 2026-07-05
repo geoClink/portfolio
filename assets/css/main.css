@@ -3555,3 +3555,39 @@ footer#footer .footer-copy {
     .page-cta { padding: var(--space-5) var(--space-2); }
 }
 
+.spec-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4) 0 var(--space-2);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-4);
+    gap: 1em;
+}
+
+.spec-nav-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    text-decoration: none;
+    color: var(--color-heading);
+    font-weight: 600;
+    font-size: 0.88em;
+    transition: color 0.2s ease;
+}
+
+.spec-nav-btn:hover { color: var(--color-text-muted); }
+
+.spec-nav-label {
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.spec-nav-btn.next {
+    text-align: right;
+    margin-left: auto;
+}
+
