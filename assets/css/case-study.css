@@ -209,11 +209,11 @@
     border-radius: 3px 0 0 3px;
 }
 
-/* Dynamic island — sits right at the top of the screen */
+/* Dynamic island — sits inside the status bar area */
 .phone-mockup::after {
     content: '';
     position: absolute;
-    top: 9px;
+    top: 6px;
     left: 50%;
     transform: translateX(-50%);
     width: 30%;
@@ -371,7 +371,7 @@ p.ipad-item-label {
 
 /* Dynamic island — rescaled */
 .device-showcase-grid .phone-mockup::after {
-    top: 7px;
+    top: 5px;
     height: 15px;
     border-radius: 8px;
 }
