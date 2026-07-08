@@ -318,7 +318,7 @@
 
         <div class="wp-why">
             <h3>One API Server. Every Vertical.</h3>
-            <p>As the platform grew from one client to five, maintaining separate backends became unsustainable. The solution was <strong>webplatform-api</strong> — a single Express/Supabase server that powers every frontend above. Each client is a tenant row in the database. Every fetch request includes an <code>X-Tenant-Slug</code> header; the server resolves the tenant, scopes all queries by <code>tenant_id</code>, and routes to the right vertical logic.</p>
+            <p>The platform currently has one live client and five spec deployments across five verticals — each spec built to prove the architecture works at that vertical's specific requirements, not just one. The backbone is <strong>webplatform-api</strong> — a single Express/Supabase server that powers every frontend above. Each client is a tenant row in the database. Every fetch request includes an <code>X-Tenant-Slug</code> header; the server resolves the tenant, scopes all queries by <code>tenant_id</code>, and routes to the right vertical logic.</p>
             <p style="margin-top:1em;">Per-tenant Stripe and Resend keys live in the database — not in environment variables — so adding a new client means inserting a row, not redeploying a server. A step-by-step onboarding wizard walks non-technical owners through connecting Stripe, Resend, and a custom domain via the Cloudflare API, which adds DNS records automatically. The same wizard ships to every vertical with vertical-specific steps swapped in.</p>
         </div>
 
