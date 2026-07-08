@@ -502,7 +502,7 @@
                             <strong>Focus:</strong> App Store marketing, campaign setup, optimization, and analytics.<br>
                             <strong>Outcome:</strong> Gained expertise in driving app growth and visibility through Apple Ads.
                             <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/Apple_Ads_Certification.png" alt="Apple Ads Certification badge" width="600" height="600" />
                                 </div>
                             </div>
@@ -559,23 +559,23 @@
                             <a href="https://developeracademy.msu.edu" target="_blank" rel="noopener noreferrer">Apple Developer Academy Detroit</a>
                             <br><strong>Certificates:</strong> Completed all 5 program certificates
                             <div class="badge-grid">
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-game-development.webp" alt="Introduction to Game Development badge" width="1200" height="1200" />
                                     <span>Introduction to Game Development</span>
                                 </div>
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-ios-app-development.webp" alt="Introduction to iOS App Development badge" width="1200" height="1200" />
                                     <span>Introduction to iOS App Development</span>
                                 </div>
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-ui-design-and-swift-fundamentals.webp" alt="UI Design and Swift Fundamentals badge" width="1200" height="1200" />
                                     <span>UI Design &amp; Swift Fundamentals</span>
                                 </div>
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-user-centered-development.webp" alt="User Centered Development badge" width="600" height="600" />
                                     <span>User Centered Development</span>
                                 </div>
-                                <div class="badge-item">
+                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/app-store-development.webp" alt="App Store Development badge" width="600" height="600" />
                                     <span>App Store Development</span>
                                 </div>
@@ -616,6 +616,30 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
+    </div>
+    <style>
+        #lightbox { display: none; }
+        #lightbox.open { display: flex; }
+    </style>
+    <script>
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
     <script>
         function toggleTimelineCard(card) {
             const details = card.querySelector('.timeline-details');
