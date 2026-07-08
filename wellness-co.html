@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://geoclink.github.io/portfolio/wellness-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: The Wellness Co. — A full-stack booking platform for acupuncture and energy healing practices with webhook-driven payments, self-serve cancellation, and multi-tenant architecture. Built as a white-label Mindbody alternative." />
+    <meta name="description" content="Case study: The Wellness Co. — A full-stack booking platform for acupuncture and energy healing practices with Stripe checkout, tiered refunds, custom branding, and a multi-tenant admin dashboard. Built as a white-label Mindbody alternative." />
     <meta property="og:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Full-stack booking platform for solo wellness practitioners — webhook-driven Stripe payments, tiered refunds, and a multi-tenant admin dashboard. Built as a white-label Mindbody alternative." />
+    <meta property="og:description" content="Full-stack booking platform for solo wellness practitioners — Stripe checkout, tiered refunds, 5 color palettes, 5 font combos, and a no-code admin dashboard. Two live clients." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/wellness-co.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Full-stack booking platform for solo wellness practitioners — webhook-driven Stripe payments, tiered refunds, and a multi-tenant admin dashboard." />
+    <meta name="twitter:description" content="Full-stack booking platform for solo wellness practitioners — Stripe checkout, tiered refunds, custom branding, and a no-code admin dashboard. Two live clients." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co.jpg" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/case-study.css" />
@@ -58,7 +58,7 @@
         <a href="web-platforms.html" class="back-link">← Small Business Suite</a>
 
         <h2 class="case-title">The Wellness Co.</h2>
-        <p class="case-tagline">A full-stack booking platform for acupuncture and energy healing practices — service discovery, appointment scheduling, self-serve cancellation and rescheduling, and Stripe payments, all in one.</p>
+        <p class="case-tagline">A full-stack, multi-tenant booking platform for solo wellness practitioners — Stripe checkout, self-serve cancellation with tiered refunds, a fully customizable brand experience, and a no-code admin dashboard. Two live clients.</p>
 
         <div class="case-links">
             <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
@@ -94,8 +94,19 @@
         <div class="case-section">
             <h3>Admin Dashboard</h3>
 
-            <p>Practitioners manage every aspect of the business from a protected dashboard — service descriptions and pricing, real-time availability and blocked date configuration, appointment history, a review moderation queue with approve and feature controls, SEO metadata per page, and direct Stripe and Resend account configuration from the UI. No code. No developer on call. Every change reflects on the live site immediately.</p>
-            <p>First-time setup is guided by a 7-step onboarding wizard that walks non-technical owners through every configuration in the right order: business info, connecting Stripe, connecting Resend (with a live test email), adding their first service, setting weekly availability, and optionally connecting a custom domain. The domain step uses the Cloudflare API to add DNS records automatically — the owner pastes an API token and the wizard handles the rest. Live read-only demo below, no login needed.</p>
+            <p>Everything runs from a single protected dashboard. No code, no developer on call — every change reflects on the live site immediately. A 7-step onboarding wizard walks non-technical owners through setup in the right order: business info, connecting Stripe (publishable key, secret key, and webhook, each saved individually), connecting Resend with a live test email, adding their first service, setting weekly availability, and optionally connecting a custom domain via the Cloudflare API. Live read-only demo below, no login needed.</p>
+
+            <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
+                <li><strong>Appointments</strong> — full history, one-click cancel + Stripe refund from the dashboard</li>
+                <li><strong>Services</strong> — add, edit, delete with per-service image upload and drag-to-reorder</li>
+                <li><strong>Content</strong> — hero section, practitioner bio, about page, all editable</li>
+                <li><strong>FAQ</strong> — add, edit, delete entries; renders dynamically on the public FAQ page</li>
+                <li><strong>Site banner</strong> — toggleable promo that links directly to a specific service's checkout</li>
+                <li><strong>Reviews</strong> — approval queue (accept/reject before anything goes live), feature toggle for homepage</li>
+                <li><strong>Appearance</strong> — 5 color palettes, 5 font combinations; change applies to the live site instantly via CSS variable injection</li>
+                <li><strong>SEO</strong> — custom meta title, description, and Open Graph tags per page</li>
+                <li><strong>Integrations</strong> — connect Stripe and Resend directly from the UI; no env file editing</li>
+            </ul>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -163,7 +174,9 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>The booking confirmation flow is webhook-driven rather than tied to the booking endpoint — Stripe fires a webhook after payment clears, which writes the appointment to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never results in a confirmed appointment. Four distinct email flows run through Resend: booking confirmation with appointment details and a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed directly to the practitioner.</p>
+            <p>When a client completes checkout, Stripe redirects to <code>/api/confirmation</code> — a server-side handler that writes the appointment to Supabase and fires the confirmation email via Resend. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate bookings. Either path alone produces a confirmed appointment; a failed payment never does. Four distinct email flows run through Resend: booking confirmation with a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed to the practitioner.</p>
+            <p>The appearance system is built entirely on CSS custom properties. Selecting a palette in the admin writes the choice to the database; the client site reads it on load and injects the variables into <code>:root</code>. A small synchronous <code>theme-init.js</code> in the <code>&lt;head&gt;</code> reads a localStorage cache of the last-known palette and applies it before the first paint, eliminating any color flash while the async API call is in flight.</p>
+            <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast — demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
             <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
             <p>Service pages, the booking flow, and the homepage each get unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server. Search engines and link previewers see complete, page-specific metadata without any client-side JavaScript — which matters for a local service business where discoverability drives bookings. The practitioner can edit all SEO copy directly from the admin dashboard.</p>
             <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
@@ -172,7 +185,7 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>Live with a real client — a solo wellness practitioner who replaced a $100–200/month Mindbody subscription with a custom platform built specifically for her practice. The multi-tenant architecture means white-labeling for additional practitioners requires no code changes: insert a row, deploy a Vercel project, done. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the Small Business Platform Suite.</p>
+            <p>Live with two paying clients — <strong>The Wellness Co.</strong> and <strong>White Bear Harmonics</strong>, a second practitioner who onboarded without any code changes. Both run from the same codebase in parallel, proving the multi-tenant architecture in production. The first client replaced a $100–200/month Mindbody subscription with a platform built specifically for her practice. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the Small Business Platform Suite.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">

@@ -846,6 +846,57 @@
             }
         }
 
+        /* ── Trusted Partners ─────────────────────────────────── */
+        .trusted-partners-strip {
+            margin: 0 auto 2.5em;
+        }
+
+        .trusted-partners-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75em;
+        }
+
+        .trusted-partner {
+            display: flex;
+            align-items: center;
+            gap: 0.75em;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 0.75em 1.1em;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 6px var(--color-shadow);
+        }
+
+        .trusted-partner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px var(--color-shadow);
+        }
+
+        .trusted-partner-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .trusted-partner-name {
+            display: block;
+            font-size: 0.88em;
+            font-weight: 700;
+            color: var(--color-heading);
+        }
+
+        .trusted-partner-url {
+            display: block;
+            font-size: 0.73em;
+            color: var(--color-text-muted);
+            margin-top: 0.1em;
+        }
+
         /* ── Scroll fade-in ────────────────────────────────────── */
         .fade-in {
             opacity: 0;
@@ -1039,6 +1090,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Trusted Partners -->
+        <section class="appstore-strip trusted-partners-strip">
+            <div class="appstore-strip-label">Trusted Partners</div>
+            <div class="trusted-partners-list">
+                <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer" class="trusted-partner">
+                    <img src="assets/images/site/whitebearharmonics-favicon.svg" alt="Whitebear Harmonics logo" class="trusted-partner-icon" />
+                    <div>
+                        <span class="trusted-partner-name">Whitebear Harmonics</span>
+                        <span class="trusted-partner-url">whitebearharmonics.com ↗</span>
+                    </div>
+                </a>
             </div>
         </section>
 
