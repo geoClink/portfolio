@@ -630,6 +630,14 @@ p.ipad-item-label {
     display: block;
 }
 
+.case-caption {
+    font-size: 0.82em;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin: -0.5em 0 1.5em;
+    font-style: italic;
+}
+
 @media (max-width: 600px) {
     .phone-mockup {
         width: 240px;

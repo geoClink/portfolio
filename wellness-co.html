@@ -178,6 +178,23 @@
             <p>The appearance system is built entirely on CSS custom properties. Selecting a palette in the admin writes the choice to the database; the client site reads it on load and injects the variables into <code>:root</code>. A small synchronous <code>theme-init.js</code> in the <code>&lt;head&gt;</code> reads a localStorage cache of the last-known palette and applies it before the first paint, eliminating any color flash while the async API call is in flight.</p>
             <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast — demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
             <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
+            <div style="margin: 1.5em 0;">
+                <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:0.6em;">
+                </div>
+                <div class="browser-mockup lightbox-trigger" style="cursor:zoom-in;" onclick="openLightbox(this)">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span class="browser-dot close"></span>
+                            <span class="browser-dot minimize"></span>
+                            <span class="browser-dot maximize"></span>
+                        </div>
+                    </div>
+                    <div class="browser-body">
+                        <img src="assets/images/thewellnessco/cancel-48hr.png" alt="Cancel appointment page showing a 50% refund notice for cancellations inside 48 hours" style="width:100%;display:block;border-radius:0 0 8px 8px;" />
+                    </div>
+                </div>
+            </div>
+            <p class="case-caption">Live on White Bear Harmonics — clients inside 48 hours see a partial refund notice before confirming. The refund executes automatically through the Stripe API. Click to expand.</p>
             <p>Service pages, the booking flow, and the homepage each get unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server. Search engines and link previewers see complete, page-specific metadata without any client-side JavaScript — which matters for a local service business where discoverability drives bookings. The practitioner can edit all SEO copy directly from the admin dashboard.</p>
             <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
             <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session.</p>
@@ -221,5 +238,30 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
+    </div>
+    <style>
+        #lightbox { display: none; }
+        #lightbox.open { display: flex; }
+    </style>
+    <script>
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>
