@@ -227,6 +227,61 @@
             margin: 0;
         }
 
+        /* ── Intent cards ─────────────────────────────────────── */
+        .contact-intent-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75em;
+            margin: 0 0 2.5em;
+        }
+
+        .contact-intent-card {
+            padding: 1.4em 1.5em;
+            border: 1.5px solid var(--color-border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+            background: var(--color-bg);
+            user-select: none;
+        }
+
+        .contact-intent-card:hover {
+            border-color: var(--color-heading);
+            transform: translateY(-1px);
+        }
+
+        .contact-intent-card.selected {
+            border-color: var(--color-heading);
+            background: var(--color-surface);
+        }
+
+        .contact-intent-card-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 0.4em;
+        }
+
+        .contact-intent-card-desc {
+            font-size: 0.88em;
+            color: var(--color-text-muted);
+            line-height: 1.65;
+            margin: 0 0 0.85em;
+        }
+
+        .contact-intent-card-cta {
+            font-size: 0.8em;
+            font-weight: 600;
+            color: var(--color-heading);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25em;
+        }
+
+        .contact-intent-card.selected .contact-intent-card-cta::after {
+            content: ' ✓';
+        }
+
         @media (max-width: 600px) {
             #main {
                 padding-top: 4em;
@@ -288,18 +343,27 @@
     <div id="main" role="main">
 
         <h2 class="contact-title">Get in touch</h2>
-        <p class="contact-tagline">Detroit-based iOS and full-stack engineer, co-founder of CH Studios LLC.</p>
+        <p class="contact-tagline">Detroit-based full-stack and iOS engineer. Co-founder of CH Studios LLC.</p>
 
-        <p class="contact-intro">I build complete products — from the iOS app to the backend API to the admin dashboard — and I've shipped real software for real clients. I have a background in UI/UX design and care about the details: clean interfaces, fast load times, and software that holds up in production.</p>
-
-        <p class="contact-intro">Currently looking for full-time iOS or full-stack roles, remote or in Detroit. Also open to freelance through CH Studios — web platforms, iOS apps, AI integrations. If what you're building sounds like a fit, reach out.</p>
+        <div class="contact-intent-grid">
+            <div class="contact-intent-card" onclick="selectIntent('hiring', this)">
+                <div class="contact-intent-card-title">Hiring?</div>
+                <p class="contact-intent-card-desc">I'm open to full-time full-stack and iOS roles — remote or Detroit-based. Let's talk about what you're building and whether I'm the right fit.</p>
+                <span class="contact-intent-card-cta">I'm a hiring manager →</span>
+            </div>
+            <div class="contact-intent-card" onclick="selectIntent('client', this)">
+                <div class="contact-intent-card-title">Need something built?</div>
+                <p class="contact-intent-card-desc">I build ordering, booking, and business platforms for small businesses — fast, with a real client already live on the platform. Let's see if what I've built fits what you need.</p>
+                <span class="contact-intent-card-cta">I'm a potential client →</span>
+            </div>
+        </div>
 
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/george-clinkscales/" class="button" target="_blank" rel="noopener noreferrer">LinkedIn <i class="icon brands fa-linkedin"></i></a>
             <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="icon brands fa-github"></i></a>
         </div>
 
-        <span class="contact-form-label">Send a message</span>
+        <span class="contact-form-label" id="form-label">Send a message</span>
 
         <div id="form-success" class="form-success">
             <p class="form-success-heading">Thanks, I'll be in touch.</p>
@@ -315,6 +379,7 @@
             <input type="text" name="subject" id="subject" placeholder="Subject" />
             <label for="message" class="sr-only">Your Message</label>
             <textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
+            <input type="hidden" name="inquiry_type" id="inquiry_type" value="" />
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
             <input type="submit" value="Send Message" />
         </form>
@@ -339,6 +404,18 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+        function selectIntent(type, el) {
+            document.querySelectorAll('.contact-intent-card').forEach(function(c) {
+                c.classList.remove('selected');
+            });
+            el.classList.add('selected');
+            document.getElementById('inquiry_type').value = type;
+            const label = document.getElementById('form-label');
+            label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
+            document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(function() { document.getElementById('name').focus(); }, 500);
+        }
+
         function sanitize(value, maxLength) {
             return value
                 .replace(/&/g, '&amp;')
@@ -371,10 +448,11 @@
             if (!valid) return;
 
             const data = {
-                name:    sanitize(document.getElementById('name').value, 100),
-                email:   sanitize(document.getElementById('email').value, 200),
-                subject: sanitize(document.getElementById('subject').value, 200),
-                message: sanitize(document.getElementById('message').value, 2000)
+                name:         sanitize(document.getElementById('name').value, 100),
+                email:        sanitize(document.getElementById('email').value, 200),
+                subject:      sanitize(document.getElementById('subject').value, 200),
+                message:      sanitize(document.getElementById('message').value, 2000),
+                inquiry_type: document.getElementById('inquiry_type').value || 'unspecified'
             };
             try {
                 const res = await fetch('https://formspree.io/f/mgojabvq', {
