@@ -97,7 +97,22 @@
 
         <div class="case-section">
             <h3>Admin Dashboard</h3>
-            <p>The owner manages every aspect of the business from a protected dashboard — menu, inventory, orders, revenue, gift cards, subscriptions, loyalty rewards, coupons, prep list, and staff. Changes reflect instantly across the website and both iOS apps. Live read-only demo below, no login needed.</p>
+            <p>The owner manages every aspect of the business from a protected dashboard — no code, no developer on call — and every change reflects instantly across the website and both iOS apps. Live read-only demo below, no login needed.</p>
+
+            <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
+                <li><strong>Orders</strong> — live queue with status tracking; one-click fulfill from the dashboard</li>
+                <li><strong>Revenue</strong> — live charts with daily and weekly breakdowns</li>
+                <li><strong>Menu CMS</strong> — add, edit, delete items with per-item image upload and drag-to-reorder</li>
+                <li><strong>Inventory</strong> — stock tracking per item; low-stock flagged before the morning rush</li>
+                <li><strong>Subscriptions</strong> — recurring order management with a site-wide toggle</li>
+                <li><strong>Gift Cards</strong> — creation, redemption, and balance tracking</li>
+                <li><strong>Loyalty Rewards</strong> — points per purchase, configurable reward tiers</li>
+                <li><strong>Coupons</strong> — discount creation and management</li>
+                <li><strong>Prep List</strong> — auto-generated kitchen list from all pending orders</li>
+                <li><strong>Site Banner</strong> — toggleable promo banner that links directly to a specific product or checkout</li>
+                <li><strong>Store Hours</strong> — hours editor; reflects live on the public hours page</li>
+                <li><strong>Staff</strong> — staff accounts with role-based permissions</li>
+            </ul>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -199,11 +214,18 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Built as a five-surface business platform — customer website, admin CMS, iOS POS, iOS customer app, and an AI ordering layer — all sharing one Supabase database. A change made in the admin dashboard propagates to every connected surface in real time. No code. No redeploy. No developer on call.</p>
 
-            <p>The payment flow is webhook-first: the Stripe charge is confirmed before the order is written to the database, so no unpaid order ever enters the admin queue. Every admin API route verifies a JWT server-side — hiding a button in the browser isn't security. The entire stack is hand-written HTML, CSS, and JavaScript on the frontend, Node.js and Express on the backend, so the platform can be handed off as static files and a single server process.</p>
+            <h4>Payment &amp; Order Flow</h4>
+            <p>The payment flow is webhook-first: the Stripe charge is confirmed before the order is written to the database, so no unpaid order ever enters the admin queue. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate orders. Either path alone produces a confirmed order; a failed payment never does.</p>
 
+            <h4>AI Ordering Layer</h4>
             <p>The AI layer ships two integrations: a custom MCP server that lets customers browse the menu and place orders through Claude, and a WebMCP integration that registers menu search and checkout as browser-native AI tools — shipped the same week Google announced the W3C WebMCP standard at I/O 2026.</p>
+
+            <h4>Security</h4>
+            <p>Every admin API route verifies a JWT server-side — hiding a button in the browser isn't security. The demo mode intercepts every mutating action client-side and replaces it with an informational toast, so the full dashboard is explorable from this portfolio without exposing write endpoints.</p>
+
+            <h4>Multi-Tenancy</h4>
+            <p>The architecture is multi-tenant from day one — every table carries a <code>tenant_id</code>, so onboarding the next bakery client is one database row and a frontend deploy. No schema changes. No code forks.</p>
         </div>
 
         <div class="case-section">
@@ -244,5 +266,30 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
+    </div>
+    <style>
+        #lightbox { display: none; }
+        #lightbox.open { display: flex; }
+    </style>
+    <script>
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>

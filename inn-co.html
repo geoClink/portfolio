@@ -91,13 +91,21 @@
                     loading="lazy"
                 ></iframe>
             </div>
-            <p class="iframe-note iframe-note-desktop">Previewing at tablet width. <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
-            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience.</p>
+            <p class="iframe-note">Previewing at tablet width. <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
         </div>
 
         <div class="case-section">
             <h3>Admin Dashboard</h3>
-            <p>The owner manages every aspect of the property from a protected dashboard — room listings and descriptions, availability calendar with blocked date management, booking history, guest records, revenue reporting, review moderation, and direct Stripe and Resend account configuration from the UI. No code. No developer on call. Every change reflects on the live site immediately.</p>
+            <p>The owner manages every aspect of the property from a protected dashboard. No code, no developer on call — every change reflects on the live site immediately.</p>
+
+            <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
+                <li><strong>Reservations</strong> — full booking history with guest name, room, dates, and status</li>
+                <li><strong>Room listings</strong> — room names and descriptions editable from the UI</li>
+                <li><strong>Availability</strong> — block specific dates to prevent bookings</li>
+                <li><strong>Status management</strong> — mark bookings confirmed or cancelled directly from the dashboard</li>
+                <li><strong>Stripe</strong> — connected directly from the UI; no env file editing</li>
+                <li><strong>Resend</strong> — email configuration set from the dashboard</li>
+            </ul>
         </div>
 
         <div class="case-section">
@@ -126,14 +134,19 @@
         </div>
 
         <div class="case-section">
-            <h3>The Approach</h3>
-            <p>The booking confirmation flow is webhook-driven — Stripe fires a webhook after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. Three email flows run through Resend: booking confirmation with stay details and a cancellation link, cancellation receipt with refund status, and contact form notifications routed directly to the owner.</p>
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Booking &amp; Payment Flow</h4>
+                    <p>The booking confirmation flow is webhook-driven — Stripe fires a webhook after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. Three email flows run through Resend: booking confirmation with stay details and a cancellation link, cancellation receipt with refund status, and contact form notifications routed directly to the owner.</p>
 
-            <p>Each reservation is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no guest account required, and the URL cannot be guessed or enumerated. When a guest clicks the link, the server checks the check-in date: cancellations made more than 48 hours before check-in receive a full refund processed automatically through the Stripe API. Cancellations within 48 hours fall under the hotel's standard policy — no refund is issued and the booking is marked cancelled in the admin.</p>
+                    <h4>Cancellation &amp; Refunds</h4>
+                    <p>Each reservation is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no guest account required, and the URL cannot be guessed or enumerated. When a guest clicks the link, the server checks the check-in date: cancellations made more than 48 hours before check-in receive a full refund processed automatically through the Stripe API. Cancellations within 48 hours fall under the hotel's standard policy — no refund is issued and the booking is marked cancelled in the admin.</p>
 
-            <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The owner manages room availability, blocks dates, edits room descriptions, reviews incoming bookings, and configures their Stripe and Resend accounts directly from the UI — no code, no developer on call.</p>
-
-            <p>The architecture is multi-tenant from day one. A single middleware reads a <code>TENANT_SLUG</code> environment variable and scopes every database query to that property. Onboarding a second hotel means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
+                    <h4>Auth &amp; Multi-Tenancy</h4>
+                    <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The owner manages room availability, blocks dates, edits room descriptions, reviews incoming bookings, and configures their Stripe and Resend accounts directly from the UI — no code, no developer on call. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. Onboarding a second hotel means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
+                </div>
+            </details>
         </div>
 
         <div class="case-section">

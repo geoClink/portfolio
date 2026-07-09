@@ -177,43 +177,46 @@
         </div>
 
         <div class="case-section">
-            <h3>The Approach</h3>
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Booking &amp; Payment Flow</h4>
+                    <p>When a client completes checkout, Stripe redirects to <code>/api/confirmation</code> — a server-side handler that writes the appointment to Supabase and fires the confirmation email via Resend. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate bookings. Either path alone produces a confirmed appointment; a failed payment never does. Four distinct email flows run through Resend: booking confirmation with a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed to the practitioner.</p>
 
-            <h4>Booking &amp; Payment Flow</h4>
-            <p>When a client completes checkout, Stripe redirects to <code>/api/confirmation</code> — a server-side handler that writes the appointment to Supabase and fires the confirmation email via Resend. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate bookings. Either path alone produces a confirmed appointment; a failed payment never does. Four distinct email flows run through Resend: booking confirmation with a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed to the practitioner.</p>
+                    <h4>Appearance System</h4>
+                    <p>The appearance system is built entirely on CSS custom properties. Selecting a palette in the admin writes the choice to the database; the client site reads it on load and injects the variables into <code>:root</code>. A small synchronous <code>theme-init.js</code> in the <code>&lt;head&gt;</code> reads a localStorage cache of the last-known palette and applies it before the first paint, eliminating any color flash while the async API call is in flight.</p>
 
-            <h4>Appearance System</h4>
-            <p>The appearance system is built entirely on CSS custom properties. Selecting a palette in the admin writes the choice to the database; the client site reads it on load and injects the variables into <code>:root</code>. A small synchronous <code>theme-init.js</code> in the <code>&lt;head&gt;</code> reads a localStorage cache of the last-known palette and applies it before the first paint, eliminating any color flash while the async API call is in flight.</p>
+                    <h4>Demo Mode</h4>
+                    <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast — demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
 
-            <h4>Demo Mode</h4>
-            <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast — demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
-
-            <h4>Cancellation &amp; Refunds</h4>
-            <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
-            <div style="margin: 1.5em 0;">
-                <div class="browser-mockup lightbox-trigger" style="cursor:zoom-in;" onclick="openLightbox(this)">
-                    <div class="browser-bar">
-                        <div class="browser-dots">
-                            <span class="browser-dot close"></span>
-                            <span class="browser-dot minimize"></span>
-                            <span class="browser-dot maximize"></span>
+                    <h4>Cancellation &amp; Refunds</h4>
+                    <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
+                    <div style="margin: 1.5em 0;">
+                        <div class="browser-mockup lightbox-trigger" style="cursor:zoom-in;" onclick="openLightbox(this)">
+                            <div class="browser-bar">
+                                <div class="browser-dots">
+                                    <span class="browser-dot close"></span>
+                                    <span class="browser-dot minimize"></span>
+                                    <span class="browser-dot maximize"></span>
+                                </div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="assets/images/thewellnessco/cancel-48hr.webp" alt="Cancel appointment page showing a 50% refund notice for cancellations inside 48 hours" style="width:100%;display:block;border-radius:0 0 8px 8px;" />
+                            </div>
                         </div>
                     </div>
-                    <div class="browser-body">
-                        <img src="assets/images/thewellnessco/cancel-48hr.webp" alt="Cancel appointment page showing a 50% refund notice for cancellations inside 48 hours" style="width:100%;display:block;border-radius:0 0 8px 8px;" />
-                    </div>
+                    <p class="case-caption">Live on White Bear Harmonics — clients inside 48 hours see a partial refund notice before confirming. The refund executes automatically through the Stripe API. Click to expand.</p>
+
+                    <h4>SEO</h4>
+                    <p>Service pages, the booking flow, and the homepage each get unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server. Search engines and link previewers see complete, page-specific metadata without any client-side JavaScript — which matters for a local service business where discoverability drives bookings. The practitioner can edit all SEO copy directly from the admin dashboard.</p>
+
+                    <h4>Reviews</h4>
+                    <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
+
+                    <h4>Auth &amp; Multi-Tenancy</h4>
+                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session.</p>
                 </div>
-            </div>
-            <p class="case-caption">Live on White Bear Harmonics — clients inside 48 hours see a partial refund notice before confirming. The refund executes automatically through the Stripe API. Click to expand.</p>
-
-            <h4>SEO</h4>
-            <p>Service pages, the booking flow, and the homepage each get unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server. Search engines and link previewers see complete, page-specific metadata without any client-side JavaScript — which matters for a local service business where discoverability drives bookings. The practitioner can edit all SEO copy directly from the admin dashboard.</p>
-
-            <h4>Reviews</h4>
-            <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
-
-            <h4>Auth &amp; Multi-Tenancy</h4>
-            <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session.</p>
+            </details>
         </div>
 
         <div class="case-section">

@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://geoclink.github.io/portfolio/salon-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: The Salon Co. — A 14-page luxury salon website with scroll animations, reviews carousel, gallery filters, and booking forms. Hand-coded, no platform fee." />
+    <meta name="description" content="Case study: The Salon Co. — A 14-page luxury salon website with a full-stack booking engine, 4-step reservation flow, Stripe deposit checkout, Supabase availability tracking, and Resend transactional email." />
     <meta property="og:title" content="The Salon Co. — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="14-page luxury salon website, hand-coded from scratch — scroll animations, reviews carousel, gallery filters, and booking forms. No monthly platform fee." />
+    <meta property="og:description" content="14-page luxury salon website with a full-stack booking engine — 4-step reservation flow, Stripe deposit checkout, real-time stylist availability, and automated cancellation with 48-hour refund policy." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/salon-co.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-salon-co.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The Salon Co. — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="14-page luxury salon website, hand-coded from scratch. No monthly platform fee." />
+    <meta name="twitter:description" content="14-page luxury salon website with a full-stack booking engine — 4-step reservation flow, Stripe deposit checkout, and automated cancellation with refunds." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-salon-co.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,13 +61,18 @@
         <a href="web-platforms.html" class="back-link">← Small Business Suite</a>
 
         <h2 class="case-title">The Salon Co.</h2>
-        <p class="case-tagline">A 14-page marketing and booking site for a luxury hair salon — hand-coded from scratch, custom branding, and owned outright with no monthly platform fee.</p>
+        <p class="case-tagline">A 14-page luxury salon website with a full-stack booking engine — 4-step reservation flow, Stripe deposit checkout, real-time stylist availability from Supabase, Resend transactional email, and automated cancellation with a 48-hour refund policy. Owned outright with no monthly platform fee.</p>
 
         <div class="case-links">
             <a href="https://the-salon-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
         </div>
 
-        <div class="case-meta">HTML · CSS · JavaScript · IntersectionObserver · Formspree · CH Studios LLC · Vercel</div>
+        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel · CH Studios LLC</div>
+
+        <div class="case-section">
+            <h3>The Problem</h3>
+            <p>Most salons are booked through platforms like Square Appointments, GlossGenius, or Vagaro that charge $25–100/month in perpetuity, impose their own branding on every customer-facing page, and in some cases take a cut of each transaction. The UX is generic by design — the same template used across thousands of salons — and the owner never fully controls the experience. The goal was a custom-branded presence built from scratch that feels genuinely luxury: a 4-step reservation flow with per-stylist availability, 25% deposit collection through Stripe, and automated email confirmation and cancellation — all owned outright with no subscription, no platform lock-in, and no commission per booking.</p>
+        </div>
 
         <div class="case-section desktop-only">
             <h3>Try It</h3>
@@ -111,18 +116,33 @@
         </div>
 
         <div class="case-section">
-            <h3>The Problem</h3>
-            <p>Most salon websites are built on generic platforms with limited customization and a recurring monthly fee that never goes away. The goal was a custom site that feels premium, loads fast, and is owned outright — no subscriptions, no platform lock-in.</p>
-        </div>
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Booking Flow</h4>
+                    <p>Four steps: service selection (radio buttons mapped to valid stylists per service), stylist selection (cards dynamically enabled or disabled based on both service compatibility and per-stylist availability), date and time selection via a fully custom calendar, and a confirmation step where the client enters their details and pays a 25% deposit. The progress bar updates on each step transition with a smooth scroll back to the top of the booking section.</p>
 
-        <div class="case-section">
-            <h3>The Approach</h3>
-            <p>Fourteen pages of hand-written HTML, CSS, and JavaScript — no framework, no CMS. The scroll-based sticky header uses an IntersectionObserver to detect when the hero leaves the viewport. The reviews carousel auto-rotates with a CSS transition and pauses on hover. The gallery uses a filter system with CSS class toggling — no library needed. A mobile hamburger menu, FAQ accordion, and contact forms via Formspree round out the full site experience.</p>
+                    <h4>Stripe Checkout &amp; Webhook</h4>
+                    <p>When the client submits their details, the front end POSTs to <code>/create-checkout-session</code>, which validates all inputs server-side, pulls the service price from Supabase, calculates a 25% deposit amount, and creates a Stripe Checkout session. When payment completes, Stripe fires a webhook to <code>/webhook</code> — the handler writes the booking to Supabase and sends a confirmation email through Resend. The success page fetches booking details from Supabase first, falling back to Stripe session metadata directly if the webhook hasn't fired yet — handling the race condition between a fast browser redirect and slower webhook delivery.</p>
+
+                    <h4>Cancellation &amp; Refunds</h4>
+                    <p>Each booking is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login, no account required, and the URL can't be guessed. When a client clicks it, the server calculates time remaining: cancellations at least 48 hours out trigger an automatic Stripe refund executed server-side through the Stripe API; inside 48 hours, cancellation requires calling the salon directly.</p>
+
+                    <h4>Real-Time Availability</h4>
+                    <p>The calendar makes two live API calls when a stylist and month are selected: <code>/closed-dates</code> returns owner-blocked dates stored in Supabase, and <code>/booked-dates</code> returns all confirmed bookings grouped by date so fully-booked days can be greyed out. When a specific day is selected, <code>/booked-slots</code> returns the taken time slots for that stylist on that date — the remaining slots render as selectable buttons. An <code>AbortController</code> cancels in-flight slot requests if the client changes their date selection before the previous fetch completes.</p>
+
+                    <h4>Scroll Behavior &amp; UI</h4>
+                    <p>A scroll event listener transitions the header to its condensed sticky state once the page scrolls past 10px. The reviews carousel auto-rotates every 3 seconds with clickable progress bar dots that jump to any review directly. The gallery filter uses CSS class toggling to show and hide items by category — no external library. The FAQ accordion manages open/close state with <code>display</code> toggling, defaulting to the first item open on load.</p>
+
+                    <h4>Contact Form</h4>
+                    <p>The contact form POSTs to <code>/contact</code>, which sends a formatted email to the salon owner through Resend with a <code>reply-to</code> header pointing at the client's address — the owner can reply directly from their inbox without any intermediary dashboard.</p>
+                </div>
+            </details>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A luxury salon presence the owner controls outright. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the CH Studios Small Business Platform Suite.</p>
+            <p>A 14-page luxury salon presence the owner controls outright — no subscription, no commissions, no platform lock-in. Clients can browse services, see stylist availability in real time, book and pay a deposit through Stripe, and cancel if needed — all from the same site. 100/100/100 Lighthouse scores across Performance, Accessibility, and SEO. Part of the Small Business Platform Suite.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">

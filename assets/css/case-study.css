@@ -674,3 +674,48 @@ p.ipad-item-label {
         transform-origin: center;
     }
 }
+
+/* ── Technical collapsible ──────────────────────────────── */
+.tech-details {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin: 0;
+}
+
+.tech-details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9em 1.15em;
+    cursor: pointer;
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    list-style: none;
+    user-select: none;
+    gap: 1em;
+}
+
+.tech-details summary::-webkit-details-marker { display: none; }
+
+.tech-details summary::after {
+    content: '+';
+    font-size: 1.4em;
+    font-weight: 300;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.tech-details[open] summary {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tech-details[open] summary::after {
+    content: '−';
+}
+
+.tech-details-body {
+    padding: 0.25em 1.15em 1.25em;
+}
