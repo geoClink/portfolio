@@ -356,6 +356,31 @@ p.ipad-item-label {
 /* Lets iphone-bezel fill the scroll item instead of capping at 270px */
 .screenshot-bezel { max-width: 100% !important; }
 
+/* Desktop browser screenshot gallery */
+.desktop-ss-item {
+    flex: 0 0 auto;
+    width: 440px;
+    scroll-snap-align: start;
+}
+.desktop-ss-item img {
+    width: 100%;
+    display: block;
+}
+.ss-clickable {
+    cursor: zoom-in;
+}
+.ss-clickable:hover {
+    opacity: 0.92;
+}
+.desktop-ss-item p {
+    font-size: 0.75em;
+    color: var(--color-text-muted);
+    margin: 0.65em 0 0;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
 /* Two iPhones side by side — reuses .phone-mockup, scaled to 240px */
 .device-showcase-grid {
     display: flex;
