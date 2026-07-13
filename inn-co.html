@@ -97,16 +97,37 @@
 
         <div class="case-section">
             <h3>Admin Dashboard</h3>
-            <p>The owner manages every aspect of the property from a protected dashboard. No code, no developer on call — every change reflects on the live site immediately.</p>
+            <p>The owner manages every aspect of the property from a protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below — no login needed.</p>
 
             <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
-                <li><strong>Reservations</strong> — full booking history with guest name, room, dates, and status</li>
-                <li><strong>Room listings</strong> — room names and descriptions editable from the UI</li>
-                <li><strong>Availability</strong> — block specific dates to prevent bookings</li>
-                <li><strong>Status management</strong> — mark bookings confirmed or cancelled directly from the dashboard</li>
-                <li><strong>Stripe</strong> — connected directly from the UI; no env file editing</li>
-                <li><strong>Resend</strong> — email configuration set from the dashboard</li>
+                <li><strong>Reservations</strong> — full booking history with guest name, room, dates, status, and special requests</li>
+                <li><strong>Availability calendar</strong> — tape-chart style grid showing occupancy by room and day; navigate by month</li>
+                <li><strong>Room listings</strong> — add, edit, and delete rooms with name, slug, price, and description</li>
+                <li><strong>Block dates</strong> — mark a room unavailable for Expedia bookings, maintenance, or any external source</li>
+                <li><strong>Status management</strong> — mark bookings confirmed, completed, cancelled, or no-show from the dashboard</li>
+                <li><strong>Message guest</strong> — send a direct email to any guest from within the dashboard</li>
+                <li><strong>Stripe</strong> — paste API keys directly in the UI; webhook URL is displayed with step-by-step instructions</li>
+                <li><strong>Resend</strong> — API key configured from the dashboard; domain verification guidance included</li>
+                <li><strong>Setup checklist</strong> — guided onboarding for non-technical clients, with plain-English tooltips on every API key field</li>
             </ul>
+
+            <p class="device-view-label desktop-only">Desktop</p>
+            <div class="browser-mockup desktop-only">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot close"></div>
+                        <div class="browser-dot minimize"></div>
+                        <div class="browser-dot maximize"></div>
+                    </div>
+                    <div class="browser-url">the-inn-co.vercel.app/admin</div>
+                </div>
+                <iframe
+                    src="https://the-inn-co.vercel.app/admin.html?demo=true"
+                    title="The Inn Co. — Admin Dashboard Demo"
+                    loading="lazy"
+                ></iframe>
+            </div>
+            <p class="iframe-note desktop-only"><a href="https://the-inn-co.vercel.app/admin.html?demo=true" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
 
         <div class="case-section">
@@ -131,6 +152,25 @@
                     </div>
                     <p class="phone-item-label">Guest</p>
                 </div>
+                <div class="phone-label-item">
+                    <div class="phone-mockup">
+                        <div class="phone-btns-left"></div>
+                        <div class="phone-screen">
+                            <div class="status-bar" style="background: #f3f2f2;">
+                                <span class="status-time">9:41</span>
+                                <div class="status-icons">
+                                    <svg width="14" height="9" viewBox="0 0 18 12" fill="#1c1c1e" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                    <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#1c1c1e"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#1c1c1e" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#1c1c1e" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#1c1c1e" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#1c1c1e" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#1c1c1e"/></svg>
+                                </div>
+                            </div>
+                            <div class="phone-viewport">
+                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/admin.html?demo=true" title="The Inn Co. — Admin Mobile" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="phone-item-label">Admin</p>
+                </div>
             </div>
         </div>
 
@@ -139,20 +179,32 @@
                 <summary>Technical Implementation</summary>
                 <div class="tech-details-body">
                     <h4>Booking &amp; Payment Flow</h4>
-                    <p>The booking confirmation flow is webhook-driven — Stripe fires a webhook after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. Three email flows run through Resend: booking confirmation with stay details and a cancellation link, cancellation receipt with refund status, and contact form notifications routed directly to the owner.</p>
+                    <p>The booking confirmation flow is webhook-driven — Stripe fires a <code>checkout.session.completed</code> event after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. After payment, the success page fetches live booking details using the Stripe <code>session_id</code> from the redirect URL and displays the confirmed room, dates, nights, and total paid — no polling, no waiting. Five email flows run through Resend: booking confirmation, cancellation receipt with refund status, pre-arrival reminder sent 2 days before check-in, post-stay review request sent the day after checkout, and contact form notifications routed to the owner.</p>
+
+                    <h4>Automated Email Scheduling</h4>
+                    <p>Pre-arrival reminders and post-stay review requests run on daily cron jobs via cron-job.org (free, no Vercel Pro required). Each job hits a protected endpoint on the server with a shared secret header. The server queries the shared booking API for check-ins or checkouts matching that day's target date, then sends the relevant email through Resend for each matching reservation.</p>
+
+                    <h4>Guest Experience</h4>
+                    <p>Each suite has its own SEO-optimized URL (<code>/rooms/coastal-suite</code>, <code>/rooms/garden-room</code>, etc.) served by a single dynamic Express route. Room data, meta tags, the Open Graph image, and the canonical URL are all populated client-side from a JavaScript data map. Guests can look up any reservation at <code>/my-booking</code> using just their email and check-in date — no account required. The booking form pre-selects the room when arriving from a room detail page.</p>
+
+                    <h4>Demo Mode</h4>
+                    <p>A read-only demo mode makes the admin dashboard accessible from this portfolio without exposing write endpoints or requiring a login. The page detects a <code>?demo=true</code> URL param and renders pre-seeded reservation and room data client-side, skipping all API calls for data loading. Every mutating action — status changes, form submissions, adding blocks, deleting rooms, saving API keys — is intercepted before it reaches the server and replaced with a toast notification. No demo session ever touches the database.</p>
 
                     <h4>Cancellation &amp; Refunds</h4>
                     <p>Each reservation is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no guest account required, and the URL cannot be guessed or enumerated. When a guest clicks the link, the server checks the check-in date: cancellations made more than 48 hours before check-in receive a full refund processed automatically through the Stripe API. Cancellations within 48 hours fall under the hotel's standard policy — no refund is issued and the booking is marked cancelled in the admin.</p>
 
                     <h4>Auth &amp; Multi-Tenancy</h4>
-                    <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The owner manages room availability, blocks dates, edits room descriptions, reviews incoming bookings, and configures their Stripe and Resend accounts directly from the UI — no code, no developer on call. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. Onboarding a second hotel means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
+                    <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. When an owner saves a Stripe or Resend key via the dashboard, it syncs to both the tenant's local settings table and the shared platform API so checkout sessions and webhooks both use the client's own keys. Onboarding a second hotel means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
+
+                    <h4>SEO</h4>
+                    <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room.</p>
                 </div>
             </details>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A direct booking platform the owner controls outright — capturing bookings directly at zero commission versus 15–25% on OTA platforms. Guests book, pay, and self-serve their cancellations without any involvement from the owner. The multi-tenant architecture means the same platform can be white-labeled for additional properties as CH Studios grows the hospitality suite. Part of the CH Studios Small Business Platform Suite.</p>
+            <p>A direct booking platform the owner controls outright — capturing bookings at zero commission versus 15–25% on OTA platforms. Guests book, pay, receive an immediate booking confirmation with full details, look up their reservation anytime, and self-serve cancellations — all without any involvement from the owner. Automated pre-arrival and post-stay emails run daily with no manual effort. A non-technical client can connect Stripe and Resend, configure their rooms, and start taking bookings entirely through the admin dashboard, guided by a setup checklist and plain-English tooltips. The multi-tenant architecture means the same platform can be white-labeled for additional properties as CH Studios grows the hospitality suite.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">

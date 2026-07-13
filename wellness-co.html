@@ -101,7 +101,9 @@
             <p>A 7-step onboarding wizard walks non-technical owners through setup in the right order: business info, connecting Stripe (publishable key, secret key, and webhook, each saved individually), connecting Resend with a live test email, adding their first service, setting weekly availability, and optionally connecting a custom domain via the Cloudflare API.</p>
 
             <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
-                <li><strong>Appointments</strong> — full history, one-click cancel + Stripe refund from the dashboard</li>
+                <li><strong>Overview</strong> — at-a-glance home tab with today's schedule, month revenue, unread message count, and pending review alerts; upcoming appointments for the next 7 days and a recent messages preview</li>
+                <li><strong>Appointments</strong> — full history, one-click cancel + Stripe refund from the dashboard, private internal notes per appointment never visible to clients, and CSV export</li>
+                <li><strong>Client directory</strong> — searchable table of every client grouped by email, with full visit history, session count, total spend, and last visit date</li>
                 <li><strong>Services</strong> — add, edit, delete with per-service image upload and drag-to-reorder</li>
                 <li><strong>Content</strong> — hero section, practitioner bio, about page, all editable</li>
                 <li><strong>FAQ</strong> — add, edit, delete entries; renders dynamically on the public FAQ page</li>
@@ -213,8 +215,11 @@
                     <h4>Reviews</h4>
                     <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
 
+                    <h4>Practitioner Notifications</h4>
+                    <p>Every new booking — whether paid through Stripe or a free consultation booked directly — triggers a notification email to the practitioner alongside the client confirmation. The email includes the client's name, contact info, date, time, any notes they left, and a direct link to the dashboard. Both the Stripe webhook path (for paid services) and the free booking path fire this independently so no booking ever goes unnoticed regardless of which code path handled it.</p>
+
                     <h4>Auth &amp; Multi-Tenancy</h4>
-                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session.</p>
+                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
                 </div>
             </details>
         </div>
