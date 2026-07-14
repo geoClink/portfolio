@@ -104,7 +104,8 @@
                 <li><strong>Overview</strong> — at-a-glance home tab with today's schedule, month revenue, unread message count, and pending review alerts; upcoming appointments for the next 7 days and a recent messages preview</li>
                 <li><strong>Appointments</strong> — full history, one-click cancel + Stripe refund from the dashboard, private internal notes per appointment never visible to clients, and CSV export</li>
                 <li><strong>Client directory</strong> — searchable table of every client grouped by email, with full visit history, session count, total spend, and last visit date</li>
-                <li><strong>Services</strong> — add, edit, delete with per-service image upload and drag-to-reorder</li>
+                <li><strong>Services</strong> — add, edit, delete with per-service image upload and drag-to-reorder; each service supports multiple variants (e.g. Acupuncture → 30-min community session, 60-min individual, 90-min deep treatment) with independent pricing and duration, surfaced in a slide-out detail panel on the public site</li>
+                <li><strong>Availability</strong> — per-day schedule rules with independent start and end times; weekday and weekend hours are configured separately, designed around practitioners who run their practice alongside a full-time job</li>
                 <li><strong>Content</strong> — hero section, practitioner bio, about page, all editable</li>
                 <li><strong>FAQ</strong> — add, edit, delete entries; renders dynamically on the public FAQ page</li>
                 <li><strong>Site banner</strong> — toggleable promo that links directly to a specific service's checkout</li>
@@ -222,6 +223,14 @@
                     <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
                 </div>
             </details>
+        </div>
+
+        <div class="case-section">
+            <h3>What the Real Client Changed</h3>
+            <p>Two assumptions I built in during the spec phase turned out to be wrong once I was working with an actual practitioner.</p>
+            <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. The real client has a 40-hour day job — meaning her weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
+            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. The real client's offerings don't work that way — "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants — child records per offering under each parent service — and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
+            <p>Both changes came directly from sitting with the business owner and watching the first model fail against how she actually worked.</p>
         </div>
 
         <div class="case-section">
