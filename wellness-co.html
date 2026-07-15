@@ -100,39 +100,31 @@
             <p>Everything runs from a single protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below, no login needed.</p>
             <p>A 7-step onboarding wizard walks non-technical owners through setup in the right order: business info, connecting Stripe (publishable key, secret key, and webhook, each saved individually), connecting Resend with a live test email, adding their first service, setting weekly availability, and optionally connecting a custom domain via the Cloudflare API.</p>
 
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:1.25em;">
-                <div>
-                    <p style="font-weight:600;margin:0 0 0.5em;">Operations</p>
-                    <ul style="margin:0;padding-left:1.2em;line-height:1.9;">
-                        <li>At-a-glance overview — today's schedule, monthly revenue, upcoming appointments, unread messages</li>
-                        <li>Appointments — one-click cancel + Stripe refund, private notes, CSV export</li>
-                        <li>Client directory — searchable by email, full visit history, session count, total spend</li>
-                        <li>Reviews — approval queue before anything goes live, feature toggle for homepage</li>
-                    </ul>
-                </div>
-                <div>
-                    <p style="font-weight:600;margin:0 0 0.5em;">Services &amp; Scheduling</p>
-                    <ul style="margin:0;padding-left:1.2em;line-height:1.9;">
-                        <li>Services — image upload, drag-to-reorder, multiple variants per service with independent pricing and duration</li>
-                        <li>Availability — per-day rules with independent hours; weekdays and weekends configured separately</li>
-                    </ul>
-                </div>
-                <div>
-                    <p style="font-weight:600;margin:0 0 0.5em;">Monetization</p>
-                    <ul style="margin:0;padding-left:1.2em;line-height:1.9;">
-                        <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side, auto-restored on cancellation</li>
-                        <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
-                    </ul>
-                </div>
-                <div>
-                    <p style="font-weight:600;margin:0 0 0.5em;">Site Control</p>
-                    <ul style="margin:0;padding-left:1.2em;line-height:1.9;">
-                        <li>Appearance — 5 color palettes, 5 font combinations; applies to the live site instantly</li>
-                        <li>Content — hero, bio, FAQ, site banner all editable without code</li>
-                        <li>SEO — custom meta title, description, and Open Graph tags per page</li>
-                        <li>Integrations — connect Stripe and Resend directly from the UI</li>
-                    </ul>
-                </div>
+            <div style="margin-top:1.25em;">
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Operations</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>At-a-glance overview — today's schedule, monthly revenue, upcoming appointments, unread messages</li>
+                    <li>Appointments — one-click cancel + Stripe refund, private notes, CSV export</li>
+                    <li>Client directory — searchable by email, full visit history, session count, total spend</li>
+                    <li>Reviews — approval queue before anything goes live, feature toggle for homepage</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Services &amp; Scheduling</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Services — image upload, drag-to-reorder, multiple variants per service with independent pricing and duration</li>
+                    <li>Availability — per-day rules with independent hours; weekdays and weekends configured separately</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Monetization</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side, auto-restored on cancellation</li>
+                    <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Site Control</p>
+                <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
+                    <li>Appearance — 5 color palettes, 5 font combinations; applies to the live site instantly</li>
+                    <li>Content — hero, bio, FAQ, site banner all editable without code</li>
+                    <li>SEO — custom meta title, description, and Open Graph tags per page</li>
+                    <li>Integrations — connect Stripe and Resend directly from the UI</li>
+                </ul>
             </div>
 
             <p class="device-view-label desktop-only">Desktop</p>
@@ -209,6 +201,63 @@
                         </div>
                     </div>
                     <p class="case-caption">Gift card purchase page — clients buy and send a gift card directly through the site via Stripe. Click to expand.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Desktop Pages</h3>
+            <p style="font-size:0.85em;color:var(--color-text-muted);margin:-0.5em 0 1.25em;">Click any screenshot to enlarge.</p>
+            <div class="screenshot-scroll-track">
+                <div class="desktop-ss-item">
+                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
+                        <div class="browser-bar">
+                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
+                            <div class="browser-url">the-wellness-co.vercel.app</div>
+                        </div>
+                        <img src="assets/images/thewellnessco/screenshot-home.png" alt="Home page" />
+                    </div>
+                    <p>Home — hero, services overview, and booking CTA.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
+                        <div class="browser-bar">
+                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
+                            <div class="browser-url">the-wellness-co.vercel.app/services</div>
+                        </div>
+                        <img src="assets/images/thewellnessco/screenshot-services.png" alt="Services page" />
+                    </div>
+                    <p>Services — all modalities with pricing, duration, and variant options.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
+                        <div class="browser-bar">
+                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
+                            <div class="browser-url">the-wellness-co.vercel.app/book</div>
+                        </div>
+                        <img src="assets/images/thewellnessco/screenshot-booking.png" alt="Booking page" />
+                    </div>
+                    <p>Booking — live availability calendar with Stripe checkout at the end.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
+                        <div class="browser-bar">
+                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
+                            <div class="browser-url">the-wellness-co.vercel.app/stories</div>
+                        </div>
+                        <img src="assets/images/thewellnessco/screenshot-stories.png" alt="Stories page" />
+                    </div>
+                    <p>Stories — client testimonials pulled from the admin and gated by an approval queue.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
+                        <div class="browser-bar">
+                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
+                            <div class="browser-url">the-wellness-co.vercel.app/about</div>
+                        </div>
+                        <img src="assets/images/thewellnessco/screenshot-about.png" alt="About page" />
+                    </div>
+                    <p>About — practitioner bio and credential section, editable from the admin.</p>
                 </div>
             </div>
         </div>

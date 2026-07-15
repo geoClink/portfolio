@@ -911,6 +911,120 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ── Screenshot Strip ──────────────────────────────────── */
+        .screenshot-strip-section {
+            padding: 2.5em 0;
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .screenshot-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5em;
+        }
+        .screenshot-strip-label {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 1.25em;
+            padding-bottom: 0.75em;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .screenshot-strip-track {
+            display: flex;
+            gap: 1.25em;
+            overflow-x: auto;
+            padding-bottom: 0.5em;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .screenshot-strip-track::-webkit-scrollbar { display: none; }
+        .screenshot-card {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px var(--color-shadow);
+        }
+        .screenshot-browser-chrome {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.45em 0.75em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .browser-dots-sm { display: flex; gap: 4px; }
+        .browser-dot-sm {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--color-border);
+        }
+        .browser-url-sm {
+            font-size: 0.6em;
+            color: var(--color-text-muted);
+            font-family: monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .screenshot-img-wrap {
+            height: 190px;
+            overflow: hidden;
+        }
+        .screenshot-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+        .screenshot-card-footer {
+            padding: 0.7em 0.85em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5em;
+        }
+        .screenshot-card-name {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--color-heading);
+        }
+        .screenshot-card-tag {
+            font-size: 0.58em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.2em 0.6em;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .screenshot-card-tag.real {
+            background: var(--color-heading);
+            color: var(--color-on-dark);
+        }
+        .screenshot-card-tag.spec {
+            background: var(--color-surface);
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+        }
+        @media (max-width: 600px) {
+            .screenshot-card { flex: 0 0 270px; }
+            .screenshot-img-wrap { height: 160px; }
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -954,17 +1068,75 @@
                 <img loading="lazy" src="assets/images/site/pin.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:invert(1);opacity:0.45;" />Detroit, MI
             </p>
             <h1 class="hero-name">George Clinkscales Jr.</h1>
-            <p class="hero-role">Full-stack &amp; iOS engineer.
-
-
-
-
-                s
-            </p>
+            <p class="hero-role">Full-stack &amp; iOS engineer.</p>
             <p class="hero-bio">Co-founder of <a href="https://chstudiosdetroit.com/" target="_blank" rel="noopener noreferrer">CH Studios LLC</a> — a Detroit software studio building full-stack platforms, iOS apps, and AI integrations for real clients.</p>
             <div class="hero-ctas">
                 <a href="case-studies.html" class="hero-btn-primary">View My Work</a>
                 <a href="assets/docs/Resume.pdf" class="hero-btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Project Screenshots -->
+    <section class="screenshot-strip-section">
+        <div class="screenshot-strip-inner">
+            <div class="screenshot-strip-label">Web Platforms</div>
+            <div class="screenshot-strip-track">
+                <a href="wellness-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-wellness-co.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/thewellnessco/screenshot-home.png" alt="The Wellness Co." loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">The Wellness Co.</span>
+                        <span class="screenshot-card-tag real">Real client</span>
+                    </div>
+                </a>
+                <a href="bakery-spec.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-bakery-co.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/thebakeryco/screenshot-home.png" alt="The Bakery Co." loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">The Bakery Co.</span>
+                        <span class="screenshot-card-tag spec">Spec</span>
+                    </div>
+                </a>
+                <a href="salon-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-salon-co.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/thesalonco/screenshot-home.png" alt="The Salon Co." loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">The Salon Co.</span>
+                        <span class="screenshot-card-tag spec">Spec</span>
+                    </div>
+                </a>
+                <a href="sports-bar-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-sports-bar.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/thesportsbarco/screenshot-home.png" alt="The Sports Bar Co." loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">The Sports Bar Co.</span>
+                        <span class="screenshot-card-tag spec">Spec</span>
+                    </div>
+                </a>
+                <a href="inn-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-inn-co.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/theinnco/screenshot-home.png" alt="The Inn Co." loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">The Inn Co.</span>
+                        <span class="screenshot-card-tag spec">Spec</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1064,6 +1236,18 @@
         <section class="appstore-strip">
             <div class="appstore-strip-label">On the App Store</div>
             <div class="appstore-apps">
+                <div class="appstore-app">
+                    <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="appstore-app-icon" />
+                    <div class="appstore-app-info">
+                        <span class="appstore-app-name">Tally — Time Tracker</span>
+                        <span class="appstore-app-sub">Time tracking · iPhone · Apple Watch · Mac</span>
+                        <p class="appstore-app-desc">Cross-platform time tracker with a React web dashboard on a shared Supabase backend. $9.99 one-time against competitors charging $10–20/month.</p>
+                        <div class="appstore-app-btns">
+                            <a href="tally.html" class="appstore-case-btn" aria-label="Tally case study">Case Study →</a>
+                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="appstore-app">
                     <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="appstore-app-icon" />
                     <div class="appstore-app-info">
