@@ -228,7 +228,13 @@
             <a href="https://webplatform-api.vercel.app/#" class="button" target="_blank" rel="noopener noreferrer">View Platform ↗</a>
         </div>
 
-        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · 2026 · Live</div>
+        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Twilio · Sentry · 2026 · Live</div>
+
+        <div class="case-section">
+            <h3>The Research</h3>
+            <p>Before writing any code, I spent time at Detroit-area farmers markets talking directly with small business owners — bakery owners, salon operators, restaurant managers, and wellness studio owners — about what software they were using, what they were paying for it, and what frustrated them about it.</p>
+            <p>The pattern was consistent: owners were locked into generic platforms that charged monthly fees in perpetuity, applied their own branding over everything, and in some cases took a cut of every transaction. Most had never seriously considered a custom alternative because they assumed it would require a developer on retainer to maintain. That assumption is exactly what this suite is built to disprove.</p>
+        </div>
 
         <div class="case-section">
             <h3>The Problem</h3>
@@ -238,6 +244,7 @@
         <div class="case-section">
             <h3>The Platform</h3>
             <p>This is one Node/Express API serving every web surface a business needs — customer website, customer account portal, and admin dashboard — all reading from one Supabase database. A change made anywhere propagates everywhere instantly. Menu update from the admin? The website reflects it in real time. No redeploy. No developer required.</p>
+            <p>Per-tenant Stripe and Resend keys live in the database — not in environment variables — so the shared backend never needs redeploying for a new client. Onboarding a new business means copying the frontend repo, deploying it, and inserting a tenant row. A step-by-step onboarding wizard then walks the owner through connecting Stripe, Resend, and a custom domain via the Cloudflare API, which adds DNS records automatically.</p>
 
             <div class="knot-surface-grid">
                 <div class="knot-surface-card">
@@ -383,15 +390,10 @@
         <div class="case-section">
             <h3>The Outcome</h3>
             <p>The Wellness Co., a Michigan wellness studio, had no online presence before this platform — bookings were by phone, payments were in person, and the owner had no visibility into who was coming in or when. Today, customers book and pay online themselves. Cancellations are handled automatically by the 48-hour policy. The owner manages every appointment, payment, and customer from one dashboard. No calls. No spreadsheets.</p>
-            <p>That's what the platform replaces: the overhead, not just the software. Zero commission per order versus 15–30% on delivery platforms. Zero monthly platform fee versus $200–500/month for Toast or Square. Every new business is one database row and a frontend deploy.</p>
+            <p>That's what the platform replaces: the overhead, not just the software. Zero commission per order versus 15–30% on delivery platforms. Zero monthly platform fee versus $200–500/month for Toast or Square. Every new business is one database row and a frontend deploy. The platform ships with 130 passing tests and Sentry error tracking in production.</p>
         </div>
 
-        <div class="case-section" style="padding-top:0; border-top: none;">
-            <p style="font-size:0.88em; color:var(--color-text-muted); margin:0 0 0.75em;">Looking for the client-facing product overview — what each vertical replaces and what's included?</p>
-            <a href="web-platforms.html" class="knot-deploy-btn" style="display:inline-block;">View Platform Suite →</a>
-        </div>
-
-        <nav class="spec-nav" aria-label="Case study navigation">
+<nav class="spec-nav" aria-label="Case study navigation">
             <a href="wellness-co.html" class="spec-nav-btn next">
                 <span class="spec-nav-label">Next case study</span>
                 The Wellness Co. →
