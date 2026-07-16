@@ -181,6 +181,41 @@
         @media (max-width: 600px) {
             .knot-surface-grid { grid-template-columns: 1fr; }
             .knot-admin-grid { grid-template-columns: 1fr; }
+            .admin-feature-groups { grid-template-columns: 1fr; }
+        }
+
+        .admin-feature-groups {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5em;
+            margin: 1.1em 0 0;
+        }
+        .admin-group-head {
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin: 0 0 0.55em;
+        }
+        .admin-feature-groups ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .admin-feature-groups li {
+            font-size: 0.88em;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            padding-left: 1em;
+            position: relative;
+            margin-bottom: 0.3em;
+        }
+        .admin-feature-groups li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--color-text-muted);
         }
 
     </style>
@@ -267,12 +302,6 @@
         </div>
 
         <div class="case-section">
-            <h3>The Research</h3>
-            <p>Before writing any code, I spent time at Detroit-area farmers markets talking directly with small business owners — bakery owners, salon operators, restaurant managers, and wellness studio owners — about what software they were using, what they were paying for it, and what frustrated them about it.</p>
-            <p>The pattern was consistent: owners were locked into generic platforms that charged monthly fees in perpetuity, applied their own branding over everything, and in some cases took a cut of every transaction. Most had never seriously considered a custom alternative because they assumed it would require a developer on retainer to maintain. That assumption is exactly what this suite is built to disprove.</p>
-        </div>
-
-        <div class="case-section">
             <h3>The Problem</h3>
             <p>Small businesses run on fragmented tools — a POS from one vendor, a website from another, employee scheduling from a third. Toast charges $200–500/month. Square charges per transaction and per feature. 7shifts charges per employee just to manage a schedule. None of them connect. None were built for the independent business owner who needs everything to work without a developer on call.</p>
         </div>
@@ -282,16 +311,6 @@
             <p>This is one Node/Express API serving every web surface a business needs — customer website, customer account portal, and admin dashboard — all reading from one Supabase database. A change made anywhere propagates everywhere instantly. Menu update from the admin? The website reflects it in real time. No redeploy. No developer required.</p>
             <p>Per-tenant Stripe and Resend keys live in the database — not in environment variables — so the shared backend never needs redeploying for a new client. Onboarding a new business means copying the frontend repo, deploying it, and inserting a tenant row. A step-by-step onboarding wizard then walks the owner through connecting Stripe, Resend, and a custom domain via the Cloudflare API, which adds DNS records automatically.</p>
 
-            <div class="knot-surface-grid">
-                <div class="knot-surface-card">
-                    <div class="knot-surface-label">Customer-facing</div>
-                    <div class="knot-surface-name">Website + Account Portal</div>
-                </div>
-                <div class="knot-surface-card">
-                    <div class="knot-surface-label">Operations</div>
-                    <div class="knot-surface-name">Admin Dashboard</div>
-                </div>
-            </div>
         </div>
 
         <div class="case-section">
@@ -349,7 +368,7 @@
                             <span class="knot-deploy-name">The Sports Bar Co.</span>
                             <span class="knot-deploy-tag">Spec</span>
                         </div>
-                        <p class="knot-deploy-desc">Reservations and events platform for a Detroit sports bar — full menu, weekly events calendar, table reservations, and a private party inquiry form. Owners control everything without a developer on retainer.</p>
+                        <p class="knot-deploy-desc">Live scores, reservations, and events for a Detroit sports bar — 7 leagues (NFL, MLB, NBA, NHL, CFB, CBB, MLS) via ESPN's API, table booking, weekly events calendar, and a party inquiry form. No per-cover fees.</p>
                         <div class="knot-deploy-btns">
                             <a href="sports-bar-co.html" class="knot-deploy-btn">Case Study →</a>
                             <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="knot-deploy-btn knot-deploy-btn-secondary">View Website ↗</a>
@@ -391,25 +410,35 @@
             <h3>The Admin Dashboard</h3>
             <p>A protected single-page dashboard that gives the business owner full control over their storefront without touching code or a database. Every admin route verifies a JWT server-side — the security lives on the server, not in the browser.</p>
 
-            <ul class="knot-admin-grid">
-                <li>Live order and revenue overview</li>
-                <li>Order management and fulfillment</li>
-                <li>Revenue charts and breakdowns</li>
-                <li>Menu CMS — items, photos, sale pricing</li>
-                <li>Inventory tracking per item</li>
-                <li>Coupon creation and management</li>
-                <li>Hero image and banner CMS</li>
-                <li>Store hours editor</li>
-                <li>Feature toggles — ordering, subscriptions</li>
-                <li>Gift card management</li>
-                <li>Subscription management</li>
-                <li>Customer list and purchase history</li>
-                <li>Contact form submissions</li>
-                <li>Event booking inquiries</li>
-                <li>Employment applications</li>
-                <li>Staff accounts and roles</li>
-                <li>Kitchen prep list from pending orders</li>
-            </ul>
+            <div class="admin-feature-groups">
+                <div>
+                    <div class="admin-group-head">Revenue &amp; Orders</div>
+                    <ul>
+                        <li>Live order and revenue overview</li>
+                        <li>Order management and fulfillment</li>
+                        <li>Revenue charts and breakdowns</li>
+                        <li>Kitchen prep list from pending orders</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="admin-group-head">Catalog &amp; Content</div>
+                    <ul>
+                        <li>Menu CMS — items, photos, pricing, sale badges</li>
+                        <li>Inventory tracking per item</li>
+                        <li>Coupon and gift card management</li>
+                        <li>Hero image and banner CMS</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="admin-group-head">Business Admin</div>
+                    <ul>
+                        <li>Customer list and purchase history</li>
+                        <li>Subscription management</li>
+                        <li>Staff accounts and roles</li>
+                        <li>Feature toggles — ordering, subscriptions</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
 
