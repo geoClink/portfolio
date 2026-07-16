@@ -279,30 +279,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-
-    <!-- Lightbox -->
-    <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
-    </div>
-    <style>
-        #lightbox { display: none; }
-        #lightbox.open { display: flex; }
-    </style>
-    <script>
-        function openLightbox(el) {
-            const img = el.querySelector('img');
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.alt;
-            document.getElementById('lightbox').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
 </body>
 </html>

@@ -91,12 +91,16 @@
                     loading="lazy"
                 ></iframe>
             </div>
-            <p class="iframe-note">Previewing at tablet width. <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
+            <p class="iframe-note iframe-note-desktop">Previewing at tablet width. <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
+            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
         </div>
 
         <div class="case-section">
             <h3>Live Scores</h3>
             <p>Seven leagues — NFL, MLB, NBA, NHL, CFB, CBB, and MLS — pulled live from ESPN's official API. The "What's On" board shows how many games are live right now, how many are coming up today, and a live countdown to the next tip-off. Guests can filter by day (up to 7 days ahead) and by sport. The board pulls fresh data on every load with no page refresh needed.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thesportsbarco/screenshot-whatslive.png" alt="Live scores board — seven leagues, game times, and day filter" style="width:100%;display:block;" />
+            </div>
         </div>
 
         <div class="case-section">
@@ -207,30 +211,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-
-    <!-- Lightbox -->
-    <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
-    </div>
-    <style>
-        #lightbox { display: none; }
-        #lightbox.open { display: flex; }
-    </style>
-    <script>
-        function openLightbox(el) {
-            const img = el.querySelector('img');
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.alt;
-            document.getElementById('lightbox').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
 </body>
 </html>
