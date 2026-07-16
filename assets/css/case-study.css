@@ -365,9 +365,6 @@ p.ipad-item-label {
 .desktop-ss-item img {
     width: 100%;
     display: block;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    object-position: top;
 }
 .ss-clickable {
     cursor: zoom-in;

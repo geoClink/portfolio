@@ -97,3 +97,32 @@ document.addEventListener('DOMContentLoaded', function () {
         revealEls.forEach(function (el) { observer.observe(el); });
     }
 });
+
+// Screenshot lightbox
+function openLightbox(el) {
+    var img = el.querySelector('img');
+    if (!img) return;
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;';
+
+    var image = document.createElement('img');
+    image.src = img.src;
+    image.alt = img.alt;
+    image.style.cssText = 'max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,0.5);';
+
+    overlay.appendChild(image);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    function close() {
+        document.body.removeChild(overlay);
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onKey);
+    }
+
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    overlay.addEventListener('click', close);
+    document.addEventListener('keydown', onKey);
+}
