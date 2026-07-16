@@ -96,55 +96,16 @@
         </div>
 
         <div class="case-section">
-            <h3>Desktop Pages</h3>
-            <p style="font-size:0.85em;color:var(--color-text-muted);margin:-0.5em 0 1.25em;">Click any screenshot to enlarge.</p>
-            <div class="screenshot-scroll-track">
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">landscape-co-ten.vercel.app</div>
-                        </div>
-                        <img src="assets/images/thelandscapeco/screenshot-home.png" alt="Home page" />
-                    </div>
-                    <p>Home — full-screen editorial hero with gradient overlay and testimonials.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">landscape-co-ten.vercel.app/portfolio.html</div>
-                        </div>
-                        <img src="assets/images/thelandscapeco/screenshot-portfolio.png" alt="Portfolio page" />
-                    </div>
-                    <p>Portfolio — 9 projects filterable by Maintenance, Design, and Design + Install.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">landscape-co-ten.vercel.app/services.html</div>
-                        </div>
-                        <img src="assets/images/thelandscapeco/screenshot-services.png" alt="Services page" />
-                    </div>
-                    <p>Services — three tiers (Maintenance, Design, Design + Install) with scope and pricing.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">landscape-co-ten.vercel.app/team.html</div>
-                        </div>
-                        <img src="assets/images/thelandscapeco/screenshot-team.png" alt="Meet the team page" />
-                    </div>
-                    <p>Team — studio founders and brand story.</p>
-                </div>
+            <h3>Portfolio</h3>
+            <p>The studio's primary sales tool — a gallery of nine past client projects that prospective clients can browse before reaching out. Each project has its own page with photos, a written account of the work, and specs like plant list, site conditions, and timeline. Filterable by service type so clients looking for a full install aren't scrolling through maintenance jobs.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thelandscapeco/screenshot-portfolio.png" alt="Portfolio page — 9 projects with filter by service type" style="width:100%;display:block;" />
             </div>
         </div>
 
         <div class="case-section">
             <h3>Before &amp; After</h3>
-            <p>The Noe Valley project features an interactive drag slider comparing the dry, unused lawn before installation against the finished native garden. Built with pointer and touch events — no library — so it works on both desktop and mobile.</p>
+            <p>The Noe Valley project features an interactive drag slider comparing the dry, unused lawn before installation against the finished native garden. Works on both desktop and mobile.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img src="assets/images/thelandscapeco/screenshot-beforeafter.png" alt="Before and after drag slider — Noe Valley project" style="width:100%;display:block;" />
             </div>
@@ -161,6 +122,7 @@
 
         <div class="case-section">
             <h3>Mobile Experience</h3>
+            <p>The full site is responsive from 320px up. On mobile, the nav collapses into a full-screen overlay triggered by a hamburger button — no library, just a CSS class toggle. The before/after slider and portfolio filter both work on touch. The contact form submits correctly on mobile with inline success and error states.</p>
             <div class="phone-showcase">
                 <div class="phone-mockup">
                     <div class="phone-btns-left"></div>
@@ -177,6 +139,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Contact Form</h3>
+            <p>The contact form submits to the Small Business Suite API, which validates the payload, writes the submission to Supabase, and sends an email notification through Resend. The studio owner receives an email immediately. On the client side, the form shows an inline success message on completion and an error state if the request fails — no page reload, no third-party form service.</p>
         </div>
 
         <div class="case-section">
@@ -199,7 +166,7 @@
                     <p>Cormorant Garamond (serif, italic variants at 400 and 600 weight) is loaded via Google Fonts and used for all headings and the nav logo. Body copy and UI elements use system-ui. Six CSS custom properties cover all brand colors, keeping the design system consistent across all 15 pages. All interior page headers use a dark-gradient overlay technique (<code>linear-gradient(rgba overlay) + url() center/cover</code>) over Pexels CDN photos — matching the homepage hero aesthetic without separate CSS blocks per page.</p>
 
                     <h4>Scroll Fade-Ins</h4>
-                    <p>Every major section uses an <code>IntersectionObserver</code> in <code>main.js</code> to watch for <code>.fade-in</code> elements entering the viewport. On intersection, a <code>.visible</code> class is added which triggers a CSS <code>opacity: 0 → 1</code> and <code>translateY(22px) → 0</code> transition. The observer unsubscribes after firing so there's no ongoing cost — in Swift terms, this is like a one-shot <code>onAppear</code> animation.</p>
+                    <p>Every major section uses an <code>IntersectionObserver</code> in <code>main.js</code> to watch for <code>.fade-in</code> elements entering the viewport. On intersection, a <code>.visible</code> class is added which triggers a CSS <code>opacity: 0 → 1</code> and <code>translateY(22px) → 0</code> transition. The observer unsubscribes after firing so there's no ongoing cost.</p>
 
                     <h4>Before/After Drag Slider</h4>
                     <p>The Noe Valley project page features a before/after slider comparing a dry unused lawn (before) against the finished native garden (after). The implementation uses CSS <code>overflow: hidden</code> on a clipping div whose width is updated via <code>pointermove</code> and <code>touchmove</code> events. The "after" image is positioned normally; the "before" is absolute-positioned with its width set to match the container so <code>object-fit: cover</code> works correctly at any drag position.</p>
@@ -218,7 +185,7 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A site that holds up against professionally commissioned work — not because it uses a framework or template, but because every decision was made deliberately: the editorial dark-green testimonial layout instead of a card grid, the IntersectionObserver fade-ins that fire once and unsubscribe, the drag slider that works equally on mouse and touch, the seasonal planting feature that updates itself four times a year without a database. The technical implementation section above describes each of these in detail. Live at <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer">landscape-co-ten.vercel.app</a>.</p>
+            <p>A site that holds up against professionally commissioned work — not because it uses a framework or template, but because every decision was made deliberately: the editorial dark-green testimonial layout instead of a card grid, the drag slider that works equally on mouse and touch, the seasonal planting feature that updates itself four times a year without a database. Live at <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer">landscape-co-ten.vercel.app</a>.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">

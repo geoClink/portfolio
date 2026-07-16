@@ -372,6 +372,12 @@ p.ipad-item-label {
 .ss-clickable:hover {
     opacity: 0.92;
 }
+@media (max-width: 600px) {
+    .ss-clickable {
+        cursor: default;
+        pointer-events: none;
+    }
+}
 .desktop-ss-item p {
     font-size: 0.75em;
     color: var(--color-text-muted);
