@@ -247,6 +247,26 @@
         </div>
 
         <div class="case-section">
+            <h3>Mobile Experience</h3>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen" style="background: #f8fafc;">
+                        <div class="status-bar" style="background: #0f172a;">
+                            <span class="status-time" style="color: #fff;">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.5"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
+                            </div>
+                        </div>
+                        <div class="phone-viewport"><iframe class="phone-demo" src="https://webplatform-api.vercel.app/" title="Small Business Suite — Mobile" loading="lazy"></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
             <h3>The Research</h3>
             <p>Before writing any code, I spent time at Detroit-area farmers markets talking directly with small business owners — bakery owners, salon operators, restaurant managers, and wellness studio owners — about what software they were using, what they were paying for it, and what frustrated them about it.</p>
             <p>The pattern was consistent: owners were locked into generic platforms that charged monthly fees in perpetuity, applied their own branding over everything, and in some cases took a cut of every transaction. Most had never seriously considered a custom alternative because they assumed it would require a developer on retainer to maintain. That assumption is exactly what this suite is built to disprove.</p>
@@ -271,17 +291,13 @@
                     <div class="knot-surface-label">Operations</div>
                     <div class="knot-surface-name">Admin Dashboard</div>
                 </div>
-                <div class="knot-surface-card">
-                    <div class="knot-surface-label">Employee Management</div>
-                    <div class="knot-surface-name">Employee Scheduling App</div>
-                </div>
             </div>
         </div>
 
         <div class="case-section">
             <h3>Deployments</h3>
-            <p>The platform is multi-tenant from day one — every table carries a <code>tenant_id</code>, so onboarding a new business is one database row and a frontend deploy. Currently live across five verticals.</p>
-            <p>The Wellness Co. is the platform's first real client — a Michigan wellness studio that had no online presence before this. The remaining four are spec builds showing what the platform looks like across different business types.</p>
+            <p>The platform is multi-tenant from day one — every table carries a <code>tenant_id</code>, so onboarding a new business is one database row and a frontend deploy. Currently live across six verticals.</p>
+            <p>The Wellness Co. is the platform's first real client — a Michigan wellness studio that had no online presence before this. The remaining five are spec builds showing what the platform looks like across different business types.</p>
 
             <div class="knot-deployments">
                 <div class="knot-deploy-item">
@@ -305,7 +321,7 @@
                             <span class="knot-deploy-name">The Bakery Co.</span>
                             <span class="knot-deploy-tag">Spec</span>
                         </div>
-                        <p class="knot-deploy-desc">Ordering platform with five surfaces — customer site, admin dashboard, and AI ordering via a production MCP server. Shipped the week Google announced WebMCP at I/O 2026.</p>
+                        <p class="knot-deploy-desc">Ordering platform with a customer site, admin dashboard, and AI ordering via a production MCP server. Shipped the week Google announced WebMCP at I/O 2026.</p>
                         <div class="knot-deploy-btns">
                             <a href="bakery-spec.html" class="knot-deploy-btn">Case Study →</a>
                             <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="knot-deploy-btn knot-deploy-btn-secondary">View Website ↗</a>
@@ -354,6 +370,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="knot-deploy-item">
+                    <img src="assets/images/thelandscapeco/favicon.svg" alt="" class="knot-deploy-icon" />
+                    <div class="knot-deploy-content">
+                        <div class="knot-deploy-header">
+                            <span class="knot-deploy-name">The Landscape Co.</span>
+                            <span class="knot-deploy-tag">Spec</span>
+                        </div>
+                        <p class="knot-deploy-desc">Multi-page website for a Bay Area garden design and maintenance studio — photo-driven hero headers, 9 individual project detail pages, portfolio filter, and a live contact form backed by the platform API. Built from scratch in vanilla HTML, CSS, and JavaScript.</p>
+                        <div class="knot-deploy-btns">
+                            <a href="landscape-co.html" class="knot-deploy-btn">Case Study →</a>
+                            <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer" class="knot-deploy-btn knot-deploy-btn-secondary">View Website ↗</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -382,26 +412,6 @@
             </ul>
         </div>
 
-        <div class="case-section">
-            <h3>The Employee Layer</h3>
-            <p>The Employee Scheduler is the staff management surface of the platform — a native iOS app that handles everything 7shifts charges per seat for. Managers get a drag-and-drop schedule builder, overtime alerts, and labor cost reporting. Staff get clock-in/out with break tracking, shift swaps, time-off requests, and direct messaging. All real-time via Supabase Realtime websockets, push notifications via a custom Deno Edge Function calling APNs directly.</p>
-
-            <div class="knot-deployments">
-                <div class="knot-deploy-item">
-                    <img src="assets/images/knotemployee/appicon.png" alt="Employee Scheduler" class="knot-deploy-icon" />
-                    <div class="knot-deploy-content">
-                        <div class="knot-deploy-header">
-                            <span class="knot-deploy-name">Employee Scheduler</span>
-                            <span class="knot-deploy-tag">iOS</span>
-                        </div>
-                        <p class="knot-deploy-desc">iOS employee scheduling — manager and staff surfaces in one app</p>
-                        <div class="knot-deploy-btns">
-                            <a href="knotemployee.html?from=suite" class="knot-deploy-btn">Case Study →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>

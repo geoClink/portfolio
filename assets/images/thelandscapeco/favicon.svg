@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- T-bar grip -->
+  <rect x="20" y="5" width="60" height="13" rx="6.5" fill="#2D5A1B"/>
+  <!-- Shaft -->
+  <rect x="44" y="16" width="12" height="36" fill="#2D5A1B"/>
+  <!-- Spade blade -->
+  <path d="M16,52 L84,52 L84,65 Q84,96 50,100 Q16,96 16,65 Z" fill="#2D5A1B"/>
+</svg>
