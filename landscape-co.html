@@ -120,7 +120,7 @@
                 <summary>Technical Implementation</summary>
                 <div class="tech-details-body">
                     <h4>Site Architecture</h4>
-                    <p>Six top-level pages (homepage, services, portfolio, team, contact, 404) plus a <code>portfolio/</code> subfolder containing 9 individual project detail pages — 15 HTML files in total. All styles live in a single <code>css/styles.css</code> file using CSS custom properties for brand colors and font stack. JavaScript is split into a shared <code>js/main.js</code> (nav toggle, scroll behavior) and inline scripts for page-specific interactions.</p>
+                    <p>Six top-level pages (homepage, services, portfolio, team, contact, 404) plus a <code>portfolio/</code> subfolder containing 9 individual project detail pages — 15 HTML files in total. All styles live in a single <code>css/styles.css</code> file using CSS custom properties for brand colors and font stack. JavaScript lives in a shared <code>js/main.js</code> that handles nav, scroll fade-ins, a lightbox, and a before/after drag slider — plus inline scripts for page-specific features like seasonal plant rendering.</p>
 
                     <h4>Mobile Navigation</h4>
                     <p>On desktop, the nav is a standard flex row. On mobile, tapping the hamburger button transforms it into a full-screen cream-colored overlay using <code>position: fixed; top: 64px; bottom: 0</code> — no JavaScript library, just a CSS class toggle on <code>display: flex</code>. The three hamburger bars animate into an X via <code>transform: rotate()</code> and <code>opacity: 0</code> on the middle bar. Clicking any nav link dismisses the overlay by removing the <code>.open</code> class.</p>
@@ -134,6 +134,18 @@
                     <h4>Typography & Design System</h4>
                     <p>Cormorant Garamond (serif, italic variants at 400 and 600 weight) is loaded via Google Fonts and used for all headings and the nav logo. Body copy and UI elements use system-ui. Six CSS custom properties cover all brand colors, keeping the design system consistent across all 15 pages. All interior page headers use a dark-gradient overlay technique (<code>linear-gradient(rgba overlay) + url() center/cover</code>) over Pexels CDN photos — matching the homepage hero aesthetic without separate CSS blocks per page.</p>
 
+                    <h4>Scroll Fade-Ins</h4>
+                    <p>Every major section uses an <code>IntersectionObserver</code> in <code>main.js</code> to watch for <code>.fade-in</code> elements entering the viewport. On intersection, a <code>.visible</code> class is added which triggers a CSS <code>opacity: 0 → 1</code> and <code>translateY(22px) → 0</code> transition. The observer unsubscribes after firing so there's no ongoing cost — in Swift terms, this is like a one-shot <code>onAppear</code> animation.</p>
+
+                    <h4>Before/After Drag Slider</h4>
+                    <p>The Noe Valley project page features a before/after slider comparing a dry unused lawn (before) against the finished native garden (after). The implementation uses CSS <code>overflow: hidden</code> on a clipping div whose width is updated via <code>pointermove</code> and <code>touchmove</code> events. The "after" image is positioned normally; the "before" is absolute-positioned with its width set to match the container so <code>object-fit: cover</code> works correctly at any drag position.</p>
+
+                    <h4>Image Lightbox</h4>
+                    <p>On all 9 project detail pages, clicking any gallery image opens a full-screen lightbox. The lightbox element is injected into the DOM by <code>main.js</code> once on load — not duplicated in every HTML file — and a single event delegation loop on <code>.project-gallery img</code> handles all click targets. Closes on click-outside or <code>Escape</code>. Body scroll is locked while open via <code>document.body.style.overflow = 'hidden'</code>.</p>
+
+                    <h4>Seasonal Planting Feature</h4>
+                    <p>The homepage includes a "In the garden now" section that detects the current month with <code>new Date().getMonth()</code> and renders a different set of three Bay Area plants depending on the season. All four seasonal datasets are stored as a plain JS object in an inline <code>&lt;script&gt;</code> tag and the DOM is written with <code>innerHTML</code> on page load — no API call, no build step, no dependencies. Visitors in winter see native shrubs suited for winter planting; summer visitors see drought-adapted species.</p>
+
                     <h4>Accessibility</h4>
                     <p>After running a Lighthouse audit, two failures were found: footer text contrast ratios below 4.5:1 (WCAG AA) and no <code>&lt;main&gt;</code> landmark on any page. Footer color values were adjusted from <code>rgba(255,255,255,0.28)</code> to <code>rgba(255,255,255,0.50)</code> and above. A Python script was used to insert <code>&lt;main&gt;</code> and <code>&lt;/main&gt;</code> tags at the correct positions across all 14 content pages at once, rather than editing each file by hand.</p>
                 </div>
@@ -142,7 +154,7 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A fully deployed, production-quality website that demonstrates end-to-end frontend development: design decisions, CSS architecture built without a framework, responsive layout, JavaScript interactivity, REST API integration, accessibility compliance, SEO metadata, and Vercel deployment. Live at <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer">landscape-co-ten.vercel.app</a>. Part of the Small Business Platform Suite.</p>
+            <p>A site that holds up against professionally commissioned work — not because it uses a framework or template, but because every decision was made deliberately: the editorial dark-green testimonial layout instead of a card grid, the IntersectionObserver fade-ins that fire once and unsubscribe, the drag slider that works equally on mouse and touch, the seasonal planting feature that updates itself four times a year without a database. The technical implementation section above describes each of these in detail. Live at <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer">landscape-co-ten.vercel.app</a>.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
