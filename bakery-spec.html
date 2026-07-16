@@ -134,59 +134,42 @@
         </div>
 
         <div class="case-section">
-            <h3>Desktop Pages</h3>
-            <p style="font-size:0.85em;color:var(--color-text-muted);margin:-0.5em 0 1.25em;">Click any screenshot to enlarge.</p>
-            <div class="screenshot-scroll-track">
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">the-bakery-co.vercel.app</div>
-                        </div>
-                        <img src="assets/images/thebakeryco/screenshot-home.png" alt="Home page" />
-                    </div>
-                    <p>Home — hero, featured items, and order CTA.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">the-bakery-co.vercel.app/menu</div>
-                        </div>
-                        <img src="assets/images/thebakeryco/screenshot-menu.png" alt="Menu page" />
-                    </div>
-                    <p>Menu — filterable catalog with categories, best seller tags, and add-to-cart.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">the-bakery-co.vercel.app/checkout</div>
-                        </div>
-                        <img src="assets/images/thebakeryco/screenshot-checkout.png" alt="Checkout page" />
-                    </div>
-                    <p>Checkout — pickup or delivery selection, date/time picker, tip, and Stripe payment.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">the-bakery-co.vercel.app/admin · demo</div>
-                        </div>
-                        <img src="assets/images/thebakeryco/screenshot-admin.png" alt="Admin dashboard" />
-                    </div>
-                    <p>Admin — order queue, revenue, messages, event inquiries, and job applications at a glance.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="browser-mockup ss-clickable" onclick="openLightbox(this)">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><div class="browser-dot close"></div><div class="browser-dot minimize"></div><div class="browser-dot maximize"></div></div>
-                            <div class="browser-url">the-bakery-co.vercel.app/admin · demo</div>
-                        </div>
-                        <img src="assets/images/thebakeryco/screenshot-admin-detail.png" alt="Admin — Needs Attention panel" />
-                    </div>
-                    <p>Admin detail — real customer messages, event inquiries (weddings, baby showers), and job applications all surfaced in one panel.</p>
-                </div>
+            <h3>Item Badges</h3>
+            <p>The owner can tag any item from the admin dashboard — Best Seller, New, Staff Pick, Seasonal, Limited, and more. Badges are item-specific and update instantly across the site with no code change.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thebakeryco/screenshot-badges.png" alt="Item badges — Best Seller, New, Staff Pick set in admin" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>You Might Like</h3>
+            <p>Recommendations are pulled from an <code>item_pairs</code> table that tracks which items are frequently ordered together — ranked by pair count. The more customers order two items together, the higher that pair ranks. Falls back to same-category items, then trending items if no pairs exist yet.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thebakeryco/screenshot-youmightlike.png" alt="You might like — order-based item recommendations" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Empty Cart</h3>
+            <p>Even an empty cart is a selling opportunity — it surfaces recommended items so customers who land on the cart page without adding anything have an immediate path to start browsing.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thebakeryco/screenshot-emptycart.png" alt="Empty cart state with item recommendations" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Gift Cards</h3>
+            <p>Customers can purchase and send gift cards directly through the site via Stripe. The recipient gets a unique code by email and can redeem it at checkout.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thebakeryco/screenshot-giftcard.png" alt="Gift card purchase flow" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Loyalty Program</h3>
+            <p>Creating an account unlocks a points-based loyalty program — 1 point per $1 spent, 100 points = $1 off your next order. Members also get birthday perks and a full order history. The sign-up page explains the benefits upfront to give customers a reason to create an account before they check out.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/thebakeryco/screenshot-loyalty.png" alt="Create account page with loyalty program incentive" style="width:100%;display:block;" />
             </div>
         </div>
 
