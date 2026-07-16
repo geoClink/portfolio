@@ -92,6 +92,8 @@
             <p>Every click sound is synthesized on the fly using the Web Audio API — 20ms of white noise run through a gain node with an exponential ramp. No audio files, no fetch requests. The result is a sharp mechanical click that fades immediately, like a physical key. The same <code>AudioContext</code> fires on mouse clicks, touch events, and keyboard presses.</p>
 
             <p>The voice pipeline uses the Web Speech API's <code>SpeechRecognition</code> to capture a spoken calculation ("five plus three"), maps each word to its symbol via a <code>wordMap</code>, then staggers button clicks 300ms apart so every key animates and plays its click sound in real time. After all presses complete, <code>SpeechSynthesisUtterance</code> reads the result back aloud. The long-press power toggle uses a <code>setTimeout</code> on <code>mousedown</code> that cancels on <code>mouseup</code> if released too quickly — the whole calculator goes dark and ignores all input while off.</p>
+
+            <p>Keys are color-coded by function — numbers, operators, and utility keys each use a distinct color so the layout is scannable at a glance without reading every label.</p>
         </div>
 
         <div class="case-section">
