@@ -451,7 +451,7 @@
                 inquiry_type: document.getElementById('inquiry_type').value || 'unspecified'
             };
             try {
-                const res = await fetch('https://formspree.io/f/mgojabvq', {
+                const res = await fetch('https://webplatform-api.vercel.app/api/platform/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify(data)
@@ -470,7 +470,8 @@
                         requestAnimationFrame(() => { successMsg.style.opacity = '1'; });
                     }, 300);
                 } else {
-                    alert('Something went wrong. Please try again.');
+                    const body = await res.json().catch(() => ({}));
+                    alert(body.error || 'Something went wrong. Please try again.');
                 }
             } catch (err) {
                 alert('Could not send message. Check your connection and try again.');
