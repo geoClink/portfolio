@@ -735,6 +735,11 @@ p.ipad-item-label {
     }
 }
 
+/* Case study pages get more breathing room for screenshots */
+#main {
+    max-width: 860px !important;
+}
+
 /* ── Technical collapsible ──────────────────────────────── */
 .tech-details {
     border: 1px solid var(--color-border);
