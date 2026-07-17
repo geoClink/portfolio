@@ -227,6 +227,59 @@
             margin: 0;
         }
 
+        /* ── How it works ─────────────────────────────────────── */
+        .contact-hiw {
+            display: none;
+            margin: 0 0 2em;
+            padding: 1.25em 1.5em;
+            background: var(--color-surface);
+            border-radius: 8px;
+        }
+
+        .contact-hiw.visible {
+            display: block;
+        }
+
+        .contact-hiw-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .contact-hiw-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+        }
+
+        .contact-hiw-num {
+            font-size: 0.65em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+            flex-shrink: 0;
+            padding-top: 0.3em;
+            min-width: 20px;
+        }
+
+        .contact-hiw-step strong {
+            font-size: 0.92em;
+            font-weight: 700;
+            color: var(--color-heading);
+            display: block;
+            margin-bottom: 0.25em;
+        }
+
+        .contact-hiw-step p {
+            font-size: 0.88em;
+            color: var(--color-text-muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+
         /* ── Intent cards ─────────────────────────────────────── */
         .contact-intent-grid {
             display: flex;
@@ -354,6 +407,33 @@
             </div>
         </div>
 
+        <div id="how-it-works" class="contact-hiw">
+            <span class="contact-open-to-label">How it works</span>
+            <ol class="contact-hiw-steps">
+                <li class="contact-hiw-step">
+                    <span class="contact-hiw-num">01</span>
+                    <div>
+                        <strong>Discovery</strong>
+                        <p>We talk through your business, what you need, and your timeline — no commitment required.</p>
+                    </div>
+                </li>
+                <li class="contact-hiw-step">
+                    <span class="contact-hiw-num">02</span>
+                    <div>
+                        <strong>Build</strong>
+                        <p>I handle design, development, and testing. You get regular check-ins and a staging link to review before anything goes live.</p>
+                    </div>
+                </li>
+                <li class="contact-hiw-step">
+                    <span class="contact-hiw-num">03</span>
+                    <div>
+                        <strong>Launch</strong>
+                        <p>Your site goes live with a walkthrough of your admin dashboard. I stay available for questions after launch.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/george-clinkscales/" class="button" target="_blank" rel="noopener noreferrer">LinkedIn <i class="icon brands fa-linkedin"></i></a>
             <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="icon brands fa-github"></i></a>
@@ -408,6 +488,8 @@
             document.getElementById('inquiry_type').value = type;
             const label = document.getElementById('form-label');
             label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
+            const hiw = document.getElementById('how-it-works');
+            if (hiw) hiw.classList.toggle('visible', type === 'client');
             document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
             setTimeout(function() { document.getElementById('name').focus(); }, 500);
         }
