@@ -101,20 +101,32 @@
             <h3>Admin Dashboard</h3>
             <p>The owner manages every aspect of the property from a protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below — no login needed.</p>
 
-            <ul style="margin:0 0 0 0;padding-left:1.4em;line-height:2.1;color:inherit;">
-                <li><strong>Reservations</strong> — full booking history with guest name, room, dates, status, and special requests</li>
-                <li><strong>Availability calendar</strong> — tape-chart style grid showing occupancy by room and day; navigate by month</li>
-                <li><strong>Room listings</strong> — add, edit, and delete rooms with name, slug, price, and description</li>
-                <li><strong>Block dates</strong> — mark a room unavailable for Expedia bookings, maintenance, or any external source</li>
-                <li><strong>Status management</strong> — mark bookings confirmed, completed, cancelled, or no-show from the dashboard</li>
-                <li><strong>Message guest</strong> — send a direct email to any guest from within the dashboard</li>
-                <li><strong>Stripe</strong> — paste API keys directly in the UI; webhook URL is displayed with step-by-step instructions</li>
-                <li><strong>Resend</strong> — API key configured from the dashboard; domain verification guidance included</li>
-                <li><strong>Pricing rules</strong> — set weekend rate multipliers or seasonal date-range rates; highest multiplier wins when rules overlap</li>
-                <li><strong>Tax rate</strong> — lodging tax configured once in the dashboard; applied automatically at checkout as a separate line item</li>
-                <li><strong>Minimum stay</strong> — per-room minimum night requirement enforced at booking before the guest reaches payment</li>
-                <li><strong>Setup checklist</strong> — guided onboarding for non-technical clients, with plain-English tooltips on every API key field</li>
-            </ul>
+            <div style="margin-top:1.25em;">
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Reservations</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Booking history — guest name, room, dates, status, and special requests</li>
+                    <li>Availability calendar — tape-chart style grid showing occupancy by room and day; navigate by month</li>
+                    <li>Block dates — mark a room unavailable for maintenance, Expedia bookings, or any external source</li>
+                    <li>Status management — mark bookings confirmed, completed, cancelled, or no-show</li>
+                    <li>Message guest — send a direct email to any guest from within the dashboard</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Property</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Room listings — add, edit, and delete rooms with name, slug, price, and description</li>
+                    <li>Minimum stay — per-room minimum night requirement enforced at booking before payment</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Revenue</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Pricing rules — weekend rate multipliers or seasonal date-range rates; highest multiplier wins when rules overlap</li>
+                    <li>Tax rate — lodging tax configured once; applied automatically at checkout as a separate line item</li>
+                </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Setup</p>
+                <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
+                    <li>Stripe — paste API keys directly in the UI; webhook URL displayed with step-by-step instructions</li>
+                    <li>Resend — API key configured from the dashboard; domain verification guidance included</li>
+                    <li>Setup checklist — guided onboarding with plain-English tooltips on every API key field</li>
+                </ul>
+            </div>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -136,8 +148,32 @@
         </div>
 
         <div class="case-section">
+            <h3>Room Listings</h3>
+            <p>Each suite has its own page with photos, description, pricing, and a direct booking button. Guests arriving from search land on a dedicated room page and can book in one click — the booking form pre-selects their room automatically. The owner manages all room listings from the admin dashboard without touching code.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/theinnco/screenshot-rooms.png" alt="Room listings — individual suite pages with photos and booking" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Availability Calendar</h3>
+            <p>The admin includes a tape-chart style occupancy grid — every room across every night of the month in a single view. Navigate by month to spot gaps, identify fully-booked nights, and block dates for maintenance or external bookings. No spreadsheet, no third-party channel manager.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar — tape-chart occupancy grid by room and date" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Booking Confirmation</h3>
+            <p>After payment, the confirmation page fetches live booking details using the Stripe session ID and displays the confirmed room, dates, and total paid — no polling, no waiting. Guests also receive a confirmation email immediately with a cancel link tied to their unique reservation token.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                <img src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" style="width:100%;display:block;" />
+            </div>
+        </div>
+
+        <div class="case-section">
             <h3>Explore the Inn</h3>
-            <p>A clear navigation section that gives first-time visitors an immediate path forward — browse rooms, view the menu, or learn about the property. Designed so a guest can orient themselves and get to booking without hunting through the nav.</p>
+            <p>A clear navigation section that gives first-time visitors an immediate path forward — browse rooms, visit The Dining Room (open to guests and the public), or learn about the property. Designed so a guest can orient themselves and get to booking without hunting through the nav.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img src="assets/images/theinnco/screenshot-explore.png" alt="Explore section — rooms, menu, and about the inn" style="width:100%;display:block;" />
             </div>
@@ -241,10 +277,7 @@
             <h3>The Outcome</h3>
             <p>A direct booking platform the owner controls outright — capturing bookings at zero commission versus 15–25% on OTA platforms. Guests book, pay, get an immediate confirmation with full details, look up their reservation anytime, and cancel themselves — all without any involvement from the owner. Pre-arrival and post-stay emails run automatically every day.</p>
             <p>A non-technical client can connect Stripe and Resend, configure their rooms, set lodging tax, define weekend and seasonal pricing rules, and start taking bookings entirely through the admin dashboard — no developer needed after handoff. The multi-tenant architecture means the same platform can be white-labeled for additional properties.</p>
-            <p>Designed and built solo in two weeks. 100/100/100/100 Lighthouse scores across Performance, Accessibility, Best Practices, and SEO — plus 2/2 on Agentic Browsing.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
-                <img src="assets/images/theinnco/screenshot-lighthouse.png" alt="Lighthouse scores — 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO" style="width:100%;display:block;" />
-            </div>
+            <p>Designed and built solo in two weeks.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
@@ -252,9 +285,9 @@
                 <span class="spec-nav-label">Previous case study</span>
                 ← The Sports Bar Co.
             </a>
-            <a href="tally.html" class="spec-nav-btn next">
+            <a href="landscape-co.html" class="spec-nav-btn next">
                 <span class="spec-nav-label">Next case study</span>
-                Tally →
+                The Landscape Co. →
             </a>
         </nav>
     </div>
