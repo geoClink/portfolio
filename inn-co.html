@@ -102,7 +102,10 @@
             <div style="margin-top:1.25em;">
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Reservations</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Today's sheet — arrivals and departures for the current day at a glance; printable in one click for front-desk use</li>
                     <li>Booking history — guest name, room, dates, status, and special requests</li>
+                    <li>Phone search — find any reservation by guest name or phone number</li>
+                    <li>Resend confirmation — re-send the booking confirmation email to any guest in one click</li>
                     <li>Availability calendar — tape-chart style grid showing occupancy by room and day; navigate by month</li>
                     <li>Block dates — mark a room unavailable for maintenance, Expedia bookings, or any external source</li>
                     <li>Status management — mark bookings confirmed, completed, cancelled, or no-show</li>
@@ -118,11 +121,13 @@
                     <li>Pricing rules — weekend rate multipliers or seasonal date-range rates; highest multiplier wins when rules overlap</li>
                     <li>Tax rate — lodging tax configured once; applied automatically at checkout as a separate line item</li>
                 </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Setup</p>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Settings</p>
                 <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
                     <li>Stripe — paste API keys directly in the UI; webhook URL displayed with step-by-step instructions</li>
                     <li>Resend — API key configured from the dashboard; domain verification guidance included</li>
+                    <li>Booking alerts — enter an email address to receive a notification every time a new reservation comes in</li>
                     <li>Setup checklist — guided onboarding with plain-English tooltips on every API key field</li>
+                    <li>Settings collapsed by default — Rooms, Pricing, and Integrations are grouped under a single accordion so the daily-use controls stay front and center</li>
                 </ul>
             </div>
 
@@ -254,7 +259,7 @@
                     <p>Pre-arrival reminders and post-stay review requests run on daily cron jobs via cron-job.org (free, no Vercel Pro required). Each job hits a protected endpoint on the server with a shared secret header. The server queries the shared booking API for check-ins or checkouts matching that day's target date, then sends the relevant email through Resend for each matching reservation.</p>
 
                     <h4>Guest Experience</h4>
-                    <p>Each suite has its own SEO-optimized URL (<code>/rooms/coastal-suite</code>, <code>/rooms/garden-room</code>, etc.) served by a single dynamic Express route. Room data, meta tags, the Open Graph image, and the canonical URL are all populated client-side from a JavaScript data map. Guests can look up any reservation at <code>/my-booking</code> using just their email and check-in date — no account required. The booking form pre-selects the room when arriving from a room detail page.</p>
+                    <p>Each suite has its own SEO-optimized URL (<code>/rooms/coastal-suite</code>, <code>/rooms/garden-room</code>, etc.) served by a single dynamic Express route. Room data, meta tags, the Open Graph image, and the canonical URL are all populated client-side from a JavaScript data map. Guests can look up any reservation at <code>/my-booking</code> using just their email and check-in date — no account required. The booking form pre-selects the room when arriving from a room detail page. A homepage availability widget accepts check-in and check-out dates and redirects to the booking page with both values pre-filled as URL params, which the booking form reads on load and immediately triggers an availability check. A Local Guide page — filterable by category (Arts, Food, Coffee, Music, Outdoors) — gives guests curated neighborhood recommendations from the owner's perspective.</p>
 
                     <h4>Demo Mode</h4>
                     <p>A read-only demo mode makes the admin dashboard accessible from this portfolio without exposing write endpoints or requiring a login. The page detects a <code>?demo=true</code> URL param and renders pre-seeded reservation and room data client-side, skipping all API calls for data loading. Every mutating action — status changes, form submissions, adding blocks, deleting rooms, saving API keys — is intercepted before it reaches the server and replaced with a toast notification. No demo session ever touches the database.</p>
