@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://geoclink.github.io/portfolio/detroit-sports-chatbot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: Detroit Sports Chatbot — An AI agent with live ESPN tool-calling, triple provider support, and an automated eval pipeline that improved response quality 28%." />
+    <meta name="description" content="Case study: Detroit Sports Chatbot — An AI agent with live ESPN tool-calling, dual-provider support (Claude + Groq), and an automated eval pipeline that improved response quality 28%." />
     <meta property="og:title" content="Detroit Sports Chatbot — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="An AI agent with live ESPN tool-calling, triple provider support, and an automated eval pipeline that improved response quality 28%." />
+    <meta property="og:description" content="An AI agent with live ESPN tool-calling, dual-provider support (Claude + Groq), and an automated eval pipeline that improved response quality 28%." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/detroit-sports-chatbot.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Detroit Sports Chatbot — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="An AI agent with live ESPN tool-calling, triple provider support, and an automated eval pipeline that improved response quality 28%." />
+    <meta name="twitter:description" content="An AI agent with live ESPN tool-calling, dual-provider support (Claude + Groq), and an automated eval pipeline that improved response quality 28%." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,14 +59,14 @@
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
         <h2 class="case-title">Detroit Sports Chatbot</h2>
-        <p class="case-tagline">An AI agent that answers questions about Detroit sports with live data — not a chatbot wrapper, but a tool-calling agent that decides when to hit the ESPN API, fetches real scores and stats, and synthesizes an answer. Built with triple provider support and an automated eval pipeline that improved response quality 28% across four prompt iterations.</p>
+        <p class="case-tagline">An AI agent that answers questions about Detroit sports with live data — not a chatbot wrapper, but a tool-calling agent that decides when to hit the ESPN API, fetches real scores and stats, and synthesizes an answer. Supports two AI providers (Claude Sonnet and Groq), voice input and output, and an automated eval pipeline that improved response quality 28% across four prompt iterations.</p>
 
         <div class="case-links">
             <a href="https://detroitsportchatbot.onrender.com" class="button" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
             <a href="https://github.com/geoClink/DetroitSportChatBot" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
 
-        <div class="case-meta">Python · Streamlit · Anthropic Claude API · Groq · OpenRouter · ESPN API</div>
+        <div class="case-meta">Python · Streamlit · Anthropic Claude API · Groq · ESPN API</div>
 
         <div class="case-section">
             <h3>The Problem</h3>
@@ -90,7 +90,31 @@
                     loading="lazy"
                 ></iframe>
             </div>
-            <p class="iframe-note iframe-note-desktop">Hosted on Render's free tier — may take 30–60 seconds to wake up after inactivity. No API key needed; powered by OpenRouter's free model router. <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+            <p class="iframe-note iframe-note-desktop">No API key needed — a server-side Groq key powers the default model. Switch to Anthropic in the sidebar if you want to use your own Claude key. <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+        </div>
+
+        <div class="case-section">
+            <h3>Mobile Experience</h3>
+            <p>The chatbot is fully responsive — the sidebar collapses to a hamburger menu on small screens so the full chat area is usable. Voice input is especially useful on mobile: tap the mic in the sidebar, ask your question, and the answer streams back and plays as audio automatically. No typing required.</p>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen" style="background:#0e1117;">
+                        <div class="status-bar" style="background:#0e1117;">
+                            <span class="status-time" style="color:#fff;">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
+                            </div>
+                        </div>
+                        <div class="phone-viewport">
+                            <iframe class="phone-demo" src="https://detroitsportchatbot.onrender.com" title="Detroit Sports Chatbot — Mobile View" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="case-caption">Mobile view — sidebar collapses, full chat area visible</p>
         </div>
 
         <div class="case-section">
@@ -125,7 +149,7 @@
 
         <div class="case-section">
             <h3>Provider Architecture</h3>
-            <p>Three AI providers — Claude Sonnet, Groq (Llama 3.3 70B), and OpenRouter — are supported through a unified interface. All three use the same tool-calling loop and system prompt; switching providers in the sidebar swaps the underlying model without changing anything else. OpenRouter is the default, routing to a free model so visitors can use the live demo without an API key. The architecture was built to make provider comparison easy — the same question routed through different models demonstrates how tool-calling behavior differs across providers.</p>
+            <p>Two AI providers — Anthropic Claude Sonnet and Groq (Llama 3.3 70B) — are supported through a unified interface. Both use the same tool-calling loop and system prompt; switching providers in the sidebar swaps the underlying model without changing anything else. Groq is the default: a server-side API key is configured on Render, so the live demo works for anyone without any setup. Visitors who want to use Claude can enter their own Anthropic key in the sidebar. The architecture makes provider comparison easy — the same question routed through different models demonstrates how tool-calling behavior and response style differ across providers.</p>
         </div>
 
         <div class="case-section">
@@ -162,8 +186,11 @@
                     <h4>ESPN Response Caching</h4>
                     <p>Each ESPN endpoint response is cached for 30 seconds using a simple in-memory dictionary keyed by URL. On every tool call, the cache is checked first — if the cached entry is within the TTL, the stored response is returned immediately. This prevents redundant API calls when multiple questions in a session ask about the same endpoint. The 30-second TTL is short enough that live game scores stay current but long enough to absorb bursts of related questions.</p>
 
+                    <h4>Voice Input &amp; Output</h4>
+                    <p>Users can ask questions by voice using a mic recorder in the sidebar — audio is transcribed in real time via Groq's Whisper large-v3 model. Responses can also be played back as audio using gTTS (Google Text-to-Speech), with autoplay triggered automatically after each answer. Voice mode makes the chatbot usable hands-free, which is useful on mobile where typing a sports question mid-game is inconvenient.</p>
+
                     <h4>Security &amp; Rate Limiting</h4>
-                    <p>API keys are stored server-side only — never sent to the browser or exposed in the Streamlit client. Rate limiting protects against API quota exhaustion from high-volume sessions. If a visitor provides their own key in the sidebar, it is used for that session only and never persisted. The default OpenRouter key is loaded from the server environment, so the live demo works for anyone with no setup.</p>
+                    <p>API keys are stored server-side only — never sent to the browser or exposed in the Streamlit client. Rate limiting is set to 10 requests per minute to protect against API quota exhaustion. If a visitor provides their own key in the sidebar, it is used for that session only and never persisted. The default Groq key is loaded from the server environment, so the live demo works for anyone with no setup.</p>
 
                     <h4>Streaming</h4>
                     <p>Responses stream word by word to the Streamlit UI as the model generates them. A thinking indicator is displayed while tool calls are executing so the user knows the agent is working. Once the final response starts streaming, the indicator is replaced with the text in real time. Error messages for rate limits, invalid keys, and API failures are handled gracefully with plain-English copy rather than raw exception output.</p>
@@ -173,7 +200,7 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A deployed AI agent — not a demo, live at <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">detroitsportchatbot.onrender.com</a> — that answers Detroit sports questions with real ESPN data. Response quality improved 28% through iterative prompt engineering measured by an automated eval pipeline, not guesswork. The provider abstraction means the same agent runs on Claude, Groq, or OpenRouter with a single sidebar toggle.</p>
+            <p>A deployed AI agent — not a demo, live at <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">detroitsportchatbot.onrender.com</a> — that answers Detroit sports questions with real ESPN data. Response quality improved 28% through iterative prompt engineering measured by an automated eval pipeline, not guesswork. Voice input via Groq Whisper and voice output via gTTS make it usable on any device. The provider abstraction means the same agent runs on Claude or Groq with a single sidebar toggle.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
