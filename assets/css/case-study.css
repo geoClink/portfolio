@@ -287,13 +287,13 @@
     pointer-events: none;
     position: relative;
     z-index: 5;
-    background: #f3edea;
+    background: #000;
 }
 
 .status-time {
     font-size: 12px;
     font-weight: 600;
-    color: #1c1c1e;
+    color: #fff;
     letter-spacing: -0.2px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1;

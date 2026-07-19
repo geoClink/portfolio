@@ -184,43 +184,7 @@
 
         <div class="case-section">
             <h3>Prompt Engineering &amp; Eval Pipeline</h3>
-            <p>Response quality was measured with an automated eval pipeline before and after each prompt change — not subjectively. Eight test cases cover the main failure modes: live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. After each prompt iteration, Groq's Llama 3.3 70B graded every answer 1–5 against the expected behavior, with context injected into the grader so it didn't penalize real ESPN data as hallucination.</p>
-
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.5em;margin-top:1.5em;margin-bottom:1em;">
-                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
-                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v1</div>
-                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.2<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
-                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
-                        <div style="width:64%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.4;"></div>
-                    </div>
-                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Basic system prompt</div>
-                </div>
-                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
-                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v2</div>
-                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.6<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
-                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
-                        <div style="width:72%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.6;"></div>
-                    </div>
-                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Added few-shot examples and bad examples with XML tags</div>
-                </div>
-                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
-                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v3</div>
-                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.9<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
-                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
-                        <div style="width:78%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.8;"></div>
-                    </div>
-                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Fixed grader context, improved edge case handling</div>
-                </div>
-                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
-                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v4</div>
-                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">4.1<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
-                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
-                        <div style="width:82%;height:100%;background:var(--color-heading);border-radius:2px;"></div>
-                    </div>
-                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Added output format rules for live score responses</div>
-                </div>
-            </div>
-            <p>28% improvement from v1 to v4. The grader context was itself a prompt engineering problem — early runs penalized correct live score answers as hallucinations because the grader didn't know the model had real-time tool access. Fixing that required injecting context about the ESPN tools into the grader's prompt so it could distinguish live data from fabricated results.</p>
+            <p>Response quality was measured with an automated eval pipeline across four prompt iterations — eight test cases covering live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. Each answer was graded 1–5 by Groq's Llama 3.3 70B with context injected so it could distinguish real ESPN tool output from fabricated responses. 28% improvement from v1 to v4, 3.2 to 4.1. Try it yourself below.</p>
         </div>
 
         <div class="case-section">
