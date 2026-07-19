@@ -9,11 +9,11 @@
     <meta property="og:description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geoclink.github.io/portfolio/coastcast.html" />
-    <meta property="og:image" content="https://geoclink.github.io/portfolio/assets/images/site/logo.jpg" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CoastCast — Case Study | George Clinkscales Jr." />
     <meta name="twitter:description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
-    <meta name="twitter:image" content="https://geoclink.github.io/portfolio/assets/images/site/logo.jpg" />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <meta name="description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +94,7 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Built with a 2-person team (myself and Jaiden Henley) over March–April 2026. I led the SwiftUI side — map, beach scoring engine, CoreML crowd prediction, App Intents, WidgetKit, Live Activities, and notifications. The Python FastAPI backend, deployed on Render, aggregates six data sources concurrently: NOAA buoy data, water quality, NWS weather alerts, TomTom traffic, holiday detection, and a holiday crowd signal.</p>
+            <p>Built as part of the MSU Apple Developer Academy program with a team of five — two developers, two designers, and a project manager — over March–April 2026. The SwiftUI app covers the map, beach scoring engine, CoreML crowd prediction, App Intents, WidgetKit, Live Activities, and notifications. The Python FastAPI backend, deployed on Render, aggregates six data sources concurrently: NOAA buoy data, water quality, NWS weather alerts, TomTom traffic, holiday detection, and a holiday crowd signal.</p>
 
             <p>The crowd prediction model is an XGBoost classifier trained on 40 years of attendance data, converted to CoreML and running fully on-device. It uses cyclical month encoding so the model understands seasonal proximity, and falls back to historical Lake Michigan water temperature averages when live buoy data isn't available. The beach detail screen fires the FastAPI backend and WeatherKit simultaneously using <code>async let</code>, cutting load time roughly in half.</p>
 
@@ -179,6 +179,10 @@
             <a href="tally.html" class="spec-nav-btn">
                 <span class="spec-nav-label">Previous case study</span>
                 ← Tally
+            </a>
+            <a href="detroit-sports-chatbot.html" class="spec-nav-btn next">
+                <span class="spec-nav-label">Next case study</span>
+                Detroit Sports Chatbot →
             </a>
         </nav>
     </div>
