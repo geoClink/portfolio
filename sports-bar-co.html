@@ -168,6 +168,9 @@
 
                     <h4>Frontend Architecture</h4>
                     <p>The frontend is built in vanilla HTML, CSS, and JavaScript with no framework. All dynamic features — live game scores, event listings, reservation submissions, the open/closed badge, and the happy hour countdown — connect to the webplatform-api, a shared multi-tenant Express backend also built for this suite. The sports bar routes run alongside bakery, inn, salon, and wellness routes on a single deployed API, with platform-level routes registered before tenant middleware so they resolve without a domain lookup. CSS custom properties handle theming; the mobile nav includes a backdrop-filter workaround to ensure the overlay covers the full viewport consistently across Chrome and Safari.</p>
+
+                    <h4>SEO</h4>
+                    <p>Schema.org <code>BarOrPub</code> JSON-LD structured data on the homepage with full address, hours, contact details, cuisine, and founding date. Verified passing in Google's Rich Results Test.</p>
                 </div>
             </details>
         </div>

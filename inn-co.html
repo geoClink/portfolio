@@ -279,7 +279,7 @@
                     <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. When an owner saves a Stripe or Resend key via the dashboard, it syncs to both the tenant's local settings table and the shared platform API so checkout sessions and webhooks both use the client's own keys. Onboarding a second hotel means inserting a row and deploying a new Vercel project — no schema changes, no code forks.</p>
 
                     <h4>SEO</h4>
-                    <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room.</p>
+                    <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room. Verified passing in Google's Rich Results Test.</p>
                 </div>
             </details>
         </div>

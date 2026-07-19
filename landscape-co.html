@@ -176,6 +176,9 @@
                     <h4>Seasonal Planting Feature</h4>
                     <p>The homepage includes a "In the garden now" section that detects the current month with <code>new Date().getMonth()</code> and renders a different set of three Bay Area plants depending on the season. All four seasonal datasets are stored as a plain JS object in an inline <code>&lt;script&gt;</code> tag and the DOM is written with <code>innerHTML</code> on page load — no API call, no build step, no dependencies. Visitors in winter see native shrubs suited for winter planting; summer visitors see drought-adapted species.</p>
 
+                    <h4>SEO</h4>
+                    <p>Schema.org <code>LandscapingBusiness</code> JSON-LD structured data on the homepage with service area, contact details, and social links. Verified passing in Google's Rich Results Test.</p>
+
                     <h4>Accessibility</h4>
                     <p>After running a Lighthouse audit, two failures were found: footer text contrast ratios below 4.5:1 (WCAG AA) and no <code>&lt;main&gt;</code> landmark on any page. Footer color values were adjusted from <code>rgba(255,255,255,0.28)</code> to <code>rgba(255,255,255,0.50)</code> and above. A Python script was used to insert <code>&lt;main&gt;</code> and <code>&lt;/main&gt;</code> tags at the correct positions across all 14 content pages at once, rather than editing each file by hand.</p>
                 </div>
