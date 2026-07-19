@@ -121,29 +121,55 @@
             <h3>Tool Architecture</h3>
             <p>The agent has access to 15 live ESPN API tools covering all four Detroit teams — Lions, Tigers, Red Wings, and Pistons. The model decides which tool to call based on the question. A knowledge question like "who is the greatest Red Wing of all time?" hits no tools. A question like "what's the Lions score?" triggers a live NFL scoreboard fetch. A question like "what does the depth chart look like?" triggers a separate endpoint. The model only calls what the question actually needs.</p>
 
-            <div style="overflow-x:auto;margin-top:1.5em;">
-                <table style="width:100%;border-collapse:collapse;font-size:0.88em;">
-                    <thead>
-                        <tr style="border-bottom:2px solid var(--color-border);">
-                            <th style="text-align:left;padding:0.6em 1em 0.6em 0;color:var(--color-text-muted);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.8em;">Tool</th>
-                            <th style="text-align:left;padding:0.6em 0;color:var(--color-text-muted);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.8em;">What It Returns</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">NFL / NBA / MLB / NHL Scores</td><td style="padding:0.55em 0;color:var(--color-text);">Live scores and game status</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Standings</td><td style="padding:0.55em 0;color:var(--color-text);">Conference standings by sport</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Schedule</td><td style="padding:0.55em 0;color:var(--color-text);">Next 5 upcoming games</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Injuries</td><td style="padding:0.55em 0;color:var(--color-text);">Current injury report</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Roster</td><td style="padding:0.55em 0;color:var(--color-text);">Full roster by position group</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">News</td><td style="padding:0.55em 0;color:var(--color-text);">Latest headlines</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Team Stats</td><td style="padding:0.55em 0;color:var(--color-text);">Season statistics</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Transactions</td><td style="padding:0.55em 0;color:var(--color-text);">Recent signings, trades, and cuts</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Depth Chart</td><td style="padding:0.55em 0;color:var(--color-text);">Starters and backups by position</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Leaders</td><td style="padding:0.55em 0;color:var(--color-text);">Top performers from the current or most recent game</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Play-by-Play</td><td style="padding:0.55em 0;color:var(--color-text);">Live play-by-play during active games</td></tr>
-                        <tr><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">Box Score</td><td style="padding:0.55em 0;color:var(--color-text);">Full box score from the current or most recent game</td></tr>
-                    </tbody>
-                </table>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5em;margin-top:1.5em;">
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">NFL / NBA / MLB / NHL Scores</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Live scores and game status</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Standings</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Conference standings by sport</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Schedule</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Next 5 upcoming games</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Injuries</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Current injury report</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Roster</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Full roster by position group</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">News</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Latest headlines</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Team Stats</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Season statistics</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Transactions</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Recent signings, trades, and cuts</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Depth Chart</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Starters and backups by position</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Leaders</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Top performers from current or most recent game</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Play-by-Play</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Live play-by-play during active games</div>
+                </div>
+                <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.84em;font-weight:600;color:var(--color-heading);margin-bottom:0.2em;">Box Score</div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);">Full box score from current or most recent game</div>
+                </div>
             </div>
         </div>
 
@@ -161,22 +187,39 @@
             <h3>Prompt Engineering &amp; Eval Pipeline</h3>
             <p>Response quality was measured with an automated eval pipeline before and after each prompt change — not subjectively. Eight test cases cover the main failure modes: live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. After each prompt iteration, Groq's Llama 3.3 70B graded every answer 1–5 against the expected behavior, with context injected into the grader so it didn't penalize real ESPN data as hallucination.</p>
 
-            <div style="overflow-x:auto;margin-top:1.5em;margin-bottom:1em;">
-                <table style="width:100%;border-collapse:collapse;font-size:0.88em;">
-                    <thead>
-                        <tr style="border-bottom:2px solid var(--color-border);">
-                            <th style="text-align:left;padding:0.6em 1em 0.6em 0;color:var(--color-text-muted);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.8em;">Version</th>
-                            <th style="text-align:left;padding:0.6em 1em 0.6em 0;color:var(--color-text-muted);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.8em;">Score</th>
-                            <th style="text-align:left;padding:0.6em 0;color:var(--color-text-muted);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.8em;">Change Made</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">v1</td><td style="padding:0.55em 1em 0.55em 0;color:var(--color-text);">3.2 / 5</td><td style="padding:0.55em 0;color:var(--color-text);">Basic system prompt</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">v2</td><td style="padding:0.55em 1em 0.55em 0;color:var(--color-text);">3.6 / 5</td><td style="padding:0.55em 0;color:var(--color-text);">Added few-shot examples and bad examples with XML tags</td></tr>
-                        <tr style="border-bottom:1px solid var(--color-border);"><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">v3</td><td style="padding:0.55em 1em 0.55em 0;color:var(--color-text);">3.9 / 5</td><td style="padding:0.55em 0;color:var(--color-text);">Fixed grader context, improved edge case handling</td></tr>
-                        <tr><td style="padding:0.55em 1em 0.55em 0;color:var(--color-heading);font-weight:600;">v4</td><td style="padding:0.55em 1em 0.55em 0;color:var(--color-text);">4.1 / 5</td><td style="padding:0.55em 0;color:var(--color-text);">Added output format rules for live score responses</td></tr>
-                    </tbody>
-                </table>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.5em;margin-top:1.5em;margin-bottom:1em;">
+                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v1</div>
+                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.2<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
+                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
+                        <div style="width:64%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.4;"></div>
+                    </div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Basic system prompt</div>
+                </div>
+                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v2</div>
+                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.6<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
+                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
+                        <div style="width:72%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.6;"></div>
+                    </div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Added few-shot examples and bad examples with XML tags</div>
+                </div>
+                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v3</div>
+                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">3.9<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
+                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
+                        <div style="width:78%;height:100%;background:var(--color-heading);border-radius:2px;opacity:0.8;"></div>
+                    </div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Fixed grader context, improved edge case handling</div>
+                </div>
+                <div style="padding:1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
+                    <div style="font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:0.5em;">v4</div>
+                    <div style="font-size:1.3em;font-weight:700;color:var(--color-heading);line-height:1;margin-bottom:0.5em;">4.1<span style="font-size:0.55em;font-weight:400;color:var(--color-text-muted);"> / 5</span></div>
+                    <div style="height:4px;background:var(--color-border);border-radius:2px;margin-bottom:0.75em;">
+                        <div style="width:82%;height:100%;background:var(--color-heading);border-radius:2px;"></div>
+                    </div>
+                    <div style="font-size:0.76em;color:var(--color-text-muted);line-height:1.4;">Added output format rules for live score responses</div>
+                </div>
             </div>
             <p>28% improvement from v1 to v4. The grader context was itself a prompt engineering problem — early runs penalized correct live score answers as hallucinations because the grader didn't know the model had real-time tool access. Fixing that required injecting context about the ESPN tools into the grader's prompt so it could distinguish live data from fabricated results.</p>
         </div>
