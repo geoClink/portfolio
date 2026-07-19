@@ -148,6 +148,11 @@
         </div>
 
         <div class="case-section">
+            <h3>Live Score Sidebar</h3>
+            <p>The sidebar shows live scores for any Detroit game happening today — Lions, Tigers, Red Wings, or Pistons — without the user needing to ask. All four ESPN scoreboards are checked on page load and the results are cached for 5 minutes so the API isn't hit on every Streamlit interaction. Only in-progress and final games are shown; scheduled future games are filtered out to avoid showing upcoming matchups as if they were live. A manual refresh button clears the cache if you want up-to-the-minute data during a close game.</p>
+        </div>
+
+        <div class="case-section">
             <h3>Provider Architecture</h3>
             <p>Two AI providers — Anthropic Claude Sonnet and Groq (Llama 3.3 70B) — are supported through a unified interface. Both use the same tool-calling loop and system prompt; switching providers in the sidebar swaps the underlying model without changing anything else. Groq is the default: a server-side API key is configured on Render, so the live demo works for anyone without any setup. Visitors who want to use Claude can enter their own Anthropic key in the sidebar. The architecture makes provider comparison easy — the same question routed through different models demonstrates how tool-calling behavior and response style differ across providers.</p>
         </div>
@@ -187,10 +192,13 @@
                     <p>Each ESPN endpoint response is cached for 30 seconds using a simple in-memory dictionary keyed by URL. On every tool call, the cache is checked first — if the cached entry is within the TTL, the stored response is returned immediately. This prevents redundant API calls when multiple questions in a session ask about the same endpoint. The 30-second TTL is short enough that live game scores stay current but long enough to absorb bursts of related questions.</p>
 
                     <h4>Voice Input &amp; Output</h4>
-                    <p>Users can ask questions by voice using a mic recorder in the sidebar — audio is transcribed in real time via Groq's Whisper large-v3 model. Responses can also be played back as audio using gTTS (Google Text-to-Speech), with autoplay triggered automatically after each answer. Voice mode makes the chatbot usable hands-free, which is useful on mobile where typing a sports question mid-game is inconvenient.</p>
+                    <p>Users can ask questions by voice using a mic recorder in the sidebar — audio is transcribed in real time via Groq's Whisper large-v3 model. Voice output via gTTS (Google Text-to-Speech) is available as an opt-in toggle in the sidebar, so users who want audio responses can enable them without it playing automatically for everyone. Voice mode makes the chatbot usable hands-free, which is useful on mobile where typing a sports question mid-game is inconvenient.</p>
 
                     <h4>Security &amp; Rate Limiting</h4>
                     <p>API keys are stored server-side only — never sent to the browser or exposed in the Streamlit client. Rate limiting is set to 10 requests per minute to protect against API quota exhaustion. If a visitor provides their own key in the sidebar, it is used for that session only and never persisted. The default Groq key is loaded from the server environment, so the live demo works for anyone with no setup.</p>
+
+                    <h4>Context Window Management</h4>
+                    <p>The full conversation history is stored in session state and displayed in the UI, but only the most recent 20 messages are sent to the API on each turn. When the trimmed slice would start mid-exchange on an assistant message, the first message is dropped so the API always receives a well-formed conversation beginning with a user turn. This keeps token costs bounded regardless of how long a session runs, while the displayed chat history remains complete for the user.</p>
 
                     <h4>Streaming</h4>
                     <p>Responses stream word by word to the Streamlit UI as the model generates them. A thinking indicator is displayed while tool calls are executing so the user knows the agent is working. Once the final response starts streaming, the indicator is replaced with the text in real time. Error messages for rate limits, invalid keys, and API failures are handled gracefully with plain-English copy rather than raw exception output.</p>
