@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
-        .screenshot-scroll-track { display: flex; gap: 1.8em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 1em 0.5em 1.5em; margin: 0 -0.5em 1.5em; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
+        .screenshot-scroll-track { display: flex; gap: 1.8em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 1em 0 1.5em; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
+        .screenshot-scroll-track::before, .screenshot-scroll-track::after { content: ''; flex: 0 0 2rem; }
         .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
         .screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
         .screenshot-scroll-item { flex: 0 0 auto; width: 260px; scroll-snap-align: start; }
@@ -66,7 +67,7 @@
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
         <h2 class="case-title">Tally — Time Tracker</h2>
-        <p class="case-tagline">Cross-platform time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and Stripe invoicing.</p>
+        <p class="case-tagline">Cross-platform time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and client invoicing sent directly by email.</p>
 
         <div class="case-links">
             <a href="https://tally-web-nu.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Web App ↗</a>
@@ -123,20 +124,20 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same <code>is_pro</code> flag in the database, so the app never has to check two payment systems.</p>
+            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same subscription record in the database, so neither platform has to check two payment systems.</p>
 
-            <p>Sessions are stored locally in SwiftData so the app works offline and opens instantly. Supabase syncs when the network is available. The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI — plus Stripe invoicing and a 7-day free trial.</p>
+            <p>The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI — plus a shared weekly hour goal per workspace so teams can track progress against a client contract. Invoice generation pulls from tracked sessions with draft → sent → paid status tracking, outstanding balance summaries, and one-click email delivery to clients via Resend. Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy.</p>
 
             <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
 
-            <p>Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy. The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead.</p>
+            <p>Both platforms share the same feature set: a timer with pause/resume, manual session entry, a "Log again" shortcut on recent sessions to instantly re-open the same client and task, a weekly hour goal with per-client sub-goals and progress bars, a client rate and project budget tracker (with a progress bar that turns red when over budget), reports showing hours and earnings side by side with period-over-period comparison, a session calendar, and CSV export. The web app adds voice control — saying "start", "pause", or "save" controls the timer hands-free.</p>
 
-            <p>The public demo account is seeded with realistic sessions that automatically adjust to the current week — a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
+            <p>The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead. The public demo account is seeded with realistic sessions that automatically adjust to the current week — a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>Tally is the most complex thing I've built — not because any single piece is hard, but because four platforms, two payment systems, and a shared backend require every layer to be correct at once. The web app is live on Vercel, including a full marketing landing page with iOS screenshots, live demo access, and App Store integration. The iOS app is live on the App Store for iPhone, Apple Watch, and Mac. Free to start, $9.99 one-time for Pro, and $4.99/month for Business — against competitors that start at $10–20/month with no free tier and no one-time option.</p>
+            <p>Tally is the most complex thing I've built — not because any single piece is hard, but because four platforms, two payment systems, and a shared backend require every layer to be correct at once. The iOS app shipped to the App Store and runs on iPhone, Apple Watch, and Mac. The web app is live on Vercel with a full marketing landing page, live demo, and App Store integration. Free to start with no time limit, $9.99 once for Pro, and $4.99/month for Business — against competitors that charge $10–20/month with no free tier and no one-time option.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
