@@ -1,104 +1,110 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Page Not Found | George Clinkscales Jr.</title>
-		<meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | George Clinkscales Jr.</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="noindex" />
-		<meta name="description" content="Page not found — return to George Clinkscales Jr.'s portfolio." />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Page not found — return to George Clinkscales Jr.'s portfolio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-		<style>
-			.not-found-wrap {
-				text-align: center;
-				padding: 3em 1em;
-			}
-			.not-found-code {
-				font-size: 5em;
-				font-weight: 700;
-				color: var(--color-heading);
-				line-height: 1;
-				margin: 0 0 0.2em;
-			}
-			.not-found-wrap h2 {
-				font-size: 1.5em;
-				margin: 0 0 0.5em;
-			}
-			.not-found-wrap p {
-				color: var(--color-text-muted);
-				margin: 0 0 1.5em;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .not-found-wrap {
+            text-align: center;
+            padding: 5em 1.25em 4em;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .not-found-code {
+            font-size: 6em;
+            font-weight: 800;
+            color: var(--color-heading);
+            line-height: 1;
+            margin: 0 0 0.15em;
+            letter-spacing: -0.03em;
+        }
+        .not-found-msg {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: var(--color-heading);
+            margin: 0 0 0.5em;
+        }
+        .not-found-sub {
+            color: var(--color-text-muted);
+            margin: 0 0 2em;
+        }
+        .not-found-btns {
+            display: flex;
+            gap: 0.75em;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<h1>George Clinkscales Jr.</h1>
-						<button id="menuToggle" aria-label="Open menu" class="menu-btn">
-							<span class="menu-icon">
-								<span></span>
-							</span>
-						</button>
-						<nav class="links">
-							<ul>
-								<li><a href="index.html" class="button">Home</a></li>
-								<li><a href="about.html" class="button">About</a></li>
-								<li><a href="case-studies.html" class="button">Case Studies</a></li>
-								<li><a href="resume.html" class="button">Resume</a></li>
-								<li><a href="contact.html" class="button">Contact</a></li>
-                
-							</ul>
-						</nav>
-						<aside id="sidebarMenu" class="sidebar-menu">
-							<nav>
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about.html">About</a></li>
-									<li><a href="case-studies.html">Case Studies</a></li>
-									<li><a href="resume.html">Resume</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</nav>
-						</aside>
-					</header>
+    <header id="header">
+        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" />George Clinkscales Jr.</a></h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
     <div id="menuOverlay" class="menu-overlay"></div>
 
-				<!-- Main -->
-					<div id="main" role="main">
-						<article class="post">
-							<div class="not-found-wrap">
-								<p class="not-found-code">404</p>
-								<h2>This page took a wrong turn on Woodward and never came back.</h2>
-								<p>Let's get you somewhere that exists.</p>
-								<div style="display:flex;gap:0.75em;justify-content:center;flex-wrap:wrap;">
-									<a href="index.html" class="button">Go Back Home</a>
-									<a href="case-studies.html" class="button">View My Work</a>
-								</div>
-							</div>
-						</article>
-					</div>
+    <div id="main" role="main">
+        <div class="not-found-wrap">
+            <p class="not-found-code">404</p>
+            <p class="not-found-msg">This page took a wrong turn on Woodward.</p>
+            <p class="not-found-sub">Let's get you somewhere that exists.</p>
+            <div class="not-found-btns">
+                <a href="index.html" class="button">Go Home</a>
+                <a href="case-studies.html" class="button">View My Work</a>
+            </div>
+        </div>
+    </div>
 
-				<!-- Footer -->
-					<section id="footer">
-						<ul class="icons">
-							<li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-						</ul>
-						<p class="copyright">&copy; George Clinkscales Jr. Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
-					</section>
+    <div class="page-cta">
+        <strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+    </div>
 
-			</div>
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+    </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
-	</body>
+</body>
 </html>
