@@ -642,6 +642,23 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Magnetic buttons
+        document.querySelectorAll('.cs-cta').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const r = btn.getBoundingClientRect();
+                const dx = (e.clientX - (r.left + r.width / 2)) * 0.28;
+                const dy = (e.clientY - (r.top + r.height / 2)) * 0.28;
+                btn.style.transition = 'transform 0.1s ease';
+                btn.style.transform = `translate(${dx}px, ${dy}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transition = 'transform 0.45s ease';
+                btn.style.transform = '';
+            });
+        });
+
+    </script>
 
 </body>
 </html>
