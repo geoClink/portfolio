@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Tripsetta | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://geoclink.github.io/portfolio/tripsetta.html" />
+    <meta property="og:title" content="Tripsetta | George Clinkscales Jr." />
+    <meta property="og:description" content="Tripsetta — a travel platform for solo travelers and travel agents, with AI copilot, itinerary planning, CRM, and Agent Mode." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geoclink.github.io/portfolio/tripsetta.html" />
+    <meta name="description" content="Tripsetta — a travel platform for solo travelers and travel agents, with AI copilot, itinerary planning, CRM, and Agent Mode." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .trips-hero {
+            display: flex;
+            align-items: center;
+            gap: 1.25em;
+            margin-bottom: 1.5em;
+        }
+        .trips-hero-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .trips-hero-text h2 {
+            margin: 0 0 0.15em;
+            font-size: 1.75em;
+        }
+        .trips-hero-text p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.95em;
+        }
+
+        .marketing-gallery {
+            display: flex;
+            gap: 1em;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.25em 0 1.25em;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-border) transparent;
+        }
+        .marketing-gallery::before,
+        .marketing-gallery::after {
+            content: '';
+            flex: 0 0 0.25rem;
+        }
+        .marketing-gallery::-webkit-scrollbar { height: 5px; }
+        .marketing-gallery::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+        .marketing-gallery-item {
+            flex: 0 0 auto;
+            width: 200px;
+            scroll-snap-align: start;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .marketing-gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1em;
+            margin-top: 1em;
+        }
+        .feature-item {
+            background: var(--color-surface, rgba(0,0,0,0.03));
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 1em 1.1em;
+        }
+        .feature-item strong {
+            display: block;
+            margin-bottom: 0.25em;
+            font-size: 0.9em;
+        }
+        .feature-item p {
+            margin: 0;
+            font-size: 0.85em;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .feature-item { background: rgba(255,255,255,0.04); }
+        }
+        :root[data-theme="dark"] .feature-item { background: rgba(255,255,255,0.04); }
+        :root[data-theme="light"] .feature-item { background: rgba(0,0,0,0.03); }
+    </style>
+</head>
+<body class="is-preload">
+
+    <header id="header">
+        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" />George Clinkscales Jr.</a></h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div id="main" role="main">
+
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
+
+        <div class="trips-hero">
+            <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta app icon" class="trips-hero-icon" />
+            <div class="trips-hero-text">
+                <h2>Tripsetta</h2>
+                <p>Travel planning platform for solo travelers and travel agents — iOS, Android, and web.</p>
+            </div>
+        </div>
+
+        <div class="case-links">
+            <a href="https://tripsetta.com" class="button" target="_blank" rel="noopener noreferrer">Visit Tripsetta ↗</a>
+            <a href="https://apps.apple.com/il/app/tripsetta/id6756068722" class="button" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.tripsetta.app" class="button" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+            <a href="https://www.instagram.com/tripsettaagent/" class="button" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        </div>
+
+        <div class="case-meta">iOS · Android · Web · Active Contract</div>
+
+        <div class="case-section">
+            <p>Tripsetta is a travel platform built for two audiences: solo travelers who want to plan and book trips in one place, and travel agents who manage clients, itineraries, and revenue through a dedicated Agent Mode. The app handles trip creation, bookings, task tracking, live travel news, messaging, and Tripi — an AI travel copilot that helps users plan itineraries, pack lists, and destinations on demand.</p>
+            <p>For agents, Tripsetta doubles as a business tool: a built-in CRM tracks leads and clients, a reporting dashboard shows revenue, and a client portal lets travelers access their own trip details — all inside the same app.</p>
+        </div>
+
+        <div class="case-section desktop-only">
+            <h3>Live Website</h3>
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot close"></div>
+                        <div class="browser-dot minimize"></div>
+                        <div class="browser-dot maximize"></div>
+                    </div>
+                    <div class="browser-url">tripsetta.com</div>
+                </div>
+                <iframe src="https://tripsetta.com" title="Tripsetta — Live Website" loading="lazy"></iframe>
+            </div>
+            <p class="iframe-note iframe-note-desktop"><a href="https://tripsetta.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+        </div>
+
+        <div class="case-section mobile-only">
+            <h3>Mobile View</h3>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span class="status-time">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
+                            </div>
+                        </div>
+                        <div class="phone-viewport">
+                            <iframe class="phone-demo" src="https://tripsetta.com" title="Tripsetta — Mobile View" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="iframe-note iframe-note-mobile"><a href="https://tripsetta.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+            <p class="case-caption">tripsetta.com — mobile layout</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What It Does</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>Trip Planning</strong>
+                    <p>Create trips, attach bookings, build itineraries, and manage tasks — all in one view.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>AI Copilot — Tripi</strong>
+                    <p>Ask for destination ideas, packing lists, or full itineraries. Responds instantly inside the app.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Explore &amp; Discover</strong>
+                    <p>Travel tools, live news, currency converter, language translate, and destination inspiration in one view.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Agent Mode</strong>
+                    <p>A separate dashboard for travel agents with revenue overview, active trips, CRM, tasks, and messages.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>CRM for Agents</strong>
+                    <p>Track leads, active clients, and follow-ups. Filter by status and manage the full sales pipeline.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Messaging</strong>
+                    <p>Built-in messaging keeps client conversations and group trip chats organized alongside the itinerary.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Android</h3>
+            <div class="marketing-gallery">
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-01.png" alt="Choose how you travel — work with a travel agent or plan your own trip" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-02.png" alt="Plan every trip in one place — trips, bookings, tasks, and itineraries together" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-03.png" alt="Explore destinations faster — travel tools, news, and inspiration in one view" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-04.png" alt="Meet Tripi, your travel copilot — ask for ideas, itineraries, and planning help instantly" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-05.png" alt="Stay connected with messages — keep every client and trip conversation organized" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-06.png" alt="Manage leads with CRM — track clients, leads, and follow-ups with ease" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-07.png" alt="Switch into Agent Mode — manage trips, revenue, tasks, and reports" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/marketing-08.png" alt="Run your client portal — access tools, destinations, and travel updates instantly" />
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>iOS</h3>
+            <div class="marketing-gallery">
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/ios-plantripyourway.png" alt="Plan trips your way — choose Traveler or Travel Agent mode on setup" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/ios-explore.png" alt="Explore destinations instantly — curated inspiration and travel tools in one place" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/ios-sherpa.png" alt="Know before you go — check visa, passport, and health requirements via Sherpa" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/ios-currencyconverter.png" alt="Convert currencies fast — favorites and popular rates at a glance" />
+                </div>
+                <div class="marketing-gallery-item">
+                    <img src="assets/images/tripsetta/ios-trippi.png" alt="Meet your trip copilot — ask Tripsetta to plan, refine, and organize" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page-cta">
+        <strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+    </div>
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <strong>George Clinkscales Jr.</strong>
+                <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
