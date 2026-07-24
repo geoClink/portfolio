@@ -831,12 +831,18 @@
             display: flex;
             align-items: center;
             gap: 0.5em;
-            flex-wrap: wrap;
         }
         .knot-deploy-name {
             font-size: 0.82em;
             font-weight: 600;
             color: var(--color-heading);
+        }
+        @media (max-width: 600px) {
+            .knot-deploy-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3em;
+            }
         }
         .knot-deploy-tag {
             font-size: 0.6em;
