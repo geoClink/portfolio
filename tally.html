@@ -143,6 +143,17 @@
 
             <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
 
+            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
+                <div style="width:100%;max-width:480px;">
+                    <img src="assets/images/tallyios/iostallylargewidget.png" alt="Tally large iOS home screen widget showing weekly hours and goal progress" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Large widget — weekly hours and goal progress</p>
+                </div>
+                <div style="width:100%;max-width:320px;">
+                    <img src="assets/images/tallyios/iostallysmallwidget.png" alt="Tally small iOS home screen widget showing start button and goal percentage" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Small widget — start timer and goal percentage</p>
+                </div>
+            </div>
+
             <p>Both platforms share the same feature set: a timer with pause/resume, manual session entry, a "Log again" shortcut on recent sessions to instantly re-open the same client and task, a weekly hour goal with per-client sub-goals and progress bars, a client rate and project budget tracker (with a progress bar that turns red when over budget), reports showing hours and earnings side by side with period-over-period comparison, a session calendar, and CSV export. The web app adds voice control — saying "start", "pause", or "save" controls the timer hands-free.</p>
 
             <p>The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead. The public demo account is seeded with realistic sessions that automatically adjust to the current week — a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
