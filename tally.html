@@ -70,7 +70,7 @@
         <p class="case-tagline">Cross-platform time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and client invoicing sent directly by email.</p>
 
         <div class="case-links">
-            <a href="https://tally-web-nu.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Web App ↗</a>
+            <a href="https://tallytimetracker.com/" class="button" target="_blank" rel="noopener noreferrer">Web App ↗</a>
             <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36" style="display:block;"></a>
         </div>
 
@@ -91,11 +91,11 @@
                         <div class="browser-dot minimize"></div>
                         <div class="browser-dot maximize"></div>
                     </div>
-                    <div class="browser-url">tally-web-nu.vercel.app</div>
+                    <div class="browser-url">tallytimetracker.com</div>
                 </div>
-                <iframe src="https://tally-web-nu.vercel.app/" title="Tally — Landing Page" loading="lazy"></iframe>
+                <iframe src="https://tallytimetracker.com/" title="Tally — Landing Page" loading="lazy"></iframe>
             </div>
-            <p class="iframe-note iframe-note-desktop"><a href="https://tally-web-nu.vercel.app/" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+            <p class="iframe-note iframe-note-desktop"><a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
 
         <div class="case-section">
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="phone-viewport">
-                            <iframe class="phone-demo" src="https://tally-web-nu.vercel.app/" title="Tally — Mobile View" loading="lazy"></iframe>
+                            <iframe class="phone-demo" src="https://tallytimetracker.com/" title="Tally — Mobile View" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -125,6 +125,19 @@
         <div class="case-section">
             <h3>The Approach</h3>
             <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same subscription record in the database, so neither platform has to check two payment systems.</p>
+
+            <p>Authentication supports email/password, Sign in with Apple, and Sign in with Google on both iOS and web. The web app includes a full forgot password flow — users request a reset link, Supabase emails it via Resend over custom SMTP, and a recovery token handler in the React app detects the link regardless of where Supabase redirects and presents the reset form. A built-in bug report modal (also powered by Resend) is surfaced on the landing page, login page, and inside the dashboard settings — so users can report issues from anywhere without leaving the app.</p>
+
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin:1.5rem 0;">
+                <div style="flex:1;min-width:220px;">
+                    <img src="assets/images/tallyios/weblogin.png" alt="Tally web login showing Sign in with Google and Sign in with Apple buttons" style="width:100%;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;text-align:center;font-style:italic;">Web login — Sign in with Google and Apple</p>
+                </div>
+                <div style="flex:1;min-width:220px;">
+                    <img src="assets/images/tallyios/reportform.png" alt="Tally bug report modal with name, email and message fields" style="width:100%;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;text-align:center;font-style:italic;">Bug report modal — powered by Resend</p>
+                </div>
+            </div>
 
             <p>The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI — plus a shared weekly hour goal per workspace so teams can track progress against a client contract. Invoice generation pulls from tracked sessions with draft → sent → paid status tracking, outstanding balance summaries, and one-click email delivery to clients via Resend. Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy.</p>
 
@@ -142,12 +155,12 @@
 
         <div class="case-section og-preview-section">
             <h3>Link Preview</h3>
-            <a href="https://tally-web-nu.vercel.app/" class="og-card" target="_blank" rel="noopener noreferrer">
-                <img class="og-card-img" src="https://tally-web-nu.vercel.app/images/og-image.png" alt="Tally link preview image" loading="lazy">
+            <a href="https://tallytimetracker.com/" class="og-card" target="_blank" rel="noopener noreferrer">
+                <img class="og-card-img" src="https://tallytimetracker.com/images/og-image.png" alt="Tally link preview image" loading="lazy">
                 <div class="og-card-meta">
                     <div class="og-card-domain">
-                        <img src="https://tally-web-nu.vercel.app/favicon.svg" class="og-card-favicon" alt="" aria-hidden="true">
-                        tally-web-nu.vercel.app
+                        <img src="https://tallytimetracker.com/favicon.svg" class="og-card-favicon" alt="" aria-hidden="true">
+                        tallytimetracker.com
                     </div>
                     <p class="og-card-title">Tally — Time Tracker</p>
                     <p class="og-card-desc">A time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a web dashboard on one shared backend. Free to start.</p>
