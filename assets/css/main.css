@@ -3616,3 +3616,9 @@ footer#footer .footer-copy {
     margin-left: auto;
 }
 
+@media (max-width: 600px) {
+    .spec-nav-label {
+        display: none;
+    }
+}
+
