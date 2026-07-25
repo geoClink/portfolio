@@ -144,6 +144,13 @@
             <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
 
             <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
+                <div style="width:100%;max-width:320px;">
+                    <img src="assets/images/tallyios/lockscreentimertallyios.jpg" alt="Tally Live Activity on the iOS lock screen showing the running timer" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Lock screen Live Activity — check your timer without unlocking</p>
+                </div>
+            </div>
+
+            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
                 <div style="width:100%;max-width:480px;">
                     <img src="assets/images/tallyios/iostallylargewidget.png" alt="Tally large iOS home screen widget showing weekly hours and goal progress" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
                     <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Large widget — weekly hours and goal progress</p>
@@ -190,6 +197,63 @@
             </a>
         </nav>
     </div>
+
+    <!-- Tally update signup -->
+    <div style="background:var(--color-surface);border-top:1px solid var(--color-border);padding:3rem 1.5rem;text-align:center;">
+        <h2 style="font-size:1.25rem;font-weight:600;color:var(--color-heading);margin:0 0 0.5rem;">Stay in the loop</h2>
+        <p style="color:var(--color-text-muted);font-size:0.95rem;margin:0 0 1.25rem;">Get notified when Tally ships new features. No spam.</p>
+        <div id="tally-signup-wrap">
+            <form id="tally-signup" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;max-width:420px;margin:0 auto;">
+                <input type="email" id="tally-email" placeholder="your@email.com" required
+                    style="flex:1;min-width:0;padding:0.6rem 1rem;border:1px solid var(--color-border);border-radius:6px;font-size:0.95rem;background:#fff;color:var(--color-text);outline:none;">
+                <button type="submit"
+                    style="padding:0.6rem 1.25rem;background:var(--color-accent);color:#fff;border:none;border-radius:6px;font-size:0.95rem;font-weight:600;cursor:pointer;white-space:nowrap;">
+                    Notify me
+                </button>
+            </form>
+        </div>
+        <p id="tally-signup-msg" style="display:none;margin-top:0.75rem;font-size:0.9rem;"></p>
+    </div>
+
+    <script>
+        document.getElementById('tally-signup').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const msg = document.getElementById('tally-signup-msg');
+            const email = document.getElementById('tally-email').value;
+            btn.disabled = true;
+            btn.textContent = 'Saving…';
+            try {
+                const res = await fetch('https://fcmfuxoblbtxigknwhpz.supabase.co/functions/v1/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjbWZ1eG9ibGJ0eGlna253aHB6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTQ4MzQsImV4cCI6MjA5NTU3MDgzNH0.YFH0CVGnLAW4ufdj04aAc2e4CZeGxnNsyAfo3n40VPM'
+                    },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+                document.getElementById('tally-signup-wrap').style.display = 'none';
+                msg.style.display = 'block';
+                if (data.error === 'already') {
+                    msg.style.color = 'var(--color-text-muted)';
+                    msg.textContent = 'That email is already subscribed.';
+                } else if (data.success) {
+                    msg.style.color = '#16a34a';
+                    msg.textContent = "You're in. We'll reach out when something ships.";
+                } else {
+                    msg.style.color = '#dc2626';
+                    msg.textContent = 'Something went wrong — try again.';
+                }
+            } catch {
+                btn.disabled = false;
+                btn.textContent = 'Notify me';
+                msg.style.display = 'block';
+                msg.style.color = '#dc2626';
+                msg.textContent = 'Something went wrong — try again.';
+            }
+        });
+    </script>
 
     <!-- CTA Band -->
     <div class="page-cta">
