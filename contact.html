@@ -488,7 +488,8 @@
             label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
             const hiw = document.getElementById('how-it-works');
             if (hiw) hiw.classList.toggle('visible', type === 'client');
-            document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const scrollTarget = (type === 'client' && hiw) ? hiw : document.getElementById('contactForm');
+            scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
             setTimeout(function() { document.getElementById('name').focus(); }, 500);
         }
 
