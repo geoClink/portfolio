@@ -98,6 +98,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Restore page visibility when navigating back (bfcache restores page-leaving/is-preload state)
+window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+        document.body.classList.remove('is-preload', 'page-leaving');
+    }
+});
+
 // Page transitions
 document.querySelectorAll('a[href]').forEach(function (link) {
     var href = link.getAttribute('href');
