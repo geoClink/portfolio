@@ -484,6 +484,7 @@
             });
             el.classList.add('selected');
             document.getElementById('inquiry_type').value = type;
+            document.getElementById('subject').value = type === 'hiring' ? 'Full-time role inquiry' : 'Build inquiry';
             const label = document.getElementById('form-label');
             label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
             const hiw = document.getElementById('how-it-works');
