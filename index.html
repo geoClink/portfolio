@@ -868,15 +868,19 @@
             }
         }
         .knot-deploy-tag {
-            font-size: 0.6em;
-            font-weight: 700;
+            font-size: 0.62em;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            border: 1px solid var(--color-border);
-            border-radius: 999px;
-            padding: 0.2em 0.55em;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+        .knot-deploy-tag::before {
+            content: '●';
+            font-size: 0.7em;
         }
         .knot-deploy-desc {
             font-size: 0.73em;
@@ -1083,22 +1087,24 @@
             color: var(--color-heading);
         }
         .screenshot-card-tag {
-            font-size: 0.58em;
-            font-weight: 700;
-            letter-spacing: 0.06em;
+            font-size: 0.62em;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 0.2em 0.6em;
-            border-radius: 999px;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+        .screenshot-card-tag::before {
+            content: '●';
+            font-size: 0.7em;
         }
         .screenshot-card-tag.real {
-            background: var(--color-heading);
-            color: var(--color-on-dark);
+            color: var(--color-heading);
         }
         .screenshot-card-tag.spec {
-            background: var(--color-surface);
             color: var(--color-text-muted);
-            border: 1px solid var(--color-border);
         }
         @media (max-width: 600px) {
             .screenshot-strip-inner { padding-right: 0; }
