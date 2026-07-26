@@ -49,6 +49,28 @@
             margin: 0 auto;
             padding: 0 2em;
             box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5em;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.12);
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            cursor: default;
+            will-change: transform;
         }
 
         .hero-location {
@@ -147,7 +169,8 @@
 
         @media (max-width: 736px) {
             .hero-dark { padding: 2em 0 2.25em; }
-            .hero-inner { padding: 0 1.25em; }
+            .hero-inner { padding: 0 1.25em; flex-direction: row; align-items: center; gap: 1.25em; }
+            .hero-avatar { width: 72px; height: 72px; }
             .hero-name { font-size: 2.1em; }
             .hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.6em; }
             .testimonial-indicators { justify-content: flex-start; }
@@ -1167,16 +1190,19 @@
     <!-- Hero -->
     <section class="hero-dark">
         <div class="hero-inner">
-            <p class="hero-location">
-                <img loading="lazy" src="assets/images/site/pin.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:invert(1);opacity:0.45;" />Detroit, MI
-            </p>
-            <h1 class="hero-name">George Clinkscales Jr.</h1>
-            <p class="hero-role">Full-stack &amp; iOS engineer.</p>
-            <p class="hero-bio">I'm a developer who figures things out. Give me an unfamiliar stack, a hard user problem, or a complex domain — I'll do the research, learn what the job needs, and ship the solution. Co-founder of <a href="https://chstudiosdetroit.com/" target="_blank" rel="noopener noreferrer">CH Studios LLC</a>, a Detroit software studio.</p>
-            <div class="hero-ctas">
-                <a href="case-studies.html" class="hero-btn-primary">View My Work</a>
-                <a href="assets/docs/Resume_Web_Dev.pdf" class="hero-btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
+            <div class="hero-text">
+                <p class="hero-location">
+                    <img loading="lazy" src="assets/images/site/pin.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:invert(1);opacity:0.45;" />Detroit, MI
+                </p>
+                <h1 class="hero-name">George Clinkscales Jr.</h1>
+                <p class="hero-role">Full-stack &amp; iOS engineer.</p>
+                <p class="hero-bio">I'm a developer who figures things out. Give me an unfamiliar stack, a hard user problem, or a complex domain — I'll do the research, learn what the job needs, and ship the solution. Co-founder of <a href="https://chstudiosdetroit.com/" target="_blank" rel="noopener noreferrer">CH Studios LLC</a>, a Detroit software studio.</p>
+                <div class="hero-ctas">
+                    <a href="case-studies.html" class="hero-btn-primary">View My Work</a>
+                    <a href="assets/docs/Resume_Web_Dev.pdf" class="hero-btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
+                </div>
             </div>
+            <img src="assets/images/site/myself.webp" alt="George Clinkscales Jr." class="hero-avatar" width="800" height="1199" />
         </div>
     </section>
 
@@ -1733,6 +1759,52 @@
                 card.style.transform = '';
             });
         });
+    </script>
+
+    <script>
+        (function () {
+            const el = document.querySelector('.hero-name');
+            if (!el) return;
+            const final = el.textContent.trim();
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@!&%';
+            const rand = () => chars[Math.floor(Math.random() * chars.length)];
+            const duration = 800;
+            const interval = 40;
+            let elapsed = 0;
+            const timer = setInterval(() => {
+                elapsed += interval;
+                const progress = elapsed / duration;
+                el.textContent = final.split('').map((char, i) => {
+                    if (char === ' ') return ' ';
+                    return i / final.length < progress ? char : rand();
+                }).join('');
+                if (elapsed >= duration) {
+                    clearInterval(timer);
+                    el.textContent = final;
+                }
+            }, interval);
+        })();
+
+        (function () {
+            const avatar = document.querySelector('.hero-avatar');
+            const hero = document.querySelector('.hero-dark');
+            if (!avatar || !hero) return;
+
+            hero.addEventListener('mousemove', function (e) {
+                const rect = avatar.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (e.clientX - cx) / 180;
+                const dy = (e.clientY - cy) / 180;
+                avatar.style.transform = `perspective(600px) rotateY(${dx * 20}deg) rotateX(${-dy * 20}deg) scale(1.04)`;
+                avatar.style.boxShadow = `${-dx * 8}px ${dy * 8}px 24px rgba(0,0,0,0.4)`;
+            });
+
+            hero.addEventListener('mouseleave', function () {
+                avatar.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+                avatar.style.boxShadow = '';
+            });
+        })();
     </script>
 
 </body>
