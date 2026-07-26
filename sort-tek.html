@@ -84,13 +84,24 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>The site is plain HTML, CSS, and JavaScript — no React, no build step, no CMS. That was a deliberate choice: the client has no developer on staff, the content doesn't change frequently, and a static site is the fastest, most maintainable option for a small business that just needs to be findable and credible.</p>
+            <p>Plain HTML, CSS, and JavaScript — no framework, no build step, no CMS. The client has no developer on staff and the content doesn't change frequently, so a static site is the fastest, most maintainable fit. The design system, animations, and SEO were all built from scratch to meet 99–100/100 Lighthouse scores across the board.</p>
 
-            <p>The design system was built from scratch using CSS custom properties — Sort-Tek Red, Ink, Steel, Silver, and Paper as the palette. All three fonts (Oswald for headlines, Inter for body, IBM Plex Mono for data readouts) load non-blocking via the <code>rel="preload"</code> pattern so they never hold up the first paint. The signature element is the homepage hero: a camera-reticle viewport with red corner brackets, a scanline that sweeps once on load, and a status readout that flips from SCANNING to PASS. The animation runs on the GPU compositor using <code>transform: translateY()</code> — not <code>top</code> — to avoid forced layout recalculation on every frame.</p>
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Design System</h4>
+                    <p>The palette is defined as CSS custom properties — Sort-Tek Red, Ink, Steel, Silver, and Paper. All three fonts (Oswald for headlines, Inter for body, IBM Plex Mono for data readouts) load non-blocking via the <code>rel="preload"</code> pattern so they never hold up the first paint.</p>
 
-            <p>All images are served as WebP with PNG fallbacks via <code>&lt;picture&gt;</code> elements. Every <code>&lt;img&gt;</code> has explicit <code>width</code> and <code>height</code> attributes so the browser reserves the correct aspect ratio before the image loads, eliminating layout shift. The drone aerial poster image is resized to the exact display width to avoid sending oversized pixels over the wire. The result: 0ms Total Blocking Time, 0.03 Cumulative Layout Shift.</p>
+                    <h4>Hero Animation</h4>
+                    <p>The signature element is the homepage hero: a camera-reticle viewport with red corner brackets, a scanline that sweeps once on load, and a status readout that flips from SCANNING to PASS. The animation runs on the GPU compositor using <code>transform: translateY()</code> — not <code>top</code> — to avoid forced layout recalculation on every frame. The client requested the green PASS state specifically to mirror their real-world process of scanning parts and clearing them as defect-free.</p>
 
-            <p>SEO is comprehensive: unique meta descriptions on all five pages, Open Graph and Twitter Card tags, a LocalBusiness Schema.org JSON-LD block, canonical URLs, a sitemap.xml, and robots.txt. The contact form submits via Formspree AJAX with a success state swap and an inline error fallback — no page reload, no third-party redirect.</p>
+                    <h4>Performance</h4>
+                    <p>All images are served as WebP with PNG fallbacks via <code>&lt;picture&gt;</code> elements. Every <code>&lt;img&gt;</code> has explicit <code>width</code> and <code>height</code> attributes so the browser reserves the correct aspect ratio before the image loads, eliminating layout shift. The facility drone poster image is resized to the exact display width to avoid sending oversized pixels over the wire. Result: 0ms Total Blocking Time, 0.03 Cumulative Layout Shift.</p>
+
+                    <h4>SEO &amp; Contact Form</h4>
+                    <p>Unique meta descriptions on all five pages, Open Graph and Twitter Card tags, a LocalBusiness Schema.org JSON-LD block, canonical URLs, a sitemap.xml, and robots.txt. The contact form submits via Formspree AJAX with a success state swap and an inline error fallback — no page reload, no third-party redirect.</p>
+                </div>
+            </details>
         </div>
 
         <div class="case-section">
@@ -98,19 +109,19 @@
             <video class="case-video" autoplay muted loop playsinline style="object-fit:cover;object-position:top;aspect-ratio:1280/900;">
                 <source src="assets/images/sort-tek/sort-tek-demo.mp4" type="video/mp4">
             </video>
-            <p class="case-caption" style="margin-top:0.5em;">Hero animation — camera reticle, scanline sweep, and PASS readout</p>
-            <video class="case-video" autoplay muted loop playsinline style="margin-top:1.25em;">
+            <p class="case-caption">Hero animation — camera reticle, scanline sweep, and PASS readout</p>
+            <video class="case-video" autoplay muted loop playsinline>
                 <source src="assets/images/sort-tek/sort-tek-laser-scan-correct.mov" type="video/mp4">
             </video>
-            <p class="case-caption" style="margin-top:0.5em;">Laser inspection feature — custom UI callout</p>
+            <p class="case-caption">Laser inspection page — the client requested a green PASS readout after the scan completes, directly mirroring Sort-Tek's real work of scanning parts and clearing them as defect-free</p>
         </div>
 
         <div class="case-section">
-            <h3>Facility Drone Footage</h3>
+            <h3>Inside the Facility</h3>
             <video class="case-video" autoplay muted loop playsinline>
                 <source src="assets/images/sort-tek/sort-tek-inside-drone.mov" type="video/mp4">
             </video>
-            <p class="case-caption" style="margin-top:0.5em;">Aerial time-lapse of the Troy, MI facility — integrated directly into the site as a background hero</p>
+            <p class="case-caption">Drone footage of the Troy, MI facility floor — used as a full-bleed background video on the site</p>
         </div>
 
         <div class="case-section">
