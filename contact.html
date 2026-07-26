@@ -490,7 +490,9 @@
             const hiw = document.getElementById('how-it-works');
             if (hiw) hiw.classList.toggle('visible', type === 'client');
             const scrollTarget = (type === 'client' && hiw) ? hiw : document.getElementById('contactForm');
-            scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const headerHeight = document.getElementById('header')?.offsetHeight || 70;
+            const top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
             setTimeout(function() { document.getElementById('name').focus(); }, 500);
         }
 
