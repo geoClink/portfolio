@@ -114,7 +114,7 @@
                 </ul>
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Monetization</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side, auto-restored on cancellation</li>
+                    <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side; partial balances accepted with the remainder charged via Stripe, auto-restored on cancellation</li>
                     <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
                 </ul>
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Site Control</p>
@@ -266,7 +266,7 @@
                     <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
 
                     <h4>Gift Cards &amp; Discount Codes</h4>
-                    <p>Gift card purchases go through a dedicated Stripe Checkout session. On completion, a webhook inserts the card into the database and emails the recipient a unique code. At booking time, the client enters the code — the server validates it, deducts the amount from <code>remaining_balance</code>, and creates the appointment directly without a second Stripe charge. If the appointment is later cancelled through the admin dashboard, the deducted amount is automatically restored to the card's balance. The booking path stores the gift card code and amount paid on the appointment row so cancellations always know exactly what to restore.</p>
+                    <p>Gift card purchases go through a dedicated Stripe Checkout session. On completion, a webhook inserts the card into the database and emails the recipient a unique code. At booking time, the client enters the code — the server validates it and checks the remaining balance. If the balance covers the full price, the appointment is confirmed directly without a Stripe charge. If the balance is partial, the server creates a Stripe Checkout session for the difference only, with the gift card code and amount carried in the session metadata; the webhook deducts the gift card balance and stores both amounts on the appointment row once payment clears. If the appointment is later cancelled through the admin dashboard, the Stripe portion is refunded and the gift card balance is restored independently — both always happen regardless of which path was taken.</p>
                     <p>Discount codes are validated and applied entirely server-side — the client sends the code and the server re-validates it independently before creating the Stripe session, so the frontend price display is never trusted. Usage count increments in the Stripe webhook after confirmed payment. Codes support percent-off or fixed-dollar discounts, optional per-tenant usage limits, and optional expiry dates. Both gift cards and discount codes are managed from the admin dashboard without developer involvement.</p>
 
                     <h4>Practitioner Notifications</h4>
