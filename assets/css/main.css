@@ -3464,18 +3464,14 @@ footer#footer .footer-social li a:hover {
 footer#footer a:hover::before {
     color: var(--color-on-dark) !important;
 }
-footer#footer .footer-legal {
+footer#footer a.footer-legal {
+    display: block;
     font-size: 0.75em;
-    color: var(--color-on-dark-muted);
-    text-align: center;
-    margin: var(--space-3) auto 0;
-    max-width: 720px;
-}
-footer#footer .footer-legal a {
-    color: var(--color-on-dark-muted);
+    color: rgba(255,255,255,0.75);
     text-decoration: underline;
+    margin-top: 0.35em;
 }
-footer#footer .footer-legal a:hover {
+footer#footer a.footer-legal:hover {
     color: var(--color-on-dark);
 }
 footer#footer .footer-copy {
