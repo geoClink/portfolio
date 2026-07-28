@@ -3467,7 +3467,9 @@ footer#footer a:hover::before {
 footer#footer .footer-legal {
     font-size: 0.75em;
     color: var(--color-on-dark-muted);
-    margin-top: var(--space-2);
+    text-align: center;
+    margin: var(--space-3) auto 0;
+    max-width: 720px;
 }
 footer#footer .footer-legal a {
     color: var(--color-on-dark-muted);

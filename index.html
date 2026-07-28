@@ -67,10 +67,6 @@
             object-position: top center;
             flex-shrink: 0;
             border: 2px solid rgba(255,255,255,0.12);
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease, box-shadow 0.1s ease;
-            cursor: default;
-            will-change: transform;
             position: sticky;
             top: 4em;
             align-self: flex-start;
@@ -1658,8 +1654,8 @@
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
                 <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
             </ul>
-            <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a></p>
         </div>
+        <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a></p>
 
     </footer>
 
@@ -1808,20 +1804,6 @@
             const hero = document.querySelector('.hero-dark');
             if (!avatar || !hero) return;
 
-            hero.addEventListener('mousemove', function (e) {
-                const rect = avatar.getBoundingClientRect();
-                const cx = rect.left + rect.width / 2;
-                const cy = rect.top + rect.height / 2;
-                const dx = (e.clientX - cx) / 180;
-                const dy = (e.clientY - cy) / 180;
-                avatar.style.transform = `perspective(600px) rotateY(${dx * 20}deg) rotateX(${-dy * 20}deg) scale(1.04)`;
-                avatar.style.boxShadow = `${-dx * 8}px ${dy * 8}px 24px rgba(0,0,0,0.4)`;
-            });
-
-            hero.addEventListener('mouseleave', function () {
-                avatar.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
-                avatar.style.boxShadow = '';
-            });
         })();
     </script>
 
