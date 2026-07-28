@@ -3464,6 +3464,18 @@ footer#footer .footer-social li a:hover {
 footer#footer a:hover::before {
     color: var(--color-on-dark) !important;
 }
+footer#footer .footer-legal {
+    font-size: 0.75em;
+    color: var(--color-on-dark-muted);
+    margin-top: var(--space-2);
+}
+footer#footer .footer-legal a {
+    color: var(--color-on-dark-muted);
+    text-decoration: underline;
+}
+footer#footer .footer-legal a:hover {
+    color: var(--color-on-dark);
+}
 footer#footer .footer-copy {
     max-width: 720px;
     margin: 0 auto;
