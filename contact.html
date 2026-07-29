@@ -403,7 +403,7 @@
         <div class="contact-intent-grid">
             <div class="contact-intent-card" onclick="selectIntent('hiring', this)">
                 <div class="contact-intent-card-title">Hiring?</div>
-                <p class="contact-intent-card-desc">I'm open to full-time full-stack roles — remote or Detroit-based. Let's talk about what you're building and whether I'm the right fit.</p>
+                <p class="contact-intent-card-desc">I'm open to full-time iOS and full-stack roles — remote or Detroit-based. Let's talk about what you're building and whether I'm the right fit.</p>
                 <span class="contact-intent-card-cta">I'm a hiring manager →</span>
             </div>
             <div class="contact-intent-card" onclick="selectIntent('client', this)">
@@ -557,6 +557,9 @@
                     setTimeout(() => {
                         form.style.display = 'none';
                         document.querySelector('.contact-form-label').style.display = 'none';
+                        document.querySelector('.contact-intent-grid').style.display = 'none';
+                        const hiwEl = document.getElementById('how-it-works');
+                        if (hiwEl) hiwEl.style.display = 'none';
                         successMsg.style.display = 'block';
                         successMsg.style.opacity = '0';
                         successMsg.style.transition = 'opacity 0.4s ease';
