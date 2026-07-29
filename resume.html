@@ -268,20 +268,22 @@
         }
 
         .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4em;
+            display: block;
+            line-height: 1.9;
         }
 
         .skill-tag {
-            font-size: 0.8em;
-            font-weight: 500;
-            color: var(--color-heading);
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: 4px;
-            padding: 0.3em 0.7em;
-            line-height: 1.4;
+            font-size: 0.88em;
+            color: var(--color-text);
+        }
+
+        .skill-tag::after {
+            content: " · ";
+            color: var(--color-text-muted);
+        }
+
+        .skill-tag:last-child::after {
+            content: "";
         }
 
         .resume-accordion-header > div {
@@ -482,7 +484,7 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Building a multi-tenant SaaS platform for Detroit small businesses across wellness, bakery, salon, sports bar, and hospitality verticals, consolidating online booking, payments, staff scheduling, loyalty programs, and AI integrations into one system. Leading product development with full-stack architecture responsibilities — from database schema to admin dashboard UX and client onboarding flows.</p>
+                        <p>Co-founded a Detroit-based software studio focused on mobile apps and full-stack products. Building and shipping software for real clients across iOS and web.</p>
                     </div>
                 </li>
                 <li>
@@ -541,6 +543,22 @@
                             <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
                         <p>Built a full booking platform for a solo wellness practitioner replacing a $100–200/month Mindbody subscription. Stripe payment flow is webhook-driven — charges are confirmed before appointments are written to Supabase, so no unpaid booking can enter the system. Each appointment gets a UUID cancel token at insert time; the confirmation email carries that token so clients can self-serve cancel or reschedule with no login. Refund tier (full, 50%, or zero) is calculated server-side based on time remaining. Admin dashboard is JWT-protected with a rate-limited login and password reset via tokenized email. Multi-tenant architecture from day one — onboarding a new practitioner is one database row and a Vercel deploy. 100/100/100 Lighthouse scores.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title">Sort-Tek Inspection Systems — Real Client</div>
+                            <div class="resume-item-meta">HTML · CSS · JavaScript · Vercel · Formspree · Google Analytics &middot; Jul 2026 · Delivered in under one week</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="sort-tek.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                        </div>
+                        <p>Built the first web presence for an ISO 9001:2015-certified fastener inspection company in Troy, Michigan — bespoke 6-page site in plain HTML, CSS, and JavaScript with no framework, no template, and no CMS. Custom design system, hero animation, Google Analytics with a conversion event on the contact form, Google Search Console, and a privacy policy. 100/100 Lighthouse across all four categories on both mobile and desktop. First solo freelance web build; came through a referral.</p>
                     </div>
                 </li>
                 <li>
@@ -619,7 +637,7 @@
                             <a href="inn-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Built a direct booking platform for a boutique hotel — room listings with detail pages, Stripe-powered reservations, self-serve cancellation, and a full owner admin dashboard. Eliminates 15–25% OTA commission per booking. Guests can look up any reservation with just their email and check-in date — no account required. Pre-arrival and post-stay emails fire automatically. Designed and built solo in two weeks.</p>
+                        <p>Built a direct booking platform for boutique hotels and resorts — room listings, Stripe-powered reservations, self-serve cancellation, and a full owner admin dashboard. Eliminates 15–25% OTA commission per booking. Guests look up reservations with just their email and check-in date — no account required. Pre-arrival and post-stay emails fire automatically. Live client: Crystal Lake Resort, Frankfort, MI. Designed and built solo.</p>
                     </div>
                 </li>
                 <li>
@@ -673,53 +691,6 @@
                     </div>
                 </li>
                 -->
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">RateChecker</div>
-                            <div class="resume-item-meta">SwiftUI · SwiftData · Core ML · WidgetKit · FRED API · US Treasury API &middot; 2026 · iOS</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="ratechecker.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                        </div>
-                        <p>Built a SwiftUI iOS app that benchmarks savings accounts against live Treasury rates, forecasts where rates are headed with an on-device Core ML model trained on FRED data, and shows exactly how much the user's current bank is costing them. Features WidgetKit home screen widgets and a contextual InfoButton glossary for financial terms.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">TakeFlight — A Bird's Life</div>
-                            <div class="resume-item-meta">SpriteKit · iOS · iPadOS · macOS · App Store &middot; Jan 2026 – Feb 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="https://github.com/geoClink/BirdSimC4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                        </div>
-                        <p>Architected a 5-in-1 SpriteKit survival game with full keyboard support, haptic feedback, and granular audio management — shipped to App Store for iPhone, iPad, and macOS.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Stamped! — A City Passport</div>
-                            <div class="resume-item-meta">Swift Concurrency · i18n · Spatial Mapping · iOS · iPadOS · App Store &middot; Nov 2025 – Feb 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="https://github.com/geoClink/Stamped-A-City-Passport" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                        </div>
-                        <p>Built a travel passport app shipping to iPhone and iPad with full internationalization, live API data syncing, and offline caching using URLCache and disk persistence for reliable use in low-signal environments. Implemented spatial mapping for location-aware stamp collection and Swift Concurrency for background data refresh.</p>
-                    </div>
-                </li>
             </ul>
         </section>
 
@@ -780,11 +751,6 @@
                         <span class="skill-tag">Supabase</span>
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Stripe</span>
-                        <span class="skill-tag">Twilio</span>
-                        <span class="skill-tag">Sentry</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Webhooks</span>
-                        <span class="skill-tag">Cron Jobs</span>
                         <span class="skill-tag">Vercel</span>
                     </div>
                 </div>
@@ -798,9 +764,7 @@
                         <span class="skill-tag">StoreKit</span>
                         <span class="skill-tag">WidgetKit</span>
                         <span class="skill-tag">SwiftData</span>
-                        <span class="skill-tag">SpriteKit</span>
                         <span class="skill-tag">CoreML</span>
-                        <span class="skill-tag">MVVM</span>
                         <span class="skill-tag">Apple Intelligence</span>
                     </div>
                 </div>
@@ -813,8 +777,6 @@
                         <span class="skill-tag">Agentic Tool-Calling</span>
                         <span class="skill-tag">Few-Shot Prompting</span>
                         <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">ONNX</span>
-                        <span class="skill-tag">Ollama</span>
                     </div>
                 </div>
                 <div>
@@ -826,8 +788,6 @@
                         <span class="skill-tag">Claude Code</span>
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">TestFlight</span>
-                        <span class="skill-tag">VoiceOver</span>
-                        <span class="skill-tag">Dynamic Type</span>
                     </div>
                 </div>
             </div>

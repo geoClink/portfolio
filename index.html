@@ -187,7 +187,7 @@
             padding: 1.6em 1.25em;
         }
         .stats-inner {
-            max-width: 640px;
+            max-width: 820px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -1003,16 +1003,29 @@
             margin: 0 auto;
             padding: 0 1.5em;
         }
+        .screenshot-strip-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25em;
+            padding-bottom: 0.75em;
+            border-bottom: 1px solid var(--color-border);
+        }
         .screenshot-strip-label {
             font-size: 0.7em;
             font-weight: 700;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            margin-bottom: 1.25em;
-            padding-bottom: 0.75em;
-            border-bottom: 1px solid var(--color-border);
         }
+        .screenshot-strip-all {
+            font-size: 0.78em;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .screenshot-strip-all:hover { color: var(--color-heading); }
         .screenshot-strip-track {
             display: flex;
             gap: 1.25em;
@@ -1223,15 +1236,15 @@
         <div class="stats-inner">
             <div class="stat-item">
                 <span class="stat-number" data-target="4">0</span>
-                <span class="stat-label">apps in production</span>
+                <span class="stat-label">apps on the App Store</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" data-target="6">0</span>
                 <span class="stat-label">platform verticals built</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="2">0</span>
-                <span class="stat-label">real clients</span>
+                <span class="stat-number" data-target="4">0</span>
+                <span class="stat-label">freelance &amp; contract clients</span>
             </div>
         </div>
     </section>
@@ -1239,7 +1252,10 @@
     <!-- Web Project Screenshots -->
     <section class="screenshot-strip-section">
         <div class="screenshot-strip-inner">
-            <div class="screenshot-strip-label">Web Platforms</div>
+            <div class="screenshot-strip-header">
+                <div class="screenshot-strip-label">Web Platforms</div>
+                <a href="case-studies.html" class="screenshot-strip-all">View all case studies →</a>
+            </div>
             <div class="screenshot-strip-track">
                 <a href="wellness-co.html" class="screenshot-card">
                     <div class="screenshot-browser-chrome">
@@ -1260,6 +1276,17 @@
                     <div class="screenshot-img-wrap"><img src="assets/images/sort-tek/screenshot-home.png" alt="Sort-Tek Inspection Systems" loading="lazy" /></div>
                     <div class="screenshot-card-footer">
                         <span class="screenshot-card-name">Sort-Tek Inspection Systems</span>
+                        <span class="screenshot-card-tag real">Real client</span>
+                    </div>
+                </a>
+                <a href="inn-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">the-crystal-lake-resort.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/crystal-lake/screenshot-home.png" alt="Crystal Lake Resort" loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">Crystal Lake Resort</span>
                         <span class="screenshot-card-tag real">Real client</span>
                     </div>
                 </a>
@@ -1335,132 +1362,6 @@
 
     <div id="main" role="main">
 
-        <!-- Small Business Suite -->
-        <div class="cs-group">
-            <h3 class="cs-group-label">Business OS</h3>
-            <div class="cs-cards">
-                <div class="cs-card">
-                    <span class="cs-card-featured-chip">Flagship</span>
-                    <img src="assets/images/knot/favicon.svg" alt="Small Business Suite" class="cs-card-icon" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">Small Business Suite</div>
-                        <p class="cs-card-desc">A multi-tenant web platform replacing Toast, Square, and 7shifts — customer website, admin dashboard, and an employee scheduling app, all on one Node/Express API and one Supabase database. 1 real client, 3 spec deployments, 2 in talks — 6 verticals live.</p>
-                        <div class="cs-card-btns">
-                            <a href="small-business-suite.html" class="cs-cta">Case Study →</a>
-                            <a href="https://webplatform-api.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Platform ↗</a>
-                        </div>
-                    </div>
-                    <div class="knot-deployments knot-deployments-card">
-                        <div class="knot-deploy-label">Live Deployments</div>
-                        <div class="knot-deploy-list">
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thewellnessco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Wellness Co.</span>
-                                        <span class="knot-deploy-tag">Real client</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">The platform's first real client — a Michigan wellness studio with a fully live booking platform, Stripe payments, and an owner admin dashboard.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="wellness-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/theinnco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Inn Co.</span>
-                                        <span class="knot-deploy-tag">In talks</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Direct booking platform for a boutique hotel — Stripe payments, 48hr cancellation policy, and owner admin dashboard.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="inn-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thebakeryco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Bakery Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Five-surface ordering platform — customer site, admin dashboard, iOS POS, iOS customer app, and AI ordering via MCP.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="bakery-spec.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thesalonco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Salon Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">14-page marketing and booking site — custom branding, 4-step reservation flow, Stripe deposits, and real-time stylist availability.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="salon-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thesportsbarco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Sports Bar Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Reservations and events platform — table booking, live events calendar, and party inquiry form.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="sports-bar-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thelandscapeco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Landscape Co.</span>
-                                        <span class="knot-deploy-tag">In talks</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Multi-page garden design studio — photo-driven hero headers, 9 portfolio project detail pages, portfolio filter, and a live contact form backed by the platform API.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="landscape-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cs-group">
-            <h3 class="cs-group-label">Freelance Client</h3>
-            <div class="cs-cards">
-                <div class="cs-card">
-                    <span class="cs-card-featured-chip">Real Client</span>
-                    <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek Inspection Systems" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">Sort-Tek Inspection Systems</div>
-                        <p class="cs-card-desc">Bespoke 5-page marketing website for a Troy, Michigan ISO 9001:2015-certified fastener inspection company. Built from scratch in plain HTML, CSS, and JavaScript — 99/100 mobile and 100/100 desktop Lighthouse, 0ms Total Blocking Time. My first solo freelance web build, delivered in under five days.</p>
-                        <div class="cs-card-btns">
-                            <a href="sort-tek.html" class="cs-cta">Case Study →</a>
-                            <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Live Site ↗</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- App Store Strip -->
         <section class="appstore-strip">
             <div class="appstore-strip-label">On the App Store</div>
@@ -1518,12 +1419,28 @@
         <section class="appstore-strip trusted-partners-strip">
             <div class="appstore-strip-label">Trusted Partners</div>
             <div class="trusted-partners-list">
+                <a href="https://the-crystal-lake-resort.vercel.app/" target="_blank" rel="noopener noreferrer" class="trusted-partner">
+                    <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort logo" class="trusted-partner-icon" style="object-fit:contain;background:var(--color-surface);" />
+                    <div>
+                        <span class="trusted-partner-name">Crystal Lake Resort</span>
+                        <span class="trusted-partner-url">crystalLakeresort.com ↗</span>
+                        <span class="trusted-partner-desc">Michigan lakefront resort — live direct booking platform.</span>
+                    </div>
+                </a>
+                <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="trusted-partner">
+                    <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek logo" class="trusted-partner-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
+                    <div>
+                        <span class="trusted-partner-name">Sort-Tek Inspection Systems</span>
+                        <span class="trusted-partner-url">sort-tek.com ↗</span>
+                        <span class="trusted-partner-desc">ISO 9001:2015 certified fastener inspection company in Troy, MI — built their first marketing site from scratch.</span>
+                    </div>
+                </a>
                 <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer" class="trusted-partner">
                     <img src="assets/images/site/whitebearharmonics-logo.png" alt="Whitebear Harmonics logo" class="trusted-partner-icon" />
                     <div>
                         <span class="trusted-partner-name">Whitebear Harmonics</span>
                         <span class="trusted-partner-url">whitebearharmonics.com ↗</span>
-                        <span class="trusted-partner-desc">Real wellness business running live booking and Stripe payments on a CH Studios-built platform.</span>
+                        <span class="trusted-partner-desc">Real wellness business running live booking and Stripe payments.</span>
                     </div>
                 </a>
                 <a href="https://tripsetta.com" target="_blank" rel="noopener noreferrer" class="trusted-partner">
@@ -1534,17 +1451,6 @@
                         <span class="trusted-partner-desc">Active contract — maintaining iOS, Android, and web for a live travel platform.</span>
                     </div>
                 </a>
-                <!--
-                SORT-TEK — Uncomment when owner approves public listing.
-                <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="trusted-partner">
-                    <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek logo" class="trusted-partner-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
-                    <div>
-                        <span class="trusted-partner-name">Sort-Tek Inspection Systems</span>
-                        <span class="trusted-partner-url">sort-tek.com ↗</span>
-                        <span class="trusted-partner-desc">ISO 9001:2015 certified fastener inspection company in Troy, MI — built their first marketing site from scratch.</span>
-                    </div>
-                </a>
-                -->
             </div>
         </section>
 
