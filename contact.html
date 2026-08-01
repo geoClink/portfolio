@@ -550,6 +550,7 @@
                     body: JSON.stringify(data)
                 });
                 if (res.ok) {
+                    gtag('event', 'generate_lead', { event_category: 'contact', event_label: data.inquiry_type });
                     const form = e.target;
                     const successMsg = document.getElementById('form-success');
                     form.style.transition = 'opacity 0.3s ease';

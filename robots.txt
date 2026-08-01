@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://geoclink.github.io/portfolio/sitemap.xml
+Sitemap: https://georgeclinkscalesdev.com/sitemap.xml
