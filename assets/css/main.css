@@ -3494,6 +3494,7 @@ footer#footer .footer-copy {
     }
     footer#footer .footer-social {
         justify-content: flex-start;
+        align-self: flex-start;
     }
     footer#footer .footer-cta {
         text-align: center;
