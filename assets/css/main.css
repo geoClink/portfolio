@@ -3493,7 +3493,7 @@ footer#footer .footer-copy {
         margin-bottom: var(--space-4);
     }
     footer#footer .footer-social {
-        justify-content: center;
+        justify-content: flex-start;
     }
     footer#footer .footer-cta {
         text-align: center;
