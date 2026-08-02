@@ -150,7 +150,28 @@
             text-transform: uppercase;
             color: var(--color-text-muted);
             display: block;
-            margin-bottom: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .contact-response-note {
+            font-size: 0.82em;
+            color: var(--color-text-muted);
+            margin: 0 0 1.5em;
+        }
+        .contact-testimonial {
+            border-left: 2px solid var(--color-border);
+            margin: 0 0 2em;
+            padding: 0.75em 1.25em;
+        }
+        .contact-testimonial p {
+            font-size: 0.9em;
+            color: var(--color-text-muted);
+            font-style: italic;
+            margin: 0 0 0.5em;
+        }
+        .contact-testimonial footer {
+            font-size: 0.78em;
+            color: var(--color-text-muted);
+            font-style: normal;
         }
 
         .contact-form input,
@@ -408,7 +429,7 @@
             </div>
             <div class="contact-intent-card" onclick="selectIntent('client', this)">
                 <div class="contact-intent-card-title">Need something built?</div>
-                <p class="contact-intent-card-desc">I build ordering, booking, and business platforms for small businesses — fast, with a real client already live on the platform. Let's see if what I've built fits what you need.</p>
+                <p class="contact-intent-card-desc">I build web platforms and iOS apps for small businesses — ordering, booking, client management, and more. Fast, with real clients already live. Let's see if what I've built fits what you need.</p>
                 <span class="contact-intent-card-cta">I'm a potential client →</span>
             </div>
         </div>
@@ -445,7 +466,13 @@
             <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="icon brands fa-github"></i></a>
         </div>
 
+        <blockquote class="contact-testimonial">
+            <p>"George is fast, knowledgeable, proactive, and always willing to dig deeper than what's immediately in front of him. A fantastic fit for any fast-growing company looking for a team that truly takes ownership and delivers results."</p>
+            <footer>— LaShelle McClaster, Founder, Tripsetta</footer>
+        </blockquote>
+
         <span class="contact-form-label" id="form-label">Send a message</span>
+        <p class="contact-response-note">I typically respond within 24 hours.</p>
 
         <div id="form-success" class="form-success">
             <p class="form-success-heading">Thanks, I'll be in touch.</p>

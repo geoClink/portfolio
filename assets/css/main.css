@@ -3574,6 +3574,22 @@ footer#footer .footer-copy {
 .page-cta strong {
     color: var(--color-heading);
 }
+.availability-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 0.45em;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+    50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+}
 
 .page-cta a {
     color: var(--color-heading);
@@ -3581,6 +3597,7 @@ footer#footer .footer-copy {
     text-decoration: none;
     border-bottom: 1px solid var(--color-border);
     transition: border-color 0.2s ease;
+    white-space: nowrap;
 }
 
 .page-cta a:hover {

@@ -154,11 +154,13 @@
         </div>
 
         <div class="case-section">
-            <h3>The Approach</h3>
+            <h3>Architecture</h3>
             <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too — StoreKit and Stripe both write to the same subscription record in the database, so neither platform has to check two payment systems.</p>
+        </div>
 
+        <div class="case-section">
+            <h3>Auth</h3>
             <p>Authentication supports email/password, Sign in with Apple, and Sign in with Google on both iOS and web. The web app includes a full forgot password flow — users request a reset link, Supabase emails it via Resend over custom SMTP, and a recovery token handler in the React app detects the link regardless of where Supabase redirects and presents the reset form. A built-in bug report modal (also powered by Resend) is surfaced on the landing page, login page, and inside the dashboard settings — so users can report issues from anywhere without leaving the app.</p>
-
             <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
                 <div style="width:100%;max-width:480px;">
                     <img src="assets/images/tallyios/weblogin.png" alt="Tally web login showing Sign in with Google and Sign in with Apple buttons" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
@@ -169,19 +171,21 @@
                     <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Bug report modal — powered by Resend</p>
                 </div>
             </div>
+        </div>
 
+        <div class="case-section">
+            <h3>Business Tier</h3>
             <p>The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security — not just in the UI — plus a shared weekly hour goal per workspace so teams can track progress against a client contract. Invoice generation pulls from tracked sessions with draft → sent → paid status tracking, outstanding balance summaries, and one-click email delivery to clients via Resend. Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy.</p>
+        </div>
 
+        <div class="case-section">
+            <h3>iOS Integration</h3>
             <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
-
             <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
                 <div style="width:100%;max-width:320px;">
                     <img src="assets/images/tallyios/lockscreentimertallyios.png" alt="Tally Live Activity on the iOS lock screen showing the running timer" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
                     <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Lock screen Live Activity — check your timer without unlocking</p>
                 </div>
-            </div>
-
-            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
                 <div style="width:100%;max-width:480px;">
                     <img src="assets/images/tallyios/iostallylargewidget.png" alt="Tally large iOS home screen widget showing weekly hours and goal progress" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
                     <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Large widget — weekly hours and goal progress</p>
@@ -191,8 +195,10 @@
                     <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Small widget — start timer and goal percentage</p>
                 </div>
             </div>
+        </div>
 
-            <p>Both platforms share the same core feature set:</p>
+        <div class="case-section">
+            <h3>Core Features</h3>
             <ul>
                 <li>Timer with pause/resume and manual session entry</li>
                 <li>"Log again" shortcut — re-open the same client and task from any recent session</li>
@@ -202,8 +208,11 @@
                 <li>Session calendar and CSV export</li>
                 <li>Web app adds voice control — say "start", "pause", or "save" to control the timer hands-free</li>
             </ul>
+        </div>
 
-            <p>The web dashboard is built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead. The public demo account is seeded with realistic sessions that automatically adjust to the current week — a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
+        <div class="case-section">
+            <h3>Web Dashboard</h3>
+            <p>Built with React and Vite — a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead. The public demo account is seeded with realistic sessions that automatically adjust to the current week — a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
         </div>
 
         <div class="case-section">
@@ -303,7 +312,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->

@@ -1,21 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>The Wellness Co. — Case Study | George Clinkscales Jr.</title>
+    <title>White Bear Harmonics — Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/wellness-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: The Wellness Co. — A full-stack booking platform for acupuncture and energy healing practices with Stripe checkout, tiered refunds, custom branding, and a multi-tenant admin dashboard. Built as a white-label Mindbody alternative." />
-    <meta property="og:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Full-stack booking platform for solo wellness practitioners — Stripe checkout, tiered refunds, 5 color palettes, 5 font combos, and a no-code admin dashboard. One live client, onboarded without a single line of code." />
+    <meta name="description" content="Case study: White Bear Harmonics — A live Michigan wellness practice running on a full-stack booking platform I built solo. Stripe checkout, tiered refunds, self-serve branding, gift cards, and a no-code admin dashboard. Built as a Mindbody alternative for solo practitioners." />
+    <meta property="og:title" content="White Bear Harmonics — Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="A real client — live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/wellness-co.html" />
-    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co.jpg" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co-live.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Wellness Co. — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Full-stack booking platform for solo wellness practitioners — Stripe checkout, tiered refunds, custom branding, and a no-code admin dashboard. One live client, onboarded without a single line of code." />
-    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co.jpg" />
+    <meta name="twitter:title" content="White Bear Harmonics — Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="A real client — live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-wellness-co-live.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
@@ -87,23 +87,31 @@
 
         <a href="small-business-suite.html" class="back-link">← Small Business Suite</a>
 
-        <h2 class="case-title">The Wellness Co.</h2>
-        <p class="case-tagline">A full-stack, multi-tenant booking platform for solo wellness practitioners — Stripe checkout, self-serve cancellation with tiered refunds, a fully customizable brand experience, and a no-code admin dashboard. One live client, onboarded without a single line of code.</p>
+        <h2 class="case-title">White Bear Harmonics</h2>
+        <p class="case-tagline">A real client — a Michigan energy healing and acupuncture practitioner — live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, tiered refunds, gift cards, self-serve branding, and a no-code admin dashboard built as a Mindbody alternative for solo practitioners.</p>
 
         <div class="case-links">
-            <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Spec Site ↗</a>
-            <a href="https://whitebearharmonics.com" class="button" target="_blank" rel="noopener noreferrer">Visit Live Client ↗</a>
+            <a href="https://whitebearharmonics.com" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+            <a href="https://the-wellness-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">View Demo ↗</a>
         </div>
 
-        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel · Live client</div>
+        <div class="case-meta">Node.js · Supabase · Stripe · Resend · Vercel · Live client</div>
 
         <div class="case-section">
             <h3>The Problem</h3>
             <p>Solo wellness practitioners — acupuncturists, energy healers, Reiki providers — are paying $100–200/month for platforms like Mindbody or Vagaro that were built for large gyms and feel like it. The booking UX is generic, the branding belongs to the platform, and the features they're paying for go mostly unused. The goal was a fully custom-branded booking experience on a platform built specifically for solo practitioners — at a fraction of what Mindbody charges, with no commission per booking and no generic branding.</p>
         </div>
 
+        <div class="case-section">
+            <h3>What the Real Client Changed</h3>
+            <p>Two assumptions I built in during the spec phase turned out to be wrong once I was working with an actual practitioner.</p>
+            <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. White Bear Harmonics runs her practice alongside a full-time job — meaning weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
+            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way — "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants — child records per offering under each parent service — and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
+            <p>Both changes came directly from sitting with the business owner and watching the first model fail against how she actually worked.</p>
+        </div>
+
         <div class="case-section desktop-only">
-            <h3>Try It</h3>
+            <h3>Try It — Demo Environment</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
                     <div class="browser-dots">
@@ -119,8 +127,8 @@
                     loading="lazy"
                 ></iframe>
             </div>
-            <p class="iframe-note iframe-note-desktop">Previewing at tablet width. <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
-            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
+            <p class="iframe-note iframe-note-desktop">This is the fully-populated spec deployment used for testing and demos. The live client site is at <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">whitebearharmonics.com ↗</a> — active and taking bookings. <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">open the demo ↗</a> or visit the <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">live client site ↗</a>. Any display issues in the embed are caused by the iframe, not the site itself.</p>
         </div>
 
         <div class="case-section">
@@ -311,11 +319,12 @@
         </div>
 
         <div class="case-section">
-            <h3>What the Real Client Changed</h3>
-            <p>Two assumptions I built in during the spec phase turned out to be wrong once I was working with an actual practitioner.</p>
-            <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. White Bear Harmonics, a Michigan energy healing and acupuncture practice, runs her practice alongside a full-time job — meaning weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
-            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way — "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants — child records per offering under each parent service — and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
-            <p>Both changes came directly from sitting with the business owner and watching the first model fail against how she actually worked.</p>
+            <h3>Post-Launch</h3>
+            <p>Shipping the platform was the start, not the end. After go-live I continued iterating on the client site based on real usage — treating it as a production product, not a finished deliverable.</p>
+            <p><strong>Booking notifications.</strong> Added practitioner email notifications for every new booking — whether paid through Stripe or a free consultation — so no appointment ever goes unnoticed. Both the Stripe webhook path and the free-booking path fire independently.</p>
+            <p><strong>FAQ page — accessibility and security.</strong> Audited and fixed the FAQ page as a production-readiness exercise: added <code>aria-expanded</code> state to all accordion buttons so screen readers communicate open/closed correctly; added explicit <code>type="button"</code> to prevent implicit form submission; fixed an XSS vulnerability where dynamic FAQ content from the API was injected into <code>innerHTML</code> without sanitization — now all API content is escaped before rendering.</p>
+            <p><strong>FAQ page — SEO and conversion.</strong> Changed the <code>&lt;h1&gt;</code> from brand copy to "Frequently Asked Questions" for keyword targeting; promoted category labels to semantic <code>&lt;h3&gt;</code> elements; removed client-side FAQ schema injection that was duplicating the server-side schema already injected by the render layer. Added in-content booking CTAs after the two highest-intent questions ("What should I expect?" and "How many sessions will I need?"), a newsletter email capture at the bottom of the page, and GA4 event tracking on every accordion open — so the practitioner now has data on which questions visitors care about most.</p>
+            <p><strong>FAQ page — smooth animation.</strong> Replaced the instant <code>display: none/block</code> accordion toggle with a <code>max-height</code> CSS transition, and grouped questions into labeled categories (Getting started, Your sessions, Pricing &amp; policies, Good to know) using semantic structure that works for both the static server-rendered HTML and the dynamic API-loaded content.</p>
         </div>
 
         <div class="case-section">
@@ -363,7 +372,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->
