@@ -82,14 +82,22 @@
         <p class="case-tagline">A full-stack direct booking platform for a boutique hotel — room reservations, Stripe payments, gift cards, automated email campaigns, self-serve cancellation, and a complete owner admin dashboard. Built to eliminate OTA commissions and give the owner full control over their bookings and guest relationships.</p>
 
         <div class="case-links">
-            <a href="https://the-inn-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+            <a href="https://crystallakeresortmi.com" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
+            <a href="https://the-inn-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">View Demo ↗</a>
         </div>
 
-        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel</div>
+        <div class="case-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel · Live client</div>
 
         <div class="case-section">
             <h3>The Problem</h3>
             <p>Boutique hotels and inns pay 15–25% commission on every booking made through Booking.com, Expedia, or Airbnb — platforms that own the guest relationship and push the property to the bottom of results whenever a larger hotel bids higher. Dedicated hotel software like Cloudbeds or Little Hotelier runs $150–400/month and is designed for large properties, not independent boutique owners. The goal was a direct booking platform the owner controls outright, with no per-booking commission and no ongoing platform fee.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What the Real Client Changed</h3>
+            <p>Two assumptions from the spec phase didn't survive contact with how Crystal Lake Resort actually operates.</p>
+            <p><strong>Rooms aren't all booked the same way.</strong> The spec modeled everything as nightly stays — pick a check-in date, pick a check-out date, book. Crystal Lake Resort runs two fundamentally different accommodation types: motel rooms that guests book nightly, and private cottages that rent by the week only. A single booking model couldn't express both. I extended the room configuration to support a per-room booking cadence — nightly or weekly — with the booking form adapting its date picker and minimum-stay enforcement based on whichever type the guest selects. Cottages surface a week-at-a-time calendar; motel rooms show the standard night-by-night picker.</p>
+            <p><strong>Seasonal context matters to the guest.</strong> The spec treated every date the same — a room was available or it wasn't. Crystal Lake Resort's business is fundamentally seasonal; guests aren't just booking a room, they're booking their summer. The hero, the content, and the booking flow needed to speak to that context directly. The owner controls the hero copy, the promotional banner, and all site content from the admin dashboard — no code change, no developer call — so they can update messaging as the season progresses.</p>
         </div>
 
         <div class="case-section desktop-only">
@@ -338,7 +346,7 @@
             <p>Revenue beyond room bookings is captured through gift cards — a full purchase and delivery flow backed by Stripe, with the owner seeing every sale, balance, and redemption in the admin. The overview dashboard tracks monthly bookings, revenue, occupancy, and average nightly rate, with an all-time revenue breakdown by room so the owner knows which suite is carrying the business.</p>
             <p>A non-technical client can connect Stripe and Resend, configure their rooms, write their email templates, set lodging tax, define weekend and seasonal pricing, add sister property referrals, and start taking bookings entirely through the admin dashboard — no developer needed after handoff. The multi-tenant architecture means the same platform is white-labeled for additional properties at the cost of a new row and a Vercel deploy.</p>
             <p>Designed and built solo. Part of the Small Business Platform Suite.</p>
-            <p>This platform is now deployed for a live client — <strong>Crystal Lake Resort</strong>, a lakefront resort property in Michigan. Crystal Lake is the first production deployment of this architecture, currently transitioning to their own domain.</p>
+            <p>This platform is now deployed for a live client — <a href="crystal-lake-resort.html"><strong>Crystal Lake Resort</strong></a>, a Michigan lakefront resort live at <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">crystallakeresortmi.com ↗</a>.</p>
             <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
                 <img src="assets/images/theinnco/inn-co-qr.png" alt="QR code — scan to visit The Inn Co. spec demo" style="width:160px;height:160px;display:block;" />
                 <span style="font-size:0.8em;color:var(--color-text-muted);">Scan to view spec demo</span>
@@ -362,16 +370,18 @@
 
         <div class="case-section og-preview-section">
             <h3>Live Client — Crystal Lake Resort</h3>
-            <a href="https://the-crystal-lake-resort.vercel.app/" class="og-card" target="_blank" rel="noopener noreferrer">
+            <a href="https://crystallakeresortmi.com/" class="og-card" target="_blank" rel="noopener noreferrer">
                 <img class="og-card-img" src="assets/images/crystal-lake/screenshot-home.png" alt="Crystal Lake Resort" loading="lazy">
                 <div class="og-card-meta">
                     <div class="og-card-domain">
-                        the-crystal-lake-resort.vercel.app
+                        <img src="assets/images/crystal-lake/favicon.svg" class="og-card-favicon" alt="" aria-hidden="true">
+                        crystallakeresortmi.com
                     </div>
                     <p class="og-card-title">Crystal Lake Resort | Michigan</p>
-                    <p class="og-card-desc">A lakefront resort property — the first live deployment of the Inn Co. direct booking platform.</p>
+                    <p class="og-card-desc">Motel rooms with lake views and private weekly cottages on Michigan's most beautiful inland lake.</p>
                 </div>
             </a>
+            <p style="margin-top:0.75em;font-size:0.82em;color:var(--color-text-muted);">Read the full case study: <a href="crystal-lake-resort.html">Crystal Lake Resort →</a></p>
         </div>
 
         <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);text-align:center;">
