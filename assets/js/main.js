@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const revealEls = document.querySelectorAll(revealSelectors);
 
         revealEls.forEach(function (el, i) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) return;
             el.classList.add('sr-hidden');
             // Stagger siblings in the same parent
             const siblings = el.parentElement.querySelectorAll(':scope > .sr-hidden');

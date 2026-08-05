@@ -1716,28 +1716,6 @@
     </script>
 
     <script>
-        (function () {
-            const el = document.querySelector('.hero-name');
-            if (!el) return;
-            const final = el.textContent.trim();
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#@!&%';
-            const rand = () => chars[Math.floor(Math.random() * chars.length)];
-            const duration = 800;
-            const interval = 40;
-            let elapsed = 0;
-            const timer = setInterval(() => {
-                elapsed += interval;
-                const progress = elapsed / duration;
-                el.textContent = final.split('').map((char, i) => {
-                    if (char === ' ') return ' ';
-                    return i / final.length < progress ? char : rand();
-                }).join('');
-                if (elapsed >= duration) {
-                    clearInterval(timer);
-                    el.textContent = final;
-                }
-            }, interval);
-        })();
 
         (function () {
             const avatar = document.querySelector('.hero-avatar');
