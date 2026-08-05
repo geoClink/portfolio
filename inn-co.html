@@ -134,12 +134,13 @@
                     <li>Returning guest badge — automatically flags any guest whose email appears on 2+ confirmed stays</li>
                     <li>Search — find any reservation by guest name, email, or phone number; filter by status</li>
                     <li>Resend confirmation — re-send the booking confirmation email to any guest in one click</li>
+                    <li>Cancel &amp; Refund — cancel any confirmed or pending booking and issue a full Stripe refund in one click from within the dashboard</li>
                     <li>Availability calendar — tape-chart style grid showing occupancy by room and day; navigate by month</li>
                     <li>Block dates — mark a room unavailable for maintenance, Expedia bookings, or any external source</li>
                     <li>Status management — mark bookings confirmed, completed, cancelled, or no-show</li>
                     <li>Message guest — send a direct email to any guest from within the dashboard</li>
-                    <li>Log a phone booking — manually add a reservation from a call or external OTA so it appears in the calendar</li>
-                    <li>Section nav — sticky jump bar links directly to Today, Calendar, Reservations, Add Booking, and all settings sections without scrolling</li>
+                    <li>Record a Booking — manually add a reservation from a phone call, Expedia, Hotels.com, or any other external source so the dates are blocked and the booking appears in the reservations list</li>
+                    <li>Section nav — sticky jump bar links directly to Today, Calendar, Reservations, Record Booking, Alerts, and all settings sections without scrolling</li>
                 </ul>
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Overview</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
@@ -150,7 +151,6 @@
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
                     <li>Room listings — add, edit, and delete rooms with name, slug, price, and description</li>
                     <li>Minimum stay — per-room minimum night requirement enforced at booking before payment</li>
-                    <li>Sister properties — configure partner inns; if dates are fully booked, a callout automatically appears on the rooms page directing guests to a sister property the owner also runs</li>
                 </ul>
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Revenue</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
@@ -158,11 +158,14 @@
                     <li>Tax rate — lodging tax configured once; applied automatically at checkout as a separate line item</li>
                     <li>Gift cards — full gift card management table; all purchases, balances, recipients, and senders tracked in one view</li>
                 </ul>
+                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Booking Alerts</p>
+                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
+                    <li>Enter an email address to receive a notification every time a new reservation comes in — visible in the main dashboard, not buried in settings</li>
+                </ul>
                 <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Settings</p>
                 <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
                     <li>Stripe — paste API keys directly in the UI; webhook URL displayed with step-by-step instructions</li>
                     <li>Resend — API key configured from the dashboard; domain verification guidance included</li>
-                    <li>Booking alerts — enter an email address to receive a notification every time a new reservation comes in</li>
                     <li>Setup checklist — guided onboarding with plain-English tooltips on every API key field</li>
                     <li>Settings collapsed by default — Rooms, Pricing, Emails, and Integrations are grouped under a single accordion so the daily-use controls stay front and center</li>
                 </ul>
@@ -281,7 +284,7 @@
 
         <div class="case-section">
             <h3>Gift Cards</h3>
-            <p>Guests can purchase gift cards using quick-pick amounts ($50, $100, $150, $200) or a custom value between $5 and $500 — specifying recipient name, recipient email, and an optional sender name. Payment runs through Stripe Checkout. After payment clears, the recipient is emailed their unique code automatically. The owner sees every gift card purchase, remaining balance, and redemption status in the admin dashboard. A sitewide promotional banner drives awareness across every page of the site, dismissible per session.</p>
+            <p>Guests can purchase gift cards using quick-pick amounts ($50, $100, $150, $200) or a custom value between $5 and $500 — specifying recipient name, recipient email, optional sender name, and sender email for a buyer receipt. Payment runs through Stripe Checkout. After payment clears, the recipient receives their unique code by email and the buyer receives a separate purchase receipt. At checkout, guests can apply a gift card code against any booking — partial coverage applies the balance as a discount and runs the remainder through Stripe; full coverage bypasses Stripe entirely and confirms the reservation directly. The owner sees every gift card purchase, remaining balance, and redemption status in the admin dashboard. A sitewide promotional banner drives awareness across every page of the site, dismissible per session.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img src="assets/images/theinnco/screenshot-gift-card.png" alt="Gift card purchase page — amount picker, recipient details, and send button" style="width:100%;display:block;" />
             </div>
@@ -314,7 +317,7 @@
                     <p>The booking confirmation flow is webhook-driven — Stripe fires a <code>checkout.session.completed</code> event after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. After payment, the success page fetches live booking details using the Stripe <code>session_id</code> from the redirect URL and displays the confirmed room, dates, nights, and total paid — no polling, no waiting. Five email flows run through Resend: booking confirmation, cancellation receipt with refund status, pre-arrival reminder sent 2 days before check-in, post-stay review request sent the day after checkout, and contact form notifications routed to the owner.</p>
 
                     <h4>Gift Cards</h4>
-                    <p>Gift card purchases flow through Stripe Checkout. After <code>checkout.session.completed</code> fires, the webhook writes a gift card record to Supabase with a generated code, the full purchase amount as the initial balance, and the recipient's details. Resend fires a recipient email immediately with the code. The admin dashboard shows all gift cards across purchase date, original amount, remaining balance, recipient, and sender. Balances and redemption state are tracked in the <code>gift_cards</code> table and queryable per tenant.</p>
+                    <p>Gift card purchases flow through Stripe Checkout. After <code>checkout.session.completed</code> fires, the webhook writes a gift card record to Supabase with a generated code, the full purchase amount as the initial balance, and the recipient's details. Resend fires two emails: one to the recipient with their code, and a separate receipt to the buyer confirming the purchase. At booking checkout, guests can enter a gift card code — the server validates the code and returns the remaining balance, which is displayed as a discount in the price breakdown. If the gift card covers the full stay cost, Stripe is bypassed entirely: the reservation is written directly to Supabase and the standard confirmation flow fires. If it only partially covers the cost, a Stripe coupon is created for the gift card amount and applied to the Checkout session; after payment, the webhook deducts the used balance from the gift card record. The admin dashboard shows all gift cards across purchase date, original amount, remaining balance, recipient, and sender. Balances and redemption state are tracked in the <code>gift_cards</code> table and queryable per tenant.</p>
 
                     <h4>Custom Email Templates</h4>
                     <p>Email templates (booking confirmation, pre-arrival, post-checkout) are stored as a JSON string in the <code>tenant_settings</code> table. The admin dashboard exposes a full editing UI for subject and body, with live preview using sample data. At send time, a shared <code>applyEmailVars()</code> utility substitutes all <code>{{variable}}</code> placeholders with real reservation data. The cron jobs and webhook handler both read from the stored template first and fall back to hardcoded defaults if no custom template is saved, so the system works out of the box without requiring any configuration.</p>
