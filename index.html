@@ -51,13 +51,13 @@
         }
 
         .hero-inner {
-            max-width: 720px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 0 2em;
             box-sizing: border-box;
             display: flex;
-            align-items: flex-start;
-            gap: 2.5em;
+            align-items: center;
+            gap: 3em;
         }
 
         .hero-text {
@@ -66,16 +66,44 @@
         }
 
         .hero-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top center;
+            display: none;
+        }
+
+        .hero-butter-col {
             flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6em;
+        }
+
+        .hero-butter-wrap {
+            width: 380px;
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
             border: 2px solid rgba(255,255,255,0.12);
-            position: sticky;
-            top: 4em;
-            align-self: flex-start;
+        }
+
+        .hero-butter-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .hero-butter-link,
+        .hero-butter-link:link,
+        .hero-butter-link:visited {
+            font-size: 0.78em;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+        }
+
+        .hero-butter-link:hover {
+            color: #fff;
         }
 
         .hero-location {
@@ -175,7 +203,7 @@
         @media (max-width: 736px) {
             .hero-dark { padding: 2em 0 2.25em; }
             .hero-inner { padding: 0 1.25em; flex-direction: row; align-items: center; gap: 1.25em; }
-            .hero-avatar { width: 72px; height: 72px; }
+            .hero-butter-col { display: none; }
             .hero-name { font-size: 2.1em; }
             .hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.6em; }
             .testimonial-indicators { justify-content: flex-start; }
@@ -962,9 +990,6 @@
             border-radius: 8px;
             flex-shrink: 0;
             object-fit: contain;
-            background: var(--color-surface);
-            padding: 4px;
-            box-sizing: border-box;
         }
 
         .trusted-partner-name {
@@ -1242,7 +1267,19 @@
                     <a href="assets/docs/Resume_Web_Dev.pdf" class="hero-btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
                 </div>
             </div>
-            <img src="assets/images/site/myself.webp" alt="George Clinkscales Jr." class="hero-avatar" width="800" height="1199" />
+            <div class="hero-butter-col">
+                <div class="hero-butter-wrap">
+                    <iframe
+                        src="https://squishy-butter.vercel.app/?embed=true"
+                        class="hero-butter-iframe"
+                        title="Squishy Butter — squeeze me"
+                        loading="lazy"
+                        scrolling="no"
+                        frameborder="0"
+                    ></iframe>
+                </div>
+                <a href="squishy-butter.html" class="hero-butter-link">Squishy Butter ↗</a>
+            </div>
         </div>
     </section>
 
@@ -1324,6 +1361,17 @@
                     <div class="screenshot-card-footer">
                         <span class="screenshot-card-name">Squishy Butter</span>
                         <span class="screenshot-card-tag real">Live</span>
+                    </div>
+                </a>
+                <a href="beverage-co.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">beverage-webpage.vercel.app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/beverageco/screenshot-home.png" alt="Botanical Archive" loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">Botanical Archive</span>
+                        <span class="screenshot-card-tag spec">Spec</span>
                     </div>
                 </a>
                 <a href="bakery-spec.html" class="screenshot-card">
