@@ -202,8 +202,9 @@
 
         @media (max-width: 736px) {
             .hero-dark { padding: 2em 0 2.25em; }
-            .hero-inner { padding: 0 1.25em; flex-direction: row; align-items: center; gap: 1.25em; }
-            .hero-butter-col { display: none; }
+            .hero-inner { padding: 0 1.25em; flex-direction: column; align-items: flex-start; gap: 1.75em; }
+            .hero-butter-col { width: 100%; align-items: center; }
+            .hero-butter-wrap { width: 100%; height: 320px; }
             .hero-name { font-size: 2.1em; }
             .hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.6em; }
             .testimonial-indicators { justify-content: flex-start; }
@@ -942,6 +943,10 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
+            .appstore-app-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             .appstore-case-btn {
                 padding: 0.35em 0.6em;
                 font-size: 0.68em;
@@ -1432,7 +1437,7 @@
                     <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="appstore-app-icon" />
                     <div class="appstore-app-info">
                         <span class="appstore-app-name">Tally — Time Tracker</span>
-                        <span class="appstore-app-sub">Time tracking · iPhone · Apple Watch · Mac</span>
+                        <span class="appstore-app-sub">Time tracking · iPhone · Apple Watch</span>
                         <p class="appstore-app-desc">Cross-platform time tracker with a React web dashboard on a shared Supabase backend. $9.99 one-time against competitors charging $10–20/month. 18K+ App Store impressions and 80 downloads since launch.</p>
                         <div class="appstore-app-btns">
                             <a href="tally.html" class="appstore-case-btn" aria-label="Tally case study">Case Study →</a>
