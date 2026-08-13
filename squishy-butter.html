@@ -29,6 +29,12 @@
         .sb-hook { font-size: 1.15em; line-height: 1.65; font-weight: 500; color: var(--color-heading); margin-bottom: 1em; }
         .sb-code { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1em 1.15em; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; line-height: 1.6; margin: 1.2em 0 0.6em; }
         .sb-code-note { font-size: 0.78rem; color: var(--color-text-muted); font-style: italic; margin: 0 0 0.5em; }
+        .sb-scroll-track { display: flex; gap: 1.25em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 0.75em 0 1.5em; margin: 1.25em 0 0; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
+        .sb-scroll-track::-webkit-scrollbar { height: 6px; }
+        .sb-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+        .sb-scroll-item { flex: 0 0 auto; width: 340px; scroll-snap-align: start; margin: 0; }
+        .sb-scroll-item img, .sb-scroll-item video { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid var(--color-border); }
+        .sb-scroll-item figcaption { font-size: 0.75em; color: var(--color-text-muted); margin: 0.5em 0 0; font-style: italic; line-height: 1.4; }
     </style>
     <script type="application/ld+json">
     {
@@ -231,6 +237,49 @@ return Math.max(6, Math.min(48, affordable));</div>
         </div>
 
         <div class="case-section">
+            <h3>In the App</h3>
+            <p>The coin shop, skin reveals, and what a card + certificate look like when they land.</p>
+            <div class="sb-scroll-track">
+                <figure class="sb-scroll-item">
+                    <img src="assets/images/squishy-butter/prices.png" alt="Coin shop — Stick, Case, Crate, and Pallet packages" loading="lazy">
+                    <figcaption>Coin shop — four pull packages, priced per pull</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <img src="assets/images/squishy-butter/coa-trading-card.png" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy">
+                    <figcaption>Trading card and certificate of authenticity</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <img src="assets/images/squishy-butter/profile-view.png" alt="Profile page — customizable butter color, expression, and title" loading="lazy">
+                    <figcaption>Customizable profile — butter color, expression, title</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/squishy-butter/sample-video.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Demo</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/squishy-butter/have-you-tried-tie-die.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Tie-Dye skin</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/squishy-butter/merch-video.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Merch</figcaption>
+                </figure>
+                <figure class="sb-scroll-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/squishy-butter/truck-animation.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Shop animation</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="case-section">
             <h3>What Was Hard</h3>
             <p>Getting the feel right was mostly deleting things that were subtly wrong. A spring on release. A dent that stayed the same size no matter how hard you pressed. A drag that slid one divot around instead of ploughing a groove. Each was defensible on its own, and each one made the butter feel like a different material than I wanted.</p>
             <p>The worst bug looked completely correct in the code. Dragging is meant to leave dents behind your finger, and the spacing check measured the gap between the cursor and the active dent — except that dent eases toward the cursor every frame. I was measuring the distance between the cursor and something chasing the cursor, so it never grew large enough to trigger, and below a certain speed dragging left no trail at all. Reading it, it looked fine. Simulating the loop outside the browser found it in one pass. That lesson stuck harder than the fix did.</p>
@@ -264,13 +313,13 @@ return Math.max(6, Math.min(48, affordable));</div>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
-            <a href="tally.html" class="spec-nav-btn">
+            <a href="landscape-co.html" class="spec-nav-btn">
                 <span class="spec-nav-label">Previous case study</span>
-                ← Tally
+                ← The Landscape Co.
             </a>
-            <a href="sort-tek.html" class="spec-nav-btn next">
+            <a href="tally.html" class="spec-nav-btn next">
                 <span class="spec-nav-label">Next case study</span>
-                Sort-Tek →
+                Tally →
             </a>
         </nav>
     </div>
