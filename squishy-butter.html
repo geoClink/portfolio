@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
-        .sb-live-bar { display: flex; align-items: center; gap: 0.5em; font-size: 0.78em; color: var(--color-text-muted); margin: 0.5em 0 0; min-height: 1.2em; }
+        .sb-live-bar { display: flex; align-items: center; gap: 0.5em; font-size: 0.78em; color: var(--color-text-muted); min-height: 1.2em; }
         .sb-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex-shrink: 0; animation: sb-pulse 2s ease-in-out infinite; }
         @keyframes sb-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
         .sb-hook { font-size: 1.15em; line-height: 1.65; font-weight: 500; color: var(--color-heading); margin-bottom: 1em; }
@@ -101,10 +101,10 @@
 
         <div class="case-links">
             <a href="https://squishybutter.app/" class="button" target="_blank" rel="noopener noreferrer" style="align-self:flex-end;">Try It ↗</a>
+            <div id="sb-live-bar" class="sb-live-bar"></div>
         </div>
 
-        <div class="case-meta">Three.js · GLSL · WebGL2 · Vite · Supabase · Web Audio · 2026 · In development</div>
-        <div id="sb-live-bar" class="sb-live-bar"></div>
+        <div class="case-meta">Three.js · GLSL · WebGL2 · Blender · Vite · Supabase · Web Audio · 2026 · In development</div>
 
         <div class="case-section">
             <h3>The Idea</h3>
@@ -169,16 +169,6 @@
         </div>
 
         <div class="case-section">
-            <h3>It Sizes Itself to Your Device</h3>
-            <p>Each simultaneous dent costs memory on the graphics card, and the budget varies wildly — a desktop has plenty, plenty of phones have a fraction of it. Ask for more than the device has and the shader silently fails to compile, which renders as <em>nothing at all</em>. The butter just never appears, and it looks like a loading bug rather than a graphics one.</p>
-            <div class="sb-code">const budget = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128;
-const affordable = Math.floor((budget * 0.45) / 2);
-return Math.max(6, Math.min(48, affordable));</div>
-            <p class="sb-code-note">The shader asks the device what it can afford before deciding how much to use.</p>
-            <p>So it asks first, then compiles itself to fit — up to 48 simultaneous dents on a laptop, scaling down on weaker hardware. One codebase, no device detection, no separate mobile build.</p>
-        </div>
-
-        <div class="case-section">
             <h3>31+ Skins, Zero Image Files</h3>
             <p>Marble veining, zebra stripes that taper and fork the way real ones do, cheetah rosettes, wood grain that crowds and spreads along the ring, tie-dye, denim, camo, gold foil. Every one is drawn at runtime in code — there isn't a single image file in the project.</p>
             <p>Which means the download stays tiny no matter how big the catalogue gets, and adding a skin is writing a function instead of running an art pipeline. That's the only reason a catalogue this size was practical for one person.</p>
@@ -192,6 +182,40 @@ return Math.max(6, Math.min(48, affordable));</div>
                 <li><strong>Gold reflects the actual room.</strong> Metal looks like metal because it mirrors its surroundings. Paint the highlights into a texture instead and you get yellow plastic wearing a picture of gold.</li>
                 <li><strong>Limited runs are enforced in the database, not the app.</strong> Two people buying the last copy at the same instant must not both get serial #100 — so minting locks the row, checks supply, assigns the serial and issues the certificate hash inside a single transaction.</li>
             </ul>
+        </div>
+
+        <div class="case-section">
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Soft-Body Physics Shader</h4>
+                    <p>Deformation runs entirely on the GPU in a GLSL vertex shader. Each dent is a struct holding a position, depth, velocity, and age. Every frame the shader reads those values, calculates a displacement for each vertex based on a smooth falloff curve from the dent center, and writes the deformed position. Velocity and depth evolve on the CPU each frame and are uploaded as a uniform array — the GPU only does the geometry math, which is the part that needs to be fast.</p>
+                    <p>Resistance rises with the square of press speed, which is what separates memory foam from rubber at the physics level. Recovery uses an exponential ease rather than a spring, so there's no overshoot — overshoot is exactly what reads as jelly.</p>
+
+                    <h4>Device Budget Detection</h4>
+                    <p>The number of simultaneous dents is compiled into the shader as a constant. Ask for too many and the shader silently fails to compile on lower-end hardware, which renders as nothing at all — not a loading error, just a blank canvas. Before compiling, the engine queries <code>gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS)</code>, uses 45% of the reported budget split across the dent structs, and clamps between 6 and 48. One build, no device detection, no separate mobile path.</p>
+                    <div class="sb-code">const budget = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128;
+const affordable = Math.floor((budget * 0.45) / 2);
+return Math.max(6, Math.min(48, affordable));</div>
+                    <p class="sb-code-note">The shader asks the device what it can afford before deciding how much to use.</p>
+
+                    <h4>Procedural Skin System</h4>
+                    <p>Every skin — marble veining, zebra stripes, cheetah rosettes, wood grain, tie-dye, denim, camo, gold foil — is drawn at runtime in GLSL. There are no image files in the project. Each skin is a function that takes a UV coordinate and returns a color, which means the catalogue can grow indefinitely without affecting download size. Adding a skin is writing a function, not running an art pipeline.</p>
+                    <p>Some skins have physics properties: Frozen raises the stiffness coefficient and tracks warmth per-region so one end of the butter can soften while the other stays solid. The warmth map is a per-dent accumulator updated each frame your finger stays in contact.</p>
+
+                    <h4>Fur Rendering</h4>
+                    <p>Fur is rendered using shell texturing — the mesh is drawn 16 times, each pass offset slightly outward along the surface normals. A noise function masks each layer so only strand-shaped pixels survive. Every pass runs through the same squish shader, so the coat deforms with the butter rather than floating above it. Without that, the fur would stay rigid while the body dented — immediately breaking the illusion.</p>
+
+                    <h4>Live Audio</h4>
+                    <p>Sound is generated in the Web Audio API each frame, not sampled from a file. Dent depth and press velocity are fed as parameters to an oscillator chain each frame, so the sound tracks what your hand is actually doing — pressing harder produces a lower, more compressed tone; a fast jab produces a sharper transient. Each skin has its own audio profile layered on top of the base model.</p>
+
+                    <h4>Auth Flow</h4>
+                    <p>Sign in with Apple and Sign in with Google both use PKCE flows handled by Supabase Auth. The third option is a six-digit OTP sent by email — not a magic link, because a tapped link opens a new browser tab, which breaks the in-page flow and depends on the right email client being set as default on iOS. A code the user types stays in the same tab with no external dependencies.</p>
+
+                    <h4>Minting Transaction</h4>
+                    <p>Supply caps are enforced at the database level, not the application level. When a pull resolves to a Limited or rarer skin, a Supabase database function runs inside a single transaction: it locks the relevant row, reads current supply, checks against the cap, increments the counter, assigns the serial number, generates the certificate hash, and commits — all before releasing. Two simultaneous purchases of the last copy cannot both succeed; one gets the serial, the other gets a pool miss and re-draws.</p>
+                </div>
+            </details>
         </div>
 
         <div class="case-section">
