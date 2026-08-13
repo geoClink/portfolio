@@ -177,7 +177,7 @@ return Math.max(6, Math.min(48, affordable));</div>
         </div>
 
         <div class="case-section">
-            <h3>30+ Skins, Zero Image Files</h3>
+            <h3>31+ Skins, Zero Image Files</h3>
             <p>Marble veining, zebra stripes that taper and fork the way real ones do, cheetah rosettes, wood grain that crowds and spreads along the ring, tie-dye, denim, camo, gold foil. Every one is drawn at runtime in code — there isn't a single image file in the project.</p>
             <p>Which means the download stays tiny no matter how big the catalogue gets, and adding a skin is writing a function instead of running an art pipeline. That's the only reason a catalogue this size was practical for one person.</p>
             <p>Skins aren't just colours, either. Each has its own physics — Frozen barely yields until you warm it up with your finger, and it warms <em>where you touch it</em>, so one end can soften while the rest stays solid. Each has its own sound, generated live and fed the dent's depth and speed every frame so it tracks what your hand is doing. And each has a rarity, a supply cap, a serial number, a written provenance story, a certificate and a trading card.</p>
@@ -193,6 +193,18 @@ return Math.max(6, Math.min(48, affordable));</div>
         </div>
 
         <div class="case-section">
+            <h3>Auth</h3>
+            <p>Sign in with Apple, Sign in with Google, or a six-digit email code — no password to forget or rotate. The magic link pattern was ruled out early: a tapped link that opens a new browser tab breaks the flow, and the right email client on iOS isn't guaranteed to match the browser. A one-time code sidesteps both problems — the user stays in the same app, on the same page, and nothing depends on which client they open.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>The Pull System</h3>
+            <p>Skins aren't bought directly. You buy coins, then spend them on pulls — each pull draws from the current drop's rarity pool with published odds. Common skins are plentiful; Legendary and Mythic tiers are scarce by design, and supply caps are enforced at the database level. A pity counter guarantees you can't get locked out of the rarest tier forever: after a defined number of dry pulls, the next one is guaranteed to hit.</p>
+            <p>New accounts start with 300 coins — enough for a few pulls — so the collection is immediately interactive without a purchase required.</p>
+            <p>Each pull triggers an animated card reveal: the card flips, the rarity tier glows in, and the certificate details resolve. The animation is keyed to what you actually got, so a Legendary reveal doesn't look like a Common one.</p>
+        </div>
+
+        <div class="case-section">
             <h3>What Was Hard</h3>
             <p>Getting the feel right was mostly deleting things that were subtly wrong. A spring on release. A dent that stayed the same size no matter how hard you pressed. A drag that slid one divot around instead of ploughing a groove. Each was defensible on its own, and each one made the butter feel like a different material than I wanted.</p>
             <p>The worst bug looked completely correct in the code. Dragging is meant to leave dents behind your finger, and the spacing check measured the gap between the cursor and the active dent — except that dent eases toward the cursor every frame. I was measuring the distance between the cursor and something chasing the cursor, so it never grew large enough to trigger, and below a certain speed dragging left no trail at all. Reading it, it looked fine. Simulating the loop outside the browser found it in one pass. That lesson stuck harder than the fix did.</p>
@@ -200,8 +212,8 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>Where It Stands</h3>
-            <p>The engine works and the first drop ships 30+ skins — each with individual physics, sound and presentation, running at frame rate from laptops down to phones, in roughly 7,000 lines. New drops every two weeks.</p>
-            <p>What's left is the shop. Accounts, server-side ownership and checkout are designed and partly written but not yet connected — that's the next build, and it's the difference between a very good toy and something people can own.</p>
+            <p>The engine works, auth is live, and the pull system is running — Apple sign-in, Google sign-in, or a passwordless email code; a coin economy with rarity tiers, supply caps, and a pity guarantee; animated card reveals; 31+ skins each with individual physics, sound, and a certificate of authenticity, running at frame rate from laptops down to phones in roughly 7,000 lines. New skins drop every two weeks.</p>
+            <p>What ships next is the vault — the public-facing coin shop, checkout, and the collection screen where your owned skins live. The backend is already ready: minting is handled in a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. The store is the front door. Everything behind it is built.</p>
             <p><a href="tally.html">Tally</a> was hard because four platforms and two payment systems had to be correct at once. This one is hard in a narrower way: the whole product is a feeling. It either lands or it doesn't, and there's nothing to hide behind.</p>
         </div>
 
