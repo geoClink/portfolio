@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
+        .sb-live-bar { display: flex; align-items: center; gap: 0.5em; font-size: 0.78em; color: var(--color-text-muted); margin: 0.5em 0 0; min-height: 1.2em; }
+        .sb-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex-shrink: 0; animation: sb-pulse 2s ease-in-out infinite; }
+        @keyframes sb-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
         .sb-hook { font-size: 1.15em; line-height: 1.65; font-weight: 500; color: var(--color-heading); margin-bottom: 1em; }
         .sb-code { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1em 1.15em; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; line-height: 1.6; margin: 1.2em 0 0.6em; }
         .sb-code-note { font-size: 0.78rem; color: var(--color-text-muted); font-style: italic; margin: 0 0 0.5em; }
@@ -101,6 +104,7 @@
         </div>
 
         <div class="case-meta">Three.js · GLSL · WebGL2 · Vite · Supabase · Web Audio · 2026 · In development</div>
+        <div id="sb-live-bar" class="sb-live-bar"></div>
 
         <div class="case-section">
             <h3>The Idea</h3>
@@ -145,7 +149,6 @@
                         </div>
                         <div class="phone-viewport">
                             <iframe class="phone-demo" src="https://squishybutter.app/landing.html" title="Squishy Butter — Mobile View" loading="lazy" allow="autoplay"></iframe>
-                            <img src="assets/images/squishy-butter/squishylogo.svg" alt="" aria-hidden="true" style="position:absolute;top:8px;left:8px;width:40px;opacity:0.18;pointer-events:none;z-index:1;">
                         </div>
                     </div>
                 </div>
@@ -327,5 +330,38 @@ return Math.max(6, Math.min(48, affordable));</div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Squishy Butter live stats
+        (function () {
+            const URL = 'https://bxdhxedvcqfpkrefxmfl.supabase.co';
+            const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZGh4ZWR2Y3FmcGtyZWZ4bWZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU2OTk5MjEsImV4cCI6MjEwMTI3NTkyMX0.aq76gAi69dAgRHzesf07BwmKWWDfGDIoyzFVQC83hOg';
+            const h = { 'apikey': KEY, 'Authorization': 'Bearer ' + KEY };
+
+            function fmt(n) { return Number(n).toLocaleString(); }
+            function fmtTime(ms) {
+                if (!ms) return null;
+                const hrs = ms / 3600000;
+                if (hrs >= 1) return hrs.toFixed(1) + ' hrs squished';
+                return Math.round(ms / 60000) + ' min squished';
+            }
+
+            Promise.all([
+                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squishes', { headers: h }).then(r => r.json()),
+                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squish_ms', { headers: h }).then(r => r.json()),
+                fetch(URL + '/rest/v1/rpc/count_collectors', { method: 'POST', headers: { ...h, 'Content-Type': 'application/json' }, body: '{}' }).then(r => r.json())
+            ]).then(function ([sq, tm, col]) {
+                const parts = [];
+                if (sq[0]?.total_squishes != null) parts.push(fmt(sq[0].total_squishes) + ' squishes');
+                const t = fmtTime(tm[0]?.total_squish_ms);
+                if (t) parts.push(t);
+                const c = typeof col === 'number' ? col : col?.count;
+                if (c != null) parts.push(fmt(c) + ' collectors');
+                const el = document.getElementById('sb-live-bar');
+                if (el && parts.length) {
+                    el.innerHTML = '<span class="sb-live-dot"></span>' + parts.join(' &middot; ');
+                }
+            }).catch(function () {});
+        })();
+    </script>
 </body>
 </html>

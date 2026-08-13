@@ -112,61 +112,7 @@
                     ></iframe>
                 </div>
                 <a href="squishy-butter.html" class="hero-butter-link">Squishy Butter ↗</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats-row">
-        <div class="stats-inner">
-            <div class="stat-item">
-                <span class="stat-number" data-target="4">0</span>
-                <span class="stat-label">apps on the App Store</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="6">0</span>
-                <span class="stat-label">platform verticals built</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="4">0</span>
-                <span class="stat-label">freelance &amp; contract clients</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Squishy Butter Featured Project -->
-    <section class="sb-feature-section">
-        <div class="sb-feature-inner">
-            <div class="sb-feature-label">Featured Project</div>
-            <div class="sb-feature-content">
-                <div class="sb-feature-text">
-                    <h2 class="sb-feature-name">Squishy Butter</h2>
-                    <p class="sb-feature-desc">A stick of butter you squish with your finger — real soft-body physics in the browser, no install required. 31+ collectible skins, each with its own physics, sound, and certificate of authenticity.</p>
-                    <div class="sb-feature-tags">
-                        <span>Three.js</span>
-                        <span>GLSL</span>
-                        <span>WebGL2</span>
-                        <span>Supabase</span>
-                        <span>Web Audio</span>
-                        <span>Vite</span>
-                    </div>
-                    <div class="sb-feature-btns">
-                        <a href="squishy-butter.html" class="sb-feature-btn-primary">Case Study →</a>
-                        <a href="https://squishybutter.app/" target="_blank" rel="noopener noreferrer" class="sb-feature-btn-secondary">Try It ↗</a>
-                    </div>
-                </div>
-                <a href="squishy-butter.html" class="sb-feature-visual" aria-label="Squishy Butter case study">
-                    <div class="sb-browser-chrome">
-                        <div class="sb-browser-dots">
-                            <div class="sb-browser-dot"></div>
-                            <div class="sb-browser-dot"></div>
-                            <div class="sb-browser-dot"></div>
-                        </div>
-                        <span class="sb-browser-url">squishybutter.app</span>
-                    </div>
-                    <div class="sb-feature-img-wrap">
-                        <img src="assets/images/squishy-butter/landing-page.png" alt="Squishy Butter landing page screenshot" loading="lazy" />
-                    </div>
-                </a>
+                <span id="sb-live-stats" class="hero-butter-stats"></span>
             </div>
         </div>
     </section>
@@ -300,50 +246,58 @@
             <div class="appstore-strip-label">On the App Store</div>
             <div class="appstore-apps">
                 <div class="appstore-app">
-                    <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">Tally — Time Tracker</span>
-                        <span class="appstore-app-sub">Time tracking · iPhone · Apple Watch</span>
-                        <p class="appstore-app-desc">Cross-platform time tracker with a React web dashboard on a shared Supabase backend. $9.99 one-time against competitors charging $10–20/month. 18K+ App Store impressions and 80 downloads since launch.</p>
-                        <div class="appstore-app-btns">
-                            <a href="tally.html" class="appstore-case-btn" aria-label="Tally case study">Case Study →</a>
-                            <a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">Web App ↗</a>
-                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
+                    <div class="appstore-app-top">
+                        <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="appstore-app-icon" />
+                        <div class="appstore-app-info">
+                            <span class="appstore-app-name">Tally — Time Tracker</span>
+                            <span class="appstore-app-sub">Time tracking · iPhone · Apple Watch</span>
+                            <p class="appstore-app-desc">Cross-platform time tracker with a React web dashboard on a shared Supabase backend. $9.99 one-time against competitors charging $10–20/month. 18K+ App Store impressions and 80 downloads since launch.</p>
                         </div>
+                    </div>
+                    <div class="appstore-app-btns">
+                        <a href="tally.html" class="appstore-case-btn" aria-label="Tally case study">Case Study →</a>
+                        <a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">Web App ↗</a>
+                        <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
                     </div>
                 </div>
                 <div class="appstore-app">
-                    <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">CoastCast</span>
-                        <span class="appstore-app-sub">Beach conditions · iOS</span>
-                        <p class="appstore-app-desc">SwiftUI app backed by Python FastAPI with real-time conditions for 54 Michigan beaches. On-device CoreML for crowd prediction, plus Dynamic Island, Siri Shortcuts, and WidgetKit.</p>
-                        <div class="appstore-app-btns">
-                            <a href="coastcast.html" class="appstore-case-btn" aria-label="CoastCast case study">Case Study →</a>
-                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
+                    <div class="appstore-app-top">
+                        <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="appstore-app-icon" />
+                        <div class="appstore-app-info">
+                            <span class="appstore-app-name">CoastCast</span>
+                            <span class="appstore-app-sub">Beach conditions · iOS</span>
+                            <p class="appstore-app-desc">SwiftUI app backed by Python FastAPI with real-time conditions for 54 Michigan beaches. On-device CoreML for crowd prediction, plus Dynamic Island, Siri Shortcuts, and WidgetKit.</p>
                         </div>
+                    </div>
+                    <div class="appstore-app-btns">
+                        <a href="coastcast.html" class="appstore-case-btn" aria-label="CoastCast case study">Case Study →</a>
+                        <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
                     </div>
                 </div>
                 <div class="appstore-app">
-                    <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! app icon" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">Stamped!</span>
-                        <span class="appstore-app-sub">City passport · iPhone · iPad</span>
-                        <p class="appstore-app-desc">i18n travel app with live API data syncing and offline caching for reliable use in low-signal areas. Tracks landmarks and local spots across cities.</p>
-                        <div class="appstore-app-btns">
-                            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
+                    <div class="appstore-app-top">
+                        <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! app icon" class="appstore-app-icon" />
+                        <div class="appstore-app-info">
+                            <span class="appstore-app-name">Stamped!</span>
+                            <span class="appstore-app-sub">City passport · iPhone · iPad</span>
+                            <p class="appstore-app-desc">i18n travel app with live API data syncing and offline caching for reliable use in low-signal areas. Tracks landmarks and local spots across cities.</p>
                         </div>
+                    </div>
+                    <div class="appstore-app-btns">
+                        <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
                     </div>
                 </div>
                 <div class="appstore-app">
-                    <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight app icon" class="appstore-app-icon" />
-                    <div class="appstore-app-info">
-                        <span class="appstore-app-name">TakeFlight</span>
-                        <span class="appstore-app-sub">Bird life game · iPhone · iPad · macOS</span>
-                        <p class="appstore-app-desc">5-in-1 SpriteKit survival game with full keyboard support, haptic feedback, and granular audio management. Ships on iPhone, iPad, and macOS.</p>
-                        <div class="appstore-app-btns">
-                            <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
+                    <div class="appstore-app-top">
+                        <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight app icon" class="appstore-app-icon" />
+                        <div class="appstore-app-info">
+                            <span class="appstore-app-name">TakeFlight</span>
+                            <span class="appstore-app-sub">Bird life game · iPhone · iPad · macOS</span>
+                            <p class="appstore-app-desc">5-in-1 SpriteKit survival game with full keyboard support, haptic feedback, and granular audio management. Ships on iPhone, iPad, and macOS.</p>
                         </div>
+                    </div>
+                    <div class="appstore-app-btns">
+                        <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer" class="appstore-case-btn appstore-case-btn-secondary">App Store ↗</a>
                     </div>
                 </div>
             </div>
@@ -549,6 +503,38 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Squishy Butter live stats
+        (function () {
+            const URL = 'https://bxdhxedvcqfpkrefxmfl.supabase.co';
+            const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZGh4ZWR2Y3FmcGtyZWZ4bWZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU2OTk5MjEsImV4cCI6MjEwMTI3NTkyMX0.aq76gAi69dAgRHzesf07BwmKWWDfGDIoyzFVQC83hOg';
+            const h = { 'apikey': KEY, 'Authorization': 'Bearer ' + KEY };
+
+            function fmt(n) { return Number(n).toLocaleString(); }
+            function fmtTime(ms) {
+                if (!ms) return null;
+                const hrs = ms / 3600000;
+                if (hrs >= 1) return hrs.toFixed(1) + ' hrs squished';
+                return Math.round(ms / 60000) + ' min squished';
+            }
+
+            Promise.all([
+                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squishes', { headers: h }).then(r => r.json()),
+                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squish_ms', { headers: h }).then(r => r.json()),
+                fetch(URL + '/rest/v1/rpc/count_collectors', { method: 'POST', headers: { ...h, 'Content-Type': 'application/json' }, body: '{}' }).then(r => r.json())
+            ]).then(function ([sq, tm, col]) {
+                const parts = [];
+                if (sq[0]?.total_squishes != null) parts.push(fmt(sq[0].total_squishes) + ' squishes');
+                const t = fmtTime(tm[0]?.total_squish_ms);
+                if (t) parts.push(t);
+                const c = typeof col === 'number' ? col : col?.count;
+                if (c != null) parts.push(fmt(c) + ' collectors');
+                const el = document.getElementById('sb-live-stats');
+                if (el && parts.length) el.textContent = parts.join(' · ');
+            }).catch(function () {});
+        })();
+    </script>
 
     <script>
         // Testimonial slider — auto-advance, pause on hover, swipe support
