@@ -305,6 +305,7 @@ return Math.max(6, Math.min(48, affordable));</div>
             <h3>Where It Stands</h3>
             <p>The engine works, auth is live, and the pull system is running — Apple sign-in, Google sign-in, or a passwordless email code; a coin economy with rarity tiers, supply caps, and a pity guarantee; animated card reveals; 31+ skins each with individual physics, sound, and a certificate of authenticity, running at frame rate from laptops down to phones in roughly 7,000 lines. New skins drop every two weeks.</p>
             <p>What ships next is the vault — the public-facing coin shop, checkout, and the collection screen where your owned skins live. The backend is already ready: minting is handled in a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. The store is the front door. Everything behind it is built.</p>
+            <p>Native iOS and Android apps are coming — the physics engine is already ported, and the web version has been the proving ground for the feel. The app versions will add haptics: the device actually vibrates in sync with what the butter is doing under your finger.</p>
             <p><a href="tally.html">Tally</a> was hard because four platforms and two payment systems had to be correct at once. This one is hard in a narrower way: the whole product is a feeling. It either lands or it doesn't, and there's nothing to hide behind.</p>
         </div>
 
