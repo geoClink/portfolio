@@ -126,6 +126,14 @@
             <p>That's a materials problem, not an animation problem. You can't get there with CSS. It needed a real deformation model running on the graphics card — and once the feel existed, everything else got built around it.</p>
         </div>
 
+        <div class="case-section">
+            <figure style="margin:0;">
+                <video autoplay muted loop playsinline style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;">
+                    <source src="assets/videos/squishy-butter/draw-butter-animation.mp4" type="video/mp4">
+                </video>
+            </figure>
+        </div>
+
         <div class="case-section desktop-only">
             <h3>The Landing Page</h3>
             <p>The full product page — collection, mechanics, rarity tiers, and the order flow.</p>
@@ -303,9 +311,9 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>Where It Stands</h3>
-            <p>The engine works, auth is live, and the pull system is running — Apple sign-in, Google sign-in, or a passwordless email code; a coin economy with rarity tiers, supply caps, and a pity guarantee; animated card reveals; 31+ skins each with individual physics, sound, and a certificate of authenticity, running at frame rate from laptops down to phones in roughly 7,000 lines. New skins drop every two weeks.</p>
-            <p>What ships next is the vault — the public-facing coin shop, checkout, and the collection screen where your owned skins live. The backend is already ready: minting is handled in a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. The store is the front door. Everything behind it is built.</p>
-            <p>Native iOS and Android apps are coming — the physics engine is already ported, and the web version has been the proving ground for the feel. The app versions will add haptics: the device actually vibrates in sync with what the butter is doing under your finger.</p>
+            <p>The core product is built and live. Soft-body physics running on the GPU. Auth with Apple, Google, and passwordless email. A coin economy with rarity tiers, supply caps, a pity guarantee, and animated card reveals. 31+ skins — each with its own physics, sound, and certificate of authenticity — all procedurally generated, no image files. Roughly 7,000 lines, running at frame rate from laptops down to phones. New skins drop every two weeks.</p>
+            <p>The vault launches next: the public coin shop, checkout, and the collection screen where owned skins live. The backend is already production-ready — minting runs inside a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. Two people buying the last copy at the same instant cannot both get it. The store is the front door. Everything behind it is done.</p>
+            <p>iOS and Android apps are in progress. The physics engine is already ported. The web version was the proving ground — the apps add haptics, so the device vibrates in sync with the butter under your finger.</p>
             <p><a href="tally.html">Tally</a> was hard because four platforms and two payment systems had to be correct at once. This one is hard in a narrower way: the whole product is a feeling. It either lands or it doesn't, and there's nothing to hide behind.</p>
         </div>
 
