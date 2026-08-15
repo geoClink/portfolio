@@ -36,7 +36,9 @@
         .sb-scroll-item img, .sb-scroll-item video { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid var(--color-border); }
         .sb-scroll-item figcaption { font-size: 0.75em; color: var(--color-text-muted); margin: 0.5em 0 0; font-style: italic; line-height: 1.4; }
         .sb-scroll-item--phone { width: 200px; }
-        .sb-scroll-item--phone img { height: auto; border-radius: 16px; }
+        .sb-scroll-item--phone img { height: auto; border-radius: 16px; border: none; box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
+        .sb-pull-up { margin-top: -160px; }
+        @media (max-width: 680px) { .sb-pull-up { margin-top: 0; } }
         .phone-mockup.no-island::after { display: none; }
         .sb-auth-split { display: flex; gap: 2.5em; align-items: flex-start; margin-top: 0.75em; }
         .sb-auth-split-text { flex: 1; min-width: 0; }
@@ -44,6 +46,9 @@
         @media (max-width: 680px) { .sb-auth-split { flex-direction: column; align-items: center; } }
         @keyframes sb-float { 0%, 100% { transform: rotate(4deg) translateY(0); } 50% { transform: rotate(4deg) translateY(-10px); } }
         .sb-phone-float { animation: sb-float 3.5s ease-in-out infinite; }
+        .case-section h3 { border-left: 3px solid #f0c14b; padding-left: 0.6em; }
+        .sb-fade { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .sb-fade.visible { opacity: 1; transform: translateY(0); }
     </style>
     <script type="application/ld+json">
     {
@@ -119,7 +124,7 @@
             <div id="sb-live-bar" class="sb-live-bar"></div>
         </div>
 
-        <div class="case-meta">Three.js · GLSL · WebGL2 · Blender · Vite · Supabase · Web Audio · 2026 · In development</div>
+        <div class="case-meta">Three.js · GLSL · WebGL2 · Blender · Vite · Supabase · Web Audio · 2026 · Live</div>
 
         <div class="case-section">
             <h3>The Idea</h3>
@@ -189,13 +194,26 @@
                 <li><strong>Let go and the dent stays.</strong> It sits there for a couple of seconds doing nothing, then eases back — and it never bounces. A spring would overshoot, and overshoot is exactly what reads as jelly. Deeper presses take longer to recover, because there's more to undo.</li>
                 <li><strong>Press in several places at once.</strong> Every dent is its own little simulation, so you can poke here, poke there, and watch both fade on their own schedule.</li>
             </ul>
+            <video autoplay muted loop playsinline style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.5em;">
+                <source src="assets/videos/squishy-butter/sample-video.mp4" type="video/mp4">
+            </video>
         </div>
 
         <div class="case-section">
             <h3>31+ Skins, Zero Image Files</h3>
-            <p>Marble veining, zebra stripes that taper and fork the way real ones do, cheetah rosettes, wood grain that crowds and spreads along the ring, tie-dye, denim, camo, gold foil. Every one is drawn at runtime in code — there isn't a single image file in the project.</p>
-            <p>Which means the download stays tiny no matter how big the catalogue gets, and adding a skin is writing a function instead of running an art pipeline. That's the only reason a catalogue this size was practical for one person.</p>
-            <p>Skins aren't just colours, either. Each has its own physics — Frozen barely yields until you warm it up with your finger, and it warms <em>where you touch it</em>, so one end can soften while the rest stays solid. Each has its own sound, generated live and fed the dent's depth and speed every frame so it tracks what your hand is doing. And each has a rarity, a supply cap, a serial number, a written provenance story, a certificate and a trading card.</p>
+            <div class="sb-auth-split">
+                <div class="sb-auth-split-text">
+                    <p>Marble veining, zebra stripes that taper and fork the way real ones do, cheetah rosettes, wood grain that crowds and spreads along the ring, tie-dye, denim, camo, gold foil. Every one is drawn at runtime in code — there isn't a single image file in the project.</p>
+                    <p>Which means the download stays tiny no matter how big the catalogue gets, and adding a skin is writing a function instead of running an art pipeline. That's the only reason a catalogue this size was practical for one person.</p>
+                    <p>Skins aren't just colours, either. Each has its own physics — Frozen barely yields until you warm it up with your finger, and it warms <em>where you touch it</em>, so one end can soften while the rest stays solid. Each has its own sound, generated live and fed the dent's depth and speed every frame so it tracks what your hand is doing. And each has a rarity, a supply cap, a serial number, a written provenance story, a certificate and a trading card.</p>
+                </div>
+                <div class="sb-auth-split-phone">
+                    <img src="assets/images/squishy-butter/butter-9.jpg" alt="Classic Butter — certificate details and provenance story" loading="lazy" style="width:220px;max-width:100%;display:block;border-radius:20px;">
+                </div>
+            </div>
+            <video autoplay muted loop playsinline style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.5em;">
+                <source src="assets/videos/squishy-butter/have-you-tried-tie-die.mp4" type="video/mp4">
+            </video>
         </div>
 
         <div class="case-section">
@@ -249,7 +267,7 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <p>Once you're in, your profile tracks coins, squish count, and total time squished. You can set a username, pick your butter's color from 16 options, choose an expression, and claim a title — Squish Enthusiast, Butter Baron, and others unlock as you go.</p>
                 </div>
                 <div class="sb-auth-split-phone">
-                    <div class="phone-mockup no-island sb-phone-float">
+                    <div class="phone-mockup no-island sb-phone-float" style="width:240px;">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
                             <img src="assets/images/squishy-butter/profile-view.png" alt="Profile editor — butter color picker, expression selector, and title options" loading="lazy">
@@ -261,60 +279,23 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>The Pull System</h3>
-            <p>Skins aren't bought directly. You buy coins, then spend them on pulls — each pull draws from the current drop's rarity pool with published odds. Common skins are plentiful; Legendary and Mythic tiers are scarce by design, and supply caps are enforced at the database level. A pity counter guarantees you can't get locked out of the rarest tier forever: after a defined number of dry pulls, the next one is guaranteed to hit.</p>
-            <p>New accounts start with 300 coins — enough for a few pulls — so the collection is immediately interactive without a purchase required.</p>
-            <p>Each pull triggers an animated card reveal: the card flips, the rarity tier glows in, and the certificate details resolve. The animation is keyed to what you actually got, so a Legendary reveal doesn't look like a Common one.</p>
-        </div>
-
-        <div class="case-section">
-            <h3>In the App</h3>
-            <p>The coin shop, skin reveals, and what a card + certificate look like when they land.</p>
-            <figure class="sb-media-item" style="margin:1.25em 0 0;">
-                <img src="assets/images/squishy-butter/prices.png" alt="Coin shop — Stick, Case, Crate, and Pallet packages" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--color-border);display:block;">
-                <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Coin shop — four pull packages, priced per pull</figcaption>
-            </figure>
-            <figure class="sb-media-item" style="margin:1.25em 0 0;">
-                <img src="assets/images/squishy-butter/coa-trading-card.png" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--color-border);display:block;">
-                <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Trading card and certificate of authenticity</figcaption>
-            </figure>
-            <div class="sb-scroll-track">
-                <figure class="sb-scroll-item">
-                    <video autoplay muted loop playsinline>
-                        <source src="assets/videos/squishy-butter/sample-video.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Demo</figcaption>
-                </figure>
-                <figure class="sb-scroll-item">
-                    <video autoplay muted loop playsinline>
-                        <source src="assets/videos/squishy-butter/have-you-tried-tie-die.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Tie-Dye skin</figcaption>
-                </figure>
-                <figure class="sb-scroll-item">
-                    <video autoplay muted loop playsinline>
-                        <source src="assets/videos/squishy-butter/merch-video.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Merch</figcaption>
-                </figure>
-                <figure class="sb-scroll-item">
-                    <video autoplay muted loop playsinline>
-                        <source src="assets/videos/squishy-butter/truck-animation.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Shop animation</figcaption>
-                </figure>
+            <div style="margin-top:0.75em;">
+                <img src="assets/images/squishy-butter/coa-trading-card.png" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy" style="float:left;width:260px;max-width:45%;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.14);margin:0 1.75em 1em 0;">
+                <p>Skins aren't bought directly. You buy coins, then spend them on pulls — each pull draws from the current drop's rarity pool with published odds. Common skins are plentiful; Legendary and Mythic tiers are scarce by design, and supply caps are enforced at the database level. A pity counter guarantees you can't get locked out of the rarest tier forever: after a defined number of dry pulls, the next one is guaranteed to hit.</p>
+                <p>New accounts start with 300 coins — enough for a few pulls — so the collection is immediately interactive without a purchase required.</p>
+                <p>Each pull triggers an animated card reveal: the card flips, the rarity tier glows in, and the certificate details resolve. The animation is keyed to what you actually got, so a Legendary reveal doesn't look like a Common one.</p>
+                <div style="clear:both;"></div>
             </div>
+            <figure style="margin:1.75em auto 0;max-width:520px;">
+                <img src="assets/images/squishy-butter/prices.png" alt="Coin shop — Stick, Case, Crate, and Pallet packages" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;">
+                <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;text-align:center;">Coin shop — four pull packages, priced per pull</figcaption>
+            </figure>
         </div>
 
         <div class="case-section">
             <h3>Home Screen Widgets</h3>
             <p>Three widget sizes put your squish stats on the home screen without opening the app.</p>
-            <div style="display:flex;gap:1.25em;align-items:flex-start;flex-wrap:wrap;margin-top:1.25em;">
-                <img src="assets/images/squishy-butter/butter-widget-large.png" alt="Large widget — squish count, time squishing, and streak" loading="lazy" style="width:280px;max-width:100%;display:block;">
-                <div style="display:flex;flex-direction:column;gap:1.25em;flex:0 0 auto;">
-                    <img src="assets/images/squishy-butter/butter-widget-medium.png" alt="Medium widget — squishes and time spent squishing" loading="lazy" style="width:180px;display:block;">
-                    <img src="assets/images/squishy-butter/butter-widget-small.png" alt="Small widget — lifetime squish count" loading="lazy" style="width:180px;display:block;">
-                </div>
-            </div>
+            <img src="assets/images/squishy-butter/widget-background-and-widgets.jpg" alt="All three Squishy Butter widgets — large, medium, and small" loading="lazy" style="width:100%;display:block;border-radius:12px;margin-top:1.25em;">
         </div>
 
         <div class="case-section">
@@ -325,46 +306,49 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>Where It Stands</h3>
-            <p>The core product is built and live. Soft-body physics running on the GPU. Auth with Apple, Google, and passwordless email. A coin economy with rarity tiers, supply caps, a pity guarantee, and animated card reveals. 31+ skins — each with its own physics, sound, and certificate of authenticity — all procedurally generated, no image files. Roughly 7,000 lines, running at frame rate from laptops down to phones. New skins drop every two weeks.</p>
-            <p>The vault launches next: the public coin shop, checkout, and the collection screen where owned skins live. The backend is already production-ready — minting runs inside a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. Two people buying the last copy at the same instant cannot both get it. The store is the front door. Everything behind it is done.</p>
-            <p>The iOS and Android apps are built. Same physics engine, same coin economy — the apps add haptics, so the device vibrates in sync with the butter under your finger.</p>
-            <p><a href="tally.html">Tally</a> was hard because four platforms and two payment systems had to be correct at once. This one is hard in a narrower way: the whole product is a feeling. It either lands or it doesn't, and there's nothing to hide behind.</p>
+            <div style="margin-top:0.75em;">
+                <img src="assets/images/squishy-butter/butter-1.jpg" alt="Squishy Butter iOS app — main squish screen" loading="lazy" style="float:right;width:280px;max-width:45%;border-radius:20px;margin:0 0 1em 2em;">
+                <p>The core product is built and live. Soft-body physics running on the GPU. Auth with Apple, Google, and passwordless email. A coin economy with rarity tiers, supply caps, a pity guarantee, and animated card reveals. 31+ skins — each with its own physics, sound, and certificate of authenticity — all procedurally generated, no image files. Roughly 7,000 lines, running at frame rate from laptops down to phones. New skins drop every two weeks.</p>
+                <p>The vault launches next: the public coin shop, checkout, and the collection screen where owned skins live. The backend is already production-ready — minting runs inside a single database transaction that locks the row, checks supply, assigns the serial, and issues the certificate hash before releasing. Two people buying the last copy at the same instant cannot both get it. The store is the front door. Everything behind it is done.</p>
+                <p>The iOS and Android apps are built. Same physics engine, same coin economy — the apps add haptics, so the device vibrates in sync with the butter under your finger.</p>
+                <p><a href="tally.html">Tally</a> was hard because four platforms and two payment systems had to be correct at once. This one is hard in a narrower way: the whole product is a feeling. It either lands or it doesn't, and there's nothing to hide behind.</p>
+                <div style="clear:both;"></div>
+            </div>
+            <video autoplay muted loop playsinline style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.5em;">
+                <source src="assets/videos/squishy-butter/merch-video.mp4" type="video/mp4">
+            </video>
         </div>
 
         <div class="case-section">
             <h3>iOS</h3>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-1.jpg" alt="Main squish screen — butter on dark background" loading="lazy">
-                    <figcaption>Squish screen</figcaption>
-                </figure>
-                <figure class="sb-scroll-item sb-scroll-item--phone">
                     <img src="assets/images/squishy-butter/butter-2.jpg" alt="Navigation drawer — Dairy Delivery, Buy Coins, My Butters, Leaderboard, Trading Card, Certificate" loading="lazy">
-                    <figcaption>Navigation</figcaption>
+                    <figcaption>One swipe back to squishing</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-4.jpg" alt="Customization — color picker and butter appearance options" loading="lazy">
-                    <figcaption>Customization</figcaption>
+                    <img src="assets/images/squishy-butter/butter-4.jpg" alt="Customization — 16 butter colors, expression picker, and title selector" loading="lazy">
+                    <figcaption>Pick your color, expression, and title</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-5.jpg" alt="Dairy Delivery — delivery tracking screen" loading="lazy">
-                    <figcaption>Dairy Delivery</figcaption>
+                    <img src="assets/images/squishy-butter/butter-5.jpg" alt="Dairy Delivery — order tracking screen with delivery details" loading="lazy">
+                    <figcaption>Dairy Delivery — track your drop</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-6.jpg" alt="Dairy Delivery — truck animation" loading="lazy">
-                    <figcaption>Delivery animation</figcaption>
+                    <img src="assets/images/squishy-butter/butter-6.jpg" alt="Dairy Delivery truck animation en route" loading="lazy">
+                    <figcaption>The truck is on its way</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-7.jpg" alt="Classic Butter detail — trading card dark mode" loading="lazy">
-                    <figcaption>Skin detail</figcaption>
+                    <img src="assets/images/squishy-butter/butter-7.jpg" alt="Classic Butter skin — trading card with rarity and serial number" loading="lazy">
+                    <figcaption>Every skin gets a trading card</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-10.jpg" alt="Classic Butter certificate of authenticity" loading="lazy">
-                    <figcaption>Certificate</figcaption>
+                    <img src="assets/images/squishy-butter/butter-10.jpg" alt="Classic Butter certificate of authenticity with provenance details" loading="lazy">
+                    <figcaption>Certificate of authenticity</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-8.jpg" alt="Stock Up — coin package pricing" loading="lazy">
-                    <figcaption>Coin shop</figcaption>
+                    <img src="assets/images/squishy-butter/butter-8.jpg" alt="Stock Up — Stick, Case, Crate, and Pallet coin packages" loading="lazy">
+                    <figcaption>Four ways to stock up on coins</figcaption>
                 </figure>
             </div>
         </div>
@@ -373,32 +357,32 @@ return Math.max(6, Math.min(48, affordable));</div>
             <h3>Android</h3>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-22-android.jpg" alt="Android navigation menu — Dairy Delivery, Buy Coins, My Butters, Leaderboard" loading="lazy">
-                    <figcaption>Navigation</figcaption>
+                    <img src="assets/images/squishy-butter/butter-22-android.jpg" alt="Android navigation drawer — Dairy Delivery, Buy Coins, My Butters, Leaderboard" loading="lazy">
+                    <figcaption>One swipe back to squishing</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-24-android.jpg" alt="Android butter collection and butterscore" loading="lazy">
-                    <figcaption>Collection</figcaption>
+                    <img src="assets/images/squishy-butter/butter-24-android.jpg" alt="Android butter collection showing owned skins and butterscore" loading="lazy">
+                    <figcaption>Every butter you've squished, ranked</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-23-android.jpg" alt="Android customization — color picker" loading="lazy">
-                    <figcaption>Customization</figcaption>
+                    <img src="assets/images/squishy-butter/butter-23-android.jpg" alt="Android customization — butter color and expression picker" loading="lazy">
+                    <figcaption>Pick your color, expression, and title</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-25-android.jpg" alt="Android Stock Up — coin packages" loading="lazy">
-                    <figcaption>Coin shop</figcaption>
+                    <img src="assets/images/squishy-butter/butter-25-android.jpg" alt="Android Stock Up — Stick, Case, Crate, and Pallet coin packages" loading="lazy">
+                    <figcaption>Four ways to stock up on coins</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-26-android.jpg" alt="Android Classic Butter skin detail" loading="lazy">
-                    <figcaption>Skin detail</figcaption>
+                    <img src="assets/images/squishy-butter/butter-26-android.jpg" alt="Android Classic Butter skin — trading card with rarity and serial" loading="lazy">
+                    <figcaption>Every skin gets a trading card</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-28-android.jpg" alt="Android Classic Butter certificate" loading="lazy">
-                    <figcaption>Certificate</figcaption>
+                    <img src="assets/images/squishy-butter/butter-28-android.jpg" alt="Android Classic Butter certificate of authenticity" loading="lazy">
+                    <figcaption>Certificate of authenticity</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-27-android.jpg" alt="Android leaderboard" loading="lazy">
-                    <figcaption>Leaderboard</figcaption>
+                    <img src="assets/images/squishy-butter/butter-27-android.jpg" alt="Android leaderboard showing top squishers" loading="lazy">
+                    <figcaption>See where you rank</figcaption>
                 </figure>
             </div>
         </div>
@@ -515,6 +499,42 @@ return Math.max(6, Math.min(48, affordable));</div>
 
     <script src="assets/js/main.js"></script>
     <script>
+        (function () {
+            const style = document.createElement('style');
+            document.head.appendChild(style);
+            for (let i = 0; i < 11; i++) {
+                const id = 'sbf' + i;
+                const ltr = Math.random() > 0.5;
+                const y1 = (4 + Math.random() * 85).toFixed(1);
+                const y2 = (4 + Math.random() * 85).toFixed(1);
+                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
+                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
+                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
+                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
+                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
+                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const del = (Math.random() * 0.9).toFixed(2);
+                const sz  = Math.round(24 + Math.random() * 32);
+                style.sheet.insertRule(
+                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
+                    style.sheet.cssRules.length
+                );
+                const img = document.createElement('img');
+                img.src = 'assets/images/squishy-butter/squishylogo.svg';
+                img.setAttribute('aria-hidden', 'true');
+                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;animation:${id} ${dur}s ${del}s linear forwards;`;
+                document.body.appendChild(img);
+                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
+            }
+        })();
+    </script>
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.case-section').forEach(el => { el.classList.add('sb-fade'); observer.observe(el); });
+    </script>
+    <script>
         // Squishy Butter live stats
         (function () {
             const URL = 'https://bxdhxedvcqfpkrefxmfl.supabase.co';
@@ -542,7 +562,7 @@ return Math.max(6, Math.min(48, affordable));</div>
                 if (c != null) parts.push(fmt(c) + ' collectors');
                 const el = document.getElementById('sb-live-bar');
                 if (el && parts.length) {
-                    el.innerHTML = '<span class="sb-live-dot"></span>' + parts.join(' &middot; ');
+                    el.innerHTML = '<span class="sb-live-dot"></span><span style="font-weight:600;color:var(--color-text);">Live —</span> ' + parts.join(' &middot; ');
                 }
             }).catch(function () {});
         })();
