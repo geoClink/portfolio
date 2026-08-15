@@ -304,6 +304,27 @@ return Math.max(6, Math.min(48, affordable));</div>
         </div>
 
         <div class="case-section">
+            <h3>Home Screen Widgets</h3>
+            <p>Three widget sizes put your squish stats on the home screen without opening the app.</p>
+            <div style="display:flex;gap:1.25em;align-items:flex-start;flex-wrap:wrap;margin-top:1.25em;">
+                <figure style="margin:0;text-align:center;flex:0 0 auto;">
+                    <img src="assets/images/squishy-butter/butter-widget-large.png" alt="Large widget — squish count, time squishing, and streak" loading="lazy" style="width:320px;max-width:100%;border-radius:20px;border:1px solid var(--color-border);display:block;">
+                    <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Large — squishes, time, and streak</figcaption>
+                </figure>
+                <div style="display:flex;flex-direction:column;gap:1.25em;flex:0 0 auto;">
+                    <figure style="margin:0;text-align:center;">
+                        <img src="assets/images/squishy-butter/butter-widget-small.png" alt="Small widget — lifetime squish count" loading="lazy" style="width:200px;border-radius:20px;border:1px solid var(--color-border);display:block;">
+                        <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Small — lifetime squish count</figcaption>
+                    </figure>
+                    <figure style="margin:0;text-align:center;">
+                        <img src="assets/images/squishy-butter/butter-widget-medium.png" alt="Medium widget — squishes and time spent squishing" loading="lazy" style="width:200px;border-radius:20px;border:1px solid var(--color-border);display:block;">
+                        <figcaption style="font-size:0.75em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Medium — squishes + time squishing</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
             <h3>What Was Hard</h3>
             <p>Getting the feel right was mostly deleting things that were subtly wrong. A spring on release. A dent that stayed the same size no matter how hard you pressed. A drag that slid one divot around instead of ploughing a groove. Each was defensible on its own, and each one made the butter feel like a different material than I wanted.</p>
             <p>The worst bug looked completely correct in the code. Dragging is meant to leave dents behind your finger, and the spacing check measured the gap between the cursor and the active dent — except that dent eases toward the cursor every frame. I was measuring the distance between the cursor and something chasing the cursor, so it never grew large enough to trigger, and below a certain speed dragging left no trail at all. Reading it, it looked fine. Simulating the loop outside the browser found it in one pass. That lesson stuck harder than the fix did.</p>
