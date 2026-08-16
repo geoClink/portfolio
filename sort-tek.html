@@ -86,8 +86,11 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">Sort-Tek Inspection Systems</h2>
-        <p class="case-tagline">A bespoke 6-page marketing website for a Troy, Michigan fastener inspection company — built from scratch in plain HTML, CSS, and JavaScript. 100/100 Lighthouse across all four categories on both mobile and desktop. No framework, no build step, no template.</p>
+        <div class="case-hero">
+            <img src="assets/images/sort-tek/favicon.png" alt="Sort-Tek icon" class="case-hero-icon" />
+            <h2 class="case-title">Sort-Tek Inspection Systems</h2>
+            <p class="case-tagline">A bespoke 6-page marketing website for a Troy, Michigan fastener inspection company — built from scratch in plain HTML, CSS, and JavaScript. 100/100 Lighthouse across all four categories on both mobile and desktop. No framework, no build step, no template.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="case-link-btn">View Live Site ↗</a>
@@ -292,8 +295,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

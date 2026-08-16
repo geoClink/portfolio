@@ -23,29 +23,6 @@
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
-        .trips-hero {
-            display: flex;
-            align-items: center;
-            gap: 1.25em;
-            margin-bottom: 1.5em;
-        }
-        .trips-hero-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
-            flex-shrink: 0;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-        }
-        .trips-hero-text h2 {
-            margin: 0 0 0.15em;
-            font-size: 1.75em;
-        }
-        .trips-hero-text p {
-            margin: 0;
-            color: var(--color-text-muted);
-            font-size: 0.95em;
-        }
-
         .marketing-gallery {
             display: flex;
             gap: 1em;
@@ -172,12 +149,10 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <div class="trips-hero">
-            <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta app icon" class="trips-hero-icon" />
-            <div class="trips-hero-text">
-                <h2>Tripsetta</h2>
-                <p>Travel planning platform for solo travelers and travel agents — iOS, Android, and web.</p>
-            </div>
+        <div class="case-hero">
+            <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta app icon" class="case-hero-icon" />
+            <h2 class="case-title">Tripsetta</h2>
+            <p class="case-tagline">Travel planning platform for solo travelers and travel agents — iOS, Android, and web.</p>
         </div>
 
         <div class="case-links">
@@ -383,8 +358,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

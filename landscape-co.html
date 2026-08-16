@@ -77,8 +77,11 @@
 
         <a href="small-business-suite.html" class="back-link">← Small Business Suite</a>
 
-        <h2 class="case-title">The Landscape Co.</h2>
-        <p class="case-tagline">A fully deployed, multi-page website for a women-run Bay Area garden design and maintenance studio — built from scratch in vanilla HTML, CSS, and JavaScript, with a live contact form backed by the Small Business Suite API and 9 individual project detail pages.</p>
+        <div class="case-hero">
+            <img src="assets/images/thelandscapeco/favicon.svg" alt="The Landscape Co. icon" class="case-hero-icon" />
+            <h2 class="case-title">The Landscape Co.</h2>
+            <p class="case-tagline">A fully deployed, multi-page website for a women-run Bay Area garden design and maintenance studio — built from scratch in vanilla HTML, CSS, and JavaScript, with a live contact form backed by the Small Business Suite API and 9 individual project detail pages.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://landscape-co-ten.vercel.app" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
@@ -132,7 +135,7 @@
         <div class="case-section">
             <h3>In the Garden Now</h3>
             <p>The homepage includes a seasonal planting section that reads the current month with JavaScript and renders a different set of Bay Area plants depending on the season — winter shrubs in December, drought-adapted species in summer. No API call, no database, no build step. It updates itself four times a year automatically.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1em;">
                 <img src="assets/images/thelandscapeco/screenshot-seasonal.png" alt="Seasonal planting section" style="width:100%;display:block;" />
             </div>
         </div>
@@ -232,7 +235,7 @@
         <nav class="spec-nav" aria-label="Case study navigation">
             <a href="inn-co.html" class="spec-nav-btn">
                 <span class="spec-nav-label">Previous case study</span>
-                ← The Inn Co.
+                ← Crystal Lake Resort
             </a>
             <a href="squishy-butter.html" class="spec-nav-btn next">
                 <span class="spec-nav-label">Next case study</span>
@@ -275,8 +278,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

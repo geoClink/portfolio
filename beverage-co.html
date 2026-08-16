@@ -77,8 +77,11 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">Botanical Archive</h2>
-        <p class="case-tagline">A brand landing page for a craft hemp beverage company — built to attract wholesale partners, capture early orders, and signal "established brand" to investors before a nationwide October launch.</p>
+        <div class="case-hero">
+            <img src="assets/images/beverageco/favicon.png" alt="Botanical Archive icon" class="case-hero-icon" />
+            <h2 class="case-title">Botanical Archive</h2>
+            <p class="case-tagline">A brand landing page for a craft hemp beverage company — built to attract wholesale partners, capture early orders, and signal "established brand" to investors before a nationwide October launch.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://beverage-webpage.vercel.app" class="button" target="_blank" rel="noopener noreferrer">Visit Spec Site ↗</a>
@@ -266,8 +269,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

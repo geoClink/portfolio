@@ -96,8 +96,11 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">CoastCast</h2>
-        <p class="case-tagline">A full-platform iOS app delivering real-time beach conditions for 54 Michigan beaches — with on-device ML crowd prediction, Siri Shortcuts, Live Activities, and a Python FastAPI backend.</p>
+        <div class="case-hero">
+            <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="case-hero-icon" />
+            <h2 class="case-title">CoastCast</h2>
+            <p class="case-tagline">A full-platform iOS app delivering real-time beach conditions for 54 Michigan beaches — with on-device ML crowd prediction, Siri Shortcuts, Live Activities, and a Python FastAPI backend.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="38"></a>
@@ -263,8 +266,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(
@@ -272,7 +275,7 @@
                     style.sheet.cssRules.length
                 );
                 const img = document.createElement('img');
-                img.src = 'assets/images/coastcast/coastcast-app-icon.png';
+                img.src = 'assets/images/coastcast/coastcast-app-icon.webp';
                 img.setAttribute('aria-hidden', 'true');
                 img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
                 document.body.appendChild(img);

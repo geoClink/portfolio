@@ -29,7 +29,7 @@
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgeclinkscalesdev.com/" },
             { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://georgeclinkscalesdev.com/case-studies.html" },
-            { "@type": "ListItem", "position": 3, "name": "The Inn Co.", "item": "https://georgeclinkscalesdev.com/inn-co.html" }
+            { "@type": "ListItem", "position": 3, "name": "Crystal Lake Resort", "item": "https://georgeclinkscalesdev.com/inn-co.html" }
         ]
     }
     </script>
@@ -78,8 +78,11 @@
         <a href="small-business-suite.html" class="back-link">← Small Business Suite</a>
         
 
-        <h2 class="case-title">Crystal Lake Resort</h2>
-        <p class="case-tagline">A real client — Crystal Lake Resort, a Michigan lakefront resort with motel rooms and private weekly cottages — live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, gift cards, automated email campaigns, self-serve cancellation, and a no-code admin dashboard built to eliminate OTA commissions entirely.</p>
+        <div class="case-hero">
+            <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" class="case-hero-icon" />
+            <h2 class="case-title">Crystal Lake Resort</h2>
+            <p class="case-tagline">A real client — Crystal Lake Resort, a Michigan lakefront resort with motel rooms and private weekly cottages — live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, gift cards, automated email campaigns, self-serve cancellation, and a no-code admin dashboard built to eliminate OTA commissions entirely.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://crystallakeresortmi.com" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
@@ -113,7 +116,7 @@
                 </div>
                 <iframe
                     src="https://the-inn-co.vercel.app/"
-                    title="The Inn Co. — Live Site"
+                    title="Crystal Lake Resort — Live Site"
                     loading="lazy"
                 ></iframe>
             </div>
@@ -183,7 +186,7 @@
                 </div>
                 <iframe
                     src="https://the-inn-co.vercel.app/admin.html?demo=true"
-                    title="The Inn Co. — Admin Dashboard Demo"
+                    title="Crystal Lake Resort — Admin Dashboard Demo"
                     loading="lazy"
                 ></iframe>
             </div>
@@ -254,7 +257,7 @@
                                 </div>
                             </div>
                             <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/" title="The Inn Co. — Guest Mobile" loading="lazy"></iframe>
+                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/" title="Crystal Lake Resort — Guest Mobile" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
@@ -273,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/admin.html?demo=true" title="The Inn Co. — Admin Mobile" loading="lazy"></iframe>
+                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/admin.html?demo=true" title="Crystal Lake Resort — Admin Mobile" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
@@ -373,9 +376,6 @@
             </a>
         </div>
 
-        l
-        </div>
-
         <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
             <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
             <a href="contact.html" style="display:inline-block;background:var(--color-heading);color:#fff;font-weight:600;font-size:0.95em;padding:0.65em 1.4em;border-radius:4px;text-decoration:none;">Let's talk →</a>
@@ -427,8 +427,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(
@@ -436,7 +436,7 @@
                     style.sheet.cssRules.length
                 );
                 const img = document.createElement('img');
-                img.src = 'assets/images/theinnco/favicon.svg';
+                img.src = 'assets/images/crystal-lake/favicon.svg';
                 img.setAttribute('aria-hidden', 'true');
                 img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
                 document.body.appendChild(img);

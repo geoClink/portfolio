@@ -288,8 +288,11 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">Small Business Suite</h2>
-        <p class="case-tagline">One backend, one database, six live sites. A multi-tenant web platform for small businesses — booking, payments, admin dashboards, and automated emails.</p>
+        <div class="case-hero">
+            <img src="assets/images/knot/favicon.svg" alt="Small Business Suite icon" class="case-hero-icon" />
+            <h2 class="case-title">Small Business Suite</h2>
+            <p class="case-tagline">One backend, one database, six live sites. A multi-tenant web platform for small businesses — booking, payments, admin dashboards, and automated emails.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://webplatform-api.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">View Platform ↗</a>
@@ -352,7 +355,7 @@
 
             <div class="knot-deployments">
                 <div class="knot-deploy-item">
-                    <img src="assets/images/thewellnessco/whitebear-logo.png" alt="" class="knot-deploy-icon" />
+                    <img src="assets/images/site/whitebearharmonics-logo.png" alt="" class="knot-deploy-icon" />
                     <div class="knot-deploy-content">
                         <div class="knot-deploy-header">
                             <span class="knot-deploy-name">White Bear Harmonics</span>
@@ -542,8 +545,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(
@@ -551,7 +554,7 @@
                     style.sheet.cssRules.length
                 );
                 const img = document.createElement('img');
-                img.src = 'favicon.svg';
+                img.src = 'assets/images/knot/favicon.svg';
                 img.setAttribute('aria-hidden', 'true');
                 img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
                 document.body.appendChild(img);

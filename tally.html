@@ -97,8 +97,11 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">Tally — Time Tracker</h2>
-        <p class="case-tagline">Cross-platform time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and client invoicing sent directly by email.</p>
+        <div class="case-hero">
+            <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="case-hero-icon" />
+            <h2 class="case-title">Tally — Time Tracker</h2>
+            <p class="case-tagline">Cross-platform time tracker for freelancers and small teams — native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and client invoicing sent directly by email.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://tallytimetracker.com/" class="button" target="_blank" rel="noopener noreferrer" style="align-self:flex-end;">Web App ↗</a>
@@ -160,15 +163,13 @@
 
         <div class="case-section">
             <h3>Auth</h3>
-            <p>Authentication supports email/password, Sign in with Apple, and Sign in with Google on both iOS and web. The web app includes a full forgot password flow — users request a reset link, Supabase emails it via Resend over custom SMTP, and a recovery token handler in the React app detects the link regardless of where Supabase redirects and presents the reset form. A built-in bug report modal (also powered by Resend) is surfaced on the landing page, login page, and inside the dashboard settings — so users can report issues from anywhere without leaving the app.</p>
-            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
-                <div style="width:100%;max-width:480px;">
-                    <img src="assets/images/tallyios/weblogin.png" alt="Tally web login showing Sign in with Google and Sign in with Apple buttons" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
-                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Web login — Sign in with Google and Apple</p>
+            <div style="display:flex;gap:2em;align-items:flex-start;flex-wrap:wrap;margin-top:0.75em;">
+                <div style="flex:1;min-width:0;">
+                    <p>Authentication supports email/password, Sign in with Apple, and Sign in with Google on both iOS and web. The web app includes a full forgot password flow — users request a reset link, Supabase emails it via Resend over custom SMTP, and a recovery token handler in the React app detects the link regardless of where Supabase redirects and presents the reset form. A built-in bug report modal (also powered by Resend) is surfaced on the landing page, login page, and inside the dashboard settings — so users can report issues from anywhere without leaving the app.</p>
                 </div>
-                <div style="width:100%;max-width:480px;">
-                    <img src="assets/images/tallyios/reportform.png" alt="Tally bug report modal with name, email and message fields" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
-                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Bug report modal — powered by Resend</p>
+                <div style="flex-shrink:0;">
+                    <img src="assets/images/tallyios/weblogin.png" alt="Tally web login showing Sign in with Google and Sign in with Apple buttons" style="width:220px;max-width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Web login</p>
                 </div>
             </div>
         </div>
@@ -180,21 +181,16 @@
 
         <div class="case-section">
             <h3>iOS Integration</h3>
-            <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
-            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.5rem;align-items:center;">
-                <div style="width:100%;max-width:320px;">
-                    <img src="assets/images/tallyios/lockscreentimertallyios.png" alt="Tally Live Activity on the iOS lock screen showing the running timer" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
-                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Lock screen Live Activity — check your timer without unlocking</p>
+            <div style="display:flex;gap:2em;align-items:flex-start;flex-wrap:wrap;margin-top:0.75em;">
+                <div style="flex:1;min-width:0;">
+                    <p>The iOS app integrates deeply with the OS: ActivityKit powers a Live Activity on the lock screen and Dynamic Island so the running timer is always visible without opening the app. WidgetKit adds a home screen widget in small and medium sizes. App Intents expose Siri shortcuts for starting and stopping a timer, and a Focus Mode filter lets Tally automatically activate when a work focus is on.</p>
                 </div>
-                <div style="width:100%;max-width:480px;">
-                    <img src="assets/images/tallyios/iostallylargewidget.png" alt="Tally large iOS home screen widget showing weekly hours and goal progress" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
-                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Large widget — weekly hours and goal progress</p>
-                </div>
-                <div style="width:100%;max-width:320px;">
-                    <img src="assets/images/tallyios/iostallysmallwidget.png" alt="Tally small iOS home screen widget showing start button and goal percentage" style="width:100%;display:block;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 2px 12px rgba(0,0,0,0.08);" loading="lazy">
-                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Small widget — start timer and goal percentage</p>
+                <div style="flex-shrink:0;">
+                    <img src="assets/images/tallyios/lockscreentimertallyios.png" alt="Tally Live Activity on the iOS lock screen showing the running timer" style="width:200px;max-width:100%;display:block;" loading="lazy">
+                    <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.5rem;font-style:italic;text-align:center;">Lock screen Live Activity</p>
                 </div>
             </div>
+            <img src="assets/images/tallyios/widget-background-and-widgets-TALLY.jpg" alt="Tally home screen widgets — large, medium, and small" loading="lazy" style="width:100%;display:block;border-radius:12px;margin-top:1.25em;">
         </div>
 
         <div class="case-section">
@@ -345,8 +341,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

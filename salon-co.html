@@ -77,8 +77,11 @@
 
         <a href="small-business-suite.html" class="back-link">← Small Business Suite</a>
 
-        <h2 class="case-title">The Salon Co.</h2>
-        <p class="case-tagline">A 14-page luxury salon website with a full-stack booking engine — 4-step reservation flow, Stripe deposit checkout, real-time stylist availability from Supabase, Resend transactional email, and automated cancellation with a 48-hour refund policy. Owned outright with no monthly platform fee.</p>
+        <div class="case-hero">
+            <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co. icon" class="case-hero-icon" />
+            <h2 class="case-title">The Salon Co.</h2>
+            <p class="case-tagline">A 14-page luxury salon website with a full-stack booking engine — 4-step reservation flow, Stripe deposit checkout, real-time stylist availability from Supabase, Resend transactional email, and automated cancellation with a 48-hour refund policy. Owned outright with no monthly platform fee.</p>
+        </div>
 
         <div class="case-links">
             <a href="https://the-salon-co.vercel.app/" class="button" target="_blank" rel="noopener noreferrer">Visit Live Site ↗</a>
@@ -256,8 +259,8 @@
                 const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
                 const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
                 const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.1 + Math.random() * 0.15).toFixed(2);
-                const dur = (1.3 + Math.random() * 1).toFixed(2);
+                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
+                const dur = (4 + Math.random() * 2.5).toFixed(2);
                 const del = (Math.random() * 0.9).toFixed(2);
                 const sz  = Math.round(24 + Math.random() * 32);
                 style.sheet.insertRule(

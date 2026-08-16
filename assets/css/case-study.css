@@ -3,6 +3,17 @@
    ============================================================ */
 
 
+.case-hero {
+    margin-bottom: 1.5em;
+}
+.case-hero-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    display: block;
+    margin-bottom: 0.75em;
+}
+
 .back-link {
     display: inline-block;
     font-size: 0.75em;
