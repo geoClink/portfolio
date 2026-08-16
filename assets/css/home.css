@@ -859,6 +859,7 @@ body::before {
     border-radius: 6px;
     flex-shrink: 0;
     margin-top: 0.1em;
+    object-fit: cover;
 }
 .knot-deploy-content {
     display: flex;
