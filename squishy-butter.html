@@ -33,6 +33,9 @@
         .sb-app-links { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: flex-end; margin-top: calc(-1 * var(--space-4)); margin-bottom: var(--space-4); }
         .sb-app-link { display: inline-flex; align-items: center; height: auto; line-height: normal; font-size: 0.85em; font-weight: 600; text-transform: none; letter-spacing: 0.02em; padding: 0; border-radius: 0; box-shadow: none; background: transparent; color: var(--color-text-muted) !important; border: none; border-bottom: 1px solid var(--color-border); cursor: pointer; font-family: inherit; white-space: nowrap; text-decoration: none; transition: color 0.2s ease, border-bottom-color 0.2s ease; }
         .sb-app-link:hover { color: var(--color-heading) !important; background: transparent; box-shadow: none; border-bottom-color: var(--color-heading); }
+        /* Store badge buttons — strip global button chrome so only the badge shows */
+        .sb-badge-btn { padding: 0; height: auto; line-height: 0; background: transparent; border: none; border-radius: 0; box-shadow: none; cursor: pointer; transition: opacity 0.2s ease; }
+        .sb-badge-btn:hover { background: transparent; box-shadow: none; opacity: 0.8; }
         /* Coming Soon modal — portfolio style (white card, thin border, soft shadow) */
         .sb-cs-overlay { position: fixed; inset: 0; z-index: 99999; background: rgba(17, 17, 17, 0.55); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 20px; }
         .sb-cs-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18); padding: 40px 44px 44px; width: 340px; max-width: 100%; position: relative; text-align: center; }
@@ -176,8 +179,8 @@
             <div id="sb-live-bar" class="sb-live-bar"></div>
         </div>
         <div class="sb-app-links">
-            <button type="button" class="sb-app-link" onclick="sbShowComingSoon()">iOS App ↗</button>
-            <button type="button" class="sb-app-link" onclick="sbShowComingSoon()">Android App ↗</button>
+            <button type="button" class="sb-badge-btn" onclick="sbShowComingSoon()" aria-label="Download on the App Store — coming soon"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36" style="display:block;"></button>
+            <button type="button" class="sb-badge-btn" onclick="sbShowComingSoon()" aria-label="Get it on Google Play — coming soon"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="36" style="display:block;"></button>
             <a class="sb-app-link" href="https://www.tiktok.com/@squishybutterco" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
             <a class="sb-app-link" href="https://www.instagram.com/squishybutterco" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
             <a class="sb-app-link" href="https://www.reddit.com/r/SquishyButterCo/" target="_blank" rel="noopener noreferrer">Reddit ↗</a>
