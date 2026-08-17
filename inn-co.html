@@ -81,7 +81,7 @@
         <div class="case-hero">
             <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" class="case-hero-icon" />
             <h2 class="case-title">Crystal Lake Resort</h2>
-            <p class="case-tagline">A real client — Crystal Lake Resort, a Michigan lakefront resort with motel rooms and private weekly cottages — live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, gift cards, automated email campaigns, self-serve cancellation, and a no-code admin dashboard built to eliminate OTA commissions entirely.</p>
+            <p class="case-tagline">A real client — a Michigan lakefront resort with motel rooms and private weekly cottages, live and taking bookings on a platform I designed and built solo. Stripe checkout, gift cards, automated emails, and a no-code admin dashboard — built to eliminate OTA commissions entirely.</p>
         </div>
 
         <div class="case-links">
@@ -129,50 +129,44 @@
             <h3>Admin Dashboard</h3>
             <p>The owner manages every aspect of the property from a protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below — no login needed.</p>
 
-            <div style="margin-top:1.25em;">
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Reservations</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Today's sheet — arrivals and departures for the current day at a glance; printable in one click for front-desk use</li>
-                    <li>Booking history — guest name, room, dates, status, and special requests; limited to 15 most recent by default with a "Show older" control</li>
-                    <li>Returning guest badge — automatically flags any guest whose email appears on 2+ confirmed stays</li>
-                    <li>Search — find any reservation by guest name, email, or phone number; filter by status</li>
-                    <li>Resend confirmation — re-send the booking confirmation email to any guest in one click</li>
-                    <li>Cancel &amp; Refund — cancel any confirmed or pending booking and issue a full Stripe refund in one click from within the dashboard</li>
-                    <li>Availability calendar — tape-chart style grid showing occupancy by room and day; navigate by month</li>
-                    <li>Block dates — mark a room unavailable for maintenance, Expedia bookings, or any external source</li>
-                    <li>Status management — mark bookings confirmed, completed, cancelled, or no-show</li>
-                    <li>Message guest — send a direct email to any guest from within the dashboard</li>
-                    <li>Record a Booking — manually add a reservation from a phone call, Expedia, Hotels.com, or any other external source so the dates are blocked and the booking appears in the reservations list</li>
-                    <li>Section nav — sticky jump bar links directly to Today, Calendar, Reservations, Record Booking, Alerts, and all settings sections without scrolling</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Overview</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Monthly stats — bookings, revenue, occupancy rate, and average nightly rate for the current month</li>
-                    <li>Revenue by room — all-time bar chart showing which rooms generate the most revenue; updates automatically as new bookings come in</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Property</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Room listings — add, edit, and delete rooms with name, slug, price, and description</li>
-                    <li>Minimum stay — per-room minimum night requirement enforced at booking before payment</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Revenue</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Pricing rules — weekend rate multipliers or seasonal date-range rates; highest multiplier wins when rules overlap</li>
-                    <li>Tax rate — lodging tax configured once; applied automatically at checkout as a separate line item</li>
-                    <li>Gift cards — full gift card management table; all purchases, balances, recipients, and senders tracked in one view</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Booking Alerts</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Enter an email address to receive a notification every time a new reservation comes in — visible in the main dashboard, not buried in settings</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Settings</p>
-                <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
-                    <li>Stripe — paste API keys directly in the UI; webhook URL displayed with step-by-step instructions</li>
-                    <li>Resend — API key configured from the dashboard; domain verification guidance included</li>
-                    <li>Setup checklist — guided onboarding with plain-English tooltips on every API key field</li>
-                    <li>Settings collapsed by default — Rooms, Pricing, Emails, and Integrations are grouped under a single accordion so the daily-use controls stay front and center</li>
-                </ul>
-            </div>
+            <ul style="margin:1.25em 0 0;padding-left:1.2em;line-height:2;">
+                <li>Today's sheet — arrivals and departures at a glance; printable in one click for front-desk use</li>
+                <li>Availability calendar — tape-chart occupancy grid by room and day, with date blocking for maintenance or Expedia bookings</li>
+                <li>Record a Booking — manually log reservations from phone calls or OTA platforms so the dates stay blocked</li>
+                <li>Cancel &amp; Refund — cancel any booking and issue a full Stripe refund in one click</li>
+                <li>Custom email templates — subject and body editable with <code>{{variables}}</code> and a live preview</li>
+                <li>Pricing rules — weekend multipliers and seasonal rates; lodging tax applied automatically at checkout</li>
+                <li>Setup checklist — the owner pastes their own Stripe and Resend keys directly into the UI with guided instructions</li>
+            </ul>
+
+            <details class="tech-details" style="margin-top:1.25em;">
+                <summary>Full admin feature list</summary>
+                <div class="tech-details-body">
+                    <h4>Reservations</h4>
+                    <ul>
+                        <li>Booking history — guest name, room, dates, status, and special requests; 15 most recent by default with a "Show older" control</li>
+                        <li>Returning guest badge — automatically flags any guest whose email appears on 2+ confirmed stays</li>
+                        <li>Search — find any reservation by guest name, email, or phone number; filter by status</li>
+                        <li>Resend confirmation — re-send the booking confirmation email to any guest in one click</li>
+                        <li>Status management — mark bookings confirmed, completed, cancelled, or no-show</li>
+                        <li>Message guest — send a direct email to any guest from within the dashboard</li>
+                        <li>Section nav — sticky jump bar links directly to Today, Calendar, Reservations, Record Booking, Alerts, and all settings sections</li>
+                    </ul>
+                    <h4>Overview &amp; Revenue</h4>
+                    <ul>
+                        <li>Monthly stats — bookings, revenue, occupancy rate, and average nightly rate for the current month</li>
+                        <li>Revenue by room — all-time bar chart showing which rooms generate the most revenue</li>
+                        <li>Gift cards — full management table; purchases, balances, recipients, and senders in one view</li>
+                    </ul>
+                    <h4>Property &amp; Settings</h4>
+                    <ul>
+                        <li>Room listings — add, edit, and delete rooms with name, slug, price, and description</li>
+                        <li>Minimum stay — per-room minimum night requirement enforced at booking before payment</li>
+                        <li>Booking alerts — email notification on every new reservation, visible in the main dashboard</li>
+                        <li>Settings collapsed by default — Rooms, Pricing, Emails, and Integrations grouped under one accordion so daily-use controls stay front and center</li>
+                    </ul>
+                </div>
+            </details>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -194,115 +188,57 @@
         </div>
 
         <div class="case-section">
-            <h3>Room Listings</h3>
-            <p>Each suite has its own page with photos, description, pricing, and a direct booking button. Guests arriving from search land on a dedicated room page and can book in one click — the booking form pre-selects their room automatically. The owner manages all room listings from the admin dashboard without touching code.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-rooms.png" alt="Room listings — individual suite pages with photos and booking" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Availability Calendar</h3>
-            <p>The admin includes a tape-chart style occupancy grid — every room across every night of the month in a single view. Navigate by month to spot gaps, identify fully-booked nights, and block dates for maintenance or external bookings. No spreadsheet, no third-party channel manager.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar — tape-chart occupancy grid by room and date" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Booking Confirmation</h3>
-            <p>After payment, the confirmation page fetches live booking details using the Stripe session ID and displays the confirmed room, dates, and total paid — no polling, no waiting. Guests also receive a confirmation email immediately with a cancel link tied to their unique reservation token.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Explore the Inn</h3>
-            <p>A clear navigation section that gives first-time visitors an immediate path forward — browse rooms, visit The Dining Room (open to guests and the public), or learn about the property. Designed so a guest can orient themselves and get to booking without hunting through the nav.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-explore.png" alt="Explore section — rooms, menu, and about the inn" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>FAQ</h3>
-            <p>Three organized sections — Booking, Arrival, and Food — covering the questions guests actually ask before they show up. Structured around the guest's journey rather than a generic catch-all list.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-faq.png" alt="FAQ — Booking, Arrival, and Food sections" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Find Us</h3>
-            <p>An embedded map section so guests can orient themselves before arrival — neighborhood, parking, and nearby landmarks at a glance without leaving the site.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-findus.png" alt="Find Us — embedded map with inn location" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Mobile Experience</h3>
-            <div class="device-showcase-grid">
-                <div class="phone-label-item">
-                    <div class="phone-mockup">
-                        <div class="phone-btns-left"></div>
-                        <div class="phone-screen">
-                            <div class="status-bar" style="background: #000;">
-                                <span class="status-time">9:41</span>
-                                <div class="status-icons">
-                                    <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                                    <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                    <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
-                                </div>
-                            </div>
-                            <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/" title="Crystal Lake Resort — Guest Mobile" loading="lazy"></iframe>
-                            </div>
-                        </div>
+            <h3>Site Highlights</h3>
+            <p>The guest-facing site and admin, feature by feature — click any screenshot to expand.</p>
+            <div class="screenshot-scroll-track">
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-rooms.png" alt="Room listings — individual suite pages with photos and booking" />
                     </div>
-                    <p class="phone-item-label">Guest</p>
+                    <p>Every suite gets its own SEO-optimized page — the booking form pre-selects the room.</p>
                 </div>
-                <div class="phone-label-item">
-                    <div class="phone-mockup">
-                        <div class="phone-btns-left"></div>
-                        <div class="phone-screen">
-                            <div class="status-bar" style="background: #000;">
-                                <span class="status-time">9:41</span>
-                                <div class="status-icons">
-                                    <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                                    <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                    <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
-                                </div>
-                            </div>
-                            <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://the-inn-co.vercel.app/admin.html?demo=true" title="Crystal Lake Resort — Admin Mobile" loading="lazy"></iframe>
-                            </div>
-                        </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar — tape-chart occupancy grid by room and date" />
                     </div>
-                    <p class="phone-item-label">Admin</p>
+                    <p>Tape-chart occupancy grid — every room, every night, no spreadsheet or channel manager.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Gift Cards</h3>
-            <p>Guests can purchase gift cards using quick-pick amounts ($50, $100, $150, $200) or a custom value between $5 and $500 — specifying recipient name, recipient email, optional sender name, and sender email for a buyer receipt. Payment runs through Stripe Checkout. After payment clears, the recipient receives their unique code by email and the buyer receives a separate purchase receipt. At checkout, guests can apply a gift card code against any booking — partial coverage applies the balance as a discount and runs the remainder through Stripe; full coverage bypasses Stripe entirely and confirms the reservation directly. The owner sees every gift card purchase, remaining balance, and redemption status in the admin dashboard. A sitewide promotional banner drives awareness across every page of the site, dismissible per session.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-gift-card.png" alt="Gift card purchase page — amount picker, recipient details, and send button" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Custom Email Templates</h3>
-            <p>The owner writes and customizes all three automated email templates — booking confirmation, pre-arrival reminder, and post-checkout review request — directly inside the admin dashboard. Subject line and body are both editable, with a reference panel showing every available variable (<code>{{guest_name}}</code>, <code>{{room_name}}</code>, <code>{{check_in_date}}</code>, etc.). A live preview renders a fully populated sample email before saving. Each template can be toggled on or off independently. Changes take effect on the next send with no code deployment.</p>
-        </div>
-
-        <div class="case-section">
-            <h3>Review Integration</h3>
-            <p>The homepage pulls in live guest reviews from Google and TripAdvisor — displayed in platform-styled panels with ratings, reviewer names, locations, and review text. TripAdvisor reviews embed via their official free widget available to any claimed business. Google reviews surface through the property's Google Business Profile. Both panels link directly to the full review listing on each platform.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" style="width:100%;display:block;" />
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" />
+                    </div>
+                    <p>Confirmation page pulls live details from the Stripe session — email includes a self-serve cancel link.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-gift-card.png" alt="Gift card purchase page — amount picker, recipient details, and send button" />
+                    </div>
+                    <p>Gift cards from $5–$500 — a full balance bypasses Stripe entirely; partial coverage applies as a discount.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" />
+                    </div>
+                    <p>Live Google and TripAdvisor reviews, pulled onto the homepage.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-explore.png" alt="Explore section — rooms, menu, and about the inn" />
+                    </div>
+                    <p>Explore section orients first-time guests — rooms, dining, and the property.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-faq.png" alt="FAQ — Booking, Arrival, and Food sections" />
+                    </div>
+                    <p>FAQ structured around the guest journey — Booking, Arrival, Food.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/theinnco/screenshot-findus.png" alt="Find Us — embedded map with inn location" />
+                    </div>
+                    <p>Embedded map — neighborhood, parking, and landmarks before arrival.</p>
+                </div>
             </div>
         </div>
 
@@ -310,6 +246,28 @@
             <h3>Find Your Reservation</h3>
             <p>Guests look up any booking with just their email and check-in date — no account required.</p>
             <video class="case-video" src="assets/images/theinnco/findbookingvideo.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="case-section">
+            <h3>Mobile Experience</h3>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen">
+                        <div class="status-bar" style="background: #000;">
+                            <span class="status-time">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
+                            </div>
+                        </div>
+                        <div class="phone-viewport">
+                            <iframe class="phone-demo" src="https://the-inn-co.vercel.app/" title="Crystal Lake Resort — Guest Mobile" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="case-section">
@@ -348,17 +306,8 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A direct booking platform the owner controls outright — capturing bookings at zero commission versus 15–25% on OTA platforms. Guests book, pay, get an immediate confirmation with full details, look up their reservation anytime, and cancel themselves — all without any involvement from the owner. Pre-arrival and post-stay emails run automatically every day using templates the owner writes themselves.</p>
-            <p>Revenue beyond room bookings is captured through gift cards — a full purchase and delivery flow backed by Stripe, with the owner seeing every sale, balance, and redemption in the admin. The overview dashboard tracks monthly bookings, revenue, occupancy, and average nightly rate, with an all-time revenue breakdown by room so the owner knows which suite is carrying the business.</p>
-            <p>A non-technical client can connect Stripe and Resend, configure their rooms, write their email templates, set lodging tax, define weekend and seasonal pricing, add sister property referrals, and start taking bookings entirely through the admin dashboard — no developer needed after handoff. The multi-tenant architecture means the same platform is white-labeled for additional properties at the cost of a new row and a Vercel deploy.</p>
-            <p>Designed and built solo. Part of the Small Business Platform Suite.</p>
-            <p>This platform is now deployed for a live client — <strong>Crystal Lake Resort</strong>, a Michigan lakefront resort live at <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">crystallakeresortmi.com ↗</a>.</p>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
-                <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/images/crystal-lake/crystal-lake-qr.png" alt="QR code — scan to visit Crystal Lake Resort" style="width:160px;height:160px;display:block;" />
-                </a>
-                <span style="font-size:0.8em;color:var(--color-text-muted);">Scan or click to visit the live client site</span>
-            </div>
+            <p>A direct booking platform the owner controls outright — live at <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">crystallakeresortmi.com ↗</a>, capturing bookings at zero commission versus 15–25% on OTA platforms. Guests book, pay, get an immediate confirmation, look up their reservation anytime, and cancel themselves. Pre-arrival and post-stay emails run automatically using templates the owner writes, and gift cards add a second revenue stream with every sale, balance, and redemption tracked in the admin.</p>
+            <p>A non-technical client can connect Stripe and Resend, configure rooms, set lodging tax and seasonal pricing, and start taking bookings entirely through the dashboard — no developer needed after handoff. The multi-tenant architecture means white-labeling the platform for another property costs one database row and a Vercel deploy. Designed and built solo as part of the Small Business Suite.</p>
         </div>
 
         <div class="case-section og-preview-section">
@@ -374,6 +323,12 @@
                     <p class="og-card-desc">Motel rooms with lake views and private weekly cottages on Michigan's most beautiful inland lake.</p>
                 </div>
             </a>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
+                <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/crystal-lake/crystal-lake-qr.png" alt="QR code — scan to visit Crystal Lake Resort" style="width:160px;height:160px;display:block;" />
+                </a>
+                <span style="font-size:0.8em;color:var(--color-text-muted);">Scan or click to visit the live client site</span>
+            </div>
         </div>
 
         <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">

@@ -101,7 +101,9 @@
             </div>
             <div class="hero-butter-col">
                 <div class="hero-butter-wrap">
+                    <img src="assets/images/squishy-butter/squishylogo.svg" alt="" aria-hidden="true" class="hero-butter-logo-fallback" />
                     <iframe
+                        id="hero-butter-iframe"
                         src="https://squishybutter.app/?embed=true&sound=clicker"
                         class="hero-butter-iframe"
                         title="Squishy Butter — squeeze me"
@@ -464,17 +466,17 @@
                 <article class="strength-card">
                     <span class="strength-card-num">01</span>
                     <h3>I figure things out</h3>
-                    <p>Every project here meant learning something new — a new stack, a new API, a new domain. I dig in and build through it.</p>
+                    <p>I picked up Kotlin and Android cold mid-contract at Tripsetta and kept the platform moving. Every project here meant learning something the job needed — I dig in and build through it.</p>
                 </article>
                 <article class="strength-card">
                     <span class="strength-card-num">02</span>
                     <h3>I lead with design</h3>
-                    <p>Design matters to me. Every project gets clean interfaces and flows that actually feel like they belong in the product.</p>
+                    <p>Sort-Tek shipped with 100/100 Lighthouse scores on mobile and desktop. A client called her site "beautiful" the day it launched. Design isn't a pass at the end — it's in the first prototype.</p>
                 </article>
                 <article class="strength-card">
                     <span class="strength-card-num">03</span>
                     <h3>I sweat the details</h3>
-                    <p>I work across the full stack — iOS, backend, and web. What I care about is getting it right and shipping on time. Every time.</p>
+                    <p>Tally hit 18K+ App Store impressions and nearly 200 downloads. Sort-Tek delivered in under a week via referral. I work across iOS, backend, and web — and I care about getting it right every time.</p>
                 </article>
             </div>
         </section>
@@ -533,6 +535,33 @@
                 const el = document.getElementById('sb-live-stats');
                 if (el && parts.length) el.textContent = parts.join(' · ');
             }).catch(function () {});
+        })();
+    </script>
+
+    <script>
+        // Hero iframe — fade in on load, fall back to logo after 8s
+        (function () {
+            const iframe = document.getElementById('hero-butter-iframe');
+            const fallback = document.querySelector('.hero-butter-logo-fallback');
+            if (!iframe || !fallback) return;
+            let revealed = false;
+
+            function reveal() {
+                if (revealed) return;
+                revealed = true;
+                iframe.style.opacity = '1';
+                fallback.style.opacity = '0';
+            }
+
+            iframe.addEventListener('load', reveal);
+
+            // If iframe hasn't loaded in 8s, keep showing the logo
+            setTimeout(function () {
+                if (!revealed) {
+                    iframe.style.display = 'none';
+                    fallback.style.opacity = '0.9';
+                }
+            }, 8000);
         })();
     </script>
 
@@ -652,6 +681,8 @@
 
     <script>
         (() => {
+            if (sessionStorage.getItem('sb-butter-played')) return;
+            sessionStorage.setItem('sb-butter-played', '1');
             const style = document.createElement('style');
             document.head.appendChild(style);
             for (let i = 0; i < 11; i++) {
