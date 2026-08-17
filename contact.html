@@ -230,6 +230,18 @@
             opacity: 0.8 !important;
         }
 
+        .contact-form input[type="submit"]:disabled {
+            opacity: 0.55 !important;
+            cursor: not-allowed !important;
+        }
+
+        .form-error {
+            font-size: 0.85em;
+            color: #c0392b;
+            margin: 0.5em 0 0;
+            min-height: 1.2em;
+        }
+
         .form-success {
             display: none;
         }
@@ -466,13 +478,13 @@
             <a href="https://github.com/geoClink" class="button" target="_blank" rel="noopener noreferrer">GitHub <i class="icon brands fa-github"></i></a>
         </div>
 
+        <span class="contact-form-label" id="form-label">Send a message</span>
+        <p class="contact-response-note">I typically respond within 24 hours.</p>
+
         <blockquote class="contact-testimonial">
             <p>"George is fast, knowledgeable, proactive, and always willing to dig deeper than what's immediately in front of him. A fantastic fit for any fast-growing company looking for a team that truly takes ownership and delivers results."</p>
             <footer>— LaShelle McClaster, Founder, Tripsetta</footer>
         </blockquote>
-
-        <span class="contact-form-label" id="form-label">Send a message</span>
-        <p class="contact-response-note">I typically respond within 24 hours.</p>
 
         <div id="form-success" class="form-success">
             <p class="form-success-heading">Thanks, I'll be in touch.</p>
@@ -490,7 +502,8 @@
             <textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
             <input type="hidden" name="inquiry_type" id="inquiry_type" value="" />
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
-            <input type="submit" value="Send Message" />
+            <input type="submit" value="Send Message" id="form-submit" />
+            <p id="form-error" class="form-error" aria-live="polite"></p>
         </form>
 
     </div>
@@ -563,6 +576,12 @@
             });
             if (!valid) return;
 
+            const submitBtn = document.getElementById('form-submit');
+            const errorEl = document.getElementById('form-error');
+            submitBtn.disabled = true;
+            submitBtn.value = 'Sending…';
+            errorEl.textContent = '';
+
             const data = {
                 name:         sanitize(document.getElementById('name').value, 100),
                 email:        sanitize(document.getElementById('email').value, 200),
@@ -595,10 +614,14 @@
                     }, 300);
                 } else {
                     const body = await res.json().catch(() => ({}));
-                    alert(body.error || 'Something went wrong. Please try again.');
+                    errorEl.textContent = body.error || 'Something went wrong. Please try again.';
+                    submitBtn.disabled = false;
+                    submitBtn.value = 'Send Message';
                 }
             } catch (err) {
-                alert('Could not send message. Check your connection and try again.');
+                errorEl.textContent = 'Could not send message. Check your connection and try again.';
+                submitBtn.disabled = false;
+                submitBtn.value = 'Send Message';
             }
         });
     </script>

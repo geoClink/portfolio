@@ -591,6 +591,7 @@
             }
 
             function startTimer() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
                 clearInterval(timer);
                 timer = setInterval(function () { if (!paused) goTo(current + 1); }, DURATION);
             }
@@ -631,9 +632,12 @@
     </script>
 
     <script>
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         // Stat count-up
         function countUp(el) {
             const target = parseInt(el.dataset.target);
+            if (reduceMotion) { el.textContent = target; return; }
             const duration = 1000;
             const start = performance.now();
             (function update(now) {
@@ -649,7 +653,7 @@
         document.querySelectorAll('.stat-number').forEach(el => statObs.observe(el));
 
         // Magnetic hero buttons
-        document.querySelectorAll('.hero-btn-primary, .hero-btn-secondary').forEach(btn => {
+        if (!reduceMotion) document.querySelectorAll('.hero-btn-primary, .hero-btn-secondary').forEach(btn => {
             btn.addEventListener('mousemove', e => {
                 const r = btn.getBoundingClientRect();
                 const dx = (e.clientX - (r.left + r.width / 2)) * 0.28;
@@ -664,7 +668,7 @@
         });
 
         // 3D tilt on screenshot cards
-        document.querySelectorAll('.screenshot-card').forEach(card => {
+        if (!reduceMotion) document.querySelectorAll('.screenshot-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const r = card.getBoundingClientRect();
                 const rotX = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -7;
@@ -683,6 +687,7 @@
         (() => {
             if (sessionStorage.getItem('sb-butter-played')) return;
             sessionStorage.setItem('sb-butter-played', '1');
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             const style = document.createElement('style');
             document.head.appendChild(style);
             for (let i = 0; i < 11; i++) {

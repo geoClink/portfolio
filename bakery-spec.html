@@ -366,6 +366,7 @@
     <script src="assets/js/main.js"></script>
     <script>
         (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             const style = document.createElement('style');
             document.head.appendChild(style);
             for (let i = 0; i < 11; i++) {

@@ -3,6 +3,7 @@
 <head>
     <title>Detroit Sports Chatbot — Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/detroit-sports-chatbot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -280,6 +281,7 @@
     <script src="assets/js/main.js"></script>
     <script>
         (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             const style = document.createElement('style');
             document.head.appendChild(style);
             for (let i = 0; i < 11; i++) {
