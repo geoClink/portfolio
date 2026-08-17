@@ -2,6 +2,10 @@
    Case Study — shared styles for all case study pages
    ============================================================ */
 
+@keyframes case-hero-icon-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
 .case-hero {
     margin-bottom: 1.5em;
@@ -14,7 +18,8 @@
     display: block;
     flex-shrink: 0;
     margin-bottom: 0.75em;
-    object-fit: cover;
+    object-fit: contain;
+    animation: case-hero-icon-in 0.55s ease 0.1s both;
 }
 
 .back-link {
