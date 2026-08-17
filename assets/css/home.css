@@ -1141,7 +1141,7 @@ body::before {
     gap: 0.5em;
 }
 .screenshot-card-name {
-    font-size: 0.85em;
+    font-size: 0.65em;
     font-weight: 600;
     color: var(--color-heading);
 }
