@@ -100,7 +100,7 @@
     align-items: flex-start;
     gap: 1em;
     background: var(--color-surface);
-    border-left: 3px solid var(--color-heading);
+    border-left: 3px solid var(--case-accent, var(--color-heading));
     border-radius: 0 8px 8px 0;
     padding: 1.1em 1.4em;
     margin-bottom: var(--space-6);
@@ -144,6 +144,8 @@
     text-transform: uppercase;
     color: var(--color-text-muted);
     margin: 0 0 var(--space-2);
+    border-left: 3px solid var(--case-accent, var(--color-heading));
+    padding-left: 0.6em;
 }
 .case-section p {
     font-size: 1em;
@@ -895,4 +897,35 @@ p.ipad-item-label {
     .og-card-desc {
         display: none;
     }
+}
+
+/* At-a-glance stat row — sits under .case-meta on case study pages */
+.case-glance {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.6em;
+    margin: 1.25em 0 0;
+}
+.case-glance-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.7em 0.9em;
+}
+.case-glance-label {
+    font-size: 0.62em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 0.25em;
+}
+.case-glance-value {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--color-heading);
+    line-height: 1.45;
+}
+@media (max-width: 600px) {
+    .case-glance { grid-template-columns: 1fr 1fr; }
 }

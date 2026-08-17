@@ -51,6 +51,7 @@
   gtag('js', new Date());
   gtag('config', 'G-GTLNJGZN8P');
 </script>
+    <style>:root { --case-accent: #16a34a; }</style>
 </head>
 <body class="is-preload">
 
@@ -99,6 +100,25 @@
         </div>
 
         <div class="case-meta">Node.js · Supabase · Stripe · Resend · Vercel · Live client</div>
+        <div class="case-glance">
+            <div class="case-glance-item">
+                <div class="case-glance-label">Role</div>
+                <div class="case-glance-value">Solo build</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Timeline</div>
+                <div class="case-glance-value">4 weeks to handoff</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Status</div>
+                <div class="case-glance-value">Live client — taking bookings</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Replaces</div>
+                <div class="case-glance-value">$100–200/mo Mindbody</div>
+            </div>
+        </div>
+
 
         <div class="case-section">
             <h3>The Problem</h3>
@@ -140,33 +160,38 @@
             <p>Everything runs from a single protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below, no login needed.</p>
             <p>A 7-step onboarding wizard walks non-technical owners through setup in the right order: business info, connecting Stripe (publishable key, secret key, and webhook, each saved individually), connecting Resend with a live test email, adding their first service, setting weekly availability, and optionally connecting a custom domain via the Cloudflare API.</p>
 
-            <div style="margin-top:1.25em;">
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Operations</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>At-a-glance overview — today's schedule, monthly revenue, upcoming appointments, unread messages</li>
-                    <li>Appointments — one-click cancel + Stripe refund, private notes, CSV export</li>
-                    <li>Client directory — searchable by email, full visit history, session count, total spend</li>
-                    <li>Reviews — approval queue before anything goes live, feature toggle for homepage</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Services &amp; Scheduling</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Services — image upload, drag-to-reorder, multiple variants per service with independent pricing and duration</li>
-                    <li>Availability — per-day rules with independent hours; weekdays and weekends configured separately</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Monetization</p>
-                <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
-                    <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side; partial balances accepted with the remainder charged via Stripe, auto-restored on cancellation</li>
-                    <li>Session Packages — bundles of sessions sold at a discounted rate; Stripe checkout issues a gift card code to the client by email, which they apply at booking; balance decrements per session until exhausted</li>
-                    <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
-                </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Site Control</p>
-                <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
-                    <li>Appearance — 5 color palettes, 5 font combinations; applies to the live site instantly</li>
-                    <li>Content — hero, bio, FAQ, site banner all editable without code</li>
-                    <li>SEO — custom meta title, description, and Open Graph tags per page</li>
-                    <li>Integrations — connect Stripe and Resend directly from the UI</li>
-                </ul>
-            </div>
+            <ul style="margin:1.25em 0 0;padding-left:1.2em;line-height:2;">
+                <li>Appointments — one-click cancel + Stripe refund, private notes, CSV export</li>
+                <li>Availability — per-day rules with independent hours; weekdays and weekends configured separately</li>
+                <li>Services — multiple variants per service with independent pricing and duration, drag-to-reorder</li>
+                <li>Gift cards, session packages, and discount codes — all validated server-side, all managed from the dashboard</li>
+                <li>Appearance — 5 color palettes and 5 font combinations that apply to the live site instantly</li>
+                <li>Content and SEO — hero, bio, FAQ, banner, and per-page meta tags all editable without code</li>
+                <li>Integrations — the owner pastes their own Stripe and Resend keys directly into the UI</li>
+            </ul>
+
+            <details class="tech-details" style="margin-top:1.25em;">
+                <summary>Full admin feature list</summary>
+                <div class="tech-details-body">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li>At-a-glance overview — today's schedule, monthly revenue, upcoming appointments, unread messages</li>
+                        <li>Client directory — searchable by email, full visit history, session count, total spend</li>
+                        <li>Reviews — approval queue before anything goes live, feature toggle for homepage</li>
+                    </ul>
+                    <h4>Monetization</h4>
+                    <ul>
+                        <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side; partial balances accepted with the remainder charged via Stripe, auto-restored on cancellation</li>
+                        <li>Session Packages — bundles of sessions sold at a discounted rate; Stripe checkout issues a gift card code to the client by email, which they apply at booking; balance decrements per session until exhausted</li>
+                        <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
+                    </ul>
+                    <h4>Services &amp; Site Control</h4>
+                    <ul>
+                        <li>Services — image upload, drag-to-reorder, variants with independent pricing and duration</li>
+                        <li>SEO — custom meta title, description, and Open Graph tags per page</li>
+                    </ul>
+                </div>
+            </details>
 
             <p class="device-view-label desktop-only">Desktop</p>
             <div class="browser-mockup desktop-only">
@@ -189,18 +214,33 @@
         </div>
 
         <div class="case-section">
-            <h3>Promotional Banner</h3>
-            <p>The owner can set a site-wide alert banner from the admin dashboard — custom text, custom destination. In this example it links directly to checkout with a 30-minute consultation pre-selected, so a visitor goes from seeing the offer to being one click from booking. No code change, no developer call.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thewellnessco/screenshot-banneralert.png" alt="Customizable promotional banner linking to pre-selected checkout" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Gift Cards</h3>
-            <p>Gift cards are a first-class feature — promoted on the site, purchased via Stripe, and delivered to the recipient by email with a unique code. Clients can check their remaining balance anytime and redeem at checkout.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thewellnessco/screenshot-giftcardbanner.png" alt="Gift card promotional banner" style="width:100%;display:block;" />
+            <h3>Site Highlights</h3>
+            <p>The client-facing site, feature by feature — click any screenshot to expand.</p>
+            <div class="screenshot-scroll-track">
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-serviceselection.png" alt="Service selection page with variants and educational content" />
+                    </div>
+                    <p>Service pages pair variant selection with education — clients compare session lengths and prices before booking.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-scheduler.png" alt="Booking scheduler showing live availability" />
+                    </div>
+                    <p>Booking calendar shows real-time availability from the schedule the owner sets in the admin.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-giftcardbanner.png" alt="Gift card promotional banner" />
+                    </div>
+                    <p>Gift cards purchased via Stripe and emailed to the recipient with a unique code.</p>
+                </div>
+                <div class="desktop-ss-item">
+                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-banneralert.png" alt="Customizable promotional banner linking to pre-selected checkout" />
+                    </div>
+                    <p>Owner-set promo banner — this one links straight to checkout with a consultation pre-selected.</p>
+                </div>
             </div>
         </div>
 
@@ -211,61 +251,23 @@
         </div>
 
         <div class="case-section">
-            <h3>Service Selection</h3>
-            <p>Each service page does two things at once — lets the client choose from variants and session lengths, and educates them on what the service is and what to expect before they book. The owner controls all service offerings, descriptions, and pricing from the admin dashboard.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thewellnessco/screenshot-serviceselection.png" alt="Service selection page with variants and educational content" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Booking Scheduler</h3>
-            <p>The booking calendar shows real-time availability based entirely on the schedule the owner sets in the admin dashboard — hours, blocked dates, and service durations. No developer needed to make changes. The owner updates their availability and the calendar reflects it immediately.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thewellnessco/screenshot-scheduler.png" alt="Booking scheduler showing live availability" style="width:100%;display:block;" />
-            </div>
-        </div>
-
-        <div class="case-section">
             <h3>Mobile Experience</h3>
-            <div class="device-showcase-grid">
-                <div class="phone-label-item">
-                    <div class="phone-mockup">
-                        <div class="phone-btns-left"></div>
-                        <div class="phone-screen">
-                            <div class="status-bar">
-                                <span class="status-time">9:41</span>
-                                <div class="status-icons">
-                                    <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                                    <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                    <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
-                                </div>
-                            </div>
-                            <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://whitebearharmonics.com/" title="White Bear Harmonics — Live Site Mobile" loading="lazy"></iframe>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span class="status-time">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
                             </div>
                         </div>
-                    </div>
-                    <p class="phone-item-label">Client</p>
-                </div>
-                <div class="phone-label-item">
-                    <div class="phone-mockup">
-                        <div class="phone-btns-left"></div>
-                        <div class="phone-screen">
-                            <div class="status-bar" style="background: #000;">
-                                <span class="status-time">9:41</span>
-                                <div class="status-icons">
-                                    <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                                    <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                    <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
-                                </div>
-                            </div>
-                            <div class="phone-viewport">
-                                <iframe class="phone-demo" src="https://the-wellness-co.vercel.app/admin.html?demo=true" title="The Wellness Co. — Admin Mobile" loading="lazy"></iframe>
-                            </div>
+                        <div class="phone-viewport">
+                            <iframe class="phone-demo" src="https://whitebearharmonics.com/" title="White Bear Harmonics — Live Site Mobile" loading="lazy"></iframe>
                         </div>
                     </div>
-                    <p class="phone-item-label">Admin</p>
                 </div>
             </div>
         </div>
@@ -326,10 +328,12 @@
         <div class="case-section">
             <h3>Post-Launch</h3>
             <p>Shipping the platform was the start, not the end. After go-live I continued iterating on the client site based on real usage — treating it as a production product, not a finished deliverable.</p>
-            <p><strong>Booking notifications.</strong> Added practitioner email notifications for every new booking — whether paid through Stripe or a free consultation — so no appointment ever goes unnoticed. Both the Stripe webhook path and the free-booking path fire independently.</p>
-            <p><strong>FAQ page — accessibility and security.</strong> Audited and fixed the FAQ page as a production-readiness exercise: added <code>aria-expanded</code> state to all accordion buttons so screen readers communicate open/closed correctly; added explicit <code>type="button"</code> to prevent implicit form submission; fixed an XSS vulnerability where dynamic FAQ content from the API was injected into <code>innerHTML</code> without sanitization — now all API content is escaped before rendering.</p>
-            <p><strong>FAQ page — SEO and conversion.</strong> Changed the <code>&lt;h1&gt;</code> from brand copy to "Frequently Asked Questions" for keyword targeting; promoted category labels to semantic <code>&lt;h3&gt;</code> elements; removed client-side FAQ schema injection that was duplicating the server-side schema already injected by the render layer. Added in-content booking CTAs after the two highest-intent questions ("What should I expect?" and "How many sessions will I need?"), a newsletter email capture at the bottom of the page, and GA4 event tracking on every accordion open — so the practitioner now has data on which questions visitors care about most.</p>
-            <p><strong>FAQ page — smooth animation.</strong> Replaced the instant <code>display: none/block</code> accordion toggle with a <code>max-height</code> CSS transition, and grouped questions into labeled categories (Getting started, Your sessions, Pricing &amp; policies, Good to know) using semantic structure that works for both the static server-rendered HTML and the dynamic API-loaded content.</p>
+            <ul>
+                <li><strong>Booking notifications</strong> — the practitioner now gets an email for every new booking, paid or free consultation, fired independently by both code paths so no appointment goes unnoticed.</li>
+                <li><strong>Fixed an XSS vulnerability</strong> — dynamic FAQ content from the API was injected into <code>innerHTML</code> without sanitization; all API content is now escaped before rendering.</li>
+                <li><strong>Accessibility audit</strong> — added <code>aria-expanded</code> state to accordion buttons for screen readers and explicit <code>type="button"</code> to prevent implicit form submission.</li>
+                <li><strong>SEO and conversion tuning</strong> — keyword-targeted <code>&lt;h1&gt;</code>, semantic heading structure, booking CTAs after the two highest-intent questions, newsletter capture, and GA4 event tracking on every accordion open so the practitioner can see which questions visitors care about most.</li>
+            </ul>
         </div>
 
         <div class="case-section">
@@ -342,12 +346,6 @@
                 <li><strong>No deployment work to onboard.</strong> The multi-tenant architecture means adding a new practitioner requires no code changes, no schema updates, and no new deployment.</li>
             </ul>
             <p>Designed and built solo in four weeks. Part of the Small Business Platform Suite.</p>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
-                <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/images/thewellnessco/whitebearharmonicsgradientqrcode.png" alt="QR code — scan to visit White Bear Harmonics live site" style="width:160px;height:160px;display:block;" />
-                </a>
-                <span style="font-size:0.8em;color:var(--color-text-muted);">Scan or click to visit the live client site</span>
-            </div>
         </div>
 
         <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);">
@@ -371,6 +369,12 @@
                     <p class="og-card-desc">QHHT, Reiki, Biofield Tuning, and more — book a session with Karen L Alexander, PhD.</p>
                 </div>
             </a>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
+                <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/thewellnessco/whitebearharmonicsgradientqrcode.png" alt="QR code — scan to visit White Bear Harmonics live site" style="width:160px;height:160px;display:block;" />
+                </a>
+                <span style="font-size:0.8em;color:var(--color-text-muted);">Scan or click to visit the live client site</span>
+            </div>
         </div>
 
         <div class="case-section og-preview-section">

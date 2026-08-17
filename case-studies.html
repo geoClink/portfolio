@@ -252,12 +252,6 @@
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
             .cs-card-btns { padding-top: 0.6em; flex-wrap: wrap; }
-            .knot-deploy-desc {
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
         }
 
         .knot-deploy-group {
@@ -272,76 +266,41 @@
             color: var(--color-text-muted);
             margin-bottom: 0.6em;
         }
-        .knot-deploy-list {
+        .knot-chips {
             display: flex;
-            flex-direction: column;
-            gap: 0.35em;
+            flex-wrap: wrap;
+            gap: 0.5em;
         }
-        .knot-deploy-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.65em;
-            padding: 0.7em 0.85em;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-        }
-        .knot-deploy-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            flex-shrink: 0;
-            margin-top: 0.1em;
-        }
-        .knot-deploy-content {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3em;
-            flex: 1;
-            min-width: 0;
-        }
-        .knot-deploy-header {
-            display: flex;
+        .knot-chip {
+            display: inline-flex;
             align-items: center;
             gap: 0.5em;
-            flex-wrap: wrap;
-        }
-        .knot-deploy-name {
-            font-size: 0.82em;
-            font-weight: 600;
-            color: var(--color-heading);
-        }
-        .knot-deploy-tag {
-            font-size: 0.6em;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
+            padding: 0.45em 0.85em;
+            background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 999px;
-            padding: 0.2em 0.55em;
-            white-space: nowrap;
+            text-decoration: none;
+            color: var(--color-heading);
+            font-size: 0.78em;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .knot-deploy-desc {
-            font-size: 0.73em;
+        .knot-chip:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px var(--color-shadow);
+        }
+        .knot-chip img {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .knot-chip-tag {
+            font-size: 0.72em;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
             color: var(--color-text-muted);
-            line-height: 1.5;
-            margin: 0;
-        }
-        .knot-deploy-btns {
-            display: flex;
-            gap: 0.4em;
-        }
-        .knot-deploy-btns .cs-cta {
-            flex: 1;
-            text-align: center;
-            min-width: 0;
-        }
-        @media (max-width: 600px) {
-            .knot-deploy-btns .cs-cta {
-                padding: 0.35em 0.45em;
-                font-size: 0.65em;
-            }
         }
     </style>
     <script type="application/ld+json">
@@ -420,92 +379,37 @@
                     </div>
                     <div class="knot-deploy-group">
                         <div class="knot-deploy-label">Live Deployments</div>
-                        <div class="knot-deploy-list">
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thewellnessco/whitebear-logo.png" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">White Bear Harmonics</span>
-                                        <span class="knot-deploy-tag">Real client</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">The platform's first real client — a Michigan wellness studio with a fully live booking platform, Stripe payments, and an owner admin dashboard. The owner now manages their own bookings and payouts through a custom dashboard — no Square, no Mindbody, no monthly SaaS fee.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="wellness-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://whitebearharmonics.com/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/crystal-lake/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">Crystal Lake Resort</span>
-                                        <span class="knot-deploy-tag">Real client</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">A Michigan lakefront resort running on the platform's direct booking system — motel rooms and private weekly cottages, Stripe payments, gift cards, and an owner admin dashboard. No third-party booking fees, best rates guaranteed on-site.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="inn-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thebakeryco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Bakery Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Five-surface ordering platform — customer site, admin dashboard, iOS POS, iOS customer app, and AI ordering via MCP.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="bakery-spec.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thesalonco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Salon Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">14-page marketing and booking site — custom branding, 4-step reservation flow, Stripe deposits, and real-time stylist availability.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="salon-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thesportsbarco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Sports Bar Co.</span>
-                                        <span class="knot-deploy-tag">Spec</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Reservations and events platform — table booking, live events calendar, and party inquiry form.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="sports-bar-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="knot-deploy-item">
-                                <img src="assets/images/thelandscapeco/favicon.svg" alt="" class="knot-deploy-icon" />
-                                <div class="knot-deploy-content">
-                                    <div class="knot-deploy-header">
-                                        <span class="knot-deploy-name">The Landscape Co.</span>
-                                        <span class="knot-deploy-tag">In talks</span>
-                                    </div>
-                                    <p class="knot-deploy-desc">Multi-page garden design studio — photo-driven hero headers, 9 portfolio project detail pages, portfolio filter, and a live contact form backed by the platform API.</p>
-                                    <div class="knot-deploy-btns">
-                                        <a href="landscape-co.html" class="cs-cta">Case Study →</a>
-                                        <a href="https://landscape-co-ten.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Website ↗</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="knot-chips">
+                            <a href="wellness-co.html" class="knot-chip">
+                                <img src="assets/images/thewellnessco/whitebear-logo.png" alt="" />
+                                White Bear Harmonics
+                                <span class="knot-chip-tag">Real client</span>
+                            </a>
+                            <a href="inn-co.html" class="knot-chip">
+                                <img src="assets/images/crystal-lake/favicon.svg" alt="" />
+                                Crystal Lake Resort
+                                <span class="knot-chip-tag">Real client</span>
+                            </a>
+                            <a href="bakery-spec.html" class="knot-chip">
+                                <img src="assets/images/thebakeryco/favicon.svg" alt="" />
+                                The Bakery Co.
+                                <span class="knot-chip-tag">Spec</span>
+                            </a>
+                            <a href="salon-co.html" class="knot-chip">
+                                <img src="assets/images/thesalonco/favicon.svg" alt="" />
+                                The Salon Co.
+                                <span class="knot-chip-tag">Spec</span>
+                            </a>
+                            <a href="sports-bar-co.html" class="knot-chip">
+                                <img src="assets/images/thesportsbarco/favicon.svg" alt="" />
+                                The Sports Bar Co.
+                                <span class="knot-chip-tag">Spec</span>
+                            </a>
+                            <a href="landscape-co.html" class="knot-chip">
+                                <img src="assets/images/thelandscapeco/favicon.svg" alt="" />
+                                The Landscape Co.
+                                <span class="knot-chip-tag">In talks</span>
+                            </a>
                         </div>
                     </div>
                 </div>
