@@ -1,19 +1,19 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Local LLM Speaker — Case Study | George Clinkscales Jr.</title>
+    <title>Local LLM Speaker - Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/llm-speaker.html" />
-    <meta property="og:title" content="Local LLM Speaker — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Case study: A fully private offline smart speaker built from scratch — Raspberry Pi 5, custom ESP32-S3 PCB, local LLM, no cloud." />
+    <meta property="og:title" content="Local LLM Speaker - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Case study: A fully private offline smart speaker built from scratch - Raspberry Pi 5, custom ESP32-S3 PCB, local LLM, no cloud." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/llm-speaker.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/logo.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Local LLM Speaker — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="A fully private offline smart speaker — Raspberry Pi 5, custom ESP32-S3 PCB, local LLM, no cloud." />
+    <meta name="twitter:title" content="Local LLM Speaker - Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="A fully private offline smart speaker - Raspberry Pi 5, custom ESP32-S3 PCB, local LLM, no cloud." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/logo.jpg" />
     <meta name="description" content="Case study: A fully private, offline smart speaker built from scratch on Raspberry Pi 5 with a custom ESP32-S3 PCB, faster-Whisper STT, Ollama LLM, and Piper TTS." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -137,7 +137,7 @@
         <div class="case-hero">
             <img src="assets/images/llm-speaker/favicon.svg" alt="Local LLM Speaker icon" class="case-hero-icon" />
             <h2 class="case-title">Local LLM Speaker</h2>
-            <p class="case-tagline">A fully private, offline smart speaker built from scratch — no cloud, no subscription, no voice data leaving the home network.</p>
+            <p class="case-tagline">A fully private, offline smart speaker built from scratch - no cloud, no subscription, no voice data leaving the home network.</p>
         </div>
 
         <div class="case-meta">Python · Faster-Whisper · Ollama · Qwen3 4B · Piper TTS · Node.js · Express · WebSockets · Raspberry Pi 5 · ESP32-S3 · 2026 · Personal Project</div>
@@ -148,7 +148,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Privacy</div>
-                <div class="case-glance-value">Fully local — no cloud</div>
+                <div class="case-glance-value">Fully local - no cloud</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Hardware</div>
@@ -163,17 +163,17 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Every mainstream smart speaker — Alexa, Google Home, Siri — sends your voice to a remote server to process it. Your home conversations, your daily schedule, your shopping list: all of it leaves the house. The only way to get a capable AI assistant without that tradeoff is to build one that never makes the call.</p>
+            <p>Every mainstream smart speaker - Alexa, Google Home, Siri - sends your voice to a remote server to process it. Your home conversations, your daily schedule, your shopping list: all of it leaves the house. The only way to get a capable AI assistant without that tradeoff is to build one that never makes the call.</p>
         </div>
 
         <div class="case-section">
             <h3>The Hardware</h3>
-            <p>The speaker runs on a Raspberry Pi 5 (8GB) with an NVMe SSD for fast model loading and persistent storage. Audio capture and wake word detection are handled by a custom ESP32-S3 PCB — a microcontroller board I designed specifically for this build, responsible for listening at the edge and only waking the Pi when a trigger is detected. The result is a device that idles at near-zero power and wakes in under a second.</p>
+            <p>The speaker runs on a Raspberry Pi 5 (8GB) with an NVMe SSD for fast model loading and persistent storage. Audio capture and wake word detection are handled by a custom ESP32-S3 PCB - a microcontroller board I designed specifically for this build, responsible for listening at the edge and only waking the Pi when a trigger is detected. The result is a device that idles at near-zero power and wakes in under a second.</p>
         </div>
 
         <div class="case-section">
             <h3>The Pipeline</h3>
-            <p>Every request runs through a four-stage local pipeline — nothing touches the internet except for data fetches like weather or sports scores.</p>
+            <p>Every request runs through a four-stage local pipeline - nothing touches the internet except for data fetches like weather or sports scores.</p>
 
             <div class="pipeline-steps">
                 <div class="pipeline-step">
@@ -198,12 +198,12 @@
                 </div>
             </div>
 
-            <p>A Python pipeline (<code>pipeline.py</code>) orchestrates the full loop. Voice is captured and transcribed locally by faster-Whisper. The transcript is handed to Qwen3 4B running via Ollama — fully on-device — which selects the right tool and generates a response. Piper TTS converts the response to speech and plays it back. A Node.js and Express backend with WebSockets keeps the web dashboard updated in real time throughout.</p>
+            <p>A Python pipeline (<code>pipeline.py</code>) orchestrates the full loop. Voice is captured and transcribed locally by faster-Whisper. The transcript is handed to Qwen3 4B running via Ollama - fully on-device - which selects the right tool and generates a response. Piper TTS converts the response to speech and plays it back. A Node.js and Express backend with WebSockets keeps the web dashboard updated in real time throughout.</p>
         </div>
 
         <div class="case-section">
             <h3>Tools</h3>
-            <p>The LLM picks from a set of registered tools based on the request. All tool logic runs locally or fetches from external APIs — no personal data is ever sent.</p>
+            <p>The LLM picks from a set of registered tools based on the request. All tool logic runs locally or fetches from external APIs - no personal data is ever sent.</p>
             <ul class="tool-grid">
                 <li>Weather conditions and forecast</li>
                 <li>Sports scores and standings</li>
@@ -225,14 +225,14 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A capable AI assistant that handles weather, music, sports, cooking, and calendar — entirely on a $90 single-board computer, with zero monthly cost and zero data leaving the house. The only outbound calls are weather and sports data fetches and Meater cook temperatures. Everything else — transcription, inference, speech synthesis — runs on-device. The custom PCB means the device listens at the edge and only draws full power when it needs to respond.</p>
+            <p>A capable AI assistant that handles weather, music, sports, cooking, and calendar - entirely on a $90 single-board computer, with zero monthly cost and zero data leaving the house. The only outbound calls are weather and sports data fetches and Meater cook temperatures. Everything else - transcription, inference, speech synthesis - runs on-device. The custom PCB means the device listens at the edge and only draws full power when it needs to respond.</p>
         </div>
 
     </div>
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now - full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->

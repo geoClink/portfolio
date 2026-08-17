@@ -621,6 +621,8 @@ body::before {
 }
 .testimonial-name a { color: inherit; text-decoration: none; }
 .testimonial-name a:hover { text-decoration: underline; }
+.testimonial-title a { color: inherit; text-decoration: none; }
+.testimonial-title a:hover { text-decoration: underline; }
 
 .testimonial-title {
     color: var(--color-text-muted);
@@ -814,6 +816,7 @@ body::before {
 .appstore-app-btns {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     overflow-x: auto;
     gap: 0.5em;
     margin-top: 0.75em;
@@ -976,7 +979,7 @@ body::before {
 
 .trusted-partner {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75em;
     flex: 1 1 calc(50% - 0.375em);
     min-width: 220px;

@@ -1,19 +1,19 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>JavaScript Calculator — Case Study | George Clinkscales Jr.</title>
+    <title>JavaScript Calculator - Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/javascript-calculator.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Case study: A vanilla JavaScript calculator with Web Audio API click sounds, Web Speech API voice input, keyboard support, and a long-press power toggle." />
-    <meta property="og:title" content="JavaScript Calculator — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Vanilla JavaScript calculator with procedural audio, voice input, keyboard shortcuts, and a hidden power toggle — built for The Odin Project." />
+    <meta property="og:title" content="JavaScript Calculator - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Vanilla JavaScript calculator with procedural audio, voice input, keyboard shortcuts, and a hidden power toggle - built for The Odin Project." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/javascript-calculator.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JavaScript Calculator — Case Study | George Clinkscales Jr." />
+    <meta name="twitter:title" content="JavaScript Calculator - Case Study | George Clinkscales Jr." />
     <meta name="twitter:description" content="Vanilla JavaScript calculator with procedural audio, voice input, keyboard shortcuts, and a hidden power toggle." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-preview.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +81,7 @@
         <div class="case-hero">
             <img src="assets/images/calculator-icon.png" alt="JavaScript Calculator icon" class="case-hero-icon" />
             <h2 class="case-title">JavaScript Calculator</h2>
-            <p class="case-tagline">A vanilla HTML/CSS/JavaScript calculator built for The Odin Project — with procedurally generated click sounds, voice input that animates every button press, full keyboard support, and a long-press power toggle. No libraries. No audio files.</p>
+            <p class="case-tagline">A vanilla HTML/CSS/JavaScript calculator built for The Odin Project - with procedurally generated click sounds, voice input that animates every button press, full keyboard support, and a long-press power toggle. No libraries. No audio files.</p>
         </div>
 
         <div class="case-links">
@@ -101,7 +101,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Audio</div>
-                <div class="case-glance-value">Procedurally generated — no files</div>
+                <div class="case-glance-value">Procedurally generated - no files</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Input</div>
@@ -112,7 +112,7 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>The Odin Project's calculator assignment is intentionally open-ended: build a working calculator with the four operations. The baseline is straightforward. The goal I set was to go further — make it feel like a real piece of hardware. That meant click sounds, keyboard input, and a voice interface that animates every button press as if someone is physically operating it.</p>
+            <p>The Odin Project's calculator assignment is intentionally open-ended: build a working calculator with the four operations. The baseline is straightforward. The goal I set was to go further - make it feel like a real piece of hardware. That meant click sounds, keyboard input, and a voice interface that animates every button press as if someone is physically operating it.</p>
         </div>
 
         <div class="case-section">
@@ -124,21 +124,21 @@
                 loading="lazy"
             ></iframe>
             <p class="iframe-note iframe-note-desktop">Previewing at tablet width. <a href="https://geoclink.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer">Open the full site ↗</a> for the desktop experience. Also fully optimized for mobile.</p>
-            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://geoclink.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
+            <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://geoclink.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
         </div>
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Every click sound is synthesized on the fly using the Web Audio API — 20ms of white noise run through a gain node with an exponential ramp. No audio files, no fetch requests. The result is a sharp mechanical click that fades immediately, like a physical key. The same <code>AudioContext</code> fires on mouse clicks, touch events, and keyboard presses.</p>
+            <p>Every click sound is synthesized on the fly using the Web Audio API - 20ms of white noise run through a gain node with an exponential ramp. No audio files, no fetch requests. The result is a sharp mechanical click that fades immediately, like a physical key. The same <code>AudioContext</code> fires on mouse clicks, touch events, and keyboard presses.</p>
 
-            <p>The voice pipeline uses the Web Speech API's <code>SpeechRecognition</code> to capture a spoken calculation ("five plus three"), maps each word to its symbol via a <code>wordMap</code>, then staggers button clicks 300ms apart so every key animates and plays its click sound in real time. After all presses complete, <code>SpeechSynthesisUtterance</code> reads the result back aloud. The long-press power toggle uses a <code>setTimeout</code> on <code>mousedown</code> that cancels on <code>mouseup</code> if released too quickly — the whole calculator goes dark and ignores all input while off.</p>
+            <p>The voice pipeline uses the Web Speech API's <code>SpeechRecognition</code> to capture a spoken calculation ("five plus three"), maps each word to its symbol via a <code>wordMap</code>, then staggers button clicks 300ms apart so every key animates and plays its click sound in real time. After all presses complete, <code>SpeechSynthesisUtterance</code> reads the result back aloud. The long-press power toggle uses a <code>setTimeout</code> on <code>mousedown</code> that cancels on <code>mouseup</code> if released too quickly - the whole calculator goes dark and ignores all input while off.</p>
 
-            <p>Keys are color-coded by function — numbers, operators, and utility keys each use a distinct color so the layout is scannable at a glance without reading every label.</p>
+            <p>Keys are color-coded by function - numbers, operators, and utility keys each use a distinct color so the layout is scannable at a glance without reading every label.</p>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A calculator that responds to your voice, reads the result back to you, clicks on every key press, and hides a power toggle — built entirely with browser-native APIs and zero dependencies. The Odin Project spec asked for a calculator. This one feels like hardware.</p>
+            <p>A calculator that responds to your voice, reads the result back to you, clicks on every key press, and hides a power toggle - built entirely with browser-native APIs and zero dependencies. The Odin Project spec asked for a calculator. This one feels like hardware.</p>
         </div>
 
         <div class="case-section og-preview-section">
@@ -166,7 +166,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now - full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->

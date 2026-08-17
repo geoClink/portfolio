@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Employee Scheduler — Case Study | George Clinkscales Jr.</title>
+    <title>Employee Scheduler - Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/knotemployee.html" />
-    <meta property="og:title" content="Employee Scheduler — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Case study: Employee Scheduler — A multi-tenant iOS employee scheduling app for small businesses." />
+    <meta property="og:title" content="Employee Scheduler - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Case study: Employee Scheduler - A multi-tenant iOS employee scheduling app for small businesses." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/knotemployee.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-knot.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Employee Scheduler — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: Employee Scheduler — A multi-tenant iOS employee scheduling app for small businesses." />
+    <meta name="twitter:title" content="Employee Scheduler - Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Case study: Employee Scheduler - A multi-tenant iOS employee scheduling app for small businesses." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-knot.jpg" />
-    <meta name="description" content="Case study: Employee Scheduler — A multi-tenant iOS employee scheduling app for small businesses." />
+    <meta name="description" content="Case study: Employee Scheduler - A multi-tenant iOS employee scheduling app for small businesses." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +75,7 @@
         <div class="case-hero">
             <img src="assets/images/knotemployee/appicon.png" alt="Employee Scheduler app icon" class="case-hero-icon" />
             <h2 class="case-title">Employee Scheduler</h2>
-            <p class="case-tagline">Employee scheduling for small businesses — built to replace the paper schedule and the group text.</p>
+            <p class="case-tagline">Employee scheduling for small businesses - built to replace the paper schedule and the group text.</p>
         </div>
 
         <div class="case-links">
@@ -110,11 +110,11 @@
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>The Employee Scheduler is two complete experiences in one binary — a full manager surface and a staff surface, gated by role from the moment of sign-in. The manager gets a drag-and-drop weekly schedule builder, a labor cost report with CSV export, and real-time alerts for overtime warnings and pending approvals. Staff get clock-in and out with break tracking, time-off requests with balance tracking, shift swaps, and direct messaging — every workflow that previously happened over text.</p>
+            <p>The Employee Scheduler is two complete experiences in one binary - a full manager surface and a staff surface, gated by role from the moment of sign-in. The manager gets a drag-and-drop weekly schedule builder, a labor cost report with CSV export, and real-time alerts for overtime warnings and pending approvals. Staff get clock-in and out with break tracking, time-off requests with balance tracking, shift swaps, and direct messaging - every workflow that previously happened over text.</p>
 
             <p>The backend is built on Supabase with multi-tenancy enforced at the database level. Every table carries a tenant ID, and row-level security policies ensure a JWT can only read rows belonging to its tenant. Adding a second business is a configuration change, not a code change.</p>
 
-            <p>Push notifications flow entirely through the database — an insert into a notifications table triggers a Deno Edge Function that calls APNs directly, with no third-party SDK. Schedule changes and messages sync live via Supabase Realtime websocket channels scoped per tenant, so every connected device updates the instant a row changes.</p>
+            <p>Push notifications flow entirely through the database - an insert into a notifications table triggers a Deno Edge Function that calls APNs directly, with no third-party SDK. Schedule changes and messages sync live via Supabase Realtime websocket channels scoped per tenant, so every connected device updates the instant a row changes.</p>
         </div>
 
         
@@ -129,7 +129,7 @@
                             <img loading="lazy" src="assets/images/knotemployee/managerhome.webp" alt="KnotEmployee manager home screen" />
                         </div>
                     </div>
-                    <p>Manager home — schedule overview, pending approvals, and overtime alerts at a glance.</p>
+                    <p>Manager home - schedule overview, pending approvals, and overtime alerts at a glance.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -138,7 +138,7 @@
                             <img loading="lazy" src="assets/images/knotemployee/managerteamview.webp" alt="KnotEmployee manager team view" />
                         </div>
                     </div>
-                    <p>Team view — full staff roster with roles, availability, and shift history per employee.</p>
+                    <p>Team view - full staff roster with roles, availability, and shift history per employee.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -147,7 +147,7 @@
                             <img loading="lazy" src="assets/images/knotemployee/managermessagesscreen.webp" alt="KnotEmployee messages screen" />
                         </div>
                     </div>
-                    <p>Messages — real-time direct messaging via Supabase Realtime, scoped per tenant.</p>
+                    <p>Messages - real-time direct messaging via Supabase Realtime, scoped per tenant.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -156,7 +156,7 @@
                             <img loading="lazy" src="assets/images/knotemployee/employeehome.webp" alt="KnotEmployee employee home screen" />
                         </div>
                     </div>
-                    <p>Employee home — clock in/out, break tracking, and upcoming shifts in one view.</p>
+                    <p>Employee home - clock in/out, break tracking, and upcoming shifts in one view.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -165,7 +165,7 @@
                             <img loading="lazy" src="assets/images/knotemployee/employeeopenshifts.webp" alt="KnotEmployee open shifts screen" />
                         </div>
                     </div>
-                    <p>Open shifts — staff can claim available shifts without a manager needing to call around.</p>
+                    <p>Open shifts - staff can claim available shifts without a manager needing to call around.</p>
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now - full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->

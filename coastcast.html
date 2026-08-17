@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>CoastCast — Case Study | George Clinkscales Jr.</title>
+    <title>CoastCast - Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/coastcast.html" />
-    <meta property="og:title" content="CoastCast — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
+    <meta property="og:title" content="CoastCast - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Case study: CoastCast - A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/coastcast.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/coastcast/coastcast_mockup_hand.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CoastCast — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
+    <meta name="twitter:title" content="CoastCast - Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Case study: CoastCast - A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/coastcast/coastcast_mockup_hand.jpg" />
-    <meta name="description" content="Case study: CoastCast — A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
+    <meta name="description" content="Case study: CoastCast - A SwiftUI iOS app with CoreML crowd prediction, Live Activities, and a Python FastAPI backend for 54 Michigan beaches." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@
         <div class="case-hero">
             <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="case-hero-icon" />
             <h2 class="case-title">CoastCast</h2>
-            <p class="case-tagline">A full-platform iOS app delivering real-time beach conditions for 54 Michigan beaches — with on-device ML crowd prediction, Siri Shortcuts, Live Activities, and a Python FastAPI backend.</p>
+            <p class="case-tagline">A full-platform iOS app delivering real-time beach conditions for 54 Michigan beaches - with on-device ML crowd prediction, Siri Shortcuts, Live Activities, and a Python FastAPI backend.</p>
         </div>
 
         <div class="case-links">
@@ -125,17 +125,21 @@
                 <div class="case-glance-label">Testing</div>
                 <div class="case-glance-value">120+ parameterized test cases</div>
             </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Design</div>
+                <div class="case-glance-value"><a href="https://www.linkedin.com/in/tamia-brezzell-2873251a2/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Tamia Brezzell</a> · <a href="https://www.linkedin.com/in/alexis-cardwell-510375b6/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Alexis Cardwell</a></div>
+            </div>
         </div>
 
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Michigan has 54 public beaches across five Great Lakes — and no single tool to answer the question every resident asks before heading out: <em>Is it worth going today?</em> Existing weather apps don't show water temperature, wave height, or crowd density. CoastCast solves this with one platform that pulls all of it together.</p>
+            <p>Michigan has 54 public beaches across five Great Lakes - and no single tool to answer the question every resident asks before heading out: <em>Is it worth going today?</em> Existing weather apps don't show water temperature, wave height, or crowd density. CoastCast solves this with one platform that pulls all of it together.</p>
         </div>
 
         <div class="case-section">
             <h3>The Approach</h3>
-            <p>Built as part of the MSU Apple Developer Academy program with a team of five — two developers, two designers, and a project manager — over March–April 2026. The SwiftUI app covers the map, beach scoring engine, CoreML crowd prediction, App Intents, WidgetKit, Live Activities, and notifications. The Python FastAPI backend, deployed on Render, aggregates six data sources concurrently: NOAA buoy data, water quality, NWS weather alerts, TomTom traffic, holiday detection, and a holiday crowd signal.</p>
+            <p>Built as part of the MSU Apple Developer Academy program with a team of five - two developers, two designers, and a project manager - over March–April 2026. UI/UX design was led by <a href="https://www.linkedin.com/in/tamia-brezzell-2873251a2/" target="_blank" rel="noopener noreferrer">Tamia Brezzell</a> alongside designer <a href="https://www.linkedin.com/in/alexis-cardwell-510375b6/" target="_blank" rel="noopener noreferrer">Alexis Cardwell</a>, I co-developed the app with <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer">Jaiden Henley</a>, and <a href="https://www.linkedin.com/in/ada-mbonu-notary-public-chs-cta%E2%9C%A8-09b057165/" target="_blank" rel="noopener noreferrer">Ada Mbonu</a> was our project manager. The SwiftUI app covers the map, beach scoring engine, CoreML crowd prediction, App Intents, WidgetKit, Live Activities, and notifications. The Python FastAPI backend, deployed on Render, aggregates six data sources concurrently: NOAA buoy data, water quality, NWS weather alerts, TomTom traffic, holiday detection, and a holiday crowd signal.</p>
 
             <p>The crowd prediction model is an XGBoost classifier trained on 40 years of attendance data, converted to CoreML and running fully on-device. It uses cyclical month encoding so the model understands seasonal proximity, and falls back to historical Lake Michigan water temperature averages when live buoy data isn't available. The beach detail screen fires the FastAPI backend and WeatherKit simultaneously using <code>async let</code>, cutting load time roughly in half.</p>
 
@@ -152,7 +156,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots6.webp" alt="CoastCast home screen" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Home screen — discovery feed with activity filters and personalized suggestions.</p>
+                    <p>Home screen - discovery feed with activity filters and personalized suggestions.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -161,7 +165,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots1.webp" alt="CoastCast map view" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Map view — custom clustering algorithm, no third-party library.</p>
+                    <p>Map view - custom clustering algorithm, no third-party library.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -170,7 +174,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots5.webp" alt="CoastCast browse list" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Browse list — searchable beach directory with lake type and favorites.</p>
+                    <p>Browse list - searchable beach directory with lake type and favorites.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -179,7 +183,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots8.webp" alt="CoastCast beach detail" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Beach detail — E. coli safety alert, air and water temp, UV, hourly forecast.</p>
+                    <p>Beach detail - E. coli safety alert, air and water temp, UV, hourly forecast.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -188,7 +192,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots2.webp" alt="CoastCast crowd meter" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Crowd Meter — on-device XGBoost CoreML model trained on 40 years of data.</p>
+                    <p>Crowd Meter - on-device XGBoost CoreML model trained on 40 years of data.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -197,7 +201,7 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots3.webp" alt="CoastCast 7-day forecast" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>7-day forecast — full weekly outlook with WeatherKit conditions.</p>
+                    <p>7-day forecast - full weekly outlook with WeatherKit conditions.</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup">
@@ -206,14 +210,19 @@
                             <img loading="lazy" src="assets/images/coastcast/CoastcastScreenShots7.webp" alt="CoastCast favorites" style="width:100%;display:block;border-radius:30px;" />
                         </div>
                     </div>
-                    <p>Favorites — saved beaches backed by SwiftData persistence.</p>
+                    <p>Favorites - saved beaches backed by SwiftData persistence.</p>
                 </div>
             </div>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>CoastCast surfaces live beach intelligence across the app, home screen, Dynamic Island, and Siri — without opening anything. On-device CoreML means crowd predictions work offline, and the three-tier notification system covers daily alerts, score thresholds, and severe weather. Live on the App Store.</p>
+            <p>CoastCast surfaces live beach intelligence across the app, home screen, Dynamic Island, and Siri - without opening anything. On-device CoreML means crowd predictions work offline, and the three-tier notification system covers daily alerts, score thresholds, and severe weather. Live on the App Store.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What's Next</h3>
+            <p>CoastCast currently covers Great Lakes beaches only - which makes it a summer app by nature. The roadmap tackles that from two directions: expanding to new states so the app stays useful across more seasons of the year, and adding inland lakes so people can check conditions on the water closest to them, not just the Great Lakes shoreline.</p>
         </div>
 
         <div class="case-section og-preview-section">
@@ -235,7 +244,7 @@
             <h3>Designer Feedback</h3>
             <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
                 <p style="margin:0 0 0.75em;">"As I further develop my discipline as a UI/UX designer, the shared vision between the developers and the designers is imperative to create an amazing final product. After working with George, I can testify that he understands the importance of proper communication, research, and hard work. He would easily take any feedback I gave him and either implement it or offer me a new perspective on it. Working with him was a smooth process and I would definitely work with him again."</p>
-                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">— <a href="https://www.linkedin.com/in/tamia-brezzell-2873251a2/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Tamia Brezzell</a>, UI/UX Designer &amp; Graphic Designer</footer>
+                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">- <a href="https://www.linkedin.com/in/tamia-brezzell-2873251a2/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Tamia Brezzell</a>, UI/UX Designer, CoastCast</footer>
             </blockquote>
         </div>
 
@@ -253,7 +262,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now - full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->

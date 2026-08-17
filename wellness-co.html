@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>White Bear Harmonics — Case Study | George Clinkscales Jr.</title>
+    <title>White Bear Harmonics - Case Study | George Clinkscales Jr.</title>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/wellness-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: White Bear Harmonics — A live Michigan wellness practice running on a full-stack booking platform I built solo. Stripe checkout, tiered refunds, self-serve branding, gift cards, and a no-code admin dashboard. Built as a Mindbody alternative for solo practitioners." />
-    <meta property="og:title" content="White Bear Harmonics — Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="A real client — live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
+    <meta name="description" content="Case study: White Bear Harmonics - A live Michigan wellness practice running on a full-stack booking platform I built solo. Stripe checkout, tiered refunds, self-serve branding, gift cards, and a no-code admin dashboard. Built as a Mindbody alternative for solo practitioners." />
+    <meta property="og:title" content="White Bear Harmonics - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="A real client - live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/wellness-co.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-whitebearharmonics.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="White Bear Harmonics — Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="A real client — live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
+    <meta name="twitter:title" content="White Bear Harmonics - Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="A real client - live, taking bookings, and accepting payments on a platform I built solo. Stripe, Supabase, custom branding, and a no-code admin dashboard that replaced Mindbody." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/site/og-whitebearharmonics.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "White Bear Harmonics",
-        "description": "Full-stack booking platform for a Michigan wellness studio — Stripe checkout, tiered refunds, custom branding, and a no-code admin dashboard.",
+        "description": "Full-stack booking platform for a Michigan wellness studio - Stripe checkout, tiered refunds, custom branding, and a no-code admin dashboard.",
         "url": "https://whitebearharmonics.com/",
         "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
     }
@@ -91,7 +91,7 @@
         <div class="case-hero">
             <img src="assets/images/thewellnessco/whitebear-logo.png" alt="White Bear Harmonics logo" class="case-hero-icon" />
             <h2 class="case-title">White Bear Harmonics</h2>
-            <p class="case-tagline">A real client — a Michigan energy healing and acupuncture practitioner — live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, tiered refunds, gift cards, self-serve branding, and a no-code admin dashboard built as a Mindbody alternative for solo practitioners.</p>
+            <p class="case-tagline">A real client - a Michigan energy healing and acupuncture practitioner - live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, tiered refunds, gift cards, self-serve branding, and a no-code admin dashboard built as a Mindbody alternative for solo practitioners.</p>
         </div>
 
         <div class="case-links">
@@ -111,7 +111,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live client — taking bookings</div>
+                <div class="case-glance-value">Live client - taking bookings</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Replaces</div>
@@ -122,14 +122,14 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Solo wellness practitioners — acupuncturists, energy healers, Reiki providers — are paying $100–200/month for platforms like Mindbody or Vagaro that were built for large gyms and feel like it. The booking UX is generic, the branding belongs to the platform, and the features they're paying for go mostly unused. The goal was a fully custom-branded booking experience on a platform built specifically for solo practitioners — at a fraction of what Mindbody charges, with no commission per booking and no generic branding.</p>
+            <p>Solo wellness practitioners - acupuncturists, energy healers, Reiki providers - are paying $100–200/month for platforms like Mindbody or Vagaro that were built for large gyms and feel like it. The booking UX is generic, the branding belongs to the platform, and the features they're paying for go mostly unused. The goal was a fully custom-branded booking experience on a platform built specifically for solo practitioners - at a fraction of what Mindbody charges, with no commission per booking and no generic branding.</p>
         </div>
 
         <div class="case-section">
             <h3>What the Real Client Changed</h3>
             <p>Two assumptions I built in during the spec phase turned out to be wrong once I was working with an actual practitioner.</p>
-            <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. White Bear Harmonics runs her practice alongside a full-time job — meaning weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
-            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way — "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants — child records per offering under each parent service — and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
+            <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. White Bear Harmonics runs her practice alongside a full-time job - meaning weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
+            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way - "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants - child records per offering under each parent service - and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
             <p>Both changes came directly from sitting with the business owner and watching the first model fail against how she actually worked.</p>
         </div>
 
@@ -146,28 +146,28 @@
                 </div>
                 <iframe
                     src="https://whitebearharmonics.com/"
-                    title="White Bear Harmonics — Live Site"
+                    title="White Bear Harmonics - Live Site"
                     loading="lazy"
                 ></iframe>
             </div>
-            <p class="iframe-note iframe-note-desktop">Live production site — active and taking bookings. <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
-            <p class="iframe-note iframe-note-mobile">You're on mobile — <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">open the live site ↗</a>. Any display issues in the embed are caused by the iframe, not the site itself.</p>
+            <p class="iframe-note iframe-note-desktop">Live production site - active and taking bookings. <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
+            <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">open the live site ↗</a>. Any display issues in the embed are caused by the iframe, not the site itself.</p>
         </div>
 
         <div class="case-section">
             <h3>Admin Dashboard</h3>
 
-            <p>Everything runs from a single protected dashboard. No code, no developer on call — every change reflects on the live site immediately. Live read-only demo below, no login needed.</p>
+            <p>Everything runs from a single protected dashboard. No code, no developer on call - every change reflects on the live site immediately. Live read-only demo below, no login needed.</p>
             <p>A 7-step onboarding wizard walks non-technical owners through setup in the right order: business info, connecting Stripe (publishable key, secret key, and webhook, each saved individually), connecting Resend with a live test email, adding their first service, setting weekly availability, and optionally connecting a custom domain via the Cloudflare API.</p>
 
             <ul style="margin:1.25em 0 0;padding-left:1.2em;line-height:2;">
-                <li>Appointments — one-click cancel + Stripe refund, private notes, CSV export</li>
-                <li>Availability — per-day rules with independent hours; weekdays and weekends configured separately</li>
-                <li>Services — multiple variants per service with independent pricing and duration, drag-to-reorder</li>
-                <li>Gift cards, session packages, and discount codes — all validated server-side, all managed from the dashboard</li>
-                <li>Appearance — 5 color palettes and 5 font combinations that apply to the live site instantly</li>
-                <li>Content and SEO — hero, bio, FAQ, banner, and per-page meta tags all editable without code</li>
-                <li>Integrations — the owner pastes their own Stripe and Resend keys directly into the UI</li>
+                <li>Appointments - one-click cancel + Stripe refund, private notes, CSV export</li>
+                <li>Availability - per-day rules with independent hours; weekdays and weekends configured separately</li>
+                <li>Services - multiple variants per service with independent pricing and duration, drag-to-reorder</li>
+                <li>Gift cards, session packages, and discount codes - all validated server-side, all managed from the dashboard</li>
+                <li>Appearance - 5 color palettes and 5 font combinations that apply to the live site instantly</li>
+                <li>Content and SEO - hero, bio, FAQ, banner, and per-page meta tags all editable without code</li>
+                <li>Integrations - the owner pastes their own Stripe and Resend keys directly into the UI</li>
             </ul>
 
             <details class="tech-details" style="margin-top:1.25em;">
@@ -175,20 +175,20 @@
                 <div class="tech-details-body">
                     <h4>Operations</h4>
                     <ul>
-                        <li>At-a-glance overview — today's schedule, monthly revenue, upcoming appointments, unread messages</li>
-                        <li>Client directory — searchable by email, full visit history, session count, total spend</li>
-                        <li>Reviews — approval queue before anything goes live, feature toggle for homepage</li>
+                        <li>At-a-glance overview - today's schedule, monthly revenue, upcoming appointments, unread messages</li>
+                        <li>Client directory - searchable by email, full visit history, session count, total spend</li>
+                        <li>Reviews - approval queue before anything goes live, feature toggle for homepage</li>
                     </ul>
                     <h4>Monetization</h4>
                     <ul>
-                        <li>Gift Cards — purchased via Stripe, emailed to recipient, balance deducted server-side; partial balances accepted with the remainder charged via Stripe, auto-restored on cancellation</li>
-                        <li>Session Packages — bundles of sessions sold at a discounted rate; Stripe checkout issues a gift card code to the client by email, which they apply at booking; balance decrements per session until exhausted</li>
-                        <li>Discount Codes — percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
+                        <li>Gift Cards - purchased via Stripe, emailed to recipient, balance deducted server-side; partial balances accepted with the remainder charged via Stripe, auto-restored on cancellation</li>
+                        <li>Session Packages - bundles of sessions sold at a discounted rate; Stripe checkout issues a gift card code to the client by email, which they apply at booking; balance decrements per session until exhausted</li>
+                        <li>Discount Codes - percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
                     </ul>
                     <h4>Services &amp; Site Control</h4>
                     <ul>
-                        <li>Services — image upload, drag-to-reorder, variants with independent pricing and duration</li>
-                        <li>SEO — custom meta title, description, and Open Graph tags per page</li>
+                        <li>Services - image upload, drag-to-reorder, variants with independent pricing and duration</li>
+                        <li>SEO - custom meta title, description, and Open Graph tags per page</li>
                     </ul>
                 </div>
             </details>
@@ -205,7 +205,7 @@
                 </div>
                 <iframe
                     src="https://the-wellness-co.vercel.app/admin.html?demo=true"
-                    title="The Wellness Co. — Admin Dashboard Demo"
+                    title="The Wellness Co. - Admin Dashboard Demo"
                     loading="lazy"
                 ></iframe>
             </div>
@@ -215,7 +215,7 @@
 
         <div class="case-section">
             <h3>Promotional Banner</h3>
-            <p>The owner can set a site-wide alert banner from the admin dashboard — custom text, custom destination. In this example it links directly to checkout with a 30-minute consultation pre-selected, so a visitor goes from seeing the offer to being one click from booking. No code change, no developer call.</p>
+            <p>The owner can set a site-wide alert banner from the admin dashboard - custom text, custom destination. In this example it links directly to checkout with a 30-minute consultation pre-selected, so a visitor goes from seeing the offer to being one click from booking. No code change, no developer call.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img loading="lazy" src="assets/images/thewellnessco/screenshot-banneralert.png" alt="Customizable promotional banner linking to pre-selected checkout" style="width:100%;display:block;" />
             </div>
@@ -223,7 +223,7 @@
 
         <div class="case-section">
             <h3>Gift Cards</h3>
-            <p>Gift cards are a first-class feature — promoted on the site, purchased via Stripe, and delivered to the recipient by email with a unique code. Clients can check their remaining balance anytime and redeem at checkout.</p>
+            <p>Gift cards are a first-class feature - promoted on the site, purchased via Stripe, and delivered to the recipient by email with a unique code. Clients can check their remaining balance anytime and redeem at checkout.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img loading="lazy" src="assets/images/thewellnessco/screenshot-giftcardbanner.png" alt="Gift card promotional banner" style="width:100%;display:block;" />
             </div>
@@ -231,13 +231,13 @@
 
         <div class="case-section">
             <h3>Gift Card Balance</h3>
-            <p>Recipients can check their remaining balance at any time before redeeming — no account needed, just the code.</p>
+            <p>Recipients can check their remaining balance at any time before redeeming - no account needed, just the code.</p>
             <video class="case-video" src="assets/images/thewellnessco/giftcardbalancevideo.mp4" autoplay loop muted playsinline></video>
         </div>
 
         <div class="case-section">
             <h3>Service Selection</h3>
-            <p>Each service page does two things at once — lets the client choose from variants and session lengths, and educates them on what the service is and what to expect before they book. The owner controls all service offerings, descriptions, and pricing from the admin dashboard.</p>
+            <p>Each service page does two things at once - lets the client choose from variants and session lengths, and educates them on what the service is and what to expect before they book. The owner controls all service offerings, descriptions, and pricing from the admin dashboard.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img loading="lazy" src="assets/images/thewellnessco/screenshot-serviceselection.png" alt="Service selection page with variants and educational content" style="width:100%;display:block;" />
             </div>
@@ -245,7 +245,7 @@
 
         <div class="case-section">
             <h3>Booking Scheduler</h3>
-            <p>The booking calendar shows real-time availability based entirely on the schedule the owner sets in the admin dashboard — hours, blocked dates, and service durations. No developer needed to make changes. The owner updates their availability and the calendar reflects it immediately.</p>
+            <p>The booking calendar shows real-time availability based entirely on the schedule the owner sets in the admin dashboard - hours, blocked dates, and service durations. No developer needed to make changes. The owner updates their availability and the calendar reflects it immediately.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img loading="lazy" src="assets/images/thewellnessco/screenshot-scheduler.png" alt="Booking scheduler showing live availability" style="width:100%;display:block;" />
             </div>
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                         <div class="phone-viewport">
-                            <iframe class="phone-demo" src="https://whitebearharmonics.com/" title="White Bear Harmonics — Live Site Mobile" loading="lazy"></iframe>
+                            <iframe class="phone-demo" src="https://whitebearharmonics.com/" title="White Bear Harmonics - Live Site Mobile" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -278,16 +278,16 @@
                 <summary>Technical Implementation</summary>
                 <div class="tech-details-body">
                     <h4>Booking &amp; Payment Flow</h4>
-                    <p>When a client completes checkout, Stripe redirects to <code>/api/confirmation</code> — a server-side handler that writes the appointment to Supabase and fires the confirmation email via Resend. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate bookings. Either path alone produces a confirmed appointment; a failed payment never does. Four distinct email flows run through Resend: booking confirmation with a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed to the practitioner.</p>
+                    <p>When a client completes checkout, Stripe redirects to <code>/api/confirmation</code> - a server-side handler that writes the appointment to Supabase and fires the confirmation email via Resend. A parallel Stripe webhook runs as a safety net for abandoned browsers, with idempotency checks to prevent duplicate bookings. Either path alone produces a confirmed appointment; a failed payment never does. Four distinct email flows run through Resend: booking confirmation with a cancel/reschedule link, cancellation receipt with refund amount and processing timeline, reschedule confirmation, and contact form notifications routed to the practitioner.</p>
 
                     <h4>Appearance System</h4>
                     <p>The appearance system is built entirely on CSS custom properties. Selecting a palette in the admin writes the choice to the database; the client site reads it on load and injects the variables into <code>:root</code>. A small synchronous <code>theme-init.js</code> in the <code>&lt;head&gt;</code> reads a localStorage cache of the last-known palette and applies it before the first paint, eliminating any color flash while the async API call is in flight.</p>
 
                     <h4>Demo Mode</h4>
-                    <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast — demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
+                    <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast - demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
 
                     <h4>Cancellation &amp; Refunds</h4>
-                    <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link — no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
+                    <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link - no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
                     <div style="margin: 1.5em 0;">
                         <div class="browser-mockup lightbox-trigger" style="cursor:zoom-in;" onclick="openLightbox(this)">
                             <div class="browser-bar">
@@ -302,47 +302,47 @@
                             </div>
                         </div>
                     </div>
-                    <p class="case-caption">Live on White Bear Harmonics — clients inside 48 hours see a partial refund notice before confirming. The refund executes automatically through the Stripe API. Click to expand.</p>
+                    <p class="case-caption">Live on White Bear Harmonics - clients inside 48 hours see a partial refund notice before confirming. The refund executes automatically through the Stripe API. Click to expand.</p>
 
                     <h4>SEO</h4>
-                    <p>Every page gets unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server — search engines and social link previewers see complete, page-specific metadata with no client-side JavaScript involved. The practitioner controls all SEO copy from the admin dashboard. Footer contact data (phone, email, address) is injected server-side so crawlers see real business information rather than JavaScript-dependent placeholders. An <code>og:image</code> fallback ensures the branded social share image appears on every page even if the admin field is left blank.</p>
-                    <p>A suite of Schema.org JSON-LD blocks is injected into the <code>&lt;head&gt;</code> of every page server-side: <code>HealthAndBeautyBusiness</code> (with service catalog, area served, and price range), <code>Person</code> (linking the practitioner to the business for Knowledge Panel accuracy), <code>WebSite</code> (establishing the canonical domain), and <code>BreadcrumbList</code> on all inner pages. The FAQ page additionally receives a <code>FAQPage</code> schema block built from live database records — eligible for Google's FAQ rich result accordion. All schema is rendered in the initial HTML response, making it fully reliable for crawlers that don't execute JavaScript.</p>
-                    <p>URLs across the platform use clean paths (<code>/services</code>, <code>/about</code>, <code>/faq</code>) with permanent 301 redirects from the legacy <code>.html</code> equivalents. The sitemap uses clean URLs and all internal links are consistent — no mixed signals to Google about canonical paths.</p>
+                    <p>Every page gets unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server - search engines and social link previewers see complete, page-specific metadata with no client-side JavaScript involved. The practitioner controls all SEO copy from the admin dashboard. Footer contact data (phone, email, address) is injected server-side so crawlers see real business information rather than JavaScript-dependent placeholders. An <code>og:image</code> fallback ensures the branded social share image appears on every page even if the admin field is left blank.</p>
+                    <p>A suite of Schema.org JSON-LD blocks is injected into the <code>&lt;head&gt;</code> of every page server-side: <code>HealthAndBeautyBusiness</code> (with service catalog, area served, and price range), <code>Person</code> (linking the practitioner to the business for Knowledge Panel accuracy), <code>WebSite</code> (establishing the canonical domain), and <code>BreadcrumbList</code> on all inner pages. The FAQ page additionally receives a <code>FAQPage</code> schema block built from live database records - eligible for Google's FAQ rich result accordion. All schema is rendered in the initial HTML response, making it fully reliable for crawlers that don't execute JavaScript.</p>
+                    <p>URLs across the platform use clean paths (<code>/services</code>, <code>/about</code>, <code>/faq</code>) with permanent 301 redirects from the legacy <code>.html</code> equivalents. The sitemap uses clean URLs and all internal links are consistent - no mixed signals to Google about canonical paths.</p>
 
                     <h4>Reviews</h4>
                     <p>The review system handles the full lifecycle: a public submission form on the client site, an admin approval queue where the practitioner accepts or rejects each review before it goes live, and a feature toggle that promotes one review to the homepage. No review appears publicly without explicit admin approval.</p>
 
                     <h4>Gift Cards, Packages &amp; Discount Codes</h4>
-                    <p>Session packages and gift cards share the same underlying system. A package purchase goes through a dedicated Stripe Checkout session — on completion, a webhook inserts a gift card record into the database and emails the buyer a unique code at the full package balance. The client applies that code at booking and the balance decrements per session until exhausted. This meant packages required no new checkout infrastructure — the gift card redemption, partial-balance, and cancellation-restore logic already handles them correctly.</p>
-                    <p>Gift card purchases go through a dedicated Stripe Checkout session. On completion, a webhook inserts the card into the database and emails the recipient a unique code. At booking time, the client enters the code — the server validates it and checks the remaining balance. If the balance covers the full price, the appointment is confirmed directly without a Stripe charge. If the balance is partial, the server creates a Stripe Checkout session for the difference only, with the gift card code and amount carried in the session metadata; the webhook deducts the gift card balance and stores both amounts on the appointment row once payment clears. If the appointment is later cancelled through the admin dashboard, the Stripe portion is refunded and the gift card balance is restored independently — both always happen regardless of which path was taken.</p>
-                    <p>Discount codes are validated and applied entirely server-side — the client sends the code and the server re-validates it independently before creating the Stripe session, so the frontend price display is never trusted. Usage count increments in the Stripe webhook after confirmed payment. Codes support percent-off or fixed-dollar discounts, optional per-tenant usage limits, and optional expiry dates. Both gift cards and discount codes are managed from the admin dashboard without developer involvement.</p>
+                    <p>Session packages and gift cards share the same underlying system. A package purchase goes through a dedicated Stripe Checkout session - on completion, a webhook inserts a gift card record into the database and emails the buyer a unique code at the full package balance. The client applies that code at booking and the balance decrements per session until exhausted. This meant packages required no new checkout infrastructure - the gift card redemption, partial-balance, and cancellation-restore logic already handles them correctly.</p>
+                    <p>Gift card purchases go through a dedicated Stripe Checkout session. On completion, a webhook inserts the card into the database and emails the recipient a unique code. At booking time, the client enters the code - the server validates it and checks the remaining balance. If the balance covers the full price, the appointment is confirmed directly without a Stripe charge. If the balance is partial, the server creates a Stripe Checkout session for the difference only, with the gift card code and amount carried in the session metadata; the webhook deducts the gift card balance and stores both amounts on the appointment row once payment clears. If the appointment is later cancelled through the admin dashboard, the Stripe portion is refunded and the gift card balance is restored independently - both always happen regardless of which path was taken.</p>
+                    <p>Discount codes are validated and applied entirely server-side - the client sends the code and the server re-validates it independently before creating the Stripe session, so the frontend price display is never trusted. Usage count increments in the Stripe webhook after confirmed payment. Codes support percent-off or fixed-dollar discounts, optional per-tenant usage limits, and optional expiry dates. Both gift cards and discount codes are managed from the admin dashboard without developer involvement.</p>
 
                     <h4>Practitioner Notifications</h4>
-                    <p>Every new booking — whether paid through Stripe or a free consultation booked directly — triggers a notification email to the practitioner alongside the client confirmation. The email includes the client's name, contact info, date, time, any notes they left, and a direct link to the dashboard. Both the Stripe webhook path (for paid services) and the free booking path fire this independently so no booking ever goes unnoticed regardless of which code path handled it.</p>
+                    <p>Every new booking - whether paid through Stripe or a free consultation booked directly - triggers a notification email to the practitioner alongside the client confirmation. The email includes the client's name, contact info, date, time, any notes they left, and a direct link to the dashboard. Both the Stripe webhook path (for paid services) and the free booking path fire this independently so no booking ever goes unnoticed regardless of which code path handled it.</p>
 
                     <h4>Auth &amp; Multi-Tenancy</h4>
-                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one — a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
+                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one - a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
                 </div>
             </details>
         </div>
 
         <div class="case-section">
             <h3>Post-Launch</h3>
-            <p>Shipping the platform was the start, not the end. After go-live I continued iterating on the client site based on real usage — treating it as a production product, not a finished deliverable.</p>
+            <p>Shipping the platform was the start, not the end. After go-live I continued iterating on the client site based on real usage - treating it as a production product, not a finished deliverable.</p>
             <ul>
-                <li><strong>Booking notifications</strong> — the practitioner now gets an email for every new booking, paid or free consultation, fired independently by both code paths so no appointment goes unnoticed.</li>
-                <li><strong>Fixed an XSS vulnerability</strong> — dynamic FAQ content from the API was injected into <code>innerHTML</code> without sanitization; all API content is now escaped before rendering.</li>
-                <li><strong>Accessibility audit</strong> — added <code>aria-expanded</code> state to accordion buttons for screen readers and explicit <code>type="button"</code> to prevent implicit form submission.</li>
-                <li><strong>SEO and conversion tuning</strong> — keyword-targeted <code>&lt;h1&gt;</code>, semantic heading structure, booking CTAs after the two highest-intent questions, newsletter capture, and GA4 event tracking on every accordion open so the practitioner can see which questions visitors care about most.</li>
+                <li><strong>Booking notifications</strong> - the practitioner now gets an email for every new booking, paid or free consultation, fired independently by both code paths so no appointment goes unnoticed.</li>
+                <li><strong>Fixed an XSS vulnerability</strong> - dynamic FAQ content from the API was injected into <code>innerHTML</code> without sanitization; all API content is now escaped before rendering.</li>
+                <li><strong>Accessibility audit</strong> - added <code>aria-expanded</code> state to accordion buttons for screen readers and explicit <code>type="button"</code> to prevent implicit form submission.</li>
+                <li><strong>SEO and conversion tuning</strong> - keyword-targeted <code>&lt;h1&gt;</code>, semantic heading structure, booking CTAs after the two highest-intent questions, newsletter capture, and GA4 event tracking on every accordion open so the practitioner can see which questions visitors care about most.</li>
             </ul>
         </div>
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>The Wellness Co. is the spec deployment that proved the platform. <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer"><strong>White Bear Harmonics</strong></a> is the first real client — a Michigan wellness practitioner who went from zero online presence to a fully live booking business.</p>
+            <p>The Wellness Co. is the spec deployment that proved the platform. <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer"><strong>White Bear Harmonics</strong></a> is the first real client - a Michigan wellness practitioner who went from zero online presence to a fully live booking business.</p>
             <ul>
-                <li><strong>Zero code required.</strong> The client connected their own Stripe account, configured Resend, set branding, built out services with variants and pricing, and went live — entirely through the admin dashboard.</li>
-                <li><strong>Full SEO coverage at launch.</strong> Custom meta titles, descriptions, and Open Graph images on every page. Google Analytics (GA4), Search Console verified, sitemap submitted, and a Google Business Profile live on Maps — all set up as part of go-live.</li>
+                <li><strong>Zero code required.</strong> The client connected their own Stripe account, configured Resend, set branding, built out services with variants and pricing, and went live - entirely through the admin dashboard.</li>
+                <li><strong>Full SEO coverage at launch.</strong> Custom meta titles, descriptions, and Open Graph images on every page. Google Analytics (GA4), Search Console verified, sitemap submitted, and a Google Business Profile live on Maps - all set up as part of go-live.</li>
                 <li><strong>Post-launch technical SEO.</strong> Full Schema.org suite (HealthAndBeautyBusiness, Person, WebSite, BreadcrumbList, FAQPage), clean URLs with 301 redirects sitewide, og:image fallback system, and a Supabase audit that verified data integrity and cleared all test records from the live database.</li>
                 <li><strong>No deployment work to onboard.</strong> The multi-tenant architecture means adding a new practitioner requires no code changes, no schema updates, and no new deployment.</li>
             </ul>
@@ -353,7 +353,7 @@
             <h3>Client Feedback</h3>
             <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
                 <p style="margin:0 0 0.75em;">"My website is Beautiful! 🤩 Thank you George!"</p>
-                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">— <a href="https://www.facebook.com/p/White-Bear-Harmonics-100089805055422/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Karen Alexander</a>, Owner, White Bear Harmonics</footer>
+                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">- <a href="https://www.facebook.com/p/White-Bear-Harmonics-100089805055422/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Karen Alexander</a>, Owner, White Bear Harmonics</footer>
             </blockquote>
         </div>
 
@@ -367,12 +367,12 @@
                         whitebearharmonics.com
                     </div>
                     <p class="og-card-title">White Bear Harmonics | Energy Healing in Michigan</p>
-                    <p class="og-card-desc">QHHT, Reiki, Biofield Tuning, and more — book a session with Karen L Alexander, PhD.</p>
+                    <p class="og-card-desc">QHHT, Reiki, Biofield Tuning, and more - book a session with Karen L Alexander, PhD.</p>
                 </div>
             </a>
             <div style="display:flex;flex-direction:column;align-items:center;gap:0.5em;margin-top:1.5em;">
                 <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/images/thewellnessco/whitebearharmonicsgradientqrcode.png" alt="QR code — scan to visit White Bear Harmonics live site" style="width:160px;height:160px;display:block;" />
+                    <img src="assets/images/thewellnessco/whitebearharmonicsgradientqrcode.png" alt="QR code - scan to visit White Bear Harmonics live site" style="width:160px;height:160px;display:block;" />
                 </a>
                 <span style="font-size:0.8em;color:var(--color-text-muted);">Scan or click to visit the live client site</span>
             </div>
@@ -388,7 +388,7 @@
                         the-wellness-co.vercel.app
                     </div>
                     <p class="og-card-title">The Wellness Co. | Booking Platform Demo</p>
-                    <p class="og-card-desc">Fully populated spec deployment — explore the booking flow, services, and admin dashboard.</p>
+                    <p class="og-card-desc">Fully populated spec deployment - explore the booking flow, services, and admin dashboard.</p>
                 </div>
             </a>
         </div>
@@ -412,7 +412,7 @@
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
+        <span class="availability-dot"></span><strong>Available now - full-stack roles (remote or Detroit) and select freelance work</strong>. <a href="contact.html">Let's talk</a>.
     </div>
 
     <!-- Footer -->
