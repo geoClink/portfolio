@@ -76,10 +76,11 @@ body::before {
 .hero-butter-iframe {
     position: relative;
     z-index: 1;
-    width: 130%;
-    height: 130%;
-    margin-left: -15%;
-    margin-top: -10%;
+    /* Oversize the iframe and scale it down so the embedded site renders zoomed out */
+    width: calc(100% / 0.85);
+    height: calc(100% / 0.85);
+    transform: scale(0.85);
+    transform-origin: top left;
     border: none;
     display: block;
     opacity: 0;
