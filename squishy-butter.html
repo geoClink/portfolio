@@ -543,62 +543,17 @@ return Math.max(6, Math.min(48, affordable));</div>
         </nav>
     </div>
 
-    <!-- Squishy Butter waitlist -->
-    <div style="background:#1a1510;padding:3rem 1.5rem;text-align:left;">
-        <h2 style="font-size:1.25rem;font-weight:600;color:#f5f0e8;margin:0 0 0.5rem;">Get told when the vault opens</h2>
-        <p style="color:rgba(245,240,232,0.7);font-size:0.95rem;margin:0 0 1.25rem;">Limited runs, serial numbers, certificates. One email when it launches. No spam.</p>
-        <div id="sb-signup-wrap">
-            <form id="sb-signup" style="display:flex;gap:0.5rem;justify-content:center;align-items:center;flex-wrap:wrap;max-width:420px;margin:0 auto;">
-                <input type="email" id="sb-email" placeholder="your@email.com" required
-                    style="flex:1;min-width:0;padding:0.6rem 1rem;border:none;border-radius:6px;font-size:0.95rem;background:#fff;color:#111;outline:none;">
-                <button type="submit"
-                    style="height:auto;line-height:normal;padding:0.6rem 1.25rem;background:#f0c14b;color:#1a1510;border:none;border-radius:6px;font-size:0.95rem;font-weight:700;cursor:pointer;white-space:nowrap;text-transform:none;letter-spacing:normal;">
-                    Notify me
-                </button>
-            </form>
+    <!-- Squishy Butter CTA -->
+    <div style="background:#1a1510;padding:3rem 0;text-align:left;">
+        <div style="max-width:720px;margin:0 auto;padding:0 2rem;">
+            <h2 style="font-size:1.25rem;font-weight:600;color:#f5f0e8;margin:0 0 0.5rem;">Stay in the loop.</h2>
+            <p style="color:rgba(245,240,232,0.7);font-size:0.95rem;margin:0 0 1.25rem;">The gacha loop is always open. Over 100 serial-numbered butters — Commons, Rares, Epics, and Legendaries — each with their own squish physics and ASMR sounds. No ads, no downloads.</p>
+            <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer"
+                style="display:inline-block;padding:0.6rem 1.25rem;background:#f0c14b;color:#1a1510;border-radius:6px;font-size:0.95rem;font-weight:700;text-decoration:none;white-space:nowrap;">
+                Play squishybutter.app ↗
+            </a>
         </div>
-        <p id="sb-signup-msg" style="display:none;margin-top:0.75rem;font-size:0.9rem;color:#f5f0e8;"></p>
     </div>
-
-    <script>
-        document.getElementById('sb-signup').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const msg = document.getElementById('sb-signup-msg');
-            const email = document.getElementById('sb-email').value;
-            btn.disabled = true;
-            btn.textContent = 'Saving…';
-            try {
-                const res = await fetch('https://fcmfuxoblbtxigknwhpz.supabase.co/functions/v1/subscribe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjbWZ1eG9ibGJ0eGlna253aHB6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTQ4MzQsImV4cCI6MjA5NTU3MDgzNH0.YFH0CVGnLAW4ufdj04aAc2e4CZeGxnNsyAfo3n40VPM'
-                    },
-                    body: JSON.stringify({ email, source: 'squishy-butter' })
-                });
-                const data = await res.json();
-                document.getElementById('sb-signup-wrap').style.display = 'none';
-                msg.style.display = 'block';
-                if (data.error === 'already') {
-                    msg.style.color = 'rgba(245,240,232,0.7)';
-                    msg.textContent = 'That email is already subscribed.';
-                } else if (data.success) {
-                    msg.style.color = '#7ddb8f';
-                    msg.textContent = "You're in. We'll reach out when it launches.";
-                } else {
-                    msg.style.color = '#ff8a80';
-                    msg.textContent = 'Something went wrong - try again.';
-                }
-            } catch {
-                btn.disabled = false;
-                btn.textContent = 'Notify me';
-                msg.style.display = 'block';
-                msg.style.color = '#ff8a80';
-                msg.textContent = 'Something went wrong - try again.';
-            }
-        });
-    </script>
 
     <!-- CTA Band -->
     <div class="page-cta">
