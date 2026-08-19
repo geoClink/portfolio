@@ -168,6 +168,7 @@
                 <li>Appearance - 5 color palettes and 5 font combinations that apply to the live site instantly</li>
                 <li>Content and SEO - hero, bio, FAQ, banner, and per-page meta tags all editable without code</li>
                 <li>Integrations - the owner pastes their own Stripe and Resend keys directly into the UI</li>
+                <li>Email automations - a post-appointment review request email fires automatically N days after each session; the owner sets the delay, the Google Review URL, and custom subject and body from the dashboard — no developer involvement</li>
             </ul>
 
             <details class="tech-details" style="margin-top:1.25em;">
@@ -321,7 +322,7 @@
                     <p>Every new booking - whether paid through Stripe or a free consultation booked directly - triggers a notification email to the practitioner alongside the client confirmation. The email includes the client's name, contact info, date, time, any notes they left, and a direct link to the dashboard. Both the Stripe webhook path (for paid services) and the free booking path fire this independently so no booking ever goes unnoticed regardless of which code path handled it.</p>
 
                     <h4>Auth &amp; Multi-Tenancy</h4>
-                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one - a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. A cron job runs nightly to send automated appointment reminder emails 24 hours before each scheduled session. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
+                    <p>The admin is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. Password reset is handled through a tokenized email flow. The architecture is multi-tenant from day one - a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that tenant. Onboarding a new practitioner means inserting a row and deploying a Vercel project, no schema changes, no code forks. Two cron jobs run nightly. The first sends a 24-hour appointment reminder to each client before their scheduled session. The second fires a post-appointment follow-up — a "How was your session?" email with a direct Google Review CTA — sent automatically N days after the appointment, configurable per tenant. Both track a sent flag on the appointment row so no client receives a duplicate. Subject line, body, review URL, and send delay are all editable from the admin dashboard without developer involvement. A GDPR-compliant cookie consent banner appears on first visit with accept/decline options; the choice persists in localStorage so the prompt never re-appears.</p>
                 </div>
             </details>
         </div>
