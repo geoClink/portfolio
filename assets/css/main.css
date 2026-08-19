@@ -3481,6 +3481,22 @@ footer#footer .footer-copy {
     color: var(--color-on-dark-muted);
     text-align: left;
 }
+footer#footer .footer-squishy {
+    width: 100%;
+    text-align: left;
+    font-size: 0.72em;
+    color: var(--color-on-dark-muted);
+    margin: var(--space-3) 0 0;
+    letter-spacing: 0.01em;
+}
+footer#footer .footer-squishy a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+footer#footer .footer-squishy a:hover {
+    color: var(--color-on-dark);
+}
 @media (max-width: 600px) {
     footer#footer {
         padding: var(--space-5) var(--space-3);
