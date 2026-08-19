@@ -3527,6 +3527,16 @@ footer#footer .footer-squishy a:hover {
     }
     footer#footer .footer-name {
         text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3em;
+    }
+    footer#footer .footer-name-text {
+        text-align: center;
+        align-items: center;
+    }
+    footer#footer .footer-favicon {
+        margin-top: 0;
     }
     footer#footer .footer-social {
         justify-content: center;
