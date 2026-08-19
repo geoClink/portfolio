@@ -78,6 +78,16 @@
     transition: color 0.2s ease, border-bottom-color 0.2s ease !important;
 }
 
+.case-links-label {
+    width: 100%;
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: -0.25em;
+}
+
 .case-links a.button:hover {
     background: transparent !important;
     color: var(--color-heading) !important;
