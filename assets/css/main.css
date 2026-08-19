@@ -127,6 +127,13 @@ a:link, a:visited {
 		align-items: center !important;
 		gap: 0.45em !important;
 	}
+	#header h1 .nav-name {
+		display: none !important;
+	}
+	.site-favicon {
+		width: 28px !important;
+		height: 28px !important;
+	}
 	nav.links {
 		display: none !important;
 	}
@@ -3413,6 +3420,17 @@ footer#footer .footer-inner {
 }
 footer#footer .footer-name {
     text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55em;
+}
+.footer-favicon {
+    flex-shrink: 0;
+    margin-top: 0.15em;
+}
+.footer-name-text {
+    display: flex;
+    flex-direction: column;
 }
 footer#footer .footer-name strong {
     display: block;

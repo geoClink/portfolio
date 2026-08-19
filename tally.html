@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/case-study.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
-        :root { --case-accent: #ef4444; }
+        :root { --case-accent: #4361EE; }
         .screenshot-scroll-track { display: flex; gap: 1.8em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 1em 0 1.5em; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
         .screenshot-scroll-track::before, .screenshot-scroll-track::after { content: ''; flex: 0 0 2rem; }
         .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
@@ -67,7 +67,7 @@
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" />George Clinkscales Jr.</a></h1>
+        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -271,10 +271,11 @@
 
     <!-- Tally update signup -->
     <div style="background:#4361EE;padding:3rem 1.5rem;text-align:left;">
+        <div style="max-width:860px;margin:0 auto;">
         <h2 style="font-size:1.25rem;font-weight:600;color:#fff;margin:0 0 0.5rem;">Stay in the loop</h2>
         <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1.25rem;">Get notified when Tally ships new features. No spam.</p>
         <div id="tally-signup-wrap">
-            <form id="tally-signup" style="display:flex;gap:0.5rem;justify-content:center;align-items:center;flex-wrap:wrap;max-width:420px;margin:0 auto;">
+            <form id="tally-signup" style="display:flex;gap:0.5rem;justify-content:flex-start;align-items:center;flex-wrap:wrap;max-width:420px;margin:0;">
                 <input type="email" id="tally-email" placeholder="your@email.com" required
                     style="flex:1;min-width:0;padding:0.6rem 1rem;border:none;border-radius:6px;font-size:0.95rem;background:#fff;color:#111;outline:none;">
                 <button type="submit"
@@ -284,6 +285,7 @@
             </form>
         </div>
         <p id="tally-signup-msg" style="display:none;margin-top:0.75rem;font-size:0.9rem;color:#fff;"></p>
+        </div>
     </div>
 
     <script>
@@ -335,9 +337,10 @@
     <footer id="footer">
         <div class="footer-inner">
             <div class="footer-name">
-                <strong>George Clinkscales Jr.</strong>
-                <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
-                <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
+                <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
+                    <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
+                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a></div>
             </div>
             <ul class="footer-social">
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
