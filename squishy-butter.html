@@ -182,7 +182,7 @@
         </div>
         <div class="sb-app-links">
             <button type="button" class="sb-badge-btn" onclick="sbShowComingSoon()" aria-label="Download on the App Store - coming soon"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36" style="display:block;"></button>
-            <button type="button" class="sb-badge-btn" onclick="sbShowComingSoon()" aria-label="Get it on Google Play - coming soon"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="36" style="display:block;"></button>
+            <button type="button" class="sb-badge-btn" onclick="sbShowAndroidBeta()" aria-label="Get it on Google Play - Android closed beta"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="36" style="display:block;"></button>
             <a class="sb-app-link" href="https://squishy-butter-co.itch.io" target="_blank" rel="noopener noreferrer">itch.io ↗</a>
             <div class="sb-socials-group">
                 <span class="sb-socials-label">Socials</span>
@@ -593,6 +593,31 @@ return Math.max(6, Math.min(48, affordable));</div>
     </footer>
 
     <script>
+        function sbShowAndroidBeta() {
+            let overlay = document.getElementById('sb-android-beta-overlay');
+            if (overlay) { overlay.style.display = 'flex'; return; }
+            overlay = document.createElement('div');
+            overlay.id = 'sb-android-beta-overlay';
+            overlay.className = 'sb-cs-overlay';
+            overlay.innerHTML = `
+                <div class="sb-cs-card" style="max-width:380px;">
+                    <button type="button" id="sb-android-beta-close" class="sb-cs-close" aria-label="Close">&#x2715;</button>
+                    <div style="font-size:34px;margin-bottom:16px;line-height:1;">🤖</div>
+                    <div class="sb-cs-eyebrow">Android</div>
+                    <div class="sb-cs-title">Closed Testing</div>
+                    <p class="sb-cs-text" style="margin-bottom:16px;">This app is in closed testing and working on becoming a real Android app. To help it get there, join the group and opt in to the beta.</p>
+                    <ol style="text-align:left;font-size:13px;line-height:2.2;margin:0;padding-left:18px;color:#444;">
+                        <li><a href="https://groups.google.com/g/squishy-butter-testers" target="_blank" rel="noopener" style="color:#6B4226;font-weight:700;">Join the tester group</a></li>
+                        <li><a href="https://play.google.com/apps/testing/com.squishybutter.app" target="_blank" rel="noopener" style="color:#6B4226;font-weight:700;">Opt in on the web</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener" style="color:#6B4226;font-weight:700;">Install from the Play Store</a></li>
+                    </ol>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', e => { if (e.target === overlay) overlay.style.display = 'none'; });
+            overlay.querySelector('#sb-android-beta-close').addEventListener('click', () => overlay.style.display = 'none');
+        }
+
         function sbShowComingSoon() {
             let overlay = document.getElementById('sb-cs-overlay');
             if (overlay) { overlay.style.display = 'flex'; return; }
