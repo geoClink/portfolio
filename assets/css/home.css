@@ -869,13 +869,10 @@ body::before {
 
 .appstore-app-btns {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    overflow-x: auto;
     gap: 0.5em;
     margin-top: 0.75em;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
 }
 .appstore-app-btns::-webkit-scrollbar { display: none; }
 .appstore-app-btns img { height: 40px; width: auto; }
