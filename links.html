@@ -1,0 +1,472 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Links | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .links-page {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: var(--space-6) var(--space-3) var(--space-8);
+        }
+
+        .links-page h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin: 0 0 var(--space-1);
+        }
+
+        .links-page .page-sub {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin: 0 0 var(--space-6);
+        }
+
+        .links-section {
+            margin-bottom: var(--space-6);
+        }
+
+        .links-section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-2);
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-3);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+        }
+
+        .link-card:hover {
+            border-color: rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px var(--color-shadow);
+            background: #f0f0f0;
+            color: var(--color-text);
+        }
+
+        .link-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+        }
+
+        .link-card-icon img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .link-card-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-card-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-heading);
+        }
+
+        .link-card-desc {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+            margin-top: 0.15rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link-card-arrow {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            flex-shrink: 0;
+        }
+
+        /* Android testing steps */
+        .android-steps {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-3);
+            margin-bottom: 0.6rem;
+        }
+
+        .android-steps-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-heading);
+            margin: 0 0 var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .android-steps-note {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-2);
+        }
+
+        .android-step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .android-step-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .step-num {
+            width: 24px;
+            height: 24px;
+            background: var(--color-heading);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .android-step-list a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .android-step-list a:hover {
+            border-bottom-color: var(--color-text);
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-left: 0.25rem;
+        }
+
+        @media (max-width: 480px) {
+            .links-page {
+                padding: var(--space-4) var(--space-2) var(--space-6);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button">Case Studies</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div id="main" role="main">
+        <div class="links-page">
+
+            <h1>All Links</h1>
+            <p class="page-sub">Live apps, websites, and testing programs</p>
+
+            <!-- Live Apps -->
+            <div class="links-section">
+                <p class="links-section-label">Live Apps</p>
+
+                <a class="link-card" href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/tallyios/appicon.webp" alt="Tally icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Tally - Time Tracker</div>
+                        <div class="link-card-desc">App Store · iOS &amp; Mac</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">CoastCast</div>
+                        <div class="link-card-desc">App Store · iOS</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Stamped! - A City Passport</div>
+                        <div class="link-card-desc">App Store · iOS</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">TakeFlight - A Bird Life</div>
+                        <div class="link-card-desc">App Store · iOS</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://apps.apple.com/il/app/tripsetta/id6756068722" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Tripsetta</div>
+                        <div class="link-card-desc">App Store · iOS</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://play.google.com/store/apps/details?id=com.tripsetta.app" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Tripsetta</div>
+                        <div class="link-card-desc">Google Play · Android</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+            </div>
+
+            <!-- Android Closed Testing -->
+            <div class="links-section">
+                <p class="links-section-label">Android Closed Testing</p>
+
+                <div class="android-steps">
+                    <div class="android-steps-title">
+                        <img src="assets/images/tallyios/appicon.webp" alt="Tally icon" style="width:22px;height:22px;border-radius:5px;object-fit:cover;" />
+                        Tally - Time Tracker — Closed Beta
+                    </div>
+                    <p class="android-steps-note">3 steps to get access — takes about 2 minutes</p>
+                    <ul class="android-step-list">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <a href="https://groups.google.com/g/tally-time-tracker" target="_blank" rel="noopener noreferrer">Join the tester group</a>
+                                <span class="step-label">— Google Groups</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <a href="https://play.google.com/apps/testing/name.georgeclinkscales.tally" target="_blank" rel="noopener noreferrer">Opt in to the beta</a>
+                                <span class="step-label">— Google Play</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <a href="https://play.google.com/store/apps/details?id=name.georgeclinkscales.tally" target="_blank" rel="noopener noreferrer">Download the app</a>
+                                <span class="step-label">— Google Play Store</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="android-steps" id="squishy-butter-beta">
+                    <div class="android-steps-title">
+                        <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter icon" style="width:20px;height:20px;object-fit:contain;" />
+                        Squishy Butter — Closed Beta
+                    </div>
+                    <p class="android-steps-note">3 steps to get access — takes about 1 minute</p>
+
+                    <ul class="android-step-list">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <a href="https://groups.google.com/g/squishy-butter-testers" target="_blank" rel="noopener noreferrer">Join the tester group</a>
+                                <span class="step-label">— Google Groups</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <a href="https://play.google.com/apps/testing/com.squishybutter.app" target="_blank" rel="noopener noreferrer">Opt in to the beta</a>
+                                <span class="step-label">— Google Play</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer">Download the app</a>
+                                <span class="step-label">— Google Play Store</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Live Websites -->
+            <div class="links-section">
+                <p class="links-section-label">Live Websites &amp; Web Apps</p>
+
+                <a class="link-card" href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter logo" style="width:28px;height:28px;object-fit:contain;border-radius:0;" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Squishy Butter</div>
+                        <div class="link-card-desc">squishybutter.app</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/tallyios/appicon.webp" alt="Tally icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Tally - Time Tracker</div>
+                        <div class="link-card-desc">tallytimetracker.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://tripsetta.com" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Tripsetta</div>
+                        <div class="link-card-desc">tripsetta.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://chstudiosdetroit.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">🏙️</div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">CH Studios Detroit</div>
+                        <div class="link-card-desc">chstudiosdetroit.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://crystallakeresortmi.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Crystal Lake Resort MI</div>
+                        <div class="link-card-desc">crystallakeresortmi.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/sort-tek/favicon.png" alt="Sort-Tek icon" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">Sort-Tek Inspection Systems</div>
+                        <div class="link-card-desc">sort-tek.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+
+                <a class="link-card" href="https://whitebearharmonics.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="link-card-icon">
+                        <img src="assets/images/site/whitebearharmonics-logo.png" alt="White Bear Harmonics logo" />
+                    </div>
+                    <div class="link-card-text">
+                        <div class="link-card-name">White Bear Harmonics</div>
+                        <div class="link-card-desc">whitebearharmonics.com</div>
+                    </div>
+                    <span class="link-card-arrow">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
+                <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
+                    <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
+                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a></div>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        <p class="footer-squishy"><a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">squishybutter.app</a> — a gacha style, ad-free digital squishy game/toy by George</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
