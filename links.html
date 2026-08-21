@@ -184,9 +184,53 @@
             margin-left: 0.25rem;
         }
 
-        @media (max-width: 480px) {
+        /* Multi-platform card (div, not anchor) */
+        .link-card-multi {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-3);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+        }
+
+        .platform-btns {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .platform-btn {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-heading);
+            text-decoration: none;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 0.3rem 0.6rem;
+            white-space: nowrap;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .platform-btn:hover {
+            background: var(--color-bg);
+            border-color: rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 540px) {
             .links-page {
                 padding: var(--space-4) var(--space-2) var(--space-6);
+            }
+            .link-card-multi {
+                flex-wrap: wrap;
+            }
+            .platform-btns {
+                width: 100%;
+                padding-left: 56px;
             }
         }
     </style>
@@ -227,75 +271,70 @@
             <h1>All Links</h1>
             <p class="page-sub">Live apps, websites, and testing programs</p>
 
-            <!-- Live Apps -->
+            <!-- App Store -->
             <div class="links-section">
-                <p class="links-section-label">Live Apps</p>
+                <p class="links-section-label">App Store</p>
 
                 <a class="link-card" href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/tallyios/appicon.webp" alt="Tally icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/tallyios/appicon.webp" alt="Tally icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Tally - Time Tracker</div>
-                        <div class="link-card-desc">App Store · iOS &amp; Mac</div>
+                        <div class="link-card-desc">iOS &amp; Mac</div>
                     </div>
                     <span class="link-card-arrow">↗</span>
                 </a>
 
                 <a class="link-card" href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">CoastCast</div>
-                        <div class="link-card-desc">App Store · iOS</div>
+                        <div class="link-card-desc">iOS</div>
                     </div>
                     <span class="link-card-arrow">↗</span>
                 </a>
 
                 <a class="link-card" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Stamped! - A City Passport</div>
-                        <div class="link-card-desc">App Store · iOS</div>
+                        <div class="link-card-desc">iOS</div>
                     </div>
                     <span class="link-card-arrow">↗</span>
                 </a>
 
                 <a class="link-card" href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">TakeFlight - A Bird Life</div>
-                        <div class="link-card-desc">App Store · iOS</div>
+                        <div class="link-card-desc">iOS &amp; Mac</div>
                     </div>
                     <span class="link-card-arrow">↗</span>
                 </a>
+            </div>
 
-                <a class="link-card" href="https://apps.apple.com/il/app/tripsetta/id6756068722" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
-                    </div>
+            <!-- Google Play -->
+            <div class="links-section">
+                <p class="links-section-label">Google Play</p>
+
+                <div class="link-card-multi">
+                    <div class="link-card-icon"><img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Tripsetta</div>
-                        <div class="link-card-desc">App Store · iOS</div>
+                        <div class="link-card-desc">iOS &amp; Android</div>
                     </div>
-                    <span class="link-card-arrow">↗</span>
-                </a>
+                    <div class="platform-btns">
+                        <a href="https://apps.apple.com/il/app/tripsetta/id6756068722" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="32" style="display:block;"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.tripsetta.app" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="32" style="display:block;"></a>
+                    </div>
+                </div>
+            </div>
 
-                <a class="link-card" href="https://play.google.com/store/apps/details?id=com.tripsetta.app" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
-                    </div>
-                    <div class="link-card-text">
-                        <div class="link-card-name">Tripsetta</div>
-                        <div class="link-card-desc">Google Play · Android</div>
-                    </div>
-                    <span class="link-card-arrow">↗</span>
-                </a>
+            <!-- iOS TestFlight -->
+            <div class="links-section">
+                <p class="links-section-label">iOS TestFlight</p>
+                <div style="padding: var(--space-2) var(--space-3); background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
+                    No active TestFlight builds right now — check back soon.
+                </div>
             </div>
 
             <!-- Android Closed Testing -->
@@ -336,44 +375,43 @@
                 <div class="android-steps" id="squishy-butter-beta">
                     <div class="android-steps-title">
                         <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter icon" style="width:20px;height:20px;object-fit:contain;" />
-                        Squishy Butter — Closed Beta
+                        Squishy Butter — Android Beta
                     </div>
-                    <p class="android-steps-note">3 steps to get access — takes about 1 minute</p>
+                    <p class="android-steps-note">Google requires 3 steps to access a closed beta — do them in order and it takes about 1 minute.</p>
 
                     <ul class="android-step-list">
                         <li>
                             <span class="step-num">1</span>
                             <div>
                                 <a href="https://groups.google.com/g/squishy-butter-testers" target="_blank" rel="noopener noreferrer">Join the tester group</a>
-                                <span class="step-label">— Google Groups</span>
+                                <span class="step-label">— opens Google Groups, click "Join group"</span>
                             </div>
                         </li>
                         <li>
                             <span class="step-num">2</span>
                             <div>
                                 <a href="https://play.google.com/apps/testing/com.squishybutter.app" target="_blank" rel="noopener noreferrer">Opt in to the beta</a>
-                                <span class="step-label">— Google Play</span>
+                                <span class="step-label">— opens Google Play, click "Become a tester"</span>
                             </div>
                         </li>
                         <li>
                             <span class="step-num">3</span>
                             <div>
                                 <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer">Download the app</a>
-                                <span class="step-label">— Google Play Store</span>
+                                <span class="step-label">— opens the Play Store listing, click "Install"</span>
                             </div>
                         </li>
                     </ul>
+                    <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.75rem;margin-bottom:0;">Step 2 may say "you are not eligible" if step 1 hasn't processed yet — wait 30 seconds and refresh.</p>
                 </div>
             </div>
 
-            <!-- Live Websites -->
+            <!-- My Projects -->
             <div class="links-section">
-                <p class="links-section-label">Live Websites &amp; Web Apps</p>
+                <p class="links-section-label">My Projects</p>
 
                 <a class="link-card" href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter logo" style="width:28px;height:28px;object-fit:contain;border-radius:0;" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter logo" style="width:28px;height:28px;object-fit:contain;border-radius:0;" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Squishy Butter</div>
                         <div class="link-card-desc">squishybutter.app</div>
@@ -382,9 +420,7 @@
                 </a>
 
                 <a class="link-card" href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/tallyios/appicon.webp" alt="Tally icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/tallyios/appicon.webp" alt="Tally icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Tally - Time Tracker</div>
                         <div class="link-card-desc">tallytimetracker.com</div>
@@ -393,9 +429,7 @@
                 </a>
 
                 <a class="link-card" href="https://tripsetta.com" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/tripsetta/appicon.png" alt="Tripsetta icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Tripsetta</div>
                         <div class="link-card-desc">tripsetta.com</div>
@@ -404,18 +438,21 @@
                 </a>
 
                 <a class="link-card" href="https://chstudiosdetroit.com/" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">🏙️</div>
+                    <div class="link-card-icon"><img src="assets/images/ch-studios-favicon.svg" alt="CH Studios Detroit" style="width:36px;height:36px;object-fit:contain;" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">CH Studios Detroit</div>
                         <div class="link-card-desc">chstudiosdetroit.com</div>
                     </div>
                     <span class="link-card-arrow">↗</span>
                 </a>
+            </div>
+
+            <!-- Client Sites -->
+            <div class="links-section">
+                <p class="links-section-label">Client Sites</p>
 
                 <a class="link-card" href="https://crystallakeresortmi.com/" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Crystal Lake Resort MI</div>
                         <div class="link-card-desc">crystallakeresortmi.com</div>
@@ -424,9 +461,7 @@
                 </a>
 
                 <a class="link-card" href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/sort-tek/favicon.png" alt="Sort-Tek icon" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/sort-tek/favicon.png" alt="Sort-Tek icon" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">Sort-Tek Inspection Systems</div>
                         <div class="link-card-desc">sort-tek.com</div>
@@ -435,9 +470,7 @@
                 </a>
 
                 <a class="link-card" href="https://whitebearharmonics.com/" target="_blank" rel="noopener noreferrer">
-                    <div class="link-card-icon">
-                        <img src="assets/images/site/whitebearharmonics-logo.png" alt="White Bear Harmonics logo" />
-                    </div>
+                    <div class="link-card-icon"><img src="assets/images/site/whitebearharmonics-logo.png" alt="White Bear Harmonics logo" /></div>
                     <div class="link-card-text">
                         <div class="link-card-name">White Bear Harmonics</div>
                         <div class="link-card-desc">whitebearharmonics.com</div>

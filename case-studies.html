@@ -277,6 +277,18 @@
             align-self: center;
         }
 
+        .cs-card-badges {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5em;
+            align-items: center;
+            width: 100%;
+            padding-top: 0.35em;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .cs-card-badges::-webkit-scrollbar { display: none; }
+
         @media (max-width: 600px) {
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
@@ -293,17 +305,17 @@
             .knot-deploy-group { padding-left: 0; }
         }
         .knot-deploy-label {
-            font-size: 0.65em;
+            font-size: 0.72em;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--color-text-muted);
-            margin-bottom: 0.6em;
+            margin-bottom: 0.75em;
         }
         .knot-chips {
             display: flex;
             flex-direction: column;
-            gap: 0.35em;
+            gap: 0.55em;
         }
         .knot-chip {
             display: inline-flex;
@@ -311,7 +323,7 @@
             gap: 0.5em;
             text-decoration: none;
             color: var(--color-heading);
-            font-size: 0.82em;
+            font-size: 0.9em;
             font-weight: 500;
         }
         .knot-chip::before {
@@ -324,17 +336,20 @@
             color: var(--color-accent);
         }
         .knot-chip img {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 3px;
             object-fit: cover;
         }
         .knot-chip-tag {
-            font-size: 0.72em;
+            font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--color-text-muted);
+        }
+        .knot-chip-tag.real-client {
+            color: #16a34a;
         }
     </style>
     <script type="application/ld+json">
@@ -416,12 +431,12 @@
                             <a href="wellness-co.html" class="knot-chip">
                                 <img src="assets/images/thewellnessco/whitebear-logo.png" alt="" />
                                 White Bear Harmonics
-                                <span class="knot-chip-tag">Real client</span>
+                                <span class="knot-chip-tag real-client">Real client</span>
                             </a>
                             <a href="inn-co.html" class="knot-chip">
                                 <img src="assets/images/crystal-lake/favicon.svg" alt="" />
                                 Crystal Lake Resort
-                                <span class="knot-chip-tag">Real client</span>
+                                <span class="knot-chip-tag real-client">Real client</span>
                             </a>
                             <a href="bakery-spec.html" class="knot-chip">
                                 <img src="assets/images/thebakeryco/favicon.svg" alt="" />
@@ -528,8 +543,10 @@
                         <div class="cs-card-btns">
                             <a href="tally.html" class="cs-cta">Case Study →</a>
                             <a href="https://tallytimetracker.com/login" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Web App ↗</a>
-                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="32" style="display:block;"></a>
-                            <a href="tally/android-beta.html" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="32" style="display:block;"></a>
+                            <div class="cs-card-badges">
+                                <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="32" style="display:block;"></a>
+                                <a href="tally/android-beta.html" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="32" style="display:block;"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -567,11 +584,10 @@
                         <div class="cs-card-btns">
                             <a href="squishy-butter.html" class="cs-cta">Case Study →</a>
                             <a href="https://squishybutter.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Try It ↗</a>
-                            <span style="display:inline-flex;flex-direction:column;align-items:center;gap:2px;cursor:default;" title="Coming Soon">
-                                <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store — Coming Soon" height="32" style="display:block;opacity:0.4;filter:grayscale(1);">
-                                <span style="font-size:0.62em;color:var(--color-text-muted);letter-spacing:0.04em;">Coming Soon</span>
-                            </span>
-                            <a href="links.html#squishy-butter-beta"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="32" style="display:block;"></a>
+                            <div class="cs-card-badges">
+                                <button onclick="document.getElementById('cs-coming-soon-modal').style.display='flex'" style="padding:0;background:none;border:none;cursor:pointer;opacity:0.4;filter:grayscale(1);" title="iOS — Coming Soon"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store — Coming Soon" height="32" style="display:block;"></button>
+                                <a href="squishy-butter/android-beta.html" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="32" style="display:block;"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -684,6 +700,16 @@
         });
 
     </script>
+
+    <!-- Coming Soon modal (App Store badge) -->
+    <div id="cs-coming-soon-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(17,17,17,0.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,0.18);padding:40px 44px 44px;width:340px;max-width:100%;position:relative;text-align:center;">
+            <button onclick="document.getElementById('cs-coming-soon-modal').style.display='none'" style="position:absolute;top:14px;right:18px;height:auto;line-height:1;padding:0.25em;background:none;border:none;box-shadow:none;cursor:pointer;font-size:15px;color:var(--color-text-muted);" aria-label="Close">✕</button>
+            <p style="font-size:0.72em;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:10px;">iOS App</p>
+            <h2 style="font-size:1.5em;font-weight:700;color:var(--color-heading);margin-bottom:10px;line-height:1.2;">Coming Soon</h2>
+            <p style="font-size:0.85em;color:var(--color-text-muted);line-height:1.6;margin:0;">Squishy Butter is available now on Android. The iOS App Store release is in progress — check back soon.</p>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -30,7 +30,7 @@
         .sb-hook { font-size: 1.15em; line-height: 1.65; font-weight: 500; color: var(--color-heading); margin-bottom: 1em; }
         /* App store links - match the Try It link; margin-bottom keeps the
            .case-meta separator line from colliding with the button underlines */
-        .sb-app-links { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: flex-end; margin-top: calc(-1 * var(--space-4)); margin-bottom: var(--space-4); }
+        .sb-app-links { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; margin-top: var(--space-1); margin-bottom: var(--space-4); }
         .sb-app-link { display: inline-flex; align-items: center; height: auto; line-height: normal; font-size: 0.85em; font-weight: 600; text-transform: none; letter-spacing: 0.02em; padding: 0; border-radius: 0; box-shadow: none; background: transparent; color: var(--color-text-muted) !important; border: none; border-bottom: 1px solid var(--color-border); cursor: pointer; font-family: inherit; white-space: nowrap; text-decoration: none; transition: color 0.2s ease, border-bottom-color 0.2s ease; }
         .sb-app-link:hover { color: var(--color-heading) !important; background: transparent; box-shadow: none; border-bottom-color: var(--color-heading); }
         .sb-socials-group { display: contents; }
@@ -177,23 +177,22 @@
         </div>
 
         <div class="case-links">
-            <a href="https://squishybutter.app/" class="button" target="_blank" rel="noopener noreferrer" style="align-self:flex-end;">Try It ↗</a>
-            <span style="display:inline-flex;flex-direction:column;align-items:center;gap:2px;cursor:default;" title="Coming Soon">
-                <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store — Coming Soon" height="36" style="display:block;opacity:0.4;filter:grayscale(1);">
-                <span style="font-size:0.65em;color:var(--color-text-muted);letter-spacing:0.04em;">Coming Soon</span>
-            </span>
-            <a href="links.html#squishy-butter-beta"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="36" style="display:block;"></a>
-            <div id="sb-live-bar" class="sb-live-bar"></div>
+            <a href="https://squishybutter.app/" class="button" target="_blank" rel="noopener noreferrer">Try It ↗</a>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+                <a href="squishy-butter/android-beta.html" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" height="36" style="display:block;"></a>
+                <button class="sb-badge-btn" onclick="document.getElementById('sb-cs-overlay').style.display='flex'" title="iOS — Coming Soon">
+                    <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store — Coming Soon" height="36" style="display:block;opacity:0.35;filter:grayscale(1);">
+                </button>
+            </div>
         </div>
+        <div id="sb-live-bar" class="sb-live-bar" style="margin-bottom:var(--space-2);"></div>
         <div class="sb-app-links">
             <a class="sb-app-link" href="https://squishy-butter-co.itch.io" target="_blank" rel="noopener noreferrer">itch.io ↗</a>
-            <div class="sb-socials-group">
-                <span class="sb-socials-label">Socials</span>
-                <a class="sb-app-link" href="https://www.tiktok.com/@squishybutterco" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
-                <a class="sb-app-link" href="https://www.instagram.com/squishybutterco" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a class="sb-app-link" href="https://discord.gg/Ds8SePnDu" target="_blank" rel="noopener noreferrer">Discord ↗</a>
-                <a class="sb-app-link" href="https://www.facebook.com/squishybutterco" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-            </div>
+            <span style="color:var(--color-border);font-size:0.85em;">·</span>
+            <a class="sb-app-link" href="https://www.tiktok.com/@squishybutterco" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+            <a class="sb-app-link" href="https://www.instagram.com/squishybutterco" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a class="sb-app-link" href="https://discord.gg/Ds8SePnDu" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+            <a class="sb-app-link" href="https://www.facebook.com/squishybutterco" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
         </div>
 
         <div class="case-meta">Three.js · GLSL · WebGL2 · Blender · Vite · Supabase · Web Audio · 2026 · Live</div>
@@ -724,5 +723,15 @@ return Math.max(6, Math.min(48, affordable));</div>
             }).catch(function () {});
         })();
     </script>
+
+    <!-- Coming Soon modal (App Store badge) -->
+    <div id="sb-cs-overlay" class="sb-cs-overlay" style="display:none;" onclick="if(event.target===this)this.style.display='none'">
+        <div class="sb-cs-card">
+            <button class="sb-cs-close" onclick="document.getElementById('sb-cs-overlay').style.display='none'" aria-label="Close">✕</button>
+            <p class="sb-cs-eyebrow">iOS App</p>
+            <h2 class="sb-cs-title">Coming Soon</h2>
+            <p class="sb-cs-text">Squishy Butter is available now on Android. The iOS App Store release is in progress — check back soon.</p>
+        </div>
+    </div>
 </body>
 </html>
