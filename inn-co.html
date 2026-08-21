@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/inn-co.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Case study: Crystal Lake Resort - A live Michigan lakefront resort running on a full-stack direct booking platform I built solo. Stripe payments, weekly cottage rentals, gift cards, and a no-code admin dashboard." />
+    <meta name="description" content="Case study: Crystal Lake Resort - A live Michigan lakefront resort running on a full-stack direct booking platform I built solo. Stripe deposit payments, weekly cottage rentals, automated emails, and a no-code admin dashboard." />
     <meta property="og:title" content="Crystal Lake Resort - Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="A real client - live, taking bookings at crystallakeresortmi.com on a platform I built solo. Stripe, Supabase, weekly cottage booking, gift cards, and a no-code admin dashboard." />
+    <meta property="og:description" content="A real client - live, taking bookings at crystallakeresortmi.com on a platform I built solo. Stripe deposit payments, Supabase, weekly cottage booking, automated emails, and a no-code admin dashboard." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/inn-co.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/crystal-lake/screenshot-home.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Crystal Lake Resort - Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="A real client - live Michigan lakefront resort on a direct booking platform I built solo. Stripe, weekly cottage rentals, gift cards, no-code admin dashboard." />
+    <meta name="twitter:description" content="A real client - live Michigan lakefront resort on a direct booking platform I built solo. Stripe deposit payments, weekly cottage rentals, automated emails, no-code admin dashboard." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/crystal-lake/screenshot-home.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +82,7 @@
         <div class="case-hero">
             <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" class="case-hero-icon" />
             <h2 class="case-title">Crystal Lake Resort</h2>
-            <p class="case-tagline">A real client - a Michigan lakefront resort with motel rooms and private weekly cottages, live and taking bookings on a platform I designed and built solo. Stripe checkout, gift cards, automated emails, and a no-code admin dashboard - built to eliminate OTA commissions entirely.</p>
+            <p class="case-tagline">A real client - a Michigan lakefront resort with motel rooms and private weekly cottages, live and taking bookings on a platform I designed and built solo. Stripe deposit checkout, automated emails, and a no-code admin dashboard - built to eliminate OTA commissions entirely.</p>
         </div>
 
         <div class="case-links">
@@ -158,7 +158,7 @@
                 <li>Record a Booking - manually log reservations from phone calls or OTA platforms so the dates stay blocked</li>
                 <li>Cancel &amp; Refund - cancel any booking and issue a full Stripe refund in one click</li>
                 <li>Custom email templates - subject and body editable with <code>{{variables}}</code> and a live preview</li>
-                <li>Pricing rules - weekend multipliers and seasonal rates; lodging tax applied automatically at checkout</li>
+                <li>Pricing rules - weekend and seasonal flat-rate adjustments ($/night); lodging tax applied automatically at checkout</li>
                 <li>Setup checklist - the owner pastes their own Stripe and Resend keys directly into the UI with guided instructions</li>
             </ul>
 
@@ -179,7 +179,7 @@
                     <ul>
                         <li>Monthly stats - bookings, revenue, occupancy rate, and average nightly rate for the current month</li>
                         <li>Revenue by room - all-time bar chart showing which rooms generate the most revenue</li>
-                        <li>Gift cards - full management table; purchases, balances, recipients, and senders in one view</li>
+                        <li>Deposits &amp; Balances - per-booking deposit status; mark balance paid at check-in with one click</li>
                     </ul>
                     <h4>Property &amp; Settings</h4>
                     <ul>
@@ -231,12 +231,6 @@
                         <img loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" />
                     </div>
                     <p>Confirmation page pulls live details from the Stripe session - email includes a self-serve cancel link.</p>
-                </div>
-                <div class="desktop-ss-item">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-gift-card.png" alt="Gift card purchase page - amount picker, recipient details, and send button" />
-                    </div>
-                    <p>Gift cards from $5–$500 - a full balance bypasses Stripe entirely; partial coverage applies as a discount.</p>
                 </div>
                 <div class="desktop-ss-item">
                     <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -300,8 +294,8 @@
                     <h4>Booking &amp; Payment Flow</h4>
                     <p>The booking confirmation flow is webhook-driven - Stripe fires a <code>checkout.session.completed</code> event after payment clears, which writes the reservation to Supabase and triggers the confirmation email via Resend. A failed or abandoned payment never creates a booking record. After payment, the success page fetches live booking details using the Stripe <code>session_id</code> from the redirect URL and displays the confirmed room, dates, nights, and total paid - no polling, no waiting. Five email flows run through Resend: booking confirmation, cancellation receipt with refund status, pre-arrival reminder sent 2 days before check-in, post-stay review request sent the day after checkout, and contact form notifications routed to the owner.</p>
 
-                    <h4>Gift Cards</h4>
-                    <p>Gift card purchases flow through Stripe Checkout. After <code>checkout.session.completed</code> fires, the webhook writes a gift card record to Supabase with a generated code, the full purchase amount as the initial balance, and the recipient's details. Resend fires two emails: one to the recipient with their code, and a separate receipt to the buyer confirming the purchase. At booking checkout, guests can enter a gift card code - the server validates the code and returns the remaining balance, which is displayed as a discount in the price breakdown. If the gift card covers the full stay cost, Stripe is bypassed entirely: the reservation is written directly to Supabase and the standard confirmation flow fires. If it only partially covers the cost, a Stripe coupon is created for the gift card amount and applied to the Checkout session; after payment, the webhook deducts the used balance from the gift card record. The admin dashboard shows all gift cards across purchase date, original amount, remaining balance, recipient, and sender. Balances and redemption state are tracked in the <code>gift_cards</code> table and queryable per tenant.</p>
+                    <h4>Deposits &amp; Balance Tracking</h4>
+                    <p>Guests pay a $100 deposit per room at booking through Stripe Checkout. The balance owed is collected by the owner at the front desk before check-in. After <code>checkout.session.completed</code> fires, the webhook records the <code>deposit_amount</code> and <code>payment_intent_id</code> on the reservation row. The admin dashboard shows a Deposits &amp; Balances view per booking - the owner marks each balance paid with one click via a <code>PATCH /api/admin/reservations/:id/balance-paid</code> endpoint. Reservations added manually by phone have no <code>payment_intent_id</code> and display "No deposit" with the full amount due at front desk. The deposit status is derived from the <code>getDeposit()</code> helper: uses <code>deposit_amount</code> if set, falls back to $100 only when a <code>payment_intent_id</code> is present, otherwise $0.</p>
 
                     <h4>Custom Email Templates</h4>
                     <p>Email templates (booking confirmation, pre-arrival, post-checkout) are stored as a JSON string in the <code>tenant_settings</code> table. The admin dashboard exposes a full editing UI for subject and body, with live preview using sample data. At send time, a shared <code>applyEmailVars()</code> utility substitutes all <code>{{variable}}</code> placeholders with real reservation data. The cron jobs and webhook handler both read from the stored template first and fall back to hardcoded defaults if no custom template is saved, so the system works out of the box without requiring any configuration.</p>
@@ -316,7 +310,7 @@
                     <p>A read-only demo mode makes the admin dashboard accessible from this portfolio without exposing write endpoints or requiring a login. The page detects a <code>?demo=true</code> URL param and renders pre-seeded reservation and room data client-side, skipping all API calls for data loading. Every mutating action - status changes, form submissions, adding blocks, deleting rooms, saving API keys - is intercepted before it reaches the server and replaced with a toast notification. No demo session ever touches the database.</p>
 
                     <h4>Cancellation &amp; Refunds</h4>
-                    <p>Each reservation is issued a UUID cancel token at insert time. The confirmation email carries that token in a link - no guest account required, and the URL cannot be guessed or enumerated. When a guest clicks the link, the server checks the check-in date: cancellations made more than 48 hours before check-in receive a full refund processed automatically through the Stripe API. Cancellations within 48 hours fall under the hotel's standard policy - no refund is issued and the booking is marked cancelled in the admin.</p>
+                    <p>Each reservation is issued a UUID cancel token at insert time. The confirmation email carries that token in a link - no guest account required, and the URL cannot be guessed or enumerated. When a guest clicks the link, the server checks the check-in date: cancellations made more than 48 hours before check-in receive a full refund of their $100 deposit, processed automatically through the Stripe API. Cancellations within 48 hours of check-in forfeit the deposit - the booking is marked cancelled and no refund is issued. The balance owed (collected at the front desk) is never charged through Stripe and is unaffected in either case.</p>
 
                     <h4>Auth &amp; Multi-Tenancy</h4>
                     <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The architecture is multi-tenant from day one - a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. When an owner saves a Stripe or Resend key via the dashboard, it syncs to both the tenant's local settings table and the shared platform API so checkout sessions and webhooks both use the client's own keys. Onboarding a second hotel means inserting a row and deploying a new Vercel project - no schema changes, no code forks.</p>
@@ -329,7 +323,7 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>A direct booking platform the owner controls outright - live at <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">crystallakeresortmi.com ↗</a>, capturing bookings at zero commission versus 15–25% on OTA platforms. Guests book, pay, get an immediate confirmation, look up their reservation anytime, and cancel themselves. Pre-arrival reminders go out 2 days before check-in using templates the owner writes. Post-stay emails fire the morning after checkout with a direct Google review link — a flywheel that compounds the property's local search ranking with every booking the platform handles. Gift cards add a second revenue stream with every sale, balance, and redemption tracked in the admin.</p>
+            <p>A direct booking platform the owner controls outright - live at <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">crystallakeresortmi.com ↗</a>, capturing bookings at zero commission versus 15–25% on OTA platforms. Guests pay a $100 deposit at booking, get an immediate confirmation, look up their reservation anytime, and cancel themselves. Pre-arrival reminders go out 2 days before check-in using templates the owner writes. Post-stay emails fire the morning after checkout with a direct Google review link — a flywheel that compounds the property's local search ranking with every booking the platform handles.</p>
             <p>A non-technical client can connect Stripe and Resend, configure rooms, set lodging tax and seasonal pricing, and start taking bookings entirely through the dashboard - no developer needed after handoff. The multi-tenant architecture means white-labeling the platform for another property costs one database row and a Vercel deploy. Designed and built solo as part of the Small Business Suite.</p>
         </div>
 
