@@ -83,7 +83,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Tools</div>
-                <div class="case-glance-value">15 live ESPN tools</div>
+                <div class="case-glance-value">16 live ESPN tools</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Providers</div>
@@ -147,7 +147,7 @@
 
         <div class="case-section">
             <h3>Tool Architecture</h3>
-            <p>The agent has access to 15 live ESPN API tools covering all four Detroit teams - Lions, Tigers, Red Wings, and Pistons. The model decides which tool to call based on the question. A knowledge question like "who is the greatest Red Wing of all time?" hits no tools. A question like "what's the Lions score?" triggers a live NFL scoreboard fetch. A question like "what does the depth chart look like?" triggers a separate endpoint. The model only calls what the question actually needs.</p>
+            <p>The agent has access to 16 live ESPN API tools covering all four Detroit teams - Lions, Tigers, Red Wings, and Pistons. The model decides which tool to call based on the question. A knowledge question like "who is the greatest Red Wing of all time?" hits no tools. A question like "what's the Lions score?" triggers a live NFL scoreboard fetch. A question like "what does the depth chart look like?" triggers a separate endpoint. The model only calls what the question actually needs.</p>
 
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5em;margin-top:1.5em;">
                 <div style="padding:0.8em 1em;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);">
@@ -208,12 +208,12 @@
 
         <div class="case-section">
             <h3>Provider Architecture</h3>
-            <p>Two AI providers - Claude Sonnet and Groq (Llama 3.3 70B) - run through a unified interface using the same tool-calling loop and system prompt. Switching providers swaps the underlying model without changing anything else. Groq is the default: a server-side key on Render means the live demo works for anyone without setup. Bring your own Claude key to compare - the same question through different models shows exactly how tool-calling behavior and response style differ.</p>
+            <p>Two AI providers - Claude Sonnet and Groq (GPT-OSS 120B) - run through a unified interface using the same tool-calling loop and system prompt. Switching providers swaps the underlying model without changing anything else. Groq is the default: a server-side key on Render means the live demo works for anyone without setup. Bring your own Claude key to compare - the same question through different models shows exactly how tool-calling behavior and response style differ.</p>
         </div>
 
         <div class="case-section">
             <h3>Prompt Engineering &amp; Eval Pipeline</h3>
-            <p>Response quality was measured with an automated eval pipeline across four prompt iterations - eight test cases covering live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. Each answer was graded 1–5 by Groq's Llama 3.3 70B with context injected so it could distinguish real ESPN tool output from fabricated responses. 28% improvement from v1 to v4, 3.2 to 4.1. Try it yourself below.</p>
+            <p>Response quality was measured with an automated eval pipeline across four prompt iterations - eight test cases covering live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. Each answer was graded 1–5 by Groq's GPT-OSS 120B with context injected so it could distinguish real ESPN tool output from fabricated responses. 28% improvement from v1 to v4, 3.2 to 4.1. Try it yourself below.</p>
         </div>
 
         <div class="case-section">
