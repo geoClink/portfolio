@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.__TENANT__ = 'the-salon-co';
+<title>Admin Dashboard | The Salon Co.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root {
+  --sidebar-bg:    #1A2E2A;
+  --sidebar-hover: #243832;
+  --sidebar-txt:   #b8ccc7;
+  --sidebar-muted: #607570;
+  --sidebar-w:     224px;
+
+  --accent:        #C9A96E;
+  --accent-hover:  #b08a50;
+  --accent-light:  rgba(201,169,110,.13);
+
+  --bg:       #F5F0E8;
+  --surface:  #fdfaf5;
+  --white:    #ffffff;
+  --ink:      #2C2C2C;
+  --ink-soft: #4a4038;
+  --muted:    #706860;
+  --line:     #e0d8ca;
+
+  --success:    #3d7a55;
+  --success-bg: #edf5f0;
+  --danger:     #ab3328;
+  --danger-bg:  #fdf0ee;
+  --warn:       #a86010;
+  --warn-bg:    #fef5e7;
+
+  --sage-deep: #1A2E2A;
+  --sage-deep-hover: #0f1e1b;
+  --clay: #C9A96E;
+  --clay-text: #7A5C2E;
+  --success-green: #3d7a55;
+  --danger-red: #ab3328;
+  --bg-alt: #ede8df;
+
+  --r:    10px;
+  --r-sm: 6px;
+  --r-pill: 100px;
+}
+
+html,body{height:100%;font-family:'Jost',system-ui,-apple-system,sans-serif;font-size:14px;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;}
+
+/* ── Login ── */
+#login-view{max-width:400px;margin:100px auto;padding:40px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px -12px rgba(26,46,42,.15);}
+#login-view h1{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--ink);margin-bottom:24px;border:none;padding:0;}
+#login-form input,#reset-request-form input,#new-password-form input{width:100%;padding:12px 16px;margin-bottom:16px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;background:var(--white);color:var(--ink);outline:none;transition:border-color .13s;}
+#login-form input:focus,#reset-request-form input:focus,#new-password-form input:focus{border-color:var(--accent);}
+#login-form button[type=submit]{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;}
+#login-form button[type=submit]:hover{background:var(--accent-hover);}
+
+/* ── App shell ── */
+#dashboard-view{height:100vh;overflow:hidden;}
+.app{display:flex;height:100%;overflow:hidden;}
+
+/* ── Sidebar ── */
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--sidebar-bg);display:flex;flex-direction:column;overflow-y:auto;}
+.sidebar-brand{padding:20px 16px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.07);}
+.brand-avatar{width:34px;height:34px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.brand-name{color:#ede5d8;font-size:12.5px;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brand-role{color:var(--sidebar-muted);font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+#dashboard-biz-label{color:var(--sidebar-muted);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-top:1px;}
+
+.sidebar-nav{flex:1;padding:10px 8px;}
+.admin-tab{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:var(--r-sm);color:var(--sidebar-txt);font-size:13px;font-weight:500;cursor:pointer;transition:background .12s,color .12s;user-select:none;margin-bottom:1px;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.admin-tab:hover:not(.active){background:var(--sidebar-hover);color:#ede5d8;}
+.admin-tab.active{background:var(--accent);color:#fff;}
+.nav-icon{width:15px;height:15px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.85;}
+.admin-tab.active .nav-icon{opacity:1;}
+
+.sidebar-footer{padding:12px 10px 16px;border-top:1px solid rgba(255,255,255,.07);}
+#setup-card{background:rgba(255,255,255,.04);border-radius:var(--r-sm);padding:11px 12px;margin-bottom:10px;display:none;}
+#setup-card.has-items{display:block;}
+.setup-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.setup-card-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sidebar-muted);}
+.setup-card-dismiss{background:none;border:none;cursor:pointer;color:var(--sidebar-muted);font-size:16px;line-height:1;padding:0;width:auto;}
+.setup-items{display:flex;flex-direction:column;gap:4px;}
+.setup-item{display:flex;align-items:center;gap:6px;font-size:11.5px;padding:5px 8px;border-radius:4px;background:rgba(255,255,255,.05);cursor:pointer;transition:background .13s;text-decoration:none;color:var(--sidebar-txt);border:none;font-family:inherit;width:100%;text-align:left;}
+.setup-item:hover{background:rgba(255,255,255,.09);}
+.setup-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.setup-dot.green{background:#5cb87a;}
+.setup-dot.yellow{background:#f0a840;}
+.setup-dot.red{background:#d95f52;}
+
+#logout-btn{display:block;width:100%;padding:7px 11px;background:transparent;border:1px solid rgba(255,255,255,.1);border-radius:var(--r-sm);color:var(--sidebar-muted);font-size:12.5px;font-family:inherit;cursor:pointer;text-align:left;transition:all .15s;}
+#logout-btn:hover{border-color:rgba(255,255,255,.2);color:var(--sidebar-txt);}
+#help-btn{display:none;}
+
+/* ── Main ── */
+.main{flex:1;overflow-y:auto;background:var(--bg);}
+.tab-section{padding:34px 38px 60px;display:none;}
+.tab-section:first-of-type{display:block;}
+
+.section-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:normal;color:var(--ink);margin-bottom:3px;}
+.section-sub-text{font-size:13px;color:var(--muted);margin-bottom:20px;}
+
+/* ── Sub-tabs ── */
+.sub-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px;}
+.sub-tab{padding:6px 15px;border-radius:var(--r-pill);border:1px solid var(--line);background:transparent;font-size:13px;font-family:inherit;color:var(--ink-soft);cursor:pointer;transition:all .13s;font-weight:500;}
+.sub-tab:hover:not(.active){border-color:var(--accent);color:var(--accent);}
+.sub-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.sub-panel{display:none;}
+.sub-panel.active{display:block;}
+
+/* ── Cards ── */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:16px;}
+
+/* ── Tables ── */
+.table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;background:var(--surface);font-size:13.5px;}
+th{padding:10px 16px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);border-bottom:1px solid var(--line);white-space:nowrap;}
+td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(240,232,218,.4);}
+#reviews-body td{white-space:normal;overflow:visible;word-break:break-word;vertical-align:top;padding-top:16px;padding-bottom:16px;}
+#reviews-body td:last-child{white-space:nowrap;}
+
+@media(max-width:900px){
+  #reviews-table thead{display:none;}
+  #reviews-wrap{border:none;background:transparent;border-radius:0;}
+  #reviews-body tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;}
+  #reviews-body td{display:block;border:none;padding:0;margin-bottom:10px;font-size:13.5px;color:var(--ink-soft);white-space:normal;word-break:break-word;}
+  #reviews-body td:last-child{margin-bottom:0;white-space:normal;}
+  #reviews-body td[data-label]::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  #reviews-body td[data-label=""]::before{display:none;}
+  #reviews-body .table-actions{flex-wrap:wrap;gap:6px;}
+}
+
+/* ── Status pills ── */
+.status-pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:var(--r-pill);font-size:11.5px;font-weight:600;}
+.pill-confirmed{background:var(--success-bg);color:var(--success);}
+.pill-completed{background:var(--bg);color:var(--muted);border:1px solid var(--line);}
+.pill-cancelled{background:var(--danger-bg);color:var(--danger);}
+.pill-pending{background:var(--warn-bg);color:var(--warn);}
+
+/* ── Buttons ── */
+button{font-family:inherit;cursor:pointer;}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:var(--r-pill);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .13s;border:none;white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-hover);}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink-soft);}
+.btn-ghost:hover{border-color:var(--ink-soft);color:var(--ink);}
+.btn-sm{padding:5px 12px;font-size:12px;}
+
+.nav-badge{display:none;min-width:16px;height:16px;background:#e53935;color:#fff;font-size:9px;font-weight:700;border-radius:8px;padding:0 4px;align-items:center;justify-content:center;margin-left:auto;line-height:1;flex-shrink:0;}
+.nav-badge:not(:empty){display:inline-flex;}
+.admin-tab.active .nav-badge{background:rgba(255,255,255,0.9);color:#e53935;}
+
+.table-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.table-actions .btn-feature{min-width:110px;text-align:center;}
+.btn-feature{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;transition:all .2s;}
+.btn-feature:hover{border-color:var(--accent);color:var(--accent);}
+.btn-feature.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.delete-service-btn{background:var(--danger)!important;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}
+button[onclick*="approveReview"]{background:var(--success)!important;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}
+
+/* ── Forms ── */
+label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+input[type=text],input[type=url],input[type=email],input[type=password],input[type=date],input[type=number],select,textarea{width:100%;padding:8px 11px;border:1.5px solid var(--line);border-radius:var(--r-sm);font-size:13.5px;font-family:inherit;background:var(--white);color:var(--ink);outline:none;transition:border-color .13s,box-shadow .13s;-webkit-appearance:none;appearance:none;margin-bottom:14px;}
+input[type=file]{display:none;}
+.file-pick-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.file-pick-label{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:border-color .13s,color .13s;white-space:nowrap;}
+.file-pick-label:hover{border-color:var(--accent);color:var(--accent);}
+.file-pick-name{font-size:12px;color:var(--muted);}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light);}
+textarea{resize:vertical;line-height:1.6;}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236a6058' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;}
+small{color:var(--muted);display:block;margin:-8px 0 14px;font-size:12px;line-height:1.5;}
+
+.save-row{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.save-msg{font-size:12.5px;font-weight:600;color:var(--success);opacity:0;transition:opacity .2s;}
+.save-msg.show{opacity:1;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+hr.divider{border:none;border-top:1px solid var(--line);margin:22px 0;}
+
+.editor-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.preview-wrap{position:sticky;top:24px;}
+
+/* ── Mobile topbar ── */
+.mobile-topbar{display:none;align-items:center;gap:12px;padding:0 16px;background:var(--sidebar-bg);height:52px;position:fixed;top:0;left:0;right:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-menu-btn{background:none;border:none;color:var(--sidebar-txt);cursor:pointer;padding:4px;display:flex;align-items:center;flex-shrink:0;}
+.mobile-topbar-name{color:#ede5d8;font-size:13.5px;font-weight:600;}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:250;}
+
+/* ── Responsive ── */
+@media (max-width:900px){
+  .mobile-topbar{display:flex;}
+  .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:300;transform:translateX(-100%);transition:transform .24s ease;width:var(--sidebar-w);}
+  .app.sidebar-open .sidebar{transform:translateX(0);}
+  .app.sidebar-open .sidebar-overlay{display:block;}
+  .main{padding-top:52px;}
+  #dashboard-view{height:auto;overflow:visible;}
+  .app{overflow:visible;}
+  .tab-section{padding:20px 16px 48px;}
+  .editor-split{grid-template-columns:1fr;}
+  .row2{grid-template-columns:1fr;}
+  .preview-wrap{position:static;}
+  .section-title{font-size:22px;}
+
+  #appts-table thead{display:none;}
+  #appts-wrap{border:none;background:transparent;border-radius:0;}
+  #bookings-body tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;}
+  #bookings-body td{display:block;border:none;padding:0;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);white-space:normal;word-break:break-word;}
+  #bookings-body td:last-child{margin-bottom:0;}
+  #bookings-body td[data-label]::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  #bookings-body td[data-label=""]::before{display:none;}
+
+  #inbox-table thead{display:none;}
+  #inbox-wrap{border:none;background:transparent;border-radius:0;}
+  #contact-body tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;}
+  #contact-body td{display:block;border:none;padding:0;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);white-space:normal;word-break:break-word;}
+  #contact-body td:last-child{margin-bottom:0;}
+  #contact-body td[data-label]::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  #contact-body td[data-label=""]::before{display:none;}
+
+  .avail-table{display:block;}
+  .avail-table thead{display:none;}
+  .avail-table tbody{display:block;}
+  .avail-table tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;padding:14px 0;border-bottom:1px solid var(--line);}
+  .avail-table td{display:block;padding:0;border:none;font-size:13px;}
+  .avail-table td:first-child{grid-column:1/-1;font-weight:600;color:var(--ink);}
+  .avail-table td:nth-child(2){grid-column:1/-1;color:var(--ink-soft);}
+  .avail-table select{width:100%;margin-bottom:0;}
+}
+.preview-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.preview-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px;overflow:hidden;}
+.preview-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.preview-h{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:normal;color:var(--ink);line-height:1.25;margin-bottom:10px;}
+.preview-body-text{font-size:12.5px;line-height:1.7;color:var(--ink-soft);}
+
+/* ── Toggle switch ── */
+.toggle-wrap{display:flex;align-items:center;gap:8px;}
+.toggle{position:relative;display:inline-block;width:34px;height:18px;cursor:pointer;flex-shrink:0;}
+.toggle input{display:none;}
+.toggle-track{position:absolute;inset:0;background:var(--line);border-radius:var(--r-pill);transition:background .18s;}
+.toggle-thumb{position:absolute;top:3px;left:3px;width:12px;height:12px;background:#fff;border-radius:50%;transition:transform .18s;box-shadow:0 1px 3px rgba(0,0,0,.22);}
+.toggle input:checked~.toggle-track{background:var(--accent);}
+.toggle input:checked~.toggle-thumb{transform:translateX(16px);}
+.avail-table{width:100%;border-collapse:collapse;}
+.avail-table th{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 12px 10px;text-align:left;border-bottom:1px solid var(--line);background:transparent;}
+.avail-table td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+.avail-table tr:last-child td{border-bottom:none;}
+.avail-table tr:hover td{background:transparent;}
+.avail-table select{width:108px;padding:5px 26px 5px 8px;font-size:12.5px;margin:0;}
+.avail-table tr.day-closed td:not(:nth-child(1)):not(:nth-child(2)){opacity:.4;pointer-events:none;}
+
+/* ── SEO char counter ── */
+.char-row{display:flex;justify-content:flex-end;margin:-8px 0 14px;}
+.char-count{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;}
+.char-count.warn{color:var(--warn);}
+.char-count.over{color:var(--danger);}
+
+/* ── Palette / font grid ── */
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:22px;}
+.palette-opt{border:2px solid var(--line);border-radius:var(--r);padding:12px;background:var(--white);cursor:pointer;text-align:left;font-family:inherit;transition:border-color .13s;width:100%;}
+.palette-opt.active{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light);}
+.palette-swatches{display:flex;gap:4px;margin-bottom:8px;}
+.swatch{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.08);}
+.palette-name{font-size:12px;font-weight:600;color:var(--ink);}
+
+.font-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:22px;}
+.font-opt{border:2px solid var(--line);border-radius:var(--r);padding:13px;background:var(--white);cursor:pointer;text-align:left;font-family:inherit;transition:border-color .13s;width:100%;}
+.font-opt.active{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light);}
+
+/* ── Key/test row ── */
+.key-row{display:flex;gap:8px;align-items:center;margin-bottom:14px;}
+.key-row input{flex:1;margin:0;}
+.test-btn{background:transparent;border:1px solid var(--line);border-radius:var(--r-sm);color:var(--ink-soft);font-size:12px;font-family:inherit;font-weight:600;cursor:pointer;padding:8px 12px;white-space:nowrap;transition:all .13s;}
+.test-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── Inline blocked-date form ── */
+.inline-form{display:flex;gap:10px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap;}
+.inline-form .field{margin-bottom:0;flex:1;min-width:140px;}
+.inline-form .field:first-child{max-width:180px;}
+.inline-form input{margin-bottom:0;}
+
+/* ── Hint box ── */
+.hint-box{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:18px;}
+.hint-box strong{color:var(--ink-soft);}
+
+/* ── Modals ── */
+#onboarding-modal,#confirm-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,46,42,.65);z-index:1000;align-items:center;justify-content:center;}
+.modal-box{background:var(--surface);padding:36px;border-radius:16px;max-width:480px;width:90%;box-shadow:0 20px 40px rgba(0,0,0,.2);}
+
+/* ── Tooltips ── */
+[data-tooltip]{position:relative;}
+[data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#2c2823;color:#fff;font-size:12px;font-weight:400;line-height:1.5;padding:8px 12px;border-radius:8px;white-space:normal;width:220px;text-align:center;pointer-events:none;opacity:0;transition:opacity .15s;z-index:9999;}
+[data-tooltip]:hover::after{opacity:1;}
+.tooltip-down[data-tooltip]::after{bottom:auto;top:calc(100% + 8px);}
+.tooltip-left[data-tooltip]::after{left:auto;right:0;transform:none;}
+
+#help-drawer{display:none;}
+
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;}}
+
+/* ── Site preview (banner editor) ── */
+.site-preview{background:#f4eee4;border:1px solid #e6dcc9;border-radius:var(--r);overflow:hidden;font-family:'Jost',system-ui,sans-serif;}
+.site-preview-nav{background:rgba(26,46,42,.96);border-bottom:1px solid rgba(255,255,255,.1);padding:7px 14px;display:flex;align-items:center;justify-content:space-between;}
+.site-preview-logo{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:600;color:#ede5d8;display:flex;align-items:center;gap:5px;}
+.site-preview-book{background:#C9A96E;color:#fff;border-radius:999px;font-size:8px;font-weight:600;padding:4px 9px;}
+.site-preview-body{padding:18px 16px;}
+.sp-eyebrow{font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#7A5C2E;margin-bottom:8px;}
+.sp-h1{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;line-height:1.08;color:#2C2C2C;margin-bottom:9px;}
+.sp-body{font-size:10.5px;line-height:1.7;color:#6f665a;margin-bottom:10px;}
+.sp-btn-row{display:flex;gap:6px;}
+.sp-btn-primary{background:#1A2E2A;color:#fff;border-radius:999px;font-size:8.5px;font-weight:600;padding:5px 10px;white-space:nowrap;}
+.sp-btn-outline{border:1px solid #cabfac;border-radius:999px;font-size:8.5px;font-weight:600;padding:5px 10px;color:#2C2C2C;white-space:nowrap;}
+
+/* ── Overview ── */
+.ov-greeting{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap;}
+.ov-view-site{padding:8px 14px;border:1px solid var(--line);border-radius:var(--r-sm);font-size:12.5px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap;transition:border-color .13s,color .13s;}
+.ov-view-site:hover{border-color:var(--accent);color:var(--accent);}
+.ov-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.ov-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;cursor:default;}
+.ov-stat.clickable{cursor:pointer;transition:border-color .13s;}
+.ov-stat.clickable:hover{border-color:var(--accent);}
+.ov-stat.has-alert{border-color:var(--warn);background:#fffbf5;}
+.ov-stat-value{font-size:28px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:5px;font-family:'Cormorant Garamond',serif;}
+.ov-stat-label{font-size:12px;color:var(--muted);font-weight:500;}
+.ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.ov-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.ov-card-title{font-size:13.5px;font-weight:600;color:var(--ink);}
+.ov-card-link{background:none;border:none;color:var(--accent);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;padding:0;}
+.ov-card-link:hover{text-decoration:underline;}
+.ov-appt-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);}
+.ov-appt-row:last-child{border-bottom:none;}
+.ov-appt-time{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap;min-width:72px;}
+.ov-appt-name{font-size:13px;font-weight:600;color:var(--ink);}
+.ov-appt-service{font-size:11.5px;color:var(--muted);}
+.ov-status{margin-left:auto;font-size:10.5px;font-weight:600;padding:3px 8px;border-radius:var(--r-pill);text-transform:capitalize;flex-shrink:0;}
+.ov-status-confirmed{background:#edf5f0;color:var(--success);}
+.ov-status-completed{background:#e8edf5;color:#2d5a99;}
+.ov-status-cancelled{background:var(--danger-bg);color:var(--danger);}
+.ov-empty{font-size:13px;color:var(--muted);padding:12px 0;}
+.ov-msg-row{padding:10px 0;border-bottom:1px solid var(--line);}
+.ov-msg-row:last-child{border-bottom:none;}
+.ov-msg-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.ov-msg-preview{font-size:12.5px;color:var(--muted);line-height:1.5;}
+@media(max-width:900px){.ov-stats{grid-template-columns:1fr 1fr;}.ov-cols{grid-template-columns:1fr;}}
+
+/* ── Client directory ── */
+.client-row{cursor:pointer;}
+.client-row:hover td{background:rgba(201,169,110,.05);}
+.cd-expand-btn{color:var(--muted);font-size:11px;transition:transform .15s;display:inline-block;}
+.cd-history-row td{padding:0;border-bottom:1px solid var(--line);}
+.cd-history-inner{padding:12px 16px 14px;background:#faf6ef;display:flex;flex-direction:column;gap:6px;}
+.cd-appt-line{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--ink-soft);}
+.cd-appt-date{font-weight:600;min-width:90px;color:var(--muted);}
+.cd-appt-service{flex:1;}
+.cd-appt-time{color:var(--muted);min-width:72px;}
+.cd-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px;}
+.cd-search{padding:8px 12px;border:1.5px solid var(--line);border-radius:var(--r-sm);font-size:13px;font-family:inherit;background:var(--white);color:var(--ink);outline:none;width:260px;transition:border-color .13s;}
+.cd-search:focus{border-color:var(--accent);}
+
+/* ── Admin notes ── */
+.notes-input{width:100%;padding:5px 7px;border:1px solid transparent;border-radius:4px;font-size:12px;font-family:inherit;background:transparent;color:var(--ink-soft);resize:none;min-height:32px;line-height:1.4;transition:border-color .13s,background .13s;}
+.notes-input:hover{border-color:var(--line);}
+.notes-input:focus{border-color:var(--accent);background:var(--white);outline:none;}
+
+/* ── Export ── */
+.export-btn{padding:7px 13px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--white);font-size:12.5px;font-weight:500;color:var(--ink-soft);cursor:pointer;font-family:inherit;transition:border-color .13s,color .13s;}
+.export-btn:hover{border-color:var(--accent);color:var(--accent);}
+.appts-toolbar{display:flex;justify-content:flex-end;margin-bottom:12px;}
+
+/* ── Stylists ── */
+.stylist-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.stylist-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-light);border:1.5px solid var(--accent);color:var(--clay-text);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;}
+.stylist-name{font-size:14px;font-weight:600;color:var(--ink);}
+.stylist-role{font-size:12px;color:var(--muted);}
+.stylist-status{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:var(--r-pill);}
+.stylist-status.active{background:var(--success-bg);color:var(--success);}
+.stylist-status.inactive{background:var(--bg);color:var(--muted);border:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ LOGIN ═══════════════════ -->
+<div id="login-view">
+  <h1>Admin Login</h1>
+
+  <form id="login-form">
+    <input type="email" id="admin-email" placeholder="Email address" required>
+    <input type="password" id="admin-password" placeholder="Password" required>
+    <button type="submit">Sign In</button>
+    <p style="text-align:center;margin-top:14px;">
+      <a href="#" id="show-reset-link" style="font-size:13px;color:var(--muted);">Forgot password?</a>
+    </p>
+  </form>
+
+  <form id="reset-request-form" style="display:none;">
+    <p style="margin-bottom:16px;font-size:14px;color:var(--muted);">Enter your email and we'll send you a reset link.</p>
+    <input type="email" id="reset-email" placeholder="Email address" required>
+    <button type="submit" style="width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;">Send Reset Link</button>
+    <p style="text-align:center;margin-top:14px;"><a href="#" id="back-to-login-link" style="font-size:13px;color:var(--muted);">Back to login</a></p>
+    <p id="reset-request-msg" style="font-size:13px;text-align:center;margin-top:10px;"></p>
+  </form>
+
+  <form id="new-password-form" style="display:none;">
+    <p style="margin-bottom:16px;font-size:14px;color:var(--muted);">Enter a new password for your account.</p>
+    <input type="password" id="new-password" placeholder="New password" required>
+    <button type="submit" style="width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;">Update Password</button>
+    <p id="new-password-msg" style="font-size:13px;text-align:center;margin-top:10px;"></p>
+  </form>
+</div>
+
+<!-- ═══════════════════ DASHBOARD ═══════════════════ -->
+<div id="dashboard-view" style="display:none;">
+<div class="app">
+
+<!-- ── MOBILE TOPBAR ── -->
+<div class="mobile-topbar">
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <line x1="3" y1="6" x2="17" y2="6"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="14" x2="17" y2="14"/>
+    </svg>
+  </button>
+  <span class="mobile-topbar-name">The Salon Co.</span>
+</div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-avatar">S</div>
+    <div>
+      <div class="brand-name">The Salon Co.</div>
+      <div id="dashboard-biz-label"></div>
+      <div class="brand-role">Admin</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <button class="admin-tab active" data-tab="overview">
+      <svg class="nav-icon" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+      Overview
+    </button>
+    <button class="admin-tab" data-tab="bookings">
+      <svg class="nav-icon" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 2v2M11 2v2M2 7h12"/></svg>
+      Bookings
+    </button>
+    <button class="admin-tab" data-tab="clients">
+      <svg class="nav-icon" viewBox="0 0 16 16"><circle cx="6" cy="5" r="2.5"/><path d="M1 13c0-2.8 2.2-4.5 5-4.5s5 1.7 5 4.5"/><circle cx="12" cy="5" r="2"/><path d="M14 12c0-1.8-1-3-2.5-3.5"/></svg>
+      Clients
+    </button>
+    <button class="admin-tab" data-tab="stylists">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M3 13c0-2.2 1.8-4 4-4s4 1.8 4 4"/><circle cx="7" cy="5" r="2.5"/><path d="M11 2l2 2-5 5"/><path d="M11 4l2-2"/></svg>
+      Stylists
+    </button>
+    <button class="admin-tab" data-tab="content">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M3 2h7l3 3v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M10 2v4h4M5 8h6M5 11h4"/></svg>
+      Content
+    </button>
+    <button class="admin-tab" data-tab="reviews">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M8 2l1.6 3.3 3.6.5-2.6 2.6.6 3.6L8 10.3l-3.2 1.7.6-3.6L2.8 5.8l3.6-.5z"/></svg>
+      Reviews
+      <span class="nav-badge" id="nav-badge-reviews"></span>
+    </button>
+    <button class="admin-tab" data-tab="inbox">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V4z"/><path d="M2 4l6 5 6-5"/></svg>
+      Inbox
+      <span class="nav-badge" id="nav-badge-inbox"></span>
+    </button>
+    <button class="admin-tab" data-tab="seo">
+      <svg class="nav-icon" viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4"/><path d="M11 11l3 3"/></svg>
+      SEO
+    </button>
+    <button class="admin-tab" data-tab="gift-cards">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="9" rx="1.5"/><path d="M1 9h14"/><path d="M8 6V4a2 2 0 0 0-4 0c0 1.1.9 2 2 2h2zm0 0V4a2 2 0 0 1 4 0c0 1.1-.9 2-2 2H8z"/></svg>
+      Gift Cards
+    </button>
+    <button class="admin-tab" data-tab="discount-codes">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1L1 9l6 6 8-8V1H9z"/><circle cx="11.5" cy="4.5" r="1"/></svg>
+      Discount Codes
+    </button>
+    <button class="admin-tab" data-tab="settings">
+      <svg class="nav-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 2v1M8 13v1M2 8h1M13 8h1M4.2 4.2l.7.7M11.1 11.1l.7.7M4.2 11.8l.7-.7M11.1 4.9l.7-.7"/></svg>
+      Settings
+    </button>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div id="setup-card">
+      <div class="setup-card-header">
+        <span class="setup-card-title">Setup</span>
+        <button class="setup-card-dismiss" id="setup-dismiss">×</button>
+      </div>
+      <div class="setup-items" id="setup-items"></div>
+    </div>
+    <button id="logout-btn">Log out</button>
+    <button id="help-btn" style="display:none;"></button>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<main class="main">
+<div id="help-drawer"></div>
+
+<!-- ════════ OVERVIEW ════════ -->
+<div id="tab-overview" class="tab-section">
+  <div class="ov-greeting">
+    <div>
+      <h1 class="section-title" id="ov-greeting-text">Good morning</h1>
+      <p class="section-sub-text" id="ov-date-text"></p>
+    </div>
+    <a href="/" target="_blank" class="ov-view-site">View your site →</a>
+  </div>
+
+  <div class="ov-stats">
+    <div class="ov-stat">
+      <div class="ov-stat-value" id="ov-today-count">—</div>
+      <div class="ov-stat-label">Today's appointments</div>
+    </div>
+    <div class="ov-stat">
+      <div class="ov-stat-value" id="ov-month-revenue">—</div>
+      <div class="ov-stat-label">Revenue this month</div>
+    </div>
+    <div class="ov-stat clickable" id="ov-messages-tile" onclick="switchToTab('inbox')">
+      <div class="ov-stat-value" id="ov-unread-count">—</div>
+      <div class="ov-stat-label">Unread messages</div>
+    </div>
+    <div class="ov-stat clickable" id="ov-reviews-tile" onclick="switchToTab('reviews')">
+      <div class="ov-stat-value" id="ov-pending-reviews">—</div>
+      <div class="ov-stat-label">Reviews to approve</div>
+    </div>
+  </div>
+
+  <div class="ov-cols">
+    <div class="card">
+      <div class="ov-card-head">
+        <span class="ov-card-title">Today's schedule</span>
+        <button class="ov-card-link" onclick="switchToTab('bookings')">See all →</button>
+      </div>
+      <div id="ov-today-list"></div>
+    </div>
+    <div class="card">
+      <div class="ov-card-head">
+        <span class="ov-card-title">Coming up this week</span>
+      </div>
+      <div id="ov-upcoming-list"></div>
+    </div>
+  </div>
+
+  <div class="card" id="ov-messages-card">
+    <div class="ov-card-head">
+      <span class="ov-card-title">Unread messages</span>
+      <button class="ov-card-link" onclick="switchToTab('inbox')">Go to inbox →</button>
+    </div>
+    <div id="ov-messages-list"></div>
+  </div>
+</div>
+
+<!-- ════════ BOOKINGS ════════ -->
+<div id="tab-bookings" class="tab-section">
+  <h1 class="section-title">Bookings</h1>
+  <p class="section-sub-text">Appointments, blocked dates, and weekly schedule.</p>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" data-panel="bp-appts">Appointments</button>
+    <button class="sub-tab" data-panel="bp-blocked">Blocked Dates</button>
+    <button class="sub-tab" data-panel="bp-avail">Weekly Availability</button>
+  </div>
+
+  <div class="sub-panel active" id="bp-appts">
+    <div class="appts-toolbar">
+      <button class="export-btn" onclick="exportAppointmentsCSV()">↓ Export CSV</button>
+    </div>
+    <div class="table-wrap" id="appts-wrap">
+      <table id="appts-table">
+        <thead><tr>
+          <th>Date</th><th>Time</th><th>Client</th><th>Email</th><th>Phone</th><th>Stylist</th><th>Status</th><th>Private Notes</th><th style="width:140px;">Actions</th>
+        </tr></thead>
+        <tbody id="bookings-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-panel" id="bp-blocked">
+    <form id="blocked-date-form" class="inline-form">
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="blocked-date-input" required>
+      </div>
+      <div class="field">
+        <label>Reason (optional)</label>
+        <input type="text" id="blocked-reason-input" placeholder="e.g., Holiday">
+      </div>
+      <button type="submit" class="btn btn-primary" style="flex-shrink:0;margin-bottom:0;">Block Date</button>
+    </form>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Reason</th><th>Action</th></tr></thead>
+        <tbody id="blocked-dates-list"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-panel" id="bp-avail">
+    <div class="card">
+      <form id="availability-form">
+        <table class="avail-table">
+          <thead><tr>
+            <th>Day</th><th>Open</th><th>Start</th><th>End</th>
+            <th>Break start <span class="tooltip-down" data-tooltip="Optional break window — clients can't book during this time." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></th>
+            <th>Break end</th>
+          </tr></thead>
+          <tbody id="availability-rows"></tbody>
+        </table>
+        <div class="save-row" style="margin-top:20px;">
+          <button type="submit" class="btn btn-primary">Save Schedule</button>
+          <span id="avail-status" class="save-msg"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CLIENTS ════════ -->
+<div id="tab-clients" class="tab-section">
+  <h1 class="section-title">Clients</h1>
+  <p class="section-sub-text">Every client who has booked, grouped by email. Click a row to see their history.</p>
+
+  <div class="cd-toolbar">
+    <input type="text" class="cd-search" id="client-search" placeholder="Search by name or email…" oninput="filterClients()">
+    <span id="client-count" style="font-size:12.5px;color:var(--muted);"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="clients-table">
+      <thead><tr>
+        <th>Name</th><th>Email</th><th>Phone</th><th>Sessions</th><th>Total Spent</th><th>Last Visit</th><th style="width:32px;"></th>
+      </tr></thead>
+      <tbody id="clients-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════ STYLISTS ════════ -->
+<div id="tab-stylists" class="tab-section">
+  <h1 class="section-title">Stylists</h1>
+  <p class="section-sub-text">Manage your team. Stylists use their PIN to clock in on the booking flow.</p>
+
+  <div id="stylists-list" style="margin-bottom:24px;"></div>
+
+  <div class="card" style="max-width:480px;">
+    <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:16px;">Add a stylist</div>
+    <form id="add-stylist-form">
+      <div class="row2" style="margin-bottom:0;">
+        <div>
+          <label for="stylist-name">Name</label>
+          <input type="text" id="stylist-name" placeholder="e.g., Jordan Lee" required>
+        </div>
+        <div>
+          <label for="stylist-role">Role</label>
+          <input type="text" id="stylist-role" placeholder="e.g., Senior Stylist">
+        </div>
+      </div>
+      <div>
+        <label for="stylist-pin">4-digit PIN <span data-tooltip="Stylists enter this PIN to select themselves during the booking flow." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+        <input type="text" id="stylist-pin" placeholder="e.g., 1234" maxlength="4" pattern="\d{4}" required style="font-family:monospace;letter-spacing:.2em;">
+      </div>
+      <div class="save-row">
+        <button type="submit" class="btn btn-primary">Add Stylist</button>
+        <span id="stylist-status" class="save-msg"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ════════ CONTENT ════════ -->
+<div id="tab-content" class="tab-section">
+  <h1 class="section-title">Content</h1>
+  <p class="section-sub-text">Everything that appears on your public site.</p>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" data-panel="ct-banner">Banner</button>
+    <button class="sub-tab" data-panel="ct-about">About Page</button>
+    <button class="sub-tab" data-panel="ct-services">Services</button>
+    <button class="sub-tab" data-panel="ct-sitebanner">Site Banner</button>
+    <button class="sub-tab" data-panel="ct-faqs">FAQ</button>
+  </div>
+
+  <!-- Banner -->
+  <div class="sub-panel active" id="ct-banner">
+    <div class="editor-split">
+      <div class="card">
+        <form id="hero-form">
+          <div style="margin-bottom:14px;">
+            <label for="hero-eyebrow">Eyebrow text <span data-tooltip="Small label above your headline — e.g. your city or specialty. Keep it 3–5 words." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+            <input type="text" id="hero-eyebrow" placeholder="e.g., Hair Salon · Chicago" oninput="syncBannerPreview()">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label for="hero-title">Main headline <span data-tooltip="Wrap a word in &lt;em&gt;word&lt;/em&gt; to italicize it." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+            <input type="text" id="hero-title" placeholder="e.g., Hair that feels like &lt;em&gt;you&lt;/em&gt;" oninput="syncBannerPreview()">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label for="hero-desc">Intro text</label>
+            <textarea id="hero-desc" rows="3" placeholder="A short welcome message…" oninput="syncBannerPreview()"></textarea>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label>Banner image</label>
+            <div class="file-pick-wrap">
+              <label for="hero-image-file" class="file-pick-label">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13h12M8 2v8M5 5l3-3 3 3"/></svg>
+                Choose file
+              </label>
+              <span class="file-pick-name" id="hero-image-name">No file chosen</span>
+            </div>
+            <input type="file" id="hero-image-file" accept="image/*">
+            <small id="current-image-url"></small>
+          </div>
+          <div class="save-row">
+            <button type="submit" class="btn btn-primary">Save Banner</button>
+            <span id="hero-status" class="save-msg"></span>
+          </div>
+        </form>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-lbl">Live Preview — Homepage Banner</div>
+        <div class="site-preview">
+          <div class="site-preview-nav">
+            <div class="site-preview-logo">The Salon Co.</div>
+            <span class="site-preview-book">Book now</span>
+          </div>
+          <div class="site-preview-body">
+            <div class="sp-eyebrow" id="prev-hero-eyebrow">Hair Salon · Chicago</div>
+            <div class="sp-h1" id="prev-hero-heading">Hair that feels like <em style="font-style:italic;color:#C9A96E;">you</em></div>
+            <div class="sp-body" id="prev-hero-intro">Premium cuts, color, and care in a calm, unhurried environment.</div>
+            <div class="sp-btn-row">
+              <span class="sp-btn-primary">Book an appointment</span>
+              <span class="sp-btn-outline">See services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Page -->
+  <div class="sub-panel" id="ct-about">
+    <div class="editor-split">
+      <div class="card">
+        <form id="about-form">
+          <div style="margin-bottom:14px;">
+            <label for="about-heading">Page heading <span data-tooltip="Wrap a word in &lt;em&gt;word&lt;/em&gt; to italicize it." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+            <input type="text" id="about-heading" placeholder="e.g., About The Salon Co" oninput="syncAboutPreview()">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label for="about-body">Your story <span data-tooltip="Press Enter twice between paragraphs for spacing." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+            <textarea id="about-body" rows="6" placeholder="Tell your story and values…" oninput="syncAboutPreview()"></textarea>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label for="about-promise">Your promise <span data-tooltip="A short closing commitment. Appears at the bottom of the about page." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+            <textarea id="about-promise" rows="3" placeholder="We are committed to…" oninput="syncAboutPreview()"></textarea>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label>About page image</label>
+            <div class="file-pick-wrap">
+              <label for="about-image-file" class="file-pick-label">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13h12M8 2v8M5 5l3-3 3 3"/></svg>
+                Choose file
+              </label>
+              <span class="file-pick-name" id="about-image-name">No file chosen</span>
+            </div>
+            <input type="file" id="about-image-file" accept="image/jpeg,image/png,image/webp">
+            <div id="about-image-preview"></div>
+          </div>
+          <div class="save-row">
+            <button type="submit" class="btn btn-primary">Save About Page</button>
+            <span id="about-status" class="save-msg"></span>
+          </div>
+        </form>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-lbl">Live Preview — About Page</div>
+        <div class="preview-card">
+          <div class="preview-eyebrow">About</div>
+          <div class="preview-h" id="prev-about-h">About The Salon Co</div>
+          <div class="preview-body-text" id="prev-about-story">Your story will appear here.</div>
+          <hr style="border:none;border-top:1px solid var(--line);margin:12px 0;">
+          <div class="preview-body-text" style="font-style:italic;color:var(--muted);" id="prev-about-promise">Your promise will appear here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="sub-panel" id="ct-services">
+    <div class="card" style="margin-bottom:16px;">
+      <form id="add-service-form" style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;">
+        <div style="flex:1;min-width:180px;">
+          <label>Name</label>
+          <input type="text" id="service-title" placeholder="e.g., Precision Cut" required style="margin-bottom:0;">
+        </div>
+        <div style="flex:2;min-width:240px;">
+          <label>Description</label>
+          <input type="text" id="service-desc" placeholder="Brief description" required style="margin-bottom:0;">
+        </div>
+        <div style="width:110px;">
+          <label>Price ($)</label>
+          <input type="text" id="service-price" placeholder="85" required style="margin-bottom:0;" data-tooltip="Number only — no $ sign">
+        </div>
+        <div style="width:130px;">
+          <label>Duration (min)</label>
+          <input type="number" id="service-duration" placeholder="60" min="15" step="15" required style="margin-bottom:0;">
+        </div>
+        <button type="submit" class="btn btn-primary" style="flex-shrink:0;">Add Service</button>
+      </form>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:100px;">Image</th>
+          <th>Name</th><th>Description</th><th>Price</th>
+          <th style="width:120px;">Actions</th>
+        </tr></thead>
+        <tbody id="services-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Site Banner -->
+  <div class="sub-panel" id="ct-sitebanner">
+    <div class="card" style="max-width:600px;">
+      <form id="banner-form">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <input type="checkbox" id="banner-visible" style="width:auto;margin:0;accent-color:var(--accent);">
+          <span style="font-size:13.5px;font-weight:600;color:var(--ink);">Show banner on site</span>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="banner-text">Banner text</label>
+          <input type="text" id="banner-text" placeholder="e.g., Accepting new clients — Book your first visit today →">
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="banner-service-link">Link to service (optional)</label>
+          <select id="banner-service-link">
+            <option value="">Just the booking page</option>
+          </select>
+        </div>
+        <div class="save-row">
+          <button type="submit" class="btn btn-primary">Save Banner</button>
+          <span id="banner-status" class="save-msg"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sub-panel" id="ct-faqs">
+    <div id="faq-list" style="margin-bottom:20px;"></div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:12px;">Add a question</div>
+      <form id="add-faq-form">
+        <div style="margin-bottom:14px;">
+          <label for="faq-question">Question</label>
+          <input type="text" id="faq-question" placeholder="e.g., How do I prepare for a color appointment?" required>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="faq-answer">Answer</label>
+          <textarea id="faq-answer" rows="3" placeholder="Write the answer…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add FAQ</button>
+        <span id="faq-add-status" style="margin-left:12px;font-size:13px;font-weight:600;"></span>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ REVIEWS ════════ -->
+<div id="tab-reviews" class="tab-section">
+  <h1 class="section-title">Reviews</h1>
+  <p class="section-sub-text">Approve testimonials and control what appears on your site.</p>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" data-panel="rv-all">All Reviews</button>
+    <button class="sub-tab" data-panel="rv-add">Add Manually</button>
+  </div>
+
+  <div class="sub-panel active" id="rv-all">
+    <div class="table-wrap" id="reviews-wrap">
+      <table id="reviews-table">
+        <thead><tr>
+          <th style="width:100px;">Name</th><th style="width:70px;">Rating</th>
+          <th>Review</th><th>Status</th><th style="width:260px;">Actions</th>
+        </tr></thead>
+        <tbody id="reviews-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub-panel" id="rv-add">
+    <div class="card" style="max-width:560px;">
+      <form id="add-review-form">
+        <div class="row2" style="margin-bottom:14px;">
+          <div>
+            <label for="review-name">Client name</label>
+            <input type="text" id="review-name" placeholder="e.g., Mia T." required>
+          </div>
+          <div>
+            <label for="review-rating">Rating</label>
+            <select id="review-rating" required>
+              <option value="">Choose rating</option>
+              <option value="5">5 stars</option>
+              <option value="4">4 stars</option>
+              <option value="3">3 stars</option>
+              <option value="2">2 stars</option>
+              <option value="1">1 star</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="review-body">Testimonial</label>
+          <textarea id="review-body" rows="4" placeholder="Write the full testimonial…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Review</button>
+        <div id="review-success" style="display:none;color:var(--success);margin-top:10px;font-weight:600;">Review added.</div>
+        <div id="review-error" style="display:none;color:var(--danger);margin-top:10px;font-weight:600;"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ INBOX ════════ -->
+<div id="tab-inbox" class="tab-section">
+  <h1 class="section-title">Inbox</h1>
+  <p class="section-sub-text">Messages sent through the contact form on your site.</p>
+  <div class="table-wrap" id="inbox-wrap">
+    <table id="inbox-table">
+      <thead><tr>
+        <th>Name</th><th>Email</th><th>Subject</th><th>Message</th><th>Status</th><th>Action</th>
+      </tr></thead>
+      <tbody id="contact-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════ SEO ════════ -->
+<div id="tab-seo" class="tab-section">
+  <h1 class="section-title">SEO</h1>
+  <p class="section-sub-text">Control how each page appears in Google and when shared on social.</p>
+
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px;">
+    <button class="seo-page-btn sub-tab active" data-page="home">Home</button>
+    <button class="seo-page-btn sub-tab" data-page="about">About</button>
+    <button class="seo-page-btn sub-tab" data-page="services">Services</button>
+    <button class="seo-page-btn sub-tab" data-page="reserve">Book</button>
+    <button class="seo-page-btn sub-tab" data-page="gallery">Gallery</button>
+    <button class="seo-page-btn sub-tab" data-page="faq">FAQ</button>
+    <button class="seo-page-btn sub-tab" data-page="contact">Contact</button>
+  </div>
+
+  <div class="card" style="max-width:640px;">
+    <form id="seo-form">
+      <div style="margin-bottom:14px;">
+        <label for="seo-title">Page title</label>
+        <input type="text" id="seo-title" placeholder="Home | Your Salon Name" maxlength="70" oninput="updateSeoCharCount('seo-title','seo-title-count',60)">
+        <div class="char-row"><span class="char-count" id="seo-title-count">0 / 60</span></div>
+        <small>Shown in the browser tab and Google. Keep under 60 characters.</small>
+      </div>
+      <div style="margin-bottom:14px;">
+        <label for="seo-description">Meta description</label>
+        <textarea id="seo-description" rows="3" placeholder="A short description of this page for Google…" maxlength="160" oninput="updateSeoCharCount('seo-description','seo-desc-count',155)"></textarea>
+        <div class="char-row"><span class="char-count" id="seo-desc-count">0 / 155</span></div>
+        <small>Snippet shown under your link in Google. Keep under 155 characters.</small>
+      </div>
+      <div style="margin-bottom:14px;">
+        <label for="seo-og-image">Social share image URL</label>
+        <div class="key-row">
+          <input type="url" id="seo-og-image" placeholder="https://…">
+          <input type="file" id="og-image-file" accept="image/*" style="display:none;" onchange="uploadOgImage(this)">
+          <button type="button" onclick="document.getElementById('og-image-file').click()" class="test-btn">Upload</button>
+        </div>
+        <span id="og-image-status" style="font-size:12.5px;color:var(--muted);display:block;margin-bottom:8px;"></span>
+        <small>Shown when this page is shared on social media. 1200 × 630px recommended.</small>
+      </div>
+      <div class="save-row">
+        <button type="submit" class="btn btn-primary">Save SEO Settings</button>
+        <span id="seo-status" style="font-size:13px;font-weight:600;"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ════════ SETTINGS ════════ -->
+<div id="tab-settings" class="tab-section">
+  <h1 class="section-title">Settings</h1>
+  <p class="section-sub-text">Appearance, integrations, and account preferences.</p>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" data-panel="st-appearance">Appearance</button>
+    <button class="sub-tab" data-panel="st-branding">Branding</button>
+    <button class="sub-tab" data-panel="st-integrations">Integrations</button>
+    <button class="sub-tab" data-panel="st-footer">Footer</button>
+    <button class="sub-tab" data-panel="st-account">Account</button>
+  </div>
+
+  <!-- Appearance -->
+  <div class="sub-panel active" id="st-appearance">
+    <div class="card">
+      <div style="font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:12px;">Color palette</div>
+      <div class="palette-grid" id="palette-grid"></div>
+      <div style="font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:12px;">Font combination</div>
+      <div class="font-grid" id="font-grid"></div>
+      <div class="save-row">
+        <button class="btn btn-primary" id="save-theme-btn" onclick="saveAppearance()">Save Theme</button>
+        <span id="palette-status" style="font-size:13px;font-weight:600;"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Branding -->
+  <div class="sub-panel" id="st-branding">
+    <div class="card" style="max-width:520px;">
+      <form id="branding-form">
+        <div style="margin-bottom:14px;">
+          <label for="branding-business-name">Business name <span data-tooltip="Appears in navigation, footer, and copyright line on every page." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+          <input type="text" id="branding-business-name" placeholder="e.g., The Salon Co.">
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="branding-timezone">Your timezone <span data-tooltip="Shown to clients when booking so they know what timezone your times are in." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+          <select id="branding-timezone">
+            <option value="America/New_York">Eastern Time (ET)</option>
+            <option value="America/Chicago">Central Time (CT)</option>
+            <option value="America/Denver">Mountain Time (MT)</option>
+            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+            <option value="America/Anchorage">Alaska Time (AKT)</option>
+            <option value="Pacific/Honolulu">Hawaii Time (HT)</option>
+            <option value="America/Phoenix">Arizona (no DST)</option>
+            <option value="Europe/London">London (GMT/BST)</option>
+            <option value="Europe/Paris">Central European (CET)</option>
+            <option value="Asia/Tokyo">Japan (JST)</option>
+            <option value="Australia/Sydney">Sydney (AEST)</option>
+          </select>
+        </div>
+        <div class="save-row">
+          <button type="submit" class="btn btn-primary">Save Branding</button>
+          <span id="branding-status" class="save-msg"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Integrations -->
+  <div class="sub-panel" id="st-integrations">
+    <div class="card" style="max-width:600px;">
+      <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:14px;">Stripe — Payments</div>
+      <div class="hint-box">
+        <strong>How to get your keys:</strong> Go to stripe.com → Developers → API Keys. Copy the Publishable key (<code>pk_live_</code>) and Secret key (<code>sk_live_</code>). Use test keys while testing.
+      </div>
+      <form id="integrations-form">
+        <div style="margin-bottom:14px;">
+          <label for="stripe-pub-key">Stripe publishable key</label>
+          <small style="margin-top:-2px;">Starts with <code>pk_live_</code> or <code>pk_test_</code></small>
+          <input type="text" id="stripe-pub-key" placeholder="pk_live_…" style="font-family:monospace;">
+        </div>
+        <div style="margin-bottom:6px;">
+          <label for="stripe-sec-key">Stripe secret key</label>
+          <small style="margin-top:-2px;">Starts with <code>sk_live_</code> or <code>sk_test_</code> — never share</small>
+          <div class="key-row">
+            <input type="password" id="stripe-sec-key" placeholder="sk_live_…" style="font-family:monospace;margin-bottom:0;">
+            <button type="button" id="stripe-test-btn" onclick="adminTestStripe()" class="test-btn">Test Connection</button>
+          </div>
+          <span id="stripe-test-status" style="font-size:12.5px;font-weight:600;display:block;margin-bottom:14px;"></span>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="stripe-wh-key">Webhook signing secret <span style="font-weight:400;color:var(--muted);font-size:11px;">(recommended)</span></label>
+          <div class="hint-box" style="margin-bottom:10px;">
+            In Stripe: Developers → Webhooks → Add endpoint.<br>
+            URL: <code id="webhook-url-display" style="background:var(--white);padding:1px 5px;border-radius:4px;border:1px solid var(--line);font-size:12px;"></code><br>
+            Event: <code>checkout.session.completed</code> — then copy the signing secret.
+          </div>
+          <input type="password" id="stripe-wh-key" placeholder="whsec_…" style="font-family:monospace;">
+        </div>
+        <hr class="divider">
+        <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:14px;">Resend — Confirmation Emails</div>
+        <div class="hint-box">
+          Go to resend.com → create a free account → verify your domain → API Keys → Create API Key.
+        </div>
+        <div style="margin-bottom:14px;">
+          <label for="resend-api-key">Resend API key</label>
+          <small style="margin-top:-2px;">Starts with <code>re_</code></small>
+          <input type="password" id="resend-api-key" placeholder="re_…" style="font-family:monospace;">
+        </div>
+        <div style="margin-bottom:6px;">
+          <label for="resend-from-email">From email address</label>
+          <small style="margin-top:-2px;">Must be a verified domain in Resend (e.g. <code>hello@yoursalon.com</code>)</small>
+          <input type="email" id="resend-from-email" placeholder="hello@yoursalon.com">
+          <div class="key-row" style="margin-top:-8px;">
+            <input type="email" id="resend-test-email" placeholder="Send test to: your@email.com" style="margin:0;">
+            <button type="button" onclick="adminTestResend()" class="test-btn">Send Test</button>
+          </div>
+          <span id="resend-test-status" style="font-size:12.5px;font-weight:600;display:block;margin-bottom:14px;"></span>
+        </div>
+        <div class="save-row">
+          <button type="submit" class="btn btn-primary">Save Keys</button>
+          <span id="gateway-status" class="save-msg"></span>
+          <span id="gateway-status-2" class="save-msg"></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="max-width:600px;margin-top:16px;">
+      <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:14px;">Google Calendar — Booking Feed</div>
+      <div class="hint-box">
+        Subscribe once and all your bookings appear in Google Calendar automatically — no action needed per booking.<br><br>
+        <strong>Setup (one time):</strong> Open Google Calendar → click <strong>+</strong> next to "Other calendars" → <strong>From URL</strong> → paste the link below → <strong>Add Calendar</strong>.
+      </div>
+      <label for="calendar-feed-url">Your calendar feed URL</label>
+      <div class="key-row">
+        <input type="text" id="calendar-feed-url" readonly style="font-family:monospace;font-size:12px;background:var(--bg-alt);cursor:pointer;margin:0;" onclick="this.select()">
+        <button type="button" class="test-btn" onclick="
+          navigator.clipboard.writeText(document.getElementById('calendar-feed-url').value).then(() => {
+            const s = document.getElementById('calendar-copy-status');
+            s.textContent = 'Copied!';
+            setTimeout(() => s.textContent = '', 2000);
+          });
+        ">Copy Link</button>
+      </div>
+      <span id="calendar-copy-status" style="font-size:12.5px;font-weight:600;display:block;margin-top:6px;color:var(--success);"></span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="sub-panel" id="st-footer">
+    <div class="card" style="max-width:520px;">
+      <form id="footer-form">
+        <div style="margin-bottom:14px;">
+          <label for="footer-bio-input">Short business description <span data-tooltip="1–2 sentences shown at the bottom of every page." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+          <textarea id="footer-bio-input" rows="3" placeholder="Brief description of your salon…"></textarea>
+        </div>
+        <div style="margin-bottom:14px;"><label for="footer-email-input">Public contact email</label><input type="email" id="footer-email-input" placeholder="hello@yoursalon.com"></div>
+        <div style="margin-bottom:14px;"><label for="footer-phone-input">Business phone</label><input type="text" id="footer-phone-input" placeholder="(312) 555-0100"></div>
+        <div style="margin-bottom:14px;"><label for="footer-address-input">Business location</label><input type="text" id="footer-address-input" placeholder="123 Main St, Chicago, IL 60601"></div>
+        <div style="margin-bottom:14px;">
+          <label for="footer-hours-input">Business hours <span data-tooltip="Write each day or range on its own line." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+          <textarea id="footer-hours-input" rows="4" placeholder="Tuesday – Saturday: 9am – 6pm&#10;Sunday – Monday: Closed"></textarea>
+        </div>
+        <div style="margin-bottom:14px;"><label for="footer-website-input">Website URL <span data-tooltip="Your public-facing domain — shown in the footer." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label><input type="url" id="footer-website-input" placeholder="https://thesalonco.com"></div>
+        <div class="save-row">
+          <button type="submit" class="btn btn-primary">Save Contact Info</button>
+          <span id="footer-status" class="save-msg"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Account -->
+  <div class="sub-panel" id="st-account">
+    <div class="card" style="max-width:460px;">
+      <form id="change-email-form">
+        <div style="margin-bottom:14px;">
+          <label for="new-email-input">New email address <span data-tooltip="You'll receive a confirmation link at the new address before it takes effect." style="cursor:help;color:var(--muted);font-weight:400;"> (?)</span></label>
+          <input type="email" id="new-email-input" placeholder="new@email.com" required>
+        </div>
+        <div class="save-row">
+          <button type="submit" class="btn btn-primary">Update Email</button>
+          <span id="change-email-status" style="font-size:13px;font-weight:600;margin-left:4px;"></span>
+        </div>
+      </form>
+      <hr class="divider">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">Need to walk through setup again?</div>
+      <button onclick="restartOnboarding()" class="btn btn-ghost">Reopen Setup Wizard</button>
+      <span id="restart-onboarding-status" style="margin-left:12px;font-size:13px;font-weight:600;"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ GIFT CARDS ════════ -->
+<div id="tab-gift-cards" class="tab-section">
+  <h1 class="section-title">Gift Cards</h1>
+  <p class="section-sub-text">All issued gift cards and remaining balances.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th><th>Recipient</th><th>From</th><th>Amount</th><th>Remaining</th><th>Purchased</th>
+        </tr>
+      </thead>
+      <tbody id="gc-table-body">
+        <tr><td colspan="6" style="text-align:center;padding:32px;color:var(--ink-soft);">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════ DISCOUNT CODES ════════ -->
+<div id="tab-discount-codes" class="tab-section">
+  <h1 class="section-title">Discount Codes</h1>
+  <p class="section-sub-text">Create and manage codes clients can enter at checkout.</p>
+
+  <div class="card" style="max-width:540px;margin-bottom:32px;">
+    <h3 style="margin:0 0 16px;font-size:16px;">Create a new code</h3>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;gap:10px;">
+        <input type="text" id="dc-new-code" placeholder="Code (e.g. SUMMER20)" autocapitalize="characters" style="flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--ink);">
+        <select id="dc-new-type" style="flex:0 0 130px;padding:10px 8px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--ink);">
+          <option value="percent">Percent % off</option>
+          <option value="fixed">Fixed $ off</option>
+        </select>
+        <input type="number" id="dc-new-value" placeholder="20" min="0" step="0.01" style="flex:0 0 72px;padding:10px 8px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--ink);">
+      </div>
+      <div style="display:flex;gap:10px;">
+        <input type="number" id="dc-new-max-uses" placeholder="Max uses (optional)" min="1" style="flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--ink);">
+        <input type="date" id="dc-new-expires" style="flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--ink);">
+      </div>
+      <button id="dc-create-btn" class="btn btn-primary" style="align-self:flex-start;">Create code</button>
+      <p id="dc-create-status" style="display:none;font-size:13px;margin:0;"></p>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Code</th><th>Discount</th><th>Uses</th><th>Expires</th><th>Status</th><th></th></tr>
+      </thead>
+      <tbody id="dc-table-body">
+        <tr><td colspan="6" style="text-align:center;padding:32px;color:var(--ink-soft);">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</main>
+</div><!-- .app -->
+</div><!-- #dashboard-view -->
+
+<!-- ═══════════════════ MODALS ═══════════════════ -->
+<div id="onboarding-modal">
+  <div class="modal-box">
+    <h2 style="font-family:'Cormorant Garamond',serif;color:var(--clay-text);margin:0 0 8px;font-size:22px;font-weight:600;">Welcome to your dashboard</h2>
+    <p style="color:var(--muted);margin:0 0 24px;line-height:1.6;">Here's the recommended setup order to get ready for your first client:</p>
+    <ol style="color:var(--ink-soft);font-size:14px;line-height:1.9;padding-left:20px;margin:0 0 28px;">
+      <li><strong>Availability</strong> — set your weekly schedule and block any dates off</li>
+      <li><strong>Services</strong> — add the services you offer with pricing and duration</li>
+      <li><strong>Stylists</strong> — add your team members so clients can choose a stylist</li>
+      <li><strong>Settings → Stripe</strong> — connect your Stripe account to accept deposits</li>
+      <li><strong>Settings → Resend</strong> — connect Resend so confirmation emails go out</li>
+    </ol>
+    <button id="close-onboarding" class="btn btn-primary" style="width:100%;padding:14px;border-radius:8px;">Let's get started</button>
+  </div>
+</div>
+
+<div id="confirm-modal">
+  <div class="modal-box" style="max-width:400px;">
+    <h3 id="confirm-title" style="margin:0 0 10px;color:var(--clay-text);font-size:17px;font-family:'Cormorant Garamond',serif;font-weight:600;"></h3>
+    <p id="confirm-message" style="margin:0 0 24px;color:var(--muted);font-size:14px;line-height:1.6;"></p>
+    <div style="display:flex;gap:10px;">
+      <button id="confirm-cancel" style="flex:1;padding:12px;background:transparent;border:1px solid var(--line);border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);">Go back</button>
+      <button id="confirm-ok" style="flex:1;padding:12px;background:var(--danger);color:white;border:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;"></button>
+    </div>
+  </div>
+</div>
+
+<script src="./admin.js" defer></script>
+</body>
+</html>
