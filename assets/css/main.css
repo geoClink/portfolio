@@ -133,6 +133,7 @@ a:link, a:visited {
 	.site-favicon {
 		width: 28px !important;
 		height: 28px !important;
+		filter: invert(1) !important;
 	}
 	nav.links {
 		display: none !important;
@@ -3427,6 +3428,7 @@ footer#footer .footer-name {
 .footer-favicon {
     flex-shrink: 0;
     margin-top: 0.15em;
+    filter: invert(1);
 }
 .footer-name-text {
     display: flex;
