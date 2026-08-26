@@ -3721,8 +3721,8 @@ footer#footer .footer-squishy a:hover {
     animation: bubble-breathe ease-in-out infinite;
 }
 @keyframes bubble-breathe {
-    0%, 100% { transform: scale(0.92); opacity: 0.5; }
-    50%       { transform: scale(1.06); opacity: 0.9; }
+    0%, 100% { transform: scale(0.72); opacity: 0.4; }
+    50%       { transform: scale(1.18); opacity: 0.95; }
 }
 
 /* Touch target minimums — 44px per Apple HIG */
