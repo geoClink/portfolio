@@ -148,3 +148,57 @@ function openLightbox(el) {
     overlay.addEventListener('click', close);
     document.addEventListener('keydown', onKey);
 }
+
+
+// Ambient texture circles — fixed, subtle, breathing pulse
+// Skip on case study pages and mobile
+(function () {
+    if (document.querySelector('.case-hero')) return;
+    if (window.innerWidth < 768) return;
+
+    // y values are % of full page height — bubbles spread as you scroll
+    var bubbles = [
+        // left side
+        { x: -2, y:  3,  size: 140, dur: 8.0, delay: 0.0 },
+        { x:  6, y: 11,  size:  38, dur: 9.5, delay: 1.4 },
+        { x:  1, y: 20,  size: 110, dur: 7.2, delay: 3.1 },
+        { x:  7, y: 30,  size:  28, dur: 8.8, delay: 0.7 },
+        { x:  0, y: 40,  size: 160, dur: 6.8, delay: 2.3 },
+        { x:  5, y: 51,  size:  52, dur: 9.2, delay: 4.0 },
+        { x:  2, y: 62,  size:  90, dur: 7.5, delay: 1.8 },
+        { x:  7, y: 73,  size:  35, dur: 8.3, delay: 0.5 },
+        { x:  0, y: 83,  size: 120, dur: 6.9, delay: 3.2 },
+        { x:  5, y: 93,  size:  48, dur: 9.0, delay: 2.0 },
+        // right side
+        { x: 95, y:  7,  size:  45, dur: 7.6, delay: 1.9 },
+        { x: 91, y: 16,  size: 130, dur: 8.4, delay: 0.3 },
+        { x: 97, y: 26,  size:  32, dur: 9.0, delay: 2.8 },
+        { x: 90, y: 36,  size: 105, dur: 7.0, delay: 1.1 },
+        { x: 96, y: 46,  size:  60, dur: 8.2, delay: 3.6 },
+        { x: 92, y: 57,  size: 145, dur: 6.5, delay: 0.9 },
+        { x: 95, y: 67,  size:  40, dur: 9.3, delay: 2.5 },
+        { x: 91, y: 77,  size: 100, dur: 7.8, delay: 0.2 },
+        { x: 97, y: 87,  size:  55, dur: 8.7, delay: 3.8 },
+        { x: 93, y: 96,  size: 125, dur: 7.1, delay: 1.6 },
+    ];
+
+    var pageH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
+
+    var container = document.createElement('div');
+    container.className = 'bg-bubbles';
+    container.style.height = pageH + 'px';
+
+    bubbles.forEach(function (b) {
+        var el = document.createElement('div');
+        el.className = 'bg-bubble';
+        el.style.left            = b.x + '%';
+        el.style.top             = Math.round(b.y * pageH / 100) + 'px';
+        el.style.width           = b.size + 'px';
+        el.style.height          = b.size + 'px';
+        el.style.animationDuration = b.dur + 's';
+        el.style.animationDelay    = b.delay + 's';
+        container.appendChild(el);
+    });
+
+    document.body.insertBefore(container, document.body.firstChild);
+}());

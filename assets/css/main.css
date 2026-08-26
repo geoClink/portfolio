@@ -3703,6 +3703,28 @@ footer#footer .footer-squishy a:hover {
 }
 
 
+/* Ambient background bubbles */
+.bg-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.bg-bubble {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(0, 0, 0, 0.015);
+    animation: bubble-breathe ease-in-out infinite;
+}
+@keyframes bubble-breathe {
+    0%, 100% { transform: scale(0.92); opacity: 0.5; }
+    50%       { transform: scale(1.06); opacity: 0.9; }
+}
+
 /* Touch target minimums — 44px per Apple HIG */
 @media (max-width: 736px) {
     #footer ul.icons li a {
