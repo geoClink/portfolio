@@ -479,7 +479,7 @@
         </div>
 
         <span class="contact-form-label" id="form-label">Send a message</span>
-        <p class="contact-response-note">I typically respond within 24 hours.</p>
+        <p class="contact-response-note">I typically respond within a day or two.</p>
 
         <blockquote class="contact-testimonial">
             <p>"George is fast, knowledgeable, proactive, and always willing to dig deeper than what's immediately in front of him. A fantastic fit for any fast-growing company looking for a team that truly takes ownership and delivers results."</p>
@@ -488,18 +488,18 @@
 
         <div id="form-success" class="form-success">
             <p class="form-success-heading">Thanks, I'll be in touch.</p>
-            <p class="form-success-sub">I typically respond within a day or two.</p>
+            <p class="form-success-sub">I typically respond within 24 hours.</p>
         </div>
 
         <form id="contactForm" class="contact-form">
             <label for="name" class="sr-only">Your Name</label>
-            <input type="text" name="name" id="name" placeholder="Your Name" />
+            <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="name" />
             <label for="email" class="sr-only">Your Email</label>
-            <input type="email" name="email" id="email" placeholder="Your Email" />
+            <input type="email" name="email" id="email" placeholder="Your Email" autocomplete="email" required />
             <label for="subject" class="sr-only">Subject</label>
             <input type="text" name="subject" id="subject" placeholder="Subject" />
             <label for="message" class="sr-only">Your Message</label>
-            <textarea name="message" id="message" placeholder="Your Message" rows="6"></textarea>
+            <textarea name="message" id="message" placeholder="Your Message" rows="6" required></textarea>
             <input type="hidden" name="inquiry_type" id="inquiry_type" value="" />
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
             <input type="submit" value="Send Message" id="form-submit" />
