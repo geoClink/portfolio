@@ -23,7 +23,9 @@
 }
 
 .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 0.75em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -62,6 +64,7 @@
 .case-links a.button {
     display: inline-flex !important;
     align-items: center !important;
+    min-height: 44px !important;
     height: auto !important;
     line-height: normal !important;
     font-size: 0.85em !important;

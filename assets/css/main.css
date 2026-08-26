@@ -409,7 +409,9 @@ a:link, a:visited {
 	border-bottom: none;
 }
 .sidebar-menu a {
-	display: block;
+	display: flex;
+	align-items: center;
+	min-height: 44px;
 	font-size: 0.9em;
 	font-weight: 500;
 	color: var(--color-text);
@@ -3669,7 +3671,9 @@ footer#footer .footer-squishy a:hover {
 .spec-nav-btn {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.2em;
+    min-height: 44px;
     text-decoration: none;
     color: var(--color-heading);
     font-weight: 600;
@@ -3698,6 +3702,17 @@ footer#footer .footer-squishy a:hover {
     }
 }
 
+
+/* Touch target minimums — 44px per Apple HIG */
+@media (max-width: 736px) {
+    #footer ul.icons li a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
 
 /* Respect the visitor's OS-level Reduce Motion setting */
 @media (prefers-reduced-motion: reduce) {

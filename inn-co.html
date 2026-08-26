@@ -223,6 +223,14 @@
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                 <img loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar - tape-chart occupancy grid by room and date" style="width:100%;display:block;" />
             </div>
+            <p style="margin-top:1.25em;">After launch, the client flagged that the grid was hard to read — the day columns and room rows didn't have enough visual separation to track easily. I made three targeted changes: darkened cell borders from near-invisible <code>#f0eeee</code> to distinct values (columns lighter, rows heavier, so the eye tracks horizontally first); added alternating row shading so each room stripes consistently across the full horizontal scroll; and added a position tooltip to every cell — including empty ones — so hovering any cell shows "Room Name · Wed, Aug 26" instead of nothing. Small change, immediate clarity improvement. Shipping is not finishing.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
+                <img loading="lazy" src="assets/images/crystal-lake/hover-calendar-show-day-and-room.png" alt="Calendar hover tooltip showing room name and date for any cell" style="width:100%;display:block;" />
+            </div>
+            <p style="margin-top:1.25em;">The calendar also doubles as a booking entry point. Clicking any cell opens a form to log a reservation directly — room and date pre-filled from the cell — so the owner can record phone-in bookings or OTA reservations from Expedia or Hotels.com without leaving the occupancy view. The grid stays the source of truth: book it here, it blocks immediately.</p>
+            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
+                <img loading="lazy" src="assets/images/crystal-lake/create-booking-inside-calendar.png" alt="Create booking form opened from calendar cell with room and date pre-filled" style="width:100%;display:block;" />
+            </div>
         </div>
 
         <div class="case-section">
@@ -356,7 +364,7 @@
 
         <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
             <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
-            <a href="contact.html" style="display:inline-block;background:var(--color-heading);color:#fff;font-weight:600;font-size:0.95em;padding:0.65em 1.4em;border-radius:4px;text-decoration:none;">Let's talk →</a>
+            <a href="contact.html" style="display:inline-flex;align-items:center;min-height:44px;background:var(--color-heading);color:#fff;font-weight:600;font-size:0.95em;padding:0 1.4em;border-radius:4px;text-decoration:none;">Let's talk →</a>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
