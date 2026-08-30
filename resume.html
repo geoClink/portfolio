@@ -403,6 +403,125 @@
                 margin-bottom: 0;
             }
         }
+        /* Print-only elements — hidden on web */
+        .print-header { display: none; }
+        #print-qr { display: none; }
+    </style>
+    <style>
+        @media print {
+            /* ── Hide all web chrome ── */
+            #header, #menuOverlay, .menu-overlay, #footer,
+            .resume-actions, .page-cta,
+            .resume-title, .resume-tagline { display: none !important; }
+
+            /* ── Hide Contact section — info is in print-header instead ── */
+            .resume-section:has(h3:first-child) { }
+            .resume-section-contact { display: none !important; }
+
+            body { background: #fff !important; margin: 0; font-size: 9.5pt; color: #111; }
+            #main {
+                padding: 0.45in 0.6in 0.3in !important;
+                max-width: 100% !important;
+                box-sizing: border-box;
+            }
+
+            /* ── Print-only name + contact header ── */
+            .print-header {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 0.1in;
+            }
+            .print-header-left { flex: 1; }
+            .print-name {
+                font-size: 20pt;
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                color: #111;
+                line-height: 1.1;
+                margin-bottom: 0.05in;
+            }
+            .print-location {
+                font-size: 9pt;
+                font-weight: 400;
+                letter-spacing: 0;
+                color: #666;
+                margin-left: 0.08in;
+            }
+            .print-contact {
+                font-size: 8pt;
+                color: #444;
+                line-height: 1.3;
+            }
+            #print-qr {
+                display: block !important;
+                width: 0.65in;
+                height: 0.65in;
+                flex-shrink: 0;
+                margin-left: 0.15in;
+                image-rendering: pixelated;
+            }
+
+            /* ── Section spacing ── */
+            .resume-section { margin-bottom: 0.13in; }
+            .resume-section h3 {
+                font-size: 7pt !important;
+                letter-spacing: 0.13em !important;
+                color: #111 !important;
+                margin: 0 0 0.05in !important;
+                padding-bottom: 0.03in !important;
+                border-bottom: 0.5pt solid #ccc !important;
+            }
+
+            /* ── Entry typography ── */
+            .resume-item-title { font-size: 9.5pt; font-weight: 700; margin-bottom: 0.01in; }
+            .resume-item-meta  { font-size: 8pt; color: #555; margin-bottom: 0.02in; }
+            p { font-size: 8.5pt; line-height: 1.3; margin: 0 0 0.02in; }
+
+            /* ── Expand all accordions ── */
+            .resume-accordion-body {
+                max-height: none !important;
+                overflow: visible !important;
+                display: block !important;
+                padding-bottom: 0 !important;
+            }
+            .resume-accordion-icon { display: none !important; }
+            .resume-accordion-header {
+                cursor: default !important;
+                padding: 0.03in 0 0.01in !important;
+                background: none !important;
+                border: none !important;
+            }
+            .resume-accordion-list { list-style: none; padding: 0; margin: 0; }
+            .resume-accordion-list li { margin-bottom: 0.06in; }
+
+            /* ── Hide case study / live site links ── */
+            .resume-item-links { display: none !important; }
+
+            /* ── Skills ── */
+            .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 0.06in 0.15in; }
+            .skill-group-label { font-size: 7pt !important; color: #111 !important; margin-bottom: 0.02in; letter-spacing: 0.08em; }
+            .skill-tags { display: flex; flex-wrap: wrap; gap: 2px 4px; }
+            .skill-tag {
+                font-size: 7.5pt;
+                background: #f0f0f0 !important;
+                color: #111 !important;
+                border-radius: 2px;
+                padding: 1px 4px;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            /* ── Certs ── */
+            .cert-group { margin-bottom: 0.07in; }
+            .cert-group ul { margin: 0.02in 0 0 1em; padding: 0; }
+            .cert-group li { font-size: 8pt; line-height: 1.4; }
+
+            /* ── Page breaks — avoid splitting individual entries ── */
+            .resume-accordion-list li { break-inside: avoid; page-break-inside: avoid; }
+
+            a { color: #111 !important; text-decoration: none !important; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -472,6 +591,14 @@
 
     <div id="main" role="main">
 
+        <div class="print-header">
+            <div class="print-header-left">
+                <div class="print-name">George Clinkscales Jr. <span class="print-location">Detroit, MI</span></div>
+                <div class="print-contact">GeorgeClinkscalesDev@proton.me &nbsp;&middot;&nbsp; linkedin.com/in/george-clinkscales &nbsp;&middot;&nbsp; github.com/geoClink</div>
+            </div>
+            <img id="print-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6AQAAAAAxdWpcAAABoUlEQVR4nM2YQY7DIAxFPzFSlyD1AD0KuVpuBjdylpWMPLLTzKozyzh/USVhwZf5PEyT4qvG8v07cMnATKaZkr3tCRj2Xq+ZHH8OFFXtpJoq5kszoKpy1eR/aLHiVGBfZV/zvgpw1C3alWlWkG4oG06Fusrnw5gZ8rx28uWfgaYMFH0wHtwyQKrxrvaU0gqM96u/63hXpJRysCuoS9BUu7IVytVjXUlRKd3sMYDm35qUaFdo5LX6rRIABLtaiA3pxOPtcZrVkh9NURjYuUlRYls+Un+4wQpK6V6fptyIbSkpOu3qcnuQ0m+SK2AAg7TnotjXWd1efK7U8X7wqpF2KRpdK4h3MihdAIu94TQ+V2Lk/ByFVi7LVfwe1E/UGzGIjfBqi3gHV434YwxWsfBcLdZ5lm2+HAho4i1E9B7M5JcceeLBFS9Oheezz2gyyPl7bD34ZpR7kEHtmmO8gjU24bmCH4JOTuMVXEbU6BPHRDwEzY8bszTDb6mnctksV36DDu/b5cjVAU9Yo2W0j+YVHFCzIlWnKOyKSBxbq3TL/2R+ABYQHPWXQ7stAAAAAElFTkSuQmCC" alt="Portfolio QR code" />
+        </div>
+
         <h2 class="resume-title">Resume</h2>
         <p class="resume-tagline">Full-stack engineer and co-founder of CH Studios LLC with production apps on the App Store and live web platforms serving real clients.</p>
 
@@ -481,7 +608,7 @@
             </a>
         </div>
 
-        <section class="resume-section">
+        <section class="resume-section resume-section-contact">
             <h3>Contact</h3>
             <div class="resume-contact-links">
                 <div class="resume-contact-btns">
@@ -494,7 +621,7 @@
 
         <section class="resume-section">
             <h3>Summary</h3>
-            <p>Full-stack engineer and co-founder of CH Studios LLC building multi-tenant SaaS platforms from database architecture to payment processing to admin dashboards - with shipped App Store apps and live web platforms serving real clients. Active contracts across iOS and web. Seeking full-time engineering roles in Detroit or remote.</p>
+            <p>Full-stack engineer and co-founder of CH Studios LLC. Builds and ships production software — multi-tenant SaaS, Stripe-integrated booking platforms, and cross-platform mobile apps — for real paying clients. Active contracts across iOS and web. Seeking full-time engineering roles in Detroit or remote.</p>
         </section>
 
         <section class="resume-section">
@@ -509,7 +636,7 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Co-founded a Detroit-based software studio focused on mobile apps and full-stack products. Building and shipping software for real clients across iOS and web.</p>
+                        <p>Co-founded a Detroit-based software studio building mobile apps and full-stack web platforms for real clients.</p>
                     </div>
                 </li>
                 <li>
@@ -521,7 +648,7 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Contracted to maintain and deliver feature updates across iOS, Android, and web for an early-stage travel startup. Work directly with the founder to triage bugs, ship improvements, and respond to user feedback across the full product surface.</p>
+                        <p>Shipping feature updates across iOS, Android, and web for an early-stage travel startup. Picked up Kotlin and Android cold mid-contract and kept the platform moving without interruption.</p>
                     </div>
                 </li>
                 <li>
@@ -533,7 +660,7 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Self-directed transition from agricultural science into software engineering - completed coursework in Python (University of Michigan), front-end development (Meta), Swift, and JavaScript while building personal projects. Accepted into MSU Apple Developer Academy in Sept 2025.</p>
+                        <p>Self-directed career transition into software engineering — coursework in Python (University of Michigan), front-end development (Meta), Swift, and JavaScript. Accepted into MSU Apple Developer Academy Sept 2025.</p>
                     </div>
                 </li>
                 <li>
@@ -545,20 +672,20 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Supported wheat genetics research through field data collection, controlled environment trials, and laboratory sample analysis across multiple growing seasons.</p>
+                        <p>Field data collection, controlled environment trials, and lab sample analysis supporting wheat genetics research.</p>
                     </div>
                 </li>
             </ul>
         </section>
 
         <section class="resume-section">
-            <h3>Projects</h3>
+            <h3>Client Work</h3>
             <ul class="resume-accordion-list">
                 <li>
                     <button class="resume-accordion-header">
                         <div>
-                            <div class="resume-item-title">White Bear Harmonics - Real Client</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel &middot; Jun 2026 · ~2 weeks start to handoff</div>
+                            <div class="resume-item-title">White Bear Harmonics</div>
+                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel &middot; Jun 2026 · Solo build · 2 weeks start to handoff</div>
                         </div>
                         <span class="resume-accordion-icon">+</span>
                     </button>
@@ -567,14 +694,30 @@
                             <a href="wellness-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://whitebearharmonics.com/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Built a full booking platform for a solo wellness practitioner replacing a $100–200/month Mindbody subscription. Stripe payment flow is webhook-driven - charges are confirmed before appointments are written to Supabase, so no unpaid booking can enter the system. Each appointment gets a UUID cancel token at insert time; the confirmation email carries that token so clients can self-serve cancel or reschedule with no login. Refund tier (full, 50%, or zero) is calculated server-side based on time remaining. Admin dashboard is JWT-protected with a rate-limited login and password reset via tokenized email. Multi-tenant architecture from day one - onboarding a new practitioner is one database row and a Vercel deploy. 100/100/100 Lighthouse scores.</p>
+                        <p>Took a solo wellness practitioner from no web presence to a full booking platform in 2 weeks — Stripe payments, automated confirmation and cancellation emails, JWT-protected admin dashboard, and multi-tenant architecture. Replaced a $100–200/month Mindbody subscription. 100/100/100 Lighthouse scores.</p>
                     </div>
                 </li>
                 <li>
                     <button class="resume-accordion-header">
                         <div>
-                            <div class="resume-item-title">Sort-Tek Inspection Systems - Real Client</div>
-                            <div class="resume-item-meta">HTML · CSS · JavaScript · Vercel · Formspree · Google Analytics &middot; Jul 2026 · Delivered in under one week</div>
+                            <div class="resume-item-title">Crystal Lake Resort</div>
+                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel &middot; 2026 · Solo build</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="inn-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                        </div>
+                        <p>Direct booking platform for a boutique Michigan resort — Stripe reservations, self-serve cancellation, and a full admin dashboard that eliminates 15–25% OTA commission per booking. No guest account required; reservations looked up by email and check-in date. Platform live and processing real bookings — $2,680 in confirmed stays, rooms booked 3 months out.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title">Sort-Tek Inspection Systems</div>
+                            <div class="resume-item-meta">HTML · CSS · JavaScript · Vercel · Google Analytics &middot; Jul 2026 · Solo build · Delivered in under one week</div>
                         </div>
                         <span class="resume-accordion-icon">+</span>
                     </button>
@@ -583,180 +726,7 @@
                             <a href="sort-tek.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Built the first web presence for an ISO 9001:2015-certified fastener inspection company in Troy, Michigan - bespoke 6-page site in plain HTML, CSS, and JavaScript with no framework, no template, and no CMS. Custom design system, hero animation, Google Analytics with a conversion event on the contact form, Google Search Console, and a privacy policy. 100/100 Lighthouse across all four categories on both mobile and desktop. First solo freelance web build; came through a referral.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">The Bakery Co.</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · MCP · WebMCP &middot; May 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="bakery-spec.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://the-bakery-co.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
-                        </div>
-                        <p>Built a full-stack bakery ordering platform with Node.js/Express, Supabase, and Stripe featuring an admin dashboard covering order management, inventory, revenue analytics, menu CMS, loyalty program, staff scheduling, coupon management, digital gift cards, and subscription billing, deployed to Render. Implemented MCP server using Anthropic SDK so customers can browse menus, place orders, and receive Stripe checkout links through Claude AI conversation. Shipped WebMCP the week Google announced it at I/O 2026, enabling Gemini to query menu and cart data in Chrome with no API connection required.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">KnotEmployee - Employee Scheduling</div>
-                            <div class="resume-item-meta">SwiftUI · Supabase · Supabase Realtime · Deno Edge Functions · APNs &middot; 2026 · TestFlight</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="knotemployee.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                        </div>
-                        <p>Built a multi-tenant iOS employee scheduling app with manager drag-and-drop schedule builder, staff clock-in/out, shift swaps, time-off approvals, and team messaging. Multi-tenancy enforced at the database level via row-level security on every table. Push notifications trigger a Deno Edge Function that calls APNs directly - no third-party SDK. Live schedule updates sync via Supabase Realtime websocket channels scoped per tenant.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Tally - Time Tracker</div>
-                            <div class="resume-item-meta">SwiftUI · Catalyst · React · Vite · Supabase · StoreKit · Stripe &middot; 2026 · Live on App Store</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="tally.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="tally/android-beta.html" target="_blank" rel="noopener noreferrer">Google Play (Beta) ↗</a>
-                        </div>
-                        <p>Built a cross-platform time tracker - native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React/Vite web dashboard on a shared Supabase backend. StoreKit and Stripe both write to the same <code>is_pro</code> flag so purchasing on one platform unlocks all. Business tier adds multi-user team workspaces with row-level security. All backend logic (webhooks, email, team invites) runs in Deno Edge Functions with no Node server to maintain.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">The Salon Co.</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend &middot; May 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="salon-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
-                        </div>
-                        <p>Built a 14-page luxury salon site with a 4-step booking flow - per-stylist availability pulled live from Supabase, 25% Stripe deposit at checkout, automated cancellation with a 48-hour refund policy via Stripe, and Resend confirmation emails. Each of the four services (precision cut, color highlights, blowout, keratin treatment) has its own SEO-optimized page. No monthly platform fee.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Crystal Lake Resort</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Stripe · Resend · Vercel &middot; 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="inn-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://the-inn-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
-                        </div>
-                        <p>Built a direct booking platform for boutique hotels and resorts - room listings, Stripe-powered reservations, self-serve cancellation, and a full owner admin dashboard. Eliminates 15–25% OTA commission per booking. Guests look up reservations with just their email and check-in date - no account required. Pre-arrival and post-stay emails fire automatically. Live client: Crystal Lake Resort, Frankfort, MI. Designed and built solo.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">The Sports Bar Co.</div>
-                            <div class="resume-item-meta">Node.js · Express · Supabase · Resend · Vercel &middot; 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="sports-bar-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
-                        </div>
-                        <p>Built a reservations and events platform for a Detroit sports bar - live scores across seven leagues, table booking, weekly events calendar, and a private party inquiry form. Owners control everything from the admin dashboard with no developer needed and no per-cover platform fee.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">CoastCast</div>
-                            <div class="resume-item-meta">FastAPI · CoreML · Swift Concurrency · SwiftUI · WidgetKit &middot; Mar 2026 – Present</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="coastcast.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="https://github.com/geoClink/MichiganAPIWeather" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                        </div>
-                        <p>Shipped iOS frontend for a 54-beach conditions platform with Python FastAPI backend; built custom map clustering, weighted scoring engine, and on-device CoreML/XGBoost crowd prediction with 12 engineered features, covered by a Swift Testing suite with 120+ parameterized test cases. Added Siri Shortcuts, WidgetKit, Dynamic Island Live Activities, and a three-tier BGTaskScheduler notification system.</p>
-                    </div>
-                </li>
-                <!-- Detroit Sports Chatbot intentionally commented out - removing from public portfolio for now
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Detroit Sports Chatbot</div>
-                            <div class="resume-item-meta">Python · Claude API · Agentic Tool-Use · Streamlit &middot; Apr 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">View Live Demo ↗</a>
-                            <a href="https://github.com/geoClink/DetroitSportChatBot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                        </div>
-                        <p>Built an agentic AI analyst using LLM tool-calling and few-shot prompt templates to orchestrate real-time REST API fetches and extract structured data from unstructured responses - deployed on Render with a Streamlit frontend.</p>
-                    </div>
-                </li>
-                -->
-            </ul>
-        </section>
-
-        <section class="resume-section">
-            <h3>Open Source</h3>
-            <ul class="resume-accordion-list">
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Tandoor Recipes</div>
-                            <div class="resume-item-meta">Django · Vue.js · Docker &middot; Apr 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <p>Contributed to an open source meal planning app; diagnosed a feature request blocked at the library level, documented findings on the issue to save future contributors time, and submitted a separate PR adding a missing Back button to the Ingredient Editor - currently open for review.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Handmade Network</div>
-                            <div class="resume-item-meta">Go · HTML Templates · CSS &middot; Apr 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <p>Submitted PR (#37) resolving Go-template logic errors for featured post states and auditing typography utility classes to ensure design system consistency.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Streamlit</div>
-                            <div class="resume-item-meta">TypeScript · React · CSS-in-JS &middot; Apr 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <p>Submitted PR (#14864) adding border radius rounding to st.video and st.map components for visual consistency with Streamlit's design system.</p>
+                        <p>A 30-year fastener inspection company had an "under construction" placeholder actively losing them leads — replaced it with a full 6-page site in under one week. Plain HTML/CSS/JS, no framework or CMS, 100/100 Lighthouse on mobile and desktop. Client landed their first inbound lead from the new site within weeks of launch.</p>
                     </div>
                 </li>
             </ul>
@@ -776,7 +746,9 @@
                         <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">Supabase</span>
                         <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Deno Edge Functions</span>
                         <span class="skill-tag">Stripe</span>
+                        <span class="skill-tag">Vite</span>
                         <span class="skill-tag">Vercel</span>
                     </div>
                 </div>
@@ -912,6 +884,7 @@
             });
         });
     </script>
+
 
 </body>
 </html>
