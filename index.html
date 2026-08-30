@@ -762,5 +762,27 @@
         })();
     </script>
 
+    <!-- Squishy Butter embed upgrade modal -->
+    <div id="sb-upgrade-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(10,5,1,0.72);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;">
+        <div style="background:#fbf6ee;border:3px solid #1c1007;border-radius:16px;padding:32px 28px 28px;max-width:380px;width:100%;text-align:center;box-shadow:4px 4px 0 #9a7200;">
+            <div style="font-size:40px;margin-bottom:12px;">🧈</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#1c1007;line-height:1.2;margin-bottom:10px;">Get the full experience</div>
+            <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#7a5c38;line-height:1.6;margin:0 0 24px;">Collect butters, earn coins, and climb the leaderboard on the real site — or download the app.</p>
+            <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer" onclick="document.getElementById('sb-upgrade-modal').style.display='none';" style="display:block;background:#e8b820;color:#1c1007;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;border:2.5px solid #7e5d00;border-radius:8px;padding:14px;margin-bottom:10px;text-decoration:none;">Visit squishybutter.app →</a>
+            <button onclick="document.getElementById('sb-upgrade-modal').style.display='none';" style="background:transparent;color:#7a5c38;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.5px;border:none;padding:10px;cursor:pointer;width:100%;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('message', function (e) {
+            if (e.data && e.data.type === 'sb-embed-upgrade') {
+                const modal = document.getElementById('sb-upgrade-modal');
+                if (modal) modal.style.display = 'flex';
+            }
+        });
+        document.getElementById('sb-upgrade-modal').addEventListener('click', function (e) {
+            if (e.target === this) this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
