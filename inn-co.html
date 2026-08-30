@@ -180,6 +180,14 @@
                         <li>Revenue by room - all-time bar chart showing which rooms generate the most revenue</li>
                         <li>Deposits &amp; Balances - per-booking deposit status; mark balance paid at check-in with one click</li>
                     </ul>
+                    <h4>Analytics</h4>
+                    <ul>
+                        <li>All-time summary stats - total bookings, cancellation rate, average stay length, and average booking lead time (days booked in advance)</li>
+                        <li>Booking source breakdown - horizontal bar chart showing share of bookings from online direct, phone, Expedia, Hotels.com, and other channels</li>
+                        <li>Room performance table - per-room bookings, revenue, average nights, and cancellation rate at a glance</li>
+                        <li>Monthly bookings chart - trailing 12-month bar chart showing booking volume trends over time</li>
+                        <li>All figures computed client-side from existing reservation data — no additional API calls</li>
+                    </ul>
                     <h4>Property &amp; Settings</h4>
                     <ul>
                         <li>Room listings - add, edit, and delete rooms with name, slug, price, and description</li>
@@ -337,8 +345,8 @@
                     <h4>Auth &amp; Multi-Tenancy</h4>
                     <p>The admin dashboard is protected by Supabase Auth with a rate-limited login endpoint and JWT validation on every protected route. The architecture is multi-tenant from day one - a single middleware reads an <code>X-Tenant-Slug</code> request header and scopes every database query to that property. When an owner saves a Stripe or Resend key via the dashboard, it syncs to both the tenant's local settings table and the shared platform API so checkout sessions and webhooks both use the client's own keys. Onboarding a second hotel means inserting a row and deploying a new Vercel project - no schema changes, no code forks.</p>
 
-                    <h4>SEO</h4>
-                    <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room. Verified passing in Google's Rich Results Test.</p>
+                    <h4>SEO &amp; Analytics</h4>
+                    <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room. Verified passing in Google's Rich Results Test. Microsoft Clarity is deployed across all 16 public pages for session recordings and heatmaps — form inputs are masked by default so no guest data is captured. The privacy policy discloses both tools and the Stripe payment processor explicitly.</p>
                 </div>
             </details>
         </div>

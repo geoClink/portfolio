@@ -101,7 +101,7 @@
         <div class="case-hero">
             <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="case-hero-icon" />
             <h2 class="case-title">Tally - Time Tracker</h2>
-            <p class="case-tagline">Cross-platform time tracker for freelancers and small teams - native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro, or $4.99/month for Business with team collaboration and client invoicing sent directly by email.</p>
+            <p class="case-tagline">Cross-platform time tracker for freelancers and small teams - native iOS, Apple Watch, Mac, and a React web dashboard on one shared backend. Free to start, $9.99 one-time for Pro with invoicing and reports, or $4.99/month for Business with team collaboration.</p>
         </div>
 
         <div class="case-links">
@@ -179,7 +179,7 @@
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too - StoreKit and Stripe both write to the same subscription record in the database, so neither platform has to check two payment systems.</p>
+            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too - StoreKit and Stripe both write to the same subscription record in the database, so neither platform has to check two payment systems. Automated emails run as Vercel Pro cron jobs: a weekly digest fires every Monday with hours and earnings for the week, and a re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet since - both sent via Resend from a verified custom domain.</p>
         </div>
 
         <div class="case-section">
@@ -218,8 +218,11 @@
                 <li>Weekly hour goal with per-client sub-goals and progress bars</li>
                 <li>Budget tracker per client - progress bar turns red when over budget</li>
                 <li>Reports showing hours and earnings side-by-side with period-over-period comparison</li>
+                <li>Streak tracking - consecutive days logged, highlighted at 3+ days</li>
                 <li>Session calendar and CSV export</li>
                 <li>Web app adds voice control - say "start", "pause", or "save" to control the timer hands-free</li>
+                <li>Upgrade modal triggered at the client limit - highest-intent upgrade moment surfaced in-context rather than as an error string</li>
+                <li>Automated re-engagement emails to lapsed users via Vercel cron + Resend</li>
             </ul>
         </div>
 
