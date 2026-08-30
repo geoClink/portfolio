@@ -3630,13 +3630,16 @@ footer#footer .footer-squishy a:hover {
     width: 100%;
     padding: var(--space-5) max(var(--space-4), calc((100% - 720px) / 2 + var(--space-4)));
     font-size: 1em;
-    color: var(--color-text);
+    color: rgba(255,255,255,0.75);
     line-height: 1.6;
     text-align: center;
     background: var(--color-heading);
-    color: rgba(255,255,255,0.75);
     box-sizing: border-box;
     border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
 }
 
 @media (max-width: 736px) {
@@ -3666,14 +3669,16 @@ footer#footer .footer-squishy a:hover {
 .page-cta a {
     color: #ffffff;
     font-weight: 600;
+    font-size: 1.05em;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.35);
-    transition: border-color 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    transition: border-color 0.2s ease, opacity 0.2s ease;
     white-space: nowrap;
 }
 
 .page-cta a:hover {
     border-bottom-color: #ffffff;
+    opacity: 0.85;
 }
 
 @media (max-width: 736px) {
