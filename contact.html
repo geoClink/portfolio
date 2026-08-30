@@ -530,12 +530,16 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+        // Track intent card selection
         function selectIntent(type, el) {
             document.querySelectorAll('.contact-intent-card').forEach(function(c) {
                 c.classList.remove('selected');
             });
             el.classList.add('selected');
             document.getElementById('inquiry_type').value = type;
+            if (typeof gtag === 'function') {
+                gtag('event', 'intent_select', { label: type, page: 'contact' });
+            }
             document.getElementById('subject').value = type === 'hiring' ? 'Full-time role inquiry' : 'Build inquiry';
             const label = document.getElementById('form-label');
             label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
@@ -558,6 +562,17 @@
                 .trim()
                 .slice(0, maxLength);
         }
+
+        // Fire once when user first touches the form — lets us calculate abandonment rate vs. generate_lead
+        var formStartFired = false;
+        document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(function (el) {
+            el.addEventListener('focus', function () {
+                if (!formStartFired && typeof gtag === 'function') {
+                    formStartFired = true;
+                    gtag('event', 'form_start', { page: 'contact' });
+                }
+            }, { once: false });
+        });
 
         const requiredFields = ['email', 'message'];
         requiredFields.forEach(function (id) {
