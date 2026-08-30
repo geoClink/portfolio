@@ -270,11 +270,11 @@ body::before {
 }
 
 .featured-projects h2 {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0 0 1.25em;
     padding-bottom: 0.75em;
     border-bottom: 1px solid var(--color-border);
@@ -511,11 +511,11 @@ body::before {
 }
 
 .testimonials-section h2 {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0 0 1.5em;
     padding-bottom: 0.75em;
     border-bottom: 1px solid var(--color-border);
@@ -665,11 +665,11 @@ body::before {
 }
 
 .strengths-section h2 {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0 0 1.25em;
     padding-bottom: 0.75em;
     border-bottom: 1px solid var(--color-border);
@@ -717,11 +717,9 @@ body::before {
 
 /* ── Live Web Strip (always single column) ────────────── */
 .web-strip .appstore-apps {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
+    grid-template-columns: 1fr !important;
 }
 .web-strip .appstore-app {
-    flex: unset !important;
     width: 100% !important;
     min-width: 0 !important;
 }
@@ -785,21 +783,23 @@ body::before {
 }
 
 .appstore-strip-label {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0 0 1em;
     padding-bottom: 0.75em;
     border-bottom: 1px solid var(--color-border);
 }
 
 .appstore-apps {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1em;
+}
+@media (max-width: 680px) {
+    .appstore-apps { grid-template-columns: 1fr; }
 }
 
 .appstore-app {
@@ -1109,6 +1109,19 @@ body::before {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5em;
+    position: relative;
+}
+/* Right-edge fade hint — signals more content to scroll */
+.screenshot-strip-inner::after {
+    content: '';
+    position: absolute;
+    right: 1.5em;
+    top: 0;
+    bottom: 0.5em;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--color-surface));
+    pointer-events: none;
+    z-index: 1;
 }
 .screenshot-strip-header {
     display: flex;
@@ -1119,11 +1132,11 @@ body::before {
     border-bottom: 1px solid var(--color-border);
 }
 .screenshot-strip-label {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
 }
 .screenshot-strip-all {
     font-size: 0.78em;
@@ -1239,8 +1252,8 @@ body::before {
 /* ── cs-card (matches case-studies.html) ───────────────── */
 .cs-group { margin-bottom: 3em; }
 .cs-group-label {
-    font-size: 0.7em; font-weight: 700; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--color-text-muted);
+    font-size: 0.75em; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--color-text);
     margin: 0 0 1.25em; padding-bottom: 0.75em;
     border-bottom: 1px solid var(--color-border);
 }

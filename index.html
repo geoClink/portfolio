@@ -54,6 +54,8 @@
 </head>
 <body class="is-preload">
 
+    <a href="#main" class="skip-nav">Skip to content</a>
+
     <!-- Header -->
     <header id="header">
         <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
@@ -605,6 +607,21 @@
             const dots = document.querySelectorAll('.indicator-dot');
             const section = document.querySelector('.testimonials-section');
             const container = document.querySelector('.testimonials-container');
+
+            // Fix height-jump: measure each slide's real height and lock container to the tallest
+            function lockContainerHeight() {
+                if (!container) return;
+                // Temporarily make all slides block so we can measure them
+                slides.forEach(s => { s.style.display = 'block'; s.style.position = 'absolute'; });
+                let maxH = 0;
+                slides.forEach(s => { maxH = Math.max(maxH, s.scrollHeight); });
+                slides.forEach(s => { s.style.display = ''; s.style.position = ''; });
+                container.style.minHeight = maxH + 'px';
+            }
+
+            // Re-measure on resize in case text reflows at different widths
+            lockContainerHeight();
+            window.addEventListener('resize', lockContainerHeight);
 
             function goTo(index) {
                 if (index >= slides.length) index = 0;

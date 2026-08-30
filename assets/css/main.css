@@ -1,4 +1,24 @@
 
+/* ─── Skip Navigation ───────────────────────────────────────── */
+.skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 10000;
+    padding: 0.6em 1.2em;
+    background: var(--color-heading);
+    color: #fff !important;
+    font-size: 0.88em;
+    font-weight: 600;
+    border-radius: 0 0 6px 6px;
+    text-decoration: none;
+    transition: top 0.15s ease;
+}
+.skip-nav:focus {
+    top: 0;
+    outline: none;
+}
+
 /* ─── Scroll Reveal ──────────────────────────────────────────── */
 .sr-hidden {
 	opacity: 0;
@@ -3608,27 +3628,29 @@ footer#footer .footer-squishy a:hover {
 /* ── Page CTA Band ───────────────────────────────────────────── */
 .page-cta {
     width: 100%;
-    padding: var(--space-6) max(var(--space-4), calc((100% - 720px) / 2 + var(--space-4)));
-    font-size: 0.95em;
-    color: var(--color-text-muted);
+    padding: var(--space-5) max(var(--space-4), calc((100% - 720px) / 2 + var(--space-4)));
+    font-size: 1em;
+    color: var(--color-text);
     line-height: 1.6;
     text-align: center;
-    background: var(--color-surface);
+    background: var(--color-heading);
+    color: rgba(255,255,255,0.75);
     box-sizing: border-box;
+    border-top: none;
 }
 
 @media (max-width: 736px) {
-    .page-cta { padding: var(--space-5) var(--space-2); }
+    .page-cta { padding: var(--space-4) var(--space-2); }
 }
 
 .page-cta strong {
-    color: var(--color-heading);
+    color: #ffffff;
 }
 .availability-dot {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background: #22c55e;
+    background: #4ade80;
     border-radius: 50%;
     margin-right: 0.45em;
     vertical-align: middle;
@@ -3637,21 +3659,21 @@ footer#footer .footer-squishy a:hover {
     animation: pulse-dot 2s ease-in-out infinite;
 }
 @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-    50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+    50% { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
 }
 
 .page-cta a {
-    color: var(--color-heading);
+    color: #ffffff;
     font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid rgba(255,255,255,0.35);
     transition: border-color 0.2s ease;
     white-space: nowrap;
 }
 
 .page-cta a:hover {
-    border-bottom-color: var(--color-heading);
+    border-bottom-color: #ffffff;
 }
 
 @media (max-width: 736px) {
