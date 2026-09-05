@@ -3581,7 +3581,7 @@ footer#footer .footer-squishy a:hover {
 
 /* Global page container */
 #main {
-    max-width: 720px !important;
+    max-width: 960px !important;
     width: auto !important;
     margin: 0 auto !important;
     padding: var(--space-3) var(--space-4) var(--space-6) !important;
@@ -3628,7 +3628,7 @@ footer#footer .footer-squishy a:hover {
 /* ── Page CTA Band ───────────────────────────────────────────── */
 .page-cta {
     width: 100%;
-    padding: var(--space-5) max(var(--space-4), calc((100% - 720px) / 2 + var(--space-4)));
+    padding: var(--space-5) max(var(--space-4), calc((100% - 960px) / 2 + var(--space-4)));
     font-size: 1em;
     color: rgba(255,255,255,0.75);
     line-height: 1.6;
