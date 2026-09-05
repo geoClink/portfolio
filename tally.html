@@ -198,6 +198,7 @@
         <div class="case-section">
             <h3>Business Tier</h3>
             <p>The Business tier adds team workspaces with admin and member roles enforced at the database level via row-level security - not just in the UI - plus a shared weekly hour goal per workspace so teams can track progress against a client contract. Invoice generation pulls from tracked sessions with draft → sent → paid status tracking, outstanding balance summaries, and one-click email delivery to clients via Resend. Stripe webhooks, transactional email, and team invites all run in Supabase Edge Functions (Deno), so there's no Node server to maintain or deploy.</p>
+            <p>Invoicing is powered by Stripe Connect - each user connects their own Stripe account directly from the iOS app, so payment goes straight to the freelancer rather than routing through a platform account. This required implementing the Connect OAuth flow in SwiftUI, handling token storage securely in Supabase, and generating Stripe-hosted payment links at invoice creation time. The result is a full billing workflow - track hours, generate an invoice, collect payment - without the user ever leaving the app or setting up a separate payment tool.</p>
         </div>
 
         <div class="case-section">
