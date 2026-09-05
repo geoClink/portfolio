@@ -182,20 +182,14 @@
             color: var(--color-heading);
             margin: 0 0 0.3em;
             line-height: 1.3;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4em;
         }
 
         .cs-card-badge {
-            display: inline-block;
-            font-size: 0.62em;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 0.2em 0.55em;
-            border-radius: 999px;
-            margin-left: 0.5em;
-            vertical-align: middle;
-            line-height: 1.5;
-            white-space: nowrap;
+            display: none;
         }
 
         .cs-card-badge.live {
@@ -282,17 +276,15 @@
             flex-wrap: nowrap;
             gap: 0.5em;
             align-items: center;
-            width: 100%;
-            padding-top: 0.35em;
-            overflow-x: auto;
-            scrollbar-width: none;
+            overflow: visible;
+            padding-top: 0.25em;
         }
-        .cs-card-badges::-webkit-scrollbar { display: none; }
 
         @media (max-width: 600px) {
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
             .cs-card-btns { padding-top: 0.6em; flex-wrap: wrap; }
+            .knot-chip-tag { display: none; }
         }
 
         .knot-deploy-group {
@@ -315,36 +307,42 @@
         .knot-chips {
             display: flex;
             flex-direction: column;
-            gap: 0.55em;
+            gap: 0.4em;
         }
         .knot-chip {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 0.5em;
+            gap: 0.6em;
             text-decoration: none;
             color: var(--color-heading);
-            font-size: 0.9em;
+            font-size: 0.88em;
             font-weight: 500;
-        }
-        .knot-chip::before {
-            content: "·";
-            color: var(--color-text-muted);
-            font-weight: 700;
-            flex-shrink: 0;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 7px;
+            padding: 0.5em 0.75em;
+            transition: border-color 0.15s, background 0.15s;
         }
         .knot-chip:hover {
-            color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-heading);
+        }
+        .knot-chip-arrow {
+            margin-left: auto;
+            color: var(--color-text-muted);
+            font-size: 0.9em;
         }
         .knot-chip img {
-            width: 18px;
-            height: 18px;
-            border-radius: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
             object-fit: cover;
+            flex-shrink: 0;
         }
         .knot-chip-tag {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
             color: var(--color-text-muted);
         }
@@ -383,6 +381,8 @@
 </script>
 </head>
 <body class="is-preload">
+
+    <a href="#main" class="skip-nav">Skip to content</a>
 
     <!-- Header -->
     <header id="header">
@@ -426,7 +426,7 @@
                     <img src="assets/images/knot/favicon.svg" alt="Small Business Suite" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Small Business Suite</div>
-                        <p class="cs-card-desc">A multi-tenant web platform for small businesses - customer website, admin dashboard, booking, and payments, all on one Node/Express API and one Supabase database. 2 real clients, 3 spec deployments, 1 in talks - 6 verticals live.</p>
+                        <p class="cs-card-desc">One Node/Express API and one Supabase database powering custom websites, booking, and payments for any small business vertical — 2 real clients live, 6 verticals deployed.</p>
                         <div class="cs-card-btns">
                             <a href="knot.html" class="cs-cta">Platform Overview →</a>
                         </div>
@@ -438,32 +438,61 @@
                                 <img src="assets/images/thewellnessco/whitebear-logo.png" alt="" />
                                 White Bear Harmonics
                                 <span class="knot-chip-tag real-client">Real client</span>
+                                <span class="knot-chip-arrow">→</span>
                             </a>
                             <a href="inn-co.html" class="knot-chip">
                                 <img src="assets/images/crystal-lake/favicon.svg" alt="" />
                                 Crystal Lake Resort
                                 <span class="knot-chip-tag real-client">Real client</span>
-                            </a>
-                            <a href="bakery-spec.html" class="knot-chip">
-                                <img src="assets/images/thebakeryco/favicon.svg" alt="" />
-                                The Bakery Co.
-                                <span class="knot-chip-tag">Spec</span>
-                            </a>
-                            <a href="salon-co.html" class="knot-chip">
-                                <img src="assets/images/thesalonco/favicon.svg" alt="" />
-                                The Salon Co.
-                                <span class="knot-chip-tag">Spec</span>
-                            </a>
-                            <a href="sports-bar-co.html" class="knot-chip">
-                                <img src="assets/images/thesportsbarco/favicon.svg" alt="" />
-                                The Sports Bar Co.
-                                <span class="knot-chip-tag">Spec</span>
+                                <span class="knot-chip-arrow">→</span>
                             </a>
                             <a href="landscape-co.html" class="knot-chip">
                                 <img src="assets/images/thelandscapeco/favicon.svg" alt="" />
                                 The Landscape Co.
                                 <span class="knot-chip-tag">In talks</span>
+                                <span class="knot-chip-arrow">→</span>
                             </a>
+                            <a href="bakery-spec.html" class="knot-chip">
+                                <img src="assets/images/thebakeryco/favicon.svg" alt="" />
+                                The Bakery Co.
+                                <span class="knot-chip-tag">Spec</span>
+                                <span class="knot-chip-arrow">→</span>
+                            </a>
+                            <a href="salon-co.html" class="knot-chip">
+                                <img src="assets/images/thesalonco/favicon.svg" alt="" />
+                                The Salon Co.
+                                <span class="knot-chip-tag">Spec</span>
+                                <span class="knot-chip-arrow">→</span>
+                            </a>
+                            <a href="sports-bar-co.html" class="knot-chip">
+                                <img src="assets/images/thesportsbarco/favicon.svg" alt="" />
+                                The Sports Bar Co.
+                                <span class="knot-chip-tag">Spec</span>
+                                <span class="knot-chip-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Graphics -->
+        <div class="cs-group">
+            <h3 class="cs-group-label">Real-Time Graphics</h3>
+            <div class="cs-cards">
+                <div class="cs-card">
+                    <span class="cs-card-featured-chip">Flagship</span>
+                    <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
+                    <div class="cs-card-body">
+                        <div class="cs-card-name">Squishy Butter</div>
+                        <p class="cs-card-desc">Real-time soft-body deformation in a custom GLSL vertex shader — 37 procedurally generated collectible skins, each with unique physics and sound. Zero image assets.</p>
+                        <div class="cs-card-btns">
+                            <a href="squishy-butter.html" class="cs-cta">Case Study →</a>
+                            <a href="https://squishybutter.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Try It ↗</a>
+                            <div class="cs-card-badges">
+                                <button onclick="document.getElementById('cs-coming-soon-modal').style.display='flex'" style="padding:0;background:none;border:none;cursor:pointer;opacity:0.4;filter:grayscale(1);" title="iOS — Coming Soon"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store — Coming Soon" height="32" style="display:block;"></button>
+                                <a href="squishy-butter/android-beta.html" target="_blank" rel="noopener noreferrer" style="position:relative;display:inline-block;"><span style="position:absolute;top:-8px;right:-6px;background:#4361EE;color:#fff;font-size:0.6em;font-weight:700;letter-spacing:0.06em;padding:2px 6px;border-radius:4px;line-height:1.4;z-index:1;">Beta</span><img src="assets/images/site/google-play-badge.svg" alt="Now in beta on Google Play" height="32" style="display:block;"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -478,7 +507,7 @@
                     <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Tripsetta <span class="cs-card-badge live">Active</span></div>
-                        <p class="cs-card-desc">Contracted by the founder to maintain and ship feature updates across Tripsetta's iOS, Android, and web platforms. Responsible for keeping real users' live products running and improving - across three codebases simultaneously. Keeping a real company's live product moving forward while they continue to grow their user base.</p>
+                        <p class="cs-card-desc">Contracted to maintain and ship features across Tripsetta's iOS, Android, and web platforms simultaneously — keeping a live product running for real users.</p>
                         <div class="cs-card-btns">
                             <a href="tripsetta.html" class="cs-cta">Product Overview →</a>
                             <a href="https://tripsetta.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Visit Tripsetta ↗</a>
@@ -495,7 +524,7 @@
                     <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek Inspection Systems" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Sort-Tek Inspection Systems <span class="cs-card-badge live">Live</span></div>
-                        <p class="cs-card-desc">Bespoke 6-page marketing site for a Troy, Michigan ISO 9001:2015-certified fastener inspection company. Custom design system, non-blocking font loading, WebP image delivery, GPU-composited animations. 100/100 Lighthouse across all four categories on both mobile and desktop. No framework, no template - built and delivered in under five days.</p>
+                        <p class="cs-card-desc">6-page marketing site for a Troy, MI fastener inspection company — 100/100 Lighthouse across all four categories, no framework, delivered in five days.</p>
                         <div class="cs-card-btns">
                             <a href="sort-tek.html" class="cs-cta">Case Study →</a>
                             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
@@ -503,32 +532,10 @@
                     </div>
                 </div>
                 <div class="cs-card">
-                    <img src="assets/images/thewellnessco/whitebear-logo.png" alt="White Bear Harmonics" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">White Bear Harmonics <span class="cs-card-badge live">Live</span></div>
-                        <p class="cs-card-desc">A Michigan energy healing and acupuncture practitioner - live and taking bookings on a platform built solo on Small Business Suite. Stripe checkout, tiered refunds, gift cards, and a no-code admin dashboard, replacing $100–200/mo Mindbody.</p>
-                        <div class="cs-card-btns">
-                            <a href="wellness-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
-                    <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">Crystal Lake Resort <span class="cs-card-badge live">Live</span></div>
-                        <p class="cs-card-desc">A Michigan lakefront resort with motel rooms and weekly cottages - live and taking direct bookings on Small Business Suite. Stripe checkout, gift cards, and automated guest emails, capturing reservations at zero commission versus 15–25% on Expedia and Hotels.com.</p>
-                        <div class="cs-card-btns">
-                            <a href="inn-co.html" class="cs-cta">Case Study →</a>
-                            <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs-card">
                     <img src="assets/images/site/emmalee-sparkle.svg" alt="Emmalee Alexander Print Design" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);padding:10px;" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Emmalee Alexander · Print Design <span class="cs-card-badge live">Live</span></div>
-                        <p class="cs-card-desc">Portfolio site for a Frankfort, MI print designer - custom business cards, flyers, and invitation suites. Filterable work gallery, flip-card process section, pricing, and reviews, built from scratch in HTML, CSS, and vanilla JavaScript with full SEO and Open Graph setup.</p>
+                        <p class="cs-card-desc">Portfolio site for a Frankfort, MI print designer — filterable gallery, flip-card process section, and full SEO, built from scratch in vanilla HTML, CSS, and JavaScript.</p>
                         <div class="cs-card-btns">
                             <a href="emmalee-print-design.html" class="cs-cta">Case Study →</a>
                             <a href="https://geoclink.github.io/business-card-portfolio/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
@@ -539,13 +546,13 @@
         </div>
 
         <div class="cs-group">
-            <h3 class="cs-group-label">Cross-Platform Products</h3>
+            <h3 class="cs-group-label">Apps</h3>
             <div class="cs-cards">
                 <div class="cs-card">
                     <img src="assets/images/tallyios/appicon.png" alt="Tally app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Tally - Time Tracker</div>
-                        <p class="cs-card-desc">Cross-platform SaaS for freelancers and small teams - native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard. Cross-platform subscription sync via RevenueCat — one entitlement covers iOS (StoreKit), Android (Google Play Billing), and web (Stripe). $9.99 one-time vs. $10–20/month competitors.</p>
+                        <p class="cs-card-desc">Native iOS + Apple Watch app with a React web dashboard — cross-platform subscription sync via RevenueCat at $9.99 one-time vs. $10–20/month competitors.</p>
                         <div class="cs-card-btns">
                             <a href="tally.html" class="cs-cta">Case Study →</a>
                             <a href="https://tallytimetracker.com/login" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Web App ↗</a>
@@ -556,18 +563,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- iOS Apps -->
-        <div class="cs-group">
-            <h3 class="cs-group-label">iOS Apps</h3>
-            <div class="cs-cards">
                 <div class="cs-card">
                     <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">CoastCast</div>
-                        <p class="cs-card-desc">SwiftUI iOS app with a Python FastAPI backend delivering real-time conditions for 54 Michigan beaches. On-device CoreML/XGBoost crowd prediction, Dynamic Island Live Activities, Siri Shortcuts, WidgetKit, and a Swift Testing suite with 120+ parameterized test cases.</p>
+                        <p class="cs-card-desc">SwiftUI app with a Python FastAPI backend — real-time conditions for 54 Michigan beaches, on-device CoreML crowd prediction, Dynamic Island, and 120+ parameterized tests.</p>
                         <div class="cs-card-btns">
                             <a href="coastcast.html" class="cs-cta">Case Study →</a>
                             <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="32" style="display:block;"></a>
@@ -578,33 +578,10 @@
                     <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">TakeFlight</div>
-                        <p class="cs-card-desc">5-in-1 SpriteKit survival game set on Detroit's Belle Isle — built in 6 weeks at the Apple Developer Academy with a 5-person team. Contributed Game Center integration, a custom SwiftUI joystick normalizing touch and keyboard into a single velocity source, and the core game loop with shared state across five scenes.</p>
+                        <p class="cs-card-desc">SpriteKit survival game set on Detroit's Belle Isle — built in 6 weeks at the Apple Developer Academy, selected by Apple to demo at a downtown Detroit event.</p>
                         <div class="cs-card-btns">
                             <a href="takeflight.html" class="cs-cta">Case Study →</a>
                             <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="32" style="display:block;"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Real-Time Graphics -->
-        <div class="cs-group">
-            <h3 class="cs-group-label">Real-Time Graphics</h3>
-            <div class="cs-cards">
-                <div class="cs-card">
-                    <span class="cs-card-featured-chip">Flagship</span>
-                    <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
-                    <div class="cs-card-body">
-                        <div class="cs-card-name">Squishy Butter</div>
-                        <p class="cs-card-desc">A stick of butter you squish with your finger - real-time soft-body deformation in a custom GLSL vertex shader, not a scale animation. Viscoelastic material model with speed-dependent resistance, creep and non-overshooting recovery. 37 procedurally generated collectible skins, each with its own physics, sound and certificate. Zero image assets.</p>
-                        <div class="cs-card-btns">
-                            <a href="squishy-butter.html" class="cs-cta">Case Study →</a>
-                            <a href="https://squishybutter.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Try It ↗</a>
-                            <div class="cs-card-badges">
-                                <button onclick="document.getElementById('cs-coming-soon-modal').style.display='flex'" style="padding:0;background:none;border:none;cursor:pointer;opacity:0.4;filter:grayscale(1);" title="iOS — Coming Soon"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store — Coming Soon" height="32" style="display:block;"></button>
-                                <a href="squishy-butter/android-beta.html" target="_blank" rel="noopener noreferrer" style="position:relative;display:inline-block;"><span style="position:absolute;top:-8px;right:-6px;background:#4361EE;color:#fff;font-size:0.6em;font-weight:700;letter-spacing:0.06em;padding:2px 6px;border-radius:4px;line-height:1.4;z-index:1;">Beta</span><img src="assets/images/site/google-play-badge.svg" alt="Now in beta on Google Play" height="32" style="display:block;"></a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -619,7 +596,7 @@
                     <img src="assets/images/beverageco/favicon.png" alt="Botanical Archive" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Botanical Archive <span class="cs-card-badge review">Spec</span></div>
-                        <p class="cs-card-desc">Brand landing page for a craft hemp beverage company - built in 5 days. Three.js interactive 3D model viewer across three product formats (glass bottle, can, draft keg), animated parallax background, scroll shake and reveal, and a brutalist zine-style editorial design. Email capture and wholesale allocation form targeting two distinct audiences. The client needed something to show investors and partners before the October 15 national launch.</p>
+                        <p class="cs-card-desc">Brand landing page built in 5 days — Three.js 3D product viewer, brutalist zine design, and dual-audience forms for a craft hemp beverage company ahead of national launch.</p>
                         <div class="cs-card-btns">
                             <a href="beverage-co.html" class="cs-cta">Case Study →</a>
                             <a href="https://beverage-webpage.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>

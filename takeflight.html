@@ -24,6 +24,32 @@
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <style>
         :root { --case-accent: #16a34a; }
+
+        .tf-feature {
+            display: flex;
+            align-items: center;
+            gap: 2.5em;
+            margin-bottom: 2em;
+        }
+        .tf-feature.reverse { flex-direction: row-reverse; }
+        .tf-feature-phone {
+            flex: 0 0 200px;
+        }
+        .tf-feature-phone .phone-mockup { width: 100%; }
+        .tf-feature-phone .phone-mockup::after { display: none; }
+        .tf-feature-text { flex: 1; }
+        .tf-feature-text h4 {
+            font-size: 1em;
+            font-weight: 700;
+            margin: 0 0 0.5em;
+            color: var(--color-heading);
+        }
+        .tf-feature-text p { margin: 0; font-size: 0.92em; line-height: 1.7; }
+
+        @media (max-width: 600px) {
+            .tf-feature, .tf-feature.reverse { flex-direction: column; }
+            .tf-feature-phone { flex: 0 0 auto; width: 180px; align-self: center; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -101,7 +127,7 @@
         <div class="case-hero">
             <img src="assets/images/takeflight/TakeFlight.webp" alt="TakeFlight app icon" class="case-hero-icon" />
             <h2 class="case-title">TakeFlight</h2>
-            <p class="case-tagline">A 5-in-1 survival mini-game collection set on Detroit's Belle Isle — SpriteKit physics, a custom SwiftUI joystick with full keyboard support, and Game Center achievements. Built at the Apple Developer Academy in 6 weeks with a 5-person team.</p>
+            <p class="case-tagline">A 5-in-1 survival mini-game collection set on Detroit's Belle Isle — SpriteKit physics, a custom SwiftUI joystick with full keyboard support, and Game Center achievements. Built at the Apple Developer Academy in 6 weeks. Selected by Apple to demo at a downtown Detroit event after shipping.</p>
         </div>
 
         <div class="case-links">
@@ -133,30 +159,100 @@
         </div>
 
         <div class="case-section">
-            <h3>The Game</h3>
-            <p>TakeFlight puts you in control of a bird surviving on Detroit's Belle Isle. The core loop is survive, grow, and score: start a run, rotate through five quick challenges — memory, coordination, speed, and reflexes — while managing a hunger bar and building nests. Each mechanic feeds into the others. Letting your hunger drop ends the run; building nests extends it. The loop is short by design — every session is fast, and every run is a chance to improve.</p>
-            <p>The five mini-games each isolate a different skill: <em>Getting Hungry</em> tests coordination through a feeding mechanic, <em>Build Your Home</em> is a material collection and nesting challenge, <em>Avoid Predators</em> is a dodge-and-survive reaction test, and <em>Escape the Island</em> puts you under navigation pressure. Game Center tracks your progress and surfaces achievements as you improve.</p>
+            <h3>The Team</h3>
+            <p>TakeFlight was a 5-person team at the Apple Developer Academy — concept to App Store in 6 weeks. After shipping, Apple invited the team to demo the game at a downtown Detroit event.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5em;margin-top:1em;">
+                <div style="display:flex;align-items:center;gap:0.5em;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:0.45em 0.85em;font-size:0.88em;">
+                    <span style="font-weight:600;">George Clinkscales Jr.</span>
+                    <span style="color:var(--color-text-muted);">iOS Developer</span>
+                </div>
+                <a href="https://jaidenhenley.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.5em;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:0.45em 0.85em;font-size:0.88em;text-decoration:none;color:inherit;">
+                    <span style="font-weight:600;">Jaiden Henley ↗</span>
+                    <span style="color:var(--color-text-muted);">iOS Developer</span>
+                </a>
+                <a href="https://www.linkedin.com/in/dorienharris36/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.5em;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:0.45em 0.85em;font-size:0.88em;text-decoration:none;color:inherit;">
+                    <span style="font-weight:600;">Dorien Harris ↗</span>
+                    <span style="color:var(--color-text-muted);">Designer</span>
+                </a>
+                <a href="https://www.linkedin.com/in/zoe-talley/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.5em;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:0.45em 0.85em;font-size:0.88em;text-decoration:none;color:inherit;">
+                    <span style="font-weight:600;">Zoe Talley ↗</span>
+                    <span style="color:var(--color-text-muted);">Designer</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ashlee-williams-mpa-2633b821/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.5em;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:0.45em 0.85em;font-size:0.88em;text-decoration:none;color:inherit;">
+                    <span style="font-weight:600;">Ashlee Williams ↗</span>
+                    <span style="color:var(--color-text-muted);">Project Manager</span>
+                </a>
+            </div>
         </div>
 
         <div class="case-section">
-            <h3>What I Built</h3>
+            <h3>The Core Loop</h3>
+            <img src="assets/images/takeflight/StartARun.png" alt="TakeFlight — start a run on Belle Isle" style="width:100%;border-radius:10px;display:block;margin-bottom:1.25em;" loading="lazy" />
+            <p>TakeFlight puts you in control of a bird surviving on Detroit's Belle Isle. Start a run, rotate through five quick challenges — memory, coordination, speed, and reflexes — while managing a hunger bar and building nests. Each mechanic feeds into the others. Let your hunger drop and the run ends. Build nests and it extends. Every session is short by design, every run a chance to improve.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>Quick Challenges</h3>
+            <p>Each run cycles through five challenges that each isolate a different skill — coordination, nesting, reflexes, and navigation. Game Center tracks achievements across all of them, giving every run a score worth chasing.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>The Mini-Games</h3>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1em;margin-bottom:1em;">
+                <div>
+                    <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
+                        <img src="assets/images/takeflight/GettingHungry.png" alt="Getting Hungry mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                    </div>
+                    <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Getting Hungry — coordination feeding mechanic</p>
+                </div>
+                <div>
+                    <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
+                        <img src="assets/images/takeflight/BuildNest.png" alt="Build Your Home mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                    </div>
+                    <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Build Your Home — material collection and nesting</p>
+                </div>
+                <div>
+                    <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
+                        <img src="assets/images/takeflight/EscapePredator.png" alt="Avoid Predators mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                    </div>
+                    <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Avoid Predators — dodge-and-survive reaction test</p>
+                </div>
+                <div>
+                    <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
+                        <img src="assets/images/takeflight/EscapeBelleIsle.png" alt="Escape the Island mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                    </div>
+                    <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Escape the Island — navigation under pressure</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Score, Rest, Replay</h3>
+            <div style="display:flex;justify-content:center;margin-bottom:1.25em;">
+                <div class="phone-mockup" style="max-width:280px;width:100%;">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen-static">
+                        <img src="assets/images/takeflight/FinishRestReplay.jpg" alt="TakeFlight — Game Center achievements screen" style="width:100%;display:block;border-radius:30px;" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+            <p>When the run ends your score posts to Game Center and you can jump straight back in.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>Key Implementations</h3>
             <p>My work covered four areas: Game Center integration, the virtual joystick controller, the tutorial system, and the core game loop.</p>
-            <p><strong>Game Center.</strong> Implemented the full authentication lifecycle — silent sign-in on launch, graceful degradation when the player isn't signed in, native banner notifications for unlocked achievements, and callbacks wired into the game loop so achievements fire at exactly the right moment. This was my first time integrating a game service API, and working through the docs to get the flow right taught me a lot about how Apple's authentication handshake actually works.</p>
-            <p><strong>Custom joystick controller.</strong> Built a SwiftUI on-screen joystick that normalizes both touch drag and keyboard input into a single <code>CGPoint</code> velocity property. SpriteKit reads one source regardless of the platform — no branching in the game logic. The joystick uses radius clamping and drag gesture recognition so it stays responsive without oversteering at the edges. This was the piece I'm most satisfied with: one clean interface, two very different input sources.</p>
-            <p><strong>Tutorial state machine.</strong> The tutorial runs through three phases — tutorial, active, game-over — and hands off to the main game loop when the player is ready. Getting the pacing right mattered: too fast and players miss the mechanics, too slow and they skip it. The state machine made it easy to iterate on timing without touching the game logic.</p>
-            <p><strong>Core game loop.</strong> Built the SpriteKit update loop with delta-time clamping to keep physics stable on slow frames, a hunger accumulator that depletes at a consistent rate regardless of frame rate, and position persistence across scene transitions. Five mini-games sharing one game state meant every scene handoff had to be clean — a bad transition breaks the sense that it's one continuous run.</p>
+            <p><strong>Game Center.</strong> Implemented the full authentication lifecycle — silent sign-in on launch, graceful degradation when the player isn't signed in, native banner notifications for unlocked achievements, and callbacks wired into the game loop so achievements fire at exactly the right moment.</p>
+            <p><strong>Custom joystick controller.</strong> Built a SwiftUI on-screen joystick that normalizes both touch drag and keyboard input into a single <code>CGPoint</code> velocity property. SpriteKit reads one source regardless of platform — no branching in the game logic. The joystick uses radius clamping and drag gesture recognition to stay responsive without oversteering. One clean interface, two very different input sources.</p>
+            <p><strong>Tutorial state machine.</strong> The tutorial tracks three phases — tutorial, active, game-over — and hands off cleanly to the main game loop when the player is ready. The state machine made it easy to iterate on pacing without touching the game logic.</p>
+            <p><strong>Core game loop.</strong> Built the SpriteKit update loop with delta-time clamping to keep physics stable on slow frames, a hunger accumulator that depletes at a consistent rate regardless of frame rate, and position persistence across scene transitions. Five mini-games sharing one game state meant every scene handoff had to be airtight.</p>
         </div>
 
         <div class="case-section">
             <h3>The Hard Parts</h3>
-            <p><strong>Learning SpriteKit cold.</strong> I had no SpriteKit experience at the start of this project. I worked through Apple's documentation systematically and built isolated component tests before touching the main game — getting physics, cameras, and collision detection working separately before connecting them. Using SwiftUI as a stable outer container while I found my footing in the SpriteKit scene graph helped a lot. By the end of six weeks, the game was shipping with multi-scene transitions, physics bodies, camera work, and a full input layer.</p>
-            <p><strong>Unified state across five scenes.</strong> Each mini-game is its own SpriteKit scene. Without a shared model, each transition would have to manually pass hunger level, score, and nesting progress — and one missed value breaks the whole run. The solution was a centralized <code>RunState</code> model that every scene reads from and writes to. Getting this pattern right early was the thing that made the rest of the project go smoothly.</p>
-            <p><strong>Cross-device input without branching.</strong> Supporting touch on iPhone/iPad and keyboard on Mac through the same joystick controller without fragmenting the game logic required the normalization approach. Once velocity was the only thing SpriteKit ever saw, adding keyboard support cost almost nothing.</p>
-        </div>
-
-        <div class="case-section">
-            <h3>Gameplay</h3>
-            <img src="assets/images/takeflight/takeflight_gameplay.png" alt="TakeFlight gameplay screenshot" style="width:100%;border-radius:8px;display:block;" loading="lazy" />
+            <p><strong>Learning SpriteKit cold.</strong> Zero SpriteKit experience at the start. I worked through Apple's documentation systematically, built isolated component tests before touching the main game, and used SwiftUI as a stable outer container while I found my footing in the scene graph. By the end of six weeks the game was shipping with multi-scene transitions, physics bodies, camera work, and a full input layer.</p>
+            <p><strong>Shared state across five scenes.</strong> Each mini-game is its own SpriteKit scene. A centralized <code>RunState</code> model carries hunger, score, and nesting progress through every transition — one missed value breaks the sense that it's one continuous run. Getting this pattern right early made everything else go smoothly.</p>
+            <p><strong>Cross-device input without branching.</strong> Once velocity was the only thing SpriteKit ever saw, keyboard support on Mac cost almost nothing. The normalization layer was the right call.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
