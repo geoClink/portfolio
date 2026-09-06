@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Stamped! — A City Passport Case Study | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped.html" />
+    <meta property="og:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Stamped! is a SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Earn passport stamps, follow curated tours, and explore live city data." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Case study: Stamped! — SwiftUI iOS app covering 89 cities, curated architectural tours, live weather and events, and a passport stamp collection system." />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
+    <meta name="description" content="Stamped! is a SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Earn passport stamps, follow curated tours, and explore live city data." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/case-study.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        :root { --case-accent: #E8621A; }
+
+        /* Screenshot scroll gallery */
+        .screenshot-scroll-track {
+            display: flex;
+            gap: 1.4em;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 1em 0 1.5em;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-border) transparent;
+        }
+        .screenshot-scroll-track::before,
+        .screenshot-scroll-track::after {
+            content: '';
+            flex: 0 0 0.5rem;
+        }
+        .screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
+        .screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+        .screenshot-scroll-item {
+            flex: 0 0 auto;
+            width: 220px;
+            scroll-snap-align: start;
+        }
+        .screenshot-scroll-item img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+        }
+        .screenshot-scroll-item p {
+            font-size: 0.73em;
+            color: var(--color-text-muted);
+            margin-top: 0.6em;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Feature grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.1em;
+            margin-top: 1em;
+        }
+        .feature-card {
+            background: var(--color-bg-alt, #f9f9f9);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 1em 1.1em;
+        }
+        .feature-card strong {
+            display: block;
+            font-size: 0.82em;
+            font-weight: 700;
+            color: var(--case-accent);
+            margin-bottom: 0.3em;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .feature-card p {
+            margin: 0;
+            font-size: 0.88em;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Data sources callout */
+        .data-sources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6em;
+            margin-top: 0.9em;
+        }
+        .data-source-chip {
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 0.3em 0.75em;
+            border-radius: 20px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "SoftwareApplication",
+       "name": "Stamped! A City Passport",
+       "description": "A SwiftUI iOS app for discovering and collecting architectural landmark passport stamps across 89 cities worldwide.",
+       "applicationCategory": "TravelApplication",
+       "operatingSystem": "iOS",
+       "url": "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336",
+       "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgeclinkscalesdev.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://georgeclinkscalesdev.com/case-studies.html" },
+            { "@type": "ListItem", "position": 3, "name": "Stamped! A City Passport", "item": "https://georgeclinkscalesdev.com/stamped.html" }
+        ]
+    }
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLNJGZN8P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GTLNJGZN8P');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yaar5e101p");
+</script>
+</head>
+<body class="is-preload">
+
+    <header id="header">
+        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div id="main" role="main">
+
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
+
+        <div class="case-hero">
+            <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! app icon" class="case-hero-icon" />
+            <h2 class="case-title">Stamped! — A City Passport</h2>
+            <p class="case-tagline">A SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Follow curated day-by-day tours, earn passport stamps when you complete a city, and get live weather, events, and dining for wherever you're exploring.</p>
+        </div>
+
+        <div class="case-links">
+            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36" style="display:block;"></a>
+            <a href="https://github.com/geoClink/Stamped-A-City-Passport" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="case-meta">Swift · SwiftUI · MapKit · Open-Meteo · Ticketmaster API · Apple Maps · 2025–2026 · Live on App Store</div>
+
+        <div class="case-glance">
+            <div class="case-glance-item">
+                <div class="case-glance-label">Role</div>
+                <div class="case-glance-value">Sole developer</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Platform</div>
+                <div class="case-glance-value">iPhone (iOS)</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Cities</div>
+                <div class="case-glance-value">89 across 5 continents</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Status</div>
+                <div class="case-glance-value">Live on the App Store</div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>The Problem</h3>
+            <p>Travel and architecture apps are either too passive (a static list of landmarks) or too overwhelming (full trip planners with accounts and subscriptions). There's a gap for people who want a more structured, rewarding way to explore a city's built environment — something that tells you what to see, helps you get there, and gives you a reason to come back. The goal was an app that turns architectural sightseeing into a collection game: earn a stamp for every city you complete, and build a passport you're proud of.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>App Screenshots</h3>
+            <div class="screenshot-scroll-track">
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-1.png" alt="Stamped! onboarding — Collect Stamps, Explore the world" loading="lazy" />
+                    <p>Onboarding</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-4.png" alt="World explorer — 89 cities across continents" loading="lazy" />
+                    <p>World explorer — 89 cities</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-6.png" alt="Chicago city detail with Architecture Quiz and landmark list" loading="lazy" />
+                    <p>City detail + quiz</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-9.png" alt="Day-by-day architectural itinerary for Detroit" loading="lazy" />
+                    <p>Curated daily itinerary</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-5.png" alt="Live MapKit map showing landmark pins for Boston" loading="lazy" />
+                    <p>Live landmark map</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-3.png" alt="Apple Maps Look Around street view of Detroit" loading="lazy" />
+                    <p>Look Around street view</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-2.png" alt="Travel dossier for Kyoto — language, airport, transit, currency" loading="lazy" />
+                    <p>Travel dossier</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-7.png" alt="Live weather, upcoming events, and nearby dining" loading="lazy" />
+                    <p>Weather, events &amp; dining</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-10.png" alt="Search by architect — Frank Lloyd Wright results" loading="lazy" />
+                    <p>Search by architect</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/stamped-8.png" alt="City Explored stamp screen for Detroit — dark mode" loading="lazy" />
+                    <p>City stamp earned</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>How It Works</h3>
+            <p>The app organizes the world into continents → countries → cities. A world progress card on the home screen shows how many of the 89 cities you've mastered and your percentage toward completing all of them. Tapping into a city shows a detail page with your progress percentage, a rank badge (like "Urban Insider"), a per-city architecture quiz, and the full landmark list.</p>
+            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. From the city page, you can also pull up a MapKit map with orange pins for stamped landmarks and grey pins for unvisited ones, or jump into Apple Maps Look Around to virtually walk the streets before you arrive. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
+            <p>Beyond the architecture, each city surfaces a live travel dossier (local language, airport, transit, currency) alongside real-time weather from Open-Meteo, upcoming events filtered by category from Ticketmaster, and nearby dining from Apple Maps — so you can plan the rest of your day without leaving the app.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <strong>89 Cities</strong>
+                    <p>Africa, Asia, Europe, North America, and Oceania. Global progress tracker shows cities mastered and percentage to completion.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Passport Stamps</strong>
+                    <p>Complete every landmark in a city to earn an illustrated stamp. Each stamp includes a city fact and a date completed.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Day-by-Day Itineraries</strong>
+                    <p>Curated architectural tours with stop counts, estimated durations, and walking times between each landmark.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Live Map</strong>
+                    <p>MapKit map for each city with stamped vs. unvisited landmark pins. Tap any pin to navigate directly.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Look Around</strong>
+                    <p>Apple Maps Look Around integration — virtually scout any landmark from street level before you visit.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Architecture Quizzes</strong>
+                    <p>Per-city 10-question quiz to test your knowledge of the buildings before and after you explore.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Travel Dossier</strong>
+                    <p>Local language with spoken greeting, airport code, transit options, and currency — one tap from any city page.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Live City Data</strong>
+                    <p>Real-time weather, filterable upcoming events, and nearby dining pulled fresh each time you open a city.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Search</strong>
+                    <p>Search across all 89 cities by city name, landmark name, or architect — results appear instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Rank Badges</strong>
+                    <p>Exploration percentage drives a rank system per city — progress from Tourist to Urban Insider as you visit more landmarks.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Photo Capture</strong>
+                    <p>Attach a personal photo to any landmark using the camera or photo library, saved locally to your passport entry.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Accessibility</strong>
+                    <p>High-contrast mode, reduce motion, VoiceOver labels, and localized spoken greetings via AVSpeechSynthesizer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Live Data Sources</h3>
+            <p>Three external APIs power the live city layer — each one fetched fresh per city visit so the data is always current:</p>
+            <div class="data-sources">
+                <span class="data-source-chip">Open-Meteo — real-time weather + 7-day forecast</span>
+                <span class="data-source-chip">Ticketmaster — upcoming events by category</span>
+                <span class="data-source-chip">Apple Maps — nearby dining via MapKit</span>
+                <span class="data-source-chip">Apple Maps Look Around — street-level imagery</span>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Architecture</h3>
+            <p>Stamped! is a pure SwiftUI app. The landmark and city content layer is embedded in code — <code>BuildingRegistry</code> maps each <code>City</code> to its landmark list, and <code>CityData</code> holds metadata like nicknames, airport codes, and local transit. This keeps the app fully functional offline for browsing, tracking, and navigation, with the live data layer (weather, events, dining) layered on top where a connection is available.</p>
+            <p>State flows through a central <code>GlobalProgressManager</code> — an <code>ObservableObject</code> singleton that owns all visited IDs and user-attached photos. Visited IDs persist in <code>UserDefaults</code>; photos are written as <code>BuildingID.jpg</code> files in the app's Documents directory and loaded back on startup. City rank and completion percentage are computed properties derived from the visited set, so they're always in sync without separate storage.</p>
+            <p>Settings like haptics, sound, high contrast, and reduced motion each live in <code>@AppStorage</code> — one line of persistence per toggle. The view hierarchy follows natural SwiftUI nesting: <code>CityListView</code> → <code>CityDetailView</code> → building detail and itinerary views, with <code>PassportGalleryView</code> accessible from a floating passport button throughout.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What Was Hard</h3>
+            <p>The biggest design challenge was scope management. A travel app can expand infinitely — more cities, more data sources, more features. The answer was a strict rule: every screen had to serve the core loop (browse → visit → stamp). Weather, events, and dining made the cut because they answer "what do I do now that I'm here." Look Around made the cut because it answers "what does this building actually look like." Anything that didn't support one of those questions got cut.</p>
+            <p>Wiring MapKit pins to local progress state was subtler than expected. The map needs to reflect stamp state in real time as the user marks buildings visited — without re-fetching or re-rendering the whole annotation set. The solution was observing <code>GlobalProgressManager</code> directly in the map view so annotations update as <code>@Published</code> state changes, rather than passing a static snapshot.</p>
+            <p>The Ticketmaster integration required careful category filtering and graceful degradation — some cities have no upcoming events, and the UI had to handle empty states cleanly without making the screen feel broken. Same for Look Around: not every location has street-level imagery, so the app falls back to a standard map tile rather than showing a broken state.</p>
+            <p>App Store approval took multiple rounds. Apple scrutinized the camera usage string, the Ticketmaster deep links (which had to open in Safari rather than in-app to comply with guidelines), and the location permissions flow. Getting all three right simultaneously was the final hurdle before the app shipped.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>Expansion Concept: Stamped! for MSU</h3>
+            <p>After shipping, I documented a campus adaptation concept — <em>Stamped! for Michigan State University</em> — that reframes the same interaction model for freshman orientation. Cities become campus zones, buildings become dining halls and student services offices, and stamps become orientation completion badges. The pitch doc and HTML deck are in the project repo. The core argument: a working app framework already exists, the loop is proven, and a university pilot could start with 20–40 destinations.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>The Outcome</h3>
+            <p>Stamped! was the first solo SwiftUI product I took from zero to the App Store. Building it stretched across everything I knew at the time — MapKit, live APIs, local persistence, accessibility, and the full App Store submission process. The architecture decisions made here (observable singletons for shared state, computed properties over redundant storage, a strict content layer / state layer / UI split) became patterns I carried into every project after it. It's also the app that proved to me that a single developer can ship something genuinely polished — not just functional.</p>
+        </div>
+
+        <nav class="spec-nav" aria-label="Case study navigation">
+            <a href="tally.html" class="spec-nav-btn next">
+                <span class="spec-nav-label">Next case study</span>
+                Tally →
+            </a>
+        </nav>
+    </div>
+
+    <!-- CTA Band -->
+    <div class="page-cta">
+        <span><span class="availability-dot"></span><strong>Available now — full-stack roles (remote or Detroit) and select freelance work.</strong></span>
+        <a href="contact.html">Let's talk</a>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-name">
+                <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
+                <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
+                    <span>Detroit, MI &middot; Full Stack &amp; iOS Engineer &middot; &copy; 2026</span>
+                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                    <a class="footer-legal" href="/links.html">Apps &amp; Beta Testing</a></div>
+            </div>
+            <ul class="footer-social">
+                <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+            </ul>
+            <p class="footer-squishy"><a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">squishybutter.app</a> — a gacha style, ad-free digital squishy game/toy by George</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
