@@ -405,8 +405,11 @@
     flex: 0 0 1.5em;
     min-width: 1.5em;
 }
-.screenshot-scroll-track::-webkit-scrollbar { height: 6px; }
-.screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.screenshot-scroll-track { cursor: grab; }
+.screenshot-scroll-track:active { cursor: grabbing; }
+.screenshot-scroll-track::-webkit-scrollbar { height: 8px; }
+.screenshot-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+.screenshot-scroll-track::-webkit-scrollbar-track { background: transparent; }
 
 .screenshot-scroll-item {
     flex: 0 0 auto;

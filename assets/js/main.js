@@ -98,6 +98,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
         revealEls.forEach(function (el) { observer.observe(el); });
     }
+
+    // Drag-to-scroll for horizontal galleries (fixes Windows mouse-only users)
+    document.querySelectorAll('.screenshot-scroll-track, .sb-scroll-track').forEach(function (track) {
+        var isDown = false;
+        var startX, startLeft;
+
+        track.addEventListener('mousedown', function (e) {
+            isDown = true;
+            startX = e.pageX;
+            startLeft = track.scrollLeft;
+            track.style.cursor = 'grabbing';
+            track.style.userSelect = 'none';
+        });
+
+        document.addEventListener('mouseup', function () {
+            if (!isDown) return;
+            isDown = false;
+            track.style.cursor = '';
+            track.style.userSelect = '';
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isDown) return;
+            e.preventDefault();
+            track.scrollLeft = startLeft - (e.pageX - startX);
+        });
+
+        // Restore default cursor if mouse leaves window while dragging
+        document.addEventListener('mouseleave', function () {
+            if (!isDown) return;
+            isDown = false;
+            track.style.cursor = '';
+            track.style.userSelect = '';
+        });
+    });
 });
 
 // Restore page visibility when navigating back (bfcache restores page-leaving/is-preload state)
