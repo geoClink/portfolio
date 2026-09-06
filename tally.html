@@ -132,7 +132,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on the App Store</div>
+                <div class="case-glance-value">Live on App Store · Mac app in review</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Traction</div>
@@ -229,7 +229,7 @@
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p>Tally is a native iOS app (iPhone, Apple Watch, Mac via Catalyst) paired with a React web dashboard, both running on a shared Supabase backend. Buying Pro on iOS unlocks the web too - RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the user purchased. Automated emails run as Vercel Pro cron jobs: a weekly digest fires every Monday with hours and earnings for the week, and a re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet since - both sent via Resend from a verified custom domain.</p>
+            <p>Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI (sidebar navigation, Mac auth without GoogleSignIn, native form styles), sharing core SwiftUI views with iOS via compile-time guards. Buying Pro on iOS unlocks the web and Mac too — RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the user purchased. A push notification system lets the admin broadcast APNs messages to all iOS and Mac users from the admin dashboard — device tokens are registered on first launch and stored in Supabase; a Deno Edge Function signs an ES256 JWT, routes each token to the sandbox or production APNs endpoint based on build type, and auto-removes stale tokens on 410. Automated emails run as Vercel Pro cron jobs: a weekly digest fires every Monday with hours and earnings for the week, and a re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet since - both sent via Resend from a verified custom domain.</p>
         </div>
 
         <div class="case-section">
@@ -283,8 +283,15 @@
 
         <div class="case-section">
             <h3>iPad</h3>
-            <p>The iPad layout uses the extra space for a persistent sidebar — Timer, Reports, Activity, and Team are always one tap away without covering the main view. Also available on Mac — download it from the App Store under iPhone &amp; iPad Apps.</p>
+            <p>The iPad layout uses the extra space for a persistent sidebar — Timer, Reports, Activity, and Team are always one tap away without covering the main view.</p>
             <img src="assets/images/tallyios/ipad-frame-9.png" alt="Tally on iPad - sidebar navigation with Reports view showing client hours and charts" loading="lazy" style="width:100%;display:block;border-radius:12px;margin-top:1em;">
+        </div>
+
+        <div class="case-section">
+            <h3>Native macOS App</h3>
+            <p>Tally on Mac is a fully native macOS target — not Catalyst, not "iPhone &amp; iPad Apps on Mac." It compiles a true Mac binary, ships in the Mac section of the App Store, and uses Mac-native UI patterns throughout: sidebar navigation, Mac-specific auth (Apple Sign-In and email/password — GoogleSignIn has no Mac SDK), proper form styles, and no iOS sheet behaviors that don't translate.</p>
+            <p>The Mac and iOS targets share the same SwiftUI source files via Xcode's synchronized folder groups. iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards across the shared views. A matching bundle ID enables Universal Purchase — buy Pro or Business on iPhone and it unlocks on Mac automatically, no second purchase.</p>
+            <img src="assets/images/tallyios/macbook-bezel.png" alt="Tally running on macOS — native Mac app with sidebar navigation, client list, and live timer" loading="lazy" style="width:100%;max-width:820px;display:block;border-radius:12px;margin-top:1.5em;">
         </div>
 
         <div class="case-section">
@@ -300,6 +307,7 @@
                 <li>Web app adds voice control - say "start", "pause", or "save" to control the timer hands-free</li>
                 <li>Upgrade modal triggered at the client limit - highest-intent upgrade moment surfaced in-context rather than as an error string</li>
                 <li>Automated re-engagement emails to lapsed users via Vercel cron + Resend</li>
+                <li>Admin push notification broadcast — send APNs messages to all iOS and Mac users from the web dashboard</li>
             </ul>
         </div>
 
@@ -312,6 +320,7 @@
             <h3>What Was Hard</h3>
             <p>This was my first cross-platform project - keeping iOS, watchOS, Mac, and a React web app in sync against one backend required every layer to be correct at once.</p>
             <p>Payments were the other wall. Wiring StoreKit and Stripe to write to the same subscription record - so iOS Pro unlocks the web without checking two systems - took longer than any single feature. Getting App Store approval took nearly 10 rejections. Each one came back with a different guideline violation, and I worked through every one until it shipped.</p>
+            <p>Building the native macOS target added a different layer of complexity. GoogleSignIn has no Mac support, so the Mac target needed its own auth flow. iOS-only APIs — UIApplication, UIImpactFeedbackGenerator, presentation detents — had to be guarded with compile-time checks across dozens of shared views. The entitlements, Info.plist, and xcconfig had to be threaded through the project manually since the Mac target shares iOS source files via Xcode's synchronized folder groups.</p>
         </div>
 
         <div class="case-section">
