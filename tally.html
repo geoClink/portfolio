@@ -143,7 +143,8 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Freelancers and small teams needed a way to track billable hours and generate invoices without paying $10–20/month for features they'll never use. The goal was one app that works everywhere - phone, watch, laptop, browser - with a pricing model that matches how people actually use it: free to try with no time limit, $9.99 once for solo professionals who want everything, and $4.99/month for teams that need collaboration and invoicing.</p>
+            <p>At the Apple Developer Academy, I was on a team of five building for a real client. We needed one place where all five of us could log hours, stay in sync, and show the client what we'd actually worked on. Every tool we tried was either built for solo freelancers with no team layer, or bloated enterprise software that cost more than the project was worth.</p>
+            <p>I built Tally to solve that exactly — a time tracker that works for one person or a whole team, runs on every device they already use, and doesn't charge a monthly subscription just to log hours.</p>
         </div>
 
         <div class="case-section desktop-only">
@@ -265,7 +266,10 @@
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p>Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI (sidebar navigation, Mac auth without GoogleSignIn, native form styles), sharing core SwiftUI views with iOS via compile-time guards. Buying Pro on iOS unlocks the web and Mac too — RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the user purchased. A push notification system lets the admin broadcast APNs messages to all iOS and Mac users from the admin dashboard — device tokens are registered on first launch and stored in Supabase; a Deno Edge Function signs an ES256 JWT, routes each token to the sandbox or production APNs endpoint based on build type, and auto-removes stale tokens on 410. Automated emails run as Vercel Pro cron jobs: a weekly digest fires every Monday with hours and earnings for the week, and a re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet since - both sent via Resend from a verified custom domain.</p>
+            <p><strong>Platforms.</strong> Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard and a Capacitor Android app, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI: sidebar navigation, Mac-native auth (no GoogleSignIn SDK on Mac), and proper form styles. iOS and Mac share the same SwiftUI source files; iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards.</p>
+            <p><strong>Payments.</strong> Buying Pro on any platform unlocks every other — RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the purchase happened. Universal Purchase on iOS and Mac means one App Store payment covers both.</p>
+            <p><strong>Push notifications.</strong> A Deno Edge Function on Supabase handles APNs delivery — it signs an ES256 JWT per request, routes each token to sandbox or production based on build type, and auto-removes stale tokens on 410. Device tokens are registered on first launch and the admin can broadcast to all iOS and Mac users from the web dashboard.</p>
+            <p><strong>Automated email.</strong> A weekly digest fires every Monday with each user's hours and earnings. A re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet. Both run as Vercel cron jobs and send via Resend from a verified custom domain.</p>
         </div>
 
         <div class="case-section">
@@ -361,7 +365,8 @@
 
         <div class="case-section">
             <h3>The Outcome</h3>
-            <p>200+ downloads since launch. Tally is the most complex thing I've built - not because any single piece is hard, but because four platforms, two payment systems, and a shared backend require every layer to be correct at once. It all has to work, and it does.</p>
+            <p>200+ downloads and 18K+ App Store impressions since launch — built and shipped solo. Tally is live on the iOS App Store, in beta on Google Play, and the Mac version is in review. The same account works across all of them.</p>
+            <p>It's the most complex thing I've built — not because any single piece is hard, but because five platforms, two payment systems, and a shared backend all have to be correct at once. It all has to work, and it does.</p>
         </div>
 
         <div class="case-section og-preview-section">
