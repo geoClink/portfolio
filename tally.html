@@ -356,12 +356,6 @@
             <p>Building the native macOS target added a different layer of complexity. GoogleSignIn has no Mac support, so the Mac target needed its own auth flow. iOS-only APIs — UIApplication, UIImpactFeedbackGenerator, presentation detents — had to be guarded with compile-time checks across dozens of shared views. The entitlements, Info.plist, and xcconfig had to be threaded through the project manually since the Mac target shares iOS source files via Xcode's synchronized folder groups.</p>
         </div>
 
-        <div class="case-section">
-            <h3>The Outcome</h3>
-            <p>200+ downloads and 18K+ App Store impressions since launch — built and shipped solo. Tally is live on the iOS App Store, in beta on Google Play, and the Mac version is in review. The same account works across all of them.</p>
-            <p>It's the most complex thing I've built — not because any single piece is hard, but because five platforms, two payment systems, and a shared backend all have to be correct at once. It all has to work, and it does.</p>
-        </div>
-
     <!-- Vision Pro teaser -->
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
@@ -380,7 +374,13 @@
         </div>
     </div>
 
-        <div class="case-section og-preview-section">
+        <div class="case-section">
+            <h3>The Outcome</h3>
+            <p>200+ downloads and 18K+ App Store impressions since launch — built and shipped solo. Tally is live on the iOS App Store, in beta on Google Play, and the Mac version is in review. The same account works across all of them.</p>
+            <p>It's the most complex thing I've built — not because any single piece is hard, but because five platforms, two payment systems, and a shared backend all have to be correct at once. It all has to work, and it does.</p>
+        </div>
+
+        <div class="case-section og-preview-section" style="margin-top:3em;">
             <h3>Link Preview</h3>
             <a href="https://tallytimetracker.com/" class="og-card" target="_blank" rel="noopener noreferrer">
                 <img class="og-card-img" src="https://tallytimetracker.com/images/og-image.png" alt="Tally link preview image" loading="lazy">
