@@ -330,12 +330,12 @@
         <div class="case-section">
             <h3>Live Data Sources</h3>
             <p>Three external APIs power the live city layer — each one fetched fresh per city visit so the data is always current:</p>
-            <div class="data-sources">
-                <span class="data-source-chip">Open-Meteo — real-time weather + 7-day forecast</span>
-                <span class="data-source-chip">Ticketmaster — upcoming events by category</span>
-                <span class="data-source-chip">Apple Maps — nearby dining via MapKit</span>
-                <span class="data-source-chip">Apple Maps Look Around — street-level imagery</span>
-            </div>
+            <ul>
+                <li>Open-Meteo — real-time weather and a 7-day forecast</li>
+                <li>Ticketmaster — upcoming events by category</li>
+                <li>Apple Maps via MapKit — nearby dining</li>
+                <li>Apple Maps Look Around — street-level imagery for supported landmarks</li>
+            </ul>
         </div>
 
         <div class="case-section">
@@ -379,6 +379,20 @@
                 Tally →
             </a>
         </nav>
+    </div>
+
+    <!-- Vision Pro teaser -->
+    <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
+        <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
+            <div style="flex:1;min-width:260px;">
+                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
+                <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Stamped! for Apple Vision Pro</h2>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Exploring a visionOS version — spatial windows for city tours, landmarks anchored to your surroundings, and passport stamps collected in mixed reality. Part of my work at the Apple Developer Academy.</p>
+            </div>
+            <div style="flex-shrink:0;width:340px;max-width:100%;">
+                <img src="assets/images/APV-asset.png" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+        </div>
     </div>
 
     <!-- CTA Band -->
