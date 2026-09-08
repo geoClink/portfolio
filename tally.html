@@ -259,7 +259,7 @@
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p><strong>Platforms.</strong> Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard and a Capacitor Android app, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI: sidebar navigation, Mac-native auth (no GoogleSignIn SDK on Mac), and proper form styles. iOS and Mac share the same SwiftUI source files; iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards.</p>
+            <p><strong>Platforms.</strong> Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard and a Capacitor Android app, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI: sidebar navigation, Mac-native auth (no GoogleSignIn SDK on Mac), and proper form styles. iOS and Mac share the same SwiftUI source files; iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards. A native visionOS app is in development — a floating volume timer that stays visible alongside other apps so freelancers can track time without context switching.</p>
             <p><strong>Payments.</strong> Buying Pro on any platform unlocks every other — RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the purchase happened. Universal Purchase on iOS and Mac means one App Store payment covers both.</p>
             <p><strong>Push notifications.</strong> A Deno Edge Function on Supabase handles APNs delivery — it signs an ES256 JWT per request, routes each token to sandbox or production based on build type, and auto-removes stale tokens on 410. Device tokens are registered on first launch and the admin can broadcast to all iOS and Mac users from the web dashboard.</p>
             <p><strong>Automated email.</strong> A weekly digest fires every Monday with each user's hours and earnings. A re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet. Both run as Vercel cron jobs and send via Resend from a verified custom domain.</p>
@@ -362,10 +362,10 @@
             <div style="flex:1;min-width:260px;">
                 <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
                 <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Tally for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Building a native visionOS time tracker — spatial windows, eye tracking, and hands-free timer control. Part of my work at the Apple Developer Academy.</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Open Tally as a volume and it floats alongside your work — a live timer you can see without switching apps. Tap to pause, tap to resume. Your client hours tracked without breaking focus. Part of my work at the Apple Developer Academy.</p>
                 <a href="https://tallytimetracker.com/#visionpro" target="_blank" rel="noopener noreferrer"
                     style="display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.6rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);">
-                    View on Tally →
+                    Learn more ↗
                 </a>
             </div>
             <div style="flex-shrink:0;width:340px;max-width:100%;">
