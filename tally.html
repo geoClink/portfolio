@@ -356,6 +356,19 @@
             <p>Building the native macOS target added a different layer of complexity. GoogleSignIn has no Mac support, so the Mac target needed its own auth flow. iOS-only APIs — UIApplication, UIImpactFeedbackGenerator, presentation detents — had to be guarded with compile-time checks across dozens of shared views. The entitlements, Info.plist, and xcconfig had to be threaded through the project manually since the Mac target shares iOS source files via Xcode's synchronized folder groups.</p>
         </div>
 
+        <div class="case-section">
+            <h3>User Research</h3>
+            <p>After launch, I manually reviewed the email addresses of users who had created accounts and reached out to 30 of them directly. Most didn't respond — but one did: a senior product designer who has become an ongoing collaborator and the clearest signal I have of who Tally is really for.</p>
+            <p>Her feedback drove several concrete product decisions:</p>
+            <ul>
+                <li><strong>Billing cycles per client</strong> — she bills different clients on different schedules. I added monthly (by day of month) and weekly (by weekday) billing cycles, plus a "Last Billing Period" button on invoices that auto-fills the correct date range.</li>
+                <li><strong>Client settings in the Account tab</strong> — she wanted rates and billing cycles accessible without leaving the main app flow. I moved Client Settings into the Account tab with TipKit contextual tips on first use.</li>
+                <li><strong>Invoice persistence</strong> — name, email, and tax rate now persist across invoices so she isn't re-entering the same info every time.</li>
+                <li><strong>Billing cycle reminder notifications</strong> — a daily push fires at the start of each billing period ("Time to invoice Acme Corp.") so she never misses an invoice window.</li>
+            </ul>
+            <p>One high-quality respondent who explains their workflow is worth more than 100 survey responses. The app is increasingly tailored to how professional designers manage client work, and every feature in the current version traces back to either a real user need or a specific piece of feedback.</p>
+        </div>
+
     <!-- Vision Pro teaser -->
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
