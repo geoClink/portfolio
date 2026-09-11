@@ -406,9 +406,12 @@
         /* Print-only elements — hidden on web */
         .print-header { display: none; }
         #print-qr { display: none; }
+        .print-only-text { display: none; }
     </style>
     <style>
         @media print {
+            @page { margin: 0.25in 0; }
+
             /* ── Hide all web chrome ── */
             #header, #menuOverlay, .menu-overlay, #footer,
             .resume-actions, .page-cta,
@@ -418,9 +421,9 @@
             .resume-section:has(h3:first-child) { }
             .resume-section-contact { display: none !important; }
 
-            body { background: #fff !important; margin: 0; font-size: 9.5pt; color: #111; }
+            body { background: #fff !important; margin: 0; font-size: 9pt; color: #111; }
             #main {
-                padding: 0.45in 0.6in 0.3in !important;
+                padding: 0.05in 0.55in 0.05in !important;
                 max-width: 100% !important;
                 box-sizing: border-box;
             }
@@ -463,20 +466,22 @@
             }
 
             /* ── Section spacing ── */
-            .resume-section { margin-bottom: 0.13in; }
+            .resume-section { margin-bottom: 0.08in; }
             .resume-section h3 {
                 font-size: 7pt !important;
                 letter-spacing: 0.13em !important;
                 color: #111 !important;
-                margin: 0 0 0.05in !important;
-                padding-bottom: 0.03in !important;
+                margin: 0 0 0.04in !important;
+                padding-bottom: 0.02in !important;
                 border-bottom: 0.5pt solid #ccc !important;
+                break-after: avoid;
+                page-break-after: avoid;
             }
 
             /* ── Entry typography ── */
-            .resume-item-title { font-size: 9.5pt; font-weight: 700; margin-bottom: 0.01in; }
-            .resume-item-meta  { font-size: 8pt; color: #555; margin-bottom: 0.02in; }
-            p { font-size: 8.5pt; line-height: 1.3; margin: 0 0 0.02in; }
+            .resume-item-title { font-size: 9pt; font-weight: 700; margin-bottom: 0.01in; }
+            .resume-item-meta  { font-size: 7.5pt; color: #555; margin-bottom: 0.01in; }
+            p { font-size: 8pt; line-height: 1.25; margin: 0 0 0.01in; }
 
             /* ── Expand all accordions ── */
             .resume-accordion-body {
@@ -493,7 +498,7 @@
                 border: none !important;
             }
             .resume-accordion-list { list-style: none; padding: 0; margin: 0; }
-            .resume-accordion-list li { margin-bottom: 0.06in; }
+            .resume-accordion-list li { margin-bottom: 0.04in; }
 
             /* ── Hide case study / live site links ── */
             .resume-item-links { display: none !important; }
@@ -501,16 +506,18 @@
             /* ── Skills ── */
             .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 0.06in 0.15in; }
             .skill-group-label { font-size: 7pt !important; color: #111 !important; margin-bottom: 0.02in; letter-spacing: 0.08em; }
-            .skill-tags { display: flex; flex-wrap: wrap; gap: 2px 4px; }
+            .skill-tags { display: block; line-height: 1.6; }
             .skill-tag {
-                font-size: 7.5pt;
-                background: #f0f0f0 !important;
-                color: #111 !important;
-                border-radius: 2px;
-                padding: 1px 4px;
+                font-size: 8pt;
+                color: #333 !important;
+                background: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
                 border: none !important;
                 box-shadow: none !important;
             }
+            .skill-tag::after { content: " · "; color: #999; }
+            .skill-tag:last-child::after { content: ""; }
 
             /* ── Certs ── */
             .cert-group { margin-bottom: 0.07in; }
@@ -521,6 +528,11 @@
             .resume-accordion-list li { break-inside: avoid; page-break-inside: avoid; }
 
             a { color: #111 !important; text-decoration: none !important; }
+
+            /* PDF-only visibility controls */
+            .cert-print-hide { display: none !important; }
+            .edu-print-hide { display: none !important; }
+            .print-only-text { display: inline !important; }
         }
     </style>
     <script type="application/ld+json">
@@ -634,6 +646,66 @@
         </section>
 
         <section class="resume-section">
+            <h3>Skills</h3>
+            <div class="skill-groups">
+                <div>
+                    <div class="skill-group-label">Web &amp; Backend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML / CSS / JS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Deno Edge Functions</span>
+                        <span class="skill-tag">Stripe</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">Vercel</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">iOS</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">Catalyst</span>
+                        <span class="skill-tag">StoreKit</span>
+                        <span class="skill-tag">RevenueCat</span>
+                        <span class="skill-tag">visionOS</span>
+                        <span class="skill-tag">RealityKit</span>
+                        <span class="skill-tag">Reality Composer Pro</span>
+                        <span class="skill-tag">WidgetKit</span>
+                        <span class="skill-tag">SwiftData</span>
+                        <span class="skill-tag">CoreML</span>
+                        <span class="skill-tag">Apple Intelligence</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">AI &amp; ML</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Anthropic MCP SDK</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">WebMCP</span>
+                        <span class="skill-tag">XGBoost</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Tools</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Xcode</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">TestFlight</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
             <h3>Experience</h3>
             <ul class="resume-accordion-list">
                 <li>
@@ -646,18 +718,6 @@
                     </button>
                     <div class="resume-accordion-body">
                         <p>Selected for the advanced Year 2 Renaissance cohort (25 of ~250 first-year students). Working on a team of 5 building a Vision Pro healthcare application for a real client using visionOS and RealityKit — project details are confidential.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title">Engineer Participant · <a href="https://developeracademy.msu.edu/" target="_blank" rel="noopener noreferrer">MSU Apple Developer Academy</a> — Year 1</div>
-                            <div class="resume-item-meta">Detroit, MI &middot; Sept 2025 – 2026</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <p>Year 1 program covering Swift and SwiftUI development, design principles, project management, and collaborative team-based development. Shipped multiple App Store submissions and participated in Apple-led events and workshops throughout Detroit.</p>
                     </div>
                 </li>
                 <li>
@@ -682,6 +742,18 @@
                     </button>
                     <div class="resume-accordion-body">
                         <p>Shipping feature updates across iOS, Android, and web for an early-stage travel startup. Picked up Kotlin and Android cold mid-contract and kept the platform moving without interruption.</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title">Engineer Participant · <a href="https://developeracademy.msu.edu/" target="_blank" rel="noopener noreferrer">MSU Apple Developer Academy</a> — Year 1</div>
+                            <div class="resume-item-meta">Detroit, MI &middot; Sept 2025 – 2026</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <p>Year 1 program covering Swift and SwiftUI development, design principles, project management, and collaborative team-based development. Shipped multiple App Store submissions and participated in Apple-led events and workshops throughout Detroit.<span class="print-only-text"> Selected into the advanced Renaissance cohort for Year 2.</span></p>
                     </div>
                 </li>
                 <li>
@@ -835,77 +907,14 @@
         </section>
 
         <section class="resume-section">
-            <h3>Skills</h3>
-            <div class="skill-groups">
-                <div>
-                    <div class="skill-group-label">Web &amp; Backend</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">HTML / CSS / JS</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Supabase</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Deno Edge Functions</span>
-                        <span class="skill-tag">Stripe</span>
-                        <span class="skill-tag">Vite</span>
-                        <span class="skill-tag">Vercel</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">iOS</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Swift</span>
-                        <span class="skill-tag">SwiftUI</span>
-                        <span class="skill-tag">UIKit</span>
-                        <span class="skill-tag">Catalyst</span>
-                        <span class="skill-tag">StoreKit</span>
-                        <span class="skill-tag">RevenueCat</span>
-                        <span class="skill-tag">visionOS</span>
-                        <span class="skill-tag">RealityKit</span>
-                        <span class="skill-tag">Reality Composer Pro</span>
-                        <span class="skill-tag">WidgetKit</span>
-                        <span class="skill-tag">SwiftData</span>
-                        <span class="skill-tag">CoreML</span>
-                        <span class="skill-tag">Apple Intelligence</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">AI &amp; ML</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Anthropic MCP SDK</span>
-                        <span class="skill-tag">Claude API</span>
-                        <span class="skill-tag">WebMCP</span>
-                        <span class="skill-tag">Agentic Tool-Calling</span>
-                        <span class="skill-tag">Few-Shot Prompting</span>
-                        <span class="skill-tag">XGBoost</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-group-label">Tools</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Xcode</span>
-                        <span class="skill-tag">VSCode</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Claude Code</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">TestFlight</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="resume-section">
             <h3>Education</h3>
             <ul>
-                <li>
+                <li class="edu-print-hide">
                     <div class="resume-item-title">Renaissance Program · MSU Apple Developer Academy</div>
                     <div class="resume-item-meta">Detroit, MI &middot; Sept 2026 – May 2027 &middot; Vision Pro / visionOS</div>
                     <div class="resume-item-desc">Selected for the advanced Year 2 Renaissance cohort (25 of ~250 first-year students). Working on a team of 5 building a Vision Pro healthcare application for a real client.</div>
                 </li>
-                <li>
+                <li class="edu-print-hide">
                     <div class="resume-item-title">Engineer Participant · MSU Apple Developer Academy — Year 1</div>
                     <div class="resume-item-meta">Detroit, MI &middot; Sept 2025 – 2026</div>
                     <div class="resume-item-desc">Swift and SwiftUI development, design principles, project management, collaborative team-based development, and App Store submissions.</div>
@@ -925,15 +934,15 @@
                     <li>UI/UX Workshop - Dexian (June – July 2026)</li>
                     <li>Generative AI Explained - NVIDIA (May 2026)</li>
                     <li>Apple Ads Certification - App Store</li>
-                    <li>Introduction to Game Development - Apple Developer Academy | MSU</li>
-                    <li>Introduction to User Centered Development - Apple Developer Academy | MSU</li>
-                    <li>Introduction to UI Design and Swift Fundamentals - Apple Developer Academy | MSU</li>
-                    <li>Introduction to iOS Development - Apple Developer Academy | MSU</li>
-                    <li>Introduction to Front-End - Meta</li>
-                    <li>Programming for Everybody (Getting Started with Python) - University of Michigan</li>
+                    <li class="cert-print-hide">Introduction to Game Development - Apple Developer Academy | MSU</li>
+                    <li class="cert-print-hide">Introduction to User Centered Development - Apple Developer Academy | MSU</li>
+                    <li class="cert-print-hide">Introduction to UI Design and Swift Fundamentals - Apple Developer Academy | MSU</li>
+                    <li class="cert-print-hide">Introduction to iOS Development - Apple Developer Academy | MSU</li>
+                    <li class="cert-print-hide">Introduction to Front-End - Meta</li>
+                    <li class="cert-print-hide">Programming for Everybody (Getting Started with Python) - University of Michigan</li>
                 </ul>
             </div>
-            <div class="cert-group">
+            <div class="cert-group cert-print-hide">
                 <div class="skill-group-label">Additional</div>
                 <ul>
                     <li>Introduction to Agent Skills - Anthropic</li>
