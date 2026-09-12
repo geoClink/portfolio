@@ -263,6 +263,11 @@
 
     <div id="main" role="main">
 
+        <style>
+            .apv-img { transition: transform 0.35s ease, filter 0.35s ease; }
+            .apv-img:hover { transform: scale(1.08) rotate(-2deg); filter: brightness(1.05) contrast(1.1) drop-shadow(0 8px 24px rgba(255,255,255,0.12)); }
+        </style>
+
         <!-- visionOS Featured -->
         <section class="fade-in" style="padding: 2.5rem 2rem; background: #111; border-radius: 14px; margin: 2.5rem auto; max-width: 680px; position:relative; overflow:hidden;">
             <div style="display:flex; align-items:center; gap:1.5rem;">
@@ -273,8 +278,8 @@
                     <p style="color:rgba(255,255,255,0.75); font-size:0.78rem; margin:0; letter-spacing:0.04em;">visionOS &middot; SwiftUI &middot; Spatial Computing &middot; Healthcare</p>
                 </div>
                 <div style="flex-shrink:0; width:160px; opacity:1; position:relative;">
-                    <div style="position:absolute;inset:0;background:linear-gradient(to right,#111 0%,transparent 20%);z-index:1;"></div>
-                    <img src="assets/images/APV-asset.png" alt="Apple Vision Pro" style="width:160px; display:block; filter:brightness(0.9) contrast(1.1);" />
+                    <div style="position:absolute;inset:0;background:linear-gradient(to right,#111 0%,transparent 20%);z-index:1;pointer-events:none;"></div>
+                    <img src="assets/images/APV-asset.png" alt="Apple Vision Pro" class="apv-img" style="width:160px; display:block; filter:brightness(0.9) contrast(1.1);" />
                 </div>
             </div>
         </section>
