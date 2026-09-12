@@ -220,7 +220,11 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Engagement</div>
-                <div class="case-glance-value">30,813 squishes · 48 collectors</div>
+                <div class="case-glance-value" id="sb-glance-engagement">30,813 squishes · 48 collectors</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Downloads</div>
+                <div class="case-glance-value">100+ App Store downloads in first 3 days</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
@@ -779,6 +783,14 @@ return Math.max(6, Math.min(48, affordable));</div>
                 const el = document.getElementById('sb-live-bar');
                 if (el && parts.length) {
                     el.innerHTML = '<span class="sb-live-dot"></span><span style="font-weight:600;color:var(--color-text);">Live -</span> ' + parts.join(' &middot; ');
+                }
+                const glance = document.getElementById('sb-glance-engagement');
+                if (glance) {
+                    const gParts = [];
+                    if (sq[0]?.total_squishes != null) gParts.push(fmt(sq[0].total_squishes) + ' squishes');
+                    const c = typeof col === 'number' ? col : col?.count;
+                    if (c != null) gParts.push(fmt(c) + ' collectors');
+                    if (gParts.length) glance.textContent = gParts.join(' · ');
                 }
             }).catch(function () {});
         })();
