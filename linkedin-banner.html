@@ -19,8 +19,29 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 80px;
+    padding: 0 120px;
+    gap: 60px;
     position: relative;
+  }
+  .hero-image-wrapper {
+    position: relative;
+    height: 190px;
+    width: auto;
+    flex-shrink: 0;
+    margin-left: 100px;
+    align-self: flex-start;
+    margin-top: 20px;
+  }
+  .hero-image-wrapper img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  .hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #111111 0%, transparent 12%);
   }
   .content {
     position: relative;
@@ -32,29 +53,29 @@
     gap: 14px;
   }
   .location {
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.65);
   }
   .name {
-    font-size: 54px;
+    font-size: 32px;
     font-weight: 700;
     color: #ffffff;
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
   .title {
-    font-size: 18px;
-    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
     font-weight: 400;
     letter-spacing: 0.01em;
   }
   .url {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.55);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: 6px;
@@ -78,10 +99,13 @@
 </head>
 <body>
 <div class="banner">
+  <div class="hero-image-wrapper">
+    <img src="assets/images/APV-asset.png" alt="Apple Vision Pro">
+  </div>
   <div class="content">
     <div class="location">Detroit, MI</div>
     <div class="name">George Clinkscales Jr.</div>
-    <div class="title">iOS & Full-Stack Engineer &nbsp;·&nbsp; Co-founder, CH Studios LLC</div>
+    <div class="title">iOS & visionOS Developer &nbsp;·&nbsp; Full-Stack Engineer &nbsp;·&nbsp; Co-founder, CH Studios LLC</div>
     <div class="url">georgeclinkscalesdev.com</div>
   </div>
 </div>
