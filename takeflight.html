@@ -167,7 +167,8 @@
                 style="width:100%;border-radius:12px;display:block;background:#000;"
                 poster="assets/images/takeflight/TakeFlight.webp"
             >
-                <source src="assets/videos/TakeFlightDemoCompressed.mov" type="video/mp4" />
+                <source src="assets/videos/TakeFlightDemoCompressed.mov" type='video/mp4; codecs="hvc1"' />
+                <source src="assets/videos/takeflight-demo.mp4" type="video/mp4" />
                 Your browser doesn't support HTML5 video.
             </video>
         </div>
@@ -201,7 +202,7 @@
 
         <div class="case-section">
             <h3>The Core Loop</h3>
-            <img src="assets/images/takeflight/StartARun.png" alt="TakeFlight — start a run on Belle Isle" style="width:100%;border-radius:10px;display:block;margin-bottom:1.25em;" loading="lazy" />
+            <img src="assets/images/takeflight/StartARun.webp" alt="TakeFlight — start a run on Belle Isle" style="width:100%;border-radius:10px;display:block;margin-bottom:1.25em;" loading="lazy" />
             <p>TakeFlight puts you in control of a bird surviving on Detroit's Belle Isle. Start a run, rotate through five quick challenges — memory, coordination, speed, and reflexes — while managing a hunger bar and building nests. Each mechanic feeds into the others. Let your hunger drop and the run ends. Build nests and it extends. Every session is short by design, every run a chance to improve.</p>
         </div>
 
@@ -215,25 +216,25 @@
             <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1em;margin-bottom:1em;">
                 <div>
                     <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
-                        <img src="assets/images/takeflight/GettingHungry.png" alt="Getting Hungry mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                        <img src="assets/images/takeflight/GettingHungry.webp" alt="Getting Hungry mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
                     </div>
                     <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Getting Hungry — coordination feeding mechanic</p>
                 </div>
                 <div>
                     <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
-                        <img src="assets/images/takeflight/BuildNest.png" alt="Build Your Home mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                        <img src="assets/images/takeflight/BuildNest.webp" alt="Build Your Home mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
                     </div>
                     <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Build Your Home — material collection and nesting</p>
                 </div>
                 <div>
                     <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
-                        <img src="assets/images/takeflight/EscapePredator.png" alt="Avoid Predators mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                        <img src="assets/images/takeflight/EscapePredator.webp" alt="Avoid Predators mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
                     </div>
                     <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Avoid Predators — dodge-and-survive reaction test</p>
                 </div>
                 <div>
                     <div style="width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:10px;margin-bottom:0.5em;">
-                        <img src="assets/images/takeflight/EscapeBelleIsle.png" alt="Escape the Island mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+                        <img src="assets/images/takeflight/EscapeBelleIsle.webp" alt="Escape the Island mini-game" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
                     </div>
                     <p style="font-size:0.78em;color:var(--color-text-muted);text-align:center;font-style:italic;margin:0;">Escape the Island — navigation under pressure</p>
                 </div>
@@ -293,7 +294,7 @@
             <div class="footer-name">
                 <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
                 <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
-                    <span>Detroit, MI &middot; Full-Stack, iOS &amp; visionOS Engineer &middot; &copy; 2026</span>
+                    <span>Detroit, MI &middot; iOS, visionOS &amp; Full-Stack Engineer &middot; &copy; 2026</span>
                     <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
                     <a class="footer-legal" href="/links.html">Apps &amp; Beta Testing</a></div>
             </div>
