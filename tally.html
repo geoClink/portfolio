@@ -190,40 +190,32 @@
             <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">iOS App</h4>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-1.png" alt="Start tracking in one tap — simple timer running in the background so you never lose a billable minute" loading="lazy" style="border-radius:20px;">
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-01.webp" alt="Track every hour. Get paid for all of it — the running timer for Acme Corp" loading="lazy" style="border-radius:20px;">
                     <p>Timer</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-25.png" alt="See where your time goes — weekly and all-time breakdowns by client at a glance" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-02.webp" alt="Pick a client, hit start — the client picker with recent clients one tap away" loading="lazy" style="border-radius:20px;">
+                    <p>Client picker</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-03.webp" alt="Know where your week went — hours per client and billable sessions this week" loading="lazy" style="border-radius:20px;">
                     <p>Reports</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-26.png" alt="Never lose a day — every day you log time gets a dot, watch your consistency grow month by month" loading="lazy">
-                    <p>Activity</p>
-                </div>
-                <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-27.png" alt="Track your whole team — see everyone's hours, weekly goals, and team totals all in one place" loading="lazy">
-                    <p>Team</p>
-                </div>
-                <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-28.png" alt="Know what you've earned — hours and earnings per client tracked automatically as you work" loading="lazy">
-                    <p>Client earnings</p>
-                </div>
-                <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-29.png" alt="Send invoices from your phone — generate a PDF invoice and collect payment in seconds" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-04.webp" alt="Turn hours into invoices — Acme Corp earnings with a generated PDF invoice" loading="lazy" style="border-radius:20px;">
                     <p>Invoicing</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-30.png" alt="Always on your home screen — check your hours and weekly goal without ever opening the app" loading="lazy">
-                    <p>Widgets</p>
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-05.webp" alt="Hit your goals, client by client — weekly hour targets with live progress" loading="lazy" style="border-radius:20px;">
+                    <p>Goals</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-31.png" alt="Track from your lock screen — Live Activity shows your timer running, no need to open the app" loading="lazy">
-                    <p>Live Activity</p>
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-06.webp" alt="See every day you worked — the activity calendar with sessions for the selected day" loading="lazy" style="border-radius:20px;">
+                    <p>Activity</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyios/iphone-frame-32.png" alt="Customize your experience — set time rounding, notifications, currency, and more" loading="lazy">
-                    <p>Settings</p>
+                    <img class="screenshot-bezel" src="assets/images/tallyios/appstore/iphone-07.webp" alt="Track time together — the Design Team workspace with weekly team total and members" loading="lazy" style="border-radius:20px;">
+                    <p>Team</p>
                 </div>
             </div>
 
@@ -317,14 +309,18 @@
         <div class="case-section">
             <h3>iPad</h3>
             <p>The iPad layout uses the extra space for a persistent sidebar — Timer, Reports, Activity, and Team are always one tap away without covering the main view.</p>
-            <img src="assets/images/tallyios/ipad-frame-9.png" alt="Tally on iPad - sidebar navigation with Reports view showing client hours and charts" loading="lazy" style="width:100%;display:block;border-radius:12px;margin-top:1em;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+                <img src="assets/images/tallyios/appstore/ipad-01.webp" alt="Tally on iPad — running timer with the sidebar always visible" loading="lazy" style="width:100%;display:block;border-radius:12px;">
+                <img src="assets/images/tallyios/appstore/ipad-03.webp" alt="Tally on iPad — Reports showing this week's hours by client" loading="lazy" style="width:100%;display:block;border-radius:12px;">
+                <img src="assets/images/tallyios/appstore/ipad-07.webp" alt="Tally on iPad — Design Team workspace with team hours and members" loading="lazy" style="width:100%;display:block;border-radius:12px;">
+            </div>
         </div>
 
         <div class="case-section">
             <h3>Native macOS App</h3>
             <p>Tally on Mac is a fully native macOS target — not Catalyst, not "iPhone &amp; iPad Apps on Mac." It compiles a true Mac binary, ships in the Mac section of the App Store, and uses Mac-native UI patterns throughout: sidebar navigation, Mac-specific auth (Apple Sign-In and email/password — GoogleSignIn has no Mac SDK), proper form styles, and no iOS sheet behaviors that don't translate.</p>
             <p>The Mac and iOS targets share the same SwiftUI source files via Xcode's synchronized folder groups. iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards across the shared views. A matching bundle ID enables Universal Purchase — buy Pro or Business on iPhone and it unlocks on Mac automatically, no second purchase.</p>
-            <img src="assets/images/tallyios/macbook-bezel.webp" alt="Tally running on macOS — native Mac app with sidebar navigation, client list, and live timer" loading="lazy" style="width:100%;max-width:820px;display:block;border-radius:12px;margin-top:1.5em;">
+            <img src="assets/images/tallyios/appstore/macbook-tally.webp" alt="Tally running on macOS — native Mac app with sidebar navigation and a live timer for Acme Corp" loading="lazy" style="width:100%;max-width:820px;display:block;border-radius:12px;margin-top:1.5em;">
         </div>
 
         <div class="case-section">
