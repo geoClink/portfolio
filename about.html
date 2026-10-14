@@ -149,6 +149,7 @@
         }
 
         .timeline-card {
+            scroll-margin-top: 5em; /* clear the fixed header when opened from a link */
             display: flex;
             align-items: flex-start;
             gap: 1em;
@@ -424,7 +425,7 @@
                     <span class="timeline-arrow">›</span>
                 </li>
 
-                <li class="timeline-card" tabindex="0" aria-expanded="false">
+                <li id="claris-certifications" class="timeline-card" tabindex="0" aria-expanded="false">
                     <span class="timeline-icon">📜</span>
                     <div>
                         <div class="timeline-title">Sep – Oct 2026: Earned Claris FileMaker Pro Associate, Specialist &amp; Expert Certifications</div>
@@ -837,6 +838,15 @@
                 }
             });
         });
+
+        // Open the timeline card a link points at (e.g. about.html#claris-certifications)
+        (function () {
+            const target = location.hash && document.querySelector('.timeline-card' + location.hash);
+            if (target) {
+                toggleTimelineCard(target);
+                target.scrollIntoView({ block: 'start' });
+            }
+        })();
     </script>
 
 </body>
