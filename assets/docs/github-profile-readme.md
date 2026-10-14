@@ -4,7 +4,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&pause=1000&color=1A56DB&center=true&vCenter=true&width=600&lines=Full-Stack+Web+Engineer+%C2%B7+Detroit%2C+MI;Live+platforms+serving+real+clients;Four+shipped+App+Store+apps;MSU+Apple+Developer+Academy+%E2%80%94+Year+2)](https://georgeclinkscalesdev.com)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&pause=1000&color=1A56DB&center=true&vCenter=true&width=600&lines=Full-Stack+Web+Engineer+%C2%B7+Detroit%2C+MI;Live+platforms+serving+real+clients;Five+shipped+App+Store+apps;MSU+Apple+Developer+Academy+%E2%80%94+Year+2)](https://georgeclinkscalesdev.com)
 
 <br>
 
@@ -86,17 +86,18 @@ One backend. Six live sites. A multi-tenant SaaS platform serving real clients a
 | **Web & Backend** | Node.js · Express · Python · FastAPI · JavaScript · React · Vite · HTML · CSS · Supabase · PostgreSQL · Stripe · Resend · Twilio · Sentry · Vercel · Render |
 | **iOS & Mobile** | Swift · SwiftUI · UIKit · SpriteKit · SwiftData · WidgetKit · Core ML · App Intents · StoreKit · Catalyst · Combine · Firebase |
 | **AI & ML** | Claude API · MCP · WebMCP · Agentic Tool-Calling · XGBoost · CoreML · Create ML · Feature Engineering · Groq · Ollama |
+| **Claris FileMaker** | FileMaker Pro · Scripting & Calculations · ExecuteSQL · Data API · Semantic Search · LLM Integration · *Certified Expert + AI Fundamentals I & II* |
 | **Tools** | Xcode · VSCode · Git · Claude Code · Docker · TestFlight · GitHub Actions |
 
 ---
 
 <div align="center">
 
-**MSU Apple Developer Academy · Year 2 · Aug 2026 – May 2027** *(25 of 250 selected from year one)*
+**MSU Apple Developer Academy · Year 2 · Sep 2026 – May 2027** *(25 of 240 selected from year one)*
 &nbsp;·&nbsp;
 **Cross-Platform Engineer · [Tripsetta](https://tripsetta.com)** *(part-time contract)*
 &nbsp;·&nbsp;
-**Open to full-time web and full-stack roles in Detroit or remote**
+**Open to full-time web, full-stack, and Claris FileMaker roles in Detroit or remote**
 
 <br>
 
