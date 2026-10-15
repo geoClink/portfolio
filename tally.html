@@ -6,7 +6,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/tally.html" />
     <meta property="og:title" content="Tally - Time Tracker Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Tally — an iOS and web time tracker I built and shipped to the App Store. Built for freelancers: clock in/out, project tagging, exportable reports." />
+    <meta property="og:description" content="Tally — a time tracker for freelancers and small teams on iPhone, Apple Watch, Mac, and the web, built and shipped solo. Timer, invoicing, team dashboards, and reports." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/tally.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/tallyios/tally_mockup_hand.jpg" />
@@ -14,7 +14,7 @@
     <meta name="twitter:title" content="Tally - Time Tracker Case Study | George Clinkscales Jr." />
     <meta name="twitter:description" content="Case study: Tally - A cross-platform SaaS time tracker for freelancers and small teams." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/tallyios/tally_mockup_hand.jpg" />
-    <meta name="description" content="Tally — an iOS and web time tracker I built and shipped to the App Store. Built for freelancers: clock in/out, project tagging, exportable reports." />
+    <meta name="description" content="Tally — a time tracker for freelancers and small teams on iPhone, Apple Watch, Mac, and the web, built and shipped solo. Timer, invoicing, team dashboards, and reports." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,7 +120,7 @@
             </a>
         </div>
 
-        <div class="case-meta">Swift · SwiftUI · React · Vite · Supabase · StoreKit · RevenueCat · Stripe · 2026 · Live on App Store</div>
+        <div class="case-meta">Swift · SwiftUI · React · Vite · Supabase · StoreKit · Stripe · Capacitor · 2026 · Live on App Store</div>
         <div class="case-glance">
             <div class="case-glance-item">
                 <div class="case-glance-label">Role</div>
@@ -132,7 +132,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on App Store · Mac in review · Android beta</div>
+                <div class="case-glance-value">Live on iPhone &amp; Mac · Android beta · Vision Pro in development</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Traction</div>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="browser-url">tallytimetracker.com</div>
                 </div>
-                <iframe src="https://tallytimetracker.com/" title="Tally - Landing Page" loading="lazy"></iframe>
+                <a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/tallyios/tally-landing-desktop.webp" alt="Tally landing page on desktop — 'Bill every hour. On every device.' hero with sign-up, App Store, and Google Play buttons" loading="lazy" style="width:100%;display:block;"></a>
             </div>
             <p class="iframe-note iframe-note-desktop"><a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
@@ -180,7 +180,7 @@
                             </div>
                         </div>
                         <div class="phone-viewport">
-                            <iframe class="phone-demo" src="https://tallytimetracker.com/" title="Tally - Mobile View" loading="lazy"></iframe>
+                            <a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer"><img src="assets/images/tallyios/tally-landing-mobile.webp" alt="Tally landing page on iPhone — hero and download buttons in the mobile layout" loading="lazy" style="width:100%;display:block;"></a>
                         </div>
                     </div>
                 </div>
@@ -251,10 +251,10 @@
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p><strong>Platforms.</strong> Tally is a native iOS app (iPhone, Apple Watch) and a separate native macOS target — not Catalyst — paired with a React web dashboard and a Capacitor Android app, all running on a shared Supabase backend. The Mac binary compiles as a true Mac App Store app with platform-specific UI: sidebar navigation, Mac-native auth (no GoogleSignIn SDK on Mac), and proper form styles. iOS and Mac share the same SwiftUI source files; iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards. A native visionOS app is in development — a floating volume timer that stays visible alongside other apps so freelancers can track time without context switching.</p>
-            <p><strong>Payments.</strong> Buying Pro on any platform unlocks every other — RevenueCat keeps iOS (StoreKit), Android (Google Play Billing), and web (Stripe) in sync through a single entitlement, so any platform can verify Pro status without knowing where the purchase happened. Universal Purchase on iOS and Mac means one App Store payment covers both.</p>
-            <p><strong>Push notifications.</strong> A Deno Edge Function on Supabase handles APNs delivery — it signs an ES256 JWT per request, routes each token to sandbox or production based on build type, and auto-removes stale tokens on 410. Device tokens are registered on first launch and the admin can broadcast to all iOS and Mac users from the web dashboard.</p>
-            <p><strong>Automated email.</strong> A weekly digest fires every Monday with each user's hours and earnings. A re-engagement email goes out to users who tracked sessions 7–30 days ago but have gone quiet. Both run as Vercel cron jobs and send via Resend from a verified custom domain.</p>
+            <p><strong>Platforms.</strong> Native SwiftUI apps for iPhone, Apple Watch, and Mac (a true macOS target, not Catalyst), a React web dashboard, and a Capacitor Android app — all on one Supabase backend. A visionOS version is in development.</p>
+            <p><strong>Payments.</strong> StoreKit, Google Play Billing, and Stripe all feed one Supabase subscriptions table — no third-party billing service. Writes are server-only: Stripe purchases arrive through a webhook, so a client can't grant itself Pro. Universal Purchase means one App Store payment covers iPhone and Mac.</p>
+            <p><strong>Push notifications.</strong> A Supabase Edge Function delivers through APNs and Firebase Cloud Messaging — signing an ES256 JWT per request, routing sandbox vs. production, and pruning dead tokens. Permission is requested after the first tracked session rather than at launch, and a device's token is removed on sign-out.</p>
+            <p><strong>Automated email.</strong> A Monday digest with each user's hours, and a re-engagement email for users who've gone quiet — both Vercel cron jobs sending through Resend, with signed one-click unsubscribe links.</p>
         </div>
 
         <div class="case-section">
@@ -289,7 +289,7 @@
 
         <div class="case-section">
             <h3>Apple Watch</h3>
-            <p>The Watch app lets you start, pause, and stop a timer from your wrist — no phone needed. It syncs to the same session in real time.</p>
+            <p>Start, pause, and stop a timer from your wrist — no phone needed. When you stop, the session syncs to your iPhone and every other device.</p>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item" style="width:220px;">
                     <img class="screenshot-bezel" src="assets/images/tallyios/watch-frame-16.webp" alt="Tally Apple Watch app - start screen showing client and play button" loading="lazy" style="border-radius:12px;">
@@ -318,31 +318,42 @@
 
         <div class="case-section">
             <h3>Native macOS App</h3>
-            <p>Tally on Mac is a fully native macOS target — not Catalyst, not "iPhone &amp; iPad Apps on Mac." It compiles a true Mac binary, ships in the Mac section of the App Store, and uses Mac-native UI patterns throughout: sidebar navigation, Mac-specific auth (Apple Sign-In and email/password — GoogleSignIn has no Mac SDK), proper form styles, and no iOS sheet behaviors that don't translate.</p>
-            <p>The Mac and iOS targets share the same SwiftUI source files via Xcode's synchronized folder groups. iOS-only APIs are excluded at compile time with <code>#if os(iOS)</code> guards across the shared views. A matching bundle ID enables Universal Purchase — buy Pro or Business on iPhone and it unlocks on Mac automatically, no second purchase.</p>
+            <p>A fully native macOS target — not Catalyst — with Mac patterns throughout: sidebar navigation, right-click to edit or delete sessions, and Mac-specific sign-in (Apple and email; Google has no Mac SDK).</p>
+            <p>Mac and iOS share the same SwiftUI source, with iOS-only APIs excluded by <code>#if os(iOS)</code> guards. A shared bundle ID enables Universal Purchase: buy on iPhone, unlocked on Mac.</p>
             <img src="assets/images/tallyios/appstore/macbook-tally.webp" alt="Tally running on macOS — native Mac app with sidebar navigation and a live timer for Acme Corp" loading="lazy" style="width:100%;max-width:820px;display:block;border-radius:12px;margin-top:1.5em;">
         </div>
 
         <div class="case-section">
             <h3>Core Features</h3>
             <ul>
-                <li>Timer with pause/resume and manual session entry</li>
+                <li>Timer with pause/resume, plus manual entry by duration or start–end time</li>
                 <li>"Log again" shortcut - re-open the same client and task from any recent session</li>
                 <li>Weekly hour goal with per-client sub-goals and progress bars</li>
                 <li>Budget tracker per client - progress bar turns red when over budget</li>
                 <li>Reports showing hours and earnings side-by-side with period-over-period comparison</li>
                 <li>Streak tracking - consecutive days logged, highlighted at 3+ days</li>
-                <li>Session calendar and CSV export</li>
+                <li>Session calendar and CSV export with start/end times, team, rate, and amount</li>
+                <li>Team dashboard by week, month, or all time, with per-member hours</li>
                 <li>Web app adds voice control - say "start", "pause", or "save" to control the timer hands-free</li>
                 <li>Upgrade modal triggered at the client limit - highest-intent upgrade moment surfaced in-context rather than as an error string</li>
-                <li>Automated re-engagement emails to lapsed users via Vercel cron + Resend</li>
-                <li>Admin push notification broadcast — send APNs messages to all iOS and Mac users from the web dashboard</li>
+                <li>Admin push broadcast to iOS, Mac, and Android users from the web dashboard</li>
             </ul>
         </div>
 
         <div class="case-section">
             <h3>Web Dashboard</h3>
             <p>Built with React and Vite - a time tracker has no SEO requirements, so it deploys as static files on Vercel with no framework overhead. The public demo account is seeded with realistic sessions that automatically adjust to the current week - a GitHub Actions cron job runs nightly to delete and re-seed data, so the dashboard always shows meaningful numbers no matter when someone visits.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>Engineering Practices</h3>
+            <ul>
+                <li><strong>CI</strong> — GitHub Actions builds the iPhone, Mac, and visionOS apps and lints and builds the web app on every push</li>
+                <li><strong>Local backend</strong> — a full Supabase stack runs in Docker with seeded test accounts, so testing never touches production</li>
+                <li><strong>Versioned database</strong> — schema changes ship as migrations, tested locally before they reach production</li>
+                <li><strong>Releases</strong> — every App Store version is tagged with notes on GitHub; Dependabot keeps dependencies current</li>
+                <li><strong>Privacy</strong> — analytics load only after consent, and every marketing email has one-click unsubscribe</li>
+            </ul>
         </div>
 
         <div class="case-section">
@@ -385,7 +396,7 @@
 
         <div class="case-section" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Nearly 300 downloads and 63K+ App Store impressions since launch — built and shipped solo. Tally is live on the iOS App Store, in beta on Google Play, and the Mac version is in review. The same account works across all of them.</p>
+            <p>Nearly 300 downloads and 63K+ App Store impressions since launch — built and shipped solo. Tally is live on the App Store for iPhone and Mac and in beta on Google Play, with one account across all of them.</p>
             <p>It's the most complex thing I've built — not because any single piece is hard, but because five platforms, two payment systems, and a shared backend all have to be correct at once. It all has to work, and it does.</p>
         </div>
 
