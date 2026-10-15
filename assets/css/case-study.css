@@ -437,7 +437,7 @@ p.ipad-item-label {
     line-height: 1.4;
 }
 /* Lets iphone-bezel fill the scroll item instead of capping at 270px */
-.screenshot-bezel { max-width: 100% !important; }
+.screenshot-bezel { max-width: 100% !important; height: auto; }
 
 /* Desktop browser screenshot gallery */
 .desktop-ss-item {
