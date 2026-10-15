@@ -323,7 +323,7 @@
                     <p>Skins aren't just colours, either. Each has its own physics - Frozen barely yields until you warm it up with your finger, and it warms <em>where you touch it</em>, so one end can soften while the rest stays solid. Each has its own sound, generated live and fed the dent's depth and speed every frame so it tracks what your hand is doing. And each has a rarity, a serial number, a written provenance story, a certificate and a trading card.</p>
                 </div>
                 <div class="sb-auth-split-phone">
-                    <img src="assets/images/squishy-butter/butter-9.jpg" alt="Classic Butter - certificate details and provenance story" loading="lazy" style="width:220px;max-width:100%;display:block;border-radius:20px;">
+                    <img src="assets/images/squishy-butter/squish-golden.jpg" alt="Classic Butter dented mid-squish" loading="lazy" style="width:220px;max-width:100%;display:block;border-radius:20px;">
                 </div>
             </div>
             <div class="sb-marquee-wrap">
@@ -434,7 +434,7 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <div class="sb-odds-track"><div class="sb-odds-bar sb-odds-bar--legendary"></div></div>
                 </div>
             </div>
-            <img src="assets/images/squishy-butter/prices.png" alt="Coin shop - Stick, Case, Crate, and Pallet packages" loading="lazy" style="width:100%;border-radius:12px;display:block;margin-top:1.75em;">
+            <img src="assets/images/squishy-butter/prices.png" alt="Coin shop - one-time Starter Pat plus Stick, Case, Crate, and Pallet packages" loading="lazy" style="width:100%;border-radius:12px;display:block;margin-top:1.75em;">
         </div>
 
         <div class="case-section">
@@ -488,6 +488,13 @@ return Math.max(6, Math.min(48, affordable));</div>
             <h3>Hardening the Economy</h3>
             <p>Before a release I audited the coin economy end to end, client and database, and found real holes. A server-only function that credits purchases had never had its default public access revoked, so in principle anyone with the public API key could grant themselves coins. And because players could edit their own profile row, reward dates like the last daily claim could be reset to collect the same reward again.</p>
             <p>The fix was one migration: lock every coin-granting function to the server, and turn the profile guard from a block-list into an allow-list - players can change their name, avatar and settings, and nothing else. Purchases are now capped by what the store actually reports, so a fabricated transaction ID can't mint coins; web payments record and credit in one atomic step; and if an app purchase is interrupted after the charge, the coins are recovered automatically on the next sign-in.</p>
+            <div role="img" aria-label="Purchase flow: the app sends a purchase to a server function, which verifies it with the store, then a locked database function credits coins exactly once." style="display:flex;flex-wrap:wrap;gap:0.75em;margin:1.25em 0 1.5em;">
+                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Client</span><strong style="font-size:0.95em;">iOS · Android · Mac · Web</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Sign in before checkout. Never decides coins or pulls.</span></div>
+                <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
+                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Edge functions</span><strong style="font-size:0.95em;">Verify the purchase</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">RevenueCat purchase count, Apple-signed StoreKit transactions, Stripe signatures. Fails closed.</span></div>
+                <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
+                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Postgres</span><strong style="font-size:0.95em;">Credit exactly once</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Server-only functions, per-user lock, idempotent transaction IDs. Profile changes allow-listed.</span></div>
+            </div>
             <p>To make that testable without touching real players, I rebuilt the backend so a complete local copy of the database comes up with one command, seeded with the full catalogue and test accounts. Thirty-seven SQL tests attack each hole as an anonymous or signed-in user and confirm it stays closed; they run locally before every database change ships.</p>
         </div>
 
@@ -565,36 +572,36 @@ return Math.max(6, Math.min(48, affordable));</div>
             <h3>iOS</h3>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-2.jpg" alt="Navigation drawer - Dairy Delivery, Buy Coins, My Butters, Leaderboard, Trading Card, Certificate" loading="lazy">
-                    <figcaption>One swipe back to squishing</figcaption>
+                    <img src="assets/images/squishy-butter/as-iphone-01-squish.jpg" alt="Squish screen - Classic Butter dented mid-press" loading="lazy">
+                    <figcaption>Real soft-body squish</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-3.jpg" alt="Full menu - Sound Mode, Dynamic Background, Haptics, and Account with coin balance" loading="lazy">
-                    <figcaption>Settings, haptics, and your coin balance</figcaption>
+                    <img src="assets/images/squishy-butter/as-iphone-02-skins.jpg" alt="Lava Butter on the Vaporwave stage" loading="lazy">
+                    <figcaption>Every butter squishes differently</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-4.jpg" alt="Customization - 27 butter colors, expression picker, and title selector" loading="lazy">
-                    <figcaption>Pick your color, expression, and title</figcaption>
+                    <img src="assets/images/squishy-butter/as-iphone-03-reveal.jpg" alt="Dairy Delivery reveal - Stained Glass, Legendary, serial No. 0007" loading="lazy">
+                    <figcaption>The reveal</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-5.jpg" alt="Dairy Delivery - order tracking screen with delivery details" loading="lazy">
-                    <figcaption>Dairy Delivery - track your drop</figcaption>
+                    <img src="assets/images/squishy-butter/as-iphone-04-collection.jpg" alt="Cold store collection grid filtered to Epic" loading="lazy">
+                    <figcaption>Your collection</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-6.jpg" alt="Dairy Delivery truck animation en route" loading="lazy">
-                    <figcaption>The truck is on its way</figcaption>
-                </figure>
-                <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-7.jpg" alt="Classic Butter skin - trading card with rarity and serial number" loading="lazy">
-                    <figcaption>Every skin gets a trading card</figcaption>
-                </figure>
-                <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-10.jpg" alt="Classic Butter certificate of authenticity with provenance details" loading="lazy">
+                    <img src="assets/images/squishy-butter/as-iphone-05-certificate.jpg" alt="Kintsugi certificate of authenticity" loading="lazy">
                     <figcaption>Certificate of authenticity</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-8.jpg" alt="Stock Up - Stick, Case, Crate, and Pallet coin packages" loading="lazy">
-                    <figcaption>Four ways to stock up on coins</figcaption>
+                    <img src="assets/images/squishy-butter/as-iphone-06-card.jpg" alt="Galaxy Butter trading card" loading="lazy">
+                    <figcaption>Every skin gets a trading card</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/as-iphone-07-leaderboard.jpg" alt="Live leaderboard of top squishers" loading="lazy">
+                    <figcaption>Live leaderboards</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/as-iphone-08-delivery.jpg" alt="Dairy Delivery with pity counters and published drop rates" loading="lazy">
+                    <figcaption>Pity counters and published odds</figcaption>
                 </figure>
             </div>
         </div>
@@ -604,24 +611,24 @@ return Math.max(6, Math.min(48, affordable));</div>
             <p>The app scales naturally to iPad — the butter gets more room to breathe and the wider canvas makes squishing feel even more tactile. There's also a native Mac app: a lightweight window around the web build with StoreKit purchases, so your collection, coins and squish count are the same on every device.</p>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
-                    <img src="assets/images/squishy-butter/butter-12.jpg" alt="Squishy Butter on iPad - main squish screen with Classic Butter and mini butters floating around it" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
+                    <img src="assets/images/squishy-butter/as-ipad-01-squish.jpg" alt="Squishy Butter on iPad - squish screen" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
                     <figcaption>Main squish screen</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
-                    <img src="assets/images/squishy-butter/butter-13.jpg" alt="Squishy Butter on iPad - butter dented mid-squish with First Ten achievement badge" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
-                    <figcaption>Mid-squish with achievement</figcaption>
+                    <img src="assets/images/squishy-butter/as-ipad-02-skins.jpg" alt="Squishy Butter on iPad - Lava Butter on the Vaporwave stage" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
+                    <figcaption>More room for every skin</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
-                    <img src="assets/images/squishy-butter/butter-16.jpg" alt="Squishy Butter on iPad - profile editor showing color picker, expressions, and title options" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
-                    <figcaption>Profile &amp; customization</figcaption>
-                </figure>
-                <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
-                    <img src="assets/images/squishy-butter/butter-15.jpg" alt="Squishy Butter on iPad - Classic Butter certificate of authenticity with provenance details" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
+                    <img src="assets/images/squishy-butter/as-ipad-05-certificate.jpg" alt="Squishy Butter on iPad - certificate of authenticity" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
                     <figcaption>Certificate of authenticity</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
-                    <img src="assets/images/squishy-butter/butter-18.jpg" alt="Squishy Butter on iPad - Classic Butter trading card reveal" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
-                    <figcaption>Trading card reveal</figcaption>
+                    <img src="assets/images/squishy-butter/as-ipad-06-card.jpg" alt="Squishy Butter on iPad - Galaxy Butter trading card" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
+                    <figcaption>Trading card</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
+                    <img src="assets/images/squishy-butter/as-ipad-08-delivery.jpg" alt="Squishy Butter on iPad - Dairy Delivery with drop rates" loading="lazy" style="height:auto;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);">
+                    <figcaption>Dairy Delivery</figcaption>
                 </figure>
             </div>
         </div>
@@ -640,10 +647,6 @@ return Math.max(6, Math.min(48, affordable));</div>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
                     <img src="assets/images/squishy-butter/butter-23-android.jpg" alt="Android customization - butter color and expression picker" loading="lazy">
                     <figcaption>Pick your color, expression, and title</figcaption>
-                </figure>
-                <figure class="sb-scroll-item sb-scroll-item--phone">
-                    <img src="assets/images/squishy-butter/butter-25-android.jpg" alt="Android Stock Up - Stick, Case, Crate, and Pallet coin packages" loading="lazy">
-                    <figcaption>Four ways to stock up on coins</figcaption>
                 </figure>
                 <figure class="sb-scroll-item sb-scroll-item--phone">
                     <img src="assets/images/squishy-butter/butter-26-android.jpg" alt="Android Classic Butter skin - trading card with rarity and serial" loading="lazy">
