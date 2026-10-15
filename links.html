@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
         .links-page {
             max-width: 640px;
@@ -238,7 +240,7 @@
 <body>
 
     <header id="header">
-        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -465,7 +467,8 @@
                 <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
                 <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
                     <span>Detroit, MI &middot; iOS, visionOS &amp; Full-Stack Engineer &middot; &copy; 2026</span>
-                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a></div>
+                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                    <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a></div>
             </div>
             <ul class="footer-social">
                 <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>

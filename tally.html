@@ -18,10 +18,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/case-study.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
         :root { --case-accent: #4361EE; }
         .screenshot-scroll-track { display: flex; gap: 1.8em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 1em 0 1.5em; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
@@ -55,26 +57,12 @@
         ]
     }
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLNJGZN8P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GTLNJGZN8P');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yaar5e101p");
-</script>
+<script src="assets/js/consent.js" defer></script>
 </head>
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -222,27 +210,27 @@
             <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">Android <span style="font-size:0.8em;font-weight:500;color:var(--color-text-muted);margin-left:0.3em;">Beta</span></h4>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-33.webp" alt="One tap to start billing — client, note, timer done in seconds on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-33.webp" alt="One tap to start billing — client, note, timer done in seconds on Android" loading="lazy" width="739" height="1600">
                     <p>Track Time</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-40.webp" alt="Every client, every rate — set rates once, bill automatically on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-40.webp" alt="Every client, every rate — set rates once, bill automatically on Android" loading="lazy" width="739" height="1600">
                     <p>Client Rates</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-41.webp" alt="See where your time goes — every hour mapped by day and client on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-41.webp" alt="See where your time goes — every hour mapped by day and client on Android" loading="lazy" width="739" height="1600">
                     <p>Activity</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-42.webp" alt="Know what you earned — hours and revenue broken down by client on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-42.webp" alt="Know what you earned — hours and revenue broken down by client on Android" loading="lazy" width="739" height="1600">
                     <p>Reports</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-43.webp" alt="Run your whole team — track hours across every member, together on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-43.webp" alt="Run your whole team — track hours across every member, together on Android" loading="lazy" width="739" height="1600">
                     <p>Team Dashboard</p>
                 </div>
                 <div class="screenshot-scroll-item">
-                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-44.webp" alt="Your full work history — filter, edit, and export every session on Android" loading="lazy">
+                    <img class="screenshot-bezel" src="assets/images/tallyandroid/android-frame-44.webp" alt="Your full work history — filter, edit, and export every session on Android" loading="lazy" width="739" height="1600">
                     <p>Sessions</p>
                 </div>
             </div>
@@ -414,7 +402,7 @@
     <div style="background:#4361EE;padding:3rem 1.5rem;text-align:center;">
         <div style="max-width:860px;margin:0 auto;">
         <h2 style="font-size:1.25rem;font-weight:600;color:#fff;margin:0 0 0.5rem;">Stay in the loop</h2>
-        <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1.25rem;">Get notified when Tally ships new features. No spam.</p>
+        <p style="color:#fff;font-size:0.95rem;margin:0 0 1.25rem;">Get notified when Tally ships new features. No spam.</p>
         <div id="tally-signup-wrap">
             <form id="tally-signup" style="display:flex;gap:0.5rem;justify-content:center;align-items:center;flex-wrap:wrap;max-width:420px;margin:0 auto;">
                 <input type="email" id="tally-email" placeholder="your@email.com" required
@@ -483,6 +471,7 @@
                 <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
                     <span>Detroit, MI &middot; iOS, visionOS &amp; Full-Stack Engineer &middot; &copy; 2026</span>
                     <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                    <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a>
                     <a class="footer-legal" href="/links.html">Apps &amp; Beta Testing</a></div>
             </div>
             <ul class="footer-social">

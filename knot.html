@@ -18,10 +18,12 @@
     <meta name="twitter:description" content="A multi-tenant web platform built solo. One Node/Express API and one Supabase database. 2 real clients, 4 spec deployments." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/case-study.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -42,22 +44,7 @@
         ]
     }
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLNJGZN8P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GTLNJGZN8P');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yaar5e101p");
-</script>
-    <style>
+<style>
         :root { --case-accent: #2563eb; }
         .knot-vertical-grid {
             display: grid;
@@ -151,12 +138,13 @@
             color: #065f46;
         }
     </style>
+<script src="assets/js/consent.js" defer></script>
 </head>
 <body class="is-preload">
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -362,6 +350,7 @@
                 <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
                     <span>Detroit, MI &middot; iOS, visionOS &amp; Full-Stack Engineer &middot; &copy; 2026</span>
                     <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                    <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a>
                     <a class="footer-legal" href="/links.html">Apps &amp; Beta Testing</a></div>
             </div>
             <ul class="footer-social">

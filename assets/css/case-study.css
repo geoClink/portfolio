@@ -740,7 +740,7 @@ p.ipad-item-label {
     justify-content: center;
     padding: 0 8px;
     font-size: 11.5px;
-    color: var(--color-text-muted);
+    color: #555;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.1px;
     white-space: nowrap;
