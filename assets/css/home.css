@@ -1300,88 +1300,124 @@ body::before {
 
 /* ── Tally feature (sits under the hero, beside Squishy Butter) ── */
 .tally-feature {
-    --tally-accent: #4361EE;
+    --tally-accent: #2F6BFF;
+    --tally-ink: #0B1B3F;
     background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    padding: 3.5em 0;
+    padding: 3.5em 1.5em;
+}
+.tally-feature-card {
+    max-width: 1060px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(47, 107, 255, 0.14);
+    background:
+        radial-gradient(60% 80% at 85% 20%, rgba(91, 141, 255, 0.28), transparent 70%),
+        radial-gradient(50% 60% at 10% 100%, rgba(167, 139, 250, 0.18), transparent 70%),
+        linear-gradient(160deg, #F4F8FF 0%, #E9F0FF 55%, #F6F3FF 100%);
+    box-shadow: 0 30px 60px -30px rgba(23, 55, 140, 0.28);
 }
 .tally-feature-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 2em;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    gap: 3.5em;
-}
-.tally-feature-text { flex: 1; min-width: 0; }
-.tally-feature-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.6em;
-    font-size: 0.72em;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin: 0 0 1em;
-}
-.tally-feature-eyebrow img {
-    width: 28px;
-    height: 28px;
-    border-radius: 7px;
-    display: block;
-}
-.tally-feature-title {
-    font-size: 2.1em;
-    font-weight: 800;
-    color: var(--color-heading);
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    margin: 0 0 0.35em;
-}
-.tally-feature-pitch {
-    font-size: 1.05em;
-    line-height: 1.6;
-    color: var(--color-text);
-    margin: 0 0 1.5em;
-    max-width: 46ch;
-}
-.tally-feature-facts {
-    list-style: none;
-    margin: 0 0 1.75em;
-    padding: 0;
+    position: relative;
+    padding: 3.25em 3.25em 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6em;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.5em;
+    align-items: center;
 }
-.tally-feature-facts li {
-    margin: 0;
-    padding: 0.8em 0.95em;
-    background: var(--color-surface);
-    border-radius: 8px;
-    border-left: 3px solid var(--tally-accent);
-}
-.tally-fact-label {
-    display: block;
-    font-size: 0.62em;
+.tally-feature-text { min-width: 0; padding-bottom: 3.25em; }
+.tally-feature-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    font-size: 0.7em;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 0.3em;
+    color: var(--tally-accent);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(47, 107, 255, 0.18);
+    border-radius: 999px;
+    padding: 0.35em 0.9em 0.35em 0.4em;
+    margin: 0 0 1.2em;
 }
-.tally-fact-value {
+.tally-feature-eyebrow img {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
     display: block;
-    font-size: 0.85em;
-    font-weight: 500;
-    line-height: 1.45;
-    color: var(--color-heading);
+}
+.tally-feature-title {
+    font-size: 2.6em;
+    font-weight: 800;
+    color: var(--tally-ink);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin: 0 0 0.4em;
+}
+.tally-feature-title span { color: var(--tally-accent); }
+.tally-feature-pitch {
+    font-size: 1.02em;
+    line-height: 1.65;
+    color: #2A3550;
+    margin: 0 0 1.6em;
+    max-width: 44ch;
+}
+.tally-feature-stats {
+    list-style: none;
+    margin: 0 0 1.4em;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5em;
+}
+.tally-feature-stats li {
+    margin: 0;
+    padding: 0.75em 0.7em;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 6px 16px -10px rgba(23, 55, 140, 0.35);
+}
+.tally-stat-value {
+    display: block;
+    font-size: 1.45em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--tally-ink);
+    line-height: 1.1;
+}
+.tally-stat-label {
+    display: block;
+    font-size: 0.68em;
+    font-weight: 600;
+    color: #5A6785;
+    margin-top: 0.3em;
+    line-height: 1.35;
+}
+.tally-feature-pills {
+    list-style: none;
+    margin: 0 0 1.8em;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+}
+.tally-feature-pills li {
+    margin: 0;
+    font-size: 0.74em;
+    font-weight: 600;
+    color: #24314F;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(11, 27, 63, 0.08);
+    border-radius: 999px;
+    padding: 0.35em 0.85em;
 }
 .tally-feature-ctas {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.8em;
     flex-wrap: wrap;
 }
 .tally-btn-primary,
@@ -1391,16 +1427,16 @@ body::before {
     align-items: center;
     font-size: 0.88em;
     font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 0.75em 1.6em;
-    border-radius: 6px;
-    background: var(--color-heading);
-    color: var(--color-on-dark) !important;
+    letter-spacing: 0.02em;
+    padding: 0.8em 1.6em;
+    border-radius: 999px;
+    background: var(--tally-ink);
+    color: #fff !important;
     text-decoration: none;
     border-bottom: none !important;
-    transition: opacity 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.tally-btn-primary:hover { opacity: 0.85; }
+.tally-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 .tally-btn-secondary,
 .tally-btn-secondary:link,
 .tally-btn-secondary:visited {
@@ -1408,56 +1444,70 @@ body::before {
     align-items: center;
     font-size: 0.88em;
     font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 0.75em 1.6em;
-    border-radius: 6px;
-    background: transparent;
-    color: var(--color-heading) !important;
+    letter-spacing: 0.02em;
+    padding: 0.8em 1.4em;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--tally-ink) !important;
     text-decoration: none;
-    border: 1.5px solid var(--color-border) !important;
+    border: 1px solid rgba(11, 27, 63, 0.12) !important;
     transition: border-color 0.2s ease;
 }
-.tally-btn-secondary:hover { border-color: var(--color-heading) !important; }
+.tally-btn-secondary:hover { border-color: var(--tally-ink) !important; }
+.tally-feature-badge img { display: block; height: 40px; width: auto; }
 
-/* iPhone bezel: same frame as .phone-mockup in case-study.css */
+/* Device stage: the phone rises from the bottom edge of the card, with moments from the app floating beside it */
 .tally-feature-device {
-    flex-shrink: 0;
+    position: relative;
+    align-self: end;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.9em;
+    justify-content: center;
+    min-height: 470px;
+}
+.tally-feature-glow {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    width: 340px;
+    height: 340px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(47, 107, 255, 0.35), transparent 65%);
+    filter: blur(10px);
+    pointer-events: none;
 }
 .tally-phone {
-    width: 250px;
-    background: #111113;
-    border-radius: 40px;
-    padding: 4px 4px 6px;
     position: relative;
+    width: 270px;
+    margin-bottom: -150px; /* cropped by the card's bottom edge */
+    background: #111113;
+    border-radius: 44px;
+    padding: 5px 5px 7px;
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.1),
         0 0 0 1.5px #5c5c61,
         0 0 0 3.5px #111113,
         0 0 0 5px #3e3e43,
-        0 18px 40px rgba(0,0,0,0.16);
+        0 40px 70px -20px rgba(11, 27, 63, 0.45);
 }
 .tally-phone::before {
     content: '';
     position: absolute;
     right: -8px;
-    top: 130px;
+    top: 140px;
     width: 4px;
-    height: 54px;
+    height: 58px;
     background: #4a4a50;
     border-radius: 0 3px 3px 0;
 }
 .tally-phone::after {
     content: '';
     position: absolute;
-    top: 9px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 30%;
-    height: 17px;
+    height: 18px;
     background: #111113;
     border-radius: 9px;
     pointer-events: none;
@@ -1466,26 +1516,75 @@ body::before {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 36px;
+    border-radius: 39px;
 }
-.tally-feature-caption {
+.tally-moment {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    max-width: 230px;
+    padding: 0.6em 0.85em 0.6em 0.6em;
+    background: rgba(255, 255, 255, 0.86);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 16px 34px -14px rgba(11, 27, 63, 0.35);
     font-size: 0.72em;
-    color: var(--color-text-muted);
-    font-style: italic;
-    margin: 0.4em 0 0;
+    line-height: 1.35;
+    color: #24314F;
+    animation: tally-float 6s ease-in-out infinite;
+}
+.tally-moment strong { display: block; color: var(--tally-ink); font-size: 1.05em; }
+.tally-moment-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+    color: #fff;
+}
+.tally-moment-jira { top: 40px; left: -10px; }
+.tally-moment-jira .tally-moment-icon { background: #2F6BFF; }
+.tally-moment-calendar { top: 190px; right: -18px; animation-delay: -2s; }
+.tally-moment-calendar .tally-moment-icon { background: #8B5CF6; }
+.tally-moment-github { top: 330px; left: -24px; animation-delay: -4s; }
+.tally-moment-github .tally-moment-icon { background: #111827; }
+@keyframes tally-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tally-moment { animation: none; }
 }
 
+@media (max-width: 900px) {
+    .tally-feature-inner { padding: 2.5em 2em 0; gap: 1.5em; }
+    .tally-feature-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tally-moment-jira { left: -30px; }
+    .tally-moment-github { left: -40px; }
+}
 @media (max-width: 736px) {
-    .tally-feature { padding: 2.25em 0 2.5em; }
-    .tally-feature-inner { padding: 0 1.25em; flex-direction: column; align-items: stretch; gap: 2em; }
-    .tally-feature-title { font-size: 1.7em; }
-    .tally-feature-device { align-items: center; }
-    .tally-phone { width: 220px; border-radius: 36px; }
-    .tally-phone img { border-radius: 32px; }
-    .tally-phone::before { top: 115px; height: 48px; }
+    .tally-feature { padding: 2em 1em; }
+    .tally-feature-card { border-radius: 22px; }
+    .tally-feature-inner { grid-template-columns: 1fr; padding: 2em 1.4em 0; gap: 0.5em; }
+    .tally-feature-text { padding-bottom: 1em; }
+    .tally-feature-title { font-size: 2em; }
+    .tally-feature-device { min-height: 400px; }
+    .tally-phone { width: 230px; border-radius: 38px; margin-bottom: -130px; }
+    .tally-phone img { border-radius: 33px; }
+    .tally-phone::before { top: 120px; height: 50px; }
+    .tally-moment { font-size: 0.66em; max-width: 190px; }
+    .tally-moment-jira { top: 20px; left: 0; }
+    .tally-moment-calendar { top: 150px; right: 0; }
+    .tally-moment-github { display: none; }
 }
 @media (max-width: 480px) {
-    .tally-feature-facts { grid-template-columns: 1fr; }
     .tally-feature-ctas { flex-direction: column; align-items: stretch; }
     .tally-btn-primary, .tally-btn-secondary { justify-content: center; }
+    .tally-feature-badge { align-self: center; }
 }

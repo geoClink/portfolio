@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/home.css?v=2" />
+    <link rel="stylesheet" href="assets/css/home.css?v=3" />
 <script src="assets/js/consent.js?v=1" defer></script>
 </head>
 <body class="is-preload">
@@ -118,27 +118,46 @@
 
     <!-- Tally Featured -->
     <section class="tally-feature" aria-labelledby="tally-feature-title">
-        <div class="tally-feature-inner">
-            <div class="tally-feature-text">
-                <p class="tally-feature-eyebrow"><img src="assets/images/tallyios/appicon.webp" alt="" aria-hidden="true" width="28" height="28" />Featured app &middot; Version 1.8</p>
-                <h2 class="tally-feature-title" id="tally-feature-title">Tally - Time Tracker</h2>
-                <p class="tally-feature-pitch">Time tracking for freelancers and small teams, connected to the tools they already work in. Designed, built, and shipped solo.</p>
-                <ul class="tally-feature-facts">
-                    <li><span class="tally-fact-label">Platforms</span><span class="tally-fact-value">iPhone, iPad, Apple Watch, Mac, web, Android beta</span></li>
-                    <li><span class="tally-fact-label">Integrations</span><span class="tally-fact-value">Jira, Linear, GitHub, Google Calendar, Stripe, Claude</span></li>
-                    <li><span class="tally-fact-label">Backend</span><span class="tally-fact-value">One Supabase backend for every app</span></li>
-                    <li><span class="tally-fact-label">Traction</span><span class="tally-fact-value">~300 downloads, 63K+ App Store impressions</span></li>
-                </ul>
-                <div class="tally-feature-ctas">
-                    <a href="tally.html" class="tally-btn-primary">Read the case study</a>
-                    <a href="https://tallytimetracker.com/" class="tally-btn-secondary" target="_blank" rel="noopener noreferrer">tallytimetracker.com ↗</a>
+        <div class="tally-feature-card">
+            <div class="tally-feature-inner">
+                <div class="tally-feature-text">
+                    <p class="tally-feature-eyebrow"><img src="assets/images/tallyios/appicon.webp" alt="" aria-hidden="true" width="24" height="24" />Featured app &middot; Version 1.8</p>
+                    <h2 class="tally-feature-title" id="tally-feature-title">Tally. Time tracking that <span>lives where teams work.</span></h2>
+                    <p class="tally-feature-pitch">A time tracker for freelancers and small teams, connected to the tools they already use. Native apps, a web dashboard and one backend, designed, built and shipped solo.</p>
+                    <ul class="tally-feature-stats">
+                        <li><span class="tally-stat-value">6</span><span class="tally-stat-label">platforms</span></li>
+                        <li><span class="tally-stat-value">6</span><span class="tally-stat-label">integrations</span></li>
+                        <li><span class="tally-stat-value">~300</span><span class="tally-stat-label">downloads</span></li>
+                        <li><span class="tally-stat-value">63K+</span><span class="tally-stat-label">App Store impressions</span></li>
+                    </ul>
+                    <ul class="tally-feature-pills" aria-label="Platforms and integrations">
+                        <li>iPhone</li><li>iPad</li><li>Apple Watch</li><li>Mac</li><li>Web</li><li>Android beta</li>
+                        <li>Jira</li><li>Linear</li><li>GitHub</li><li>Calendar</li><li>Stripe</li><li>Claude</li>
+                    </ul>
+                    <div class="tally-feature-ctas">
+                        <a href="tally.html" class="tally-btn-primary">Read the case study</a>
+                        <a href="https://tallytimetracker.com/" class="tally-btn-secondary" target="_blank" rel="noopener noreferrer">tallytimetracker.com ↗</a>
+                        <a class="tally-feature-badge" href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download Tally on the App Store" height="40" /></a>
+                    </div>
                 </div>
-            </div>
-            <div class="tally-feature-device">
-                <div class="tally-phone">
-                    <img src="assets/images/tallyios/iphone-home.webp" width="660" height="1435" loading="lazy" decoding="async" alt="Tally on iPhone: the timer screen with this week's hours, a contract for Acme Corp with makeup hours, and a weekly goal for River North Group" />
+                <div class="tally-feature-device" aria-hidden="true">
+                    <div class="tally-feature-glow"></div>
+                    <div class="tally-phone">
+                        <img src="assets/images/tallyios/iphone-home.webp" width="660" height="1435" loading="lazy" decoding="async" alt="" />
+                    </div>
+                    <div class="tally-moment tally-moment-jira">
+                        <span class="tally-moment-icon">&#10003;</span>
+                        <span><strong>1h 15m logged to SCRUM-12</strong>Posted to Jira as a worklog</span>
+                    </div>
+                    <div class="tally-moment tally-moment-calendar">
+                        <span class="tally-moment-icon">&#9719;</span>
+                        <span><strong>Meeting you didn't time</strong>Acme sprint review &middot; Add 0.5h</span>
+                    </div>
+                    <div class="tally-moment tally-moment-github">
+                        <span class="tally-moment-icon">&lt;/&gt;</span>
+                        <span><strong>3 commits not tracked</strong>Found on GitHub &middot; Add 1h 30m</span>
+                    </div>
                 </div>
-                <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download Tally on the App Store" height="36" style="display:block;" /></a>
             </div>
         </div>
     </section>

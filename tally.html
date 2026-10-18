@@ -40,11 +40,24 @@
         .case-section .tally-new-item h4 { font-size: 0.9em; margin: 0 0 0.35em; }
         .case-section .tally-new-item p { font-size: 0.9em; line-height: 1.65; color: var(--color-text-muted); margin: 0; }
 
-        /* Demo clips */
-        .tally-demo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1em; margin-top: 1.25em; }
-        .tally-demo-grid figure { margin: 0; }
-        .tally-demo-grid video, .tally-demo-grid img { width: 100%; height: auto; aspect-ratio: 600 / 866; display: block; border-radius: 12px; border: 1px solid var(--color-border); background: var(--color-surface); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-        .tally-demo-grid figcaption { font-size: 0.75em; color: var(--color-text-muted); margin-top: 0.65em; text-align: center; font-style: italic; line-height: 1.45; }
+        /* Demo clips: one player, a list of clips beside it */
+        .tally-demo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5em; align-items: center; margin-top: 1.25em;
+            padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
+            background: radial-gradient(70% 70% at 80% 30%, rgba(67, 97, 238, 0.12), transparent 70%), var(--color-surface); }
+        .tally-demo-tabs { display: flex; flex-direction: column; gap: 0.4em; }
+        .tally-demo-tabs button { all: unset; box-sizing: border-box; display: block; width: 100%; height: auto; line-height: 1.4; text-transform: none; letter-spacing: normal; white-space: normal; box-shadow: none; position: relative; overflow: hidden; text-align: left; cursor: pointer; font: inherit; color: inherit;
+            padding: 0.8em 1em; border-radius: 12px; border: 1px solid transparent; background: transparent; transition: background 0.2s ease, border-color 0.2s ease; }
+        .tally-demo-tabs button:focus-visible { outline: 2px solid var(--case-accent, #4361EE); outline-offset: 2px; }
+        .tally-demo-tabs button:hover { background: rgba(255, 255, 255, 0.6); }
+        .tally-demo-tabs button[aria-selected="true"] { background: var(--color-bg); border-color: var(--color-border); box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.25); }
+        .tally-demo-tabs strong { display: block; font-size: 0.92em; color: var(--color-heading); }
+        .tally-demo-tabs span { display: block; font-size: 0.78em; line-height: 1.45; color: var(--color-text-muted); margin-top: 0.2em; }
+        .tally-demo-progress { position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--case-accent, #4361EE); }
+        .tally-demo-tabs button[aria-selected="false"] .tally-demo-progress { display: none; }
+        .tally-demo-stage { order: -1; display: flex; justify-content: center; }
+        .tally-demo-media { width: 100%; max-width: 330px; height: auto; aspect-ratio: 600 / 866; display: block; border-radius: 18px;
+            border: 1px solid var(--color-border); background: var(--color-bg); box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.35); }
+        .tally-demo-media[hidden] { display: none; }
 
         /* Architecture diagram */
         .tally-arch { margin: 1.25em 0 1.75em; display: flex; flex-direction: column; align-items: stretch; }
@@ -64,7 +77,12 @@
         .tally-arch figcaption { font-size: 0.78em; color: var(--color-text-muted); font-style: italic; text-align: center; margin-top: 0.9em; line-height: 1.5; }
 
         @media (max-width: 736px) {
-            .tally-demo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .tally-demo { grid-template-columns: 1fr; padding: 1em; gap: 1em; }
+            .tally-demo-stage { order: 0; }
+            .tally-demo-tabs { flex-direction: row; overflow-x: auto; scrollbar-width: none; gap: 0.35em; }
+            .tally-demo-tabs button { flex: 0 0 auto; width: auto; padding: 0.55em 0.9em; border-radius: 999px; }
+            .tally-demo-tabs span { display: none; }
+            .tally-demo-media { max-width: 280px; }
         }
         @media (max-width: 600px) {
             .tally-new-grid { grid-template-columns: 1fr; }
@@ -210,24 +228,22 @@
 
         <div class="case-section">
             <h3>See It Work</h3>
-            <p>Short clips from the web app, recorded at phone width.</p>
-            <div class="tally-demo-grid">
-                <figure>
-                    <video class="lazy-video" data-src="assets/videos/tally/jira-demo.mp4" poster="assets/videos/tally/jira-demo.jpg" width="600" height="866" muted loop playsinline preload="none" aria-label="Tapping Jira ticket ACME-42 starts the timer, then stopping and saving logs the time to ACME-42 in Jira"></video>
-                    <figcaption>Start from a Jira ticket. The time is logged on it when you save.</figcaption>
-                </figure>
-                <figure>
-                    <video class="lazy-video" data-src="assets/videos/tally/github-demo.mp4" poster="assets/videos/tally/github-demo.jpg" width="600" height="866" muted loop playsinline preload="none" aria-label="The dashboard lists GitHub commits with no time logged, and tapping Add 2h turns one into a session for Acme Corp"></video>
-                    <figcaption>GitHub commits with no session logged, added in one tap.</figcaption>
-                </figure>
-                <figure>
-                    <video class="lazy-video" data-src="assets/videos/tally/report-demo.mp4" poster="assets/videos/tally/report-demo.jpg" width="600" height="866" muted loop playsinline preload="none" aria-label="Tapping Share and Create report link on a client, then opening the client's page with hours by day, notes, and type of work"></video>
-                    <figcaption>A client report link. The client needs no account.</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/images/tallyios/contracts-demo.webp" width="600" height="866" loading="lazy" decoding="async" alt="Acme Corp contract card: 11 of 33 and a half hours this week, including 13 and a half hours of makeup, with the contract cap 63 percent used">
-                    <figcaption>A contract with makeup hours and a cap.</figcaption>
-                </figure>
+            <p>Short clips from the web app, recorded at phone width. Pick one, or let them play in turn.</p>
+            <div class="tally-demo" data-demo>
+                <div class="tally-demo-tabs" role="tablist" aria-label="Demo clips">
+                    <button type="button" role="tab" id="demo-tab-0" aria-controls="demo-panel" aria-selected="true" data-i="0"><strong>Jira</strong><span>Start from a Jira ticket. The time is logged on it when you save.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel" aria-selected="false" data-i="1"><strong>GitHub</strong><span>Commits with no session logged, added in one tap.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel" aria-selected="false" data-i="2"><strong>Calendar</strong><span>A client meeting with no session, added with the real hours.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-3" aria-controls="demo-panel" aria-selected="false" data-i="3"><strong>Client reports</strong><span>A report link for the client. They need no account.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-4" aria-controls="demo-panel" aria-selected="false" data-i="4"><strong>Contracts</strong><span>Makeup hours and a cap, week by week.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                </div>
+                <div class="tally-demo-stage" id="demo-panel" role="tabpanel" aria-live="polite">
+                    <video class="tally-demo-media" data-src="assets/videos/tally/jira-demo.mp4" poster="assets/videos/tally/jira-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Jira ticket ACME-42 starts the timer, then stopping and saving logs the time to ACME-42 in Jira"></video>
+                    <video class="tally-demo-media" data-src="assets/videos/tally/github-demo.mp4" poster="assets/videos/tally/github-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="The dashboard lists GitHub commits with no time logged, and tapping Add 2h turns one into a session for Acme Corp" hidden></video>
+                    <video class="tally-demo-media" data-src="assets/videos/tally/calendar-demo.mp4" poster="assets/videos/tally/calendar-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Adding a calendar rule that matches guests from acme.com to Acme Corp, then on the dashboard changing a 1 hour Acme sprint review to 0.5 hours and adding it as a 30 minute session" hidden></video>
+                    <video class="tally-demo-media" data-src="assets/videos/tally/report-demo.mp4" poster="assets/videos/tally/report-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Share and Create report link on a client, then opening the client's page with hours by day, notes, and type of work" hidden></video>
+                    <img class="tally-demo-media" src="assets/images/tallyios/contracts-demo.webp" width="600" height="866" loading="lazy" decoding="async" alt="Acme Corp contract card: 11 of 33 and a half hours this week, including 13 and a half hours of makeup, with the contract cap 63 percent used" hidden>
+                </div>
             </div>
         </div>
 
@@ -657,6 +673,69 @@
     });
   }, { rootMargin: '200px 0px' });
   vids.forEach(function (v) { if (reduce) v.controls = true; io.observe(v); });
+})();
+</script>
+<script>
+// See It Work: one clip at a time. Plays in turn while on screen; picking a clip jumps to it.
+(function () {
+  var root = document.querySelector('[data-demo]');
+  if (!root) return;
+  var tabs = root.querySelectorAll('[role="tab"]');
+  var media = root.querySelectorAll('.tally-demo-media');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = 0, visible = false, timer = null;
+
+  function progress(p) { tabs[current].style.setProperty('--p', p); }
+  function next() { show((current + 1) % media.length); }
+  function play() {
+    clearTimeout(timer);
+    var m = media[current];
+    if (!visible) return;
+    if (m.tagName === 'VIDEO') {
+      if (!m.src) { m.src = m.dataset.src; m.load(); }
+      if (reduce) { m.controls = true; return; }
+      m.play().catch(function () {});
+    } else if (!reduce) {
+      var start = Date.now();
+      (function tick() {
+        var p = Math.min(1, (Date.now() - start) / 5000);
+        progress(p);
+        if (p < 1) timer = setTimeout(tick, 100); else next();
+      })();
+    }
+  }
+  function show(i) {
+    media[current].tagName === 'VIDEO' && media[current].pause();
+    clearTimeout(timer);
+    progress(0);
+    tabs[current].setAttribute('aria-selected', 'false');
+    media[current].hidden = true;
+    current = i;
+    tabs[i].setAttribute('aria-selected', 'true');
+    media[i].hidden = false;
+    if (media[i].tagName === 'VIDEO') media[i].currentTime = 0;
+    root.querySelector('.tally-demo-stage').setAttribute('aria-labelledby', tabs[i].id);
+    play();
+  }
+  media.forEach(function (m) {
+    if (m.tagName !== 'VIDEO') return;
+    m.addEventListener('timeupdate', function () { if (m.duration) progress(m.currentTime / m.duration); });
+    m.addEventListener('ended', next);
+  });
+  tabs.forEach(function (t, i) { t.addEventListener('click', function () { show(i); }); });
+  root.querySelector('[role="tablist"]').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    var d = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : -1;
+    show((current + d + media.length) % media.length);
+    tabs[current].focus();
+  });
+  if (!('IntersectionObserver' in window)) { visible = true; play(); return; }
+  new IntersectionObserver(function (entries) {
+    visible = entries[0].isIntersecting;
+    if (visible) play();
+    else { clearTimeout(timer); if (media[current].tagName === 'VIDEO') media[current].pause(); }
+  }, { threshold: 0.35 }).observe(root);
 })();
 </script>
 </body>
