@@ -259,7 +259,7 @@
                     </div>
                     <div class="browser-url">tallytimetracker.com</div>
                 </div>
-                <video class="lazy-video" data-src="assets/images/tallyios/tally-landing-desktop.mp4" poster="assets/images/tallyios/tally-landing-desktop-poster.jpg" muted loop playsinline preload="none" aria-label="Scrolling through the Tally landing page on desktop: hero, how it works, iPhone screens, and pricing" style="width:100%;display:block;"></video>
+                <video class="lazy-video" data-rate="0.4" data-src="assets/images/tallyios/tally-landing-desktop.mp4" poster="assets/images/tallyios/tally-landing-desktop-poster.jpg" muted loop playsinline preload="none" aria-label="Scrolling through the Tally landing page on desktop: hero, how it works, iPhone screens, and pricing" style="width:100%;display:block;"></video>
             </div>
             <p class="iframe-note iframe-note-desktop"><a href="https://tallytimetracker.com/" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
@@ -280,7 +280,7 @@
                             </div>
                         </div>
                         <div class="phone-viewport">
-                            <video class="lazy-video" data-src="assets/images/tallyios/tally-landing-mobile.mp4" poster="assets/images/tallyios/tally-landing-mobile-poster.jpg" muted loop playsinline preload="none" aria-label="Scrolling through the Tally landing page on iPhone" style="width:100%;display:block;"></video>
+                            <video class="lazy-video" data-rate="0.4" data-src="assets/images/tallyios/tally-landing-mobile.mp4" poster="assets/images/tallyios/tally-landing-mobile-poster.jpg" muted loop playsinline preload="none" aria-label="Scrolling through the Tally landing page on iPhone" style="width:100%;display:block;"></video>
                         </div>
                     </div>
                 </div>
@@ -668,11 +668,17 @@
       var v = e.target;
       if (e.isIntersecting) {
         if (!v.src) { v.src = v.dataset.src; v.load(); }
+        if (v.dataset.rate) { v.defaultPlaybackRate = v.playbackRate = Number(v.dataset.rate); }
         if (!reduce) v.play().catch(function () {});
       } else if (!v.paused) { v.pause(); }
     });
   }, { rootMargin: '200px 0px' });
-  vids.forEach(function (v) { if (reduce) v.controls = true; io.observe(v); });
+  vids.forEach(function (v) {
+    if (reduce) v.controls = true;
+    // Slowed recordings: browsers reset the rate when a new source loads, so set it again once it has.
+    if (v.dataset.rate) v.addEventListener('loadedmetadata', function () { v.playbackRate = Number(v.dataset.rate); });
+    io.observe(v);
+  });
 })();
 </script>
 <script>
