@@ -34,12 +34,6 @@
         .screenshot-scroll-item p { font-size: 0.75em; color: var(--color-text-muted); margin-top: 0.65em; text-align: center; font-style: italic; line-height: 1.4; }
         .screenshot-bezel { max-width: 100% !important; }
 
-        /* What's New grid */
-        .tally-new-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75em; margin-top: 1.25em; }
-        .tally-new-item { background: var(--color-surface); border-radius: 8px; border-left: 3px solid var(--case-accent); padding: 1.1em 1.2em; }
-        .case-section .tally-new-item h4 { font-size: 0.9em; margin: 0 0 0.35em; }
-        .case-section .tally-new-item p { font-size: 0.9em; line-height: 1.65; color: var(--color-text-muted); margin: 0; }
-
         /* Demo clips: one player, a list of clips beside it */
         .tally-demo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5em; align-items: center; margin-top: 1.25em;
             padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
@@ -85,7 +79,6 @@
             .tally-demo-media { max-width: 280px; }
         }
         @media (max-width: 600px) {
-            .tally-new-grid { grid-template-columns: 1fr; }
             .tally-arch-row { grid-template-columns: 1fr; }
         }
     </style>
@@ -163,7 +156,7 @@
             </a>
         </div>
 
-        <div class="case-meta">Swift · SwiftUI · React · Vite · Supabase · StoreKit · Stripe · Capacitor · 2026 · Version 1.9 on the App Store</div>
+        <div class="case-meta">Swift · SwiftUI · React · Vite · Supabase · StoreKit · Stripe · Capacitor · 2026</div>
         <div class="case-glance">
             <div class="case-glance-item">
                 <div class="case-glance-label">Role</div>
@@ -179,7 +172,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on iPhone &amp; Mac · Android closed beta · Vision Pro in development</div>
+                <div class="case-glance-value">Live on iPhone, iPad, Watch &amp; Mac · Android closed beta · Vision Pro in development</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Traction</div>
@@ -193,37 +186,6 @@
             <p>At the Apple Developer Academy, I was on a team of five building for a real client. It was a great place to learn how real client work runs, and it showed me a problem I hadn't thought much about: we logged our hours by hand. That manual process cost real time, and about a month of hours were lost before Tally was far enough along to use.</p>
             <p>We needed one place where all five of us could log hours, stay in sync, and show the client what we'd actually worked on. Every tool we tried was either built for solo freelancers with no team layer, or bloated enterprise software that cost more than the project was worth. Tally is the tool we needed: it works for one person or a whole team, runs on the devices people already use, and doesn't charge a subscription just to log hours.</p>
             <p>Those lost hours also shaped where Tally went next. The fix wasn't a better form for typing hours in. It was meeting people in the tools they already use, so a timer starts from the issue you're working on and the time lands back where your team will see it.</p>
-        </div>
-
-        <div class="case-section">
-            <h3>What's New</h3>
-            <p>Tally 1.9 is on the App Store. Here's what it does beyond the timer.</p>
-            <div class="tally-new-grid">
-                <div class="tally-new-item">
-                    <h4>Tickets any time</h4>
-                    <p>Pick a Jira, Linear, Notion, Todoist or Figma task before, during or after a session, with search across every open ticket. The time is posted back when you save.</p>
-                </div>
-                <div class="tally-new-item">
-                    <h4>Offline, one timer everywhere</h4>
-                    <p>Stop the timer with no signal and the session syncs when you're back. Start on the web and the same timer is running on your iPhone.</p>
-                </div>
-                <div class="tally-new-item">
-                    <h4>Contracts</h4>
-                    <p>Weekly or monthly minimums, makeup hours that carry short weeks forward, time off that doesn't count as a shortfall, and a week-by-week view of where each contract stands.</p>
-                </div>
-                <div class="tally-new-item">
-                    <h4>Fix sessions later</h4>
-                    <p>Change the client on a running timer, split a session in two, and give sessions a short title. Team admins can fix a member's time, marked "Added by".</p>
-                </div>
-                <div class="tally-new-item">
-                    <h4>Reports &amp; invoices</h4>
-                    <p>An Hours Report PDF for any week, year or whole contract, a private client report link, and Stripe invoices sent straight from Tally.</p>
-                </div>
-                <div class="tally-new-item">
-                    <h4>Found time &amp; Claude</h4>
-                    <p>GitHub commits and calendar meetings you forgot to time show up as sessions to add. A Claude connector (MCP) answers questions about your hours.</p>
-                </div>
-            </div>
         </div>
 
         <div class="case-section">
@@ -381,7 +343,6 @@
 
         <div class="case-section">
             <h3>How It Works</h3>
-            <p><strong>Free</strong> to start, <strong>Pro</strong> for $9.99 one-time (unlimited clients and full history), or <strong>Business</strong> for $4.99 per user per month (teams, invoicing, and Stripe payments).</p>
             <ul>
                 <li>Timer with pause/resume, or log hours by duration or start–end time</li>
                 <li>Invoices from billable hours, paid through Stripe Connect straight into the freelancer's own account</li>
@@ -437,6 +398,8 @@
         <div class="case-section">
             <h3>Engineering Highlights</h3>
             <ul>
+                <li><strong>Open-source CLI</strong>: a Python command-line timer for Mac that syncs to the same Tally account and logs time to Jira. It's MIT licensed and public, so you can <a href="https://github.com/geoClink/Tally-CLI" target="_blank" rel="noopener noreferrer">read the code on GitHub ↗</a></li>
+                <li><strong>Public API</strong>: a REST API (<a href="https://www.tallytimetracker.com/developers" target="_blank" rel="noopener noreferrer">docs</a>, <a href="https://www.tallytimetracker.com/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI spec</a>) with per-user API keys and read/write scopes, <code>Idempotency-Key</code> for safe retries, cursor paging, and a limit of 120 requests a minute. One versioning rule: v1 only adds, never removes. Webhooks for session and timer events are signed with HMAC-SHA256 and retried at 1 minute, 5 minutes, 30 minutes, 2 hours and 6 hours</li>
                 <li><strong>Shared business logic</strong>: contract math (minimums, makeup hours, time off, caps) lives in one plain JavaScript module used by both the web app and the server functions, and is mirrored in Swift for the native apps, with tests that keep the two in step</li>
                 <li><strong>Automated tests</strong>: Deno tests for the server functions, Swift tests for the Mac app, and end-to-end browser tests that sign in, run a timer, and save a session against a local stack</li>
                 <li><strong>Security</strong>: row-level security on every table, integration tokens encrypted at rest, signed one-click unsubscribe links, and client report links that use unguessable tokens and can be turned off at any time</li>
@@ -447,9 +410,11 @@
 
         <div class="case-section">
             <h3>What Was Hard</h3>
-            <p>My first cross-platform project: iOS, watchOS, Mac, web, and Android all reading and writing one backend, so every layer has to be right at once.</p>
-            <p>Payments were the hardest part: three stores feeding one subscription record, written only by the server so nobody can grant themselves Pro. Getting through App Review took nearly 10 rejections, each for a different guideline, before it shipped.</p>
-            <p>The native Mac target shares iOS source, so iOS-only APIs had to be guarded across dozens of views, and Mac needed its own sign-in flow because Google Sign-In has no Mac SDK.</p>
+            <p><strong>Logging time to Jira exactly once.</strong> When you save a session on a Jira or Linear ticket, Tally posts the time back to that ticket. But a save can be sent twice: a double click, or a save that stalls on a bad connection, gets kept to retry, and then lands after all. Disabling the Save button covers the double click but not the late save, and a duplicate worklog shows the client hours that never happened.</p>
+            <p>So I made both steps safe to repeat. The app gives each session its id before the first try, so the database refuses a second copy and the app counts that as saved. Before posting to the ticket, the server function claims the session: a second request while the first is posting gets "already logged", a failed post gives up its claim so it can be tried again, and a claim stuck for two minutes is taken over. The worklog's id is stored on the session once it's posted.</p>
+            <p>Server tests cover the claim, and end-to-end browser tests save sessions on Jira and Linear tickets and check that each save logs time exactly once, and that double-clicking Save stores one session.</p>
+            <p><strong>Payments and App Review.</strong> Three stores feed one subscription record, written only by the server so nobody can grant themselves Pro. App Review took nearly 10 rejections, each for a different guideline, before it shipped.</p>
+            <p><strong>A real Mac app.</strong> The Mac target shares the iOS source, so iOS-only APIs had to be guarded across dozens of views, and Mac needed its own sign-in because Google Sign-In has no Mac SDK.</p>
         </div>
 
         <div class="case-section">
@@ -491,7 +456,7 @@
 
         <div class="case-section" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Nearly 300 downloads and 63K+ App Store impressions since launch, built and shipped solo. Tally 1.9 is live on the App Store for iPhone, the Mac app is on the Mac App Store, and Android is in closed testing on Google Play, with one account across all of them.</p>
+            <p>Nearly 300 downloads and 63K+ App Store impressions since launch, built and shipped solo. Tally is live on the App Store for iPhone, iPad and Apple Watch, the Mac app is on the Mac App Store, and Android is in closed testing on Google Play, with one account across all of them.</p>
             <p>It's the most complex thing I've built. Not because any single piece is hard, but because five platforms, several payment paths, a shared backend, and a growing list of integrations all have to be correct at once. It all has to work, and it does.</p>
         </div>
 
@@ -506,65 +471,6 @@
             </a>
         </nav>
     </div>
-
-    <!-- Tally update signup -->
-    <div style="background:#4361EE;padding:3rem 1.5rem;text-align:center;">
-        <div style="max-width:860px;margin:0 auto;">
-        <h2 style="font-size:1.25rem;font-weight:600;color:#fff;margin:0 0 0.5rem;">Stay in the loop</h2>
-        <p style="color:#fff;font-size:0.95rem;margin:0 0 1.25rem;">Get notified when Tally ships new features. No spam.</p>
-        <div id="tally-signup-wrap">
-            <form id="tally-signup" style="display:flex;gap:0.5rem;justify-content:center;align-items:center;flex-wrap:wrap;max-width:420px;margin:0 auto;">
-                <input type="email" id="tally-email" placeholder="your@email.com" required
-                    style="flex:1;min-width:0;padding:0.6rem 1rem;border:none;border-radius:6px;font-size:0.95rem;background:#fff;color:#111;outline:none;">
-                <button type="submit"
-                    style="height:auto;line-height:normal;padding:0.6rem 1.25rem;background:#fff;color:#4361EE;border:none;border-radius:6px;font-size:0.95rem;font-weight:700;cursor:pointer;white-space:nowrap;text-transform:none;letter-spacing:normal;">
-                    Notify me
-                </button>
-            </form>
-        </div>
-        <p id="tally-signup-msg" style="display:none;margin-top:0.75rem;font-size:0.9rem;color:#fff;"></p>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('tally-signup').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const msg = document.getElementById('tally-signup-msg');
-            const email = document.getElementById('tally-email').value;
-            btn.disabled = true;
-            btn.textContent = 'Saving…';
-            try {
-                const res = await fetch('https://fcmfuxoblbtxigknwhpz.supabase.co/functions/v1/subscribe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjbWZ1eG9ibGJ0eGlna253aHB6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTQ4MzQsImV4cCI6MjA5NTU3MDgzNH0.YFH0CVGnLAW4ufdj04aAc2e4CZeGxnNsyAfo3n40VPM'
-                    },
-                    body: JSON.stringify({ email })
-                });
-                const data = await res.json();
-                document.getElementById('tally-signup-wrap').style.display = 'none';
-                msg.style.display = 'block';
-                if (data.error === 'already') {
-                    msg.style.color = 'var(--color-text-muted)';
-                    msg.textContent = 'That email is already subscribed.';
-                } else if (data.success) {
-                    msg.style.color = '#16a34a';
-                    msg.textContent = "You're in. We'll reach out when something ships.";
-                } else {
-                    msg.style.color = '#dc2626';
-                    msg.textContent = 'Something went wrong - try again.';
-                }
-            } catch {
-                btn.disabled = false;
-                btn.textContent = 'Notify me';
-                msg.style.display = 'block';
-                msg.style.color = '#dc2626';
-                msg.textContent = 'Something went wrong - try again.';
-            }
-        });
-    </script>
 
     <!-- CTA Band -->
     <div class="page-cta">
