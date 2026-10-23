@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped.html" />
     <meta property="og:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Stamped! is a SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Earn passport stamps, follow curated tours, and explore live city data." />
+    <meta property="og:description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, earn passport stamps, and plan trips with Apple Intelligence." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: Stamped! — SwiftUI iOS app covering 89 cities, curated architectural tours, live weather and events, and a passport stamp collection system." />
+    <meta name="twitter:description" content="Case study: Stamped! — SwiftUI iOS app covering 1,392 landmarks in 140 cities, with a photoreal 3D city map, tap-to-fly pins, Look Around, iCloud sync, and passport stamps." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
-    <meta name="description" content="Stamped! is a SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Earn passport stamps, follow curated tours, and explore live city data." />
+    <meta name="description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, earn passport stamps, and plan trips with Apple Intelligence." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,13 +111,52 @@
             border: 1px solid var(--color-border);
             color: var(--color-text-muted);
         }
+
+        /* What's New grid */
+        .stamped-new-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75em; margin-top: 1.25em; }
+        .stamped-new-item { background: var(--color-surface); border-radius: 8px; border-left: 3px solid var(--case-accent); padding: 1.1em 1.2em; }
+        .case-section .stamped-new-item h4 { font-size: 0.9em; margin: 0 0 0.35em; }
+        .case-section .stamped-new-item p { font-size: 0.9em; line-height: 1.65; color: var(--color-text-muted); margin: 0; }
+
+        /* 3D map demo: the video, with chapter buttons beside it */
+        .stamped-demo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5em; align-items: center; margin-top: 1.25em;
+            padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
+            background: radial-gradient(70% 70% at 80% 30%, rgba(232, 98, 26, 0.14), transparent 70%), var(--color-surface); }
+        .stamped-demo-stage { order: -1; display: flex; justify-content: center; }
+        .stamped-demo-video { width: 100%; max-width: 420px; height: auto; aspect-ratio: 4 / 5; display: block; border-radius: 18px;
+            border: 1px solid var(--color-border); background: #1a1a1a; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.45); }
+        .stamped-demo-chapters { display: flex; flex-direction: column; gap: 0.4em; }
+        .stamped-demo-chapters button { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; text-align: left; font: inherit; color: inherit;
+            padding: 0.8em 1em; border-radius: 12px; border: 1px solid transparent; transition: background 0.2s ease, border-color 0.2s ease; }
+        .stamped-demo-chapters button:hover { background: rgba(255, 255, 255, 0.6); }
+        .stamped-demo-chapters button:focus-visible { outline: 2px solid var(--case-accent); outline-offset: 2px; }
+        .stamped-demo-chapters button[aria-current="true"] { background: var(--color-bg); border-color: var(--color-border); box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.25); }
+        .stamped-demo-chapters strong { display: block; font-size: 0.92em; color: var(--color-heading); }
+        .stamped-demo-chapters span { display: block; font-size: 0.78em; line-height: 1.45; color: var(--color-text-muted); margin-top: 0.2em; }
+        .stamped-demo-chapters .stamped-demo-time { display: inline; font-size: 0.75em; font-weight: 600; color: var(--case-accent); margin: 0 0 0 0.4em; }
+
+        /* App Store screenshots are taller marketing images, so give them more room */
+        .screenshot-scroll-track.appstore .screenshot-scroll-item { width: 240px; }
+        .screenshot-scroll-track.appstore .screenshot-scroll-item img { height: auto; border: none; border-radius: 18px; }
+
+        @media (max-width: 736px) {
+            .stamped-demo { grid-template-columns: 1fr; padding: 1em; gap: 1em; }
+            .stamped-demo-stage { order: 0; }
+            .stamped-demo-chapters { flex-direction: row; overflow-x: auto; scrollbar-width: none; gap: 0.35em; }
+            .stamped-demo-chapters button { flex: 0 0 auto; width: auto; padding: 0.55em 0.9em; border-radius: 999px; }
+            .stamped-demo-chapters span:not(.stamped-demo-time) { display: none; }
+        }
+        @media (max-width: 600px) {
+            .stamped-new-grid { grid-template-columns: 1fr; }
+            .screenshot-scroll-track.appstore .screenshot-scroll-item { width: 200px; }
+        }
     </style>
     <script type="application/ld+json">
     {
        "@context": "https://schema.org",
        "@type": "SoftwareApplication",
        "name": "Stamped! A City Passport",
-       "description": "A SwiftUI iOS app for discovering and collecting architectural landmark passport stamps across 89 cities worldwide.",
+       "description": "A SwiftUI iOS app for discovering and collecting passport stamps at 1,392 architectural landmarks across 140 cities worldwide.",
        "applicationCategory": "TravelApplication",
        "operatingSystem": "iOS",
        "url": "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336",
@@ -174,7 +213,7 @@
         <div class="case-hero">
             <img src="assets/images/stamped/Stamped! City Passport Light No Alpha.webp" alt="Stamped! app icon" class="case-hero-icon" />
             <h2 class="case-title">Stamped! — A City Passport</h2>
-            <p class="case-tagline">A SwiftUI iOS app for discovering and collecting architectural landmarks across 89 cities. Follow curated day-by-day tours, earn passport stamps when you complete a city, and get live weather, events, and dining for wherever you're exploring.</p>
+            <p class="case-tagline">A SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, walk the streets in Look Around, follow day-by-day tours, and earn a passport stamp every time you complete a city.</p>
         </div>
 
         <div class="case-links">
@@ -182,7 +221,7 @@
             <a href="https://github.com/geoClink/Stamped-A-City-Passport" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
 
-        <div class="case-meta">Swift · SwiftUI · MapKit · Open-Meteo · Ticketmaster API · Apple Maps · 2025–2026 · Live on App Store</div>
+        <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · Open-Meteo · Ticketmaster API · 2025–2026 · Live on the App Store · 2.3 in review</div>
 
         <div class="case-glance">
             <div class="case-glance-item">
@@ -190,16 +229,20 @@
                 <div class="case-glance-value">Sole developer</div>
             </div>
             <div class="case-glance-item">
-                <div class="case-glance-label">Platform</div>
-                <div class="case-glance-value">iPhone (iOS)</div>
+                <div class="case-glance-label">Platforms</div>
+                <div class="case-glance-value">iPhone · Vision Pro in development</div>
             </div>
             <div class="case-glance-item">
-                <div class="case-glance-label">Cities</div>
-                <div class="case-glance-value">89 across 5 continents</div>
+                <div class="case-glance-label">Content</div>
+                <div class="case-glance-value">1,392 landmarks · 140 cities</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on the App Store</div>
+                <div class="case-glance-value">Live on the App Store · 2.3 in review</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Origin</div>
+                <div class="case-glance-value">Swift Student Challenge entry</div>
             </div>
         </div>
 
@@ -209,7 +252,93 @@
         </div>
 
         <div class="case-section">
-            <h3>App Screenshots</h3>
+            <h3>See It Work</h3>
+            <p>Recorded on iPhone in New York. Tap a pin and the camera swoops down to it over Apple's 3D city scans, then drop to street level in Look Around.</p>
+            <div class="stamped-demo">
+                <div class="stamped-demo-chapters" aria-label="Video chapters">
+                    <button type="button" data-time="0" aria-current="true"><strong>Fly through the city in 3D<span class="stamped-demo-time">0:00</span></strong><span>Satellite photos over real building heights. Tap a pin and the camera flies to it.</span></button>
+                    <button type="button" data-time="30" aria-current="false"><strong>Then walk the streets<span class="stamped-demo-time">0:30</span></strong><span>Look Around street views, so you know what a building looks like before you go.</span></button>
+                </div>
+                <div class="stamped-demo-stage">
+                    <video class="stamped-demo-video lazy-video" data-src="assets/videos/stamped/stamped-3d-map-tour.mp4" poster="assets/videos/stamped/stamped-3d-map-poster.jpg" width="720" height="900" muted loop playsinline controls preload="none" aria-label="Stamped! on iPhone: flying low over 3D Manhattan from the Empire State Building past skyscrapers, then a street-level Look Around view of the Apple store glass cube on Fifth Avenue"></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>What's New in 2.3</h3>
+            <p>Version 2.3, now in App Store review, turns the city map into the center of the app.</p>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>Photoreal 3D city map</h4>
+                    <p>Satellite imagery draped over Apple's 3D city models, with a tilted camera so the buildings stand up, a compass, and a 2D/3D toggle.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Tap a pin to fly there</h4>
+                    <p>Tapping a landmark swoops the camera down to it before opening its card, so you see the building in 3D first.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>City Explore &amp; ambient audio</h4>
+                    <p>New City Explore views with ambient city sound, plus a sheet that nudges you to scan buildings you visit.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>AR mode, fixed</h4>
+                    <p>AR now turns on the camera reliably, explains when a city has no 3D model yet, and lets you tap buildings and scans.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>Coming in 2.4</h3>
+            <p>Built and in testing, not on the App Store yet.</p>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>Want to Visit</h4>
+                    <p>Heart any landmark, or search Apple Maps for any restaurant, shop, or venue and save it. Saved places get their own pins and sync through iCloud.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Guided city tour</h4>
+                    <p>One button flies between every landmark in walking order, starting nearest to you, pausing on each so you can read its card.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Map card quick actions</h4>
+                    <p>Stamp, Want to Go, and Look Around right on the map card, arrows to step through landmarks, and in-app websites and Ticketmaster events on place cards.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Filters &amp; map styles</h4>
+                    <p>Show not visited, stamped, or Want to Visit, narrow by architectural style, a pulsing pin on the nearest unvisited landmark, and a map/satellite toggle.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>App Store Screenshots</h3>
+            <div class="screenshot-scroll-track appstore">
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/appstore-01-fly-3d.webp" alt="Fly through real cities in 3D: the photoreal 3D map of Manhattan" width="660" height="1434" loading="lazy" />
+                    <p>Photoreal 3D map</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/appstore-02-collect-stamps.webp" alt="Collect stamps at 1,392 landmarks: My Journey with 171 stamps, 16 cities visited and 10 cities mastered" width="660" height="1434" loading="lazy" />
+                    <p>Your journey so far</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/appstore-03-walk-streets.webp" alt="Walk the streets before you go: Look Around at the Apple store on Fifth Avenue" width="660" height="1434" loading="lazy" />
+                    <p>Look Around street view</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/appstore-04-plan-trips.webp" alt="Plan trips with Apple Intelligence: a day-by-day New York architectural itinerary" width="660" height="1434" loading="lazy" />
+                    <p>Apple Intelligence itinerary</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <img src="assets/images/stamped/appstore-05-test-smarts.webp" alt="Test your architecture smarts: a New York Expert quiz question about Apple SoHo" width="660" height="1434" loading="lazy" />
+                    <p>Architecture quiz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section">
+            <h3>More Screens</h3>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item">
                     <img src="assets/images/stamped/stamped-1.webp" alt="Stamped! onboarding — Collect Stamps, Explore the world" loading="lazy" />
@@ -217,11 +346,7 @@
                 </div>
                 <div class="screenshot-scroll-item">
                     <img src="assets/images/stamped/stamped-3.webp" alt="Apple Maps Look Around street view of Detroit" loading="lazy" />
-                    <p>Look Around street view</p>
-                </div>
-                <div class="screenshot-scroll-item">
-                    <img src="assets/images/stamped/stamped-4.png" alt="World explorer — 89 cities across continents" loading="lazy" />
-                    <p>World explorer — 89 cities</p>
+                    <p>Look Around in Detroit</p>
                 </div>
                 <div class="screenshot-scroll-item">
                     <img src="assets/images/stamped/stamped-8.png" alt="City Explored stamp screen for Detroit — dark mode" loading="lazy" />
@@ -256,8 +381,8 @@
 
         <div class="case-section">
             <h3>How It Works</h3>
-            <p>The app organizes the world into continents → countries → cities. A world progress card on the home screen shows how many of the 89 cities you've mastered and your percentage toward completing all of them. Tapping into a city shows a detail page with your progress percentage, a rank badge (like "Urban Insider"), a per-city architecture quiz, and the full landmark list.</p>
-            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. From the city page, you can also pull up a MapKit map with orange pins for stamped landmarks and grey pins for unvisited ones, or jump into Apple Maps Look Around to virtually walk the streets before you arrive. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
+            <p>The app organizes the world into continents → countries → cities. A world progress card on the home screen shows how many of the 140 cities you've mastered and your percentage toward completing all of them. Tapping into a city shows a detail page with your progress percentage, a rank badge (like "Urban Insider"), a per-city architecture quiz, and the full landmark list.</p>
+            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. From the city page, you open a photoreal 3D map of the city with orange pins for stamped landmarks and grey pins for unvisited ones. Tapping any pin flies the camera down to it before its card opens. From any landmark you can jump into Apple Maps Look Around to walk the streets before you arrive. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
             <p>Beyond the architecture, each city surfaces a live travel dossier (local language, airport, transit, currency) alongside real-time weather from Open-Meteo, upcoming events filtered by category from Ticketmaster, and nearby dining from Apple Maps — so you can plan the rest of your day without leaving the app.</p>
         </div>
 
@@ -265,8 +390,8 @@
             <h3>Features</h3>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <strong>89 Cities</strong>
-                    <p>Africa, Asia, Europe, North America, and Oceania. Global progress tracker shows cities mastered and percentage to completion.</p>
+                    <strong>140 Cities</strong>
+                    <p>1,392 landmarks across six continents. Global progress tracker shows cities mastered and percentage to completion.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Passport Stamps</strong>
@@ -277,8 +402,12 @@
                     <p>Curated architectural tours with stop counts, estimated durations, and walking times between each landmark.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Live Map</strong>
-                    <p>MapKit map for each city with stamped vs. unvisited landmark pins. Tap any pin to navigate directly.</p>
+                    <strong>3D City Map</strong>
+                    <p>Photoreal satellite imagery over real building heights, with stamped vs. unvisited pins, a compass, and a 2D/3D toggle. Tap a pin to fly to it.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>iCloud Sync</strong>
+                    <p>Stamps, visit dates, and notes follow you across your devices through iCloud, with no account to create.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Look Around</strong>
@@ -298,7 +427,7 @@
                 </div>
                 <div class="feature-card">
                     <strong>Search</strong>
-                    <p>Search across all 89 cities by city name, landmark name, or architect — results appear instantly.</p>
+                    <p>Search across all 140 cities by city name, landmark name, or architect — results appear instantly.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Rank Badges</strong>
@@ -323,13 +452,16 @@
                 <li>Ticketmaster — upcoming events by category</li>
                 <li>Apple Maps via MapKit — nearby dining</li>
                 <li>Apple Maps Look Around — street-level imagery for supported landmarks</li>
+                <li>Apple Maps 3D imagery — the photoreal city map, from the same scans as Flyover</li>
             </ul>
         </div>
 
         <div class="case-section">
             <h3>Architecture</h3>
             <p>Stamped! is a pure SwiftUI app. The landmark and city content layer is embedded in code — <code>BuildingRegistry</code> maps each <code>City</code> to its landmark list, and <code>CityData</code> holds metadata like nicknames, airport codes, and local transit. This keeps the app fully functional offline for browsing, tracking, and navigation, with the live data layer (weather, events, dining) layered on top where a connection is available.</p>
-            <p>State flows through a central <code>GlobalProgressManager</code> — an <code>ObservableObject</code> singleton that owns all visited IDs and user-attached photos. Visited IDs persist in <code>UserDefaults</code>; photos are written as <code>BuildingID.jpg</code> files in the app's Documents directory and loaded back on startup. City rank and completion percentage are computed properties derived from the visited set, so they're always in sync without separate storage.</p>
+            <p>The 3D map is SwiftUI's <code>Map</code> with <code>.mapStyle(.imagery(elevation: .realistic))</code>. The 3D effect comes from the camera: every move sets a <code>MapCamera</code> pitched 60–65°, because a camera looking straight down turns the same data into a flat satellite photo.</p>
+            <p>The guided tour coming in 2.4 is a single cancellable <code>Task</code> that orders the filtered landmarks by nearest-neighbor walking distance from you (or the city center), flies to each one, and waits on it. Tapping a pin, using the landmark card, or leaving the screen cancels the task, so the tour never fights the user for the camera.</p>
+            <p>State flows through a central <code>GlobalProgressManager</code> — an <code>ObservableObject</code> singleton that owns all visited IDs and user-attached photos. Visited IDs, visit dates, and notes are written to both <code>UserDefaults</code> and <code>NSUbiquitousKeyValueStore</code>, so they sync through iCloud with no backend and no account (in 2.4 the wishlist and saved places sync the same way); photos are written as <code>BuildingID.jpg</code> files in the app's Documents directory and loaded back on startup. City rank and completion percentage are computed properties derived from the visited set, so they're always in sync without separate storage.</p>
             <p>Settings like haptics, sound, high contrast, and reduced motion each live in <code>@AppStorage</code> — one line of persistence per toggle. The view hierarchy follows natural SwiftUI nesting: <code>CityListView</code> → <code>CityDetailView</code> → building detail and itinerary views, with <code>PassportGalleryView</code> accessible from a floating passport button throughout.</p>
         </div>
 
@@ -337,6 +469,7 @@
             <h3>What Was Hard</h3>
             <p>The biggest design challenge was scope management. A travel app can expand infinitely — more cities, more data sources, more features. The answer was a strict rule: every screen had to serve the core loop (browse → visit → stamp). Weather, events, and dining made the cut because they answer "what do I do now that I'm here." Look Around made the cut because it answers "what does this building actually look like." Anything that didn't support one of those questions got cut.</p>
             <p>Wiring MapKit pins to local progress state was subtler than expected. The map needs to reflect stamp state in real time as the user marks buildings visited — without re-fetching or re-rendering the whole annotation set. The solution was observing <code>GlobalProgressManager</code> directly in the map view so annotations update as <code>@Published</code> state changes, rather than passing a static snapshot.</p>
+            <p>The fly-to camera took a few passes. Centering the camera on a landmark put the building right under the card that slides up from the bottom of the screen. The fix was aiming the camera slightly south of the landmark, which pushes the building up into the visible part of the map. Framing a whole city had a similar problem: one far-out landmark, like JFK airport in New York, made the map open zoomed out too far. The fix in 2.4 frames the closest 80% of landmarks and ignores the outliers.</p>
             <p>The Ticketmaster integration required careful category filtering and graceful degradation — some cities have no upcoming events, and the UI had to handle empty states cleanly without making the screen feel broken. Same for Look Around: not every location has street-level imagery, so the app falls back to a standard map tile rather than showing a broken state.</p>
             <p>App Store approval took multiple rounds. Apple scrutinized the camera usage string, the Ticketmaster deep links (which had to open in Safari rather than in-app to comply with guidelines), and the location permissions flow. Getting all three right simultaneously was the final hurdle before the app shipped.</p>
         </div>
@@ -353,7 +486,7 @@
             <div style="flex:1;min-width:260px;">
                 <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
                 <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Stamped! for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Exploring a visionOS version — spatial windows for city tours, landmarks anchored to your surroundings, and passport stamps collected in mixed reality. Part of my work at the Apple Developer Academy.</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">A visionOS version planned for 2.4, with all 140 cities on the same photoreal 3D city map, landmark cards, and the passport stamps you've already earned on iPhone, synced through iCloud. Part of my work at the Apple Developer Academy.</p>
             </div>
             <div style="flex-shrink:0;width:340px;max-width:100%;">
                 <img src="assets/images/APV-asset.png" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
@@ -400,5 +533,51 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+    // Load and play the 3D map demo only when it scrolls into view (keeps the page fast on mobile).
+    (() => {
+        const video = document.querySelector('.stamped-demo-video');
+        if (!video) return;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const loadVideo = () => {
+            if (!video.src) { video.src = video.dataset.src; video.load(); }
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        loadVideo();
+                        if (!reduceMotion) video.play().catch(() => {});
+                    } else if (!video.paused) {
+                        video.pause();
+                    }
+                });
+            }, { rootMargin: '200px 0px' });
+            observer.observe(video);
+        } else {
+            loadVideo();
+        }
+
+        // Chapter buttons jump the video to their start time.
+        const chapters = Array.from(document.querySelectorAll('.stamped-demo-chapters button'));
+        chapters.forEach((button) => {
+            button.addEventListener('click', () => {
+                loadVideo();
+                video.currentTime = Number(button.dataset.time);
+                video.play().catch(() => {});
+            });
+        });
+
+        // Highlight whichever chapter is playing right now.
+        video.addEventListener('timeupdate', () => {
+            const current = chapters.filter((button) => Number(button.dataset.time) <= video.currentTime).pop();
+            chapters.forEach((button) => {
+                button.setAttribute('aria-current', button === current ? 'true' : 'false');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
