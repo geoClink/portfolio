@@ -391,56 +391,28 @@
         <div class="case-section">
             <h3>How It Works</h3>
             <p>The app organizes the world into continents → countries → cities. A world progress card on the home screen shows how many of the 140 cities you've mastered and your percentage toward completing all of them. Tapping into a city shows a detail page with your progress percentage, a rank badge (like "Urban Insider"), a per-city architecture quiz, and the full landmark list.</p>
-            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. From the city page, you open a photoreal 3D map of the city with orange pins for stamped landmarks and grey pins for unvisited ones. Tapping any pin flies the camera down to it before its card opens. From any landmark you can jump into Apple Maps Look Around to walk the streets before you arrive. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
-            <p>Beyond the architecture, each city surfaces a live travel dossier (local language, airport, transit, currency) alongside real-time weather from Open-Meteo, upcoming events filtered by category from Ticketmaster, and nearby dining from Apple Maps — so you can plan the rest of your day without leaving the app.</p>
+            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. On the 3D city map, orange pins mark stamped landmarks and grey pins mark the ones you haven't visited yet. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
+            <p>Beyond the architecture, each city surfaces a live travel dossier (local language, airport, transit, currency) alongside real-time weather and a 7-day forecast from Open-Meteo, upcoming events filtered by category from Ticketmaster, and nearby dining from Apple Maps — so you can plan the rest of your day without leaving the app.</p>
         </div>
 
         <div class="case-section">
-            <h3>Features</h3>
+            <h3>Also in the App</h3>
             <div class="feature-grid">
-                <div class="feature-card">
-                    <strong>140 Cities</strong>
-                    <p>1,392 landmarks across six continents. Global progress tracker shows cities mastered and percentage to completion.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Passport Stamps</strong>
-                    <p>Complete every landmark in a city to earn an illustrated stamp. Each stamp includes a city fact and a date completed.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Day-by-Day Itineraries</strong>
-                    <p>Curated architectural tours with stop counts, estimated durations, and walking times between each landmark.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>3D City Map</strong>
-                    <p>Photoreal satellite imagery over real building heights, with stamped vs. unvisited pins, a compass, and a 2D/3D toggle. Tap a pin to fly to it.</p>
-                </div>
                 <div class="feature-card">
                     <strong>iCloud Sync</strong>
                     <p>Stamps, visit dates, and notes follow you across your devices through iCloud, with no account to create.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Look Around</strong>
-                    <p>Apple Maps Look Around integration — virtually scout any landmark from street level before you visit.</p>
+                    <strong>Search by Architect</strong>
+                    <p>Search across all 140 cities by city name, landmark name, or architect — results appear instantly.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Architecture Quizzes</strong>
                     <p>Per-city 10-question quiz to test your knowledge of the buildings before and after you explore.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Travel Dossier</strong>
-                    <p>Local language with spoken greeting, airport code, transit options, and currency — one tap from any city page.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Live City Data</strong>
-                    <p>Real-time weather, filterable upcoming events, and nearby dining pulled fresh each time you open a city.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Search</strong>
-                    <p>Search across all 140 cities by city name, landmark name, or architect — results appear instantly.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Rank Badges</strong>
-                    <p>Exploration percentage drives a rank system per city — progress from Tourist to Urban Insider as you visit more landmarks.</p>
+                    <strong>Spoken Greetings</strong>
+                    <p>The travel dossier says hello in the local language, alongside the airport code, transit options, and currency.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Photo Capture</strong>
@@ -448,21 +420,9 @@
                 </div>
                 <div class="feature-card">
                     <strong>Accessibility</strong>
-                    <p>High-contrast mode, reduce motion, VoiceOver labels, and localized spoken greetings via AVSpeechSynthesizer.</p>
+                    <p>High-contrast mode, reduce motion, and VoiceOver labels throughout.</p>
                 </div>
             </div>
-        </div>
-
-        <div class="case-section">
-            <h3>Live Data Sources</h3>
-            <p>Three external APIs power the live city layer — each one fetched fresh per city visit so the data is always current:</p>
-            <ul>
-                <li>Open-Meteo — real-time weather and a 7-day forecast</li>
-                <li>Ticketmaster — upcoming events by category</li>
-                <li>Apple Maps via MapKit — nearby dining</li>
-                <li>Apple Maps Look Around — street-level imagery for supported landmarks</li>
-                <li>Apple Maps 3D imagery — the photoreal city map, from the same scans as Flyover</li>
-            </ul>
         </div>
 
         <div class="case-section">
@@ -505,7 +465,8 @@
 
         <div class="case-section" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Stamped! was the first solo SwiftUI product I took from zero to the App Store. Building it stretched across everything I knew at the time — MapKit, live APIs, local persistence, accessibility, and the full App Store submission process. The architecture decisions made here (observable singletons for shared state, computed properties over redundant storage, a strict content layer / state layer / UI split) became patterns I carried into every project after it. It's also the app that proved to me that a single developer can ship something genuinely polished — not just functional.</p>
+            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. I didn't stop at launch: it has gone through seven versions in eight months, from 1.0 to 2.3, adding achievements, a world map, passport sharing, and building scans that sync through iCloud. 2.3, now in App Store review, adds the photoreal 3D city map, and 2.4 is built and in testing.</p>
+            <p>The patterns I worked out here (one observable store for shared state, computed values instead of duplicate storage, and a clean split between content, state, and UI) are the ones I've used in every app since, including Tally.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
