@@ -123,8 +123,12 @@
             padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
             background: radial-gradient(70% 70% at 80% 30%, rgba(232, 98, 26, 0.14), transparent 70%), var(--color-surface); }
         .stamped-demo-stage { order: -1; display: flex; justify-content: center; }
-        .stamped-demo-video { width: 100%; max-width: 420px; height: auto; aspect-ratio: 4 / 5; display: block; border-radius: 18px;
-            border: 1px solid var(--color-border); background: #1a1a1a; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.45); }
+        /* The video is a screen recording, so it sits in the shared .phone-mockup bezel from case-study.css.
+           The recording already shows the Dynamic Island, so the mockup's CSS island is hidden. */
+        .stamped-demo-stage .phone-mockup { width: 280px; max-width: 100%; }
+        .stamped-demo-stage .phone-mockup.no-island::after { display: none; }
+        .stamped-demo-stage .phone-screen-static { border-radius: 36px; background: #000; }
+        .stamped-demo-video { width: 100%; height: auto; aspect-ratio: 492 / 1078; display: block; background: #000; }
         .stamped-demo-chapters { display: flex; flex-direction: column; gap: 0.4em; }
         .stamped-demo-chapters button { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; text-align: left; font: inherit; color: inherit;
             padding: 0.8em 1em; border-radius: 12px; border: 1px solid transparent; transition: background 0.2s ease, border-color 0.2s ease; }
@@ -260,7 +264,12 @@
                     <button type="button" data-time="30" aria-current="false"><strong>Then walk the streets<span class="stamped-demo-time">0:30</span></strong><span>Look Around street views, so you know what a building looks like before you go.</span></button>
                 </div>
                 <div class="stamped-demo-stage">
-                    <video class="stamped-demo-video lazy-video" data-src="assets/videos/stamped/stamped-3d-map-tour.mp4" poster="assets/videos/stamped/stamped-3d-map-poster.jpg" width="720" height="900" muted loop playsinline controls preload="none" aria-label="Stamped! on iPhone: flying low over 3D Manhattan from the Empire State Building past skyscrapers, then a street-level Look Around view of the Apple store glass cube on Fifth Avenue"></video>
+                    <div class="phone-mockup no-island">
+                        <div class="phone-btns-left"></div>
+                        <div class="phone-screen-static">
+                            <video class="stamped-demo-video lazy-video" data-src="assets/videos/stamped/stamped-3d-map-screen.mp4" poster="assets/videos/stamped/stamped-3d-map-screen-poster.jpg" width="492" height="1078" muted loop playsinline controls preload="none" aria-label="Stamped! on iPhone: flying low over 3D Manhattan from the Empire State Building past skyscrapers, then a street-level Look Around view of the Apple store glass cube on Fifth Avenue"></video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
