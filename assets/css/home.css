@@ -1457,6 +1457,22 @@ body::before {
 }
 .tally-btn-secondary:hover { border-color: var(--tally-ink) !important; }
 .tally-feature-badge img { display: block; height: 40px; width: auto; }
+.tally-feature-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75em; }
+.tally-feature-badge--beta { position: relative; }
+.tally-feature-beta {
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    z-index: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #4361EE;
+    color: #fff;
+    font-size: 0.6em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+}
 
 /* Device stage: the phone rises from the bottom edge of the card, with moments from the app floating beside it */
 .tally-feature-device {
@@ -1588,5 +1604,5 @@ body::before {
 @media (max-width: 480px) {
     .tally-feature-ctas { flex-direction: column; align-items: stretch; }
     .tally-btn-primary, .tally-btn-secondary { justify-content: center; }
-    .tally-feature-badge { align-self: center; }
+    .tally-feature-badges { justify-content: center; }
 }
