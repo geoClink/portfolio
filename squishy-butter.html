@@ -223,7 +223,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Platforms</div>
-                <div class="case-glance-value">Web · iOS · Android · Mac</div>
+                <div class="case-glance-value">Web · iOS · Android · Mac · Vision Pro (WebXR)</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Languages</div>
@@ -418,7 +418,8 @@
                 <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
                 <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Postgres</span><strong style="font-size:0.95em;">Credit exactly once</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Server-only functions, per-user lock, idempotent transaction IDs. Profile changes allow-listed.</span></div>
             </div>
-            <p>To make that testable without touching real players, I rebuilt the backend so a complete local copy of the database comes up with one command, seeded with the full catalogue and test accounts. Thirty-seven SQL tests attack each hole as an anonymous or signed-in user and confirm it stays closed; they run locally before every database change ships.</p>
+            <p>To make that testable without touching real players, I rebuilt the backend so a complete local copy of the database comes up with one command, seeded with the full catalogue and test accounts. SQL tests attack each hole as an anonymous or signed-in user and confirm it stays closed.</p>
+            <p>Then I turned the same approach on the rest of the system: 202 SQL tests for pulls, payments and permissions, 81 tests for the payment server functions, run against forged and replayed store receipts, and continuous integration that runs every suite on each push. The tests found four more real bugs, all fixed and deployed the same day. Limited skins could sell past their supply cap. Two players pulling at the same instant could get the same serial number, and a deleted account's number could be handed out again. Someone who bought a coin pack on Mac and then the same pack on iPhone wasn't credited for the second one. And a web bank transfer was credited before the money arrived. Each fix shipped with the test that proves it.</p>
         </div>
 
         <div class="case-section">
@@ -446,9 +447,9 @@
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
             <div style="flex:1;min-width:260px;">
-                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
+                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">Live in Safari</span>
                 <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Squishy Butter for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:0;">Squishy Butter already runs on Vision Pro — the WebGL physics canvas renders in Safari's floating spatial window today. A Vision Pro–optimized version could fill a room-scale panel, replace touch with eye tracking and a pinch to squish, and lean into the spatial audio engine for layered ASMR sounds. No native port needed. The GPU physics is already there.</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:0;">Open squishybutter.app in Safari on Vision Pro and tap Enter Immersive. A small room appears with the butter at real size, about 12 cm, on a counter a metre off the floor, close enough to reach. Look at it and pinch to squish: the pinch is cast as a ray onto the butter and pressed exactly like a fingertip, so the same GPU dents, sounds and skins carry over. It's WebXR in the browser, so there's no native port and no separate app to install. Browsers that support passthrough AR get the same button and place the butter in your real room.</p>
             </div>
             <div style="flex-shrink:0;width:340px;max-width:100%;">
                 <img src="assets/images/site/APV-asset.webp" loading="lazy" decoding="async" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
@@ -488,7 +489,7 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <p>Sound is generated in the Web Audio API each frame, not sampled from a file. Dent depth and press velocity are fed as parameters to an oscillator chain each frame, so the sound tracks what your hand is actually doing - pressing harder produces a lower, more compressed tone; a fast jab produces a sharper transient. Each skin has its own audio profile layered on top of the base model.</p>
 
                     <h4>Minting Transaction</h4>
-                    <p>Pulls run entirely on the server. A Postgres function executes each pull as a single transaction: it locks the player's row, checks and deducts the coins, applies the pity counters, draws by weight from only the skins the player doesn't own yet (so there are no duplicates), assigns the next serial number for that skin and records ownership - all or nothing. The client never decides what you get or how many coins you have.</p>
+                    <p>Pulls run entirely on the server. A Postgres function executes each pull as a single transaction: it locks the player's row, checks and deducts the coins, applies the pity counters, draws by weight from only the skins the player doesn't own yet (so there are no duplicates), assigns the next serial number for that skin, refuses the pull if a limited skin has sold out, and records ownership - all or nothing. Serials come from a database trigger that locks the skin's row, so every way of granting a skin (pulls, achievements, admin grants) numbers copies the same way and can never reuse one. The client never decides what you get or how many coins you have.</p>
                 </div>
             </details>
         </div>
@@ -511,7 +512,7 @@ return Math.max(6, Math.min(48, affordable));</div>
                 </div>
                 <p>The web product is live - 214 collectible skins, GPU physics, auth with Apple, Google, and email, a coin economy with rarity tiers, no-duplicate pulls, pity guarantees, and animated card reveals.</p>
                 <p>The vault is open: Stripe payments on web, App Store and Google Play purchases verified on the server, and every pull resolved inside a single database transaction. iOS is live on the App Store. Android is live on Google Play — both apps add haptics synced to the deformation under your finger.</p>
-                <p>Android launched September 16 with no paid promotion. Within three weeks, Google Play's recommendation engine had shown the icon 29,000 times and driven nearly 500 installs, almost all through browse surfaces rather than search. That traffic is discovery, not intent: people tap install on an interesting icon in a recommendation row, and only about a third open it. But the ones who do open it stick around. In the 28 days to October 22, Google Play counted 1,030 device acquisitions (up 478% on the 28 days before), 426 first opens and 470 monthly active devices. The next experiments target both ends: store listing keywords to start earning search traffic, and a first-launch nudge to close the gap between install and open.</p>
+                <p>Android launched September 16 with no paid promotion. Within three weeks, Google Play's recommendation engine had shown the icon 29,000 times and driven nearly 500 installs, almost all through browse surfaces rather than search. That traffic is discovery, not intent: people tap install on an interesting icon in a recommendation row, and only about a third open it. But the ones who do open it stick around. In the 28 days to October 22, Google Play counted 1,030 device acquisitions (up 478% on the 28 days before), 426 first opens and 470 monthly active devices. The next experiments target both ends: store listing keywords to start earning search traffic, and a first-launch nudge to close the gap between install and open. Translating the store listing was the first of those. Play's store listing conversion rate stood at 13.9% when the translations went live and at 14.6% a week later. It's early, but it's moving the right way.</p>
                 <p>The economy is live and now hardened end to end. Early data says the squish lands: the people who sign in keep coming back. The open question is the gap before that, getting first-time visitors to their second session, which is where the next round of work goes.</p>
                 <p>The whole product is a feeling. It either lands or it doesn't.</p>
                 <div style="clear:both;"></div>
@@ -527,7 +528,7 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>On Every Screen</h3>
-            <p>One Capacitor and Three.js codebase runs on the web, iPhone, iPad, Android and Mac, with the same account, collection and coins everywhere. These are the current store screenshots.</p>
+            <p>One Capacitor and Three.js codebase runs on the web, iPhone, iPad, Android, Mac and, through WebXR, Vision Pro, with the same account, collection and coins everywhere. These are the current store screenshots, rendered from the running app by a headless-browser pipeline, so every size stays in sync with the real UI.</p>
             <h4 class="sb-subhead">iPhone</h4>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
@@ -620,6 +621,26 @@ return Math.max(6, Math.min(48, affordable));</div>
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
                     <img src="assets/images/squishy-butter/store/ipad-08-delivery.webp" alt="Epic within 30, Legendary in 90. Dairy Delivery with pity counters and drop rates on iPad" width="600" height="800" loading="lazy" decoding="async">
                     <figcaption>Pity counters and published odds</figcaption>
+                </figure>
+            </div>
+            <h4 class="sb-subhead">iPhone Duo</h4>
+            <p>Both displays get their own set: the outer screen shows the phone layout, and the inner screen gets the roomier tablet layout.</p>
+            <div class="sb-scroll-track">
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/duo-outer-01-squish.webp" alt="Squish it. Feel it give. Classic Butter on the iPhone Duo outer display" width="480" height="698" loading="lazy" decoding="async">
+                    <figcaption>Outer display</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/duo-outer-03-reveal.webp" alt="Pull rare, numbered butters. Stained Glass reveal on the iPhone Duo outer display" width="480" height="698" loading="lazy" decoding="async">
+                    <figcaption>The reveal, outer display</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone" style="width:260px;">
+                    <img src="assets/images/squishy-butter/store/duo-inner-01-squish.webp" alt="Squish it. Feel it give. Classic Butter on the iPhone Duo inner display" width="600" height="853" loading="lazy" decoding="async">
+                    <figcaption>Inner display</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone" style="width:260px;">
+                    <img src="assets/images/squishy-butter/store/duo-inner-03-reveal.webp" alt="Pull rare, numbered butters. Stained Glass reveal on the iPhone Duo inner display" width="600" height="853" loading="lazy" decoding="async">
+                    <figcaption>The reveal, inner display</figcaption>
                 </figure>
             </div>
             <h4 class="sb-subhead">Mac</h4>
