@@ -6,7 +6,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/squishy-butter.html" />
     <meta property="og:title" content="Squishy Butter - Collectible Physics Toy Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android and Mac, 214 collectible skins, in four languages. Built solo." />
+    <meta property="og:description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android, Mac, Apple Watch and in VR, 214 collectible skins, in four languages. Built solo." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/squishy-butter.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/squishy-butter/og.png" />
@@ -15,9 +15,9 @@
     <meta property="og:image:alt" content="Squishy Butter Co. wordmark under a smiling butter box" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Squishy Butter - Collectible Physics Toy Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android and Mac, 214 collectible skins, in four languages. Built solo." />
+    <meta name="twitter:description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android, Mac, Apple Watch and in VR, 214 collectible skins, in four languages. Built solo." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/squishy-butter/og.png" />
-    <meta name="description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android and Mac, 214 collectible skins, in four languages. Built solo." />
+    <meta name="description" content="A stick of butter you squish with your finger. Real soft-body physics on web, iOS, Android, Mac, Apple Watch and in VR, 214 collectible skins, in four languages. Built solo." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +67,11 @@
         .sb-preview { display: flex; justify-content: center; margin: 1.25em 0 0; padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
             background: radial-gradient(70% 70% at 50% 30%, rgba(240, 193, 75, 0.18), transparent 70%), var(--color-surface); }
         .sb-preview video { width: 100%; max-width: 300px; height: auto; aspect-ratio: 444 / 962; display: block; border-radius: 18px; background: #1A1008; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.45); }
+        .sb-vr-rooms { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 2rem; }
+        @media (max-width: 680px) { .sb-vr-rooms { grid-template-columns: 1fr 1fr; } }
+        .sb-vr-rooms figure { margin: 0; }
+        .sb-vr-rooms img { width: 100%; height: auto; aspect-ratio: 800 / 477; object-fit: cover; display: block; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); }
+        .sb-vr-rooms figcaption { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.4em; letter-spacing: 0.04em; }
         .sb-subhead { font-size: 0.95rem; font-weight: 600; color: var(--color-heading); margin: 2em 0 0; }
         .sb-mac-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.25em; }
         .sb-mac-grid img { flex: 1 1 300px; min-width: 0; width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--color-border); }
@@ -127,7 +132,7 @@
        "@context": "https://schema.org",
        "@type": "SoftwareApplication",
        "name": "Squishy Butter",
-       "description": "A stick of butter you squish with your finger - real soft-body physics on web, iOS, Android and Mac, with 214 collectible skins.",
+       "description": "A stick of butter you squish with your finger - real soft-body physics on web, iOS, Android, Mac, Apple Watch and in VR, with 214 collectible skins.",
        "applicationCategory": "GameApplication",
        "operatingSystem": "Web, iOS, iPadOS, Android, macOS",
        "inLanguage": ["en", "id", "es", "pt"],
@@ -223,7 +228,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Platforms</div>
-                <div class="case-glance-value">Web · iOS · Android · Mac · Vision Pro (WebXR)</div>
+                <div class="case-glance-value">Web · iPhone · iPad · Android · Mac · Apple Watch · VR on Vision Pro, Quest and Android XR (WebXR)</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Languages</div>
@@ -239,7 +244,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on the web, the App Store (iPhone, iPad, Mac) and Google Play</div>
+                <div class="case-glance-value">Live on the web, the App Store (iPhone, iPad, Mac, Apple Watch) and Google Play; VR in the headset browser</div>
             </div>
         </div>
 
@@ -426,6 +431,25 @@
             <h3>Four Languages</h3>
             <p>About 69% of players use Indonesian, Spanish or Portuguese, so an English-only app was talking past most of its audience. In October I translated all of it into those three languages. The interface shipped on October 22, and the written lore for all 214 skins, the provenance stories on every certificate and trading card, went live on October 23. Widgets, iOS permission prompts, push reminders and the store listings are translated too.</p>
             <p>The lore was the big piece: about 5,000 lines per language. Longer Spanish and Portuguese strings also broke layouts that fit in English, so the certificate stamp and footer had to be refitted for phones. To keep that from coming back, a screen smoke test runs 104 checks across all four languages at two viewport sizes, alongside the Vitest unit suite.</p>
+            <p>The store art followed. The screenshot pipeline takes a language flag, loads the app in that language and sets the headlines in it, so each translated listing gets the app the way those players see it: 120 localized screenshots across iPhone, iPad, Android and Mac.</p>
+            <div class="sb-scroll-track">
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/iphone-id-01-squish.webp" alt="Indonesian store screenshot: Pencet. Rasakan empuknya." width="520" height="1130" loading="lazy" decoding="async">
+                    <figcaption>Indonesian</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/iphone-es-03-reveal.webp" alt="Spanish store screenshot: Saca las raras, todas numeradas, with a Legendaria reveal" width="520" height="1130" loading="lazy" decoding="async">
+                    <figcaption>Spanish</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/iphone-pt-08-delivery.webp" alt="Portuguese store screenshot: Épica em até 30. Lendária em até 90." width="520" height="1130" loading="lazy" decoding="async">
+                    <figcaption>Portuguese</figcaption>
+                </figure>
+                <figure class="sb-scroll-item sb-scroll-item--phone">
+                    <img src="assets/images/squishy-butter/store/iphone-id-05-certificate.webp" alt="Indonesian store screenshot: the certificate of authenticity, translated" width="520" height="1130" loading="lazy" decoding="async">
+                    <figcaption>Translated certificate lore</figcaption>
+                </figure>
+            </div>
         </div>
 
         <div class="case-section">
@@ -443,17 +467,21 @@
             </div>
         </div>
 
-    <!-- Vision Pro teaser -->
+    <!-- VR: Vision Pro, Quest, Android XR -->
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
-        <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
-            <div style="flex:1;min-width:260px;">
-                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">Live in Safari</span>
-                <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Squishy Butter for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:0;">Open squishybutter.app in Safari on Vision Pro and tap Enter Immersive. A small room appears with the butter at real size, about 12 cm, on a counter a metre off the floor, close enough to reach. Look at it and pinch to squish: the pinch is cast as a ray onto the butter and pressed exactly like a fingertip, so the same GPU dents, sounds and skins carry over. It's WebXR in the browser, so there's no native port and no separate app to install. Browsers that support passthrough AR get the same button and place the butter in your real room.</p>
+        <div style="max-width:960px;margin:0 auto;">
+            <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">Live in the headset browser</span>
+            <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Squishy Butter in VR: Vision Pro, Quest and Android XR</h2>
+            <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:680px;margin-bottom:0.85rem;">Open squishybutter.app in the headset's browser and tap Enter Immersive. The butter sits at real size, about 12 cm, on a counter a metre off the floor, close enough to reach. Pinch to squish: the pinch is cast as a ray onto the butter and pressed exactly like a fingertip, so the same GPU dents, sounds and skins carry over. You can also pick the butter up, carry it and set it back down, and a small sign on the counter switches between five themed rooms without leaving immersive mode.</p>
+            <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:680px;margin-bottom:0;">It's WebXR in the browser, so there's no native port and no separate app to install. A native Vision Pro wrapper was prototyped and dropped, because WebXR doesn't run inside a WKWebView. An automated test drives the whole flow in an emulated Quest headset: enter, squish, lift, move, and cycle every room.</p>
+            <div class="sb-vr-rooms">
+                <figure><img src="assets/images/squishy-butter/vr/kitchen.webp" alt="VR Kitchen room: the butter on a counter" width="800" height="477" loading="lazy" decoding="async"><figcaption>Kitchen</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/diner.webp" alt="VR Diner room: the butter on a red diner counter over a checkered floor" width="800" height="477" loading="lazy" decoding="async"><figcaption>Diner</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/vaporwave.webp" alt="VR Vaporwave room: neon grid floor" width="800" height="477" loading="lazy" decoding="async"><figcaption>Vaporwave</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/space.webp" alt="VR Space room: the butter among the stars" width="800" height="477" loading="lazy" decoding="async"><figcaption>Space</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/sunset.webp" alt="VR Sunset room: tiled terrace at sunset" width="800" height="477" loading="lazy" decoding="async"><figcaption>Sunset</figcaption></figure>
             </div>
-            <div style="flex-shrink:0;width:340px;max-width:100%;">
-                <img src="assets/images/site/APV-asset.webp" loading="lazy" decoding="async" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
-            </div>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin:0.75rem 0 0;">Captured from the automated test in an emulated Quest headset.</p>
         </div>
     </div>
 
@@ -528,7 +556,7 @@ return Math.max(6, Math.min(48, affordable));</div>
 
         <div class="case-section">
             <h3>On Every Screen</h3>
-            <p>One Capacitor and Three.js codebase runs on the web, iPhone, iPad, Android, Mac and, through WebXR, Vision Pro, with the same account, collection and coins everywhere. These are the current store screenshots, rendered from the running app by a headless-browser pipeline, so every size stays in sync with the real UI.</p>
+            <p>One Capacitor and Three.js codebase runs on the web, iPhone, iPad, Android, Mac and Apple Watch, and through WebXR on Vision Pro, Quest and Android XR, with the same account, collection and coins everywhere. These are the current store screenshots, rendered from the running app by a headless-browser pipeline, so every size stays in sync with the real UI.</p>
             <h4 class="sb-subhead">iPhone</h4>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
@@ -645,9 +673,12 @@ return Math.max(6, Math.min(48, affordable));</div>
             </div>
             <h4 class="sb-subhead">Mac</h4>
             <p>A lightweight native window around the web build, with StoreKit purchases, so your collection, coins and squish count match every other device.</p>
+            <video class="lazy-video" data-src="assets/videos/squishy-butter/app-preview-mac.mp4" poster="assets/videos/squishy-butter/app-preview-mac.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Mac App Store preview: squishing the butter, a Dairy Delivery pull and the collection in a Mac window" style="width:100%;height:auto;display:block;margin-top:1.25em;border-radius:12px;border:1px solid var(--color-border);background:#1A1008;"></video>
             <div class="sb-mac-grid">
                 <img src="assets/images/squishy-butter/store/mac-01-squish.webp" alt="Squishy Butter on Mac: Squish it. Feel it give. Classic Butter in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
+                <img src="assets/images/squishy-butter/store/mac-03-reveal.webp" alt="Squishy Butter on Mac: Pull rare, numbered butters. A Legendary reveal in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
                 <img src="assets/images/squishy-butter/store/mac-04-collection.webp" alt="Squishy Butter on Mac: Collect them all. The Cold Store collection in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
+                <img src="assets/images/squishy-butter/store/mac-05-certificate.webp" alt="Squishy Butter on Mac: One of a kind. Provably yours. A certificate of authenticity in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
             </div>
         </div>
 
