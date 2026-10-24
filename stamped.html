@@ -6,15 +6,15 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped.html" />
     <meta property="og:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
-    <meta property="og:description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, earn passport stamps, and plan trips with Apple Intelligence." />
+    <meta property="og:description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,500+ architectural landmarks across 140 cities and 41 campuses. Fly through photoreal 3D cities, plan trips day by day, and earn passport stamps." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Stamped! — A City Passport Case Study | George Clinkscales Jr." />
-    <meta name="twitter:description" content="Case study: Stamped! — SwiftUI iOS app covering 1,392 landmarks in 140 cities, with a photoreal 3D city map, tap-to-fly pins, Look Around, iCloud sync, and passport stamps." />
+    <meta name="twitter:description" content="Case study: Stamped! — SwiftUI iOS app covering 1,500+ landmarks in 140 cities, with a photoreal 3D city map, a trip planner, Look Around, iCloud sync, and passport stamps." />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/stamped-8.png" />
-    <meta name="description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, earn passport stamps, and plan trips with Apple Intelligence." />
+    <meta name="description" content="Stamped! is a SwiftUI iOS app for discovering and collecting 1,500+ architectural landmarks across 140 cities and 41 campuses. Fly through photoreal 3D cities, plan trips day by day, and earn passport stamps." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,7 +143,54 @@
         .screenshot-scroll-track.appstore .screenshot-scroll-item { width: 240px; }
         .screenshot-scroll-track.appstore .screenshot-scroll-item img { height: auto; border: none; border-radius: 18px; }
 
+        /* Hero: three real screens in phone bezels, rising out of a warm passport-paper stage */
+        .stamped-hero-shots { position: relative; display: flex; justify-content: center; align-items: flex-end; margin: 0 0 var(--space-5, 2.5em);
+            padding: 2.5em 1em 0; height: 26em; border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border);
+            background: radial-gradient(60% 80% at 50% 100%, rgba(242, 116, 63, 0.28), transparent 70%), linear-gradient(180deg, #fff7f1 0%, #fde9dc 100%); }
+        .stamped-hero-shots .phone-mockup { flex: 0 0 auto; width: 30%; max-width: 230px; align-self: flex-start; }
+        .stamped-hero-shots .phone-mockup:nth-child(1) { transform: translate(8%, 2.2em) rotate(-5deg); }
+        .stamped-hero-shots .phone-mockup:nth-child(2) { z-index: 1; width: 33%; max-width: 250px; }
+        .stamped-hero-shots .phone-mockup:nth-child(3) { transform: translate(-8%, 2.2em) rotate(5deg); }
+        .stamped-hero-shots + .case-caption { margin-top: -1.5em; margin-bottom: 2em; }
+
+        /* Shot rows: real app screens in the shared .phone-mockup bezel (no CSS island: these captures have none) */
+        .stamped-shots { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 1.6em; margin-top: 1.25em; }
+        .stamped-shots figure { margin: 0; }
+        .stamped-shots .phone-mockup { width: auto; margin: 0 6px; }
+        .stamped-hero-shots .phone-mockup, .stamped-shots .phone-mockup { border-radius: 30px; }
+        .stamped-hero-shots .phone-mockup::after, .stamped-shots .phone-mockup::after { display: none; }
+        .stamped-hero-shots .phone-screen-static, .stamped-shots .phone-screen-static { border-radius: 26px; overflow: hidden; }
+        .stamped-hero-shots img, .stamped-shots img { display: block; width: 100%; height: auto; }
+        .stamped-shots.is-tall img { aspect-ratio: 800 / 1403; object-fit: cover; }
+        .stamped-shots figcaption { font-size: 0.8em; color: var(--color-text-muted); margin-top: 0.9em; line-height: 1.45; }
+        .stamped-shots figcaption strong { display: block; color: var(--color-heading); font-size: 1.05em; margin-bottom: 0.1em; }
+
+        /* Design system: palette swatches and type roles */
+        .stamped-swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75em; margin-top: 1.25em; }
+        .stamped-swatch { border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; background: var(--color-surface); }
+        .stamped-swatch i { display: block; height: 56px; }
+        .stamped-swatch div { padding: 0.6em 0.75em; font-size: 0.78em; line-height: 1.4; color: var(--color-text-muted); }
+        .stamped-swatch b { display: block; color: var(--color-heading); font-size: 1.05em; }
+        .stamped-type { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75em; margin-top: 0.75em; }
+        .stamped-type div { border: 1px solid var(--color-border); border-radius: 12px; padding: 1em; background: var(--color-surface); }
+        .stamped-type .sample { display: block; color: var(--color-heading); margin-bottom: 0.35em; line-height: 1.2; }
+        .stamped-type .serif { font-family: "New York", Georgia, "Times New Roman", serif; font-size: 1.5em; font-weight: 700; }
+        .stamped-type .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.85em; font-weight: 800; letter-spacing: 0.14em; color: #E8621A; text-transform: uppercase; padding-top: 0.55em; }
+        .stamped-type .rounded { font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 1.3em; font-weight: 700; }
+        .stamped-type small { font-size: 0.78em; color: var(--color-text-muted); line-height: 1.45; display: block; }
+        .stamped-principles { margin: 1.25em 0 0; padding: 0; list-style: none; display: grid; gap: 0.6em; }
+        .stamped-principles li { padding-left: 1.6em; position: relative; font-size: 0.95em; line-height: 1.6; }
+        .stamped-principles li::before { content: ''; position: absolute; left: 0; top: 0.45em; width: 0.8em; height: 0.8em; border-radius: 50%; border: 2px dashed var(--case-accent); }
+
         @media (max-width: 736px) {
+            .stamped-shots { --cols: 2 !important; }
+            .stamped-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .stamped-type { grid-template-columns: 1fr; }
+            .stamped-hero-shots { padding: 1.5em 0.5em 2.5em; height: auto; }
+            .stamped-shots .phone-btns-left, .stamped-shots .phone-mockup::before,
+            .stamped-hero-shots .phone-btns-left, .stamped-hero-shots .phone-mockup::before { display: none; }
+            .stamped-hero-shots .phone-mockup, .stamped-shots .phone-mockup { border-radius: 20px; }
+            .stamped-hero-shots .phone-screen-static, .stamped-shots .phone-screen-static { border-radius: 17px; }
             .stamped-demo { grid-template-columns: 1fr; padding: 1em; gap: 1em; }
             .stamped-demo-stage { order: 0; }
             .stamped-demo-chapters { flex-direction: row; overflow-x: auto; scrollbar-width: none; gap: 0.35em; }
@@ -160,7 +207,7 @@
        "@context": "https://schema.org",
        "@type": "SoftwareApplication",
        "name": "Stamped! A City Passport",
-       "description": "A SwiftUI iOS app for discovering and collecting passport stamps at 1,392 architectural landmarks across 140 cities worldwide.",
+       "description": "A SwiftUI iOS app for discovering and collecting passport stamps at 1,500+ architectural landmarks across 140 cities and 41 university campuses.",
        "applicationCategory": "TravelApplication",
        "operatingSystem": "iOS",
        "url": "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336",
@@ -217,7 +264,7 @@
         <div class="case-hero">
             <img src="assets/images/stamped/stamped-city-passport-light.webp" alt="Stamped! app icon" class="case-hero-icon" />
             <h2 class="case-title">Stamped! — A City Passport</h2>
-            <p class="case-tagline">A SwiftUI iOS app for discovering and collecting 1,392 architectural landmarks across 140 cities. Fly through photoreal 3D cities, walk the streets in Look Around, follow day-by-day tours, and earn a passport stamp every time you complete a city.</p>
+            <p class="case-tagline">A SwiftUI app that turns the world's great buildings into a passport to fill: more than 1,500 architectural landmarks across 140 cities and 41 university campuses. Fly through photoreal 3D cities, plan a whole trip day by day, walk the streets in Look Around, and earn a stamp for every place you visit.</p>
         </div>
 
         <div class="case-links">
@@ -225,24 +272,35 @@
             <a href="https://github.com/geoClink/Stamped-A-City-Passport" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
 
-        <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · Open-Meteo · Ticketmaster API · 2025–2026 · Live on the App Store · 2.3 in review</div>
+        <figure class="stamped-hero-shots" style="margin-inline:0;">
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-map-card.webp" alt="The Paris 3D map with the Eiffel Tower card: Look Around preview and Stamped, Want to Go, Add to Trip and Look Around buttons" width="800" height="1104" fetchpriority="high"></div></div>
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-planner.webp" alt="Three Days in Paris trip: a route map of day 1 from the Eiffel Tower to Sacré-Cœur, day tabs and a Tour This Trip in 3D button" width="800" height="1104" fetchpriority="high"></div></div>
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-city-explored.webp" alt="City Explored: a Paris passport stamp card with a Did You Know fact about the Eiffel Tower" width="800" height="1104" fetchpriority="high"></div></div>
+        </figure>
+        <p class="case-caption">Version 2.4: the 3D map card, the trip planner, and a city stamp</p>
+
+        <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · WidgetKit · visionOS · Open-Meteo · Ticketmaster API · 2026 · 2.3 live on the App Store · 2.4 next</div>
 
         <div class="case-glance">
             <div class="case-glance-item">
                 <div class="case-glance-label">Role</div>
-                <div class="case-glance-value">Sole developer</div>
+                <div class="case-glance-value">Sole designer &amp; developer</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Platforms</div>
-                <div class="case-glance-value">iPhone · Vision Pro in development</div>
+                <div class="case-glance-value">iPhone · iPad · Vision Pro with 2.5</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Content</div>
-                <div class="case-glance-value">1,392 landmarks · 140 cities</div>
+                <div class="case-glance-value">1,500+ landmarks · 140 cities · 41 campuses</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Languages</div>
+                <div class="case-glance-value">9</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on the App Store · 2.3 in review</div>
+                <div class="case-glance-value">2.3 live · 2.4 finished, next to ship</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Origin</div>
@@ -252,12 +310,12 @@
 
         <div class="case-section">
             <h3>The Problem</h3>
-            <p>Travel and architecture apps are either too passive (a static list of landmarks) or too overwhelming (full trip planners with accounts and subscriptions). There's a gap for people who want a more structured, rewarding way to explore a city's built environment — something that tells you what to see, helps you get there, and gives you a reason to come back. The goal was an app that turns architectural sightseeing into a collection game: earn a stamp for every city you complete, and build a passport you're proud of.</p>
+            <p>Architecture apps are either too passive (a static list of landmarks) or too heavy (full trip planners with accounts and subscriptions). I wanted something in between: tell me what to see, help me get there, and give me a reason to come back. Stamped! turns sightseeing into a collection game: visit every landmark in a city and you earn its stamp.</p>
         </div>
 
         <div class="case-section">
             <h3>See It Work</h3>
-            <p>Recorded on iPhone in New York. Tap a pin and the camera swoops down to it over Apple's 3D city scans, then drop to street level in Look Around.</p>
+            <p>Recorded on iPhone in New York: tap a pin to fly to it in 3D, then drop to street level in Look Around.</p>
             <div class="stamped-demo">
                 <div class="stamped-demo-chapters" aria-label="Video chapters">
                     <button type="button" data-time="0" aria-current="true"><strong>Fly through the city in 3D<span class="stamped-demo-time">0:00</span></strong><span>Satellite photos over real building heights. Tap a pin and the camera flies to it.</span></button>
@@ -275,53 +333,80 @@
         </div>
 
         <div class="case-section">
-            <h3>What's New in 2.3</h3>
-            <p>Version 2.3, now in App Store review, turns the city map into the center of the app.</p>
-            <div class="stamped-new-grid">
-                <div class="stamped-new-item">
-                    <h4>Photoreal 3D city map</h4>
-                    <p>Satellite imagery draped over Apple's 3D city models, with a tilted camera so the buildings stand up, a compass, and a 2D/3D toggle.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>Tap a pin to fly there</h4>
-                    <p>Tapping a landmark swoops the camera down to it before opening its card, so you see the building in 3D first.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>City Explore &amp; ambient audio</h4>
-                    <p>New City Explore views with ambient city sound, plus a sheet that nudges you to scan buildings you visit.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>AR mode, fixed</h4>
-                    <p>AR now turns on the camera reliably, explains when a city has no 3D model yet, and lets you tap buildings and scans.</p>
-                </div>
+            <h3>Design: A Passport, Not a Database</h3>
+            <p>Under the hood it's a list of 1,500+ buildings. The design job was making it feel like something you collect, not something you scroll. I wrote a style guide for the app (editorial, travel-inspired, reward-driven) and hold every screen to it.</p>
+            <div class="stamped-shots is-tall" style="--cols:4;">
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-onboarding-stamp.webp" alt="Onboarding: a San Francisco passport stamp with an Unlock My First Stamp button" width="800" height="1371" loading="lazy"></div></div>
+                    <figcaption><strong>Reward first</strong>Onboarding opens on a finished stamp.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-home.webp" alt="Home: World Explorer card showing 5 of 140 cities mastered, continents below and a My Passport button" width="800" height="1403" loading="lazy"></div></div>
+                    <figcaption><strong>Progress up top</strong>One progress card, one passport button.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-passport.webp" alt="Your Passport: 5 cities stamped, with locked city slots grouped by country" width="800" height="1403" loading="lazy"></div></div>
+                    <figcaption><strong>Empty slots on purpose</strong>Locked cities show what's left.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-world-map.webp" alt="World Map with orange visited pins and white not-yet pins across Europe and Africa" width="800" height="1403" loading="lazy"></div></div>
+                    <figcaption><strong>One color means done</strong>Orange is stamped. No legend needed.</figcaption>
+                </figure>
             </div>
+
+            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">One accent, three voices of type</h4>
+            <div class="stamped-swatches">
+                <div class="stamped-swatch"><i style="background:#F2743F;"></i><div><b>Adventure Orange</b>#F2743F · actions, progress, stamps</div></div>
+                <div class="stamped-swatch"><i style="background:linear-gradient(135deg,#F2743F,#FF8A57);"></i><div><b>Warm gradient</b>#FF8A57 · celebrations</div></div>
+                <div class="stamped-swatch"><i style="background:#D9A621;"></i><div><b>Reward Gold</b>#D9A621 · mastery only</div></div>
+                <div class="stamped-swatch"><i style="background:#F2F2F7;border-bottom:1px solid var(--color-border);"></i><div><b>System surfaces</b>Dark mode for free</div></div>
+            </div>
+            <div class="stamped-type">
+                <div><span class="sample serif">Paris</span><small>Serif for destinations and stamps.</small></div>
+                <div><span class="sample mono">Passport Stamped</span><small>Monospaced labels, like a customs form.</small></div>
+                <div><span class="sample rounded">Plan a Trip</span><small>SF for everything you read and tap.</small></div>
+            </div>
+
+            <ul class="stamped-principles">
+                <li><strong>Every screen serves the loop: browse → visit → stamp.</strong> Weather, events, and dining stayed because they answer "what now that I'm here?"</li>
+                <li><strong>Rewards feel ceremonial:</strong> a dashed border, a slight tilt, a typewriter date, a fact, and a haptic.</li>
+                <li><strong>The map is the app.</strong> Stamp, Want to Go, Add to Trip, and Look Around all live on the map card.</li>
+                <li><strong>Accessibility changes the skin, not the structure.</strong> High contrast swaps color for borders; Reduce Motion stills the stamp and pins.</li>
+            </ul>
         </div>
 
         <div class="case-section">
-            <h3>Coming in 2.4</h3>
-            <p>Built and in testing, not on the App Store yet.</p>
+            <h3>New in 2.4: Plan a Trip on a 3D Map</h3>
+            <p>Finished and next to ship. 2.3, live since October 23, made the photoreal 3D map the center of the app; 2.4 builds a trip planner on top of it.</p>
+            <div class="stamped-shots">
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-planner.webp" alt="Three Days in Paris trip planner with a numbered route map, day tabs and Tour This Trip in 3D" width="800" height="1104" loading="lazy"></div></div>
+                    <figcaption><strong>Trip planner</strong>Days of stops, walking times, and one-tap route optimizing.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-tour.webp" alt="Trip tour on the 3D map: the Louvre pyramid card labeled Day 1, Stop 2 of 4" width="800" height="1104" loading="lazy"></div></div>
+                    <figcaption><strong>Tour it in 3D</strong>The camera flies stop to stop, day by day.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-map-card.webp" alt="Eiffel Tower map card with Look Around preview and quick action buttons" width="800" height="1104" loading="lazy"></div></div>
+                    <figcaption><strong>Everything on the card</strong>Stamp, save, add to a trip, or look around.</figcaption>
+                </figure>
+            </div>
             <div class="stamped-new-grid">
                 <div class="stamped-new-item">
+                    <h4>Campus Architecture</h4>
+                    <p>41 university campuses and 202 buildings, with their own achievements.</p>
+                </div>
+                <div class="stamped-new-item">
                     <h4>Want to Visit</h4>
-                    <p>Heart any landmark, or search Apple Maps for any restaurant, shop, or venue and save it. Saved places get their own pins and sync through iCloud.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>Guided city tour</h4>
-                    <p>One button flies between every landmark in walking order, starting nearest to you, pausing on each so you can read its card.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>Map card quick actions</h4>
-                    <p>Stamp, Want to Go, and Look Around right on the map card, arrows to step through landmarks, and in-app websites and Ticketmaster events on place cards.</p>
-                </div>
-                <div class="stamped-new-item">
-                    <h4>Filters &amp; map styles</h4>
-                    <p>Show not visited, stamped, or Want to Visit, narrow by architectural style, a pulsing pin on the nearest unvisited landmark, and a map/satellite toggle.</p>
+                    <p>Heart any landmark or save any Apple Maps place, synced through iCloud.</p>
                 </div>
             </div>
         </div>
 
         <div class="case-section">
             <h3>App Store Screenshots</h3>
+            <p>The 2.3 product page.</p>
             <div class="screenshot-scroll-track appstore">
                 <div class="screenshot-scroll-item">
                     <img src="assets/images/stamped/appstore-01-fly-3d.webp" alt="Fly through real cities in 3D: the photoreal 3D map of Manhattan" width="660" height="1434" loading="lazy" />
@@ -389,73 +474,62 @@
         </div>
 
         <div class="case-section">
-            <h3>How It Works</h3>
-            <p>The app organizes the world into continents → countries → cities. A world progress card on the home screen shows how many of the 140 cities you've mastered and your percentage toward completing all of them. Tapping into a city shows a detail page with your progress percentage, a rank badge (like "Urban Insider"), a per-city architecture quiz, and the full landmark list.</p>
-            <p>Each city has a curated day-by-day architectural itinerary — a timeline of stops with walking times between them, organized chronologically by year built. On the 3D city map, orange pins mark stamped landmarks and grey pins mark the ones you haven't visited yet. When you visit every landmark in a city, a stamp celebration view fires and you earn a passport stamp with a "Did You Know?" fact about the city.</p>
-            <p>Beyond the architecture, each city surfaces a live travel dossier (local language, airport, transit, currency) alongside real-time weather and a 7-day forecast from Open-Meteo, upcoming events filtered by category from Ticketmaster, and nearby dining from Apple Maps — so you can plan the rest of your day without leaving the app.</p>
-        </div>
-
-        <div class="case-section">
             <h3>Also in the App</h3>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <strong>iCloud Sync</strong>
-                    <p>Stamps, visit dates, and notes follow you across your devices through iCloud, with no account to create.</p>
+                    <strong>Travel Dossier</strong>
+                    <p>Language, airport, transit, currency, live weather, Ticketmaster events, and nearby dining for every city.</p>
+                </div>
+                <div class="feature-card">
+                    <strong>Quizzes &amp; Achievements</strong>
+                    <p>A 10-question architecture quiz per city, plus achievements and a shareable passport.</p>
                 </div>
                 <div class="feature-card">
                     <strong>Search by Architect</strong>
-                    <p>Search across all 140 cities by city name, landmark name, or architect — results appear instantly.</p>
+                    <p>Find any city, landmark, or architect across all 140 cities.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Architecture Quizzes</strong>
-                    <p>Per-city 10-question quiz to test your knowledge of the buildings before and after you explore.</p>
+                    <strong>iCloud Sync</strong>
+                    <p>Stamps, notes, trips, and saved places follow you across devices. No account.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Spoken Greetings</strong>
-                    <p>The travel dossier says hello in the local language, alongside the airport code, transit options, and currency.</p>
+                    <strong>9 Languages</strong>
+                    <p>The app and its App Store page, including Japanese, Korean, and Chinese.</p>
                 </div>
                 <div class="feature-card">
-                    <strong>Photo Capture</strong>
-                    <p>Attach a personal photo to any landmark using the camera or photo library, saved locally to your passport entry.</p>
-                </div>
-                <div class="feature-card">
-                    <strong>Accessibility</strong>
-                    <p>High-contrast mode, reduce motion, and VoiceOver labels throughout.</p>
+                    <strong>Widget</strong>
+                    <p>Passport progress on your Home Screen.</p>
                 </div>
             </div>
         </div>
 
         <div class="case-section">
             <h3>Architecture</h3>
-            <p>Stamped! is a pure SwiftUI app. The landmark and city content layer is embedded in code — <code>BuildingRegistry</code> maps each <code>City</code> to its landmark list, and <code>CityData</code> holds metadata like nicknames, airport codes, and local transit. This keeps the app fully functional offline for browsing, tracking, and navigation, with the live data layer (weather, events, dining) layered on top where a connection is available.</p>
-            <p>The 3D map is SwiftUI's <code>Map</code> with <code>.mapStyle(.imagery(elevation: .realistic))</code>. The 3D effect comes from the camera: every move sets a <code>MapCamera</code> pitched 60–65°, because a camera looking straight down turns the same data into a flat satellite photo.</p>
-            <p>The guided tour coming in 2.4 is a single cancellable <code>Task</code> that orders the filtered landmarks by nearest-neighbor walking distance from you (or the city center), flies to each one, and waits on it. Tapping a pin, using the landmark card, or leaving the screen cancels the task, so the tour never fights the user for the camera.</p>
-            <p>State flows through a central <code>GlobalProgressManager</code> — an <code>ObservableObject</code> singleton that owns all visited IDs and user-attached photos. Visited IDs, visit dates, and notes are written to both <code>UserDefaults</code> and <code>NSUbiquitousKeyValueStore</code>, so they sync through iCloud with no backend and no account (in 2.4 the wishlist and saved places sync the same way); photos are written as <code>BuildingID.jpg</code> files in the app's Documents directory and loaded back on startup. City rank and completion percentage are computed properties derived from the visited set, so they're always in sync without separate storage.</p>
-            <p>Settings like haptics, sound, high contrast, and reduced motion each live in <code>@AppStorage</code> — one line of persistence per toggle. The view hierarchy follows natural SwiftUI nesting: <code>CityListView</code> → <code>CityDetailView</code> → building detail and itinerary views, with <code>PassportGalleryView</code> accessible from a floating passport button throughout.</p>
+            <p>Stamped! is pure SwiftUI with no backend. Landmark and city content is embedded in code (<code>BuildingRegistry</code>, <code>CityData</code>), so browsing and tracking work offline; weather, events, and dining layer on top when there's a connection.</p>
+            <p>One <code>ObservableObject</code>, <code>GlobalProgressManager</code>, owns visited IDs and photos. It writes to <code>UserDefaults</code> and <code>NSUbiquitousKeyValueStore</code>, so progress syncs through iCloud with no account. Rank and completion are computed from the visited set, so they can never drift out of sync.</p>
+            <p>The 3D map is SwiftUI's <code>Map</code> with realistic elevation and a <code>MapCamera</code> pitched 60–65°. Guided and trip tours are one cancellable <code>Task</code> that flies stop to stop; any tap cancels it, so the tour never fights you for the camera.</p>
         </div>
 
         <div class="case-section">
             <h3>What Was Hard</h3>
-            <p>The biggest design challenge was scope management. A travel app can expand infinitely — more cities, more data sources, more features. The answer was a strict rule: every screen had to serve the core loop (browse → visit → stamp). Weather, events, and dining made the cut because they answer "what do I do now that I'm here." Look Around made the cut because it answers "what does this building actually look like." Anything that didn't support one of those questions got cut.</p>
-            <p>Wiring MapKit pins to local progress state was subtler than expected. The map needs to reflect stamp state in real time as the user marks buildings visited — without re-fetching or re-rendering the whole annotation set. The solution was observing <code>GlobalProgressManager</code> directly in the map view so annotations update as <code>@Published</code> state changes, rather than passing a static snapshot.</p>
-            <p>The fly-to camera took a few passes. Centering the camera on a landmark put the building right under the card that slides up from the bottom of the screen. The fix was aiming the camera slightly south of the landmark, which pushes the building up into the visible part of the map. Framing a whole city had a similar problem: one far-out landmark, like JFK airport in New York, made the map open zoomed out too far. The fix in 2.4 frames the closest 80% of landmarks and ignores the outliers.</p>
-            <p>The Ticketmaster integration required careful category filtering and graceful degradation — some cities have no upcoming events, and the UI had to handle empty states cleanly without making the screen feel broken. Same for Look Around: not every location has street-level imagery, so the app falls back to a standard map tile rather than showing a broken state.</p>
-            <p>App Store approval took multiple rounds. Apple scrutinized the camera usage string, the Ticketmaster deep links (which had to open in Safari rather than in-app to comply with guidelines), and the location permissions flow. Getting all three right simultaneously was the final hurdle before the app shipped.</p>
+            <p><strong>Scope.</strong> A travel app can grow forever. The rule: every feature answers "what do I see?", "how do I get there?", or "what now that I'm here?" Anything else got cut.</p>
+            <p><strong>Camera framing.</strong> Centering on a landmark hid it under the card, so the camera aims slightly south. One far-off pin (JFK in New York) zoomed whole cities out, so city framing now uses the closest 80% of landmarks.</p>
+            <p><strong>Bad data.</strong> Flying to a pin in 3D makes a wrong pin obvious. For 2.4 I audited every landmark: 181 pins moved to their real locations, 200+ photos fixed.</p>
+            <p><strong>App Review.</strong> Apple pushed back on the camera usage string, Ticketmaster links, and the location flow. Getting all three right was the last hurdle to launch.</p>
         </div>
 
         <div class="case-section">
             <h3>Where the Idea Could Go</h3>
-            <p>A group of MSU students visited the Apple Developer Academy while I was there. I showed them Stamped! and walked them through how it worked — the city loop, the stamp collection, the itineraries. One of them said something like "this would be perfect for learning your way around campus as a freshman." That stuck.</p>
-            <p>The concept maps directly: cities become campus zones, landmarks become dining halls and student services buildings, stamps become orientation completion badges. I wrote it up and built out a pitch doc and HTML deck, but it's still just an idea — nothing in development. I documented it because the feedback was real and the framework already fits, not because there's a product coming.</p>
+            <p>When MSU students visited the Apple Developer Academy, one of them said Stamped! would be perfect for learning your way around campus as a freshman, with dining halls as landmarks and orientation as stamps. I wrote it up as a pitch doc and deck. The first piece is now real: 2.4 added a Campus Architecture collection, and 2.5 grows it to 101 campuses, every Big Ten, SEC, ACC and Big 12 school, Michigan State included, grouped by conference.</p>
         </div>
 
     <!-- Vision Pro teaser -->
-    <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
+    <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;border-radius:16px;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
             <div style="flex:1;min-width:260px;">
-                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
+                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">Launching with 2.5</span>
                 <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Stamped! for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">A visionOS version planned for 2.4, with all 140 cities on the same photoreal 3D city map, landmark cards, and the passport stamps you've already earned on iPhone, synced through iCloud. Part of my work at the Apple Developer Academy.</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Built and in testing: all 140 cities on the 3D map, a spinning globe of your stamped cities, the quiz, and stamps synced from iPhone. 9 languages, a 24 MB download. Part of my work at the Apple Developer Academy.</p>
             </div>
             <div style="flex-shrink:0;width:340px;max-width:100%;">
                 <img src="assets/images/site/APV-asset.png" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
@@ -465,8 +539,7 @@
 
         <div class="case-section" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. I didn't stop at launch: it has gone through seven versions in eight months, from 1.0 to 2.3, adding achievements, a world map, passport sharing, and building scans that sync through iCloud. 2.3, now in App Store review, adds the photoreal 3D city map, and 2.4 is built and in testing.</p>
-            <p>The patterns I worked out here (one observable store for shared state, computed values instead of duplicate storage, and a clean split between content, state, and UI) are the ones I've used in every app since, including Tally.</p>
+            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.4, with Vision Pro coming in 2.5. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
