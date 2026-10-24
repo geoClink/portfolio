@@ -144,7 +144,7 @@
         <div class="case-hero">
             <img src="assets/images/tallyios/appicon.png" alt="Tally app icon" class="case-hero-icon" />
             <h2 class="case-title">Tally - Time Tracker</h2>
-            <p class="case-tagline">A time tracker for freelancers and small teams. Native iPhone, iPad, Apple Watch, and Mac apps, a web app, and an Android beta, all on one backend, connected to Jira, Linear, GitHub, and Google Calendar. Designed, built, and shipped solo.</p>
+            <p class="case-tagline">A time tracker for freelancers and small teams. Native iPhone, iPad, Apple Watch, Mac and Apple Vision Pro apps, a web app, and an Android beta, all on one backend, connected to Jira, Linear, GitHub, and Google Calendar. Designed, built, and shipped solo.</p>
         </div>
 
         <div class="case-links">
@@ -172,7 +172,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">Live on iPhone, iPad, Watch &amp; Mac · Android closed beta · Vision Pro in development</div>
+                <div class="case-glance-value">Live on iPhone, iPad, Watch &amp; Mac · Vision Pro in App Store review · Android closed beta</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Traction</div>
@@ -334,7 +334,7 @@
                 </div>
                 <figcaption id="tally-arch-caption">Every app reads and writes the same Supabase project. Integrations connect through Edge Functions, so tokens and secrets stay on the server.</figcaption>
             </figure>
-            <p><strong>Platforms.</strong> Native SwiftUI apps for iPhone, iPad, Apple Watch, and Mac (a true macOS target, not Catalyst), a React web app, and a Capacitor Android app, all on one Supabase backend. A visionOS version is in development.</p>
+            <p><strong>Platforms.</strong> Native SwiftUI apps for iPhone, iPad, Apple Watch, and Mac (a true macOS target, not Catalyst), a React web app, and a Capacitor Android app, all on one Supabase backend. The visionOS app shares the same SwiftUI source and adds a glass window, a timer volume you can place in the room, and type sized to read from across it.</p>
             <p><strong>Payments.</strong> StoreKit, Google Play Billing, and Stripe all feed one Supabase subscriptions table — no third-party billing service. Writes are server-only — Stripe through a webhook, App Store purchases verified against Apple's signature by an Edge Function — so a client can't grant itself Pro. Universal Purchase means one App Store payment covers iPhone and Mac.</p>
             <p><strong>Push notifications.</strong> A Supabase Edge Function delivers through APNs and Firebase Cloud Messaging — signing an ES256 JWT per request, routing sandbox vs. production, and pruning dead tokens. Permission is requested after the first tracked session rather than at launch, and a device's token is removed on sign-out.</p>
             <p><strong>Automated email.</strong> A weekly summary email of each user's hours, and a re-engagement email for users who've gone quiet. Scheduled jobs in Supabase call Edge Functions that send through Resend, with signed one-click unsubscribe links.</p>
@@ -413,6 +413,8 @@
             <p><strong>Logging time to Jira exactly once.</strong> When you save a session on a Jira or Linear ticket, Tally posts the time back to that ticket. But a save can be sent twice: a double click, or a save that stalls on a bad connection, gets kept to retry, and then lands after all. Disabling the Save button covers the double click but not the late save, and a duplicate worklog shows the client hours that never happened.</p>
             <p>So I made both steps safe to repeat. The app gives each session its id before the first try, so the database refuses a second copy and the app counts that as saved. Before posting to the ticket, the server function claims the session: a second request while the first is posting gets "already logged", a failed post gives up its claim so it can be tried again, and a claim stuck for two minutes is taken over. The worklog's id is stored on the session once it's posted.</p>
             <p>Server tests cover the claim, and end-to-end browser tests save sessions on Jira and Linear tickets and check that each save logs time exactly once, and that double-clicking Save stores one session.</p>
+            <p><strong>One timer on every device, even offline.</strong> Start the timer on the website and it should be running on your iPhone, Mac and Watch, and pausing or stopping it anywhere should stop it everywhere. Two things made that hard: device clocks disagree, and a phone can lose signal right as you stop.</p>
+            <p>The running timer is one row per user in the database, pushed to every device over Realtime. The database stamps each change with its own time, so no device's clock decides which change is newer, and every timer gets a fresh id so a device can tell "this timer changed" from "a different timer started". A stop made offline is remembered on the device and sent before it reads the shared timer again, and a session saved offline waits on the device with the id it was given, so it lands once when the connection comes back. Later I added pause times and a list of paused timers you can set aside while another runs, using the same rules.</p>
             <p><strong>Payments and App Review.</strong> Three stores feed one subscription record, written only by the server so nobody can grant themselves Pro. App Review took nearly 10 rejections, each for a different guideline, before it shipped.</p>
             <p><strong>A real Mac app.</strong> The Mac target shares the iOS source, so iOS-only APIs had to be guarded across dozens of views, and Mac needed its own sign-in because Google Sign-In has no Mac SDK.</p>
         </div>
@@ -440,24 +442,34 @@
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
             <div style="flex:1;min-width:260px;">
-                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In Development</span>
+                <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">In App Store Review</span>
                 <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Tally for Apple Vision Pro</h2>
-                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">Open Tally as a volume and it floats alongside your work — a live timer you can see without switching apps. Tap to pause, tap to resume. Your client hours tracked without breaking focus. Part of my work at the Apple Developer Academy.</p>
+                <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:420px;margin-bottom:1.5rem;">A native visionOS app, submitted with version 1.9.2: the same SwiftUI source as iPhone and Mac, in a glass window with a sidebar, plus a timer volume you can place anywhere in the room and an ornament to open it. Text and progress are sized to read from across the room. Part of my work at the Apple Developer Academy.</p>
                 <a href="https://tallytimetracker.com/#visionpro" target="_blank" rel="noopener noreferrer"
                     style="display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.6rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);">
                     Learn more ↗
                 </a>
             </div>
-            <div style="flex-shrink:0;width:340px;max-width:100%;">
-                <img src="assets/images/site/APV-asset.webp" loading="lazy" alt="Apple Vision Pro" style="width:100%;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="flex:1.3;min-width:260px;">
+                <img src="assets/images/tallyios/app/visionpro-timer.webp" width="1600" height="900" loading="lazy" alt="Tally on Apple Vision Pro: a glass window in a living room with the sidebar, an empty timer ring, Acme Corp and River North Group goal progress, Start Timer, and an Open Timer Volume button below the window" style="width:100%;height:auto;display:block;border-radius:14px;filter:drop-shadow(0 24px 56px rgba(0,0,0,0.55));" />
             </div>
         </div>
     </div>
 
         <div class="case-section" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Nearly 300 downloads and 63K+ App Store impressions since launch, built and shipped solo. Tally is live on the App Store for iPhone, iPad and Apple Watch, the Mac app is on the Mac App Store, and Android is in closed testing on Google Play, with one account across all of them.</p>
+            <p>Nearly 300 downloads and 63K+ App Store impressions since launch, built and shipped solo. Tally is live on the App Store for iPhone, iPad and Apple Watch, the Mac app is on the Mac App Store, the Vision Pro app is in App Store review, and Android is in closed testing on Google Play, with one account across all of them. Version 1.9.2 went out to every platform on the same day.</p>
             <p>It's the most complex thing I've built. Not because any single piece is hard, but because five platforms, several payment paths, a shared backend, and a growing list of integrations all have to be correct at once. It all has to work, and it does.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What I Learned, and What's Next</h3>
+            <p>Shipping the same feature to every platform taught me to put the rules in one place first. When the server owns the truth (the shared timer, the subscription record, the "logged once" claim), every app can be simple, and a new platform like Vision Pro is mostly layout work.</p>
+            <ul>
+                <li><strong>Android to production</strong> once the closed test is done, with a wide-window layout for tablets and Chromebooks</li>
+                <li><strong>An installable web app</strong> for Windows and Chromebooks, straight from the browser</li>
+                <li><strong>Translations</strong> for the apps and the store listings, starting with Spanish, French, German and Portuguese</li>
+            </ul>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
