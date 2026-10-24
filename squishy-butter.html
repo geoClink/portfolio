@@ -51,7 +51,8 @@
         .sb-cs-eyebrow { font-size: 0.72em; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 10px; }
         .sb-cs-title { font-size: 1.5em; font-weight: 700; color: var(--color-heading); margin-bottom: 10px; line-height: 1.2; }
         .sb-cs-text { font-size: 0.85em; color: var(--color-text-muted); line-height: 1.6; margin: 0; }
-        .sb-code { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1em 1.15em; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; line-height: 1.6; margin: 1.2em 0 0.6em; }
+        .sb-code { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1em 1.15em; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; line-height: 1.6; margin: 1.2em 0 0.6em; white-space: pre; }
+        .tech-details-body code { overflow-wrap: anywhere; }
         .sb-code-note { font-size: 0.78rem; color: var(--color-text-muted); font-style: italic; margin: 0 0 0.5em; }
         .sb-scroll-track { display: flex; gap: 1.25em; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 0.75em 0 1.5em; margin: 1.25em 0 0; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
         .sb-scroll-track::-webkit-scrollbar { height: 6px; }
@@ -64,14 +65,18 @@
         .sb-pull-up { margin-top: -160px; }
         @media (max-width: 680px) { .sb-pull-up { margin-top: 0; } }
         .phone-mockup.no-island::after { display: none; }
+        .phone-screen-static img { height: auto; }
         .sb-preview { display: flex; justify-content: center; margin: 1.25em 0 0; padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
             background: radial-gradient(70% 70% at 50% 30%, rgba(240, 193, 75, 0.18), transparent 70%), var(--color-surface); }
         .sb-preview video { width: 100%; max-width: 300px; height: auto; aspect-ratio: 444 / 962; display: block; border-radius: 18px; background: #1A1008; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.45); }
-        .sb-vr-rooms { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 2rem; }
-        @media (max-width: 680px) { .sb-vr-rooms { grid-template-columns: 1fr 1fr; } }
+        .sb-vr { padding: 4rem 2.5rem; border-radius: 16px; }
+        @media (max-width: 680px) { .sb-vr { padding: 2.5rem 1rem; margin: 0 -24px; border-radius: 0; } }
+        .sb-vr-rooms { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 2rem; }
+        .sb-vr-rooms figure:first-child { grid-column: 1 / -1; }
+        @media (max-width: 680px) { .sb-vr-rooms { grid-template-columns: 1fr; } }
         .sb-vr-rooms figure { margin: 0; }
-        .sb-vr-rooms img { width: 100%; height: auto; aspect-ratio: 800 / 477; object-fit: cover; display: block; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); }
-        .sb-vr-rooms figcaption { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.4em; letter-spacing: 0.04em; }
+        .sb-vr-rooms img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); }
+        .sb-vr-rooms figcaption { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 0.5em; letter-spacing: 0.04em; }
         .sb-subhead { font-size: 0.95rem; font-weight: 600; color: var(--color-heading); margin: 2em 0 0; }
         .sb-mac-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.25em; }
         .sb-mac-grid img { flex: 1 1 300px; min-width: 0; width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--color-border); }
@@ -126,6 +131,39 @@
         .sb-odds.sb-odds--animate .sb-odds-bar--rare     { width: 30.1%; }
         .sb-odds.sb-odds--animate .sb-odds-bar--epic     { width: 16.9%; }
         .sb-odds.sb-odds--animate .sb-odds-bar--legendary{ width: 0.9%;  }
+
+        /* Results box under the hero */
+        .sb-results { border: 1px solid var(--color-border); border-left: 3px solid var(--case-accent); border-radius: 10px; padding: 1.1em 1.4em; margin: var(--space-4) 0 var(--space-2); background: var(--color-surface); }
+        .sb-results-label { font-size: 0.7em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5em; }
+        .sb-results ul { margin: 0; padding-left: 1.1em; }
+        .sb-results li { margin: 0.35em 0; line-height: 1.55; }
+        /* Stat cards */
+        .sb-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 1em 0 1.5em; }
+        @media (max-width: 860px) { .sb-stats { grid-template-columns: 1fr 1fr; } }
+        .sb-stat { display: flex; flex-direction: column; gap: 0.35em; padding: 1em; border: 1px solid var(--color-border); border-radius: 10px; min-width: 0; }
+        .sb-stat-num { font-size: 1.45em; font-weight: 800; color: var(--color-heading); letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+        .sb-stat-label { font-size: 0.78em; color: var(--color-text-muted); line-height: 1.45; }
+        /* Device tabs */
+        .sb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 1.25em 0 0; }
+        .sb-tabs [role="tab"] { height: auto; line-height: 1.2; padding: 0.55em 1em; font-size: 0.82em; font-weight: 600; letter-spacing: 0.02em; text-transform: none; border-radius: 99px; border: 1px solid var(--color-border); background: transparent; box-shadow: none; color: var(--color-text-muted) !important; cursor: pointer; }
+        .sb-tabs [role="tab"]:hover { color: var(--color-heading) !important; border-color: var(--color-heading); background: transparent; box-shadow: none; }
+        .sb-tabs [role="tab"][aria-selected="true"] { background: var(--color-heading); border-color: var(--color-heading); color: var(--color-bg) !important; }
+        .sb-tabpanel > p:first-child { margin-top: 1em; }
+        /* Contents list, only where the left gutter has room */
+        .sb-toc { display: none; }
+        @media (min-width: 1400px) {
+            .sb-toc { display: block; position: fixed; top: 120px; left: calc(50% - 430px - 210px); width: 180px; font-size: 0.8rem; z-index: 5; }
+            .sb-toc-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.6em; }
+            .sb-toc ul { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--color-border); }
+            .sb-toc li { margin: 0; padding: 0; }
+            .sb-toc a { display: block; padding: 0.3em 0 0.3em 0.9em; margin-left: -1px; border-left: 2px solid transparent; color: var(--color-text-muted); text-decoration: none; border-bottom: none; line-height: 1.35; }
+            .sb-toc a:hover { color: var(--color-heading); }
+            .sb-toc a.active { color: var(--color-heading); font-weight: 600; border-left-color: var(--case-accent); }
+        }
+        #main [id] { scroll-margin-top: 90px; }
+        /* Closing call to action */
+        .sb-hire { border-top: 1px solid var(--color-border); padding-top: 2em; }
+        .sb-hire-links { display: flex; gap: 1.25em; align-items: center; flex-wrap: wrap; }
     </style>
     <script type="application/ld+json">
     {
@@ -183,6 +221,26 @@
     </header>
     <div id="menuOverlay" class="menu-overlay"></div>
 
+    <nav class="sb-toc" aria-label="On this page">
+            <div class="sb-toc-label">On this page</div>
+            <ul>
+                <li><a href="#idea">The idea</a></li>
+                <li><a href="#see-it-play">See it play</a></li>
+                <li><a href="#feel">Why it feels right</a></li>
+                <li><a href="#skins">Skins</a></li>
+                <li><a href="#under-the-hood">Under the hood</a></li>
+                <li><a href="#pulls">Pull system</a></li>
+                <li><a href="#economy">Hardening the economy</a></li>
+                <li><a href="#auth">Auth</a></li>
+                <li><a href="#languages">Four languages</a></li>
+                <li><a href="#vr">VR</a></li>
+                <li><a href="#screens">On every screen</a></li>
+                <li><a href="#hard">What was hard</a></li>
+                <li><a href="#tech">Technical details</a></li>
+                <li><a href="#results">Where it stands</a></li>
+                <li><a href="#landing">Marketing site</a></li>
+            </ul>
+    </nav>
     <div id="main" role="main">
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
@@ -249,7 +307,17 @@
         </div>
 
 
-        <div class="case-section">
+        <div class="sb-results" role="region" aria-label="Results">
+            <div class="sb-results-label">Results</div>
+            <ul>
+                <li><strong>1,500+ downloads, zero ad spend.</strong> 4.7 stars on the App Store.</li>
+                <li><strong>283 automated tests</strong> on pulls, payments and permissions. They caught four real money bugs, each fixed and deployed the same day.</li>
+                <li><strong>Translated for the 69%</strong> of players who don't use English, and Play listing conversion went up.</li>
+                <li><strong>Shipped solo</strong> to web, iPhone, iPad, Android, Mac and Apple Watch, plus VR in the headset browser.</li>
+            </ul>
+        </div>
+
+        <div class="case-section" id="idea">
             <h3>The Idea</h3>
             <p class="sb-hook">It started with a gift. Someone handed me a squishy butter toy and I immediately understood why people were obsessed with them.</p>
             <p>At the time, physical squishies were everywhere - selling out at fairs, people queueing for restocks, the kind of low-cost object that somehow generates outsized enthusiasm. The product hypothesis was simple: if people were this excited about a foam rectangle that does nothing, a digital version with real physics, a collection mechanic, and something to show for it could work. I shipped fast and bet that the demand for the physical thing would translate.</p>
@@ -257,7 +325,7 @@
             <p>Almost every squishy thing on the web is a scale animation. The object shrinks toward its middle and springs back - and it feels like rubber, because a spring is what rubber does. I wanted the other sensation: a fingertip actually sinking into something soft. That's a materials problem, not an animation problem - it needed a real deformation model running on the graphics card.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="see-it-play">
             <h3>See It Play</h3>
             <p>The App Store preview in 30 seconds: squish, switch skins, open a Dairy Delivery, reveal a numbered Legendary, then find it in the collection.</p>
             <div class="sb-preview">
@@ -265,53 +333,7 @@
             </div>
         </div>
 
-        <div class="case-section desktop-only">
-            <h3>The Landing Page</h3>
-            <p>The full product page - collection, mechanics, rarity tiers, and the order flow.</p>
-            <div class="browser-mockup">
-                <div class="browser-bar">
-                    <div class="browser-dots">
-                        <div class="browser-dot close"></div>
-                        <div class="browser-dot minimize"></div>
-                        <div class="browser-dot maximize"></div>
-                    </div>
-                    <div class="browser-url">squishybutter.app/landing.html</div>
-                </div>
-                <div style="position:relative;">
-                    <video class="lazy-video" data-src="assets/videos/squishy-butter/landing-desktop.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-desktop-poster.jpg" aria-label="Recording of the Squishy Butter landing page scrolling through the hero, skin catalogue, drop rates and coin packs" style="display:block;width:100%;aspect-ratio:5/4;object-fit:cover;object-position:top;background:#F6EEDF;">
-                    </video>
-                </div>
-            </div>
-            <p class="iframe-note iframe-note-desktop"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
-        </div>
-
-        <div class="case-section">
-            <h3>Mobile Experience</h3>
-            <p>The landing page is fully responsive - the collection, rarity tiers, and order flow all work on a phone with no install required.</p>
-            <div class="phone-showcase">
-                <div class="phone-mockup">
-                    <div class="phone-btns-left"></div>
-                    <div class="phone-screen">
-                        <div class="status-bar">
-                            <span class="status-time">9:41</span>
-                            <div class="status-icons">
-                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
-                            </div>
-                        </div>
-                        <div class="phone-viewport">
-                            <video class="lazy-video" data-src="assets/videos/squishy-butter/landing-phone.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-phone-poster.jpg" aria-label="Recording of the Squishy Butter landing page on a phone, scrolling through the catalogue, drop rates and coin packs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;background:#F6EEDF;">
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="case-caption">Recorded from the live site</p>
-            <p class="iframe-note iframe-note-mobile"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
-        </div>
-
-        <div class="case-section">
+        <div class="case-section" id="feel">
             <h3>Why It Feels Right</h3>
             <p>Four decisions do most of the work, and each one is something you notice in the first three seconds without being able to name it.</p>
             <ul>
@@ -322,12 +344,12 @@
             </ul>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="skins">
             <h3>214 Skins, One Squish Engine</h3>
             <div class="skin-pan-wrap">
-                <img src="assets/images/squishy-butter/butter-skins-grid.webp" alt="Squishy Butter skin lineup — Classic, Aurora, Striped, Wood, and more" width="969" height="1969" loading="lazy" decoding="async">
+                <img src="assets/images/squishy-butter/butter-skins-grid.webp" alt="Squishy Butter skin lineup: Classic, Aurora, Striped, Wood, and more" width="969" height="1969" loading="lazy" decoding="async">
             </div>
-            <p style="font-size:0.8em;color:var(--color-text-muted);margin:-1em 0 1.5em;text-align:center;">Every skin is also a bundled iMessage sticker — hover to pause the lineup.</p>
+            <p style="font-size:0.8em;color:var(--color-text-muted);margin:-1em 0 1.5em;text-align:center;">Every skin is also a bundled iMessage sticker. Hover to pause the lineup.</p>
             <div class="sb-auth-split">
                 <div class="sb-auth-split-text">
                     <p>Marble veining, zebra stripes that taper and fork the way real ones do, cheetah rosettes, wood grain, tie-dye, denim, camo, gold foil - the texture skins. Then sports: baseball stitching, football pigskin, basketball dimples, soccer panels. Seasonal runs: Detroit city flag, Mother's Day, Valentine's Day, Birthday. And a handful that are just their own thing: Frozen, Fortune Cookie, Fur. The catalogue started fully procedural - every skin drawn at runtime in code. As it grew past 190, most skins moved to compressed texture maps for richer detail, while around 50 are still generated by code at runtime.</p>
@@ -350,7 +372,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="under-the-hood">
             <h3>A Few Things Under the Hood</h3>
             <ul>
                 <li><strong>Fur is 16 stacked layers, not a texture.</strong> Printed fur reads as fabric with a picture of fur on it. Real depth means drawing the mesh repeatedly, each copy pushed a little further out, with only the strand pixels surviving. Every layer runs the squish shader too, or the coat would stay stiff while the butter dented underneath it.</li>
@@ -359,25 +381,7 @@
             </ul>
         </div>
 
-        <div class="case-section">
-            <h3>Auth</h3>
-            <div class="sb-auth-split">
-                <div class="sb-auth-split-text">
-                    <p>Sign in with Apple, Sign in with Google, or an eight-digit email code - no password to forget or rotate. The magic link pattern was ruled out early: a tapped link that opens a new browser tab breaks the flow, and the right email client on iOS isn't guaranteed to match the browser. A one-time code sidesteps both problems - the user stays in the same app, on the same page, and nothing depends on which client they open.</p>
-                    <p>Once you're in, your profile tracks coins, squish count, and total time squished. You can set a username, pick your butter's color from 27 options, choose from 29 expressions, and claim a title - starting with Fresh Out the Fridge and unlocking through Squish Enthusiast, Butter Baron, and beyond as your squish count, time, and collection grow.</p>
-                </div>
-                <div class="sb-auth-split-phone">
-                    <div class="phone-mockup no-island sb-phone-float" style="width:240px;">
-                        <div class="phone-btns-left"></div>
-                        <div class="phone-screen-static">
-                            <img src="assets/images/squishy-butter/profile-view.webp" alt="Profile editor - butter color picker, expression selector, and title options" width="520" height="1127" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="case-section">
+        <div class="case-section" id="pulls">
             <h3>The Pull System</h3>
             <div style="margin-top:0.75em;">
                 <img src="assets/images/squishy-butter/coa-trading-card.webp" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy" style="float:left;width:260px;max-width:45%;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.14);margin:0 1.75em 1em 0;">
@@ -412,7 +416,13 @@
             <img src="assets/images/squishy-butter/prices.webp" alt="Coin shop - one-time Starter Pat plus Stick, Case, Crate, and Pallet packages" width="1600" height="727" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;display:block;margin-top:1.75em;">
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="collection">
+            <h3>The Collection</h3>
+            <p>My Butters opens the Cold Store - a full-screen collection overlay with filter tabs by rarity (All / Common / Rare / Epic / Legendary) and a grid of every skin in the pool. Skins you own show as a full card with your butter's preview; skins you haven't pulled yet show as a ??? silhouette with the rarity visible. One owned skin surrounded by a wall of question marks communicates the whole gacha loop without a word of explanation.</p>
+            <img src="assets/images/squishy-butter/my-butters-updated.webp" alt="The Cold Store collection: owned skins as full cards, unpulled ones as ??? silhouettes with their rarity" width="1600" height="1421" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.25em;clip-path:inset(0 0 12px 8px round 10px);">
+        </div>
+
+        <div class="case-section" id="economy">
             <h3>Hardening the Economy</h3>
             <p>Before a release I audited the coin economy end to end, client and database, and found real holes. A server-only function that credits purchases had never had its default public access revoked, so in principle anyone with the public API key could grant themselves coins. And because players could edit their own profile row, reward dates like the last daily claim could be reset to collect the same reward again.</p>
             <p>The fix was one migration: lock every coin-granting function to the server, and turn the profile guard from a block-list into an allow-list - players can change their name, avatar and settings, and nothing else. Purchases are now capped by what the store actually reports, so a fabricated transaction ID can't mint coins; web payments record and credit in one atomic step; and if an app purchase is interrupted after the charge, the coins are recovered automatically on the next sign-in.</p>
@@ -427,7 +437,25 @@
             <p>Then I turned the same approach on the rest of the system: 202 SQL tests for pulls, payments and permissions, 81 tests for the payment server functions, run against forged and replayed store receipts, and continuous integration that runs every suite on each push. The tests found four more real bugs, all fixed and deployed the same day. Limited skins could sell past their supply cap. Two players pulling at the same instant could get the same serial number, and a deleted account's number could be handed out again. Someone who bought a coin pack on Mac and then the same pack on iPhone wasn't credited for the second one. And a web bank transfer was credited before the money arrived. Each fix shipped with the test that proves it.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="auth">
+            <h3>Auth</h3>
+            <div class="sb-auth-split">
+                <div class="sb-auth-split-text">
+                    <p>Sign in with Apple, Sign in with Google, or an eight-digit email code - no password to forget or rotate. The magic link pattern was ruled out early: a tapped link that opens a new browser tab breaks the flow, and the right email client on iOS isn't guaranteed to match the browser. A one-time code sidesteps both problems - the user stays in the same app, on the same page, and nothing depends on which client they open.</p>
+                    <p>Once you're in, your profile tracks coins, squish count, and total time squished. You can set a username, pick your butter's color from 38 options, choose from 59 expressions, and claim a title - starting with Fresh Out the Fridge and unlocking through Squish Enthusiast, Butter Baron, and beyond as your squish count, time, and collection grow.</p>
+                </div>
+                <div class="sb-auth-split-phone">
+                    <div class="phone-mockup no-island sb-phone-float" style="width:240px;">
+                        <div class="phone-btns-left"></div>
+                        <div class="phone-screen-static">
+                            <img src="assets/images/squishy-butter/profile-view.webp" alt="Profile editor - butter color picker, expression selector, and title options" width="520" height="1127" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section" id="languages">
             <h3>Four Languages</h3>
             <p>About 69% of players use Indonesian, Spanish or Portuguese, so an English-only app was talking past most of its audience. In October I translated all of it into those three languages. The interface shipped on October 22, and the written lore for all 214 skins, the provenance stories on every certificate and trading card, went live on October 23. Widgets, iOS permission prompts, push reminders and the store listings are translated too.</p>
             <p>The lore was the big piece: about 5,000 lines per language. Longer Spanish and Portuguese strings also broke layouts that fit in English, so the certificate stamp and footer had to be refitted for phones. To keep that from coming back, a screen smoke test runs 104 checks across all four languages at two viewport sizes, alongside the Vitest unit suite.</p>
@@ -452,13 +480,7 @@
             </div>
         </div>
 
-        <div class="case-section">
-            <h3>The Collection</h3>
-            <p>My Butters opens the Cold Store - a full-screen collection overlay with filter tabs by rarity (All / Common / Rare / Epic / Legendary) and a grid of every skin in the pool. Skins you own show as a full card with your butter's preview; skins you haven't pulled yet show as a ??? silhouette with the rarity visible. One owned skin surrounded by a wall of question marks communicates the whole gacha loop without a word of explanation.</p>
-            <img src="assets/images/squishy-butter/my-butters-updated.webp" alt="The Cold Store collection: owned skins as full cards, unpulled ones as ??? silhouettes with their rarity" width="1600" height="1421" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.25em;clip-path:inset(0 0 12px 8px round 10px);">
-        </div>
-
-        <div class="case-section">
+        <div class="case-section" id="beyond">
             <h3>Beyond the Phone</h3>
             <p>The same account follows you off the main screen: three home-screen widget sizes show your squish stats, the Apple Watch app keeps your count on your wrist, and every butter ships as an iMessage sticker bundled with the app.</p>
             <div style="display:flex;gap:1.5em;align-items:center;flex-wrap:wrap;margin-top:1.25em;">
@@ -468,96 +490,34 @@
         </div>
 
     <!-- VR: Vision Pro, Quest, Android XR -->
-    <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;">
+    <div class="sb-vr" id="vr" style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);">
         <div style="max-width:960px;margin:0 auto;">
             <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#a78bfa;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:99px;padding:0.2rem 0.75rem;margin-bottom:1rem;">Live in the headset browser</span>
-            <h2 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;">Squishy Butter in VR: Vision Pro, Quest and Android XR</h2>
+            <h3 style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:0.85rem;text-transform:none;">Squishy Butter in VR: Vision Pro, Quest and Android XR</h3>
             <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:680px;margin-bottom:0.85rem;">Open squishybutter.app in the headset's browser and tap Enter Immersive. The butter sits at real size, about 12 cm, on a counter a metre off the floor, close enough to reach. Pinch to squish: the pinch is cast as a ray onto the butter and pressed exactly like a fingertip, so the same GPU dents, sounds and skins carry over. You can also pick the butter up, carry it and set it back down, and a small sign on the counter switches between five themed rooms without leaving immersive mode.</p>
             <p style="font-size:1rem;color:rgba(255,255,255,0.72);line-height:1.7;max-width:680px;margin-bottom:0;">It's WebXR in the browser, so there's no native port and no separate app to install. A native Vision Pro wrapper was prototyped and dropped, because WebXR doesn't run inside a WKWebView. An automated test drives the whole flow in an emulated Quest headset: enter, squish, lift, move, and cycle every room.</p>
             <div class="sb-vr-rooms">
-                <figure><img src="assets/images/squishy-butter/vr/kitchen.webp" alt="VR Kitchen room: the butter on a counter" width="800" height="477" loading="lazy" decoding="async"><figcaption>Kitchen</figcaption></figure>
-                <figure><img src="assets/images/squishy-butter/vr/diner.webp" alt="VR Diner room: the butter on a red diner counter over a checkered floor" width="800" height="477" loading="lazy" decoding="async"><figcaption>Diner</figcaption></figure>
-                <figure><img src="assets/images/squishy-butter/vr/vaporwave.webp" alt="VR Vaporwave room: neon grid floor" width="800" height="477" loading="lazy" decoding="async"><figcaption>Vaporwave</figcaption></figure>
-                <figure><img src="assets/images/squishy-butter/vr/space.webp" alt="VR Space room: the butter among the stars" width="800" height="477" loading="lazy" decoding="async"><figcaption>Space</figcaption></figure>
-                <figure><img src="assets/images/squishy-butter/vr/sunset.webp" alt="VR Sunset room: tiled terrace at sunset" width="800" height="477" loading="lazy" decoding="async"><figcaption>Sunset</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/diner.webp?v=2" alt="VR Diner room: the butter on a red diner counter over a checkered floor" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Diner</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/vaporwave.webp?v=2" alt="VR Vaporwave room: neon grid floor" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Vaporwave</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/space.webp?v=2" alt="VR Space room: the butter among the stars" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Space</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/sunset.webp?v=2" alt="VR Sunset room: tiled terrace at sunset" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Sunset</figcaption></figure>
+                <figure><img src="assets/images/squishy-butter/vr/kitchen.webp?v=2" alt="VR Kitchen room: the butter on a counter" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Kitchen</figcaption></figure>
             </div>
-            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin:0.75rem 0 0;">Captured from the automated test in an emulated Quest headset.</p>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin:0.75rem 0 0;">Headset view of each room, captured from the automated test running an emulated Quest 3.</p>
         </div>
     </div>
 
-        <div class="case-section" style="margin-top:3em;">
-            <h3>What Was Hard</h3>
-            <p>Getting the feel right was mostly deleting things that were subtly wrong - a spring on release, a dent that never deepened, a drag that slid one divot around instead of leaving a trail. Each was defensible on its own; each made the butter feel like a different material.</p>
-            <p>The worst bug looked correct in the code. The spacing check measured the gap between the cursor and the active dent - except that dent eases toward the cursor every frame, so the distance never grew large enough to trigger. Below a certain speed, dragging left no trail at all. Simulating the loop outside the browser found it in one pass.</p>
-        </div>
-
-        <div class="case-section">
-            <details class="tech-details">
-                <summary>Technical Implementation</summary>
-                <div class="tech-details-body">
-                    <h4>Soft-Body Physics Shader</h4>
-                    <p>Deformation runs entirely on the GPU in a GLSL vertex shader. Each dent is a struct holding a position, depth, velocity, and age. Every frame the shader reads those values, calculates a displacement for each vertex based on a smooth falloff curve from the dent center, and writes the deformed position. Velocity and depth evolve on the CPU each frame and are uploaded as a uniform array - the GPU only does the geometry math, which is the part that needs to be fast.</p>
-                    <p>Resistance rises with the square of press speed, which is what separates memory foam from rubber at the physics level. Recovery uses an exponential ease rather than a spring, so there's no overshoot - overshoot is exactly what reads as jelly.</p>
-
-                    <h4>Device Budget Detection</h4>
-                    <p>The number of simultaneous dents is compiled into the shader as a constant. Ask for too many and the shader silently fails to compile on lower-end hardware, which renders as nothing at all - not a loading error, just a blank canvas. Before compiling, the engine queries <code>gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS)</code>, uses 45% of the reported budget split across the dent structs, and clamps between 6 and 48. One build, no device detection, no separate mobile path.</p>
-                    <div class="sb-code">const budget = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128;
-const affordable = Math.floor((budget * 0.45) / 2);
-return Math.max(6, Math.min(48, affordable));</div>
-                    <p class="sb-code-note">The shader asks the device what it can afford before deciding how much to use.</p>
-
-                    <h4>Procedural Skin System</h4>
-                    <p>Each skin is a "look": a texture source plus material and lighting values (roughness, metalness, emissive glow, accent light) and its own squish physics. The texture comes either from a compressed texture map or from a generator function that paints it at runtime - the original approach, still used for around 50 skins. Both feed the same deforming mesh and shaders, so every skin squishes, dents and recovers the same way.</p>
-                    <p>Some skins have physics properties: Frozen raises the stiffness coefficient and tracks warmth per-region so one end of the butter can soften while the other stays solid. The warmth map is a per-dent accumulator updated each frame your finger stays in contact.</p>
-
-                    <h4>Fur Rendering</h4>
-                    <p>Fur is rendered using shell texturing - the mesh is drawn 16 times, each pass offset slightly outward along the surface normals. A noise function masks each layer so only strand-shaped pixels survive. Every pass runs through the same squish shader, so the coat deforms with the butter rather than floating above it. Without that, the fur would stay rigid while the body dented - immediately breaking the illusion.</p>
-
-                    <h4>Live Audio</h4>
-                    <p>Sound is generated in the Web Audio API each frame, not sampled from a file. Dent depth and press velocity are fed as parameters to an oscillator chain each frame, so the sound tracks what your hand is actually doing - pressing harder produces a lower, more compressed tone; a fast jab produces a sharper transient. Each skin has its own audio profile layered on top of the base model.</p>
-
-                    <h4>Minting Transaction</h4>
-                    <p>Pulls run entirely on the server. A Postgres function executes each pull as a single transaction: it locks the player's row, checks and deducts the coins, applies the pity counters, draws by weight from only the skins the player doesn't own yet (so there are no duplicates), assigns the next serial number for that skin, refuses the pull if a limited skin has sold out, and records ownership - all or nothing. Serials come from a database trigger that locks the skin's row, so every way of granting a skin (pulls, achievements, admin grants) numbers copies the same way and can never reuse one. The client never decides what you get or how many coins you have.</p>
-                </div>
-            </details>
-        </div>
-
-        <div class="case-section">
-            <h3>What I'd Do Differently</h3>
-            <ul>
-                <li><strong>A local database from day one.</strong> For months every database change was tested against the live project. Rebuilding a local copy later meant reconstructing tables that had been created in the dashboard and never written down.</li>
-                <li><strong>Treat the economy as adversarial from the first coin.</strong> The holes I closed were all "the client is trusted somewhere". Starting from "the server decides everything" would have cost a day up front instead of an audit later.</li>
-                <li><strong>Ask for sign-in later.</strong> Most players visit once, and signed-in players come back about three times as often. Guests can now squish freely and see a sign-up nudge after 25 squishes; letting them try a pull first is the next experiment.</li>
-                <li><strong>Smaller files, earlier.</strong> The catalogue, backgrounds and main app logic each grew into multi-thousand-line files. Splitting them sooner would have made every later change cheaper.</li>
-            </ul>
-        </div>
-
-        <div class="case-section">
-            <h3>Where It Stands</h3>
-            <div style="margin-top:0.75em;">
-                <div style="float:right;width:280px;max-width:45%;margin:0 0 1em 2em;border-radius:20px;overflow:hidden;">
-                    <img src="assets/images/squishy-butter/butter-1.webp" alt="Squishy Butter iOS app - main squish screen" width="600" height="1298" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
-                </div>
-                <p>The web product is live - 214 collectible skins, GPU physics, auth with Apple, Google, and email, a coin economy with rarity tiers, no-duplicate pulls, pity guarantees, and animated card reveals.</p>
-                <p>The vault is open: Stripe payments on web, App Store and Google Play purchases verified on the server, and every pull resolved inside a single database transaction. iOS is live on the App Store. Android is live on Google Play — both apps add haptics synced to the deformation under your finger.</p>
-                <p>Android launched September 16 with no paid promotion. Within three weeks, Google Play's recommendation engine had shown the icon 29,000 times and driven nearly 500 installs, almost all through browse surfaces rather than search. That traffic is discovery, not intent: people tap install on an interesting icon in a recommendation row, and only about a third open it. But the ones who do open it stick around. In the 28 days to October 22, Google Play counted 1,030 device acquisitions (up 478% on the 28 days before), 426 first opens and 470 monthly active devices. The next experiments target both ends: store listing keywords to start earning search traffic, and a first-launch nudge to close the gap between install and open. Translating the store listing was the first of those. Play's store listing conversion rate stood at 13.9% when the translations went live and at 14.6% a week later. It's early, but it's moving the right way.</p>
-                <p>The economy is live and now hardened end to end. Early data says the squish lands: the people who sign in keep coming back. The open question is the gap before that, getting first-time visitors to their second session, which is where the next round of work goes.</p>
-                <p>The whole product is a feeling. It either lands or it doesn't.</p>
-                <div style="clear:both;"></div>
-            </div>
-            <p style="margin-top:1.5em;color:var(--color-text-muted);font-size:0.92em;">The brand has room to go physical too.</p>
-            <figure style="margin:0.5em 0 0;">
-                <div style="overflow:hidden;border-radius:10px;border:1px solid var(--color-border);">
-                    <video class="lazy-video" data-src="assets/videos/squishy-butter/merch-video.mp4" muted loop playsinline preload="none" aria-label="Squishy Butter merch mock-up" style="width:100%;display:block;margin-top:-8%;"></video>
-                </div>
-                <figcaption style="font-size:0.78em;color:var(--color-text-muted);margin:0.5em 0 0;font-style:italic;">Something physical - merch might be coming soon.</figcaption>
-            </figure>
-        </div>
-
-        <div class="case-section">
+        <div class="case-section" id="screens">
             <h3>On Every Screen</h3>
             <p>One Capacitor and Three.js codebase runs on the web, iPhone, iPad, Android, Mac and Apple Watch, and through WebXR on Vision Pro, Quest and Android XR, with the same account, collection and coins everywhere. These are the current store screenshots, rendered from the running app by a headless-browser pipeline, so every size stays in sync with the real UI.</p>
-            <h4 class="sb-subhead">iPhone</h4>
+            <div class="sb-tabs" role="tablist" aria-label="Store screenshots by device">
+                <button type="button" role="tab" id="sb-tab-iphone" aria-controls="sb-tab-iphone-panel" aria-selected="true" tabindex="0">iPhone</button>
+                <button type="button" role="tab" id="sb-tab-android" aria-controls="sb-tab-android-panel" aria-selected="false" tabindex="-1">Android</button>
+                <button type="button" role="tab" id="sb-tab-ipad" aria-controls="sb-tab-ipad-panel" aria-selected="false" tabindex="-1">iPad</button>
+                <button type="button" role="tab" id="sb-tab-iphone-duo" aria-controls="sb-tab-iphone-duo-panel" aria-selected="false" tabindex="-1">iPhone Duo</button>
+                <button type="button" role="tab" id="sb-tab-mac" aria-controls="sb-tab-mac-panel" aria-selected="false" tabindex="-1">Mac</button>
+            </div>
+            <div class="sb-tabpanel" role="tabpanel" id="sb-tab-iphone-panel" aria-labelledby="sb-tab-iphone">
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
                     <img src="assets/images/squishy-butter/store/iphone-01-squish.webp" alt="Squish it. Feel it give. Classic Butter dented mid-press on iPhone" width="520" height="1130" loading="lazy" decoding="async">
@@ -592,7 +552,8 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <figcaption>Pity counters and published odds</figcaption>
                 </figure>
             </div>
-            <h4 class="sb-subhead">Android</h4>
+            </div>
+            <div class="sb-tabpanel" role="tabpanel" id="sb-tab-android-panel" aria-labelledby="sb-tab-android" hidden>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
                     <img src="assets/images/squishy-butter/store/android-01-squish.webp" alt="Squish it. Feel it give. Classic Butter dented mid-press on Android" width="480" height="853" loading="lazy" decoding="async">
@@ -627,7 +588,8 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <figcaption>Pity counters and published odds</figcaption>
                 </figure>
             </div>
-            <h4 class="sb-subhead">iPad</h4>
+            </div>
+            <div class="sb-tabpanel" role="tabpanel" id="sb-tab-ipad-panel" aria-labelledby="sb-tab-ipad" hidden>
             <p>The butter gets more room to breathe, and the wider canvas makes squishing feel even more tactile.</p>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone" style="width:280px;">
@@ -651,7 +613,8 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <figcaption>Pity counters and published odds</figcaption>
                 </figure>
             </div>
-            <h4 class="sb-subhead">iPhone Duo</h4>
+            </div>
+            <div class="sb-tabpanel" role="tabpanel" id="sb-tab-iphone-duo-panel" aria-labelledby="sb-tab-iphone-duo" hidden>
             <p>Both displays get their own set: the outer screen shows the phone layout, and the inner screen gets the roomier tablet layout.</p>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
@@ -671,7 +634,8 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <figcaption>The reveal, inner display</figcaption>
                 </figure>
             </div>
-            <h4 class="sb-subhead">Mac</h4>
+            </div>
+            <div class="sb-tabpanel" role="tabpanel" id="sb-tab-mac-panel" aria-labelledby="sb-tab-mac" hidden>
             <p>A lightweight native window around the web build, with StoreKit purchases, so your collection, coins and squish count match every other device.</p>
             <video class="lazy-video" data-src="assets/videos/squishy-butter/app-preview-mac.mp4" poster="assets/videos/squishy-butter/app-preview-mac.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Mac App Store preview: squishing the butter, a Dairy Delivery pull and the collection in a Mac window" style="width:100%;height:auto;display:block;margin-top:1.25em;border-radius:12px;border:1px solid var(--color-border);background:#1A1008;"></video>
             <div class="sb-mac-grid">
@@ -680,9 +644,126 @@ return Math.max(6, Math.min(48, affordable));</div>
                 <img src="assets/images/squishy-butter/store/mac-04-collection.webp" alt="Squishy Butter on Mac: Collect them all. The Cold Store collection in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
                 <img src="assets/images/squishy-butter/store/mac-05-certificate.webp" alt="Squishy Butter on Mac: One of a kind. Provably yours. A certificate of authenticity in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
             </div>
+            </div>
         </div>
 
-        <div class="case-section og-preview-section" style="margin-top:3em;">
+        <div class="case-section" id="hard" style="margin-top:3em;">
+            <h3>What Was Hard</h3>
+            <p>Getting the feel right was mostly deleting things that were subtly wrong - a spring on release, a dent that never deepened, a drag that slid one divot around instead of leaving a trail. Each was defensible on its own; each made the butter feel like a different material.</p>
+            <p>The worst bug looked correct in the code. The spacing check measured the gap between the cursor and the active dent - except that dent eases toward the cursor every frame, so the distance never grew large enough to trigger. Below a certain speed, dragging left no trail at all. Simulating the loop outside the browser found it in one pass.</p>
+        </div>
+
+        <div class="case-section" id="tech">
+            <details class="tech-details">
+                <summary>Technical Implementation</summary>
+                <div class="tech-details-body">
+                    <h4>Soft-Body Physics Shader</h4>
+                    <p>Deformation runs entirely on the GPU in a GLSL vertex shader. Each dent is a struct holding a position, depth, velocity, and age. Every frame the shader reads those values, calculates a displacement for each vertex based on a smooth falloff curve from the dent center, and writes the deformed position. Velocity and depth evolve on the CPU each frame and are uploaded as a uniform array - the GPU only does the geometry math, which is the part that needs to be fast.</p>
+                    <p>Resistance rises with the square of press speed, which is what separates memory foam from rubber at the physics level. Recovery uses an exponential ease rather than a spring, so there's no overshoot - overshoot is exactly what reads as jelly.</p>
+
+                    <h4>Device Budget Detection</h4>
+                    <p>The number of simultaneous dents is compiled into the shader as a constant. Ask for too many and the shader silently fails to compile on lower-end hardware, which renders as nothing at all - not a loading error, just a blank canvas. Before compiling, the engine queries <code>gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS)</code>, spends 45% of the reported budget on dent slots, and clamps the result between 6 and a cap - 48 on desktop, 20 on phones, because the shader loops over every slot for every vertex and 48 was measurably slower on iOS. One build; the GPU's own answer sets the ceiling.</p>
+                    <div class="sb-code">const budget = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128;
+// each dent slot costs ~2.75 vec4 uniforms
+const affordable = Math.floor((budget * 0.45) / 2.75);
+const cap = isMobile ? 20 : 48;
+return Math.max(6, Math.min(cap, affordable));</div>
+                    <p class="sb-code-note">The shader asks the device what it can afford before deciding how much to use.</p>
+
+                    <h4>Procedural Skin System</h4>
+                    <p>Each skin is a "look": a texture source plus material and lighting values (roughness, metalness, emissive glow, accent light) and its own squish physics. The texture comes either from a compressed texture map or from a generator function that paints it at runtime - the original approach, still used for around 50 skins. Both feed the same deforming mesh and shaders, so every skin squishes, dents and recovers the same way.</p>
+                    <p>Some skins have physics properties: Frozen raises the stiffness coefficient and tracks warmth per-region so one end of the butter can soften while the other stays solid. The warmth map is a per-dent accumulator updated each frame your finger stays in contact.</p>
+
+                    <h4>Fur Rendering</h4>
+                    <p>Fur is rendered using shell texturing - the mesh is drawn 16 times, each pass offset slightly outward along the surface normals. A noise function masks each layer so only strand-shaped pixels survive. Every pass runs through the same squish shader, so the coat deforms with the butter rather than floating above it. Without that, the fur would stay rigid while the body dented - immediately breaking the illusion.</p>
+
+                    <h4>Live Audio</h4>
+                    <p>Sound is generated in the Web Audio API each frame, not sampled from a file. Dent depth and press velocity are fed as parameters to an oscillator chain each frame, so the sound tracks what your hand is actually doing - pressing harder produces a lower, more compressed tone; a fast jab produces a sharper transient. Each skin has its own audio profile layered on top of the base model.</p>
+
+                    <h4>Minting Transaction</h4>
+                    <p>Pulls run entirely on the server. A Postgres function executes each pull as a single transaction: it locks the player's row, checks and deducts the coins, applies the pity counters, draws by weight from only the skins the player doesn't own yet (so there are no duplicates), assigns the next serial number for that skin, refuses the pull if a limited skin has sold out, and records ownership - all or nothing. Serials come from a database trigger that locks the skin's row, so every way of granting a skin (pulls, achievements, admin grants) numbers copies the same way and can never reuse one. The client never decides what you get or how many coins you have.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="case-section" id="results">
+            <h3>Where It Stands</h3>
+            <div class="sb-stats" role="list" aria-label="Google Play results">
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">29,000</span><span class="sb-stat-label">Play impressions in the first three weeks, no paid promotion</span></div>
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">1,030</span><span class="sb-stat-label">device acquisitions in the 28 days to Oct 22, up 478%</span></div>
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">470</span><span class="sb-stat-label">monthly active Android devices, 426 first opens</span></div>
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">14.6%</span><span class="sb-stat-label">Play listing conversion, up from 13.9% a week after the translations shipped</span></div>
+            </div>
+            <div style="margin-top:0.75em;">
+                <div style="float:right;width:280px;max-width:45%;margin:0 0 1em 2em;border-radius:20px;overflow:hidden;">
+                    <img src="assets/images/squishy-butter/butter-1.webp" alt="Squishy Butter iOS app - main squish screen" width="600" height="1298" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
+                </div>
+                <p>The web product is live - 214 collectible skins, GPU physics, auth with Apple, Google, and email, a coin economy with rarity tiers, no-duplicate pulls, pity guarantees, and animated card reveals.</p>
+                <p>The vault is open: Stripe payments on web, App Store and Google Play purchases verified on the server, and every pull resolved inside a single database transaction. iOS is live on the App Store. Android is live on Google Play, and both apps add haptics synced to the deformation under your finger.</p>
+                <p>Android launched September 16 with no paid promotion, and Google Play's recommendation rows did the rest. Almost all of that traffic came through browse surfaces rather than search: people tap install on an interesting icon, and only about a third open it. The ones who do open it stick around. The next experiments target both ends: store listing keywords to start earning search traffic, and a first-launch nudge to close the gap between install and open. Translating the store listing was the first of those, and conversion is moving the right way.</p>
+                <p>The economy is live and now hardened end to end. Early data says the squish lands: the people who sign in keep coming back. The open question is the gap before that, getting first-time visitors to their second session, which is where the next round of work goes.</p>
+                <p>The whole product is a feeling. It either lands or it doesn't.</p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <div class="case-section" id="differently">
+            <h3>What I'd Do Differently</h3>
+            <ul>
+                <li><strong>A local database from day one.</strong> For months every database change was tested against the live project. Rebuilding a local copy later meant reconstructing tables that had been created in the dashboard and never written down.</li>
+                <li><strong>Treat the economy as adversarial from the first coin.</strong> The holes I closed were all "the client is trusted somewhere". Starting from "the server decides everything" would have cost a day up front instead of an audit later.</li>
+                <li><strong>Ask for sign-in later.</strong> Most players visit once, and signed-in players come back about three times as often. Guests can now squish freely and see a sign-up nudge after 25 squishes; letting them try a pull first is the next experiment.</li>
+                <li><strong>Smaller files, earlier.</strong> The catalogue, backgrounds and main app logic each grew into multi-thousand-line files. Splitting them sooner would have made every later change cheaper.</li>
+            </ul>
+        </div>
+
+        <div class="case-section desktop-only" id="landing">
+            <h3>The Landing Page</h3>
+            <p>The full product page - collection, mechanics, rarity tiers, and the order flow.</p>
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot close"></div>
+                        <div class="browser-dot minimize"></div>
+                        <div class="browser-dot maximize"></div>
+                    </div>
+                    <div class="browser-url">squishybutter.app/landing.html</div>
+                </div>
+                <div style="position:relative;">
+                    <video class="lazy-video" data-src="assets/videos/squishy-butter/landing-desktop.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-desktop-poster.jpg" aria-label="Recording of the Squishy Butter landing page scrolling through the hero, skin catalogue, drop rates and coin packs" style="display:block;width:100%;aspect-ratio:5/4;object-fit:cover;object-position:top;background:#F6EEDF;">
+                    </video>
+                </div>
+            </div>
+            <p class="iframe-note iframe-note-desktop"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
+        </div>
+
+        <div class="case-section" id="landing-mobile">
+            <h3>Mobile Experience</h3>
+            <p>The landing page is fully responsive - the collection, rarity tiers, and order flow all work on a phone with no install required.</p>
+            <div class="phone-showcase">
+                <div class="phone-mockup">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen">
+                        <div class="status-bar">
+                            <span class="status-time">9:41</span>
+                            <div class="status-icons">
+                                <svg width="14" height="9" viewBox="0 0 18 12" fill="#fff" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="13" height="9" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="11" r="1.5" fill="#fff"/><path d="M4.5 7.5a5 5 0 0 1 7 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M1.5 4.5a9.5 9.5 0 0 1 13 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                <svg width="17" height="9" viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" stroke-opacity="0.35"/><path d="M19.5 3.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity="0.4"/><rect x="2" y="2" width="13" height="7" rx="1.5" fill="#fff"/></svg>
+                            </div>
+                        </div>
+                        <div class="phone-viewport">
+                            <video class="lazy-video" data-src="assets/videos/squishy-butter/landing-phone.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-phone-poster.jpg" aria-label="Recording of the Squishy Butter landing page on a phone, scrolling through the catalogue, drop rates and coin packs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;background:#F6EEDF;">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="case-caption">Recorded from the live site</p>
+            <p class="iframe-note iframe-note-mobile"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
+        </div>
+
+        <div class="case-section og-preview-section" id="lighthouse" style="margin-top:3em;">
             <h3>Lighthouse &amp; Link Preview</h3>
             <p>Both pages were audited with Google Lighthouse. The landing page scores 99 Performance and 100 for Accessibility, Best Practices and SEO. The app scores 100 on the first three and 92 on SEO, because crawlers can't read content drawn on a GPU canvas. Shared links unfurl with a custom preview card:</p>
             <a href="https://squishybutter.app/" class="og-card" target="_blank" rel="noopener noreferrer">
@@ -695,6 +776,12 @@ return Math.max(6, Math.min(48, affordable));</div>
                     <p class="og-card-desc">A stick of butter you can squish, running real soft-body physics in your browser. 214 collectible skins, each with its own feel, sound and certificate.</p>
                 </div>
             </a>
+        </div>
+
+        <div class="case-section sb-hire" id="work-with-me">
+            <h3>Need Something Like This?</h3>
+            <p>I took this from an idea to a live product on its own: the 3D engine, the database and payments, the iOS, Android and Mac releases, the store listings and the analytics. If your team or product needs that range, from shader work to server-verified purchases to getting through App Review, let's talk.</p>
+            <p class="sb-hire-links"><a href="contact.html" class="button primary">Get in touch</a> <a href="resume.html" class="sb-app-link">Resume</a></p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
@@ -711,7 +798,7 @@ return Math.max(6, Math.min(48, affordable));</div>
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span><span class="availability-dot"></span><strong>Available now — iOS, visionOS &amp; full-stack roles (remote or Detroit) and select freelance work.</strong></span>
+        <span><span class="availability-dot"></span><strong>Available now: iOS, visionOS &amp; full-stack roles (remote or Detroit) and select freelance work.</strong></span>
         <a href="contact.html">Let's talk</a>
     </div>
 
@@ -846,5 +933,44 @@ return Math.max(6, Math.min(48, affordable));</div>
         })();
     </script>
 
+    <script>
+        // Device tabs for the store screenshots
+        (function () {
+            const list = document.querySelector('.sb-tabs');
+            if (!list) return;
+            const tabs = [...list.querySelectorAll('[role="tab"]')];
+            function select(tab) {
+                tabs.forEach(t => {
+                    const on = t === tab;
+                    t.setAttribute('aria-selected', on);
+                    t.tabIndex = on ? 0 : -1;
+                    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+                });
+            }
+            tabs.forEach((t, i) => {
+                t.addEventListener('click', () => select(t));
+                t.addEventListener('keydown', e => {
+                    const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+                    if (!d) return;
+                    const next = tabs[(i + d + tabs.length) % tabs.length];
+                    select(next); next.focus();
+                });
+            });
+        })();
+
+        // Highlight the section being read in the contents list
+        (function () {
+            const links = [...document.querySelectorAll('.sb-toc a')];
+            if (!links.length || !window.matchMedia('(min-width: 1400px)').matches) return;
+            const targets = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+                });
+            }, { rootMargin: '-30% 0px -60% 0px' });
+            targets.forEach(t => io.observe(t));
+        })();
+    </script>
 </body>
 </html>
