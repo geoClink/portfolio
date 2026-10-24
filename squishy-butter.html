@@ -417,12 +417,6 @@
             <img src="assets/images/squishy-butter/prices.webp" alt="Coin shop - one-time Starter Pat plus Stick, Case, Crate, and Pallet packages" width="1600" height="727" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;display:block;margin-top:1.75em;">
         </div>
 
-        <div class="case-section" id="collection">
-            <h3>The Collection</h3>
-            <p>My Butters opens the Cold Store - a full-screen collection overlay with filter tabs by rarity (All / Common / Rare / Epic / Legendary) and a grid of every skin in the pool. Skins you own show as a full card with your butter's preview; skins you haven't pulled yet show as a ??? silhouette with the rarity visible. One owned skin surrounded by a wall of question marks communicates the whole gacha loop without a word of explanation.</p>
-            <img src="assets/images/squishy-butter/my-butters-updated.webp" alt="The Cold Store collection: owned skins as full cards, unpulled ones as ??? silhouettes with their rarity" width="1600" height="1421" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--color-border);display:block;margin-top:1.25em;clip-path:inset(0 0 12px 8px round 10px);">
-        </div>
-
         <div class="case-section" id="economy">
             <h3>Hardening the Economy</h3>
             <p>Before a release I audited the coin economy end to end, client and database, and found real holes. A server-only function that credits purchases had never had its default public access revoked, so in principle anyone with the public API key could grant themselves coins. And because players could edit their own profile row, reward dates like the last daily claim could be reset to collect the same reward again.</p>
@@ -699,7 +693,6 @@ return Math.max(6, Math.min(cap, affordable));</div>
                 <div style="float:right;width:280px;max-width:45%;margin:0 0 1em 2em;border-radius:20px;overflow:hidden;">
                     <img src="assets/images/squishy-butter/butter-1.webp" alt="Squishy Butter iOS app - main squish screen" width="600" height="1298" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
                 </div>
-                <p>The web product is live - 214 collectible skins, GPU physics, auth with Apple, Google, and email, a coin economy with rarity tiers, no-duplicate pulls, pity guarantees, and animated card reveals.</p>
                 <p>The vault is open: Stripe payments on web, App Store and Google Play purchases verified on the server, and every pull resolved inside a single database transaction. iOS is live on the App Store. Android is live on Google Play, and both apps add haptics synced to the deformation under your finger.</p>
                 <p>Android launched September 16 with no paid promotion, and Google Play's recommendation rows did the rest. Almost all of that traffic came through browse surfaces rather than search: people tap install on an interesting icon, and only about a third open it. The ones who do open it stick around. The next experiments target both ends: store listing keywords to start earning search traffic, and a first-launch nudge to close the gap between install and open. Translating the store listing was the first of those, and conversion is moving the right way.</p>
                 <p>The economy is live and now hardened end to end. Early data says the squish lands: the people who sign in keep coming back. The open question is the gap before that, getting first-time visitors to their second session, which is where the next round of work goes.</p>
