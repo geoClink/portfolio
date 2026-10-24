@@ -79,6 +79,10 @@
         .tally-demo-media { width: 100%; max-width: 330px; height: auto; aspect-ratio: 600 / 866; display: block; border-radius: 18px;
             border: 1px solid var(--color-border); background: var(--color-bg); box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.35); }
         .tally-demo-media[hidden] { display: none; }
+        .tally-demo-phone { width: 222px; border-radius: 32px; flex-shrink: 0; }
+        .tally-demo-phone::after { display: none; }
+        .tally-demo-phone[hidden] { display: none; }
+        .tally-demo-phone .tally-demo-media--native { max-width: none; aspect-ratio: 450 / 978; border: 0; border-radius: 28px; box-shadow: none; background: #f8fafb; }
 
         /* Architecture diagram */
         .tally-arch { margin: 1.25em 0 1.75em; display: flex; flex-direction: column; align-items: stretch; }
@@ -104,6 +108,8 @@
             .tally-demo-tabs button { flex: 0 0 auto; width: auto; padding: 0.55em 0.9em; border-radius: 999px; }
             .tally-demo-tabs span { display: none; }
             .tally-demo-media { max-width: 280px; }
+            .tally-demo-phone { width: 189px; border-radius: 28px; }
+            .tally-demo-phone .tally-demo-media--native { border-radius: 24px; }
         }
         @media (max-width: 600px) {
             .tally-arch-row { grid-template-columns: 1fr; }
@@ -221,21 +227,24 @@
 
         <div class="case-section">
             <h3>See It Work</h3>
-            <p>Short clips from the web app, recorded at phone width. Pick one, or let them play in turn.</p>
+            <p>Short clips from the native iPhone app and the web app. Pick one, or let them play in turn.</p>
             <div class="tally-demo" data-demo>
                 <div class="tally-demo-tabs" role="tablist" aria-label="Demo clips">
-                    <button type="button" role="tab" id="demo-tab-0" aria-controls="demo-panel" aria-selected="true" data-i="0"><strong>Jira</strong><span>Start from a Jira ticket. The time is logged on it when you save.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel" aria-selected="false" data-i="1"><strong>GitHub</strong><span>Commits with no session logged, added in one tap.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel" aria-selected="false" data-i="2"><strong>Calendar</strong><span>A client meeting with no session, added with the real hours.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-3" aria-controls="demo-panel" aria-selected="false" data-i="3"><strong>Client reports</strong><span>A report link for the client. They need no account.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-4" aria-controls="demo-panel" aria-selected="false" data-i="4"><strong>Contracts</strong><span>Makeup hours and a cap, week by week.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-0" aria-controls="demo-panel" aria-selected="true" data-i="0"><strong>iPhone app</strong><span>Pick a client, run the timer, note what you did and see it in Reports.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel" aria-selected="false" data-i="1"><strong>Jira</strong><span>Start from a Jira ticket. The time is logged on it when you save.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel" aria-selected="false" data-i="2"><strong>GitHub</strong><span>Commits with no session logged, added in one tap.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-3" aria-controls="demo-panel" aria-selected="false" data-i="3"><strong>Calendar</strong><span>A client meeting with no session, added with the real hours.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-4" aria-controls="demo-panel" aria-selected="false" data-i="4"><strong>Client reports</strong><span>A report link for the client. They need no account.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
                 </div>
                 <div class="tally-demo-stage" id="demo-panel" role="tabpanel" aria-live="polite">
-                    <video class="tally-demo-media" data-src="assets/videos/tally/jira-demo.mp4" poster="assets/videos/tally/jira-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Jira ticket ACME-42 starts the timer, then stopping and saving logs the time to ACME-42 in Jira"></video>
+                    <div class="phone-mockup tally-demo-phone">
+                        <div class="phone-btns-left"></div>
+                        <video class="tally-demo-media tally-demo-media--native" data-src="assets/videos/tally/native-iphone-demo.mp4" poster="assets/videos/tally/native-iphone-demo.jpg" width="450" height="978" muted playsinline preload="none" aria-label="In the native iPhone app: choosing Blue Sky Studio and starting the timer, the timer running with Pause and Stop, typing what was worked on, marking it billable and saving, then the Reports screen with the weekly goal and hours by type of work"></video>
+                    </div>
+                    <video class="tally-demo-media" data-src="assets/videos/tally/jira-demo.mp4" poster="assets/videos/tally/jira-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Jira ticket ACME-42 starts the timer, then stopping and saving logs the time to ACME-42 in Jira" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/github-demo.mp4" poster="assets/videos/tally/github-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="The dashboard lists GitHub commits with no time logged, and tapping Add 2h turns one into a session for Acme Corp" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/calendar-demo.mp4" poster="assets/videos/tally/calendar-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Adding a calendar rule that matches guests from acme.com to Acme Corp, then on the dashboard changing a 1 hour Acme sprint review to 0.5 hours and adding it as a 30 minute session" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/report-demo.mp4" poster="assets/videos/tally/report-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Share and Create report link on a client, then opening the client's page with hours by day, notes, and type of work" hidden></video>
-                    <img class="tally-demo-media" src="assets/images/tallyios/contracts-demo.webp" width="600" height="866" loading="lazy" decoding="async" alt="Acme Corp contract card: 11 of 33 and a half hours this week, including 13 and a half hours of makeup, with the contract cap 63 percent used" hidden>
                 </div>
             </div>
         </div>
@@ -652,6 +661,7 @@
   if (!root) return;
   var tabs = root.querySelectorAll('[role="tab"]');
   var media = root.querySelectorAll('.tally-demo-media');
+  function box(m) { return m.closest('.tally-demo-phone') || m; }
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var current = 0, visible = false, timer = null;
 
@@ -679,10 +689,10 @@
     clearTimeout(timer);
     progress(0);
     tabs[current].setAttribute('aria-selected', 'false');
-    media[current].hidden = true;
+    box(media[current]).hidden = true;
     current = i;
     tabs[i].setAttribute('aria-selected', 'true');
-    media[i].hidden = false;
+    box(media[i]).hidden = false;
     if (media[i].tagName === 'VIDEO') media[i].currentTime = 0;
     root.querySelector('.tally-demo-stage').setAttribute('aria-labelledby', tabs[i].id);
     play();
