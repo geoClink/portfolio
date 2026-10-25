@@ -662,6 +662,71 @@
         }
         .band-link a:hover { text-decoration: underline; }
 
+        /* ===== Landmark photo strip ===== */
+        .photo-strip {
+            list-style: none;
+            margin: 0;
+            padding: 0 var(--gutter) 8px;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(220px, 260px);
+            gap: 14px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 var(--gutter);
+            scrollbar-width: thin;
+        }
+        .photo-strip li { scroll-snap-align: start; min-width: 0; }
+        .strip-photo {
+            position: relative;
+            display: block;
+            border-radius: 18px;
+            overflow: hidden;
+            text-decoration: none;
+            background: var(--color-paper-deep);
+            box-shadow: 0 16px 32px -18px rgba(31, 27, 22, 0.45);
+        }
+        .strip-photo img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .strip-photo:hover img { transform: scale(1.04); }
+        .strip-photo span {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 40px 16px 14px;
+            color: #fff;
+            font-size: 13px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        }
+        .strip-photo strong { display: block; font-family: var(--font-serif); font-size: 19px; line-height: 1.2; }
+        .photo-strip small {
+            display: block;
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.4;
+            color: var(--color-muted);
+        }
+        .photo-strip small a { color: inherit; }
+
+        /* ===== Guided tour clips ===== */
+        .tour-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .tour-row figure { margin: 0; }
+        .tour-row figure:last-child { margin-top: 48px; }
+        .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
+        .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
+
         /* ===== Feature rows ===== */
         .feature .container {
             display: grid;
@@ -1048,6 +1113,12 @@
             .feature.flip .feature-visual { order: -1; }
 
             .phone-pair { gap: 24px; }
+            .photo-strip {
+                grid-auto-columns: minmax(240px, 280px);
+                padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+                scroll-padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+            }
+            .tour-row { gap: 40px; }
 
             .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
@@ -1228,6 +1299,103 @@
             </div>
         </section>
 
+        <!-- Landmark photos (Wikimedia Commons, each credited) -->
+        <section class="section photo-strip-section" aria-labelledby="strip-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">アプリの中身 · 1,800以上の名建築</p>
+                    <h2 id="strip-title" class="section-title">あなたを待つ<span class="highlight">名建築の一部。</span></h2>
+                    <p class="section-lead">タップすると都市ガイド（英語）が開き、建築家、建築年、建物の物語を読めます。</p>
+                </div>
+            </div>
+            <ul class="photo-strip reveal" aria-label="Stamped!の名建築">
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/paris.html#paris-eiffel-tower">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/960px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1332" alt="エッフェル塔" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>エッフェル塔</strong>パリ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons_(cropped).jpg" rel="noopener">Benh LIEU SONG</a>, Public domain</small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/rome.html#rom_colosseum">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="560" alt="コロッセオ" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>コロッセオ</strong>ローマ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg" rel="noopener">FeaturedPics</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/barcelona.html#bcn_sagrada_familia">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/SF_maig_2_cropped.jpg/960px-SF_maig_2_cropped.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1164" alt="サグラダ・ファミリア" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>サグラダ・ファミリア</strong>バルセロナ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg" rel="noopener">Canaan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/cairo.html#cai_great_pyramid">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg/960px-Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="450" alt="ギザの大ピラミッド" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>ギザの大ピラミッド</strong>カイロ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg" rel="noopener">Douwe C. van der Zee</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/sydney.html#syd_opera_house">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sydney_Australia._%2821339175489%29.jpg/960px-Sydney_Australia._%2821339175489%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="491" alt="シドニー・オペラハウス" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>シドニー・オペラハウス</strong>シドニー</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Sydney_Australia._(21339175489).jpg" rel="noopener">Bernard Spragg. NZ from Christchurch, New Zealand</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/rio-de-janeiro.html#rio-christ-redeemer">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Christ_the_Redeemer_-_Cristo_Redentor.jpg/960px-Christ_the_Redeemer_-_Cristo_Redentor.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1200" alt="コルコバードのキリスト像" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>コルコバードのキリスト像</strong>リオデジャネイロ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg" rel="noopener">Arne Müseler</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" rel="license noopener">CC BY-SA 3.0 de</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/new-york.html#nyc-01">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="800" height="1201" alt="エンパイア・ステート・ビル" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>エンパイア・ステート・ビル</strong>ニューヨーク</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Empire_State_Building_(aerial_view).jpg" rel="noopener">Sam Valadi</a>, Public domain</small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/kyoto.html#kyo_kinkaku_ji">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1200" alt="金閣寺" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>金閣寺</strong>京都</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg" rel="noopener">Nacaru</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/istanbul.html#ist_hagia_sophia">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Hagia_Sophia_%28228968325%29.jpeg/960px-Hagia_Sophia_%28228968325%29.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="484" alt="アヤソフィア" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>アヤソフィア</strong>イスタンブール</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg" rel="noopener">Adli Wahid</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener">CC BY-SA 3.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/kuala-lumpur.html#kl-petronas">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/The_Twins_SE_Asia_2019_%2849171985716%29_%28cropped%29_2.jpg/960px-The_Twins_SE_Asia_2019_%2849171985716%29_%28cropped%29_2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1424" alt="ペトロナスツインタワー" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>ペトロナスツインタワー</strong>クアラルンプール</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:The_Twins_SE_Asia_2019_(49171985716)_(cropped)_2.jpg" rel="noopener">James Kerwin from Tbilisi</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/pittsburgh.html#pit-04">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Fallingwater3.jpg/960px-Fallingwater3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="525" alt="落水荘" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>落水荘</strong>ピッツバーグ</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Fallingwater3.jpg" rel="noopener">lachrimae72</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/reykjavik.html#is_hallgrimskirkja">
+                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Hallgrimskirkja_mai_2026.jpg/960px-Hallgrimskirkja_mai_2026.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="702" alt="ハットルグリムス教会" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>ハットルグリムス教会</strong>レイキャビク</span>
+                        </a>
+                        <small>写真: <a href="https://commons.wikimedia.org/wiki/File:Hallgrimskirkja_mai_2026.jpg" rel="noopener">Steinninn</a>, <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener">CC BY 4.0</a></small>
+                    </li>
+            </ul>
+        </section>
+
         <!-- 3D map and Look Around -->
         <section class="section feature" id="explore" aria-labelledby="map-title">
             <div class="container">
@@ -1260,8 +1428,37 @@
             </div>
         </section>
 
+        <!-- Guided tours recorded in the app -->
+        <section class="section section--deep tours" aria-labelledby="tours-title">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="kicker">ガイドツアー · アプリで収録</p>
+                    <h2 id="tours-title" class="section-title">再生を押せば、<span class="highlight">空の旅へ。</span></h2>
+                    <p class="section-lead">ガイドツアーは名建築から名建築へ自動で飛び、各スポットでカードとLook Aroundのプレビューを表示します。</p>
+                </div>
+                <div class="tour-row reveal">
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" poster="assets/videos/stamped/stamped-tour-paris-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Stamped!アプリでのパリのガイドツアー：3Dのパリをガルニエ宮からルーヴル美術館、サント・シャペル、ポンピドゥー・センター、パンテオン、エッフェル塔へと飛ぶ様子"></video>
+                        </div>
+                        <figcaption><strong>パリ</strong>ガルニエ宮からエッフェル塔へ</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" poster="assets/videos/stamped/stamped-tour-chicago-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Stamped!アプリでのシカゴのガイドツアー：3Dのシカゴ中心部をカーバイド・アンド・カーボン・ビル、リグレー・ビル、トリビューン・タワー、セント・レジスへと飛ぶ様子"></video>
+                        </div>
+                        <figcaption><strong>シカゴ</strong>ミシガン・アベニューからセント・レジスへ</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <!-- Architects -->
-        <section class="section section--deep feature flip" aria-labelledby="architects-title">
+        <section class="section feature flip" aria-labelledby="architects-title">
             <div class="container">
                 <div class="reveal">
                     <p class="kicker">発見 · 建物をつくった人たち</p>
@@ -1623,6 +1820,25 @@
                         toggle.setAttribute('aria-label', copy.play);
                     }
                 });
+            }
+
+            // Tour clips load when they scroll near, play only while visible, and stay as posters for reduced motion
+            var tourVideos = document.querySelectorAll('.tour-video');
+            if (!reduceMotion && !saveData && 'IntersectionObserver' in window) {
+                var tourObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        var clip = entry.target;
+                        if (entry.isIntersecting) {
+                            if (!clip.src) clip.src = clip.dataset.src;
+                            clip.play().catch(function () {});
+                        } else if (!clip.paused) {
+                            clip.pause();
+                        }
+                    });
+                }, { threshold: 0.35 });
+                tourVideos.forEach(function (clip) { tourObserver.observe(clip); });
+            } else {
+                tourVideos.forEach(function (clip) { clip.src = clip.dataset.src; clip.setAttribute('controls', ''); });
             }
 
             // Sample quiz

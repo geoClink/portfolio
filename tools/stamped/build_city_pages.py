@@ -79,6 +79,13 @@ PLACES = {
     "Brisbane": ("Australia", "Oceania"), "Auckland": ("New Zealand", "Oceania"),
     "Queenstown": ("New Zealand", "Oceania"),
 }
+# Guided-tour clips recorded in the app (assets/videos/stamped/), shown on these city pages
+TOUR_VIDEOS = {
+    "Paris": ("stamped-tour-paris", 1070, "Palais Garnier, the Louvre, Sainte-Chapelle, the Centre Pompidou, the Panthéon and the Eiffel Tower"),
+    "Chicago": ("stamped-tour-chicago", 1070, "the Carbide and Carbon Building, the Wrigley Building, Tribune Tower and the St. Regis"),
+    "New York": ("stamped-3d-map-screen", 1078, "the Empire State Building and down to street level on Fifth Avenue"),
+}
+
 CONTINENTS = ["Europe", "Asia", "North America", "South America", "Africa", "Oceania"]
 
 
@@ -179,7 +186,7 @@ FOOT = """
                 <a href="../contact.html">Support</a>
                 <a href="../privacy.html">Privacy</a>
             </nav>
-            <p>Landmark details come from the Stamped! app. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>Landmark details come from the Stamped! app. Photos are from Wikimedia Commons; each is credited with its author and license. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
@@ -192,7 +199,20 @@ def jsonld(items):
     return "\n".join("    " + line for line in json.dumps(items, ensure_ascii=False, indent=4).splitlines())
 
 
-def city_page(city, landmarks, details, siblings):
+def photo_figure(photo, name, eager=False):
+    """A landmark photo with its required credit line (author, license, link to the file page)."""
+    if not photo:
+        return ""
+    license_html = e(photo["license"])
+    if photo.get("licenseUrl"):
+        license_html = f'<a href="{e(photo["licenseUrl"])}" rel="license noopener">{license_html}</a>'
+    loading = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+    return (f'<figure class="landmark-photo"><img src="{e(photo["src"])}" width="{photo["width"]}" height="{photo["height"]}" '
+            f'alt="{e(name)}" {loading} referrerpolicy="no-referrer" />'
+            f'<figcaption>Photo: <a href="{e(photo["page"])}" rel="noopener">{e(photo["author"])}</a>, {license_html}, via Wikimedia Commons</figcaption></figure>')
+
+
+def city_page(city, landmarks, details, siblings, photos):
     country, continent = PLACES[city]
     s = slug(city)
     url = f"{SITE}/stamped-cities/{s}.html"
@@ -238,6 +258,7 @@ def city_page(city, landmarks, details, siblings):
             <p class="lead">{e(details.get('funFact', ''))}</p>
             <ul class="stats">
                 <li><strong>{n}</strong><span>{noun.title()}</span></li>""")
+    hero_photos = [l for l in landmarks if l["id"] in photos][:3]
     if oldest:
         out.append(f"""
                 <li><strong>{e(year_label(oldest['yearBuilt']))}</strong><span>Oldest · {e(oldest['name'])}</span></li>""")
@@ -248,7 +269,16 @@ def city_page(city, landmarks, details, siblings):
         out.append(f"""
                 <li><strong>{len(architects)}</strong><span>Architects</span></li>""")
     out.append("""
-            </ul>
+            </ul>""")
+    if hero_photos:
+        tiles = "".join(
+            f'<li><a href="#{e(l["id"])}"><img src="{e(photos[l["id"]]["src"])}" width="{photos[l["id"]]["width"]}" '
+            f'height="{photos[l["id"]]["height"]}" alt="{e(l["name"])}" {"fetchpriority=\"high\"" if i == 0 else "loading=\"lazy\""} '
+            f'referrerpolicy="no-referrer" /><span>{e(l["name"])}</span></a></li>'
+            for i, l in enumerate(hero_photos))
+        out.append(f"""
+            <ul class="hero-photos count-{len(hero_photos)}">{tiles}</ul>""")
+    out.append("""
         </div>
     </section>
 """)
@@ -280,6 +310,25 @@ def city_page(city, landmarks, details, siblings):
     </section>
 """)
 
+    # Guided tour clip, when one was recorded for this city
+    if city in TOUR_VIDEOS:
+        name, height, stops = TOUR_VIDEOS[city]
+        out.append(f"""
+    <section class="tour" aria-labelledby="tour-title">
+        <div class="container tour-layout">
+            <div>
+                <p class="kicker">Recorded in the app</p>
+                <h2 id="tour-title" class="section-title">Fly the {e(city)} tour</h2>
+                <p class="tour-text">Press play on the guided tour and Stamped! flies you over {e(city)} in photoreal 3D, past {e(stops)}, with a card and a Look Around preview at every stop.</p>
+            </div>
+            <div class="phone">
+                <video src="../assets/videos/stamped/{name}.mp4" poster="../assets/videos/stamped/{name}-poster.jpg" width="492" height="{height}"
+                       controls muted playsinline preload="none" aria-label="Stamped! guided tour of {e(city)} on iPhone"></video>
+            </div>
+        </div>
+    </section>
+""")
+
     # Landmarks
     out.append(f"""
     <section class="landmarks" aria-labelledby="landmarks-title">
@@ -306,7 +355,8 @@ def city_page(city, landmarks, details, siblings):
         meta_html = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in meta)
         address = f'<p class="address">{e(l["address"])}</p>' if known(l.get("address")) else ""
         out.append(f"""
-                <li id="{e(l['id'])}">
+                <li id="{e(l['id'])}"{' class="has-photo"' if l['id'] in photos else ''}>
+                    {photo_figure(photos.get(l['id']), l['name'])}
                     <span class="landmark-number" aria-hidden="true">{i:02d}</span>
                     <h3>{e(l['name'])}</h3>
                     {address}
@@ -383,6 +433,8 @@ def main():
     resources = Path(args.app).expanduser() / "Stamped! A City Passport" / "Resources"
     registry = json.loads((resources / "BuildingRegistry.json").read_text(encoding="utf-8"))
     details = json.loads((resources / "CityDetails.json").read_text(encoding="utf-8"))
+    photos_file = OUT / "photos.json"   # written by fetch_photos.py
+    photos = json.loads(photos_file.read_text(encoding="utf-8")) if photos_file.exists() else {}
 
     cities = [c for c in registry if c in PLACES]
     skipped = [c for c in registry if c not in PLACES
@@ -396,7 +448,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     for city in cities:
         siblings = [c for c in by_continent[PLACES[city][1]] if c != city]
-        page = city_page(city, registry[city], details.get(city, {}), siblings)
+        page = city_page(city, registry[city], details.get(city, {}), siblings, photos)
         (OUT / f"{slug(city)}.html").write_text(page, encoding="utf-8")
     (OUT / "index.html").write_text(index_page(by_continent, counts), encoding="utf-8")
     print(f"wrote {len(cities)} city pages and index.html to {OUT.relative_to(ROOT)}/ "
