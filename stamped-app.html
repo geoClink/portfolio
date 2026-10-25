@@ -40,7 +40,9 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
+    <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
         /* ===== Tokens (colors and fonts from the app's style guide) ===== */
         :root {
@@ -52,6 +54,7 @@
             --color-line: #E2D8C7;
             --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
             --color-accent-ink: #C4521F;   /* darker orange for small text on paper */
+            --color-button: #C4521F;       /* orange that keeps white button text readable (4.6:1) */
             --color-gold: #D9A621;         /* Reward Gold: mastery only */
             --color-stamp-green: #2F5D4A;
             --color-stamp-navy: #24375E;
@@ -350,7 +353,7 @@
             font-size: 14px;
             font-weight: 600;
             color: #fff;
-            background: var(--color-accent);
+            background: var(--color-button);
             text-decoration: none;
             border-radius: 999px;
             padding: 7px 16px;
@@ -782,7 +785,7 @@
             font-size: 14px;
             font-weight: 600;
             color: #fff;
-            background: var(--color-accent);
+            background: var(--color-button);
             border: 0;
             border-radius: 999px;
             padding: 8px 16px;
