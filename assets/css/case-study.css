@@ -947,3 +947,82 @@ p.ipad-item-label {
     color: var(--color-heading);
     line-height: 1.45;
 }
+
+/* ── On this page ───────────────────────────────────────── */
+/* A row of section links under the intro; on wide screens it moves into the left gutter and follows the reader */
+.case-toc {
+    margin: 0 0 2.5em;
+}
+.case-toc-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5em;
+}
+.case-toc ul {
+    display: flex;
+    gap: 0.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.case-toc ul::-webkit-scrollbar { display: none; }
+.case-toc li {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+}
+.case-toc a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 0.85em;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+.case-toc a:hover {
+    color: var(--color-heading);
+    border-color: var(--color-heading);
+}
+@media (min-width: 1400px) {
+    .case-toc {
+        position: fixed;
+        top: 120px;
+        left: calc(50% - 430px - 210px);
+        width: 180px;
+        margin: 0;
+        z-index: 5;
+    }
+    .case-toc ul {
+        display: block;
+        overflow: visible;
+        padding: 0;
+        border-left: 1px solid var(--color-border);
+    }
+    .case-toc a {
+        display: block;
+        min-height: 0;
+        padding: 0.3em 0 0.3em 0.9em;
+        margin-left: -1px;
+        border: none;
+        border-left: 2px solid transparent;
+        border-radius: 0;
+        white-space: normal;
+        line-height: 1.35;
+    }
+    .case-toc a:hover { border-color: transparent; }
+    .case-toc a.active {
+        color: var(--color-heading);
+        font-weight: 600;
+        border-left-color: var(--case-accent, var(--color-heading));
+    }
+}
+/* Land section headings below the fixed site header */
+.case-section[id] { scroll-margin-top: 80px; }

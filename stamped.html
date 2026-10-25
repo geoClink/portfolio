@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=3" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=4" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -153,7 +153,7 @@
         .stamped-hero-shots .phone-mockup:nth-child(3) { transform: translate(-8%, 2.2em) rotate(5deg); }
         .stamped-hero-shots + .case-caption { margin-top: -1.5em; margin-bottom: 2em; }
 
-        /* Shot rows: real app screens in the shared .phone-mockup bezel (no CSS island: these captures have none) */
+        /* Shot rows: real app screens in the shared .phone-mockup bezel (no CSS island: the full-screen captures draw their own) */
         .stamped-shots { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: 1.6em; margin-top: 1.25em; }
         .stamped-shots figure { margin: 0; }
         .stamped-shots .phone-mockup { width: auto; margin: 0 6px; }
@@ -161,7 +161,6 @@
         .stamped-hero-shots .phone-mockup::after, .stamped-shots .phone-mockup::after { display: none; }
         .stamped-hero-shots .phone-screen-static, .stamped-shots .phone-screen-static { border-radius: 26px; overflow: hidden; }
         .stamped-hero-shots img, .stamped-shots img { display: block; width: 100%; height: auto; }
-        .stamped-shots.is-tall img { aspect-ratio: 800 / 1403; object-fit: cover; }
         .stamped-shots figcaption { font-size: 0.8em; color: var(--color-text-muted); margin-top: 0.9em; line-height: 1.45; }
         .stamped-shots figcaption strong { display: block; color: var(--color-heading); font-size: 1.05em; margin-bottom: 0.1em; }
 
@@ -268,16 +267,17 @@
         </div>
 
         <div class="case-links">
+            <a href="stamped-app.html" class="button" style="align-self:flex-end;">App Website</a>
             <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="36" style="display:block;"></a>
             <a href="https://github.com/geoClink/Stamped-A-City-Passport" class="button" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
 
         <figure class="stamped-hero-shots" style="margin-inline:0;">
-            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-map-card.webp" alt="The Paris 3D map with the Eiffel Tower card: Look Around preview and Stamped, Want to Go, Add to Trip and Look Around buttons" width="800" height="1104" fetchpriority="high"></div></div>
-            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-planner.webp" alt="Three Days in Paris trip: a route map of day 1 from the Eiffel Tower to Sacré-Cœur, day tabs and a Tour This Trip in 3D button" width="800" height="1104" fetchpriority="high"></div></div>
-            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-city-explored.webp" alt="City Explored: a Paris passport stamp card with a Did You Know fact about the Eiffel Tower" width="800" height="1104" fetchpriority="high"></div></div>
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-map-card.webp" alt="The New York 3D map with the Empire State Building card: Look Around preview and Stamped, Want to Go, Add to Trip and Look Around buttons" width="600" height="1304" fetchpriority="high"></div></div>
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-3d.webp" alt="The photoreal 3D map flying low over Midtown Manhattan" width="600" height="1304" fetchpriority="high"></div></div>
+            <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-look-around.webp" alt="Street-level Look Around at the Apple store glass cube on Fifth Avenue" width="600" height="1304" fetchpriority="high"></div></div>
         </figure>
-        <p class="case-caption">Version 2.4: the 3D map card, the trip planner, and a city stamp</p>
+        <p class="case-caption">Version 2.4: the map card, the photoreal 3D map, and street-level Look Around</p>
 
         <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · WidgetKit · visionOS · Open-Meteo · Ticketmaster API · 2026</div>
 
@@ -308,12 +308,26 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#see-it-work">See it work</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#trips">Trip planner</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#hard">What was hard</a></li>
+                <li><a href="#next">Where it could go</a></li>
+                <li><a href="#outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Architecture apps are either too passive (a static list of landmarks) or too heavy (full trip planners with accounts and subscriptions). I wanted something in between: tell me what to see, help me get there, and give me a reason to come back. Stamped! turns sightseeing into a collection game: visit every landmark in a city and you earn its stamp.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="see-it-work">
             <h3>See It Work</h3>
             <p>Recorded on iPhone in New York: tap a pin to fly to it in 3D, then drop to street level in Look Around.</p>
             <div class="stamped-demo">
@@ -332,25 +346,25 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="design">
             <h3>Design: A Passport, Not a Database</h3>
             <p>Under the hood it's a list of 1,800+ buildings. The design job was making it feel like something you collect, not something you scroll. I wrote a style guide for the app (editorial, travel-inspired, reward-driven) and hold every screen to it.</p>
-            <div class="stamped-shots is-tall" style="--cols:4;">
+            <div class="stamped-shots" style="--cols:4;">
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-onboarding-stamp.webp" alt="Onboarding: a San Francisco passport stamp with an Unlock My First Stamp button" width="800" height="1371" loading="lazy"></div></div>
-                    <figcaption><strong>Reward first</strong>Onboarding opens on a finished stamp.</figcaption>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/04-traditions.webp" alt="A Michigan State University passport stamp with a dashed border, a typewriter completion date and a Did You Know fact" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>Rewards feel ceremonial</strong>Dashed border, typewriter date, a fact.</figcaption>
                 </figure>
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-home.webp" alt="Home: World Explorer card showing 5 of 140 cities mastered, continents below and a My Passport button" width="800" height="1403" loading="lazy"></div></div>
-                    <figcaption><strong>Progress up top</strong>One progress card, one passport button.</figcaption>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-journey.webp" alt="My Journey: a progress ring showing 171 stamps and 12% of the world explored, with cities visited and mastered below" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>Progress up top</strong>One ring, one number.</figcaption>
                 </figure>
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-passport.webp" alt="Your Passport: 5 cities stamped, with locked city slots grouped by country" width="800" height="1403" loading="lazy"></div></div>
-                    <figcaption><strong>Empty slots on purpose</strong>Locked cities show what's left.</figcaption>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/achievements.webp" alt="Achievements: 14 of 28 earned, with locked ones like Night Stamper shown greyed out" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>Empty slots on purpose</strong>Locked achievements show what's left.</figcaption>
                 </figure>
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-world-map.webp" alt="World Map with orange visited pins and white not-yet pins across Europe and Africa" width="800" height="1403" loading="lazy"></div></div>
-                    <figcaption><strong>One color means done</strong>Orange is stamped. No legend needed.</figcaption>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-quiz.webp" alt="New York Expert quiz: a Flatiron Building field data card and a question about how many stories tall it is" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>Customs-form type</strong>Serif names, monospaced field labels.</figcaption>
                 </figure>
             </div>
 
@@ -375,20 +389,20 @@
             </ul>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="trips">
             <h3>New in 2.4: Plan a Trip on a 3D Map</h3>
             <p>Finished and next to ship. 2.3, live since October 23, made the photoreal 3D map the center of the app; 2.4 builds a trip planner on top of it.</p>
             <div class="stamped-shots">
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-planner.webp" alt="Three Days in Paris trip planner with a numbered route map, day tabs and Tour This Trip in 3D" width="800" height="1104" loading="lazy"></div></div>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-trip.webp" alt="NYC Long Weekend trip planner with a numbered route map, day tabs, Tour This Trip in 3D and an Optimize route button" width="600" height="1304" loading="lazy"></div></div>
                     <figcaption><strong>Trip planner</strong>Days of stops, walking times, and one-tap route optimizing.</figcaption>
                 </figure>
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-trip-tour.webp" alt="Trip tour on the 3D map: the Louvre pyramid card labeled Day 1, Stop 2 of 4" width="800" height="1104" loading="lazy"></div></div>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-3d.webp" alt="The photoreal 3D map flying over Midtown Manhattan" width="600" height="1304" loading="lazy"></div></div>
                     <figcaption><strong>Tour it in 3D</strong>The camera flies stop to stop, day by day.</figcaption>
                 </figure>
                 <figure>
-                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/v24-map-card.webp" alt="Eiffel Tower map card with Look Around preview and quick action buttons" width="800" height="1104" loading="lazy"></div></div>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/city-map-card.webp" alt="Empire State Building map card with Look Around preview and quick action buttons" width="600" height="1304" loading="lazy"></div></div>
                     <figcaption><strong>Everything on the card</strong>Stamp, save, add to a trip, or look around.</figcaption>
                 </figure>
             </div>
@@ -503,14 +517,14 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="architecture">
             <h3>Architecture</h3>
             <p>Stamped! is pure SwiftUI with no backend. Landmark and city content is embedded in code (<code>BuildingRegistry</code>, <code>CityData</code>), so browsing and tracking work offline; weather, events, and dining layer on top when there's a connection.</p>
             <p>One <code>ObservableObject</code>, <code>GlobalProgressManager</code>, owns visited IDs and photos. It writes to <code>UserDefaults</code> and <code>NSUbiquitousKeyValueStore</code>, so progress syncs through iCloud with no account. Rank and completion are computed from the visited set, so they can never drift out of sync.</p>
             <p>The 3D map is SwiftUI's <code>Map</code> with realistic elevation and a <code>MapCamera</code> pitched 60–65°. Guided and trip tours are one cancellable <code>Task</code> that flies stop to stop; any tap cancels it, so the tour never fights you for the camera.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="hard">
             <h3>What Was Hard</h3>
             <p><strong>Scope.</strong> A travel app can grow forever. The rule: every feature answers "what do I see?", "how do I get there?", or "what now that I'm here?" Anything else got cut.</p>
             <p><strong>Camera framing.</strong> Centering on a landmark hid it under the card, so the camera aims slightly south. One far-off pin (JFK in New York) zoomed whole cities out, so city framing now uses the closest 80% of landmarks.</p>
@@ -518,7 +532,7 @@
             <p><strong>App Review.</strong> Apple pushed back on the camera usage string, Ticketmaster links, and the location flow. Getting all three right was the last hurdle to launch.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="next">
             <h3>Where the Idea Could Go</h3>
             <p>When MSU students visited the Apple Developer Academy, one of them said Stamped! would be perfect for learning your way around campus as a freshman, with dining halls as landmarks and orientation as stamps. I wrote it up as a pitch doc and deck. The first piece is now real: 2.4 added a Campus Architecture collection, and 2.5 grows it to 101 campuses, every Big Ten, SEC, ACC and Big 12 school, Michigan State included, grouped by conference.</p>
         </div>
@@ -537,49 +551,64 @@
         </div>
     </div>
 
-        <div class="case-section" style="margin-top:3em;">
+        <div class="case-section" id="outcome" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.4, with a Vision Pro version planned next. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally.</p>
+            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.4, with a Vision Pro version planned next. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally. See the app itself on the <a href="stamped-app.html">Stamped! website</a>.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
-            <a href="squishy-butter.html" class="spec-nav-btn">
+            <a href="tally.html" class="spec-nav-btn">
                 <span class="spec-nav-label">Previous case study</span>
-                ← Squishy Butter
+                ← Tally
             </a>
-            <a href="coastcast.html" class="spec-nav-btn next">
+            <a href="squishy-butter.html" class="spec-nav-btn next">
                 <span class="spec-nav-label">Next case study</span>
-                CoastCast →
+                Squishy Butter →
             </a>
         </nav>
     </div>
 
     <!-- CTA Band -->
     <div class="page-cta">
-        <span><span class="availability-dot"></span><strong>Available now — iOS, visionOS &amp; full-stack roles (remote or Detroit) and select freelance work.</strong></span>
+        <span><span class="availability-dot"></span><strong>Available now for iOS, visionOS and full-stack roles (remote or Detroit) and select freelance work.</strong></span>
         <a href="contact.html">Let's talk</a>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
         <div class="footer-inner">
-            <div class="footer-name">
-                <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
-                <div class="footer-name-text"><strong>George Clinkscales Jr.</strong>
-                    <span>Detroit, MI &middot; iOS, visionOS &amp; Full-Stack Engineer &middot; &copy; 2026</span>
-                    <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
-                    <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a>
-                    <a class="footer-legal" href="/links.html">Apps &amp; Beta Testing</a></div>
+            <div class="footer-top">
+                <div class="footer-name">
+                    <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
+                    <div class="footer-name-text">
+                        <strong>George Clinkscales Jr.</strong>
+                        <span>iOS, visionOS and full-stack engineer in Detroit</span>
+                        <a class="footer-email" href="mailto:GeorgeClinkscalesDev@proton.me">GeorgeClinkscalesDev@proton.me</a>
+                    </div>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="about.html">About</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="links.html">Apps &amp; Beta Testing</a>
+                </nav>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+                </ul>
             </div>
-            <ul class="footer-social">
-                <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-                <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-            </ul>
-            <p class="footer-squishy"><a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">squishybutter.app</a> — a gacha style, ad-free digital squishy game/toy by George</p>
+            <div class="footer-bottom">
+                <span>&copy; 2026 George Clinkscales Jr.</span>
+                <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a>
+                <span class="footer-squishy">I also make <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">Squishy Butter</a>, an ad-free squishy collecting game.</span>
+            </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <script>
     // Load and play the 3D map demo only when it scrolls into view (keeps the page fast on mobile).
     (() => {

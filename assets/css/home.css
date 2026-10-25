@@ -251,6 +251,14 @@ body::before {
     line-height: 1.4;
     color: rgba(255,255,255,0.7);
 }
+.hero-proof-label a,
+.hero-proof-label a:link,
+.hero-proof-label a:visited {
+    color: rgba(255,255,255,0.9);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.hero-proof-label a:hover { color: #fff; }
 @media (max-width: 736px) {
     .hero-proof {
         grid-template-columns: repeat(2, 1fr);
