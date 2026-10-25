@@ -1,0 +1,848 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Stamped! A City Passport: The World's Great Buildings</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Collect a passport stamp at more than 1,800 architectural landmarks in 140 cities on six continents and 101 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip. Free on iPhone and iPad." />
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
+
+    <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
+    <meta name="apple-itunes-app" content="app-id=6759680336" />
+
+    <meta property="og:title" content="Stamped! A City Passport" />
+    <meta property="og:description" content="1,800+ landmarks, 140 cities, six continents, 101 campuses. Fly through them in 3D and collect a stamp at every one you visit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        /* ===== Tokens (colors and fonts from the app's style guide) ===== */
+        :root {
+            --color-paper: #F5EFE4;
+            --color-card: #FFFDF8;
+            --color-ink: #1F1B16;
+            --color-muted: #6B6358;
+            --color-line: #E2D8C7;
+            --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
+            --color-gold: #D9A621;         /* Reward Gold: mastery only */
+            --color-stamp-green: #2F5D4A;
+            --color-stamp-navy: #24375E;
+            --color-stamp-red: #B2333B;
+            --color-phone: #1A1A1A;
+            --color-band: #1F1B16;         /* dark full-width band */
+            --color-band-ink: #F5EFE4;
+
+            --font-serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
+            --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+
+            --gutter: 16px;
+            --max-width: 1120px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-paper: #191612;
+                --color-card: #231F1A;
+                --color-ink: #F3ECE0;
+                --color-muted: #A79E90;
+                --color-line: #3A332A;
+                --color-stamp-green: #7FB59C;
+                --color-stamp-navy: #8EA5D6;
+                --color-stamp-red: #E07A80;
+                --color-phone: #000000;
+                --color-band: #0F0D0A;
+                --color-band-ink: #F3ECE0;
+            }
+        }
+
+        /* ===== Base ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--color-paper);
+            color: var(--color-ink);
+            font-family: var(--font-sans);
+            font-size: 17px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        .skip-link { position: absolute; left: -9999px; }
+        .skip-link:focus {
+            left: var(--gutter);
+            top: var(--gutter);
+            background: var(--color-card);
+            padding: 8px 12px;
+            z-index: 10;
+        }
+
+        /* ===== Shared pieces ===== */
+
+        /* Small monospaced label, like a customs form */
+        .kicker {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin: 0 0 12px;
+        }
+
+        /* Boxed orange word, same as the App Store screenshots */
+        .highlight {
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            padding: 0 0.15em;
+            white-space: nowrap;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            line-height: 1.15;
+            margin: 0 0 14px;
+        }
+
+        .section-lead {
+            color: var(--color-muted);
+            margin: 0 0 28px;
+            max-width: 40em;
+        }
+
+        .app-store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-ink);
+            color: var(--color-paper);
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 10px 20px 10px 16px;
+            line-height: 1.15;
+        }
+        .app-store-button i { font-size: 28px; }
+        .app-store-button small { display: block; font-size: 11px; }
+        .app-store-button strong { display: block; font-size: 19px; font-weight: 600; }
+        .app-store-button:hover,
+        .app-store-button:focus-visible { opacity: 0.85; }
+
+        /* A phone drawn with CSS around a plain screenshot */
+        .phone {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border: 9px solid var(--color-phone);
+            border-radius: 44px;
+            overflow: hidden;
+            background: var(--color-phone);
+            box-shadow: 0 24px 48px rgba(31, 27, 22, 0.18);
+        }
+        .phone img { border-radius: 35px; }
+
+        /* Round passport stamp drawn with CSS */
+        .stamp {
+            position: absolute;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            border: 3px double currentColor;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.3;
+            text-transform: uppercase;
+            transform: rotate(-14deg);
+            opacity: 0.85;
+        }
+        .stamp--green { color: var(--color-stamp-green); }
+        .stamp--navy { color: var(--color-stamp-navy); }
+        .stamp--red { color: var(--color-stamp-red); }
+        .stamp--orange { color: var(--color-accent); }
+
+        /* ===== Header ===== */
+        .site-header { border-bottom: 1px solid var(--color-line); }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .brand img { width: 36px; height: 36px; }
+        .header-link {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        /* ===== Hero ===== */
+        .hero { padding: 48px 0 56px; }
+        .hero .container { display: grid; gap: 40px; }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            line-height: 1.12;
+            font-weight: 700;
+            margin: 0 0 16px;
+        }
+        .hero-lead {
+            font-size: 19px;
+            color: var(--color-muted);
+            margin: 0 0 24px;
+            max-width: 34em;
+        }
+        .stats {
+            list-style: none;
+            padding: 0;
+            margin: 28px 0 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .stats li {
+            background: var(--color-card);
+            border: 1px dashed var(--color-line);
+            border-radius: 12px;
+            padding: 10px 12px;
+        }
+        .stats strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 22px;
+        }
+        .stats span {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .hero-visual { position: relative; padding: 0 24px; }
+        .hero-visual .stamp--red { right: 0; bottom: 70px; }
+        .hero-visual .stamp--navy { left: 0; top: 40px; transform: rotate(12deg); }
+
+        /* ===== Continents band ===== */
+        .continents {
+            background: var(--color-band);
+            color: var(--color-band-ink);
+            padding: 56px 0;
+        }
+        .continents .section-lead { color: var(--color-band-ink); opacity: 0.75; }
+        .continent-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .continent-grid li {
+            border: 1px dashed rgba(245, 239, 228, 0.25);
+            border-radius: 14px;
+            padding: 16px 18px;
+        }
+        .continent-grid h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .continent-grid h3 span {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+        }
+        .continent-grid p {
+            margin: 6px 0 0;
+            font-size: 14px;
+            opacity: 0.75;
+        }
+
+        /* ===== Feature rows ===== */
+        .feature {
+            padding: 56px 0;
+            border-top: 1px solid var(--color-line);
+        }
+        .feature .container {
+            display: grid;
+            gap: 32px;
+            align-items: center;
+        }
+        .feature p { color: var(--color-muted); margin: 0 0 16px; }
+        .feature ul { margin: 0; padding-left: 1.2em; }
+        .feature li { margin-bottom: 6px; }
+        .feature li::marker { color: var(--color-accent); }
+        .feature-visual { position: relative; }
+        .feature-visual .stamp { right: 4%; bottom: 8%; }
+
+        /* Architect name tags */
+        /* ".feature .architects" so it beats the ".feature ul" bullet padding */
+        .feature .architects {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .architects li {
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 14px;
+            margin: 0;
+        }
+        .architects strong {
+            font-family: var(--font-mono);
+            color: var(--color-accent);
+            margin-left: 4px;
+        }
+
+        /* Timeline from oldest to newest landmark */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 2px dashed var(--color-accent);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .timeline strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 22px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--color-ink);
+        }
+        .timeline div:last-child { text-align: right; }
+
+        /* ===== Tool grid ("Before you go") ===== */
+        .tools {
+            padding: 56px 0;
+            border-top: 1px solid var(--color-line);
+        }
+        .tool-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .tool-grid li {
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .tool-grid i {
+            color: var(--color-accent);
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .tool-grid h3 { font-size: 16px; margin: 0 0 4px; }
+        .tool-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Campus section with three phones ===== */
+        .campus {
+            padding: 56px 0;
+            border-top: 1px solid var(--color-line);
+        }
+        .phone-row {
+            display: grid;
+            gap: 28px;
+            margin-top: 32px;
+        }
+        .phone-row figure { margin: 0; }
+        .phone-row figcaption {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 15px;
+            color: var(--color-muted);
+        }
+        .phone-row figcaption strong {
+            display: block;
+            color: var(--color-ink);
+            font-size: 17px;
+        }
+
+        /* ===== Small extras grid ===== */
+        .more {
+            padding: 56px 0;
+            border-top: 1px solid var(--color-line);
+        }
+        .more-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .more-grid li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .more-grid i { color: var(--color-accent); margin-top: 4px; width: 20px; text-align: center; }
+        .more-grid h3 { font-size: 16px; margin: 0; }
+        .more-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Final call to action ===== */
+        .cta {
+            padding: 64px 0;
+            text-align: center;
+            border-top: 1px solid var(--color-line);
+        }
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            margin: 0 0 12px;
+        }
+        .cta p { color: var(--color-muted); margin: 0 0 24px; }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            border-top: 1px solid var(--color-line);
+            padding: 32px 0 40px;
+            font-size: 14px;
+            color: var(--color-muted);
+        }
+        .site-footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-bottom: 16px;
+        }
+        .site-footer nav a { color: var(--color-ink); font-weight: 600; }
+        .site-footer p { margin: 0 0 8px; }
+
+        /* ===== Larger screens ===== */
+        @media (min-width: 768px) {
+            .hero { padding: 72px 0 80px; }
+            .hero .container {
+                grid-template-columns: 1.15fr 1fr;
+                align-items: center;
+            }
+            .hero h1 { font-size: 58px; }
+            .stats { grid-template-columns: repeat(6, 1fr); }
+
+            .section-title { font-size: 42px; }
+
+            .continent-grid { grid-template-columns: repeat(3, 1fr); }
+
+            .feature .container { grid-template-columns: 1fr 1fr; }
+            /* Every other row puts the phone on the left */
+            .feature.flip .feature-visual { order: -1; }
+
+            .tool-grid { grid-template-columns: repeat(4, 1fr); }
+
+            .phone-row { grid-template-columns: repeat(3, 1fr); }
+
+            .more-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .app-store-button { transition: opacity 0.15s; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="36" height="36" />
+                Stamped!
+            </a>
+            <a class="header-link" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">Download</a>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">A city passport · Free on iPhone &amp; iPad</p>
+                    <h1 id="hero-title">The world's great buildings, <span class="highlight">stamped.</span></h1>
+                    <p class="hero-lead">From the Great Pyramid to Fallingwater, fly through real cities in 3D, learn who built what and why, and earn a passport stamp at every landmark you visit.</p>
+                    <a class="app-store-button" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">
+                        <i class="fab fa-apple" aria-hidden="true"></i>
+                        <span><small>Download on the</small><strong>App Store</strong></span>
+                    </a>
+                    <ul class="stats">
+                        <li><strong>1,800+</strong><span>Landmarks</span></li>
+                        <li><strong>140</strong><span>Cities</span></li>
+                        <li><strong>6</strong><span>Continents</span></li>
+                        <li><strong>60+</strong><span>Countries</span></li>
+                        <li><strong>101</strong><span>Campuses</span></li>
+                        <li><strong>9</strong><span>Languages</span></li>
+                    </ul>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-3d.webp" width="600" height="1304"
+                             alt="A photoreal 3D map of Midtown Manhattan with the Empire State Building in the middle" />
+                    </div>
+                    <span class="stamp stamp--navy" aria-hidden="true">New York<br>2026</span>
+                    <span class="stamp stamp--red" aria-hidden="true">Paris<br>2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Every continent -->
+        <section class="continents" aria-labelledby="continents-title">
+            <div class="container">
+                <p class="kicker">Six continents · 140 cities</p>
+                <h2 id="continents-title" class="section-title">Every continent you can fly to.</h2>
+                <p class="section-lead">Not just the usual capitals. Stamped! covers 140 cities, from Reykjavik to Zanzibar, each with its own landmarks, quiz and stamp.</p>
+                <ul class="continent-grid">
+                    <li>
+                        <h3>Europe <span>34 cities</span></h3>
+                        <p>Paris, Rome, Barcelona, London, Prague, Istanbul, Reykjavik, Tbilisi…</p>
+                    </li>
+                    <li>
+                        <h3>Asia <span>38 cities</span></h3>
+                        <p>Tokyo, Kyoto, Seoul, Singapore, Dubai, Mumbai, Kathmandu, Xi'an…</p>
+                    </li>
+                    <li>
+                        <h3>North America <span>37 cities</span></h3>
+                        <p>New York, Chicago, Mexico City, Havana, Toronto, Honolulu, Detroit…</p>
+                    </li>
+                    <li>
+                        <h3>South America <span>15 cities</span></h3>
+                        <p>Rio de Janeiro, Buenos Aires, Brasília, Lima, Cartagena, Medellín…</p>
+                    </li>
+                    <li>
+                        <h3>Africa <span>11 cities</span></h3>
+                        <p>Cairo, Marrakech, Cape Town, Lagos, Nairobi, Addis Ababa, Zanzibar…</p>
+                    </li>
+                    <li>
+                        <h3>Oceania <span>5 cities</span></h3>
+                        <p>Sydney, Melbourne, Brisbane, Auckland, Queenstown</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3D map -->
+        <section class="feature" aria-labelledby="map-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Explore · Photoreal 3D</p>
+                    <h2 id="map-title" class="section-title">Fly through the city <span class="highlight">in 3D.</span></h2>
+                    <p>Satellite imagery over real building heights. Tap a pin and the camera flies straight to it, or start a guided tour that flies between every landmark for you.</p>
+                    <ul>
+                        <li>Step through landmarks in walking order right from the map card</li>
+                        <li>Filters for not visited, stamped, want to visit and architectural style</li>
+                        <li>Chips for food, coffee, culture and places to stay</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-map-card.webp" width="600" height="1304" loading="lazy"
+                             alt="3D map of New York with a card for the Empire State Building, a Look Around preview and Stamp, Want to Go and Add to Trip buttons" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Look Around -->
+        <section class="feature flip" aria-labelledby="street-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Before you go · Look Around</p>
+                    <h2 id="street-title" class="section-title">Then walk <span class="highlight">the street.</span></h2>
+                    <p>Drop down to street level with Look Around and see exactly what a building looks like before you get there. No more walking right past it.</p>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-look-around.webp" width="600" height="1304" loading="lazy"
+                             alt="Street-level Look Around view of the glass cube at Apple Fifth Avenue in Manhattan" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architects -->
+        <section class="feature" aria-labelledby="architects-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Discover · The people behind the buildings</p>
+                    <h2 id="architects-title" class="section-title">Meet the <span class="highlight">architects.</span></h2>
+                    <p>Every landmark comes with its architect, style, build date, height and history. Stamped! keeps track of whose buildings you've seen and shows your favorite architect.</p>
+                    <ul class="architects" aria-label="Some of the architects in Stamped!, with how many of their buildings are in the app">
+                        <li>Frank Lloyd Wright<strong>18</strong></li>
+                        <li>Oscar Niemeyer<strong>16</strong></li>
+                        <li>Frank Gehry<strong>14</strong></li>
+                        <li>I. M. Pei<strong>14</strong></li>
+                        <li>Zaha Hadid<strong>12</strong></li>
+                        <li>Herzog &amp; de Meuron<strong>11</strong></li>
+                        <li>Mies van der Rohe<strong>10</strong></li>
+                        <li>Renzo Piano<strong>7</strong></li>
+                        <li>Jean Nouvel<strong>7</strong></li>
+                        <li>Santiago Calatrava<strong>6</strong></li>
+                        <li>Le Corbusier<strong>5</strong></li>
+                        <li>Antoni Gaudí<strong>3</strong></li>
+                    </ul>
+                    <div class="timeline" aria-label="Landmarks span from 2560 BC to 2026">
+                        <div><strong>2560 BC</strong>Great Pyramid of Giza</div>
+                        <div><strong>2026</strong>Waterline, Austin</div>
+                    </div>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-journey.webp" width="600" height="1304" loading="lazy"
+                             alt="My Journey screen with 171 stamps, cities visited and mastered, and a favorite architect card for Albert Kahn" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section class="feature flip" aria-labelledby="quiz-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Play · Architecture quiz</p>
+                    <h2 id="quiz-title" class="section-title">Test your <span class="highlight">smarts.</span></h2>
+                    <p>Every city and every campus has its own 10-question quiz built from its real landmarks: the style, the year, the architect, the number of floors.</p>
+                    <ul>
+                        <li>241 quizzes, one for each city and campus</li>
+                        <li>Tap your answer or say it out loud</li>
+                        <li>Questions are asked in all 9 languages</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-quiz.webp" width="600" height="1304" loading="lazy"
+                             alt="New York quiz asking how many stories tall the Flatiron Building is, with an Answer via voice button" />
+                    </div>
+                    <span class="stamp stamp--green" aria-hidden="true">10 of 10<br>Expert</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip planner -->
+        <section class="feature" aria-labelledby="trip-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Plan · Trips</p>
+                    <h2 id="trip-title" class="section-title">Plan the trip, <span class="highlight">day by day.</span></h2>
+                    <p>Build a trip over several days with landmarks and your own saved places, then fly through it on the 3D map before you leave.</p>
+                    <ul>
+                        <li>Reorder stops, see walking times and optimize the route in one tap</li>
+                        <li>Add any restaurant, shop or venue from Apple Maps</li>
+                        <li>Find hotels for each night with a hotel search for your dates</li>
+                        <li>Trips sync with iCloud between iPhone and iPad</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-trip.webp" width="600" height="1304" loading="lazy"
+                             alt="NYC Long Weekend trip with a route map, three days, a Tour This Trip in 3D button and stops at the Flatiron and Empire State buildings" />
+                    </div>
+                    <span class="stamp stamp--orange" aria-hidden="true">3 days<br>NYC</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before you go -->
+        <section class="tools" aria-labelledby="tools-title">
+            <div class="container">
+                <p class="kicker">Every city page</p>
+                <h2 id="tools-title" class="section-title">Everything you need <span class="highlight">once you land.</span></h2>
+                <p class="section-lead">Each city page answers "what now?", so you don't need five other apps.</p>
+                <ul class="tool-grid">
+                    <li>
+                        <i class="fas fa-bed" aria-hidden="true"></i>
+                        <h3>Hotels</h3>
+                        <p>Hotels on the map and a hotel search for your trip dates.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <h3>Places to eat</h3>
+                        <p>Top eats near the landmarks, plus food and coffee on the map.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <h3>Events</h3>
+                        <p>Upcoming concerts and games at landmark venues, with ticket links.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                        <h3>Weather</h3>
+                        <p>The forecast for the city you're exploring.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        <h3>Currency</h3>
+                        <p>A quick converter for the local currency.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-plane" aria-hidden="true"></i>
+                        <h3>Airport</h3>
+                        <p>The main airport, its code, and what makes it worth a look.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                        <h3>Say hello</h3>
+                        <p>How to greet people in the local language.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        <h3>Want to Visit</h3>
+                        <p>Heart any landmark or Apple Maps place to save it for later.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Campuses -->
+        <section class="campus" aria-labelledby="campus-title">
+            <div class="container">
+                <p class="kicker">New in 2.5 · Campus visits</p>
+                <h2 id="campus-title" class="section-title">Plus 101 <span class="highlight">campuses.</span></h2>
+                <p class="section-lead">Every Big Ten, SEC, ACC and Big 12 school, the Ivy League, and great campuses from Oxford to Melbourne. Built for college visits, and for anyone who loves a good quad.</p>
+                <div class="phone-row">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="My College List with five saved schools and a Plan a College Road Trip button" />
+                        </div>
+                        <figcaption><strong>My College List</strong>Save the schools you're considering.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
+                                 alt="College Road Trip listing five schools in a short driving order" />
+                        </div>
+                        <figcaption><strong>College Road Trip</strong>A day at each school, in a short driving order.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
+                                 alt="Campus traditions checklist for Michigan State with two traditions checked off" />
+                        </div>
+                        <figcaption><strong>250+ traditions</strong>Rub the lucky statue, ring the bell, check it off.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collect -->
+        <section class="feature flip" aria-labelledby="collect-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Collect · Your passport</p>
+                    <h2 id="collect-title" class="section-title">Collect them <span class="highlight">all.</span></h2>
+                    <p>Earn a stamp for every landmark you visit and watch your passport fill in, city by city and country by country. Master a city when you've stamped every landmark in it.</p>
+                    <ul>
+                        <li>Achievements for first stamps, night owls, weekend wanderers and more</li>
+                        <li>A world map of everywhere you've been</li>
+                        <li>Campus stamps in school colors</li>
+                        <li>Share your passport, and see it on your Home Screen with the widget</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/achievements.webp" width="600" height="1304" loading="lazy"
+                             alt="Achievements screen with First Stamp, On The Move, Passport Regular and Century Club unlocked" />
+                    </div>
+                    <span class="stamp stamp--red" aria-hidden="true">Century<br>Club</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extras -->
+        <section class="more" aria-labelledby="more-title">
+            <div class="container">
+                <h2 id="more-title" class="section-title">And the little things.</h2>
+                <ul class="more-grid">
+                    <li>
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
+                        <div><h3>iCloud sync</h3><p>Stamps, trips and lists follow you between devices.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-language" aria-hidden="true"></i>
+                        <div><h3>9 languages</h3><p>English, German, Spanish, French, Italian, Japanese, Korean, Portuguese and Chinese.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        <div><h3>Made for everyone</h3><p>High-contrast and reduced-motion options, plus a dark mode.</p></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final call to action -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Your passport is waiting.</h2>
+                <p>Free on iPhone and iPad.</p>
+                <a class="app-store-button" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">
+                    <i class="fab fa-apple" aria-hidden="true"></i>
+                    <span><small>Download on the</small><strong>App Store</strong></span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="App links">
+                <a href="contact.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="stamped.html">How it was built</a>
+            </nav>
+            <p>Stamped! is not affiliated with or endorsed by any university. School names and colors are used only to identify them.</p>
+            <p>Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+</body>
+</html>
