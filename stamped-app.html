@@ -249,7 +249,8 @@
             text-transform: uppercase;
             color: var(--color-muted);
         }
-        .hero-visual { position: relative; padding: 0 24px; }
+        /* overflow-x: clip keeps the tilted stamps from making small phones scroll sideways */
+        .hero-visual { position: relative; padding: 0 24px; overflow-x: clip; }
         .hero-visual .stamp--red { right: 0; bottom: 70px; }
         .hero-visual .stamp--navy { left: 0; top: 40px; transform: rotate(12deg); }
 
