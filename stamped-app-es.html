@@ -1,0 +1,1719 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <title>Stamped! A City Passport: los grandes edificios del mundo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Consigue un sello en tu pasaporte en más de 1.800 monumentos arquitectónicos de 140 ciudades en seis continentes y 101 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje. Gratis para iPhone y iPad." />
+    <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
+    <link rel="alternate" hreflang="en" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="alternate" hreflang="es" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
+    <link rel="alternate" hreflang="de" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
+    <link rel="alternate" hreflang="ja" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
+    <link rel="alternate" hreflang="x-default" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
+
+    <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
+    <meta name="apple-itunes-app" content="app-id=6759680336" />
+
+    <meta property="og:title" content="Stamped! A City Passport" />
+    <meta property="og:description" content="Más de 1.800 monumentos, 140 ciudades, seis continentes, 101 campus. Sobrevuélalos en 3D y consigue un sello en cada uno que visites." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-es.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+
+    <!-- App details for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Stamped! A City Passport",
+        "description": "Consigue un sello en tu pasaporte en más de 1.800 monumentos arquitectónicos de 140 ciudades en seis continentes y 101 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, iPadOS",
+        "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
+        "url": "https://georgeclinkscalesdev.com/stamped-app-es.html",
+        "downloadUrl": "https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336",
+        "inLanguage": ["en", "de", "es", "fr", "it", "ja", "ko", "pt", "zh"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
+    }
+    </script>
+
+    <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
+    <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
+    <style>
+        /* ===== Tokens (colors and fonts from the app's style guide) ===== */
+        :root {
+            --color-paper: #F5EFE4;
+            --color-paper-deep: #EDE4D3;   /* slightly darker paper for alternating sections */
+            --color-card: #FFFDF8;
+            --color-ink: #1F1B16;
+            --color-muted: #6B6358;
+            --color-line: #E2D8C7;
+            --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
+            --color-accent-ink: #C4521F;   /* darker orange for small text on paper */
+            --color-button: #C4521F;       /* orange that keeps white button text readable (4.6:1) */
+            --color-gold: #D9A621;         /* Reward Gold: mastery only */
+            --color-stamp-green: #2F5D4A;
+            --color-stamp-navy: #24375E;
+            --color-stamp-red: #B2333B;
+            --color-phone: #1A1A1A;
+            --color-band: #1F1B16;         /* dark full-width band */
+            --color-band-ink: #F5EFE4;
+            --color-right: #2F5D4A;
+            --color-wrong: #B2333B;
+
+            --font-serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
+            --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+
+            --gutter: 16px;
+            --max-width: 1120px;
+            --shadow-phone: 0 30px 60px -20px rgba(31, 27, 22, 0.35), 0 12px 24px -12px rgba(31, 27, 22, 0.2);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-paper: #191612;
+                --color-paper-deep: #14110E;
+                --color-card: #231F1A;
+                --color-ink: #F3ECE0;
+                --color-muted: #A79E90;
+                --color-line: #3A332A;
+                --color-accent-ink: #F2743F;
+                --color-stamp-green: #7FB59C;
+                --color-stamp-navy: #8EA5D6;
+                --color-stamp-red: #E07A80;
+                --color-phone: #000000;
+                --color-band: #0F0D0A;
+                --color-band-ink: #F3ECE0;
+                --color-right: #7FB59C;
+                --color-wrong: #E07A80;
+                --shadow-phone: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        /* ===== Base ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        body {
+            margin: 0;
+            background: var(--color-paper);
+            color: var(--color-ink);
+            font-family: var(--font-sans);
+            font-size: 17px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tilted stamps hang off the edges; never let them make the page scroll sideways */
+        main { overflow-x: clip; }
+
+        img, video { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        .skip-link { position: absolute; left: -9999px; }
+        .skip-link:focus {
+            left: var(--gutter);
+            top: var(--gutter);
+            background: var(--color-card);
+            padding: 8px 12px;
+            z-index: 30;
+        }
+
+        :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+        /* ===== Shared pieces ===== */
+
+        /* Small monospaced label, like a customs form */
+        .kicker {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent-ink);
+            margin: 0 0 12px;
+        }
+
+        /* Boxed orange word, same as the App Store screenshots */
+        .highlight {
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            padding: 0 0.15em;
+            white-space: nowrap;
+        }
+        /* On very narrow phones a long boxed phrase may wrap, with the box drawn on each line */
+        @media (max-width: 400px) {
+            .highlight {
+                white-space: normal;
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            margin: 0 0 14px;
+            text-wrap: balance;
+        }
+
+        .section-lead {
+            color: var(--color-muted);
+            font-size: 18px;
+            margin: 0 0 28px;
+            max-width: 38em;
+            text-wrap: pretty;
+        }
+
+        .section { padding: 72px 0; }
+        .section--deep { background: var(--color-paper-deep); }
+        .section-head { margin-bottom: 36px; }
+        .section-head--center { text-align: center; }
+        .section-head--center .section-lead { margin-left: auto; margin-right: auto; }
+
+        .app-store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--color-ink);
+            color: var(--color-paper);
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 10px 20px 10px 16px;
+            line-height: 1.15;
+            box-shadow: 0 6px 16px -6px rgba(31, 27, 22, 0.45);
+        }
+        .app-store-button i { font-size: 28px; }
+        .app-store-button small { display: block; font-size: 11px; }
+        .app-store-button strong { display: block; font-size: 19px; font-weight: 600; }
+        .app-store-button:hover,
+        .app-store-button:focus-visible { transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(31, 27, 22, 0.5); }
+        .app-store-button--light { background: var(--color-band-ink); color: var(--color-band); }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 18px;
+        }
+        .cta-note {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        /* QR code for desktop visitors: scan it with the iPhone camera to open the App Store */
+        .qr-card {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 14px;
+            padding: 8px 14px 8px 8px;
+            text-align: left;
+        }
+        .qr-card img {
+            width: 64px;
+            height: 64px;
+            padding: 5px;
+            background: #FFFFFF;   /* QR codes need a light background, even in dark mode */
+            border-radius: 8px;
+            image-rendering: pixelated;
+        }
+        .qr-card span {
+            font-size: 13px;
+            line-height: 1.3;
+            color: var(--color-muted);
+        }
+        .qr-card strong { display: block; color: var(--color-ink); font-size: 14px; }
+        /* Only on big screens with a mouse, where you can't install an iPhone app directly */
+        @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+            .qr-card { display: flex; }
+            .cta-row .cta-note { display: none; }
+        }
+        .cta .qr-card { background: rgba(245, 239, 228, 0.06); border-color: rgba(245, 239, 228, 0.18); }
+        .cta .qr-card strong { color: var(--color-band-ink); }
+        .cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
+
+        /* A phone drawn with CSS around a plain screenshot */
+        .phone {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border: 9px solid var(--color-phone);
+            border-radius: 44px;
+            overflow: hidden;
+            background: var(--color-phone);
+            box-shadow: var(--shadow-phone);
+        }
+        .phone img,
+        .phone video {
+            width: 100%;
+            aspect-ratio: 600 / 1304;
+            object-fit: cover;
+            border-radius: 35px;
+        }
+        .phone--hero { max-width: 300px; }
+
+        /* Passport stamp: an SVG that uses the shared frame and ring frame defined at the top of <body> */
+        .stamp {
+            position: absolute;
+            width: 118px;
+            height: 118px;
+            transform: rotate(var(--tilt, -12deg));
+            opacity: 0.92;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .stamp text {
+            fill: currentColor;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            text-anchor: middle;
+            letter-spacing: 0.08em;
+        }
+        .stamp .stamp-arc { font-size: 9px; letter-spacing: 0.16em; }
+        .stamp .stamp-big { font-size: 15px; letter-spacing: 0.04em; }
+        .stamp .stamp-small { font-size: 8px; }
+        .stamp--green { color: var(--color-stamp-green); }
+        .stamp--navy { color: var(--color-stamp-navy); }
+        .stamp--red { color: var(--color-stamp-red); }
+        .stamp--orange { color: var(--color-accent); }
+        .stamp--gold { color: var(--color-gold); }
+        .stamp--band { color: var(--color-band-ink); opacity: 0.35; }
+
+        /* Stamps thud onto the page the first time they scroll into view */
+        .motion .stamp {
+            opacity: 0;
+            transform: rotate(var(--tilt, -12deg)) scale(1.6);
+            transition:
+                opacity 0.25s ease var(--delay, 0s),
+                transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.25) var(--delay, 0s);
+        }
+        .motion .stamp.is-in { opacity: 0.92; transform: rotate(var(--tilt, -12deg)) scale(1); }
+        .motion .stamp--band.is-in { opacity: 0.35; }
+
+        /* Sections fade up as they come into view */
+        .motion .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .motion .reveal.is-in { opacity: 1; transform: none; }
+
+        /* ===== Header ===== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+            -webkit-backdrop-filter: saturate(1.4) blur(14px);
+            backdrop-filter: saturate(1.4) blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .site-header.is-scrolled { border-bottom-color: var(--color-line); }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .brand img { width: 34px; height: 34px; border-radius: 8px; }
+        .header-nav { display: flex; align-items: center; gap: 14px; }
+        .header-nav > a:not(.header-button) {
+            display: none;
+            font-size: 15px;
+            color: var(--color-muted);
+            text-decoration: none;
+        }
+        .header-nav > a:not(.header-button):hover { color: var(--color-ink); }
+        .header-button {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--color-button);
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 7px 16px;
+        }
+        .header-button:hover { filter: brightness(1.05); }
+
+        /* Language switcher: a small menu in the header */
+        .lang-switch { position: relative; }
+        .lang-switch summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            color: var(--color-muted);
+            padding: 6px 4px;
+        }
+        .lang-switch summary::-webkit-details-marker { display: none; }
+        .lang-switch summary:hover { color: var(--color-ink); }
+        .lang-switch ul {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 6px);
+            min-width: 150px;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
+        }
+        .lang-switch li a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .lang-switch li a:hover { background: var(--color-paper); }
+        .lang-switch li a[aria-current="page"] { color: var(--color-accent-ink); font-weight: 600; }
+
+        /* Japanese pages: system Japanese fonts, and no breaking words mid-phrase in headings */
+        :lang(ja) {
+            --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+            --font-sans: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        }
+        :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
+        :lang(ja) .highlight { white-space: normal; }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            isolation: isolate;
+            padding: 40px 0 64px;
+        }
+        /* Faint map grid that fades out toward the bottom, plus a warm glow behind the phone */
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hero::before {
+            background-image:
+                linear-gradient(var(--color-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: center top;
+            opacity: 0.6;
+            -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+            mask-image: linear-gradient(to bottom, #000 40%, transparent);
+        }
+        .hero::after {
+            background: radial-gradient(ellipse 55% 50% at 78% 50%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%);
+        }
+        .hero .container { display: grid; gap: 44px; }
+        /* Grid children may shrink below their content, so the long passport line can't widen the page */
+        .hero .container > *,
+        .feature .container > * { min-width: 0; }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            line-height: 1.06;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            margin: 0 0 18px;
+            text-wrap: balance;
+        }
+        .hero-lead {
+            font-size: 19px;
+            color: var(--color-muted);
+            margin: 0 0 28px;
+            max-width: 32em;
+            text-wrap: pretty;
+        }
+
+        /* Stats as the data page of a passport */
+        .passport-strip {
+            margin: 36px 0 0;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 560px;
+        }
+        .passport-strip-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 14px;
+            background: var(--color-stamp-navy);
+            color: #F5EFE4;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        @media (prefers-color-scheme: dark) {
+            .passport-strip-head { background: #24375E; }
+        }
+        .stats {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .stats li {
+            min-width: 0;
+            padding: 12px 14px;
+            border-right: 1px dashed var(--color-line);
+            border-bottom: 1px dashed var(--color-line);
+        }
+        .stats li:nth-child(3n) { border-right: 0; }
+        .stats li:nth-last-child(-n+3) { border-bottom: 0; }
+        .stats strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        .stats span {
+            display: block;
+            overflow-wrap: anywhere;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        /* Machine-readable line at the bottom of a passport */
+        .passport-mrz {
+            margin: 0;
+            padding: 8px 14px;
+            border-top: 1px solid var(--color-line);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--color-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+        }
+
+        .hero-visual {
+            position: relative;
+            padding: 0 28px;
+            overflow-x: clip;   /* keeps the tilted stamps from making small phones scroll sideways */
+            overflow-y: visible;
+        }
+        .hero-visual .stamp { width: 108px; height: 108px; }
+        .hero-visual .stamp--navy { left: 0; top: 40px; --tilt: 12deg; }
+        .hero-visual .stamp--red { right: 0; bottom: 110px; --tilt: -14deg; --delay: 0.25s; }
+        .hero-visual .stamp--green { left: 14px; bottom: 30px; width: 88px; height: 88px; --tilt: -6deg; --delay: 0.5s; }
+        .video-toggle {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            z-index: 3;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 0;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            cursor: pointer;
+            display: none;
+            place-items: center;
+            font-size: 13px;
+        }
+        .video-toggle.is-ready { display: grid; }
+
+        /* ===== How it works ===== */
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+            counter-reset: step;
+        }
+        .steps li {
+            position: relative;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 18px;
+            padding: 22px 22px 22px 22px;
+        }
+        .steps li::before {
+            counter-increment: step;
+            content: "0" counter(step);
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            color: var(--color-muted);
+        }
+        .step-icon {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+            color: var(--color-accent);
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+        .steps h3 { font-family: var(--font-serif); font-size: 22px; margin: 0 0 6px; }
+        .steps p { margin: 0; color: var(--color-muted); font-size: 15px; }
+
+        /* ===== Continents band ===== */
+        .continents {
+            position: relative;
+            background: var(--color-band);
+            color: var(--color-band-ink);
+            padding: 72px 0;
+            overflow: hidden;
+        }
+        .continents .kicker { color: var(--color-accent); }
+        .continents .section-lead { color: var(--color-band-ink); opacity: 0.75; }
+        .continents .stamp { width: 220px; height: 220px; right: -40px; top: -30px; --tilt: 16deg; }
+        .continent-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .continent-grid li {
+            border: 1px dashed rgba(245, 239, 228, 0.25);
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .continent-grid li:hover {
+            border-color: var(--color-accent);
+            background: rgba(242, 116, 63, 0.06);
+        }
+        .continent-grid h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .continent-grid h3 span {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+        }
+        .continent-grid p {
+            margin: 6px 0 0;
+            font-size: 14px;
+            opacity: 0.75;
+        }
+        .band-link { margin: 28px 0 0; }
+        .band-link a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .band-link a:hover { text-decoration: underline; }
+
+        /* ===== Feature rows ===== */
+        .feature .container {
+            display: grid;
+            gap: 40px;
+            align-items: center;
+        }
+        .feature p { color: var(--color-muted); margin: 0 0 16px; }
+        .feature-list { list-style: none; margin: 20px 0 0; padding: 0; }
+        .feature-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+        }
+        .feature-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.35em;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
+            background:
+                radial-gradient(circle, var(--color-accent) 0 3px, transparent 3.5px);
+        }
+        .feature-visual { position: relative; }
+        .feature-visual .stamp { right: 2%; bottom: 8%; }
+
+        /* Two phones side by side: sky view and street view */
+        .phone-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        .phone-pair figure { margin: 0; }
+        .phone-pair figure:last-child { margin-top: 48px; }
+        .phone-pair figcaption,
+        .phone-row figcaption {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 14px;
+            color: var(--color-muted);
+        }
+        .phone-pair figcaption strong,
+        .phone-row figcaption strong {
+            display: block;
+            color: var(--color-ink);
+            font-size: 16px;
+        }
+
+        /* Architect name tags */
+        .architects {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .architects li {
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+        .architects strong {
+            font-family: var(--font-mono);
+            color: var(--color-accent-ink);
+            margin-left: 6px;
+        }
+
+        /* Timeline from oldest to newest landmark */
+        .timeline {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 16px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            border-top: 2px dashed var(--color-accent);
+        }
+        .timeline::after {
+            content: "más de 4.500 años";
+            position: absolute;
+            left: 50%;
+            top: -9px;
+            transform: translateX(-50%);
+            background: var(--color-paper-deep);
+            padding: 0 8px;
+            color: var(--color-accent-ink);
+            font-size: 11px;
+        }
+        .timeline strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 22px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--color-ink);
+        }
+        .timeline div:last-child { text-align: right; }
+
+        /* ===== Quiz ===== */
+        .quiz-card {
+            position: relative;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 20px;
+            padding: 22px;
+            margin-top: 24px;
+            max-width: 460px;
+        }
+        .quiz-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .quiz-dots { display: flex; gap: 6px; }
+        .quiz-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-line);
+        }
+        .quiz-dots span.is-right { background: var(--color-right); }
+        .quiz-dots span.is-wrong { background: var(--color-wrong); }
+        .quiz-question {
+            font-family: var(--font-serif);
+            font-size: 21px;
+            line-height: 1.25;
+            margin: 0 0 16px;
+            color: var(--color-ink);
+        }
+        .quiz-options { display: grid; gap: 8px; }
+        .quiz-options button {
+            font: inherit;
+            font-size: 16px;
+            text-align: left;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            border: 1.5px solid var(--color-line);
+            border-radius: 12px;
+            padding: 12px 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.15s, background 0.15s;
+        }
+        .quiz-options button:hover:not(:disabled) { border-color: var(--color-accent); }
+        .quiz-options button:disabled { cursor: default; }
+        .quiz-options button.is-right {
+            border-color: var(--color-right);
+            background: color-mix(in srgb, var(--color-right) 12%, var(--color-paper));
+        }
+        .quiz-options button.is-wrong {
+            border-color: var(--color-wrong);
+            background: color-mix(in srgb, var(--color-wrong) 10%, var(--color-paper));
+        }
+        .quiz-options button i { font-size: 14px; }
+        .quiz-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            min-height: 40px;
+            margin-top: 14px;
+        }
+        .quiz-feedback { margin: 0; font-size: 14px; color: var(--color-muted); }
+        .quiz-next {
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--color-button);
+            border: 0;
+            border-radius: 999px;
+            padding: 8px 16px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .quiz-next[hidden] { display: none; }
+        .quiz-card .stamp {
+            right: -14px;
+            top: -28px;
+            width: 104px;
+            height: 104px;
+            --tilt: 14deg;
+        }
+        .quiz-card .stamp[hidden] { display: none; }
+
+        /* ===== Tool grid ("Once you land") ===== */
+        .tool-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .tool-grid li {
+            min-width: 0;
+            hyphens: auto;      /* long German words break cleanly in the narrow two-column grid */
+            overflow-wrap: break-word;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 16px;
+            padding: 18px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .tool-grid li:hover { transform: translateY(-2px); border-color: var(--color-accent); }
+        .tool-grid i {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+            color: var(--color-accent);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .tool-grid h3 { font-size: 16px; margin: 0 0 4px; }
+        .tool-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Campus section with three phones ===== */
+        .phone-row {
+            display: grid;
+            gap: 32px;
+            margin-top: 8px;
+        }
+        .phone-row figure { margin: 0; }
+        .conferences {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .conferences li {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1.5px solid var(--color-ink);
+            border-radius: 6px;
+            padding: 5px 10px;
+        }
+
+        /* ===== Collect: a passport page full of stamps ===== */
+        .passport-page {
+            position: relative;
+            min-height: 520px;
+        }
+        .passport-page .phone { position: relative; z-index: 1; }
+        .passport-page .stamp:nth-of-type(1) { left: 0; top: 4%; --tilt: -16deg; }
+        .passport-page .stamp:nth-of-type(2) { right: 0; top: 16%; --tilt: 10deg; --delay: 0.15s; }
+        .passport-page .stamp:nth-of-type(3) { left: 2%; bottom: 18%; --tilt: 8deg; --delay: 0.3s; }
+        .passport-page .stamp:nth-of-type(4) { right: 3%; bottom: 4%; --tilt: -8deg; --delay: 0.45s; }
+
+        /* ===== Small extras grid ===== */
+        .more-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 20px;
+        }
+        .more-grid li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .more-grid i {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            color: var(--color-accent);
+        }
+        .more-grid h3 { font-size: 16px; margin: 0 0 2px; }
+        .more-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Final call to action ===== */
+        .cta {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 0;
+            text-align: center;
+            background: var(--color-band);
+            color: var(--color-band-ink);
+        }
+        .cta .container { position: relative; z-index: 1; }
+        .cta img.cta-icon {
+            width: 84px;
+            height: 84px;
+            border-radius: 20px;
+            margin: 0 auto 22px;
+            box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+        }
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            line-height: 1.1;
+            margin: 0 0 12px;
+        }
+        .cta p { opacity: 0.75; margin: 0 0 28px; }
+        .cta .cta-row { justify-content: center; }
+        .cta .stamp { width: 170px; height: 170px; }
+        .cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
+        .cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            padding: 32px 0 40px;
+            font-size: 14px;
+            color: var(--color-muted);
+        }
+        .site-footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-bottom: 16px;
+        }
+        .site-footer nav a { color: var(--color-ink); font-weight: 600; }
+        .site-footer p { margin: 0 0 8px; }
+
+        /* ===== Larger screens ===== */
+        @media (min-width: 768px) {
+            .section { padding: 104px 0; }
+            .section-title { font-size: 46px; }
+
+            .header-nav { gap: 22px; }
+            .header-nav > a:not(.header-button) { display: inline; }
+
+            .hero { padding: 64px 0 96px; }
+            .hero-visual .stamp { width: 132px; height: 132px; }
+            .hero-visual .stamp--green { width: 104px; height: 104px; }
+            .hero .container {
+                grid-template-columns: 1.1fr 1fr;
+                align-items: center;
+            }
+            .hero h1 { font-size: 66px; }
+            .stats { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+            .stats li { border-bottom: 0; }
+            .stats li:nth-child(3n) { border-right: 1px dashed var(--color-line); }
+            .stats li:last-child { border-right: 0; }
+            .stats strong { font-size: 22px; }
+            .stats li { padding: 12px 10px; }
+
+            .steps { grid-template-columns: repeat(3, 1fr); }
+
+            .continents { padding: 104px 0; }
+            .continents .stamp { width: 300px; height: 300px; right: 4%; top: 40px; }
+            .continent-grid { grid-template-columns: repeat(3, 1fr); }
+
+            .feature .container { grid-template-columns: 1fr 1fr; gap: 64px; }
+            /* Every other row puts the visual on the left */
+            .feature.flip .feature-visual { order: -1; }
+
+            .phone-pair { gap: 24px; }
+
+            .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+            .phone-row { grid-template-columns: repeat(3, 1fr); }
+            .phone-row figure:nth-child(2) { margin-top: 40px; }
+
+            .more-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+            .cta { padding: 120px 0; }
+            .cta h2 { font-size: 56px; }
+            .cta .stamp { width: 220px; height: 220px; }
+            .cta .stamp:nth-of-type(1) { left: 6%; top: 50px; }
+            .cta .stamp:nth-of-type(2) { right: 6%; bottom: 40px; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: 74px; }
+            .phone--hero { max-width: 320px; }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .app-store-button { transition: transform 0.15s, box-shadow 0.15s; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <!-- Shared pieces for every passport stamp: the ring frame and the arc the city name sits on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app-es.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+            <nav class="header-nav" aria-label="Secciones de la página">
+                <a href="#explore">Explorar</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#trips">Viajes</a>
+                <a href="#campuses">Campus</a>
+                <details class="lang-switch">
+                    <summary aria-label="español"><i class="fas fa-globe" aria-hidden="true"></i>ES</summary>
+                    <ul>
+                        <li><a href="stamped-app.html" hreflang="en" lang="en">English</a></li>
+                        <li><a href="stamped-app-es.html" hreflang="es" lang="es" aria-current="page">Español</a></li>
+                        <li><a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a></li>
+                        <li><a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a></li>
+                    </ul>
+                </details>
+                <a class="header-button" href="https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336">Descargar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Un pasaporte de ciudades · Gratis para iPhone y iPad</p>
+                    <h1 id="hero-title">Los grandes edificios del mundo, <span class="highlight">sellados.</span></h1>
+                    <p class="hero-lead">De la Gran Pirámide a la Casa de la Cascada: sobrevuela ciudades reales en 3D, descubre quién construyó qué y por qué, y consigue un sello en tu pasaporte en cada monumento que visites.</p>
+                    <div class="cta-row">
+                        <a class="app-store-button" href="https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336">
+                            <i class="fab fa-apple" aria-hidden="true"></i>
+                            <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+                        </a>
+                        <span class="cta-note">Gratis · iPhone y iPad</span>
+                        <div class="qr-card">
+                            <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="Código QR que abre Stamped! en el App Store" />
+                            <span><strong>¿Estás en el ordenador?</strong>Escanéalo con la cámara de tu iPhone.</span>
+                        </div>
+                    </div>
+                    <div class="passport-strip">
+                        <div class="passport-strip-head" aria-hidden="true"><span>Pasaporte · Stamped!</span><span>Tipo P</span></div>
+                        <ul class="stats">
+                            <li><strong>1.800+</strong><span>Monumentos</span></li>
+                            <li><strong>140</strong><span>Ciudades</span></li>
+                            <li><strong>6</strong><span>Continentes</span></li>
+                            <li><strong>60+</strong><span>Países</span></li>
+                            <li><strong>101</strong><span>Campus</span></li>
+                            <li><strong>9</strong><span>Idiomas</span></li>
+                        </ul>
+                        <p class="passport-mrz" aria-hidden="true">P&lt;WORLD&lt;&lt;GREAT&lt;BUILDINGS&lt;&lt;STAMPED&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone phone--hero">
+                        <video class="hero-video" data-src="assets/videos/stamped/stamped-3d-map-screen.mp4"
+                               poster="assets/images/stamped/app/city-3d.webp" width="600" height="1304"
+                               muted loop playsinline preload="none"
+                               aria-label="Stamped! sobrevolando a baja altura un Manhattan fotorrealista en 3D junto al Empire State Building y bajando después a pie de calle en la Quinta Avenida"></video>
+                        <button class="video-toggle" type="button" aria-label="Pausar vídeo"><i class="fas fa-pause" aria-hidden="true"></i></button>
+                    </div>
+                    <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">NEW YORK · USA</textPath></text><text class="stamp-big" x="60" y="64">NYC</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">PARIS · FRANCE</textPath></text><text class="stamp-big" x="60" y="64">PARIS</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">KYOTO · JAPAN</textPath></text><text class="stamp-big" x="60" y="64">KYOTO</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section section--deep" aria-labelledby="how-title">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="kicker">Cómo funciona</p>
+                    <h2 id="how-title" class="section-title">Explora. Viaja. <span class="highlight">Sella.</span></h2>
+                </div>
+                <ol class="steps reveal">
+                    <li>
+                        <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
+                        <h3>Explora desde el sofá</h3>
+                        <p>Sobrevuela 140 ciudades en 3D fotorrealista y lee la historia de cada edificio.</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
+                        <h3>Planifica el viaje</h3>
+                        <p>Organiza los monumentos día a día, añade hoteles y sitios para comer y previsualiza la ruta en 3D.</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-stamp" aria-hidden="true"></i></span>
+                        <h3>Llena tu pasaporte</h3>
+                        <p>Consigue un sello en cada monumento que visites y domina una ciudad sellándolos todos.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Every continent -->
+        <section class="continents" aria-labelledby="continents-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SEIS CONTINENTES</textPath></text><text class="stamp-big" x="60" y="64">140</text><text class="stamp-small" x="60" y="77">CIUDADES</text></svg>
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Seis continentes · 140 ciudades</p>
+                    <h2 id="continents-title" class="section-title">Todos los continentes a los que puedes volar.</h2>
+                    <p class="section-lead">No solo las capitales de siempre. Stamped! cubre 140 ciudades, de Reikiavik a Zanzíbar, cada una con sus monumentos, su quiz y su sello.</p>
+                </div>
+                <ul class="continent-grid reveal">
+                    <li>
+                        <h3>Europa <span>34 ciudades</span></h3>
+                        <p>París, Roma, Barcelona, Londres, Praga, Estambul, Reikiavik, Tiflis…</p>
+                    </li>
+                    <li>
+                        <h3>Asia <span>38 ciudades</span></h3>
+                        <p>Tokio, Kioto, Seúl, Singapur, Dubái, Bombay, Katmandú, Xi'an…</p>
+                    </li>
+                    <li>
+                        <h3>Norteamérica <span>37 ciudades</span></h3>
+                        <p>Nueva York, Chicago, Ciudad de México, La Habana, Toronto, Honolulu, Detroit…</p>
+                    </li>
+                    <li>
+                        <h3>Sudamérica <span>15 ciudades</span></h3>
+                        <p>Río de Janeiro, Buenos Aires, Brasilia, Lima, Cartagena, Medellín…</p>
+                    </li>
+                    <li>
+                        <h3>África <span>11 ciudades</span></h3>
+                        <p>El Cairo, Marrakech, Ciudad del Cabo, Lagos, Nairobi, Adís Abeba, Zanzíbar…</p>
+                    </li>
+                    <li>
+                        <h3>Oceanía <span>5 ciudades</span></h3>
+                        <p>Sídney, Melbourne, Brisbane, Auckland, Queenstown</p>
+                    </li>
+                </ul>
+                <p class="band-link"><a href="stamped-cities/index.html">Ver las 140 guías de ciudades (en inglés) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+            </div>
+        </section>
+
+        <!-- 3D map and Look Around -->
+        <section class="section feature" id="explore" aria-labelledby="map-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Explorar · 3D fotorrealista + Mirar alrededor</p>
+                    <h2 id="map-title" class="section-title">Del cielo <span class="highlight">a la calle.</span></h2>
+                    <p>Imágenes de satélite sobre las alturas reales de los edificios. Toca un pin y la cámara vuela directo hacia él, o inicia una visita guiada que vuela de un monumento a otro por ti. Después, baja a pie de calle y mira cómo es un edificio antes de llegar.</p>
+                    <ul class="feature-list">
+                        <li>Recorre los monumentos en orden a pie desde la tarjeta del mapa</li>
+                        <li>Filtra por no visitados, sellados, quiero visitar y estilo arquitectónico</li>
+                        <li>Accesos rápidos a comida, café, cultura y alojamiento</li>
+                    </ul>
+                </div>
+                <div class="phone-pair reveal">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/city-map-card.webp" width="600" height="1304" loading="lazy"
+                                 alt="Mapa 3D de Nueva York con la tarjeta del Empire State Building, una vista previa de Mirar alrededor y los botones Sellar, Quiero ir y Añadir al viaje" />
+                        </div>
+                        <figcaption><strong>Sobrevuela</strong>Todos los monumentos en un mapa 3D.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/city-look-around.webp" width="600" height="1304" loading="lazy"
+                                 alt="Vista a pie de calle con Mirar alrededor del cubo de cristal de Apple Fifth Avenue en Manhattan" />
+                        </div>
+                        <figcaption><strong>Recorre la calle</strong>Para no pasar de largo nunca más.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architects -->
+        <section class="section section--deep feature flip" aria-labelledby="architects-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Descubre · Las personas detrás de los edificios</p>
+                    <h2 id="architects-title" class="section-title">Conoce a los <span class="highlight">arquitectos.</span></h2>
+                    <p>Cada monumento incluye su arquitecto, estilo, año de construcción, altura e historia. Stamped! recuerda de quién son los edificios que has visto y te muestra tu arquitecto favorito.</p>
+                    <ul class="architects" aria-label="Algunos de los arquitectos de Stamped!, con cuántos de sus edificios hay en la app">
+                        <li>Frank Lloyd Wright<strong>18</strong></li>
+                        <li>Oscar Niemeyer<strong>16</strong></li>
+                        <li>Frank Gehry<strong>14</strong></li>
+                        <li>I. M. Pei<strong>14</strong></li>
+                        <li>Zaha Hadid<strong>12</strong></li>
+                        <li>Herzog &amp; de Meuron<strong>11</strong></li>
+                        <li>Mies van der Rohe<strong>10</strong></li>
+                        <li>Renzo Piano<strong>7</strong></li>
+                        <li>Jean Nouvel<strong>7</strong></li>
+                        <li>Santiago Calatrava<strong>6</strong></li>
+                        <li>Le Corbusier<strong>5</strong></li>
+                        <li>Antoni Gaudí<strong>3</strong></li>
+                    </ul>
+                    <div class="timeline" aria-label="Los monumentos van del 2560 a. C. a 2026">
+                        <div><strong>2560 a. C.</strong>Gran Pirámide de Guiza</div>
+                        <div><strong>2026</strong>Waterline, Austin</div>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-journey.webp" width="600" height="1304" loading="lazy"
+                             alt="Pantalla Mi viaje con 171 sellos, ciudades visitadas y dominadas, y Albert Kahn como arquitecto favorito" />
+                    </div>
+                    <svg class="stamp stamp--gold" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ARQUITECTO FAVORITO</textPath></text><text class="stamp-big" x="60" y="64">KAHN</text><text class="stamp-small" x="60" y="77">DETROIT</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section class="section feature" id="quiz" aria-labelledby="quiz-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Juega · Quiz de arquitectura</p>
+                    <h2 id="quiz-title" class="section-title">Pon a prueba <span class="highlight">lo que sabes.</span></h2>
+                    <p>Cada ciudad y cada campus tiene su propio quiz de 10 preguntas basado en sus monumentos reales: el estilo, el año, el arquitecto, el número de plantas. 241 quizzes en total, en 9 idiomas. Toca tu respuesta o dila en voz alta.</p>
+
+                    <!-- A three-question sample of the in-app quiz -->
+                    <div class="quiz-card" data-quiz>
+                        <div class="quiz-top">
+                            <span data-quiz-count>Pregunta 1 de 3</span>
+                            <span class="quiz-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                        </div>
+                        <p class="quiz-question" data-quiz-question>¿Cuántas plantas tiene el Flatiron Building?</p>
+                        <div class="quiz-options" data-quiz-options>
+                            <button type="button">16</button>
+                            <button type="button">22</button>
+                            <button type="button">31</button>
+                        </div>
+                        <div class="quiz-foot">
+                            <p class="quiz-feedback" data-quiz-feedback aria-live="polite">Pruébalo. Tres preguntas.</p>
+                            <button class="quiz-next" type="button" data-quiz-next hidden>Siguiente</button>
+                        </div>
+                        <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true" data-quiz-stamp hidden><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">RESULTADO</textPath></text><text class="stamp-big" x="60" y="64" data-quiz-score>3 / 3</text><text class="stamp-small" x="60" y="77" data-quiz-rank>EXPERTO</text></svg>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-quiz.webp" width="600" height="1304" loading="lazy"
+                             alt="Quiz de Nueva York que pregunta cuántas plantas tiene el Flatiron Building, con un botón para responder por voz" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip planner -->
+        <section class="section section--deep feature flip" id="trips" aria-labelledby="trip-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Planifica · Viajes</p>
+                    <h2 id="trip-title" class="section-title">Planifica el viaje, <span class="highlight">día a día.</span></h2>
+                    <p>Crea un viaje de varios días con monumentos y tus propios lugares guardados, y sobrevuélalo en el mapa 3D antes de salir.</p>
+                    <ul class="feature-list">
+                        <li>Reordena paradas, consulta los tiempos a pie y optimiza la ruta con un toque</li>
+                        <li>Añade cualquier restaurante, tienda o local de Apple Maps</li>
+                        <li>Encuentra hotel para cada noche con una búsqueda para tus fechas</li>
+                        <li>Los viajes se sincronizan con iCloud entre iPhone y iPad</li>
+                    </ul>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <img src="assets/images/stamped/app/city-trip.webp" width="600" height="1304" loading="lazy"
+                             alt="Viaje «NYC Long Weekend» con mapa de la ruta, tres días, un botón para recorrer el viaje en 3D y paradas en el Flatiron y el Empire State Building" />
+                    </div>
+                    <svg class="stamp stamp--orange" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ESCAPADA</textPath></text><text class="stamp-big" x="60" y="64">3 DÍAS</text><text class="stamp-small" x="60" y="77">NYC</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Once you land -->
+        <section class="section" aria-labelledby="tools-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">En cada ciudad</p>
+                    <h2 id="tools-title" class="section-title">Todo lo que necesitas <span class="highlight">al aterrizar.</span></h2>
+                    <p class="section-lead">Cada ciudad responde al «¿y ahora qué?», así que no necesitas otras cinco apps.</p>
+                </div>
+                <ul class="tool-grid reveal">
+                    <li>
+                        <i class="fas fa-bed" aria-hidden="true"></i>
+                        <h3>Hoteles</h3>
+                        <p>Hoteles en el mapa y búsqueda de hotel para las fechas de tu viaje.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <h3>Dónde comer</h3>
+                        <p>Los mejores sitios para comer cerca de los monumentos, y comida y café en el mapa.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <h3>Eventos</h3>
+                        <p>Próximos conciertos y partidos en recintos emblemáticos, con enlaces a entradas.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                        <h3>El tiempo</h3>
+                        <p>La previsión de la ciudad que estás explorando.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        <h3>Moneda</h3>
+                        <p>Un conversor rápido para la moneda local.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-plane" aria-hidden="true"></i>
+                        <h3>Aeropuerto</h3>
+                        <p>El aeropuerto principal, su código y lo que lo hace especial.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                        <h3>Saluda</h3>
+                        <p>Cómo saludar en el idioma local.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        <h3>Quiero visitar</h3>
+                        <p>Marca con un corazón cualquier monumento o lugar de Apple Maps para guardarlo.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Campuses -->
+        <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Novedad en 2.5 · Visitas a campus</p>
+                    <h2 id="campus-title" class="section-title">Y 101 <span class="highlight">campus.</span></h2>
+                    <p class="section-lead">Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne. Pensado para visitar universidades y para cualquiera a quien le guste un buen campus.</p>
+                    <ul class="conferences" aria-label="Conferencias incluidas">
+                        <li>Big Ten</li>
+                        <li>SEC</li>
+                        <li>ACC</li>
+                        <li>Big 12</li>
+                        <li>Ivy League</li>
+                        <li>+ todo el mundo</li>
+                    </ul>
+                </div>
+                <div class="phone-row reveal">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="Mi lista de universidades con cinco centros guardados y un botón Planificar un viaje por universidades" />
+                        </div>
+                        <figcaption><strong>Mi lista de universidades</strong>Guarda las universidades que te interesan.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
+                                 alt="Viaje por universidades con cinco centros en un orden de conducción corto" />
+                        </div>
+                        <figcaption><strong>Viaje por universidades</strong>Un día en cada universidad, en el orden de ruta más corto.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
+                                 alt="Lista de tradiciones del campus de Michigan State con dos tradiciones marcadas" />
+                        </div>
+                        <figcaption><strong>Más de 250 tradiciones</strong>Frota la estatua de la suerte, toca la campana y márcalo.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collect -->
+        <section class="section feature" aria-labelledby="collect-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Colecciona · Tu pasaporte</p>
+                    <h2 id="collect-title" class="section-title">Colecciónalos <span class="highlight">todos.</span></h2>
+                    <p>Consigue un sello por cada monumento que visites y mira cómo se llena tu pasaporte, ciudad a ciudad y país a país. Domina una ciudad cuando hayas sellado todos sus monumentos.</p>
+                    <ul class="feature-list">
+                        <li>Logros por primeros sellos, noctámbulos, viajeros de fin de semana y más</li>
+                        <li>Un mapa del mundo con todos los lugares donde has estado</li>
+                        <li>Sellos de campus con los colores de cada universidad</li>
+                        <li>Comparte tu pasaporte y míralo en la pantalla de inicio con el widget</li>
+                    </ul>
+                </div>
+                <div class="feature-visual passport-page">
+                    <div class="phone reveal">
+                        <img src="assets/images/stamped/app/achievements.webp" width="600" height="1304" loading="lazy"
+                             alt="Pantalla de logros con varios logros desbloqueados, entre ellos Primer sello y Club de los cien" />
+                    </div>
+                    <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">LOGRO</textPath></text><text class="stamp-big" x="60" y="62">CENTURY</text><text class="stamp-small" x="60" y="76">CLUB</text></svg>
+                    <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CAIRO · EGYPT</textPath></text><text class="stamp-big" x="60" y="64">GIZA</text><text class="stamp-small" x="60" y="77">2560 a. C.</text></svg>
+                    <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">RIO · BRAZIL</textPath></text><text class="stamp-big" x="60" y="64">RIO</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--gold" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CIUDAD DOMINADA</textPath></text><text class="stamp-big" x="60" y="64">SYDNEY</text><text class="stamp-small" x="60" y="77">★ ORO ★</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extras -->
+        <section class="section section--deep" aria-labelledby="more-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 id="more-title" class="section-title">Y los pequeños detalles.</h2>
+                </div>
+                <ul class="more-grid reveal">
+                    <li>
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
+                        <div><h3>Sincronización con iCloud</h3><p>Sellos, viajes y listas te acompañan en todos tus dispositivos.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-language" aria-hidden="true"></i>
+                        <div><h3>9 idiomas</h3><p>Inglés, alemán, español, francés, italiano, japonés, coreano, portugués y chino.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        <div><h3>Para todo el mundo</h3><p>Opciones de alto contraste y movimiento reducido, y modo oscuro.</p></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final call to action -->
+        <section class="cta" aria-labelledby="cta-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BUEN VIAJE</textPath></text><text class="stamp-big" x="60" y="64">SALIDA</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BIENVENIDO</textPath></text><text class="stamp-big" x="60" y="64">LLEGADA</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container reveal">
+                <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
+                <h2 id="cta-title">Tu pasaporte te espera.</h2>
+                <p>Más de 1.800 monumentos. Un sello por cada uno. Gratis para iPhone y iPad.</p>
+                <div class="cta-row">
+                    <a class="app-store-button app-store-button--light" href="https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336">
+                        <i class="fab fa-apple" aria-hidden="true"></i>
+                        <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+                    </a>
+                    <div class="qr-card">
+                        <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="Código QR que abre Stamped! en el App Store" />
+                        <span><strong>¿Estás en el ordenador?</strong>Escanéalo con la cámara de tu iPhone.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Enlaces de la app">
+                <a href="contact.html">Soporte</a>
+                <a href="privacy.html">Privacidad</a>
+                <a href="stamped-cities/index.html">Guías de ciudades</a>
+                <a href="stamped.html">Cómo se hizo</a>
+            </nav>
+            <nav aria-label="Idiomas">
+                <a href="stamped-app.html" hreflang="en" lang="en">English</a>
+                <a href="stamped-app-es.html" hreflang="es" lang="es">Español</a>
+                <a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a>
+                <a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a>
+            </nav>
+            <p>Stamped! no está afiliado ni respaldado por ninguna universidad. Los nombres y colores de las universidades se usan solo para identificarlas.</p>
+            <p>Apple, el logotipo de Apple, iPhone y iPad son marcas comerciales de Apple Inc. App Store es una marca de servicio de Apple Inc.</p>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            // Every piece of text the script puts on the page
+            var copy = {
+                pause: 'Pausar vídeo',
+                play: 'Reproducir vídeo',
+                question: 'Pregunta {n} de {total}',
+                correct: '¡Correcto! ',
+                wrong: 'Casi. ',
+                next: 'Siguiente',
+                seeStamp: 'Ver tu sello',
+                done: 'Listo',
+                perfect: '¡Puntuación perfecta!',
+                yourScore: 'Has acertado {score} de {total}.',
+                more: 'La app tiene 241 quizzes y 2.410 preguntas.',
+                playAgain: 'Jugar otra vez',
+                intro: 'Pruébalo. Tres preguntas.',
+                ranks: ['TURISTA', 'VIAJERO', 'LOCAL', 'EXPERTO'],
+                questions: [
+                    { q: '¿Cuántas plantas tiene el Flatiron Building?', options: ['16', '22', '31'], answer: 1,
+                      note: '22 plantas, terminado en 1902.' },
+                    { q: '¿Quién diseñó la Casa de la Cascada (Fallingwater)?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,
+                      note: 'Frank Lloyd Wright, sobre una cascada en Pensilvania.' },
+                    { q: '¿Quién diseñó la Ópera de Sídney?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,
+                      note: 'Jørn Utzon, arquitecto danés, ganó el concurso de diseño en 1957.' }
+                ]
+            };
+
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!reduceMotion && 'IntersectionObserver' in window) {
+                document.documentElement.classList.add('motion');
+            }
+
+            // Header gets a bottom line once the page scrolls
+            var header = document.querySelector('.site-header');
+            function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Close the language menu on an outside click
+            var langSwitch = document.querySelector('.lang-switch');
+            document.addEventListener('click', function (event) {
+                if (langSwitch.open && !langSwitch.contains(event.target)) langSwitch.open = false;
+            });
+
+            // Fade sections in and thud stamps down as they scroll into view
+            if (document.documentElement.classList.contains('motion')) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-in');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                document.querySelectorAll('.reveal, .stamp:not([hidden])').forEach(function (el) { observer.observe(el); });
+            }
+
+            // Hero video: only load it when motion is OK and the visitor isn't saving data
+            var video = document.querySelector('.hero-video');
+            var toggle = document.querySelector('.video-toggle');
+            var saveData = navigator.connection && navigator.connection.saveData;
+            if (video && !reduceMotion && !saveData) {
+                video.src = video.dataset.src;
+                video.play().then(function () {
+                    toggle.classList.add('is-ready');
+                }).catch(function () { /* autoplay blocked: the poster stays */ });
+                toggle.addEventListener('click', function () {
+                    var icon = toggle.querySelector('i');
+                    if (video.paused) {
+                        video.play();
+                        icon.className = 'fas fa-pause';
+                        toggle.setAttribute('aria-label', copy.pause);
+                    } else {
+                        video.pause();
+                        icon.className = 'fas fa-play';
+                        toggle.setAttribute('aria-label', copy.play);
+                    }
+                });
+            }
+
+            // Sample quiz
+            var quiz = document.querySelector('[data-quiz]');
+            if (!quiz) return;
+            var questions = copy.questions;
+            var index = 0;
+            var score = 0;
+            var countEl = quiz.querySelector('[data-quiz-count]');
+            var questionEl = quiz.querySelector('[data-quiz-question]');
+            var optionsEl = quiz.querySelector('[data-quiz-options]');
+            var feedbackEl = quiz.querySelector('[data-quiz-feedback]');
+            var nextEl = quiz.querySelector('[data-quiz-next]');
+            var dots = quiz.querySelectorAll('.quiz-dots span');
+            var stampEl = quiz.querySelector('[data-quiz-stamp]');
+
+            function render() {
+                var item = questions[index];
+                countEl.textContent = copy.question.replace('{n}', index + 1).replace('{total}', questions.length);
+                questionEl.textContent = item.q;
+                optionsEl.innerHTML = '';
+                item.options.forEach(function (label, i) {
+                    var button = document.createElement('button');
+                    button.type = 'button';
+                    button.textContent = label;
+                    button.addEventListener('click', function () { choose(i); });
+                    optionsEl.appendChild(button);
+                });
+                nextEl.hidden = true;
+            }
+
+            function choose(i) {
+                var item = questions[index];
+                var buttons = optionsEl.querySelectorAll('button');
+                var right = i === item.answer;
+                if (right) score++;
+                buttons.forEach(function (button, j) {
+                    button.disabled = true;
+                    if (j === item.answer) {
+                        button.classList.add('is-right');
+                        button.insertAdjacentHTML('beforeend', '<i class="fas fa-check" aria-hidden="true"></i>');
+                    } else if (j === i) {
+                        button.classList.add('is-wrong');
+                        button.insertAdjacentHTML('beforeend', '<i class="fas fa-times" aria-hidden="true"></i>');
+                    }
+                });
+                dots[index].classList.add(right ? 'is-right' : 'is-wrong');
+                feedbackEl.textContent = (right ? copy.correct : copy.wrong) + item.note;
+                nextEl.textContent = index < questions.length - 1 ? copy.next : copy.seeStamp;
+                nextEl.hidden = false;
+                nextEl.focus();
+            }
+
+            function finish() {
+                quiz.querySelector('[data-quiz-score]').textContent = score + ' / ' + questions.length;
+                quiz.querySelector('[data-quiz-rank]').textContent = copy.ranks[score];
+                stampEl.hidden = false;
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () { stampEl.classList.add('is-in'); });
+                });
+                countEl.textContent = copy.done;
+                questionEl.textContent = score === questions.length ? copy.perfect : copy.yourScore.replace('{score}', score).replace('{total}', questions.length);
+                optionsEl.innerHTML = '';
+                feedbackEl.textContent = copy.more;
+                nextEl.textContent = copy.playAgain;
+                nextEl.hidden = false;
+                index = questions.length;
+            }
+
+            nextEl.addEventListener('click', function () {
+                if (index >= questions.length) {
+                    index = 0;
+                    score = 0;
+                    stampEl.hidden = true;
+                    stampEl.classList.remove('is-in');
+                    dots.forEach(function (dot) { dot.className = ''; });
+                    feedbackEl.textContent = copy.intro;
+                    render();
+                    optionsEl.querySelector('button').focus();
+                } else if (index === questions.length - 1) {
+                    finish();
+                } else {
+                    index++;
+                    render();
+                    optionsEl.querySelector('button').focus();
+                }
+            });
+
+            // Swap the static first-question buttons for live ones
+            render();
+        })();
+    </script>
+</body>
+</html>

@@ -8,6 +8,11 @@
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="alternate" hreflang="en" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="alternate" hreflang="es" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
+    <link rel="alternate" hreflang="de" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
+    <link rel="alternate" hreflang="ja" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
+    <link rel="alternate" hreflang="x-default" href="https://georgeclinkscalesdev.com/stamped-app.html" />
     <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
     <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
 
@@ -17,6 +22,7 @@
     <meta property="og:title" content="Stamped! A City Passport" />
     <meta property="og:description" content="1,800+ landmarks, 140 cities, six continents, 101 campuses. Fly through them in 3D and collect a stamp at every one you visit." />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -152,6 +158,14 @@
             border: 2px solid var(--color-accent);
             padding: 0 0.15em;
             white-space: nowrap;
+        }
+        /* On very narrow phones a long boxed phrase may wrap, with the box drawn on each line */
+        @media (max-width: 400px) {
+            .highlight {
+                white-space: normal;
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
         }
 
         .section-title {
@@ -341,14 +355,14 @@
             font-weight: 700;
         }
         .brand img { width: 34px; height: 34px; border-radius: 8px; }
-        .header-nav { display: flex; align-items: center; gap: 22px; }
-        .header-nav a:not(.header-button) {
+        .header-nav { display: flex; align-items: center; gap: 14px; }
+        .header-nav > a:not(.header-button) {
             display: none;
             font-size: 15px;
             color: var(--color-muted);
             text-decoration: none;
         }
-        .header-nav a:not(.header-button):hover { color: var(--color-ink); }
+        .header-nav > a:not(.header-button):hover { color: var(--color-ink); }
         .header-button {
             font-size: 14px;
             font-weight: 600;
@@ -359,6 +373,53 @@
             padding: 7px 16px;
         }
         .header-button:hover { filter: brightness(1.05); }
+
+        /* Language switcher: a small menu in the header */
+        .lang-switch { position: relative; }
+        .lang-switch summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            color: var(--color-muted);
+            padding: 6px 4px;
+        }
+        .lang-switch summary::-webkit-details-marker { display: none; }
+        .lang-switch summary:hover { color: var(--color-ink); }
+        .lang-switch ul {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 6px);
+            min-width: 150px;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
+        }
+        .lang-switch li a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .lang-switch li a:hover { background: var(--color-paper); }
+        .lang-switch li a[aria-current="page"] { color: var(--color-accent-ink); font-weight: 600; }
+
+        /* Japanese pages: system Japanese fonts, and no breaking words mid-phrase in headings */
+        :lang(ja) {
+            --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+            --font-sans: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        }
+        :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
+        :lang(ja) .highlight { white-space: normal; }
 
         /* ===== Hero ===== */
         .hero {
@@ -438,9 +499,10 @@
             padding: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
         .stats li {
+            min-width: 0;
             padding: 12px 14px;
             border-right: 1px dashed var(--color-line);
             border-bottom: 1px dashed var(--color-line);
@@ -454,6 +516,8 @@
             line-height: 1.2;
         }
         .stats span {
+            display: block;
+            overflow-wrap: anywhere;
             font-family: var(--font-mono);
             font-size: 10px;
             letter-spacing: 0.12em;
@@ -590,6 +654,13 @@
             font-size: 14px;
             opacity: 0.75;
         }
+        .band-link { margin: 28px 0 0; }
+        .band-link a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .band-link a:hover { text-decoration: underline; }
 
         /* ===== Feature rows ===== */
         .feature .container {
@@ -808,10 +879,13 @@
             padding: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
         }
         .tool-grid li {
+            min-width: 0;
+            hyphens: auto;      /* long German words break cleanly in the narrow two-column grid */
+            overflow-wrap: break-word;
             background: var(--color-card);
             border: 1px solid var(--color-line);
             border-radius: 16px;
@@ -945,7 +1019,8 @@
             .section { padding: 104px 0; }
             .section-title { font-size: 46px; }
 
-            .header-nav a:not(.header-button) { display: inline; }
+            .header-nav { gap: 22px; }
+            .header-nav > a:not(.header-button) { display: inline; }
 
             .hero { padding: 64px 0 96px; }
             .hero-visual .stamp { width: 132px; height: 132px; }
@@ -955,7 +1030,7 @@
                 align-items: center;
             }
             .hero h1 { font-size: 66px; }
-            .stats { grid-template-columns: repeat(6, 1fr); }
+            .stats { grid-template-columns: repeat(6, minmax(0, 1fr)); }
             .stats li { border-bottom: 0; }
             .stats li:nth-child(3n) { border-right: 1px dashed var(--color-line); }
             .stats li:last-child { border-right: 0; }
@@ -974,7 +1049,7 @@
 
             .phone-pair { gap: 24px; }
 
-            .tool-grid { grid-template-columns: repeat(4, 1fr); }
+            .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
             .phone-row { grid-template-columns: repeat(3, 1fr); }
             .phone-row figure:nth-child(2) { margin-top: 40px; }
@@ -1025,6 +1100,15 @@
                 <a href="#quiz">Quiz</a>
                 <a href="#trips">Trips</a>
                 <a href="#campuses">Campuses</a>
+                <details class="lang-switch">
+                    <summary aria-label="Language: English"><i class="fas fa-globe" aria-hidden="true"></i>EN</summary>
+                    <ul>
+                        <li><a href="stamped-app.html" hreflang="en" lang="en" aria-current="page">English</a></li>
+                        <li><a href="stamped-app-es.html" hreflang="es" lang="es">Español</a></li>
+                        <li><a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a></li>
+                        <li><a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a></li>
+                    </ul>
+                </details>
                 <a class="header-button" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">Get the app</a>
             </nav>
         </div>
@@ -1140,6 +1224,7 @@
                         <p>Sydney, Melbourne, Brisbane, Auckland, Queenstown</p>
                     </li>
                 </ul>
+                <p class="band-link"><a href="stamped-cities/index.html">Browse all 140 city guides <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </section>
 
@@ -1444,7 +1529,14 @@
             <nav aria-label="App links">
                 <a href="contact.html">Support</a>
                 <a href="privacy.html">Privacy</a>
+                <a href="stamped-cities/index.html">City guides</a>
                 <a href="stamped.html">How it was built</a>
+            </nav>
+            <nav aria-label="Languages">
+                <a href="stamped-app.html" hreflang="en" lang="en">English</a>
+                <a href="stamped-app-es.html" hreflang="es" lang="es">Español</a>
+                <a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a>
+                <a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a>
             </nav>
             <p>Stamped! is not affiliated with or endorsed by any university. School names and colors are used only to identify them.</p>
             <p>Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
@@ -1454,6 +1546,32 @@
 
     <script>
         (function () {
+            // Every piece of text the script puts on the page
+            var copy = {
+                pause: 'Pause video',
+                play: 'Play video',
+                question: 'Question {n} of {total}',
+                correct: 'Correct. ',
+                wrong: 'Not quite. ',
+                next: 'Next',
+                seeStamp: 'See your stamp',
+                done: 'Done',
+                perfect: 'Perfect score.',
+                yourScore: 'You got {score} of {total}.',
+                more: 'The app has 241 quizzes and 2,410 questions.',
+                playAgain: 'Play again',
+                intro: 'Try it. Three questions.',
+                ranks: ['TOURIST', 'TRAVELER', 'LOCAL', 'EXPERT'],
+                questions: [
+                    { q: 'How many stories tall is the Flatiron Building?', options: ['16', '22', '31'], answer: 1,
+                      note: '22 stories, finished in 1902.' },
+                    { q: 'Who designed Fallingwater?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,
+                      note: 'Frank Lloyd Wright, over a waterfall in Pennsylvania.' },
+                    { q: 'Who designed the Sydney Opera House?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,
+                      note: 'Jørn Utzon, a Danish architect, won the design contest in 1957.' }
+                ]
+            };
+
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (!reduceMotion && 'IntersectionObserver' in window) {
                 document.documentElement.classList.add('motion');
@@ -1464,6 +1582,12 @@
             function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
             window.addEventListener('scroll', onScroll, { passive: true });
             onScroll();
+
+            // Close the language menu on an outside click
+            var langSwitch = document.querySelector('.lang-switch');
+            document.addEventListener('click', function (event) {
+                if (langSwitch.open && !langSwitch.contains(event.target)) langSwitch.open = false;
+            });
 
             // Fade sections in and thud stamps down as they scroll into view
             if (document.documentElement.classList.contains('motion')) {
@@ -1492,11 +1616,11 @@
                     if (video.paused) {
                         video.play();
                         icon.className = 'fas fa-pause';
-                        toggle.setAttribute('aria-label', 'Pause video');
+                        toggle.setAttribute('aria-label', copy.pause);
                     } else {
                         video.pause();
                         icon.className = 'fas fa-play';
-                        toggle.setAttribute('aria-label', 'Play video');
+                        toggle.setAttribute('aria-label', copy.play);
                     }
                 });
             }
@@ -1504,14 +1628,7 @@
             // Sample quiz
             var quiz = document.querySelector('[data-quiz]');
             if (!quiz) return;
-            var questions = [
-                { q: 'How many stories tall is the Flatiron Building?', options: ['16', '22', '31'], answer: 1,
-                  note: '22 stories, finished in 1902.' },
-                { q: 'Who designed Fallingwater?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,
-                  note: 'Frank Lloyd Wright, over a waterfall in Pennsylvania.' },
-                { q: 'Who designed the Sydney Opera House?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,
-                  note: 'Jørn Utzon, a Danish architect, won the design contest in 1957.' }
-            ];
+            var questions = copy.questions;
             var index = 0;
             var score = 0;
             var countEl = quiz.querySelector('[data-quiz-count]');
@@ -1524,7 +1641,7 @@
 
             function render() {
                 var item = questions[index];
-                countEl.textContent = 'Question ' + (index + 1) + ' of ' + questions.length;
+                countEl.textContent = copy.question.replace('{n}', index + 1).replace('{total}', questions.length);
                 questionEl.textContent = item.q;
                 optionsEl.innerHTML = '';
                 item.options.forEach(function (label, i) {
@@ -1553,25 +1670,24 @@
                     }
                 });
                 dots[index].classList.add(right ? 'is-right' : 'is-wrong');
-                feedbackEl.textContent = (right ? 'Correct. ' : 'Not quite. ') + item.note;
-                nextEl.textContent = index < questions.length - 1 ? 'Next' : 'See your stamp';
+                feedbackEl.textContent = (right ? copy.correct : copy.wrong) + item.note;
+                nextEl.textContent = index < questions.length - 1 ? copy.next : copy.seeStamp;
                 nextEl.hidden = false;
                 nextEl.focus();
             }
 
             function finish() {
-                var ranks = ['TOURIST', 'TRAVELER', 'LOCAL', 'EXPERT'];
                 quiz.querySelector('[data-quiz-score]').textContent = score + ' / ' + questions.length;
-                quiz.querySelector('[data-quiz-rank]').textContent = ranks[score];
+                quiz.querySelector('[data-quiz-rank]').textContent = copy.ranks[score];
                 stampEl.hidden = false;
                 requestAnimationFrame(function () {
                     requestAnimationFrame(function () { stampEl.classList.add('is-in'); });
                 });
-                countEl.textContent = 'Done';
-                questionEl.textContent = score === questions.length ? 'Perfect score.' : 'You got ' + score + ' of ' + questions.length + '.';
+                countEl.textContent = copy.done;
+                questionEl.textContent = score === questions.length ? copy.perfect : copy.yourScore.replace('{score}', score).replace('{total}', questions.length);
                 optionsEl.innerHTML = '';
-                feedbackEl.textContent = 'The app has 241 quizzes and 2,410 questions.';
-                nextEl.textContent = 'Play again';
+                feedbackEl.textContent = copy.more;
+                nextEl.textContent = copy.playAgain;
                 nextEl.hidden = false;
                 index = questions.length;
             }
@@ -1583,7 +1699,7 @@
                     stampEl.hidden = true;
                     stampEl.classList.remove('is-in');
                     dots.forEach(function (dot) { dot.className = ''; });
-                    feedbackEl.textContent = 'Try it. Three questions.';
+                    feedbackEl.textContent = copy.intro;
                     render();
                     optionsEl.querySelector('button').focus();
                 } else if (index === questions.length - 1) {
