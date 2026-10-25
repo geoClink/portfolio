@@ -88,6 +88,8 @@ TOUR_VIDEOS = {
     "New York": ("stamped-3d-map-screen", 1078, "the Empire State Building and down to street level on Fifth Avenue"),
 }
 
+PLACES_BY_ID = {}   # landmark id -> city, filled in by main()
+
 CONTINENTS = ["Europe", "Asia", "North America", "South America", "Africa", "Oceania"]
 
 
@@ -254,7 +256,7 @@ def city_page(city, landmarks, details, siblings, photos):
     <main id="main">
     <section class="hero">
         <div class="container">
-            <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">City guides</a> <span aria-hidden="true">/</span> {e(continent)} <span aria-hidden="true">/</span> {e(country)}</nav>
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">City guides</a> <span aria-hidden="true">/</span> <a href="{slug(continent)}.html">{e(continent)}</a> <span aria-hidden="true">/</span> {e(country)}</nav>
             <p class="kicker">{e(details.get('nickname') or 'City guide')}</p>
             <h1>{e(city)} architecture</h1>
             <p class="lead">{e(details.get('funFact', ''))}</p>
@@ -416,6 +418,187 @@ def city_page(city, landmarks, details, siblings, photos):
     return "".join(out)
 
 
+CONTINENT_INTROS = {
+    "Europe": "From Roman temples to glass towers, Europe packs two thousand years of architecture into cities you can explore on foot.",
+    "Asia": "Ancient temples, imperial palaces and some of the tallest towers on Earth, from the shrines of Kyoto to the skyline of Dubai.",
+    "North America": "Art Deco skyscrapers, Prairie houses and bold new museums, from Havana to Honolulu.",
+    "South America": "Modernist capitals, colonial churches and concrete landmarks, from Brasília to Cartagena.",
+    "Africa": "The pyramids of Giza, Moroccan medinas and striking new museums, from Cairo to Cape Town.",
+    "Oceania": "Harbor icons and modern landmarks, from the Sydney Opera House to the lakeside town of Queenstown.",
+}
+
+
+def continent_page(continent, cities, registry, details, photos):
+    """One page per continent: every city in it, with a photo, nickname and landmark count."""
+    s_cont = slug(continent)
+    url = f"{SITE}/stamped-cities/{s_cont}.html"
+    landmarks = [l for c in cities for l in registry[c]]
+    countries = sorted({PLACES[c][0] for c in cities})
+    dated = [(year_sort(l["yearBuilt"]), l) for l in landmarks if year_sort(l["yearBuilt"]) is not None]
+    oldest = min(dated, key=lambda x: x[0])[1] if dated else None
+    title = f"{continent} Architecture: {len(cities)} Cities, {len(landmarks):,} Landmarks | Stamped!"
+    description = (f"Architecture guides to {len(cities)} cities in {continent}, from {cities[0]} to {cities[-1]}: "
+                   f"{len(landmarks):,} landmarks with architects, build dates, styles and history, from the Stamped! app.")
+    ld = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Stamped!", "item": f"{SITE}/stamped-app.html"},
+        {"@type": "ListItem", "position": 2, "name": "City guides", "item": f"{SITE}/stamped-cities/index.html"},
+        {"@type": "ListItem", "position": 3, "name": continent, "item": url}]}]
+
+    def city_photo(city):
+        for l in registry[city]:
+            if l["id"] in photos:
+                return l, photos[l["id"]]
+        return None, None
+
+    # Hero mosaic: the first photo from the three cities with the most landmarks
+    hero = [city_photo(c) for c in sorted(cities, key=lambda c: -len(registry[c]))]
+    hero = [(l, ph) for l, ph in hero if l][:3]
+
+    out = [HEAD.format(title=e(title), description=e(description), url=url, site=SITE,
+                       jsonld=jsonld(ld), app_store=APP_STORE)]
+    out.append(f"""
+    <main id="main">
+    <section class="hero">
+        <div class="container">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">City guides</a> <span aria-hidden="true">/</span> {e(continent)}</nav>
+            <p class="kicker">Continent guide · Stamped!</p>
+            <h1>{e(continent)}</h1>
+            <p class="lead">{e(CONTINENT_INTROS.get(continent, ""))}</p>
+            <ul class="stats">
+                <li><strong>{len(cities)}</strong><span>Cities</span></li>
+                <li><strong>{len(landmarks):,}</strong><span>Landmarks</span></li>
+                <li><strong>{len(countries)}</strong><span>Countries</span></li>""")
+    if oldest:
+        out.append(f"""
+                <li><strong>{e(year_label(oldest['yearBuilt']))}</strong><span>Oldest · {e(oldest['name'])}</span></li>""")
+    out.append("""
+            </ul>""")
+    if hero:
+        tiles = "".join(
+            f'<li><a href="{slug(PLACES_BY_ID[l["id"]])}.html#{e(l["id"])}"><img src="{e(ph["src"])}" width="{ph["width"]}" height="{ph["height"]}" '
+            f'alt="{e(l["name"])}" {"fetchpriority=\"high\"" if i == 0 else "loading=\"lazy\""} referrerpolicy="no-referrer" />'
+            f'<span>{e(l["name"])} · {e(PLACES_BY_ID[l["id"]])}</span></a></li>'
+            for i, (l, ph) in enumerate(hero))
+        out.append(f"""
+            <ul class="hero-photos count-{len(hero)}">{tiles}</ul>
+            <p class="photo-note">{"; ".join(e(l["name"]) + ": " + e(credit_text(ph)) for l, ph in hero)}</p>""")
+    out.append("""
+        </div>
+    </section>
+
+    <section class="landmarks" aria-labelledby="cities-title">
+        <div class="container">""")
+    out.append(f"""
+            <h2 id="cities-title" class="section-title">{len(cities)} cities in {e(continent)}</h2>
+            <ul class="city-cards">""")
+    for city in cities:
+        l, ph = city_photo(city)
+        img = (f'<img src="{e(ph["src"])}" width="{ph["width"]}" height="{ph["height"]}" alt="{e(l["name"])}, {e(city)}" '
+               f'loading="lazy" decoding="async" referrerpolicy="no-referrer" />') if ph else '<span class="no-photo" aria-hidden="true"></span>'
+        nick = details.get(city, {}).get("nickname")
+        n = len(registry[city])
+        out.append(f"""
+                <li><a href="{slug(city)}.html">{img}<span class="city-card-text"><strong>{e(city)}</strong>{f"<em>{e(nick)}</em>" if known(nick) else ""}<small>{e(PLACES[city][0])} · {n} landmark{"s" if n != 1 else ""}</small>{f'<span class="card-credit">{e(credit_text(ph))}</span>' if ph else ""}</span></a></li>""")
+    out.append("""
+            </ul>
+        </div>
+    </section>
+""")
+    others = "".join(f'<li><a href="{slug(k)}.html">{e(k)}</a></li>' for k in CONTINENTS if k != continent)
+    out.append(f"""
+    <section class="more-cities" aria-labelledby="more-title">
+        <div class="container">
+            <h2 id="more-title" class="section-title">Other continents</h2>
+            <ul class="city-chips">{others}</ul>
+        </div>
+    </section>
+""")
+    out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Fly through {continent} in 3D.",
+                           cta_text=f"All {len(cities)} cities, {len(landmarks):,} landmarks and a passport stamp for every one you visit. Free on iPhone and iPad."))
+    return "".join(out)
+
+
+# Architects featured on stamped-app.html: name -> (match substrings, ASCII-folded and lowercased; one-line intro)
+ARCHITECTS = {
+    "Frank Lloyd Wright": (["frank lloyd wright"], "American architect (1867–1959) who pioneered the Prairie style and \"organic architecture\". He designed Fallingwater and the Guggenheim Museum in New York."),
+    "Oscar Niemeyer": (["niemeyer"], "Brazilian modernist (1907–2012) known for sweeping concrete curves. He designed the major civic buildings of Brasília."),
+    "Frank Gehry": (["gehry"], "Canadian-American architect, born in 1929, known for sculptural forms like the Guggenheim Bilbao and Walt Disney Concert Hall."),
+    "I. M. Pei": (["i. m. pei", "i.m. pei", "im pei", "pei cobb", "pei partnership"], "Chinese-American modernist (1917–2019) behind the Louvre Pyramid and Hong Kong's Bank of China Tower."),
+    "Zaha Hadid": (["zaha hadid"], "Iraqi-British architect (1950–2016) known for fluid, futuristic forms. In 2004 she became the first woman to win the Pritzker Prize."),
+    "Herzog & de Meuron": (["herzog"], "Swiss firm founded in Basel by Jacques Herzog and Pierre de Meuron, known for Tate Modern in London and the National Stadium in Beijing."),
+    "Mies van der Rohe": (["mies van der rohe"], "German-American modernist (1886–1969) and a master of steel and glass, remembered for the motto \"less is more\"."),
+    "Renzo Piano": (["renzo piano"], "Italian architect, born in 1937, who co-designed the Centre Pompidou in Paris and designed the Shard in London."),
+    "Jean Nouvel": (["jean nouvel"], "French architect, born in 1945, known for light-filtering designs like the Louvre Abu Dhabi. He won the Pritzker Prize in 2008."),
+    "Santiago Calatrava": (["calatrava"], "Spanish architect and engineer, born in 1951, known for skeletal, bird-like structures like the Oculus in New York."),
+    "Le Corbusier": (["le corbusier"], "Swiss-French pioneer of modern architecture (1887–1965). Seventeen of his works are listed together as a UNESCO World Heritage Site."),
+    "Antoni Gaudí": (["gaudi"], "Catalan architect (1852–1926) and the master of Modernisme behind the Sagrada Família in Barcelona."),
+}
+
+
+def credit_text(photo):
+    """Plain-text credit for photos inside links (a link can't hold another link)."""
+    return f"Photo: {photo['author']}, {photo['license']}, Wikimedia Commons"
+
+
+def fold(text):
+    return unicodedata.normalize("NFKD", str(text)).encode("ascii", "ignore").decode().lower()
+
+
+def architect_slug(name):
+    return "architect-" + slug(name.replace("&", "and"))
+
+
+def architect_page(name, intro, works, photos):
+    """Every building by one architect in the app, linking to its city guide."""
+    url = f"{SITE}/stamped-cities/{architect_slug(name)}.html"
+    places = sorted({place for place, _ in works})
+    title = f"{name}: {len(works)} Buildings to See | Stamped!"
+    description = f"{len(works)} buildings by {name} in the Stamped! app, in {', '.join(places[:4])}{' and more' if len(places) > 4 else ''}. {intro}"
+    ld = [{"@context": "https://schema.org", "@type": "Person", "name": name, "description": intro, "url": url}]
+    out = [HEAD.format(title=e(title), description=e(description[:300]), url=url, site=SITE, jsonld=jsonld(ld), app_store=APP_STORE)]
+    out.append(f"""
+    <main id="main">
+    <section class="hero">
+        <div class="container">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> Architects</nav>
+            <p class="kicker">Architect · {len(works)} buildings in Stamped!</p>
+            <h1>{e(name)}</h1>
+            <p class="lead">{e(intro)}</p>
+        </div>
+    </section>
+
+    <section class="landmarks" aria-labelledby="works-title">
+        <div class="container">
+            <h2 id="works-title" class="section-title">{len(works)} buildings in the app</h2>
+            <ul class="city-cards">""")
+    for place, l in works:
+        ph = photos.get(l["id"])
+        img = (f'<img src="{e(ph["src"])}" width="{ph["width"]}" height="{ph["height"]}" alt="{e(l["name"])}" '
+               f'loading="lazy" decoding="async" referrerpolicy="no-referrer" />') if ph else '<span class="no-photo" aria-hidden="true"></span>'
+        meta = " · ".join(x for x in [e(place), e(year_label(l["yearBuilt"])), e(l["buildingStyle"]) if known(l.get("buildingStyle")) else ""] if x)
+        credit = f'<span class="card-credit">{e(credit_text(ph))}</span>' if ph else ""
+        inner = f'{img}<span class="city-card-text"><strong>{e(l["name"])}</strong><small>{meta}</small>{credit}</span>'
+        href = f'{slug(place)}.html#{e(l["id"])}' if place in PLACES else None
+        out.append(f"""
+                <li>{f'<a href="{href}">{inner}</a>' if href else f'<div class="card-static">{inner}</div>'}</li>""")
+    others = "".join(f'<li><a href="{architect_slug(a)}.html">{e(a)}</a></li>' for a in ARCHITECTS if a != name)
+    out.append(f"""
+            </ul>
+        </div>
+    </section>
+
+    <section class="more-cities" aria-labelledby="more-title">
+        <div class="container">
+            <h2 id="more-title" class="section-title">More architects</h2>
+            <ul class="city-chips">{others}</ul>
+        </div>
+    </section>
+""")
+    out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Collect every {name} building.",
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+    return "".join(out)
+
+
 def index_page(by_continent, counts):
     total = sum(counts.values())
     title = "City Guides: 140 Cities of Great Architecture | Stamped!"
@@ -444,7 +627,7 @@ def index_page(by_continent, counts):
         out.append(f"""
     <section class="continent" aria-labelledby="{slug(continent)}">
         <div class="container">
-            <h2 id="{slug(continent)}" class="section-title">{e(continent)} <span>{len(cities)} cities</span></h2>
+            <h2 id="{slug(continent)}" class="section-title"><a href="{slug(continent)}.html">{e(continent)}</a> <span>{len(cities)} cities</span></h2>
             <ul class="city-grid">{items}</ul>
         </div>
     </section>
@@ -470,6 +653,7 @@ def main():
     if skipped:
         raise SystemExit(f"Add these cities to PLACES: {skipped}")
 
+    PLACES_BY_ID.update({l["id"]: c for c in cities for l in registry[c]})
     by_continent = {k: sorted((c for c in cities if PLACES[c][1] == k), key=slug) for k in CONTINENTS}
     counts = {c: len(registry[c]) for c in cities}
 
@@ -479,6 +663,13 @@ def main():
         page = city_page(city, registry[city], details.get(city, {}), siblings, photos)
         (OUT / f"{slug(city)}.html").write_text(page, encoding="utf-8")
     (OUT / "index.html").write_text(index_page(by_continent, counts), encoding="utf-8")
+    for name, (patterns, intro) in ARCHITECTS.items():
+        works = [(place, l) for place, items in registry.items() for l in items
+                 if any(pattern in fold(l["architect"]) for pattern in patterns)]
+        (OUT / f"{architect_slug(name)}.html").write_text(architect_page(name, intro, works, photos), encoding="utf-8")
+    for continent in CONTINENTS:
+        page = continent_page(continent, by_continent[continent], registry, details, photos)
+        (OUT / f"{slug(continent)}.html").write_text(page, encoding="utf-8")
     print(f"wrote {len(cities)} city pages and index.html to {OUT.relative_to(ROOT)}/ "
           f"({sum(counts.values()):,} landmarks)")
     for k in CONTINENTS:
