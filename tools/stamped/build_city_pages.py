@@ -83,6 +83,8 @@ PLACES = {
 TOUR_VIDEOS = {
     "Paris": ("stamped-tour-paris", 1070, "Palais Garnier, the Louvre, Sainte-Chapelle, the Centre Pompidou, the Panthéon and the Eiffel Tower"),
     "Chicago": ("stamped-tour-chicago", 1070, "the Carbide and Carbon Building, the Wrigley Building, Tribune Tower and the St. Regis"),
+    "London": ("stamped-tour-london", 1070, "Tate Modern, St Paul's Cathedral, the Barbican, the Gherkin and the Lloyd's Building"),
+    "Rome": ("stamped-tour-rome", 1070, "the Pantheon, Palazzo Doria Pamphilj, the Altare della Patria and San Carlo alle Quattro Fontane"),
     "New York": ("stamped-3d-map-screen", 1078, "the Empire State Building and down to street level on Fifth Avenue"),
 }
 

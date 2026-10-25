@@ -723,7 +723,7 @@
             margin: 0 auto;
         }
         .tour-row figure { margin: 0; }
-        .tour-row figure:last-child { margin-top: 48px; }
+        .tour-row figure:nth-child(even) { margin-top: 48px; }
         .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
         .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
 
@@ -979,6 +979,7 @@
             margin-top: 8px;
         }
         .phone-row figure { margin: 0; }
+        .campus-list { margin: -8px 0 24px; max-width: 40em; }
         .conferences {
             list-style: none;
             padding: 0;
@@ -1453,6 +1454,22 @@
                         </div>
                         <figcaption><strong>Chicago</strong>De Michigan Avenue al St. Regis</figcaption>
                     </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Visita guiada de Londres en la app Stamped!: la cámara sobrevuela Londres en 3D desde la Tate Modern hasta la catedral de San Pablo, el Barbican, el Gherkin y el edificio Lloyd's"></video>
+                        </div>
+                        <figcaption><strong>Londres</strong>De la Tate Modern al edificio Lloyd's</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Visita guiada de Roma en la app Stamped!: la cámara sobrevuela Roma en 3D desde el Panteón hasta el Palazzo Doria Pamphilj, el Altare della Patria y San Carlo alle Quattro Fontane"></video>
+                        </div>
+                        <figcaption><strong>Roma</strong>Del Panteón al Altare della Patria</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -1610,9 +1627,15 @@
         <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">Novedad en 2.5 · Visitas a campus</p>
-                    <h2 id="campus-title" class="section-title">Y 101 <span class="highlight">campus.</span></h2>
-                    <p class="section-lead">Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne. Pensado para visitar universidades y para cualquiera a quien le guste un buen campus.</p>
+                    <p class="kicker">Para visitar universidades · Novedad en 2.5</p>
+                    <h2 id="campus-title" class="section-title">¿Planeando visitas a universidades? <span class="highlight">Stamped! traza la ruta.</span></h2>
+                    <p class="section-lead">Guarda las universidades que te interesan y Stamped! las ordena en un viaje por carretera: un campus al día, en el orden de ruta más corto. Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne.</p>
+                    <ul class="feature-list campus-list">
+                        <li>Recorre cada campus en 3D antes de ir en coche</li>
+                        <li>Descubre sus edificios emblemáticos y su historia</li>
+                        <li>Marca las tradiciones que de verdad hacen los estudiantes, como frotar la estatua de la suerte</li>
+                        <li>Gratis para iPhone y iPad, con los viajes sincronizados por iCloud</li>
+                    </ul>
                     <ul class="conferences" aria-label="Conferencias incluidas">
                         <li>Big Ten</li>
                         <li>SEC</li>
@@ -1625,17 +1648,17 @@
                 <div class="phone-row reveal">
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
-                                 alt="Mi lista de universidades con cinco centros guardados y un botón Planificar un viaje por universidades" />
-                        </div>
-                        <figcaption><strong>Mi lista de universidades</strong>Guarda las universidades que te interesan.</figcaption>
-                    </figure>
-                    <figure>
-                        <div class="phone">
                             <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
                                  alt="Viaje por universidades con cinco centros en un orden de conducción corto" />
                         </div>
                         <figcaption><strong>Viaje por universidades</strong>Un día en cada universidad, en el orden de ruta más corto.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="Mi lista de universidades con cinco centros guardados y un botón Planificar un viaje por universidades" />
+                        </div>
+                        <figcaption><strong>Mi lista de universidades</strong>Guarda las universidades que te interesan.</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">

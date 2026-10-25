@@ -723,7 +723,7 @@
             margin: 0 auto;
         }
         .tour-row figure { margin: 0; }
-        .tour-row figure:last-child { margin-top: 48px; }
+        .tour-row figure:nth-child(even) { margin-top: 48px; }
         .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
         .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
 
@@ -979,6 +979,7 @@
             margin-top: 8px;
         }
         .phone-row figure { margin: 0; }
+        .campus-list { margin: -8px 0 24px; max-width: 40em; }
         .conferences {
             list-style: none;
             padding: 0;
@@ -1453,6 +1454,22 @@
                         </div>
                         <figcaption><strong>Chicago</strong>Michigan Avenue to the St. Regis</figcaption>
                     </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Guided tour of London in the Stamped! app: the camera flies over 3D London from Tate Modern to St Paul's Cathedral, the Barbican, the Gherkin and the Lloyd's Building"></video>
+                        </div>
+                        <figcaption><strong>London</strong>Tate Modern to the Lloyd's Building</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Guided tour of Rome in the Stamped! app: the camera flies over 3D Rome from the Pantheon to Palazzo Doria Pamphilj, the Altare della Patria and San Carlo alle Quattro Fontane"></video>
+                        </div>
+                        <figcaption><strong>Rome</strong>The Pantheon to the Altare della Patria</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -1610,9 +1627,15 @@
         <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">New in 2.5 · Campus visits</p>
-                    <h2 id="campus-title" class="section-title">Plus 101 <span class="highlight">campuses.</span></h2>
-                    <p class="section-lead">Every Big Ten, SEC, ACC and Big 12 school, the Ivy League, and great campuses from Oxford to Melbourne. Built for college visits, and for anyone who loves a good quad.</p>
+                    <p class="kicker">For college visits · New in 2.5</p>
+                    <h2 id="campus-title" class="section-title">Planning college visits? <span class="highlight">Let Stamped! map it.</span></h2>
+                    <p class="section-lead">Save the schools your family is looking at, and Stamped! lines them up into a road trip: one campus a day, in a short driving order. Every Big Ten, SEC, ACC and Big 12 school, the Ivy League, and great campuses from Oxford to Melbourne.</p>
+                    <ul class="feature-list campus-list">
+                        <li>Tour each campus in 3D before you drive there</li>
+                        <li>See the landmark buildings and the stories behind them</li>
+                        <li>Check off the traditions students actually do, like rubbing the lucky statue</li>
+                        <li>Free on iPhone and iPad, with trips synced over iCloud</li>
+                    </ul>
                     <ul class="conferences" aria-label="Conferences covered">
                         <li>Big Ten</li>
                         <li>SEC</li>
@@ -1625,17 +1648,17 @@
                 <div class="phone-row reveal">
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
-                                 alt="My College List with five saved schools and a Plan a College Road Trip button" />
-                        </div>
-                        <figcaption><strong>My College List</strong>Save the schools you're considering.</figcaption>
-                    </figure>
-                    <figure>
-                        <div class="phone">
                             <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
                                  alt="College Road Trip listing five schools in a short driving order" />
                         </div>
                         <figcaption><strong>College Road Trip</strong>A day at each school, in a short driving order.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="My College List with five saved schools and a Plan a College Road Trip button" />
+                        </div>
+                        <figcaption><strong>My College List</strong>Save the schools you're considering.</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">

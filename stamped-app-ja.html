@@ -723,7 +723,7 @@
             margin: 0 auto;
         }
         .tour-row figure { margin: 0; }
-        .tour-row figure:last-child { margin-top: 48px; }
+        .tour-row figure:nth-child(even) { margin-top: 48px; }
         .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
         .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
 
@@ -979,6 +979,7 @@
             margin-top: 8px;
         }
         .phone-row figure { margin: 0; }
+        .campus-list { margin: -8px 0 24px; max-width: 40em; }
         .conferences {
             list-style: none;
             padding: 0;
@@ -1453,6 +1454,22 @@
                         </div>
                         <figcaption><strong>シカゴ</strong>ミシガン・アベニューからセント・レジスへ</figcaption>
                     </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Stamped!アプリでのロンドンのガイドツアー：3Dのロンドンをテート・モダンからセント・ポール大聖堂、バービカン、ガーキン、ロイズ・ビルへと飛ぶ様子"></video>
+                        </div>
+                        <figcaption><strong>ロンドン</strong>テート・モダンからロイズ・ビルへ</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
+                                   width="492" height="1070" muted loop playsinline preload="none"
+                                   aria-label="Stamped!アプリでのローマのガイドツアー：3Dのローマをパンテオンからドーリア・パンフィーリ宮殿、ヴィットーリオ・エマヌエーレ2世記念堂、サン・カルロ・アッレ・クアットロ・フォンターネ聖堂へと飛ぶ様子"></video>
+                        </div>
+                        <figcaption><strong>ローマ</strong>パンテオンからヴィットーリオ・エマヌエーレ2世記念堂へ</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -1610,9 +1627,15 @@
         <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">2.5の新機能 · キャンパス訪問</p>
-                    <h2 id="campus-title" class="section-title">さらに101の<span class="highlight">キャンパス。</span></h2>
-                    <p class="section-lead">Big Ten、SEC、ACC、Big 12の全校、アイビーリーグ、そしてオックスフォードからメルボルンまでの名門キャンパス。大学見学にも、美しいキャンパスが好きな人にも。</p>
+                    <p class="kicker">大学見学に · 2.5の新機能</p>
+                    <h2 id="campus-title" class="section-title">大学見学の計画なら、<span class="highlight">Stamped!におまかせ。</span></h2>
+                    <p class="section-lead">検討中の大学を保存すれば、Stamped!が1日1校、移動の少ない順にロードトリップを組み立てます。Big Ten、SEC、ACC、Big 12の全校、アイビーリーグ、オックスフォードからメルボルンまでの名門キャンパスに対応。</p>
+                    <ul class="feature-list campus-list">
+                        <li>車で行く前に、各キャンパスを3Dで下見</li>
+                        <li>象徴的な建物とその物語を知る</li>
+                        <li>幸運の像をなでるなど、学生が実際にしている伝統をチェック</li>
+                        <li>iPhoneとiPadで無料。旅程はiCloudで同期</li>
+                    </ul>
                     <ul class="conferences" aria-label="収録カンファレンス">
                         <li>Big Ten</li>
                         <li>SEC</li>
@@ -1625,17 +1648,17 @@
                 <div class="phone-row reveal">
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
-                                 alt="5校を保存したマイ大学リストと「大学めぐりの旅を計画」ボタン" />
-                        </div>
-                        <figcaption><strong>マイ大学リスト</strong>気になる大学を保存。</figcaption>
-                    </figure>
-                    <figure>
-                        <div class="phone">
                             <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
                                  alt="5校を短い移動順に並べた大学めぐりの旅" />
                         </div>
                         <figcaption><strong>大学めぐりの旅</strong>1校につき1日、移動の少ない順に。</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="5校を保存したマイ大学リストと「大学めぐりの旅を計画」ボタン" />
+                        </div>
+                        <figcaption><strong>マイ大学リスト</strong>気になる大学を保存。</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">

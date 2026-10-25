@@ -287,13 +287,6 @@ T = [
     ("Heart any landmark or Apple Maps place to save it for later.", "Marca con un corazón cualquier monumento o lugar de Apple Maps para guardarlo.", "Markiere jede Sehenswürdigkeit oder jeden Ort aus Apple Karten mit einem Herz, um ihn zu merken.", "名建築やAppleマップの場所をハートで保存。"),
 
     # ----- Campuses -----
-    ("New in 2.5 · Campus visits", "Novedad en 2.5 · Visitas a campus", "Neu in 2.5 · Campusbesuche", "2.5の新機能 · キャンパス訪問"),
-    ("Plus 101 ", "Y 101 ", "Dazu 101 ", "さらに101の"),
-    ("campuses.", "campus.", "Campusse.", "キャンパス。"),
-    ("Every Big Ten, SEC, ACC and Big 12 school, the Ivy League, and great campuses from Oxford to Melbourne. Built for college visits, and for anyone who loves a good quad.",
-     "Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne. Pensado para visitar universidades y para cualquiera a quien le guste un buen campus.",
-     "Jede Uni aus Big Ten, SEC, ACC und Big 12, die Ivy League und großartige Campusse von Oxford bis Melbourne. Gemacht für College-Besuche und für alle, die einen schönen Campus lieben.",
-     "Big Ten、SEC、ACC、Big 12の全校、アイビーリーグ、そしてオックスフォードからメルボルンまでの名門キャンパス。大学見学にも、美しいキャンパスが好きな人にも。"),
     ("@Conferences covered", "Conferencias incluidas", "Enthaltene Conferences", "収録カンファレンス"),
     ("+ around the world", "+ todo el mundo", "+ weltweit", "+ 世界各地"),
     ("@My College List with five saved schools and a Plan a College Road Trip button",
@@ -314,6 +307,18 @@ T = [
      "2つのチェックが入ったミシガン州立大学のキャンパス伝統チェックリスト"),
     ("250+ traditions", "Más de 250 tradiciones", "250+ Traditionen", "250以上の伝統"),
     ("Rub the lucky statue, ring the bell, check it off.", "Frota la estatua de la suerte, toca la campana y márcalo.", "Die Glücksstatue reiben, die Glocke läuten, abhaken.", "幸運の像をなでて、鐘を鳴らして、チェック。"),
+
+    ("For college visits · New in 2.5", "Para visitar universidades · Novedad en 2.5", "Für Uni-Besuche · Neu in 2.5", "大学見学に · 2.5の新機能"),
+    ("Planning college visits? ", "¿Planeando visitas a universidades? ", "College-Besuche geplant? ", "大学見学の計画なら、"),
+    ("Let Stamped! map it.", "Stamped! traza la ruta.", "Stamped! plant die Route.", "Stamped!におまかせ。"),
+    ("Save the schools your family is looking at, and Stamped! lines them up into a road trip: one campus a day, in a short driving order. Every Big Ten, SEC, ACC and Big 12 school, the Ivy League, and great campuses from Oxford to Melbourne.",
+     "Guarda las universidades que te interesan y Stamped! las ordena en un viaje por carretera: un campus al día, en el orden de ruta más corto. Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne.",
+     "Speichere die Unis, die infrage kommen, und Stamped! macht daraus einen Roadtrip: ein Campus pro Tag, in kurzer Fahrreihenfolge. Jede Uni aus Big Ten, SEC, ACC und Big 12, die Ivy League und großartige Campusse von Oxford bis Melbourne.",
+     "検討中の大学を保存すれば、Stamped!が1日1校、移動の少ない順にロードトリップを組み立てます。Big Ten、SEC、ACC、Big 12の全校、アイビーリーグ、オックスフォードからメルボルンまでの名門キャンパスに対応。"),
+    ("Tour each campus in 3D before you drive there", "Recorre cada campus en 3D antes de ir en coche", "Jeden Campus in 3D erkunden, bevor du hinfährst", "車で行く前に、各キャンパスを3Dで下見"),
+    ("See the landmark buildings and the stories behind them", "Descubre sus edificios emblemáticos y su historia", "Die bekanntesten Gebäude und ihre Geschichte kennenlernen", "象徴的な建物とその物語を知る"),
+    ("Check off the traditions students actually do, like rubbing the lucky statue", "Marca las tradiciones que de verdad hacen los estudiantes, como frotar la estatua de la suerte", "Traditionen abhaken, die Studierende wirklich pflegen, etwa die Glücksstatue reiben", "幸運の像をなでるなど、学生が実際にしている伝統をチェック"),
+    ("Free on iPhone and iPad, with trips synced over iCloud", "Gratis para iPhone y iPad, con los viajes sincronizados por iCloud", "Kostenlos für iPhone und iPad, Reisen per iCloud synchronisiert", "iPhoneとiPadで無料。旅程はiCloudで同期"),
 
     # ----- Collect -----
     ("Collect · Your passport", "Colecciona · Tu pasaporte", "Sammeln · Dein Reisepass", "集める · あなたのパスポート"),
@@ -415,6 +420,18 @@ T = [
     ('Pittsburgh', 'Pittsburgh', 'Pittsburgh', 'ピッツバーグ'),
     ('Reykjavik', 'Reikiavik', 'Reykjavík', 'レイキャビク'),
     ('Chicago', 'Chicago', 'Chicago', 'シカゴ'),
+
+    ("London", "Londres", "London", "ロンドン"),
+    ("@Guided tour of London in the Stamped! app: the camera flies over 3D London from Tate Modern to St Paul's Cathedral, the Barbican, the Gherkin and the Lloyd's Building",
+     "Visita guiada de Londres en la app Stamped!: la cámara sobrevuela Londres en 3D desde la Tate Modern hasta la catedral de San Pablo, el Barbican, el Gherkin y el edificio Lloyd's",
+     "Geführte Tour durch London in der Stamped!-App: Die Kamera fliegt über das 3D-London von der Tate Modern zur St Paul's Cathedral, zum Barbican, zur Gherkin und zum Lloyd's Building",
+     "Stamped!アプリでのロンドンのガイドツアー：3Dのロンドンをテート・モダンからセント・ポール大聖堂、バービカン、ガーキン、ロイズ・ビルへと飛ぶ様子"),
+    ("Tate Modern to the Lloyd's Building", "De la Tate Modern al edificio Lloyd's", "Von der Tate Modern zum Lloyd's Building", "テート・モダンからロイズ・ビルへ"),
+    ("@Guided tour of Rome in the Stamped! app: the camera flies over 3D Rome from the Pantheon to Palazzo Doria Pamphilj, the Altare della Patria and San Carlo alle Quattro Fontane",
+     "Visita guiada de Roma en la app Stamped!: la cámara sobrevuela Roma en 3D desde el Panteón hasta el Palazzo Doria Pamphilj, el Altare della Patria y San Carlo alle Quattro Fontane",
+     "Geführte Tour durch Rom in der Stamped!-App: Die Kamera fliegt über das 3D-Rom vom Pantheon zum Palazzo Doria Pamphilj, zum Altare della Patria und nach San Carlo alle Quattro Fontane",
+     "Stamped!アプリでのローマのガイドツアー：3Dのローマをパンテオンからドーリア・パンフィーリ宮殿、ヴィットーリオ・エマヌエーレ2世記念堂、サン・カルロ・アッレ・クアットロ・フォンターネ聖堂へと飛ぶ様子"),
+    ("The Pantheon to the Altare della Patria", "Del Panteón al Altare della Patria", "Vom Pantheon zum Altare della Patria", "パンテオンからヴィットーリオ・エマヌエーレ2世記念堂へ"),
 
     # ----- Footer -----
     ("@App links", "Enlaces de la app", "App-Links", "アプリのリンク"),
