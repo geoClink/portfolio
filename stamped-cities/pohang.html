@@ -182,6 +182,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Pohang"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "pohang-01", "name": "Space Walk", "lat": 36.065109, "lng": 129.39044, "subtitle": "2021 · Heike Mutter & Ulrich Genth"}, {"id": "pohang-02", "name": "Yeongildae Maritime Pavilion", "lat": 36.1160689, "lng": 129.4113453, "subtitle": "2013 · Pohang City Design Team"}, {"id": "pohang-03", "name": "POSCO Global Center", "lat": 35.9863018, "lng": 129.4803929, "subtitle": "2010 · Gansam Architects"}, {"id": "pohang-04", "name": "Guryongpo Japanese Houses Street", "lat": 35.988666, "lng": 129.5507424, "subtitle": "1920 · Various (Historical Restoration)"}, {"id": "pohang-05", "name": "Pohang Museum of Steel Art (POMA)", "lat": 36.08333, "lng": 129.36667, "subtitle": "2009 · Kwon Moon-sung"}, {"id": "pohang-06", "name": "Homigot Lighthouse", "lat": 36.0774436, "lng": 129.5689568, "subtitle": "1908 · French Engineering Team"}, {"id": "pohang-07", "name": "POSTECH Chanel Hall", "lat": 36.0180795, "lng": 129.3208556, "subtitle": "1986 · KIM Jong-soung"}, {"id": "pohang-08", "name": "Oeosa Temple", "lat": 35.9349088, "lng": 129.3884926, "subtitle": "600 · Unknown (Restored by Local Artisans)"}, {"id": "pohang-09", "name": "Park 1538", "lat": 35.9863018, "lng": 129.4803929, "subtitle": "2021 · Archiplan"}, {"id": "pohang-10", "name": "Pohang Canal Pavilion", "lat": 36.08333, "lng": 129.36667, "subtitle": "2014 · Dong-woo Architects"}, {"id": "pohang-apple-academy", "name": "Apple Developer Academy (POSTECH C5)", "lat": 36.010883, "lng": 129.322669, "subtitle": "2022 · Apple Retail & Design Team / POSTECH Campus Planning"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -322,5 +337,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

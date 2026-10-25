@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Brisbane"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "au_story_bridge", "name": "Story Bridge", "lat": -27.4647, "lng": 153.0349, "subtitle": "1940 · John Bradfield"}, {"id": "au_south_bank_parklands", "name": "South Bank Parklands", "lat": -27.4751, "lng": 153.0188, "subtitle": "1992 · Various (1988 Expo and subsequent development)"}, {"id": "au_goma_brisbane", "name": "GOMA - Gallery of Modern Art, Brisbane", "lat": -27.4753, "lng": 153.0175, "subtitle": "2006 · Architectus"}, {"id": "au_brisbane_city_hall", "name": "Brisbane City Hall", "lat": -27.4683, "lng": 153.0238, "subtitle": "1930 · Hall & Prentice"}, {"id": "au_mt_coottha_lookout", "name": "Mount Coot-tha Lookout", "lat": -27.4767, "lng": 152.9773, "subtitle": "1958"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

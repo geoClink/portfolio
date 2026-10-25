@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Los Angeles"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "la_disney_hall", "name": "Walt Disney Concert Hall", "lat": 34.0555404, "lng": -118.2490211, "subtitle": "2003 · Frank Gehry"}, {"id": "glbl_apple_tower_theatre", "name": "Apple Tower Theatre", "lat": 34.0434588, "lng": -118.2545202, "subtitle": "1927 · S. Charles Lee / Foster + Partners"}, {"id": "la_griffith_observatory", "name": "Griffith Observatory", "lat": 34.1182188, "lng": -118.3002933, "subtitle": "1935 · John C. Austin & Frederick M. Ashley"}, {"id": "la_bradbury_building", "name": "The Bradbury Building", "lat": 34.0507641, "lng": -118.2480773, "subtitle": "1893 · George Wyman"}, {"id": "la_lax_theme", "name": "Theme Building (LAX)", "lat": 33.9454937, "lng": -118.4007015, "subtitle": "1961 · Pereira & Luckman / Paul R. Williams"}, {"id": "la_hollyhock_house", "name": "Hollyhock House", "lat": 34.10169, "lng": -118.294655, "subtitle": "1921 · Frank Lloyd Wright"}, {"id": "la_getty_center", "name": "The Getty Center", "lat": 34.0769513, "lng": -118.475712, "subtitle": "1997 · Richard Meier"}, {"id": "la_wilshire_grand", "name": "Wilshire Grand Center", "lat": 34.0501526, "lng": -118.2603791, "subtitle": "2017 · AC Martin Partners"}, {"id": "la_eastern_columbia", "name": "Eastern Columbia Building", "lat": 34.0427446, "lng": -118.2562094, "subtitle": "1930 · Claud Beelman"}, {"id": "la_stahl_house", "name": "Stahl House (Case Study House #22)", "lat": 34.1004003, "lng": -118.3701384, "subtitle": "1960 · Pierre Koenig"}, {"id": "la_academy_museum", "name": "Academy Museum of Motion Pictures", "lat": 34.0638179, "lng": -118.3608348, "subtitle": "2021 · Renzo Piano"}, {"id": "la_union_station", "name": "Union Station", "lat": 34.0561575, "lng": -118.2355206, "subtitle": "1939 · John and Donald Parkinson"}, {"id": "la_capitol_records", "name": "Capitol Records Building", "lat": 34.1031111, "lng": -118.3263493, "subtitle": "1956 · Welton Becket"}, {"id": "la_binoculars_building", "name": "Chiat/Day 'Binoculars' Building", "lat": 33.994745, "lng": -118.4764353, "subtitle": "1991 · Frank Gehry"}, {"id": "la_apple_the_grove", "name": "Apple The Grove", "lat": 34.0730818, "lng": -118.3584146, "subtitle": "2021 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

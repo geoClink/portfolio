@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Muscat"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "muscat-sultan-qaboos-mosque", "name": "Sultan Qaboos Grand Mosque", "lat": 23.583889, "lng": 58.389167, "subtitle": "2001 · Various Omani and British architects"}, {"id": "muscat-mutrah-souq", "name": "Mutrah Souq", "lat": 23.6241, "lng": 58.5881, "subtitle": "1200 · Traditional Omani"}, {"id": "muscat-royal-opera-house", "name": "Royal Opera House Muscat", "lat": 23.5946, "lng": 58.4024, "subtitle": "2011 · Various (international competition)"}, {"id": "muscat-al-jalali-fort", "name": "Fort Al Jalali", "lat": 23.6179, "lng": 58.5972, "subtitle": "1587 · Portuguese military engineers"}, {"id": "muscat-bait-al-zubair", "name": "Bait Al Zubair", "lat": 23.6175, "lng": 58.5954, "subtitle": "1998 · Traditional Omani"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

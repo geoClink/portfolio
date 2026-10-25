@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Brasília"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "br_cathedral_brasilia", "name": "Cathedral of Brasília", "lat": -15.798333, "lng": -47.875556, "subtitle": "1970 · Oscar Niemeyer"}, {"id": "br_national_congress", "name": "National Congress of Brazil", "lat": -15.8011592, "lng": -47.8613363, "subtitle": "1960 · Oscar Niemeyer"}, {"id": "br_itamaraty_palace", "name": "Itamaraty Palace", "lat": -15.800556, "lng": -47.867222, "subtitle": "1970 · Oscar Niemeyer"}, {"id": "br_jk_bridge", "name": "Juscelino Kubitschek Bridge", "lat": -15.8161052, "lng": -47.8392227, "subtitle": "2002 · Alexandre Chan"}, {"id": "br_alvorada_palace", "name": "Palácio da Alvorada", "lat": -15.792772, "lng": -47.822175, "subtitle": "1958 · Oscar Niemeyer"}, {"id": "br_tv_tower", "name": "Brasília TV Tower", "lat": -15.790499, "lng": -47.892977, "subtitle": "1967 · Lúcio Costa"}, {"id": "br_national_museum", "name": "National Museum of the Republic", "lat": -15.797152, "lng": -47.878679, "subtitle": "2006 · Oscar Niemeyer"}, {"id": "br_jk_memorial", "name": "Memorial JK", "lat": -15.79473, "lng": -47.92794, "subtitle": "1981 · Oscar Niemeyer"}, {"id": "br_sanctuary_dom_bosco", "name": "Sanctuary of Don Bosco", "lat": -15.80056, "lng": -47.89472, "subtitle": "1970 · Carlos Alberto Naves"}, {"id": "br_national_theater", "name": "Cláudio Santoro National Theater", "lat": -15.7922, "lng": -47.8802, "subtitle": "1966 · Oscar Niemeyer"}, {"id": "br_pontao_lago_sul", "name": "Pontão do Lago Sul", "lat": -15.825531, "lng": -47.871535, "subtitle": "2001 · Various"}, {"id": "br_planalto_palace", "name": "Palácio do Planalto", "lat": -15.8011592, "lng": -47.8613363, "subtitle": "1960 · Oscar Niemeyer"}, {"id": "br_supreme_court", "name": "Supreme Federal Court", "lat": -15.8011592, "lng": -47.8613363, "subtitle": "1960 · Oscar Niemeyer"}, {"id": "br_national_library", "name": "National Library of Brasília", "lat": -15.79674, "lng": -47.88017, "subtitle": "2008 · Oscar Niemeyer"}, {"id": "br_pantheon_liberty", "name": "Pantheon of Liberty and Democracy", "lat": -15.8011592, "lng": -47.8613363, "subtitle": "1986 · Oscar Niemeyer"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

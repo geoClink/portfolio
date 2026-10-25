@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Brussels"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "brussels-grand-place", "name": "Grand Place", "lat": 50.8468, "lng": 4.3524, "subtitle": "1402 · Various guild architects"}, {"id": "brussels-atomium", "name": "Atomium", "lat": 50.8947, "lng": 4.3414, "subtitle": "1958 · André Waterkeyn"}, {"id": "brussels-manneken-pis", "name": "Manneken Pis", "lat": 50.8449, "lng": 4.3499, "subtitle": "1619 · Jérôme Duquesnoy"}, {"id": "brussels-royal-palace", "name": "Royal Palace of Brussels", "lat": 50.844, "lng": 4.3613, "subtitle": "1904 · Alphonse Balat, Louis Montoyer"}, {"id": "brussels-cinquantenaire", "name": "Cinquantenaire", "lat": 50.8387, "lng": 4.3937, "subtitle": "1905 · Gédéon Bordiau, Charles Girault"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -219,11 +219,26 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Hong Kong"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "hk_bank_of_china", "name": "Bank of China Tower", "lat": 22.2792403, "lng": 114.1615832, "subtitle": "1990 · I.M. Pei"}, {"id": "hk_hsbc_main", "name": "HSBC Main Building", "lat": 22.2802889, "lng": 114.1595474, "subtitle": "1985 · Norman Foster"}, {"id": "hk_icc", "name": "International Commerce Centre (ICC)", "lat": 22.3046362, "lng": 114.1605933, "subtitle": "2010 · Kohn Pedersen Fox (KPF)"}, {"id": "hk_ifc_two", "name": "Two International Finance Centre", "lat": 22.2866255, "lng": 114.156663, "subtitle": "2003 · Cesar Pelli"}, {"id": "hk_jockey_club_innovation", "name": "Jockey Club Innovation Tower", "lat": 22.3037768, "lng": 114.185388, "subtitle": "2014 · Zaha Hadid"}, {"id": "hk_lippo_centre", "name": "Lippo Centre", "lat": 22.2794895, "lng": 114.163316, "subtitle": "1988 · Paul Rudolph"}, {"id": "hk_taikwun", "name": "Tai Kwun (Centre for Heritage and Arts)", "lat": 22.2811562, "lng": 114.154009, "subtitle": "2018 · Herzog & de Meuron"}, {"id": "hk_convention_centre", "name": "HK Convention and Exhibition Centre", "lat": 22.2824456, "lng": 114.1685025, "subtitle": "1988 · Skidmore, Owings & Merrill (SOM)"}, {"id": "hk_skyline_mansion", "name": "Choi Hung Estate", "lat": 22.335139, "lng": 114.2088185, "subtitle": "1962 · Palmer & Turner"}, {"id": "hk_monastery", "name": "Chi Lin Nunnery", "lat": 22.3398966, "lng": 114.2052501, "subtitle": "1998 · Traditional (Tang Style)"}, {"id": "hk_apple_ifc", "name": "Apple IFC Mall", "lat": 22.2866255, "lng": 114.156663, "subtitle": "2011 · Bohlin Cywinski Jackson / Foster + Partners"}, {"id": "hk_jardine_house", "name": "Jardine House", "lat": 22.2830026, "lng": 114.1591547, "subtitle": "1973 · James Kinoshita (P&T Group)"}, {"id": "hk_m_plus", "name": "M+", "lat": 22.3010537, "lng": 114.1591472, "subtitle": "2021 · Herzog & de Meuron"}, {"id": "hk_peak_tower", "name": "The Peak Tower", "lat": 22.271123, "lng": 114.1501414, "subtitle": "1997 · Terry Farrell"}, {"id": "hk_xiqu_centre", "name": "Xiqu Centre", "lat": 22.3020689, "lng": 114.1671776, "subtitle": "2019 · Revery Architecture / Ronald Lu & Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
             <ul class="fact-grid">
-                <li><span class="fact-label">Fly into</span><strong>HKG (HKG)</strong><p>The airport features a massive &#x27;Sky Bridge&#x27; that is high enough for an Airbus A380 to taxi underneath while passengers walk above it. Built on a massive reclaimed island, the airport is consistently ranked among the world&#x27;s best for its efficiency, shopping, and high-speed rail connection to the city.</p></li>
+                <li><span class="fact-label">Fly into</span><strong>HKG</strong><p>The airport features a massive &#x27;Sky Bridge&#x27; that is high enough for an Airbus A380 to taxi underneath while passengers walk above it. Built on a massive reclaimed island, the airport is consistently ranked among the world&#x27;s best for its efficiency, shopping, and high-speed rail connection to the city.</p></li>
                 <li><span class="fact-label">Currency</span><strong>Hong Kong Dollar ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Cantonese &amp; English</strong><p>The city&#x27;s vibrant energy is matched by its rapid &#x27;code-switching&#x27; between Cantonese and English. English remains an official language and is used for all legal, business, and transit communications.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>MTR &amp; Star Ferry</strong><p>The MTR is world-renowned for its 99.9% on-time rate and its incredibly efficient Octopus card payment system. The historic Star Ferry has been carrying passengers between Kowloon and Hong Kong Island since 1888. Double-decker &#x27;Ding Ding&#x27; trams have been operating on Hong Kong Island for over 120 years.</p></li>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -192,6 +192,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Kyoto"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "kyo_nijo_castle", "name": "Nijo Castle", "lat": 35.013878, "lng": 135.748636, "subtitle": "1603 · Tokugawa Ieyasu (Patron)"}, {"id": "kyo_fushimi_inari", "name": "Fushimi Inari Taisha (Honden)", "lat": 34.9678, "lng": 135.7822, "subtitle": "1499 · Unknown (Hata Clan)"}, {"id": "kyo_intl_conference_center", "name": "Kyoto International Conference Center", "lat": 35.0664, "lng": 135.7876, "subtitle": "1966 · Sachio Otani"}, {"id": "kyo_sanjusangendo", "name": "Sanjusangen-do", "lat": 34.9883, "lng": 135.7726, "subtitle": "1266 · Taira no Kiyomori (Patron)"}, {"id": "kyo_heian_shrine", "name": "Heian Jingu Shrine", "lat": 35.0156015, "lng": 135.7812184, "subtitle": "1895 · Itō Chūta"}, {"id": "kyo_apple_kyoto", "name": "Apple Kyoto", "lat": 35.0036, "lng": 135.7633, "subtitle": "2018 · Foster + Partners"}, {"id": "kyo_kinkaku_ji", "name": "Kinkaku-ji (Golden Pavilion)", "lat": 35.0395, "lng": 135.7294, "subtitle": "1397 · Ashikaga Yoshimitsu"}, {"id": "kyo_kyoto_station", "name": "Kyoto Station", "lat": 34.984936, "lng": 135.75769, "subtitle": "1997 · Hiroshi Hara"}, {"id": "kyo_kiyomizu_dera", "name": "Kiyomizu-dera", "lat": 34.994871, "lng": 135.783514, "subtitle": "778 · Sakanoue no Tamuramaro"}, {"id": "kyo_kyoto_kyocera_museum", "name": "Kyoto City Kyocera Museum of Art", "lat": 35.0115992, "lng": 135.7815204, "subtitle": "1933 · Goichi Takeda / Jun Aoki"}, {"id": "kyo_katsura_imperial_villa", "name": "Katsura Imperial Villa", "lat": 34.984066, "lng": 135.710587, "subtitle": "1645 · Prince Toshihito / Prince Toshitada"}, {"id": "kyo_kyoto_tower", "name": "Kyoto Tower", "lat": 34.987182, "lng": 135.758744, "subtitle": "1964 · Mamoru Yamada"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -340,5 +355,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

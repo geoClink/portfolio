@@ -183,6 +183,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Orlando"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "orl_cinderella_castle", "name": "Cinderella Castle", "lat": 28.4190753, "lng": -81.5817158, "subtitle": "1971 · Herbert Ryman"}, {"id": "orl_spaceship_earth", "name": "Spaceship Earth", "lat": 28.3714061, "lng": -81.5489587, "subtitle": "1982 · Wallace Floyd Design Group"}, {"id": "orl_dr_phillips_center", "name": "Dr. Phillips Center for the Performing Arts", "lat": 28.5377847, "lng": -81.377297, "subtitle": "2014 · Barton Myers Associates"}, {"id": "orl_lake_eola_pagoda", "name": "Chinese Pagoda at Lake Eola", "lat": 28.5436641, "lng": -81.3673426, "subtitle": "1987"}, {"id": "orl_orlando_public_library", "name": "Orlando Public Library", "lat": 28.5425394, "lng": -81.3766818, "subtitle": "1966 · John M. Johansen"}, {"id": "orl_creative_village_ea", "name": "EA Orlando (Creative Village)", "lat": 28.5493884, "lng": -81.3825015, "subtitle": "2021 · Baker Barrios Architects"}, {"id": "orl_suntrust_center", "name": "Truist Plaza (SunTrust Center)", "lat": 28.5400099, "lng": -81.3794971, "subtitle": "1988 · Skidmore, Owings & Merrill"}, {"id": "orl_citrus_bowl", "name": "Camping World Stadium", "lat": 28.538374, "lng": -81.401394, "subtitle": "1936 · HNTB (Renovation)"}, {"id": "orl_science_center", "name": "Orlando Science Center", "lat": 28.5702808, "lng": -81.3647912, "subtitle": "1997 · HHCP Architects"}, {"id": "orl_the_wheel", "name": "The Wheel at ICON Park", "lat": 28.4436157, "lng": -81.468754, "subtitle": "2015 · Intamin"}, {"id": "orl_apple_millenia", "name": "Apple Millenia", "lat": 28.4840857, "lng": -81.4300389, "subtitle": "2002 · Apple Inc. Design Team"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -323,5 +338,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

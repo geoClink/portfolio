@@ -120,6 +120,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Asheville"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "nc_biltmore_estate", "name": "Biltmore Estate", "lat": 35.54, "lng": -82.551944, "subtitle": "1895 · Richard Morris Hunt"}, {"id": "nc_basilica_st_lawrence", "name": "Basilica of Saint Lawrence", "lat": 35.597327, "lng": -82.5562877, "subtitle": "1905 · Rafael Guastavino"}, {"id": "nc_grove_arcade", "name": "Grove Arcade", "lat": 35.595542, "lng": -82.5566053, "subtitle": "1929 · Charles N. Parker"}, {"id": "nc_omni_grove_park_inn", "name": "The Omni Grove Park Inn", "lat": 35.6201674, "lng": -82.5419477, "subtitle": "1913 · Fred L. Seely"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -204,5 +219,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

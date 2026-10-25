@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Addis Ababa"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "addis-holy-trinity-cathedral", "name": "Holy Trinity Cathedral (Addis Ababa)", "lat": 9.0203, "lng": 38.7548, "subtitle": "1941 · Various Ethiopian architects"}, {"id": "addis-national-museum-ethiopia", "name": "National Museum of Ethiopia", "lat": 9.0282, "lng": 38.7617, "subtitle": "1936 · Various"}, {"id": "addis-african-union", "name": "African Union headquarters building", "lat": 9.0173, "lng": 38.7636, "subtitle": "2012 · China State Construction Engineering Corporation"}, {"id": "addis-red-terror-museum", "name": "Red Terror Martyrs' Memorial Museum", "lat": 9.0133, "lng": 38.7581, "subtitle": "2010 · Various"}, {"id": "addis-entoto-mountain", "name": "Mount Entoto", "lat": 9.115556, "lng": 38.772222, "subtitle": "0 · N/A (natural mountain)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Taipei"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "taipei-101", "name": "Taipei 101", "lat": 25.0338, "lng": 121.5645, "subtitle": "2004 · C.Y. Lee & Partners"}, {"id": "taipei-national-palace-museum", "name": "National Palace Museum", "lat": 25.1024, "lng": 121.5485, "subtitle": "1965 · Wang Da-hong"}, {"id": "taipei-chiang-kai-shek-memorial", "name": "Chiang Kai-shek Memorial Hall", "lat": 25.0363, "lng": 121.5218, "subtitle": "1980 · Yang Cho-cheng"}, {"id": "taipei-longshan-temple", "name": "Longshan Temple, Taipei", "lat": 25.037, "lng": 121.4999, "subtitle": "1738 · Wang Yi-shun"}, {"id": "taipei-elephant-mountain", "name": "Xiangshan (Taipei)", "lat": 25.0278, "lng": 121.5764, "subtitle": "0 · N/A (natural landmark)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

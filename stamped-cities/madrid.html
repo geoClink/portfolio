@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Madrid"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "madrid-prado", "name": "Museo del Prado", "lat": 40.4138, "lng": -3.6921, "subtitle": "1819 · Juan de Villanueva"}, {"id": "madrid-royal-palace", "name": "Royal Palace of Madrid", "lat": 40.4179, "lng": -3.7143, "subtitle": "1764 · Juan Bautista Sachetti, Filippo Juvara"}, {"id": "madrid-reina-sofia", "name": "Museo Reina Sofía", "lat": 40.4085, "lng": -3.6942, "subtitle": "1992 · Francesco Sabatini (original), Jean Nouvel (extension)"}, {"id": "madrid-retiro-park", "name": "Buen Retiro Park", "lat": 40.4153, "lng": -3.6843, "subtitle": "1631 · Royal gardens / various"}, {"id": "madrid-plaza-mayor", "name": "Plaza Mayor, Madrid", "lat": 40.4154, "lng": -3.7074, "subtitle": "1619 · Juan de Herrera, Juan Gómez de Mora"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

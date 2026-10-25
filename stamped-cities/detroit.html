@@ -363,6 +363,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Detroit"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "usa_apple_downtown_detroit", "name": "Apple Downtown Detroit", "lat": 42.3347221, "lng": -83.0488589, "subtitle": "2025 · Foster + Partners"}, {"id": "detroit_first_national", "name": "First National Building", "lat": 42.3308998, "lng": -83.0448095, "subtitle": "1922 · Albert Kahn"}, {"id": "detroit_the_z", "name": "The Z Garage", "lat": 42.334633, "lng": -83.0465162, "subtitle": "2014 · Neumann/Smith Architecture"}, {"id": "detroit_packard_plant", "name": "Packard Automotive Plant", "lat": 42.377922, "lng": -83.028897, "subtitle": "1903 · Albert Kahn"}, {"id": "detroit_one_kennedy", "name": "One Kennedy Square", "lat": 42.3313087, "lng": -83.0474918, "subtitle": "2006 · S. Tapubyon Architects"}, {"id": "detroit_mcgregor_center", "name": "McGregor Memorial Conference Center", "lat": 42.360437, "lng": -83.069685, "subtitle": "1958 · Minoru Yamasaki"}, {"id": "detroit_book_tower", "name": "Book Tower", "lat": 42.3334948, "lng": -83.0515783, "subtitle": "1926 · Louis Kamper"}, {"id": "detroit_ren_cen", "name": "Renaissance Center", "lat": 42.3289907, "lng": -83.0397978, "subtitle": "1977 · John Portman"}, {"id": "detroit_hudson", "name": "Hudson's Detroit", "lat": 42.3331133, "lng": -83.0478607, "subtitle": "2024 · SHoP Architects"}, {"id": "detroit_guardian", "name": "Guardian Building", "lat": 42.3295212, "lng": -83.046064, "subtitle": "1929 · Wirt C. Rowland"}, {"id": "detroit_michigan_central", "name": "Michigan Central", "lat": 42.3288907, "lng": -83.0766103, "subtitle": "1913 · Warren & Wetmore"}, {"id": "detroit_ally_center", "name": "Ally Detroit Center", "lat": 42.3300644, "lng": -83.0449346, "subtitle": "1993 · Philip Johnson / Burgee"}, {"id": "detroit_fisher_building", "name": "Fisher Building", "lat": 42.3695754, "lng": -83.0772691, "subtitle": "1928 · Albert Kahn"}, {"id": "detroit_fox_theatre", "name": "Fox Theatre", "lat": 42.3385829, "lng": -83.0522455, "subtitle": "1928 · C. Howard Crane"}, {"id": "detroit_penobscot", "name": "Penobscot Building", "lat": 42.33027, "lng": -83.0475557, "subtitle": "1928 · Wirt C. Rowland"}, {"id": "detroit_dia", "name": "Detroit Institute of Arts (DIA)", "lat": 42.3595055, "lng": -83.0645225, "subtitle": "1927 · Paul Philippe Cret"}, {"id": "detroit_cadillac_place", "name": "General Motors Building (Cadillac Place)", "lat": 42.3687984, "lng": -83.0754165, "subtitle": "1923 · Albert Kahn"}, {"id": "detroit_masonic_temple", "name": "Masonic Temple", "lat": 42.3417465, "lng": -83.0600967, "subtitle": "1926 · George D. Mason"}, {"id": "detroit_lafayette_towers", "name": "Lafayette Towers", "lat": 42.3405593, "lng": -83.0320507, "subtitle": "1963 · Mies van der Rohe"}, {"id": "detroit_david_stott", "name": "David Stott Building", "lat": 42.3324349, "lng": -83.0485357, "subtitle": "1929 · Donaldson and Meier"}, {"id": "detroit_david_whitney", "name": "David Whitney Building", "lat": 42.335441, "lng": -83.0499532, "subtitle": "1915 · Daniel Burnham"}, {"id": "detroit_book_cadillac", "name": "Westin Book Cadillac", "lat": 42.3319996, "lng": -83.0502138, "subtitle": "1924 · Louis Kamper"}, {"id": "detroit_buhl_building", "name": "Buhl Building", "lat": 42.3294212, "lng": -83.0469564, "subtitle": "1925 · Wirt C. Rowland"}, {"id": "detroit_dpl_main", "name": "Detroit Public Library (Main)", "lat": 42.3583548, "lng": -83.0668625, "subtitle": "1921 · Cass Gilbert"}, {"id": "detroit_vinton", "name": "Vinton Building", "lat": 42.3305201, "lng": -83.0454296, "subtitle": "1917 · Albert Kahn"}, {"id": "detroit_cadillac_tower", "name": "Cadillac Tower", "lat": 42.3319622, "lng": -83.0448932, "subtitle": "1927 · Louis Kamper"}, {"id": "detroit_fort_shelby", "name": "Fort Shelby Hotel", "lat": 42.3292478, "lng": -83.0527084, "subtitle": "1917 · Albert Kahn"}, {"id": "detroit_united_artists", "name": "United Artists Theatre Building", "lat": 42.3355006, "lng": -83.0523484, "subtitle": "1928 · C. Howard Crane"}, {"id": "detroit_fillmore", "name": "The Fillmore Detroit", "lat": 42.3378334, "lng": -83.051768, "subtitle": "1925 · C. Howard Crane"}, {"id": "detroit_motown_museum", "name": "Motown Museum (Hitsville U.S.A.)", "lat": 42.3641217, "lng": -83.0884919, "subtitle": "1959 · Unknown (Residential Adaptive Reuse)"}, {"id": "detroit_wright_kay", "name": "Wright-Kay Building", "lat": 42.3352177, "lng": -83.0491053, "subtitle": "1891 · Gordon W. Lloyd"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -663,5 +678,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

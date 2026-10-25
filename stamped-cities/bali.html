@@ -183,6 +183,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Bali"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bali-tanah-lot", "name": "Pura Tanah Lot", "lat": -8.62107, "lng": 115.08716, "subtitle": "1500 · Dang Hyang Nirartha"}, {"id": "bali-besakih", "name": "Pura Besakih (Mother Temple)", "lat": -8.374368, "lng": 115.450936, "subtitle": "1284 · Rresi Markandeya (Founder)"}, {"id": "bali-tirta-gangga", "name": "Tirta Gangga Water Palace", "lat": -8.411944, "lng": 115.5875, "subtitle": "1946 · Anak Agung Anglurah Ketut Karangasem"}, {"id": "bali-green-school", "name": "The Green School (Heart of School)", "lat": -8.5, "lng": 115.0, "subtitle": "2008 · Ibuku (Elora Hardy)"}, {"id": "bali-gwk-statue", "name": "Garuda Wisnu Kencana (GWK Statue)", "lat": -8.813951, "lng": 115.166882, "subtitle": "2018 · Nyoman Nuarta"}, {"id": "bali-ulun-danu", "name": "Pura Ulun Danu Beratan", "lat": -8.275278, "lng": 115.166389, "subtitle": "1633 · I Gusti Agung Putu"}, {"id": "bali-uluwatu", "name": "Pura Luhur Uluwatu", "lat": -8.828889, "lng": 115.085278, "subtitle": "900 · Empu Kuturan"}, {"id": "bali-ubud-palace", "name": "Ubud Royal Palace (Puri Saren Agung)", "lat": -8.5068, "lng": 115.2626, "subtitle": "1800 · Ida Tjokorda Putu Kandel"}, {"id": "bali-potato-head", "name": "Potato Head Studios (Desa Potato Head)", "lat": -8.678889, "lng": 115.150278, "subtitle": "2020 · OMA (Rem Koolhaas & David Gianotten)"}, {"id": "bali-sharma-springs", "name": "Sharma Springs", "lat": -8.5, "lng": 115.0, "subtitle": "2012 · Ibuku (Elora Hardy)"}, {"id": "retail_bali_imaginaria", "name": "Imaginaria (Digimap Flagship)", "lat": -8.7176835, "lng": 115.1844956, "subtitle": "2025 · Digimap Indonesia / Art Collaboration"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -323,5 +338,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

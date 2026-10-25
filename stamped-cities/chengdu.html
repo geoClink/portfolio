@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Chengdu"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cn_chengdu_panda_base", "name": "Chengdu Research Base of Giant Panda Breeding", "lat": 30.7378, "lng": 104.1373, "subtitle": "1987"}, {"id": "cn_leshan_giant_buddha", "name": "Leshan Giant Buddha", "lat": 29.5449, "lng": 103.7718, "subtitle": "803 · Haitong (monk)"}, {"id": "cn_jinli_ancient_street", "name": "Jinli Ancient Street", "lat": 30.6404, "lng": 104.0433, "subtitle": "2004"}, {"id": "cn_wuhou_shrine", "name": "Wuhou Shrine", "lat": 30.6427, "lng": 104.0449, "subtitle": "223"}, {"id": "cn_dujiangyan", "name": "Dujiangyan", "lat": 30.9976, "lng": 103.6174, "subtitle": "256 BC · Li Bing"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

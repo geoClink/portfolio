@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Central Jakarta"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "jakarta-monas", "name": "National Monument (Monas)", "lat": -6.1627023, "lng": 106.8062387, "subtitle": "1975 · Frederich Silaban"}, {"id": "jakarta-istiqlal", "name": "Istiqlal Mosque", "lat": -6.169804, "lng": 106.830921, "subtitle": "1978 · Frederich Silaban"}, {"id": "jakarta-bundaran-hi", "name": "Bundaran HI (Hotel Indonesia Roundabout)", "lat": -6.1949853, "lng": 106.8226741, "subtitle": "1962 · Abel Sorensen (Hotel) / Edhi Sunarso (Statue)"}, {"id": "jakarta-arts-theater", "name": "Gedung Kesenian Jakarta (Jakarta Arts Theater)", "lat": -6.1665103, "lng": 106.8344295, "subtitle": "1821 · J.C. Schultze"}, {"id": "jakarta-autograph-tower", "name": "Autograph Tower (Thamrin Nine)", "lat": -6.19914, "lng": 106.82263, "subtitle": "2022 · Kohn Pedersen Fox (KPF)"}, {"id": "jakarta-national-gallery", "name": "National Gallery of Indonesia", "lat": -6.178526, "lng": 106.832776, "subtitle": "1817 · G.J.P.M. Bolsius"}, {"id": "jakarta-cathedral", "name": "Jakarta Cathedral", "lat": -6.169257, "lng": 106.833069, "subtitle": "1901 · Marius Hulswit"}, {"id": "jakarta-national-museum", "name": "National Museum (Gedung Gajah)", "lat": -6.1761, "lng": 106.8217, "subtitle": "1862 · JHP de Bruyn"}, {"id": "jakarta-marathon-building", "name": "Indosat Building (Gedung Indosat)", "lat": -6.21462, "lng": 106.84513, "subtitle": "1980 · Unknown (Local Firm)"}, {"id": "jakarta-dharmapala", "name": "The Hermitage (Gedung Telepon)", "lat": -6.16639, "lng": 106.78778, "subtitle": "1923 · J.F.L. Blankenberg"}, {"id": "jakarta-perpusnas", "name": "National Library of Indonesia", "lat": -6.181761, "lng": 106.826957, "subtitle": "2017 · Unknown (Local Consortium)"}, {"id": "jakarta-pos-bloc", "name": "Pos Bloc (Gedung Filateli)", "lat": -6.167187, "lng": 106.833855, "subtitle": "1913 · J. van Hoytema"}, {"id": "jakarta-apple-plaza-indo", "name": "iBox Apple Premium Partner (Plaza Indonesia)", "lat": -6.1931372, "lng": 106.8218714, "subtitle": "2023 · Erajaya Group / Apple Retail Design Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

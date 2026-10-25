@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Mumbai"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bom_cst", "name": "Chhatrapati Shivaji Terminus", "lat": 18.93985, "lng": 72.83544, "subtitle": "1888 · Frederick William Stevens"}, {"id": "bom_gateway", "name": "Gateway of India", "lat": 18.9219661, "lng": 72.8345657, "subtitle": "1924 · George Wittet"}, {"id": "bom_taj_palace", "name": "Taj Mahal Palace Hotel", "lat": 18.9219661, "lng": 72.8345657, "subtitle": "1903 · Sitaram Khanderao Vaidya"}, {"id": "bom_rajabai", "name": "Rajabai Clock Tower", "lat": 18.929666, "lng": 72.830036, "subtitle": "1878 · George Gilbert Scott"}, {"id": "bom_antilia", "name": "Antilia", "lat": 18.9662078, "lng": 72.8090548, "subtitle": "2010 · Perkins & Will"}, {"id": "bom_kanchanjunga", "name": "Kanchanjunga Apartments", "lat": 18.9730483, "lng": 72.8101437, "subtitle": "1983 · Charles Correa"}, {"id": "bom_world_one", "name": "World One", "lat": 19.0023, "lng": 72.8265, "subtitle": "2020 · Pei Cobb Freed & Partners"}, {"id": "bom_municipal", "name": "BMC Headquarters", "lat": 18.94, "lng": 72.8353, "subtitle": "1893 · Frederick William Stevens"}, {"id": "bom_elphinstone", "name": "Elphinstone College", "lat": 18.9310786, "lng": 72.8315319, "subtitle": "1888 · Trubshaw & Khan Bahadur"}, {"id": "bom_metro_inox", "name": "Metro Inox Cinema", "lat": 18.986, "lng": 72.8259, "subtitle": "1938 · Thomas W. Lamb"}, {"id": "bom_apple_bkc", "name": "Apple BKC", "lat": 19.0535, "lng": 72.8506, "subtitle": "2023 · Foster + Partners"}, {"id": "bom_t2_terminal", "name": "Chhatrapati Shivaji Maharaj T2", "lat": 19.088611, "lng": 72.868056, "subtitle": "2014 · Skidmore, Owings & Merrill (SOM)"}, {"id": "bom_isckon", "name": "ISKCON Temple (Hare Krishna Land)", "lat": 19.1026, "lng": 72.8242, "subtitle": "1978 · Suraj P. Subherwal"}, {"id": "bom_global_vipassana", "name": "Global Vipassana Pagoda", "lat": 19.228056, "lng": 72.806053, "subtitle": "2008 · Subhash Bhoite"}, {"id": "bom_national_gallery", "name": "NGMA (Sir Cowasji Jehangir Hall)", "lat": 18.9258, "lng": 72.8313, "subtitle": "1911 · George Wittet / Romi Khosla (Interior)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

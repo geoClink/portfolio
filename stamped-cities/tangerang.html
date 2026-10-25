@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Tangerang"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "tng-the-breeze", "name": "The Breeze BSD", "lat": -6.301265, "lng": 106.65437, "subtitle": "2013 · JERDE Partnership"}, {"id": "tng-ice-bsd", "name": "Indonesia Convention Exhibition (ICE)", "lat": -6.300258, "lng": 106.636604, "subtitle": "2015 · Cox Architecture"}, {"id": "tng-scientia-square", "name": "Scientia Square Park (SQP) & SDC", "lat": -6.257685, "lng": 106.615193, "subtitle": "2014"}, {"id": "tng-uph-tower", "name": "Universitas Pelita Harapan (UPH) Tower", "lat": -6.2292, "lng": 106.6108, "subtitle": "1994 · Realrich Architecture Workshop (Renovations)"}, {"id": "tng-boen-tek-bio", "name": "Boen Tek Bio Chinese Temple", "lat": -6.17806, "lng": 106.63, "subtitle": "1684 · Unknown (Traditional)"}, {"id": "tng-qbig-bsd", "name": "QBig BSD City", "lat": -6.283743, "lng": 106.63622, "subtitle": "2016 · Broadway Malyan"}, {"id": "tng-benteng-heritage", "name": "Benteng Heritage Museum", "lat": -6.17806, "lng": 106.63, "subtitle": "1684 · Udaya Halim (Restoration)"}, {"id": "tng-soekarno-hatta-t3", "name": "Soekarno-Hatta Terminal 3", "lat": -6.125556, "lng": 106.655833, "subtitle": "2016 · Woodhead / PT. Pola Data Unit"}, {"id": "tng-gop-office", "name": "Green Office Park 9 (GOP 9)", "lat": -6.302252, "lng": 106.652292, "subtitle": "2016 · WOHA Architects"}, {"id": "tng-al-adzhom", "name": "Al-Adzhom Grand Mosque", "lat": -6.17806, "lng": 106.63, "subtitle": "2003 · Slamet Wirasonjaya"}, {"id": "tng-ikea-alam-sutera", "name": "IKEA Alam Sutera", "lat": -6.2196901, "lng": 106.6631824, "subtitle": "2014 · IKEA Global Design Team"}, {"id": "tng-knowledge-hub", "name": "Traveloka Campus (Knowledge Hub)", "lat": -6.301631, "lng": 106.649891, "subtitle": "2020 · Broadway Malyan"}, {"id": "tng-apple-summarecon", "name": "Digimap Apple Premium Partner (SMS)", "lat": -6.31694, "lng": 106.66417, "subtitle": "2023 · Apple Retail Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

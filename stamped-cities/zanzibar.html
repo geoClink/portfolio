@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Zanzibar"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "tz_stone_town", "name": "Stone Town, Zanzibar City", "lat": -6.1631, "lng": 39.1894, "subtitle": "1830"}, {"id": "tz_house_of_wonders", "name": "House of Wonders", "lat": -6.1588, "lng": 39.1896, "subtitle": "1883"}, {"id": "tz_old_fort_zanzibar", "name": "Old Fort, Zanzibar", "lat": -6.159, "lng": 39.1888, "subtitle": "1701 · Unknown (Omani)"}, {"id": "tz_freddie_mercury_birthplace", "name": "Freddie Mercury's Birthplace", "lat": -6.1608, "lng": 39.1896, "subtitle": "1900"}, {"id": "tz_nungwi", "name": "Nungwi", "lat": -5.7268, "lng": 39.3034, "subtitle": "0 · Natural landscape"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

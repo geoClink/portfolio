@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Doha"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "doha-museum-of-islamic-art", "name": "Museum of Islamic Art (Doha)", "lat": 25.2949, "lng": 51.5378, "subtitle": "2008 · I.M. Pei"}, {"id": "doha-souq-waqif", "name": "Souq Waqif", "lat": 25.2867, "lng": 51.5318, "subtitle": "1950 · Traditional Qatari / restoration"}, {"id": "doha-national-museum-qatar", "name": "National Museum of Qatar", "lat": 25.2889, "lng": 51.5415, "subtitle": "2019 · Jean Nouvel"}, {"id": "doha-aspire-tower", "name": "Aspire Tower", "lat": 25.2631, "lng": 51.4487, "subtitle": "2006 · Hyder Consulting"}, {"id": "doha-the-pearl", "name": "The Pearl, Qatar", "lat": 25.3718, "lng": 51.5505, "subtitle": "2012 · Various international architects"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

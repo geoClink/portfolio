@@ -128,6 +128,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Chiang Mai"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "th_wat_doi_suthep", "name": "Wat Phra That Doi Suthep", "lat": 18.8047, "lng": 98.9219, "subtitle": "1383"}, {"id": "th_wat_chedi_luang", "name": "Wat Chedi Luang", "lat": 18.7875, "lng": 98.9867, "subtitle": "1441"}, {"id": "th_chiang_mai_night_bazaar", "name": "Chiang Mai Night Bazaar", "lat": 18.7875, "lng": 98.9988, "subtitle": "1910"}, {"id": "th_three_kings_monument", "name": "Three Kings Monument", "lat": 18.7884, "lng": 98.9853, "subtitle": "1984"}, {"id": "th_doi_inthanon", "name": "Doi Inthanon National Park", "lat": 18.5877, "lng": 98.4864, "subtitle": "1954"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -220,5 +235,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

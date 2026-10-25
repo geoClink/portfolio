@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cairo"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cai_great_pyramid", "name": "Great Pyramid of Giza", "lat": 29.979167, "lng": 31.134167, "subtitle": "2560 BC · Hemiunu"}, {"id": "cai_tower", "name": "Cairo Tower", "lat": 30.045833, "lng": 31.224444, "subtitle": "1961 · Naoum Shebib"}, {"id": "cai_muhammad_ali", "name": "Mosque of Muhammad Ali", "lat": 30.028611, "lng": 31.259722, "subtitle": "1848 · Yusuf Bushnak"}, {"id": "cai_baron_empain", "name": "Baron Empain Palace", "lat": 30.0964969, "lng": 31.3431796, "subtitle": "1911 · Alexandre Marcel"}, {"id": "cai_gem", "name": "Grand Egyptian Museum", "lat": 29.9945754, "lng": 31.1190738, "subtitle": "2023 · Heneghan Peng Architects"}, {"id": "cai_al_azhar", "name": "Al-Azhar Mosque", "lat": 30.0421731, "lng": 31.2620473, "subtitle": "972 · Gawhar al-Siqilli"}, {"id": "cai_mogamma", "name": "The Mogamma", "lat": 30.043105, "lng": 31.234994, "subtitle": "1952 · Mohamed Kamal Esmat"}, {"id": "cai_bab_zuwayla", "name": "Bab Zuwayla", "lat": 30.04125, "lng": 31.25632, "subtitle": "1092 · Badr al-Jamali"}, {"id": "cai_st_virgin_mary", "name": "The Hanging Church", "lat": 30.0054, "lng": 31.2301, "subtitle": "690"}, {"id": "cai_opera_house", "name": "Cairo Opera House", "lat": 30.04245, "lng": 31.22353, "subtitle": "1988 · Nikken Sekkei"}, {"id": "cai_iconic_tower", "name": "Iconic Tower", "lat": 30.0118657, "lng": 31.697749, "subtitle": "2023 · Dar al-Handasah"}, {"id": "cai_apple_tradeline_cfc", "name": "Apple (Tradeline - Cairo Festival City)", "lat": 30.027025, "lng": 31.4118, "subtitle": "2013 · Apple Retail Design (Standardized)"}, {"id": "cai_abdeen_palace", "name": "Abdeen Palace", "lat": 30.041667, "lng": 31.248333, "subtitle": "1874 · Léon Rousseau"}, {"id": "cai_mosque_madrasa_sultan_hassan", "name": "Mosque-Madrasa of Sultan Hassan", "lat": 30.0319, "lng": 31.2567, "subtitle": "1363 · Unknown (Mamluk Master Builders)"}, {"id": "cai_egyptian_museum_tahrir", "name": "Museum of Egyptian Antiquities (The Red Museum)", "lat": 30.047778, "lng": 31.233333, "subtitle": "1902 · Marcel Dourgnon"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

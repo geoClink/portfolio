@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Salzburg"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "at_hohensalzburg", "name": "Hohensalzburg Fortress", "lat": 47.7953, "lng": 13.047, "subtitle": "1077 · Archbishop Gebhard von Helffenstein"}, {"id": "at_salzburg_cathedral", "name": "Salzburg Cathedral", "lat": 47.7978, "lng": 13.0474, "subtitle": "1628 · Santino Solari"}, {"id": "at_mirabell_palace", "name": "Mirabell Palace", "lat": 47.8039, "lng": 13.0426, "subtitle": "1721 · Lukas von Hildebrandt"}, {"id": "at_mozarts_birthplace", "name": "Mozart's Birthplace", "lat": 47.7998, "lng": 13.044, "subtitle": "1400"}, {"id": "at_hellbrunn_palace", "name": "Hellbrunn Palace", "lat": 47.7626, "lng": 13.0619, "subtitle": "1619 · Santino Solari"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

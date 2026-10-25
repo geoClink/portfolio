@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Bangkok"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bkk_grand_palace", "name": "Grand Palace (Chakri Maha Prasat)", "lat": 13.7524072, "lng": 100.4903417, "subtitle": "1782 · John Clunich"}, {"id": "bkk_maha_nakhon", "name": "King Power MahaNakhon", "lat": 13.723611, "lng": 100.528333, "subtitle": "2016 · Ole Scheeren"}, {"id": "bkk_wat_arun", "name": "Wat Arun (Temple of Dawn)", "lat": 13.7438976, "lng": 100.4885137, "subtitle": "1851 · Traditional (Rama II)"}, {"id": "bkk_wat_phra_kaew", "name": "Wat Phra Kaew", "lat": 13.7524072, "lng": 100.4903417, "subtitle": "1784 · Traditional"}, {"id": "bkk_moca", "name": "MOCA Bangkok", "lat": 13.8462056, "lng": 100.5599433, "subtitle": "2012 · Kanakorn Kudtaphan"}, {"id": "bkk_g_tower", "name": "G Tower", "lat": 13.7585717, "lng": 100.5660604, "subtitle": "2017 · KMD Architects"}, {"id": "bkk_icon_siam", "name": "ICONSIAM", "lat": 13.7268226, "lng": 100.510294, "subtitle": "2018 · Urban Architecture"}, {"id": "bkk_baur_museum", "name": "Bangkok Art and Culture Centre (BACC)", "lat": 13.746778, "lng": 100.5302625, "subtitle": "2008 · Robert G. Boughey"}, {"id": "bkk_elephant_tower", "name": "Elephant Tower (Chang Building)", "lat": 13.82893, "lng": 100.55985, "subtitle": "1997 · Ong-ard Satrabhandhu"}, {"id": "bkk_lebua_state", "name": "State Tower (Lebua)", "lat": 13.7212917, "lng": 100.5168726, "subtitle": "2001 · Rangsan Torsuwan"}, {"id": "bkk_apple_central_world", "name": "Apple Central World", "lat": 13.746944, "lng": 100.539722, "subtitle": "2020 · Foster + Partners"}, {"id": "bkk_apple_iconsiam", "name": "Apple Iconsiam", "lat": 13.7268226, "lng": 100.510294, "subtitle": "2018 · Foster + Partners"}, {"id": "bkk_robot_building", "name": "Robot Building", "lat": 13.7184367, "lng": 100.5151415, "subtitle": "1986 · Sumet Jumsai"}, {"id": "bkk_jim_thompson", "name": "Jim Thompson House", "lat": 13.749167, "lng": 100.528333, "subtitle": "1959 · Jim Thompson (Traditional Thai Craftsmen)"}, {"id": "bkk_nailert_park", "name": "Nai Lert Park Heritage Home", "lat": 13.74622, "lng": 100.54711, "subtitle": "1915 · Phraya Bhakdinoraseth"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

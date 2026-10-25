@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Bath"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "uk_roman_baths", "name": "The Roman Baths", "lat": 51.3813419, "lng": -2.3596754, "subtitle": "70 · Ancient Romans / John Wood the Elder & Younger"}, {"id": "uk_royal_crescent", "name": "The Royal Crescent", "lat": 51.3872718, "lng": -2.3682297, "subtitle": "1774 · John Wood the Younger"}, {"id": "uk_bath_abbey", "name": "Bath Abbey", "lat": 51.3813177, "lng": -2.3587036, "subtitle": "1499 · Robert and William Vertue"}, {"id": "uk_pulteney_bridge", "name": "Pulteney Bridge", "lat": 51.3828263, "lng": -2.358643, "subtitle": "1774 · Robert Adam"}, {"id": "uk_thermae_bath_spa", "name": "Thermae Bath Spa", "lat": 51.38032, "lng": -2.361506, "subtitle": "2006 · Grimshaw Architects"}, {"id": "uk_holburne_museum", "name": "The Holburne Museum", "lat": 51.3853491, "lng": -2.3518749, "subtitle": "1799 · Charles Harcourt Masters / Eric Parry (Extension)"}, {"id": "uk_the_circus", "name": "The Circus", "lat": 51.3862004, "lng": -2.3637578, "subtitle": "1768 · John Wood the Elder"}, {"id": "uk_prior_park", "name": "Prior Park Mansion", "lat": 51.3676817, "lng": -2.3461435, "subtitle": "1742 · John Wood the Elder"}, {"id": "uk_assembly_rooms", "name": "Bath Assembly Rooms", "lat": 51.3865985, "lng": -2.362584, "subtitle": "1771 · John Wood the Younger"}, {"id": "uk_guildhall", "name": "Bath Guildhall", "lat": 51.3820103, "lng": -2.3590679, "subtitle": "1775 · Thomas Baldwin"}, {"id": "uk_beckfords_tower", "name": "Beckford's Tower", "lat": 51.4067969, "lng": -2.3784787, "subtitle": "1827 · Henry Goodridge"}, {"id": "uk_theatre_royal", "name": "Theatre Royal Bath", "lat": 51.3817229, "lng": -2.3624992, "subtitle": "1805 · George Dance the Younger"}, {"id": "uk_milsom_place", "name": "Milsom Place", "lat": 51.3841215, "lng": -2.3616233, "subtitle": "1762 · Various / Modern Restoration"}, {"id": "uk_victoria_art_gallery", "name": "Victoria Art Gallery", "lat": 51.3828263, "lng": -2.358643, "subtitle": "1900 · John McKean Brydon"}, {"id": "uk_green_park_station", "name": "Green Park Station", "lat": 51.381065, "lng": -2.3662473, "subtitle": "1870 · James Henry Lynde"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

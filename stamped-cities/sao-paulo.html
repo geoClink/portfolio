@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in São Paulo"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "br_masp", "name": "MASP (São Paulo Museum of Art)", "lat": -23.5614961, "lng": -46.6559677, "subtitle": "1968 · Lina Bo Bardi"}, {"id": "br_copan", "name": "Edifício Copan", "lat": -23.546617, "lng": -46.644375, "subtitle": "1966 · Oscar Niemeyer"}, {"id": "br_altino_arantes", "name": "Farol Santander (Altino Arantes Building)", "lat": -23.545833, "lng": -46.633889, "subtitle": "1947 · Plínio Botelho do Amaral"}, {"id": "br_estaiada_bridge", "name": "Octávio Frias de Oliveira Bridge", "lat": -23.6154391, "lng": -46.6992167, "subtitle": "2008 · Catão Francisco Ribeiro"}, {"id": "br_theatre_municipal", "name": "Theatro Municipal de São Paulo", "lat": -23.545278, "lng": -46.638611, "subtitle": "1911 · Ramos de Azevedo"}, {"id": "br_pinacoteca", "name": "Pinacoteca do Estado", "lat": -23.5342741, "lng": -46.6339157, "subtitle": "1900 · Ramos de Azevedo / Paulo Mendes da Rocha (Renovation)"}, {"id": "br_estacao_da_luz", "name": "Luz Station", "lat": -23.5351161, "lng": -46.6353906, "subtitle": "1901 · Charles Henry Driver"}, {"id": "br_cathedral_se", "name": "São Paulo Cathedral (Catedral da Sé)", "lat": -23.551168, "lng": -46.63434, "subtitle": "1954 · Maximilian Emil Hehl"}, {"id": "br_sesc_pompeia", "name": "SESC Pompéia", "lat": -23.5247354, "lng": -46.7036039, "subtitle": "1982 · Lina Bo Bardi"}, {"id": "br_italia_building", "name": "Edifício Itália", "lat": -23.5453075, "lng": -46.6436337, "subtitle": "1965 · Franz Heep"}, {"id": "br_mosteiro_sao_bento", "name": "Saint Benedict Monastery", "lat": -23.54361, "lng": -46.63389, "subtitle": "1922 · Richard Berndl"}, {"id": "br_mercadao", "name": "Municipal Market of São Paulo", "lat": -23.5417, "lng": -46.62917, "subtitle": "1933 · Ramos de Azevedo"}, {"id": "br_ibirapuera_auditorium", "name": "Ibirapuera Auditorium", "lat": -23.5879351, "lng": -46.6514106, "subtitle": "2005 · Oscar Niemeyer"}, {"id": "br_japan_house", "name": "Japan House São Paulo", "lat": -23.5705607, "lng": -46.6447649, "subtitle": "2017 · Kengo Kuma"}, {"id": "br_casa_das_rosas", "name": "Casa das Rosas", "lat": -23.5707488, "lng": -46.6448342, "subtitle": "1935 · Ramos de Azevedo"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

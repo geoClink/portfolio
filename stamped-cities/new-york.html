@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in New York"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "nyc-01", "name": "Empire State Building", "lat": 40.7484421, "lng": -73.9856589, "subtitle": "1931 · Shreve, Lamb & Harmon"}, {"id": "us_apple_upper_east_side", "name": "Apple Upper East Side", "lat": 40.7733551, "lng": -73.9644948, "subtitle": "2015 · Bohlin Cywinski Jackson"}, {"id": "nyc-02", "name": "Chrysler Building", "lat": 40.7516676, "lng": -73.9755644, "subtitle": "1930 · William Van Alen"}, {"id": "nyc-03", "name": "One World Trade Center", "lat": 40.7129992, "lng": -74.0131894, "subtitle": "2014 · David Childs (SOM)"}, {"id": "nyc-04", "name": "The Flatiron Building", "lat": 40.7410592, "lng": -73.9896416, "subtitle": "1902 · Daniel Burnham"}, {"id": "nyc-05", "name": "Woolworth Building", "lat": 40.7124684, "lng": -74.0079294, "subtitle": "1913 · Cass Gilbert"}, {"id": "nyc-06", "name": "Rockefeller Center (30 Rock)", "lat": 40.7591232, "lng": -73.979556, "subtitle": "1933 · Raymond Hood"}, {"id": "nyc-07", "name": "The Guggenheim Museum", "lat": 40.7829932, "lng": -73.958925, "subtitle": "1959 · Frank Lloyd Wright"}, {"id": "nyc-08", "name": "Seagram Building", "lat": 40.7584073, "lng": -73.9719841, "subtitle": "1958 · Ludwig Mies van der Rohe"}, {"id": "nyc-09", "name": "The Vessel (Hudson Yards)", "lat": 40.7559064, "lng": -74.0005322, "subtitle": "2019 · Thomas Heatherwick"}, {"id": "nyc-10", "name": "Grand Central Terminal", "lat": 40.7528064, "lng": -73.9771792, "subtitle": "1913 · Reed and Stem / Warren and Wetmore"}, {"id": "glbl_apple_fifth_ave", "name": "Apple Fifth Avenue", "lat": 40.7638426, "lng": -73.9729641, "subtitle": "2006 · Foster + Partners"}, {"id": "nyc_twa_flight_center", "name": "TWA Flight Center", "lat": 40.645833, "lng": -73.7775, "subtitle": "1962 · Eero Saarinen"}, {"id": "nyc_oculus", "name": "The Oculus", "lat": 40.7115549, "lng": -74.0114199, "subtitle": "2016 · Santiago Calatrava"}, {"id": "nyc_apple_soho", "name": "Apple SoHo", "lat": 40.725039, "lng": -73.9991532, "subtitle": "2002 · Bohlin Cywinski Jackson"}, {"id": "nyc_un_hq", "name": "United Nations Headquarters", "lat": 40.7489457, "lng": -73.9680842, "subtitle": "1952 · Wallace Harrison / Le Corbusier / Oscar Niemeyer"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -422,5 +437,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

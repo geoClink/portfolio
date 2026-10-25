@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Lisbon"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "maat-lisbon", "name": "MAAT (Museum of Art, Architecture and Technology)", "lat": 38.6962598, "lng": -9.1954109, "subtitle": "2016 · Amanda Levete"}, {"id": "belem-tower", "name": "Belém Tower", "lat": 38.6962598, "lng": -9.1954109, "subtitle": "1519 · Francisco de Arruda"}, {"id": "jeronimos-monastery", "name": "Jerónimos Monastery", "lat": 38.6971218, "lng": -9.2080263, "subtitle": "1501 · Diogo de Boitaca"}, {"id": "portugal-pavilion", "name": "Portugal Pavilion", "lat": 38.761839, "lng": -9.0960548, "subtitle": "1998 · Álvaro Siza Vieira"}, {"id": "santa-justa-lift", "name": "Santa Justa Lift", "lat": 38.7090243, "lng": -9.1379117, "subtitle": "1902 · Raoul Mesnier du Ponsard"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

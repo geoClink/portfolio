@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Manila"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "manila-intramuros", "name": "Intramuros", "lat": 14.5906, "lng": 120.9742, "subtitle": "1571 · Spanish colonial engineers"}, {"id": "manila-rizal-park", "name": "Rizal Park", "lat": 14.5832, "lng": 120.9787, "subtitle": "1820 · Various"}, {"id": "manila-san-agustin-church", "name": "San Agustín Church (Manila)", "lat": 14.589, "lng": 120.9762, "subtitle": "1607 · Fray Juan Macias"}, {"id": "manila-fort-santiago", "name": "Fort Santiago", "lat": 14.5951, "lng": 120.9719, "subtitle": "1593 · Spanish military engineers"}, {"id": "manila-national-museum-fine-arts", "name": "National Museum of Fine Arts (Philippines)", "lat": 14.5897, "lng": 120.9815, "subtitle": "1918 · Juan M. Arellano"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cartagena"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "co_castillo_san_felipe", "name": "Castillo de San Felipe de Barajas", "lat": 10.4228, "lng": -75.543, "subtitle": "1657 · Antonio de Arevalo"}, {"id": "co_cartagena_cathedral", "name": "Cartagena Cathedral", "lat": 10.4232, "lng": -75.5486, "subtitle": "1612 · Simon Gonzalez"}, {"id": "co_murallas_cartagena", "name": "Las Murallas de Cartagena", "lat": 10.4257, "lng": -75.55, "subtitle": "1796 · Antonio de Arevalo"}, {"id": "co_palacio_inquisicion", "name": "Palacio de la Inquisición", "lat": 10.4247, "lng": -75.5488, "subtitle": "1770"}, {"id": "co_convento_popa", "name": "Convento de la Popa", "lat": 10.4192, "lng": -75.5255, "subtitle": "1607"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

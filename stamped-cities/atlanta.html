@@ -192,6 +192,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Atlanta"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "atl-01", "name": "Bank of America Plaza", "lat": 33.7708502, "lng": -84.3861373, "subtitle": "1992 · Kevin Roche John Dinkeloo & Associates"}, {"id": "atl-02", "name": "Hyatt Regency Atlanta", "lat": 33.7616304, "lng": -84.3866362, "subtitle": "1967 · John Portman"}, {"id": "atl-03", "name": "Ponce City Market", "lat": 33.7724397, "lng": -84.3652032, "subtitle": "1926 · Nimmons, Ferry & Hubbard"}, {"id": "atl-04", "name": "High Museum of Art", "lat": 33.7895458, "lng": -84.3862715, "subtitle": "1983 · Richard Meier / Renzo Piano"}, {"id": "atl-05", "name": "Flatiron Building (English-American)", "lat": 33.755765, "lng": -84.388883, "subtitle": "1897 · Bradford Gilbert"}, {"id": "atl-06", "name": "Mercedes-Benz Stadium", "lat": 33.7543348, "lng": -84.4023232, "subtitle": "2017 · HOK / TVS Design"}, {"id": "atl-07", "name": "The Fox Theatre", "lat": 33.7726429, "lng": -84.3855618, "subtitle": "1929 · Marye, Alger and Vinour"}, {"id": "atl-08", "name": "Swan House", "lat": 33.8417815, "lng": -84.3860102, "subtitle": "1928 · Philip Trammell Shutze"}, {"id": "atl-09", "name": "1180 Peachtree (Symphony Tower)", "lat": 33.7869256, "lng": -84.3842034, "subtitle": "2006 · Pickard Chilton"}, {"id": "atl-10", "name": "The King Center", "lat": 33.7547816, "lng": -84.3727671, "subtitle": "1982 · J. Max Bond Jr."}, {"id": "atl_apple_lenox", "name": "Apple Lenox Square", "lat": 33.848239, "lng": -84.362789, "subtitle": "2021 · Apple Inc. Design Team"}, {"id": "atl_westin_peachtree", "name": "Westin Peachtree Plaza", "lat": 33.7594396, "lng": -84.3883759, "subtitle": "1976 · John Portman"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -340,5 +355,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

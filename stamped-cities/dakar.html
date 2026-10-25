@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Dakar"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "sn_african_renaissance_monument", "name": "African Renaissance Monument", "lat": 14.7297, "lng": -17.4955, "subtitle": "2010 · Pierre Goudiaby Atepa"}, {"id": "sn_house_of_slaves", "name": "House of Slaves", "lat": 14.6681, "lng": -17.3983, "subtitle": "1776 · Unknown (Dutch construction)"}, {"id": "sn_grande_mosquee_dakar", "name": "Grande Mosquée de Dakar", "lat": 14.677778, "lng": -17.442222, "subtitle": "1964"}, {"id": "sn_ifan_museum", "name": "IFAN Museum of African Arts", "lat": 14.7009, "lng": -17.4621, "subtitle": "1938"}, {"id": "sn_lac_rose", "name": "Lac Rose", "lat": 14.8333, "lng": -17.2333, "subtitle": "0 · Natural formation"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

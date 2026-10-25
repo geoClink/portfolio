@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Kuala Lumpur"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "kl-petronas", "name": "Petronas Towers", "lat": 3.1579, "lng": 101.7116, "subtitle": "1998 · César Pelli & Associates"}, {"id": "kl-batu-caves", "name": "Batu Caves", "lat": 3.2379, "lng": 101.684, "subtitle": "1890 · N/A (natural caves)"}, {"id": "kl-menara", "name": "Kuala Lumpur Tower", "lat": 3.1531, "lng": 101.7036, "subtitle": "1996 · Kumpulan Senireka Sdn Bhd"}, {"id": "kl-sultan-samad", "name": "Sultan Abdul Samad Building", "lat": 3.1487, "lng": 101.6944, "subtitle": "1897 · A.C. Norman"}, {"id": "kl-merdeka118", "name": "Merdeka 118", "lat": 3.1428, "lng": 101.6971, "subtitle": "2023 · Fender Katsalidis"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

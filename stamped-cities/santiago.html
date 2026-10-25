@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Santiago"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "gran-torre-santiago", "name": "Gran Torre Santiago", "lat": -33.417987, "lng": -70.6064246, "subtitle": "2013 · César Pelli"}, {"id": "la-moneda-palace", "name": "La Moneda Palace", "lat": -33.4426721, "lng": -70.6583109, "subtitle": "1805 · Joaquín Toesca"}, {"id": "bahai-temple-south-america", "name": "Bahá'í Temple of South America", "lat": -33.47992, "lng": -70.523453, "subtitle": "2016 · Siamak Hariri"}, {"id": "museo-historico-nacional", "name": "National History Museum", "lat": -33.4371206, "lng": -70.6506217, "subtitle": "1807 · Juan José de Goycolea"}, {"id": "gabriela-mistral-cultural-center", "name": "GAM (Gabriela Mistral Cultural Center)", "lat": -33.4393115, "lng": -70.6399272, "subtitle": "1972 · Cristián Fernández / Sebastián Hernández"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

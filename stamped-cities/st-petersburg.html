@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in St. Petersburg"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ru_winter_palace", "name": "Winter Palace", "lat": 59.9398, "lng": 30.3146, "subtitle": "1762 · Bartolomeo Rastrelli"}, {"id": "ru_church_savior_on_blood", "name": "Church of the Savior on Blood", "lat": 59.94, "lng": 30.3289, "subtitle": "1907 · Alfred Parland"}, {"id": "ru_peter_paul_fortress", "name": "Peter and Paul Fortress", "lat": 59.95, "lng": 30.3167, "subtitle": "1724 · Domenico Trezzini"}, {"id": "ru_mariinsky_theatre", "name": "Mariinsky Theatre", "lat": 59.926, "lng": 30.2964, "subtitle": "1860 · Alberto Cavos"}, {"id": "ru_peterhof_palace", "name": "Peterhof Palace", "lat": 59.8853, "lng": 29.9084, "subtitle": "1721 · Jean-Baptiste Le Blond, Bartolomeo Rastrelli"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Batam"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "batam-barelang-bridge", "name": "Barelang Bridge (Tengku Fisabilillah)", "lat": 0.981667, "lng": 104.041667, "subtitle": "1997 · B.J. Habibie (Initiator)"}, {"id": "batam-marriott-hotel", "name": "Batam Marriott Hotel Harbour Bay", "lat": 1.1541455, "lng": 103.9967417, "subtitle": "2020 · ONG&ONG"}, {"id": "batam-great-mosque", "name": "Great Mosque of Batam (Masjid Raya)", "lat": 1.126452, "lng": 104.053489, "subtitle": "1999 · Achmad Noe'man"}, {"id": "batam-nagoya-hill", "name": "Nagoya Hill Mall", "lat": 1.13924, "lng": 104.01237, "subtitle": "2007"}, {"id": "batam-maitreya-monastery", "name": "Maha Vihara Duta Maitreya Monastery", "lat": 1.129439, "lng": 104.034725, "subtitle": "1999"}, {"id": "batam-tanjak-mosque", "name": "Masjid Tanwirun Naja (Tanjak Mosque)", "lat": 1.124242, "lng": 104.112414, "subtitle": "2022 · Kementerian PUPR"}, {"id": "batam-one-residence", "name": "One Residence Batam", "lat": 1.08333, "lng": 104.05, "subtitle": "2019 · Enviro Tec"}, {"id": "batam-galang-hospital", "name": "Galang Refugee Hospital (Historical Site)", "lat": 0.769378, "lng": 104.191261, "subtitle": "1979 · Indonesian Military / UN Taskforce"}, {"id": "batam-pollux-habibie", "name": "Meisterstadt (Pollux Habibie Towers)", "lat": 1.119844, "lng": 104.04541, "subtitle": "2020 · Aedas"}, {"id": "batam-vihara-budhi-bhakti", "name": "Vihara Budhi Bhakti (Tua Pek Kong)", "lat": 1.140301, "lng": 104.010853, "subtitle": "1986 · Unknown (Traditional)"}, {"id": "batam-hang-nadim-t2", "name": "Hang Nadim Terminal 2", "lat": 1.123377, "lng": 104.1151155, "subtitle": "2024 · Incheon International Airport Corp (Consortium)"}, {"id": "batam-city-hall", "name": "Kantor Walikota Batam (City Hall)", "lat": 1.127943, "lng": 104.055197, "subtitle": "1983 · Unknown (Public Works)"}, {"id": "batam-apple-grand", "name": "Apple Premium Partner (Grand Batam Mall)", "lat": 1.13924, "lng": 104.01237, "subtitle": "2019 · Erajaya Group (Retail Design)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

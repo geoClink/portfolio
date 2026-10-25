@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Denver"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "den-01", "name": "Wells Fargo Center", "lat": 39.7435942, "lng": -104.9854851, "subtitle": "1983 · Philip Johnson"}, {"id": "den-02", "name": "Denver Art Museum", "lat": 39.7373941, "lng": -104.9896237, "subtitle": "2006 · Daniel Libeskind"}, {"id": "den-03", "name": "Denver Union Station", "lat": 39.7532277, "lng": -105.0000944, "subtitle": "1914 · Gove & Walsh"}, {"id": "den-04", "name": "Colorado State Capitol", "lat": 39.7392252, "lng": -104.9848373, "subtitle": "1894 · Elijah E. Myers"}, {"id": "den-05", "name": "Denver Public Library (Central)", "lat": 39.7384615, "lng": -104.9902638, "subtitle": "1995 · Michael Graves"}, {"id": "den-06", "name": "United States Air Force Academy Cadet Chapel", "lat": 39.0087832, "lng": -104.8965013, "subtitle": "1962 · Walter Netsch (SOM)"}, {"id": "den-07", "name": "Clyfford Still Museum", "lat": 39.7362911, "lng": -104.9898454, "subtitle": "2011 · Allied Works Architecture"}, {"id": "den-08", "name": "One River North", "lat": 39.7719701, "lng": -104.9713268, "subtitle": "2024 · MAD Architects"}, {"id": "den-09", "name": "The Brown Palace Hotel", "lat": 39.7441138, "lng": -104.9878711, "subtitle": "1892 · Frank Edbrooke"}, {"id": "den-10", "name": "1144 Fifteenth", "lat": 39.7470275, "lng": -104.9976087, "subtitle": "2018 · Pickard Chilton"}, {"id": "den-11", "name": "Apple Cherry Creek", "lat": 39.7166139, "lng": -104.9524963, "subtitle": "2017 · Bohlin Cywinski Jackson"}, {"id": "den-12", "name": "Denver International Airport (Jeppesen Terminal)", "lat": 39.8606676, "lng": -104.6853673, "subtitle": "1995 · Curtis Fentress"}, {"id": "den-13", "name": "Daniels & Fisher Tower", "lat": 39.7481018, "lng": -104.9956876, "subtitle": "1910 · Frederick Sterner"}, {"id": "den-14", "name": "Ellie Caulkins Opera House", "lat": 39.7452146, "lng": -104.9974822, "subtitle": "2005 · Semple Brown Design"}, {"id": "den-15", "name": "The Crawford Hill Mansion", "lat": 39.731685, "lng": -104.9853051, "subtitle": "1906 · Theodore Boal"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Quebec City"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ca_chateau_frontenac", "name": "Château Frontenac", "lat": 46.8197, "lng": -71.2051, "subtitle": "1893 · Bruce Price"}, {"id": "ca_citadelle_quebec", "name": "Citadelle of Quebec", "lat": 46.8108, "lng": -71.2078, "subtitle": "1850 · Elias Walker Durnford"}, {"id": "ca_plains_of_abraham", "name": "Plains of Abraham", "lat": 46.8001, "lng": -71.2178, "subtitle": "1759 · N/A (battlefield park)"}, {"id": "ca_funiculaire_quebec", "name": "Funiculaire du Vieux-Québec", "lat": 46.8165, "lng": -71.2026, "subtitle": "1879"}, {"id": "ca_petit_champlain", "name": "Quartier Petit-Champlain", "lat": 46.8148, "lng": -71.2024, "subtitle": "1685"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

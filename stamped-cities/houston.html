@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Houston"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "usa_apple_houston_galleria", "name": "Apple Houston Galleria", "lat": 29.7379616, "lng": -95.4642783, "subtitle": "2017 · Bohlin Cywinski Jackson / Apple"}, {"id": "hou-01", "name": "JPMorgan Chase Tower", "lat": 29.7603205, "lng": -95.3639963, "subtitle": "1982 · I.M. Pei & Partners"}, {"id": "hou-02", "name": "Pennzoil Place", "lat": 29.7598388, "lng": -95.3657052, "subtitle": "1975 · Philip Johnson"}, {"id": "hou-03", "name": "Williams Tower", "lat": 29.7373, "lng": -95.4612679, "subtitle": "1983 · Philip Johnson"}, {"id": "hou-04", "name": "Houston City Hall", "lat": 29.760179, "lng": -95.3693747, "subtitle": "1939 · Joseph Finger"}, {"id": "hou-05", "name": "The Astrodome", "lat": 29.6878279, "lng": -95.4125866, "subtitle": "1965 · Hermon Lloyd & W.B. Morgan"}, {"id": "hou-06", "name": "The Menil Collection", "lat": 29.7373004, "lng": -95.3984685, "subtitle": "1987 · Renzo Piano"}, {"id": "hou-07", "name": "Bank of America Center", "lat": 29.7606455, "lng": -95.3664587, "subtitle": "1983 · Philip Johnson"}, {"id": "hou-08", "name": "The Julia Ideson Building", "lat": 29.7589153, "lng": -95.3691366, "subtitle": "1926 · Cram and Ferguson"}, {"id": "hou-09", "name": "One Shell Plaza", "lat": 29.7591492, "lng": -95.3676646, "subtitle": "1971 · Skidmore, Owings & Merrill (SOM)"}, {"id": "hou-10", "name": "Esperson Buildings", "lat": 29.7588001, "lng": -95.3650524, "subtitle": "1927 · John Eberson"}, {"id": "hou-11", "name": "NASA Johnson Space Center (Building 30)", "lat": 29.5527874, "lng": -95.0846405, "subtitle": "1964 · Charles Luckman"}, {"id": "hou_rothko_chapel", "name": "The Rothko Chapel", "lat": 29.7376165, "lng": -95.3962018, "subtitle": "1971 · Mark Rothko / Philip Johnson / Howard Barnstone"}, {"id": "hou_post_houston", "name": "POST Houston", "lat": 29.7666, "lng": -95.36612, "subtitle": "2021 · OMA (Jason Long) / Hoerr Schaudt"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

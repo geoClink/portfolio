@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Copenhagen"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cph_copenhill", "name": "CopenHill", "lat": 55.684214, "lng": 12.619183, "subtitle": "2017 · Bjarke Ingels (BIG)"}, {"id": "cph_black_diamond", "name": "The Black Diamond", "lat": 55.6730401, "lng": 12.5810081, "subtitle": "1999 · Schmidt Hammer Lassen"}, {"id": "cph_opera", "name": "Copenhagen Opera House", "lat": 55.682035, "lng": 12.602023, "subtitle": "2005 · Henning Larsen"}, {"id": "cph_blox", "name": "BLOX (Danish Architecture Center)", "lat": 55.672076, "lng": 12.579179, "subtitle": "2018 · Rem Koolhaas (OMA)"}, {"id": "cph_grundtvig", "name": "Grundtvig's Church", "lat": 55.716477, "lng": 12.533685, "subtitle": "1940 · Peder Jensen-Klint"}, {"id": "cph_round_tower", "name": "Rundetårn", "lat": 55.681339, "lng": 12.575772, "subtitle": "1642 · Hans van Steenwinckel"}, {"id": "cph_axeltowers", "name": "Axel Towers", "lat": 55.675515, "lng": 12.565704, "subtitle": "2017 · Lundgaard & Tranberg"}, {"id": "cph_amalienborg", "name": "Amalienborg Palace", "lat": 55.6839722, "lng": 12.5932212, "subtitle": "1760 · Nicolai Eigtved"}, {"id": "cph_silo", "name": "The Silo", "lat": 55.708396, "lng": 12.598071, "subtitle": "2017 · COBE"}, {"id": "cph_superkilen", "name": "Superkilen Park (Red Square)", "lat": 55.698991, "lng": 12.54212, "subtitle": "2012 · BIG / Topotek 1"}, {"id": "cph_apple_kongens", "name": "Apple Kongens Nytorv", "lat": 55.681331, "lng": 12.584993, "subtitle": "1866 · Foster + Partners"}, {"id": "cph_8_house", "name": "8 House", "lat": 55.616765, "lng": 12.570585, "subtitle": "2010 · Bjarke Ingels (BIG)"}, {"id": "cph_royal_library", "name": "Old Royal Library", "lat": 55.6730401, "lng": 12.5810081, "subtitle": "1906 · Hans J. Holm"}, {"id": "cph_bicycle_snake", "name": "Cykelslangen (The Bicycle Snake)", "lat": 55.6626217, "lng": 12.563508, "subtitle": "2014 · Dissing+Weitling"}, {"id": "cph_tivoli_nimb", "name": "Nimb Hotel (Tivoli Gardens)", "lat": 55.673606, "lng": 12.566004, "subtitle": "1909 · Knud Arne-Petersen"}, {"id": "cph_royal_playhouse", "name": "Royal Danish Playhouse", "lat": 55.680448, "lng": 12.594691, "subtitle": "2008 · Lundgaard & Tranberg"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

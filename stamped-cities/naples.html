@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Naples"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "nap-01", "name": "Castel dell'Ovo (Egg Castle)", "lat": 40.8280557, "lng": 14.2482843, "subtitle": "1128 · Various (Norman/Angevin)"}, {"id": "nap-02", "name": "Galleria Umberto I", "lat": 40.8380385, "lng": 14.2497982, "subtitle": "1890 · Emanuele Rocco"}, {"id": "nap-03", "name": "Duomo di Napoli (Naples Cathedral)", "lat": 40.8489894, "lng": 14.2610945, "subtitle": "1313 · Various"}, {"id": "nap-04", "name": "Teatro di San Carlo", "lat": 40.8387165, "lng": 14.2513842, "subtitle": "1737 · Giovanni Antonio Medrano"}, {"id": "nap-05", "name": "Certosa di San Martino", "lat": 40.8441955, "lng": 14.2403501, "subtitle": "1325 · Tino di Camaino / Cosimo Fanzago"}, {"id": "nap-06", "name": "Toledo Metro Station", "lat": 40.8416773, "lng": 14.2487536, "subtitle": "2012 · Oscar Tusquets Blanca"}, {"id": "nap-07", "name": "Palazzo Reale (Royal Palace of Naples)", "lat": 40.8368476, "lng": 14.250992, "subtitle": "1600 · Domenico Fontana"}, {"id": "nap-08", "name": "Castel Nuovo (Maschio Angioino)", "lat": 40.8387165, "lng": 14.2513842, "subtitle": "1279 · Pierre d'Angicourt"}, {"id": "nap-09", "name": "Museo Archeologico Nazionale di Napoli (MANN)", "lat": 40.8536064, "lng": 14.25115, "subtitle": "1585 · Giulio Cesare Fontana"}, {"id": "nap-10", "name": "Basilica di Santa Chiara", "lat": 40.8479249, "lng": 14.2537892, "subtitle": "1310 · Gagliardo Primario"}, {"id": "nap-11", "name": "Cappella Sansevero", "lat": 40.8492994, "lng": 14.2549332, "subtitle": "1590 · Giuseppe Sanmartino (Primary Sculptor/Designer)"}, {"id": "nap-12", "name": "Stazione Marittima di Napoli", "lat": 40.8379314, "lng": 14.2594336, "subtitle": "1936 · Cesare Bazzani"}, {"id": "nap-apple-toledo", "name": "Apple Via Toledo", "lat": 40.8425034, "lng": 14.2488703, "subtitle": "2021 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

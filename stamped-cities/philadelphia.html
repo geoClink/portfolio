@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Philadelphia"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "phi-01", "name": "Philadelphia City Hall", "lat": 39.953206, "lng": -75.1643762, "subtitle": "1901 · John McArthur Jr."}, {"id": "phi-02", "name": "Independence Hall", "lat": 39.9488873, "lng": -75.150026, "subtitle": "1753 · Edmund Woolley & Andrew Hamilton"}, {"id": "phi-03", "name": "Philadelphia Museum of Art", "lat": 39.9655661, "lng": -75.1815202, "subtitle": "1928 · Julian Abele & Horace Trumbauer"}, {"id": "phi-04", "name": "One Liberty Place", "lat": 39.9525789, "lng": -75.1681341, "subtitle": "1987 · Helmut Jahn"}, {"id": "phi-05", "name": "Comcast Technology Center", "lat": 39.9549781, "lng": -75.1704034, "subtitle": "2018 · Lord Norman Foster"}, {"id": "phi-06", "name": "Pennsylvania Academy of the Fine Arts (PAFA)", "lat": 39.9552373, "lng": -75.1636673, "subtitle": "1876 · Frank Furness"}, {"id": "phi-07", "name": "The PSFS Building", "lat": 39.9515897, "lng": -75.160309, "subtitle": "1932 · Howe & Lescaze"}, {"id": "phi-08", "name": "Fisher Fine Arts Library", "lat": 39.9515981, "lng": -75.1927152, "subtitle": "1891 · Frank Furness"}, {"id": "phi-09", "name": "Vanna Venturi House", "lat": 40.0706588, "lng": -75.2081297, "subtitle": "1964 · Robert Venturi"}, {"id": "phi-10", "name": "Eastern State Penitentiary", "lat": 39.9683406, "lng": -75.1726626, "subtitle": "1829 · John Haviland"}, {"id": "phi-11", "name": "Apple Walnut Street", "lat": 39.9500344, "lng": -75.1678868, "subtitle": "1924 · Foster + Partners (Restoration)"}, {"id": "phi-12", "name": "Richards Medical Research Laboratories", "lat": 39.9497307, "lng": -75.1975274, "subtitle": "1960 · Louis Kahn"}, {"id": "phi-13", "name": "Masonic Temple of Philadelphia", "lat": 39.9536203, "lng": -75.1626572, "subtitle": "1873 · James H. Windrim"}, {"id": "phi-14", "name": "The Barnes Foundation", "lat": 39.9605495, "lng": -75.1726581, "subtitle": "2012 · Williams & Tsien"}, {"id": "phi-15", "name": "30th Street Station", "lat": 39.9559262, "lng": -75.1819978, "subtitle": "1933 · Graham, Anderson, Probst & White"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

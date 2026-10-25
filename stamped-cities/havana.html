@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Havana"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "havana-old-havana", "name": "Old Havana", "lat": 23.1367, "lng": -82.3489, "subtitle": "1519 · Spanish colonial architects"}, {"id": "havana-el-capitolio", "name": "El Capitolio", "lat": 23.1364, "lng": -82.359, "subtitle": "1929 · Raúl Otero"}, {"id": "havana-malecon", "name": "Malecón (Havana)", "lat": 23.144, "lng": -82.3679, "subtitle": "1901 · N/A (urban promenade)"}, {"id": "havana-morro-castle", "name": "Morro Castle", "lat": 23.1503, "lng": -82.3612, "subtitle": "1589 · Juan de Tejeda, Cristóbal de Roda"}, {"id": "havana-museum-of-revolution", "name": "Museum of the Revolution (Cuba)", "lat": 23.1394, "lng": -82.3559, "subtitle": "1920 · Paul Belau, Carlos Maruri"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

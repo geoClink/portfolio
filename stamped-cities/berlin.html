@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Berlin"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ber_reichstag", "name": "Reichstag Building", "lat": 52.5186538, "lng": 13.3761015, "subtitle": "1894 · Paul Wallot / Norman Foster"}, {"id": "ber_brandenburg_gate", "name": "Brandenburg Gate", "lat": 52.5163514, "lng": 13.3786908, "subtitle": "1791 · Carl Gotthard Langhans"}, {"id": "ber_tv_tower", "name": "Berliner Fernsehturm", "lat": 52.5208279, "lng": 13.4094214, "subtitle": "1969 · Hermann Henselmann"}, {"id": "ber_jewish_museum", "name": "Jewish Museum Berlin", "lat": 52.5016941, "lng": 13.3951413, "subtitle": "2001 · Daniel Libeskind"}, {"id": "ber_philharmonic", "name": "Berliner Philharmonie", "lat": 52.5099888, "lng": 13.3696059, "subtitle": "1963 · Hans Scharoun"}, {"id": "ber_neue_national", "name": "Neue Nationalgalerie", "lat": 52.5070409, "lng": 13.3676212, "subtitle": "1968 · Ludwig Mies van der Rohe"}, {"id": "ber_kaiser_wilhelm", "name": "Kaiser Wilhelm Memorial Church", "lat": 52.5049676, "lng": 13.335294, "subtitle": "1895 · Franz Schwechten / Egon Eiermann"}, {"id": "ber_chancellery", "name": "Federal Chancellery", "lat": 52.5201946, "lng": 13.3691292, "subtitle": "2001 · Axel Schultes"}, {"id": "ber_unite_d_habitation", "name": "Corbusierhaus", "lat": 52.5102002, "lng": 13.2438932, "subtitle": "1958 · Le Corbusier"}, {"id": "ber_shell_haus", "name": "Shell-Haus", "lat": 52.5060586, "lng": 13.3629876, "subtitle": "1932 · Emil Fahrenkamp"}, {"id": "ber_apple_rosenthaler", "name": "Apple Rosenthaler Straße", "lat": 52.5243125, "lng": 13.4031361, "subtitle": "2021 · Tchoban Voss Architekten"}, {"id": "ber_humboldt_forum", "name": "Humboldt Forum", "lat": 52.516714, "lng": 13.4031305, "subtitle": "2020 · Franco Stella"}, {"id": "ber_sony_center", "name": "Sony Center", "lat": 52.5098014, "lng": 13.3755898, "subtitle": "2000 · Helmut Jahn"}, {"id": "ber_gsw_hq", "name": "GSW Headquarters (Rocket Tower)", "lat": 52.5065424, "lng": 13.392988, "subtitle": "1999 · Sauerbruch Hutton"}, {"id": "ber_james_simon_galerie", "name": "James-Simon-Galerie", "lat": 52.5201352, "lng": 13.3993615, "subtitle": "2018 · David Chipperfield"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

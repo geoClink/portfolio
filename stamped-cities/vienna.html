@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Vienna"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "stephansdom", "name": "St. Stephen's Cathedral", "lat": 48.2084923, "lng": 16.3731269, "subtitle": "1160 · Master Wenzla"}, {"id": "hundertwasserhaus", "name": "Hundertwasserhaus", "lat": 48.2075444, "lng": 16.3939944, "subtitle": "1985 · Friedensreich Hundertwasser"}, {"id": "schonbrunn-palace", "name": "Schönbrunn Palace", "lat": 48.1849457, "lng": 16.3154107, "subtitle": "1700 · Johann Bernhard Fischer von Erlach"}, {"id": "dc-tower-1", "name": "DC Tower 1", "lat": 48.2316473, "lng": 16.4126135, "subtitle": "2013 · Dominique Perrault"}, {"id": "vienna-secession", "name": "Secession Building", "lat": 48.200497, "lng": 16.3657683, "subtitle": "1898 · Joseph Maria Olbrich"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

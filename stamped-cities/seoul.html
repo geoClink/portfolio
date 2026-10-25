@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Seoul"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "lotte-world-tower", "name": "Lotte World Tower", "lat": 37.5135157, "lng": 127.1035414, "subtitle": "2017 · Kohn Pedersen Fox (KPF)"}, {"id": "glbl_apple_myeongdong", "name": "Apple Myeongdong", "lat": 37.5616229, "lng": 126.9848251, "subtitle": "2022 · Foster + Partners"}, {"id": "ddp-seoul", "name": "Dongdaemun Design Plaza (DDP)", "lat": 37.5662336, "lng": 127.0091598, "subtitle": "2014 · Zaha Hadid"}, {"id": "gyeongbokgung-palace", "name": "Gyeongbokgung Palace (Gwanghwamun Gate)", "lat": 37.5759194, "lng": 126.9768156, "subtitle": "1395 · Traditional / Joseon Dynasty"}, {"id": "n-seoul-tower", "name": "N Seoul Tower", "lat": 37.5522424, "lng": 126.9820623, "subtitle": "1969 · Jang Jong-ryul"}, {"id": "63-building", "name": "63 Building (63 City)", "lat": 37.5198496, "lng": 126.9402516, "subtitle": "1985 · SOM / Park Chun-myung"}, {"id": "seoul-city-hall", "name": "Seoul City Hall", "lat": 37.5667893, "lng": 126.9784204, "subtitle": "2012 · Yoo Kerl (iarc)"}, {"id": "ewha-campus-center", "name": "Ewha Womans University Campus Center", "lat": 37.5643371, "lng": 126.9468925, "subtitle": "2008 · Dominique Perrault"}, {"id": "gt-tower-east", "name": "GT Tower East", "lat": 37.4980633, "lng": 127.0259442, "subtitle": "2011 · Peter Couwenbergh / ArchitectenConsort"}, {"id": "some-sevit", "name": "Some Sevit (Floating Islands)", "lat": 37.512222, "lng": 126.99525, "subtitle": "2011 · Haeahn Architecture"}, {"id": "leeum-museum", "name": "Leeum Museum of Art", "lat": 37.5379627, "lng": 126.9987684, "subtitle": "2004 · Mario Botta / Jean Nouvel / Rem Koolhaas"}, {"id": "national-museum-korea", "name": "National Museum of Korea", "lat": 37.5198634, "lng": 126.9826534, "subtitle": "2005 · Park Seung-hong"}, {"id": "glbl_apple_gangnam", "name": "Apple Gangnam", "lat": 37.5030713, "lng": 127.0253238, "subtitle": "2023 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

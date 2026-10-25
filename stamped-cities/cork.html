@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cork"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "crk-01", "name": "Saint Fin Barre's Cathedral", "lat": 51.8944, "lng": -8.4806, "subtitle": "1879 · William Burges"}, {"id": "crk-02", "name": "Apple European Headquarters", "lat": 51.9055706, "lng": -8.5142723, "subtitle": "1980 · Bennett (Original) / Foster + Partners (Expansion)"}, {"id": "crk-03", "name": "Shandon Bells (St. Anne's Church)", "lat": 51.9032598, "lng": -8.4772695, "subtitle": "1722"}, {"id": "crk-04", "name": "Cork City Hall", "lat": 51.8947946, "lng": -8.4649477, "subtitle": "1936 · Jones and Kelly"}, {"id": "crk-05", "name": "The Elysian", "lat": 51.8968176, "lng": -8.4643666, "subtitle": "2008 · Wilson Architecture"}, {"id": "crk-06", "name": "University College Cork (Main Quad)", "lat": 51.89291, "lng": -8.49289, "subtitle": "1849 · Sir Thomas Deane"}, {"id": "crk-07", "name": "Blackrock Castle Observatory", "lat": 51.8970201, "lng": -8.3967546, "subtitle": "1829 · James and George Richard Pain"}, {"id": "crk-08", "name": "The English Market", "lat": 51.8969222, "lng": -8.4730178, "subtitle": "1788 · Sir John Benson"}, {"id": "crk-09", "name": "Elizabeth Fort", "lat": 51.8928859, "lng": -8.4798599, "subtitle": "1601"}, {"id": "crk-10", "name": "Cork Opera House", "lat": 51.9003, "lng": -8.4726, "subtitle": "1965 · Scott Tallon Walker"}, {"id": "crk-11", "name": "Custom House (Port of Cork)", "lat": 51.8994865, "lng": -8.4632676, "subtitle": "1818 · Abraham Hargrave"}, {"id": "crk-12", "name": "Nano Nagle Place", "lat": 51.8933258, "lng": -8.4697514, "subtitle": "1771 · JCA Architects"}, {"id": "crk-13", "name": "Lewis Glucksman Gallery", "lat": 51.8947012, "lng": -8.4903105, "subtitle": "2004 · O'Donnell + Tuomey"}, {"id": "crk-apple-opera", "name": "Apple Opera Lane", "lat": 51.899045, "lng": -8.472567, "subtitle": "2009 · O'Muire Smyth Architects / Apple Retail Design"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

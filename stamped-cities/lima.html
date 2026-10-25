@@ -138,6 +138,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Lima"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "banco-de-la-nacion", "name": "Torre Banco de la Nación", "lat": -12.0872499, "lng": -76.9960806, "subtitle": "2015 · Arquitectonica (Bernardo Fort-Brescia)"}, {"id": "basilica-cathedral-lima", "name": "Cathedral of Lima", "lat": -12.04318, "lng": -77.02824, "subtitle": "1535 · Francisco Pizarro (Founding)"}, {"id": "ispace_jockey_plaza", "name": "iSpace Jockey Plaza (Apple Premium)", "lat": -12.0846676, "lng": -76.9784107, "subtitle": "2018 · N/A (Mall Flagship)"}, {"id": "convent-of-san-francisco", "name": "Convent of San Francisco", "lat": -12.0519212, "lng": -77.0325043, "subtitle": "1674 · Constantino de Vasconcellos"}, {"id": "utec-campus", "name": "UTEC Campus", "lat": -12.1351351, "lng": -77.0221296, "subtitle": "2015 · Grafton Architects"}, {"id": "palacio-de-gobierno", "name": "Government Palace", "lat": -12.04318, "lng": -77.02824, "subtitle": "1938 · Ricardo de Jaxa Malachowski"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -238,5 +253,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

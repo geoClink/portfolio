@@ -165,6 +165,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Dubai"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "dxb_burj_al_arab", "name": "Burj Al Arab", "lat": 25.1388612, "lng": 55.1898536, "subtitle": "1999 · Tom Wright"}, {"id": "dxb_museum_future", "name": "Museum of the Future", "lat": 25.2080852, "lng": 55.2741878, "subtitle": "2022 · Killa Design"}, {"id": "dxb_atlantis_royal", "name": "Atlantis The Royal", "lat": 25.138136, "lng": 55.127789, "subtitle": "2023 · Kohn Pedersen Fox (KPF)"}, {"id": "dxb_cayan_tower", "name": "Cayan Tower", "lat": 25.08525, "lng": 55.14646, "subtitle": "2013 · Skidmore, Owings & Merrill (SOM)"}, {"id": "dxb_dubai_frame", "name": "The Dubai Frame", "lat": 25.23548, "lng": 55.30034, "subtitle": "2018 · Fernando Donis"}, {"id": "dxb_jumeirah_emirates", "name": "Jumeirah Emirates Towers", "lat": 25.217222, "lng": 55.283056, "subtitle": "2000 · Hazel Wong"}, {"id": "dxb_opus", "name": "The Opus", "lat": 25.1886255, "lng": 55.2668535, "subtitle": "2019 · Zaha Hadid"}, {"id": "dxb_index_tower", "name": "The Index", "lat": 25.206914, "lng": 55.277894, "subtitle": "2010 · Foster + Partners"}, {"id": "dxb_etihad_museum", "name": "Etihad Museum", "lat": 25.23, "lng": 55.26, "subtitle": "2017 · Moriyama & Teshima"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -289,5 +304,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

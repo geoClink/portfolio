@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Tel Aviv"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "tlv_museum_art", "name": "Tel Aviv Museum of Art", "lat": 32.0775, "lng": 34.786667, "subtitle": "2011 · Preston Scott Cohen"}, {"id": "tlv_azrieli", "name": "Azrieli Center", "lat": 32.078307, "lng": 34.793389, "subtitle": "1999 · David Azrieli"}, {"id": "tlv_crazy_house", "name": "Crazy House", "lat": 32.070539, "lng": 34.7649717, "subtitle": "1985 · Leon Gaignebet"}, {"id": "tlv_shalom_meir", "name": "Shalom Meir Tower", "lat": 32.064019, "lng": 34.769772, "subtitle": "1965 · Yitzhak Pearlstein"}, {"id": "tlv_pagoda", "name": "Pagoda House", "lat": 32.0652948, "lng": 34.7772875, "subtitle": "1924 · Alexander Levy"}, {"id": "tlv_rubinsky", "name": "Rubinsky House", "lat": 32.0688378, "lng": 34.7751917, "subtitle": "1935 · Lucian Korngold"}, {"id": "tlv_opera_tower", "name": "Opera Tower", "lat": 32.0740078, "lng": 34.7652105, "subtitle": "1993 · Abraham Yasky"}, {"id": "tlv_great_synagogue", "name": "Great Synagogue", "lat": 32.0634816, "lng": 34.773166, "subtitle": "1926 · Yehuda Magidovitch"}, {"id": "tlv_habima", "name": "Habima National Theatre", "lat": 32.0731749, "lng": 34.7787175, "subtitle": "1945 · Ram Karmi"}, {"id": "tlv_design_museum", "name": "Design Museum Holon", "lat": 32.01034, "lng": 34.77918, "subtitle": "2010 · Ron Arad"}, {"id": "tlv_apple_sarona", "name": "Apple Azrieli Sarona", "lat": 32.078307, "lng": 34.793389, "subtitle": "2022 · Foster + Partners"}, {"id": "tlv_sarona_tower", "name": "Azrieli Sarona Tower", "lat": 32.078307, "lng": 34.793389, "subtitle": "2017 · Moshe Zur Architects"}, {"id": "tlv_town_hall", "name": "Tel Aviv City Hall", "lat": 32.0928536, "lng": 34.7832834, "subtitle": "1966 · Menahem Cohen"}, {"id": "tlv_center_bauhaus", "name": "The White City Center (Liebling Haus)", "lat": 32.0736642, "lng": 34.7674748, "subtitle": "1936 · Dov Karmi"}, {"id": "tlv_sourasky_library", "name": "Sourasky Central Library", "lat": 32.114314, "lng": 34.804353, "subtitle": "1968 · Shulamit Nadler"}, {"id": "tlv_independence_hall", "name": "Independence Hall (Dizengoff House)", "lat": 32.0627835, "lng": 34.7709248, "subtitle": "1910 · Carl Rubin (Renovation)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

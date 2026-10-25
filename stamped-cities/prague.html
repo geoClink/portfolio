@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Prague"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "dancing-house", "name": "Dancing House", "lat": 50.0755185, "lng": 14.4141995, "subtitle": "1996 · Frank Gehry / Vlado Milunić"}, {"id": "st-vitus-cathedral", "name": "St. Vitus Cathedral", "lat": 50.090833, "lng": 14.400556, "subtitle": "1344 · Matthias of Arras / Peter Parler"}, {"id": "charles-bridge", "name": "Charles Bridge", "lat": 50.0861526, "lng": 14.4137572, "subtitle": "1357 · Peter Parler"}, {"id": "house-of-the-black-madonna", "name": "House of the Black Madonna", "lat": 50.0869368, "lng": 14.4254679, "subtitle": "1912 · Josef Gočár"}, {"id": "zizkov-tv-tower", "name": "Žižkov Television Tower", "lat": 50.0810217, "lng": 14.4510584, "subtitle": "1992 · Václav Aulický"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

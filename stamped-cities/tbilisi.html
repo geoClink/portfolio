@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Tbilisi"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ge_narikala_fortress", "name": "Narikala Fortress", "lat": 41.6876, "lng": 44.8097, "subtitle": "350"}, {"id": "ge_metekhi_church", "name": "Metekhi Church", "lat": 41.6897, "lng": 44.8121, "subtitle": "1278"}, {"id": "ge_georgian_national_museum", "name": "Georgian National Museum", "lat": 41.6948, "lng": 44.7975, "subtitle": "1929"}, {"id": "ge_tbilisi_botanical_garden", "name": "Tbilisi Botanical Garden", "lat": 41.6799, "lng": 44.8101, "subtitle": "1650"}, {"id": "ge_holy_trinity_cathedral", "name": "Holy Trinity Cathedral of Tbilisi", "lat": 41.6948, "lng": 44.8104, "subtitle": "2004 · Archil Mindiashvili"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

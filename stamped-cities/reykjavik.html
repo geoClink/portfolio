@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Reykjavik"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "is_hallgrimskirkja", "name": "Hallgrímskirkja", "lat": 64.142, "lng": -21.9263, "subtitle": "1986 · Gudjon Samuelsson"}, {"id": "is_harpa_concert_hall", "name": "Harpa Concert Hall", "lat": 64.1499, "lng": -21.9305, "subtitle": "2011 · Henning Larsen Architects & Olafur Eliasson"}, {"id": "is_blue_lagoon_iceland", "name": "Blue Lagoon Iceland", "lat": 63.8799, "lng": -22.4503, "subtitle": "1981 · Sigridur Sigthórsson and others"}, {"id": "is_perlan", "name": "Perlan", "lat": 64.1278, "lng": -21.9099, "subtitle": "1991 · Ingimundur Sveinsson"}, {"id": "is_national_museum_iceland", "name": "National Museum of Iceland", "lat": 64.1394, "lng": -21.9497, "subtitle": "1950"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

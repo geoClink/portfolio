@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cape Town"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "zeitz-mocaa", "name": "Zeitz MOCAA", "lat": -33.9084, "lng": 18.423, "subtitle": "2017 · Thomas Heatherwick"}, {"id": "cape-town-city-hall", "name": "Cape Town City Hall", "lat": -33.9234248, "lng": 18.4217087, "subtitle": "1905 · Harry Austin Reid"}, {"id": "castle-of-good-hope", "name": "Castle of Good Hope", "lat": -33.9258, "lng": 18.4232, "subtitle": "1666 · Pieter Dombaer"}, {"id": "portside-tower", "name": "Portside Tower", "lat": -33.9170756, "lng": 18.4220748, "subtitle": "2014 · Louis Karol Architects / DHK"}, {"id": "groot-constantia-manor", "name": "Groot Constantia Manor House", "lat": -34.0250643, "lng": 18.4280242, "subtitle": "1685 · Simon van der Stel (Original)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

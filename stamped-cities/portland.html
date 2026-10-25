@@ -174,6 +174,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Portland"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "pdx_portland_building", "name": "The Portland Building", "lat": 45.5156671, "lng": -122.6786909, "subtitle": "1982 · Michael Graves"}, {"id": "pdx_pioneer_courthouse", "name": "Pioneer Courthouse", "lat": 45.5185852, "lng": -122.6783966, "subtitle": "1869 · Alfred B. Mullett"}, {"id": "pdx_big_pink", "name": "US Bancorp Tower (Big Pink)", "lat": 45.5226107, "lng": -122.6759928, "subtitle": "1983 · Skidmore, Owings & Merrill (SOM)"}, {"id": "pdx_wells_fargo", "name": "Wells Fargo Center", "lat": 45.5143403, "lng": -122.6793519, "subtitle": "1972 · Charles Luckman"}, {"id": "pdx_pae_living", "name": "PAE Living Building", "lat": 45.5213773, "lng": -122.6719868, "subtitle": "2021 · ZGF Architects"}, {"id": "pdx_union_station", "name": "Union Station", "lat": 45.5290114, "lng": -122.6767644, "subtitle": "1896 · Van Brunt & Howe"}, {"id": "pdx_commonwealth_building", "name": "The Commonwealth Building", "lat": 45.5207481, "lng": -122.6780804, "subtitle": "1948 · Pietro Belluschi"}, {"id": "pdx_moda_center", "name": "Moda Center", "lat": 45.53221, "lng": -122.667893, "subtitle": "1995 · Ellerbe Becket"}, {"id": "pdx_custom_house", "name": "Custom House", "lat": 45.5248246, "lng": -122.6779587, "subtitle": "1901 · James Knox Taylor"}, {"id": "pdx_tilikum_crossing", "name": "Tilikum Crossing", "lat": 45.5048878, "lng": -122.6670779, "subtitle": "2015 · Donald MacDonald"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -306,5 +321,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

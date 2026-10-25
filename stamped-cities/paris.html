@@ -174,11 +174,26 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Paris"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "paris-eiffel-tower", "name": "Eiffel Tower", "lat": 48.856463, "lng": 2.3061652, "subtitle": "1889 · Gustave Eiffel"}, {"id": "paris-louvre-pyramid", "name": "Louvre Museum (Pyramid)", "lat": 48.8624906, "lng": 2.3360431, "subtitle": "1989 · I.M. Pei"}, {"id": "paris-sacre-coeur", "name": "Sacré-Cœur Basilica", "lat": 48.8871066, "lng": 2.3434906, "subtitle": "1914 · Paul Abadie"}, {"id": "paris-arc-de-triomphe", "name": "Arc de Triomphe", "lat": 48.8737673, "lng": 2.2954441, "subtitle": "1836 · Jean Chalgrin"}, {"id": "paris-centre-pompidou", "name": "Centre Pompidou", "lat": 48.8607767, "lng": 2.3517736, "subtitle": "1977 · Renzo Piano & Richard Rogers"}, {"id": "paris-palais-garnier", "name": "Palais Garnier", "lat": 48.8709021, "lng": 2.332151, "subtitle": "1875 · Charles Garnier"}, {"id": "paris-pantheon", "name": "The Panthéon", "lat": 48.8464478, "lng": 2.3448919, "subtitle": "1790 · Jacques-Germain Soufflot"}, {"id": "paris-fondation-lv", "name": "Fondation Louis Vuitton", "lat": 48.87665, "lng": 2.2633381, "subtitle": "2014 · Frank Gehry"}, {"id": "paris-sainte-chapelle", "name": "Sainte-Chapelle", "lat": 48.8546638, "lng": 2.3449698, "subtitle": "1248 · Pierre de Montreuil"}, {"id": "paris-grande-arche", "name": "La Grande Arche", "lat": 48.8921627, "lng": 2.2380913, "subtitle": "1989 · Johan Otto von Spreckelsen"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
             <ul class="fact-grid">
-                <li><span class="fact-label">Fly into</span><strong>CDG (CDG)</strong><p>Charles de Gaulle&#x27;s circular Terminal 1 is a 1970s futuristic masterpiece featuring glass skywalks that criss-cross over a central atrium. The airport is a massive, self-contained city that even includes its own internal rail system to move passengers between its sprawling complexes.</p></li>
+                <li><span class="fact-label">Fly into</span><strong>CDG</strong><p>Charles de Gaulle&#x27;s circular Terminal 1 is a 1970s futuristic masterpiece featuring glass skywalks that criss-cross over a central atrium. The airport is a massive, self-contained city that even includes its own internal rail system to move passengers between its sprawling complexes.</p></li>
                 <li><span class="fact-label">Currency</span><strong>Euro (€)</strong></li>
                 <li><span class="fact-label">Language</span><strong>French</strong><p>French is the cherished language of the city, and social etiquette requires a polite &#x27;Bonjour&#x27; before starting any conversation. English is widely understood in hotels and restaurants, but making an effort with basic French phrases is highly appreciated.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>The Métro</strong><p>The Paris Métro is iconic for its Art Nouveau station entrances designed by the architect Hector Guimard. RER express trains provide faster, deeper connections between the city center and the outer suburbs like Versailles. The Batobus is a hop-on-hop-off water bus service that stops at major landmarks along the Seine.</p></li>
@@ -320,5 +335,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cleveland"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cle-01", "name": "Rock & Roll Hall of Fame", "lat": 41.508611, "lng": -81.695556, "subtitle": "1995 · I.M. Pei"}, {"id": "cle-02", "name": "Terminal Tower", "lat": 41.498333, "lng": -81.693889, "subtitle": "1930 · Graham, Anderson, Probst & White"}, {"id": "cle-03", "name": "The Arcade", "lat": 41.500332, "lng": -81.6903643, "subtitle": "1890 · John Eisenmann / George Smith"}, {"id": "cle-04", "name": "Guardian Building (668 Euclid)", "lat": 41.4991043, "lng": -81.688547, "subtitle": "1950 · Walker & Weeks"}, {"id": "cle-05", "name": "Peter B. Lewis Building", "lat": 41.5099683, "lng": -81.6079794, "subtitle": "2002 · Frank Gehry"}, {"id": "cle-06", "name": "Cleveland Museum of Art", "lat": 41.5090438, "lng": -81.6117367, "subtitle": "2012 · Rafael Viñoly"}, {"id": "cle-07", "name": "West Side Market", "lat": 41.4846588, "lng": -81.7029998, "subtitle": "1912 · Hubbell & Benes"}, {"id": "cle-08", "name": "Cleveland Trust Company Building", "lat": 41.500985, "lng": -81.6865215, "subtitle": "1908 · George B. Post"}, {"id": "cle-09", "name": "Key Tower", "lat": 41.501111, "lng": -81.693611, "subtitle": "1991 · César Pelli"}, {"id": "cle-10", "name": "Museum of Contemporary Art (MOCA)", "lat": 41.508845, "lng": -81.605129, "subtitle": "2012 · Farshid Moussavi"}, {"id": "cle-11", "name": "Apple Crocker Park", "lat": 41.4574755, "lng": -81.9520727, "subtitle": "2005 · Apple Inc. / Bohlin Cywinski Jackson"}, {"id": "cle-12", "name": "Cleveland Public Library (Main)", "lat": 41.5011744, "lng": -81.6918045, "subtitle": "1925 · Walker & Weeks"}, {"id": "cle-13", "name": "Severance Music Center", "lat": 41.5063871, "lng": -81.6093686, "subtitle": "1931 · Walker & Weeks"}, {"id": "cle-14", "name": "Old Federal Building & Post Office", "lat": 41.500219, "lng": -81.692802, "subtitle": "1910 · Arnold Brunner"}, {"id": "cle-15", "name": "Playhouse Square (State Theatre)", "lat": 41.5014734, "lng": -81.6808235, "subtitle": "1921 · Thomas W. Lamb"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

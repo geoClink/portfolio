@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Abu Dhabi"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "glbl_apple_al_maryah", "name": "Apple Al Maryah Island", "lat": 24.501449, "lng": 54.3890553, "subtitle": "2022 · Foster + Partners"}, {"id": "auh_sheikh_zayed_mosque", "name": "Sheikh Zayed Grand Mosque", "lat": 24.412, "lng": 54.474, "subtitle": "2007 · Yusef Abdelky"}, {"id": "auh_louvre_abudhabi", "name": "Louvre Abu Dhabi", "lat": 24.533, "lng": 54.40001, "subtitle": "2017 · Jean Nouvel"}, {"id": "auh_capital_gate", "name": "Capital Gate", "lat": 24.418637, "lng": 54.434692, "subtitle": "2011 · RMJM"}, {"id": "auh_aldar_hq", "name": "Aldar Headquarters", "lat": 24.4478529, "lng": 54.5963, "subtitle": "2010 · MZ Architects"}, {"id": "auh_emirates_palace", "name": "Emirates Palace", "lat": 24.4619, "lng": 54.3167, "subtitle": "2005 · John Elliott / WATG"}, {"id": "auh_etihad_towers", "name": "Etihad Towers (Tower 2)", "lat": 24.4650615, "lng": 54.32567, "subtitle": "2011 · DBI Design"}, {"id": "auh_yas_viceroy", "name": "W Abu Dhabi - Yas Island", "lat": 24.467402, "lng": 54.606059, "subtitle": "2009 · Asymptote Architecture"}, {"id": "auh_al_bahr_towers", "name": "Al Bahr Towers", "lat": 24.4561887, "lng": 54.4009387, "subtitle": "2012 · Aedas"}, {"id": "auh_qasr_al_hosn", "name": "Qasr Al Hosn", "lat": 24.4823376, "lng": 54.3552764, "subtitle": "1761 · Unknown (Restored by DCT)"}, {"id": "auh_abrahamic_family_house", "name": "Abrahamic Family House", "lat": 24.530933, "lng": 54.406101, "subtitle": "2023 · Sir David Adjaye"}, {"id": "auh_masdar_hq", "name": "Siemens Middle East HQ (Masdar City)", "lat": 24.4274827, "lng": 54.6234876, "subtitle": "2014 · Sheppard Robson"}, {"id": "auh_qasr_al_watan", "name": "Qasr Al Watan", "lat": 24.4621308, "lng": 54.3101907, "subtitle": "2017 · WATG / Jean-Michel Wilmotte"}, {"id": "auh_guggenheim", "name": "Guggenheim Abu Dhabi (Upcoming)", "lat": 24.539514, "lng": 54.398958, "subtitle": "2025 · Frank Gehry"}, {"id": "auh_warner_bros", "name": "Warner Bros. World Abu Dhabi", "lat": 24.486404, "lng": 54.6090712, "subtitle": "2018 · AECOM"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -174,6 +174,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Honolulu"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "hnl-01", "name": "ʻIolani Palace", "lat": 21.3068147, "lng": -157.8587655, "subtitle": "1882 · Thomas J. Baker"}, {"id": "hnl-02", "name": "Aliʻiōlani Hale", "lat": 21.3054007, "lng": -157.8600482, "subtitle": "1874 · Thomas J. Baker"}, {"id": "hnl-03", "name": "Aloha Tower", "lat": 21.3072529, "lng": -157.8640516, "subtitle": "1926 · Arthur Reynolds"}, {"id": "hnl-04", "name": "Hawaii State Capitol", "lat": 21.3073335, "lng": -157.8569903, "subtitle": "1969 · John Carl Warnecke"}, {"id": "hnl-05", "name": "First Hawaiian Center", "lat": 21.3078741, "lng": -157.8616424, "subtitle": "1996 · Kohn Pedersen Fox"}, {"id": "hnl-06", "name": "IBM Building", "lat": 21.2913423, "lng": -157.8493396, "subtitle": "1962 · Vladimir Ossipoff"}, {"id": "hnl-07", "name": "Hawaii Theatre", "lat": 21.3109813, "lng": -157.8612348, "subtitle": "1922 · Emory & Webb"}, {"id": "hnl-08", "name": "Alexander & Baldwin Building", "lat": 21.3079897, "lng": -157.8626737, "subtitle": "1929 · C.W. Dickey & Hart Wood"}, {"id": "hnl-09", "name": "Liljestrand House", "lat": 21.3241621, "lng": -157.8312814, "subtitle": "1952 · Vladimir Ossipoff"}, {"id": "hnl-10", "name": "Kawaiahaʻo Church", "lat": 21.3043456, "lng": -157.8578157, "subtitle": "1842 · Hiram Bingham"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -306,5 +321,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

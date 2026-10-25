@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Buffalo"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "buf_city_hall", "name": "Buffalo City Hall", "lat": 42.8867082, "lng": -78.879256, "subtitle": "1931 · Dietel, Wade & Jones"}, {"id": "buf_darwin_martin", "name": "Darwin D. Martin House", "lat": 42.9361233, "lng": -78.8480871, "subtitle": "1905 · Frank Lloyd Wright"}, {"id": "buf_guaranty_building", "name": "Guaranty Building", "lat": 42.8831811, "lng": -78.8767925, "subtitle": "1896 · Louis Sullivan & Dankmar Adler"}, {"id": "buf_richardson_olmsted", "name": "Richardson Olmsted Campus", "lat": 42.9278044, "lng": -78.882447, "subtitle": "1870 · Henry Hobson Richardson"}, {"id": "buf_albright_knox", "name": "Buffalo AKG Art Museum", "lat": 42.9322857, "lng": -78.8756377, "subtitle": "1905 · Edward B. Green / OMA"}, {"id": "buf_electric_tower", "name": "Electric Tower", "lat": 42.8881832, "lng": -78.872376, "subtitle": "1912 · Esenwein & Johnson"}, {"id": "buf_gold_dome", "name": "Buffalo Savings Bank (Gold Dome)", "lat": 42.8884035, "lng": -78.8734005, "subtitle": "1901 · Green & Wicks"}, {"id": "buf_grain_elevators", "name": "Concrete Central Grain Elevator", "lat": 42.8574845, "lng": -78.869203, "subtitle": "1917 · Wheeler & Case"}, {"id": "buf_kleinhans", "name": "Kleinhans Music Hall", "lat": 42.9029244, "lng": -78.8816923, "subtitle": "1940 · Eliel & Eero Saarinen"}, {"id": "buf_st_louis", "name": "St. Louis Roman Catholic Church", "lat": 42.8956242, "lng": -78.8718674, "subtitle": "1889 · Schickel & Ditmars"}, {"id": "buf_apple_walden_galleria", "name": "Apple Walden Galleria", "lat": 42.913815, "lng": -78.7628999, "subtitle": "2000 · Apple Architecture / Bohlin Cywinski Jackson"}, {"id": "buf_old_post_office", "name": "Old Post Office (ECC City Campus)", "lat": 42.8817738, "lng": -78.8725853, "subtitle": "1901 · Jeremiah O'Rourke"}, {"id": "buf_seneca_one", "name": "Seneca One Tower", "lat": 42.8795322, "lng": -78.8759022, "subtitle": "1972 · Skidmore, Owings & Merrill (SOM)"}, {"id": "buf_statler_city", "name": "Statler City", "lat": 42.8874079, "lng": -78.8769715, "subtitle": "1923 · George B. Post & Sons"}, {"id": "buf_darwin_martin_gardners", "name": "Gardner's Cottage (Martin House Complex)", "lat": 42.936585, "lng": -78.8477754, "subtitle": "1908 · Frank Lloyd Wright"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

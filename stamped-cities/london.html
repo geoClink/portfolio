@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in London"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "the-shard", "name": "The Shard", "lat": 51.5043655, "lng": -0.0864741, "subtitle": "2012 · Renzo Piano"}, {"id": "st-pauls-cathedral", "name": "St. Paul's Cathedral", "lat": 51.5142205, "lng": -0.0986513, "subtitle": "1710 · Christopher Wren"}, {"id": "the-gherkin", "name": "The Gherkin", "lat": 51.514497, "lng": -0.0803325, "subtitle": "2004 · Norman Foster"}, {"id": "tower-of-london", "name": "Tower of London", "lat": 51.5101234, "lng": -0.0769284, "subtitle": "1078 · Gundulf of Rochester"}, {"id": "palace-of-westminster", "name": "Palace of Westminster", "lat": 51.5004439, "lng": -0.1265398, "subtitle": "1859 · Charles Barry & Augustus Pugin"}, {"id": "lloyds-building", "name": "Lloyd's Building", "lat": 51.5129645, "lng": -0.0824073, "subtitle": "1986 · Richard Rogers"}, {"id": "walkie-talkie", "name": "The Walkie Talkie", "lat": 51.51127, "lng": -0.0835396, "subtitle": "2014 · Rafael Viñoly"}, {"id": "battersea-power-station", "name": "Battersea Power Station", "lat": 51.4817519, "lng": -0.1460471, "subtitle": "1941 · Giles Gilbert Scott"}, {"id": "tate-modern", "name": "Tate Modern", "lat": 51.508176, "lng": -0.0991338, "subtitle": "2000 · Herzog & de Meuron"}, {"id": "natural-history-museum", "name": "Natural History Museum", "lat": 51.4949176, "lng": -0.1848924, "subtitle": "1881 · Alfred Waterhouse"}, {"id": "apple-battersea", "name": "Apple London Headquarters", "lat": 51.4810677, "lng": -0.1406001, "subtitle": "2023 · Foster + Partners"}, {"id": "the-barbican", "name": "The Barbican Centre", "lat": 51.5207582, "lng": -0.092396, "subtitle": "1982 · Chamberlin, Powell and Bon"}, {"id": "buckingham-palace", "name": "Buckingham Palace", "lat": 51.5008349, "lng": -0.1430045, "subtitle": "1837 · John Nash / Sir Aston Webb"}, {"id": "apple-regent-street", "name": "Apple Regent Street", "lat": 51.5142744, "lng": -0.1421067, "subtitle": "2016 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

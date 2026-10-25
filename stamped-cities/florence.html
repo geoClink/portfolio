@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Florence"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "florence-cathedral", "name": "Florence Cathedral", "lat": 43.7731, "lng": 11.256, "subtitle": "1436 · Arnolfo di Cambio, Filippo Brunelleschi"}, {"id": "florence-uffizi", "name": "Uffizi", "lat": 43.7678, "lng": 11.2553, "subtitle": "1581 · Giorgio Vasari"}, {"id": "florence-ponte-vecchio", "name": "Ponte Vecchio", "lat": 43.7679, "lng": 11.2531, "subtitle": "1345 · Taddeo Gaddi (attributed)"}, {"id": "florence-palazzo-vecchio", "name": "Palazzo Vecchio", "lat": 43.7694, "lng": 11.2558, "subtitle": "1299 · Arnolfo di Cambio"}, {"id": "florence-santa-croce", "name": "Basilica of Santa Croce, Florence", "lat": 43.7686, "lng": 11.2627, "subtitle": "1385 · Arnolfo di Cambio"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

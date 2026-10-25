@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Fukuoka"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "jp_fukuoka_castle", "name": "Fukuoka Castle", "lat": 33.5872, "lng": 130.3965, "subtitle": "1607 · Kuroda Nagamasa"}, {"id": "jp_kushida_shrine", "name": "Kushida Shrine", "lat": 33.5997, "lng": 130.412, "subtitle": "757"}, {"id": "jp_canal_city_hakata", "name": "Canal City Hakata", "lat": 33.59, "lng": 130.4124, "subtitle": "1996 · Jon Jerde"}, {"id": "jp_dazaifu_tenmangu", "name": "Dazaifu Tenman-gū", "lat": 33.5198, "lng": 130.5343, "subtitle": "919"}, {"id": "jp_ohori_park", "name": "Ohori Park", "lat": 33.5891, "lng": 130.3835, "subtitle": "1929"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

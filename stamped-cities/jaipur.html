@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Jaipur"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "in_hawa_mahal", "name": "Hawa Mahal", "lat": 26.9239, "lng": 75.8267, "subtitle": "1799 · Lal Chand Ustad"}, {"id": "in_amber_fort", "name": "Amber Fort", "lat": 26.9855, "lng": 75.8513, "subtitle": "1592 · Raja Man Singh I"}, {"id": "in_city_palace_jaipur", "name": "City Palace, Jaipur", "lat": 26.9258, "lng": 75.8237, "subtitle": "1729 · Vidyadhar Bhattacharya"}, {"id": "in_jantar_mantar_jaipur", "name": "Jantar Mantar, Jaipur", "lat": 26.9248, "lng": 75.8245, "subtitle": "1735 · Maharaja Jai Singh II"}, {"id": "in_nahargarh_fort", "name": "Nahargarh Fort", "lat": 26.9396, "lng": 75.8069, "subtitle": "1734 · Maharaja Sawai Jai Singh II"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

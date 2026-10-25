@@ -156,6 +156,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Marrakech"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "koutoubia-mosque", "name": "Koutoubia Mosque", "lat": 31.624124, "lng": -7.993541, "subtitle": "1199 · Almohad Dynasty"}, {"id": "yves-saint-laurent-museum", "name": "Musée Yves Saint Laurent", "lat": 31.6412481, "lng": -8.0020919, "subtitle": "2017 · Studio KO"}, {"id": "bahia-palace", "name": "Bahia Palace", "lat": 31.6205, "lng": -7.98466, "subtitle": "1860 · Si Moussa / Ba Ahmed"}, {"id": "ben-youssef-madrasa", "name": "Ben Youssef Madrasa", "lat": 31.6317026, "lng": -7.9867621, "subtitle": "1564 · Sultan Abdallah al-Ghalib"}, {"id": "el-badi-palace", "name": "El Badi Palace", "lat": 31.6205, "lng": -7.98466, "subtitle": "1578 · Ahmad al-Mansur"}, {"id": "royal-mansour", "name": "Royal Mansour Marrakech", "lat": 31.6244887, "lng": -8.0000969, "subtitle": "2010 · OBMI / 3bis"}, {"id": "saadian-tombs", "name": "Saadian Tombs", "lat": 31.6232198, "lng": -7.9890269, "subtitle": "1557 · Sultan Ahmad al-Mansur"}, {"id": "dar-si-said", "name": "Dar Si Said Museum", "lat": 31.623333, "lng": -7.983806, "subtitle": "1894 · Si Sa'id ibn Musa"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -272,5 +287,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

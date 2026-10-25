@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Minnesota"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "msp-01", "name": "IDS Center", "lat": 44.9759741, "lng": -93.2723214, "subtitle": "1972 · Philip Johnson / John Burgee"}, {"id": "msp-02", "name": "Foshay Tower", "lat": 44.9750045, "lng": -93.2718287, "subtitle": "1929 · Leon Eugene Arnal"}, {"id": "msp-03", "name": "Cathedral of Saint Paul", "lat": 44.9469589, "lng": -93.1092362, "subtitle": "1915 · Emmanuel Louis Masqueray"}, {"id": "msp-04", "name": "Guthrie Theater", "lat": 44.9782261, "lng": -93.2555176, "subtitle": "2006 · Jean Nouvel"}, {"id": "msp-05", "name": "Weisman Art Museum", "lat": 44.9770036, "lng": -93.2384011, "subtitle": "1993 · Frank Gehry"}, {"id": "msp-06", "name": "Minnesota State Capitol", "lat": 44.916165, "lng": -93.187377, "subtitle": "1905 · Cass Gilbert"}, {"id": "msp-07", "name": "Mill City Museum", "lat": 44.9788405, "lng": -93.2571837, "subtitle": "2003 · Meyer, Scherer & Rockcastle"}, {"id": "msp-08", "name": "Landmark Center", "lat": 44.9456587, "lng": -93.0971312, "subtitle": "1902 · Willoughby J. Edbrooke"}, {"id": "msp-09", "name": "U.S. Bank Stadium", "lat": 44.9736155, "lng": -93.2574663, "subtitle": "2016 · HKS, Inc."}, {"id": "msp-10", "name": "James J. Hill House", "lat": 44.945101, "lng": -93.1089265, "subtitle": "1891 · Peabody & Stearns"}, {"id": "msp-11", "name": "Mall of America", "lat": 44.8550204, "lng": -93.2421195, "subtitle": "1992 · Jerde Partnership"}, {"id": "msp-13", "name": "Basilica of Saint Mary", "lat": 44.9729824, "lng": -93.2862811, "subtitle": "1914 · Emmanuel Louis Masqueray"}, {"id": "msp-14", "name": "Riverside Plaza", "lat": 44.970496, "lng": -93.248033, "subtitle": "1973 · Ralph Rapson"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

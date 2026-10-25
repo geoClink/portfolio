@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Tokyo"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "tokyo-skytree", "name": "Tokyo Skytree", "lat": 35.7117, "lng": 139.8162, "subtitle": "2012 · Nikken Sekkei"}, {"id": "cocoon-tower", "name": "Mode Gakuen Cocoon Tower", "lat": 35.6914, "lng": 139.6932, "subtitle": "2008 · Tange Associates"}, {"id": "glbl_apple_marunouchi", "name": "Apple Marunouchi", "lat": 35.6802, "lng": 139.7642, "subtitle": "2019 · Foster + Partners"}, {"id": "tokyo-station", "name": "Tokyo Station (Marunouchi)", "lat": 35.6802, "lng": 139.7642, "subtitle": "1914 · Tatsuno Kingo"}, {"id": "sensoji-temple", "name": "Sensō-ji Temple (Main Hall)", "lat": 35.7167, "lng": 139.7966, "subtitle": "645 · Traditional / Reconstruction"}, {"id": "tokyo-tower", "name": "Tokyo Tower", "lat": 35.6576, "lng": 139.7499, "subtitle": "1958 · Tachu Naito"}, {"id": "nakagin-capsule", "name": "Nakagin Capsule Tower (Legacy)", "lat": 35.6706, "lng": 139.7649, "subtitle": "1972 · Kisho Kurokawa"}, {"id": "tokyo-gov-building", "name": "Tokyo Metropolitan Government Building", "lat": 35.68802, "lng": 139.68897, "subtitle": "1991 · Kenzo Tange"}, {"id": "prada-aoyama", "name": "Prada Aoyama", "lat": 35.6657, "lng": 139.7178, "subtitle": "2003 · Herzog & de Meuron"}, {"id": "shibuya-scramble", "name": "Shibuya Scramble Square", "lat": 35.6593, "lng": 139.7054, "subtitle": "2019 · Nikken Sekkei"}, {"id": "fuji-tv-building", "name": "Fuji TV Building", "lat": 35.6288, "lng": 139.7757, "subtitle": "1996 · Kenzo Tange"}, {"id": "apple-japan-hq", "name": "Apple Japan Headquarters (Roppongi Hills Mori Tower)", "lat": 35.660556, "lng": 139.729167, "subtitle": "2003 · Kohn Pedersen Fox (KPF)"}, {"id": "yoyogi-gymnasium", "name": "Yoyogi National Gymnasium", "lat": 35.6633, "lng": 139.7004, "subtitle": "1964 · Kenzo Tange"}, {"id": "nmwa-ueno", "name": "National Museum of Western Art", "lat": 35.7164, "lng": 139.775, "subtitle": "1959 · Le Corbusier"}, {"id": "meiji-jingu", "name": "Meiji Jingu Shrine", "lat": 35.65835, "lng": 139.702, "subtitle": "1920 · Chuta Ito"}, {"id": "glbl_apple_ginza", "name": "Apple Ginza", "lat": 35.6706, "lng": 139.7649, "subtitle": "2022 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

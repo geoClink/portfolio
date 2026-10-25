@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Rio de Janeiro"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "rio-christ-redeemer", "name": "Christ the Redeemer", "lat": -22.951944, "lng": -43.210556, "subtitle": "1931 · Heitor da Silva Costa / Paul Landowski"}, {"id": "rio-museum-tomorrow", "name": "Museum of Tomorrow (Museu do Amanhã)", "lat": -22.8940683, "lng": -43.1794045, "subtitle": "2015 · Santiago Calatrava"}, {"id": "rio-mac-niteroi", "name": "Niteroi Contemporary Art Museum (MAC)", "lat": -22.9071493, "lng": -43.1267374, "subtitle": "1996 · Oscar Niemeyer"}, {"id": "rio-cathedral", "name": "Metropolitan Cathedral of Saint Sebastian", "lat": -22.9107983, "lng": -43.1806914, "subtitle": "1979 · Edgar de Oliveira da Fonseca"}, {"id": "rio-portuguese-cabinet", "name": "Royal Portuguese Cabinet of Reading", "lat": -22.9053692, "lng": -43.1822094, "subtitle": "1887 · Rafael da Silva e Castro"}, {"id": "rio-maracana", "name": "Maracanã Stadium", "lat": -22.9103669, "lng": -43.2310661, "subtitle": "1950 · Waldir Ramos / Miguel Feldman"}, {"id": "rio-copacabana-palace", "name": "Copacabana Palace", "lat": -22.9670133, "lng": -43.1791849, "subtitle": "1923 · Joseph Gire"}, {"id": "rio-teatro-municipal", "name": "Municipal Theatre", "lat": -22.9094974, "lng": -43.1763519, "subtitle": "1909 · Francisco de Oliveira Passos"}, {"id": "rio-capanema", "name": "Gustavo Capanema Palace", "lat": -22.9089442, "lng": -43.1733643, "subtitle": "1943 · Lúcio Costa / Le Corbusier (Consultant)"}, {"id": "rio-parque-lage", "name": "Parque Lage (School of Visual Arts)", "lat": -22.9600305, "lng": -43.2120378, "subtitle": "1920 · Mario Vodret"}, {"id": "rio-mam", "name": "Museum of Modern Art (MAM Rio)", "lat": -22.9139951, "lng": -43.1728309, "subtitle": "1954 · Affonso Eduardo Reidy"}, {"id": "rio-ilha-fiscal", "name": "Ilha Fiscal", "lat": -22.896944, "lng": -43.166389, "subtitle": "1889 · Adolfo José del Vecchio"}, {"id": "rio-apple-villagemall", "name": "Apple VillageMall", "lat": -22.9982714, "lng": -43.3502606, "subtitle": "2014 · Apple Retail Design / Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

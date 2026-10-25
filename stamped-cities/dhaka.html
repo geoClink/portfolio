@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Dhaka"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bd_jatiya_sangsad", "name": "Jatiya Sangsad Bhaban", "lat": 23.7628, "lng": 90.3776, "subtitle": "1982 · Louis I. Kahn"}, {"id": "bd_lalbagh_fort", "name": "Lalbagh Fort", "lat": 23.7191, "lng": 90.3878, "subtitle": "1678 · Prince Azam Shah / Mughal architects"}, {"id": "bd_ahsan_manzil", "name": "Ahsan Manzil", "lat": 23.7095, "lng": 90.4004, "subtitle": "1872 · Unknown (commissioned by Nawab Abdul Ghani)"}, {"id": "bd_star_mosque", "name": "Star Mosque", "lat": 23.7225, "lng": 90.4065, "subtitle": "1726 · Unknown / folk craftsmen (renovation 1926)"}, {"id": "bd_shaheed_minar", "name": "Shaheed Minar", "lat": 23.7326, "lng": 90.3944, "subtitle": "1963 · Hamidur Rahman"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

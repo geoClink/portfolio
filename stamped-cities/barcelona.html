@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Barcelona"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bcn_sagrada_familia", "name": "Sagrada Família", "lat": 41.4035046, "lng": 2.1744283, "subtitle": "1882 · Antoni Gaudí"}, {"id": "bcn_casa_batllo", "name": "Casa Batlló", "lat": 41.3915446, "lng": 2.1646961, "subtitle": "1906 · Antoni Gaudí"}, {"id": "bcn_casa_mila", "name": "Casa Milà (La Pedrera)", "lat": 41.3952564, "lng": 2.1615724, "subtitle": "1912 · Antoni Gaudí"}, {"id": "bcn_pabellon", "name": "Barcelona Pavilion", "lat": 41.370556, "lng": 2.15, "subtitle": "1929 · Ludwig Mies van der Rohe"}, {"id": "bcn_palau_musica", "name": "Palau de la Música Catalana", "lat": 41.3875, "lng": 2.175556, "subtitle": "1908 · Lluís Domènech i Montaner"}, {"id": "bcn_agbar", "name": "Torre Glòries (Agbar Tower)", "lat": 41.4038823, "lng": 2.1898615, "subtitle": "2005 · Jean Nouvel"}, {"id": "bcn_macba", "name": "MACBA", "lat": 41.3827586, "lng": 2.1670687, "subtitle": "1995 · Richard Meier"}, {"id": "bcn_mercado", "name": "Mercat de Santa Caterina", "lat": 41.3863594, "lng": 2.1781611, "subtitle": "2005 · Enric Miralles"}, {"id": "bcn_forum", "name": "Edifici Fòrum", "lat": 41.4103918, "lng": 2.2203082, "subtitle": "2004 · Herzog & de Meuron"}, {"id": "bcn_walden7", "name": "Walden 7", "lat": 41.3799446, "lng": 2.0678506, "subtitle": "1975 · Ricardo Bofill"}, {"id": "bcn_apple_gracia", "name": "Apple Passeig de Gràcia", "lat": 41.3879538, "lng": 2.169488, "subtitle": "1890 · Foster + Partners"}, {"id": "bcn_catedral", "name": "Barcelona Cathedral", "lat": 41.383889, "lng": 2.176389, "subtitle": "1448 · Josep Oriol Mestres"}, {"id": "bcn_hotel_arts", "name": "Hotel Arts Barcelona", "lat": 41.3870828, "lng": 2.1965607, "subtitle": "1992 · Skidmore, Owings & Merrill (SOM)"}, {"id": "bcn_hospital_sant_pau", "name": "Hospital de Sant Pau", "lat": 41.4126653, "lng": 2.1743359, "subtitle": "1930 · Lluís Domènech i Montaner"}, {"id": "bcn_torre_communications", "name": "Montjuïc Communications Tower", "lat": 41.3648819, "lng": 2.1490715, "subtitle": "1992 · Santiago Calatrava"}, {"id": "bcn_santa_maria_mar", "name": "Santa Maria del Mar", "lat": 41.3835104, "lng": 2.1817923, "subtitle": "1383 · Berenguer de Montagut"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

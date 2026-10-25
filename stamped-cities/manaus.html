@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Manaus"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "mao-amazon-theatre", "name": "Amazon Theatre (Teatro Amazonas)", "lat": -3.130278, "lng": -60.023333, "subtitle": "1896 · Celestial Sacardim"}, {"id": "mao-rio-negro-palace", "name": "Palácio Rio Negro", "lat": -3.1350552, "lng": -60.0167709, "subtitle": "1903 · Gustavo Ernesto Doerner"}, {"id": "mao-adolpho-lisboa", "name": "Mercado Municipal Adolpho Lisboa", "lat": -3.1411048, "lng": -60.0199113, "subtitle": "1883 · Gustave Eiffel (Design inspiration)"}, {"id": "mao-custom-house", "name": "Custom House (Alfandega de Manaus)", "lat": -3.137786, "lng": -60.0247438, "subtitle": "1902 · British Engineering Team"}, {"id": "mao-fas", "name": "Amazonas Sustainable Foundation (FAS)", "lat": -3.10194, "lng": -60.025, "subtitle": "2008 · Local Sustainable Design Group"}, {"id": "mao-palacete-provincial", "name": "Palacete Provincial", "lat": -3.135554, "lng": -60.021043, "subtitle": "1875 · Unknown (Military Engineers)"}, {"id": "mao-rio-negro-bridge", "name": "Ponte Rio Negro", "lat": -3.121944, "lng": -60.079444, "subtitle": "2011 · Project by Camargo Corrêa"}, {"id": "mao-arena-amazonia", "name": "Arena da Amazônia", "lat": -3.0836426, "lng": -60.0266724, "subtitle": "2014 · gmp Architekten"}, {"id": "mao-justice-palace", "name": "Palace of Justice", "lat": -3.134384, "lng": -60.024135, "subtitle": "1900 · José de Magalhães"}, {"id": "mao-musa-tower", "name": "MUSA Observation Tower", "lat": -3.0096285, "lng": -59.9507856, "subtitle": "2014 · Local Forest Engineers"}, {"id": "mao-floating-harbor", "name": "Manaus Floating Harbor (Roadway)", "lat": -3.137786, "lng": -60.0247438, "subtitle": "1902 · English Engineering (B.H. Moore)"}, {"id": "mao-cigs-center", "name": "CIGS Jungle Warfare Center", "lat": -3.095461, "lng": -60.0512741, "subtitle": "1964 · Brazilian Military Engineers"}, {"id": "mao-apple-manauara", "name": "iPlace Apple Premium Partner (Manauara Shopping)", "lat": -3.1041306, "lng": -60.0113529, "subtitle": "2022 · iPlace Design / Apple Retail Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

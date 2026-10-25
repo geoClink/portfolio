@@ -190,7 +190,7 @@ FOOT = """
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
-</body>
+{scripts}</body>
 </html>
 """
 
@@ -283,10 +283,35 @@ def city_page(city, landmarks, details, siblings, photos):
     </section>
 """)
 
+    # Live Apple Map with Look Around (filled in by map.js; stays hidden without a token or if MapKit fails)
+    pins = [l for l in landmarks if isinstance(l.get("latitude"), (int, float)) and isinstance(l.get("longitude"), (int, float))]
+    if pins:
+        map_data = {"landmarks": [
+            {"id": l["id"], "name": l["name"], "lat": l["latitude"], "lng": l["longitude"],
+             "subtitle": " · ".join(x for x in [year_label(l["yearBuilt"]), str(l["architect"]) if known(l.get("architect")) else ""] if x)}
+            for l in pins]}
+        out.append(f"""
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in {e(city)}"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{json.dumps(map_data, ensure_ascii=False).replace("</", "<\\/")}</script>
+    </section>
+""")
+
     # Arrival facts
     facts = []
     if known(details.get("airportName")):
-        code = f" ({e(details['airportCode'])})" if known(details.get("airportCode")) else ""
+        code = details.get("airportCode")
+        code = f" ({e(code)})" if known(code) and code.strip() != details["airportName"].strip() else ""
         facts.append(("Fly into", e(details["airportName"]) + code, details.get("airportInfo")))
     if known(details.get("currencyInfo")):
         facts.append(("Currency", e(details["currencyInfo"]), None))
@@ -382,6 +407,7 @@ def city_page(city, landmarks, details, siblings, photos):
 """)
 
     out.append(FOOT.format(
+        scripts='    <script src="map-token.js"></script>\n    <script src="map.js"></script>\n' if pins else "",
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} in Stamped!" if n > 1 else "Stamp it in Stamped!",
         cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone and iPad."))
@@ -421,7 +447,7 @@ def index_page(by_continent, counts):
         </div>
     </section>
 """)
-    out.append(FOOT.format(app_store=APP_STORE, cta_title="Your passport is waiting.",
+    out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Your passport is waiting.",
                            cta_text="Fly through all 140 cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone and iPad."))
     return "".join(out)
 

@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Austin"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "atx-01", "name": "Texas State Capitol", "lat": 30.276485, "lng": -97.739768, "subtitle": "1888 · Elijah E. Myers"}, {"id": "atx-02", "name": "The Frost Bank Tower", "lat": 30.266401, "lng": -97.743028, "subtitle": "2004 · Duda/Paine Architects"}, {"id": "atx-03", "name": "The Independent", "lat": 30.2678018, "lng": -97.7511675, "subtitle": "2019 · Rhode Partners"}, {"id": "atx-04", "name": "Apple NW Austin Campus (Capstone)", "lat": 30.4757353, "lng": -97.7646542, "subtitle": "2022 · HKS Architects"}, {"id": "atx-05", "name": "UT Tower (Main Building)", "lat": 30.2860708, "lng": -97.7393521, "subtitle": "1937 · Paul Philippe Cret"}, {"id": "atx-06", "name": "Austin Central Library", "lat": 30.2660164, "lng": -97.7517064, "subtitle": "2017 · Lake Flato"}, {"id": "atx-07", "name": "The Driskill Hotel", "lat": 30.2681379, "lng": -97.7417071, "subtitle": "1886 · Jasper N. Preston"}, {"id": "atx-08", "name": "Austin City Hall", "lat": 30.2648968, "lng": -97.7469115, "subtitle": "2004 · Antoine Predock"}, {"id": "atx-09", "name": "St. Mary's Cathedral", "lat": 30.2710812, "lng": -97.7400069, "subtitle": "1874 · Nicholas J. Clayton"}, {"id": "atx-10", "name": "Fairmont Austin", "lat": 30.2620509, "lng": -97.738249, "subtitle": "2018 · Gensler"}, {"id": "atx-11", "name": "The Moody Center", "lat": 30.2809367, "lng": -97.7306522, "subtitle": "2022 · Gensler"}, {"id": "atx-12", "name": "Waterline", "lat": 30.2608346, "lng": -97.7395417, "subtitle": "2026 · Kohn Pedersen Fox (KPF)"}, {"id": "atx-13", "name": "COTA Observation Tower", "lat": 30.135635, "lng": -97.644044, "subtitle": "2012 · Miró Rivera Architects"}, {"id": "atx-14", "name": "Sixth and Guadalupe", "lat": 30.2696543, "lng": -97.7466546, "subtitle": "2024 · Gensler"}, {"id": "atx-apple-domain", "name": "Apple Domain NORTHSIDE", "lat": 30.4015968, "lng": -97.7269361, "subtitle": "2016 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

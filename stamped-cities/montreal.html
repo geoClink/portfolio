@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Montreal"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "montreal_mont_royal", "name": "Mount Royal Park", "lat": 45.502105, "lng": -73.594411, "subtitle": "1876 · Frederick Law Olmsted"}, {"id": "notre-dame-basilica", "name": "Notre-Dame Basilica", "lat": 45.504444, "lng": -73.556111, "subtitle": "1829 · James O'Donnell"}, {"id": "montreal_schwartzs_deli", "name": "Schwartz’s Deli", "lat": 45.5163277, "lng": -73.5776499, "subtitle": "1928"}, {"id": "habitat-67", "name": "Habitat 67", "lat": 45.4998761, "lng": -73.5437882, "subtitle": "1967 · Moshe Safdie"}, {"id": "olympic-stadium", "name": "Olympic Stadium", "lat": 45.5560792, "lng": -73.5504626, "subtitle": "1976 · Roger Taillibert"}, {"id": "sun-life-building", "name": "Sun Life Building", "lat": 45.501043, "lng": -73.570243, "subtitle": "1933 · Darling and Pearson"}, {"id": "place-ville-marie", "name": "Place Ville Marie", "lat": 45.5015847, "lng": -73.5686303, "subtitle": "1962 · I.M. Pei & Henry N. Cobb"}, {"id": "montreal-city-hall", "name": "Montreal City Hall", "lat": 45.5086, "lng": -73.5539, "subtitle": "1878 · Henri-Maurice Perrault"}, {"id": "the-biosphere", "name": "The Biosphere", "lat": 45.5141013, "lng": -73.53139, "subtitle": "1967 · Buckminster Fuller"}, {"id": "st-josephs-oratory", "name": "Saint Joseph's Oratory", "lat": 45.4837462, "lng": -73.628946, "subtitle": "1967 · Alphonse Venne / Dom Bellot"}, {"id": "marche-bonsecours", "name": "Marche Bonsecours", "lat": 45.508846, "lng": -73.551684, "subtitle": "1847 · William Footner"}, {"id": "1000-de-la-gauchetiere", "name": "1000 de La Gauchetiere", "lat": 45.4983565, "lng": -73.5665041, "subtitle": "1992 · Lemay & Associates"}, {"id": "montreal_cca", "name": "Canadian Centre for Architecture (CCA)", "lat": 45.491476, "lng": -73.578638, "subtitle": "1989 · Phyllis Lambert / Peter Rose"}, {"id": "montreal_orange_julep", "name": "Gibeau Orange Julep", "lat": 45.4957171, "lng": -73.6567848, "subtitle": "1966 · Hermas Gibeau"}, {"id": "montreal_apple_sainte_catherine", "name": "Apple Sainte-Catherine", "lat": 45.4893141, "lng": -73.5845122, "subtitle": "2008 · Apple Retail Design / BC2"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

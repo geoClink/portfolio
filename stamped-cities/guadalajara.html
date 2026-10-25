@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Guadalajara"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "mx_guadalajara_cathedral", "name": "Guadalajara Metropolitan Cathedral", "lat": 20.677, "lng": -103.3444, "subtitle": "1618 · Martin Casillas"}, {"id": "mx_hospicio_cabanas", "name": "Hospicio Cabañas", "lat": 20.6789, "lng": -103.339, "subtitle": "1810 · Manuel Tolsa"}, {"id": "mx_teatro_degollado", "name": "Teatro Degollado", "lat": 20.6762, "lng": -103.3447, "subtitle": "1866 · Jacobo Galvez"}, {"id": "mx_tlaquepaque", "name": "Tlaquepaque", "lat": 20.6395, "lng": -103.3092, "subtitle": "1650"}, {"id": "mx_barranca_huentitan", "name": "Barranca de Huentítán", "lat": 20.7219, "lng": -103.3416, "subtitle": "0 · Natural formation"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

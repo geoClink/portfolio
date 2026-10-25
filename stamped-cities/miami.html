@@ -192,6 +192,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Miami"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "mia-01", "name": "Freedom Tower", "lat": 25.780295, "lng": -80.18971, "subtitle": "1925 · Schultze & Weaver"}, {"id": "mia-02", "name": "One Thousand Museum", "lat": 25.7841908, "lng": -80.1901461, "subtitle": "2019 · Zaha Hadid"}, {"id": "mia-03", "name": "The Carlyle", "lat": 25.7838011, "lng": -80.1302747, "subtitle": "1939 · Kiehnel & Elliott"}, {"id": "mia-04", "name": "Vizcaya Museum & Gardens", "lat": 25.7443808, "lng": -80.2105015, "subtitle": "1916 · F. Burrall Hoffman"}, {"id": "mia-05", "name": "Pérez Art Museum Miami (PAMM)", "lat": 25.7860327, "lng": -80.1863392, "subtitle": "2013 · Herzog & de Meuron"}, {"id": "mia-06", "name": "Bacardi Building", "lat": 25.797257, "lng": -80.189149, "subtitle": "1963 · Enrique Gutierrez"}, {"id": "mia-07", "name": "Espirito Santo Plaza", "lat": 25.7605546, "lng": -80.1916886, "subtitle": "2004 · Kohn Pedersen Fox (KPF)"}, {"id": "mia-08", "name": "Biltmore Hotel", "lat": 25.7408959, "lng": -80.2777056, "subtitle": "1926 · Schultze & Weaver"}, {"id": "mia-09", "name": "Miami Beach Convention Center", "lat": 25.7955257, "lng": -80.133515, "subtitle": "2018 · Fentress Architects"}, {"id": "mia-10", "name": "Jade Signature", "lat": 25.9327098, "lng": -80.1211334, "subtitle": "2018 · Herzog & de Meuron"}, {"id": "mia_1111_lincoln", "name": "1111 Lincoln Road", "lat": 25.7907641, "lng": -80.1408191, "subtitle": "2010 · Herzog & de Meuron"}, {"id": "mia_apple_aventura", "name": "Apple Aventura", "lat": 25.9562444, "lng": -80.1396569, "subtitle": "2019 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -340,5 +355,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

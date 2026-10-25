@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Pittsburgh"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "pit-01", "name": "PPG Place", "lat": 40.4400104, "lng": -80.0037606, "subtitle": "1984 · Philip Johnson & John Burgee"}, {"id": "pit-02", "name": "Cathedral of Learning", "lat": 40.4441886, "lng": -79.9548591, "subtitle": "1934 · Charles Klauder"}, {"id": "pit-03", "name": "The Gulf Tower", "lat": 40.4426022, "lng": -79.995213, "subtitle": "1932 · Trowbridge & Livingston"}, {"id": "pit-04", "name": "Fallingwater", "lat": 39.90626, "lng": -79.46783, "subtitle": "1935 · Frank Lloyd Wright"}, {"id": "pit-05", "name": "Smithfield United Church", "lat": 40.44203, "lng": -79.9974788, "subtitle": "1926 · Henry Hornbostel"}, {"id": "pit-06", "name": "Union Trust Building", "lat": 40.4400734, "lng": -79.9965855, "subtitle": "1917 · Frederick J. Osterling"}, {"id": "pit-07", "name": "Alcoa Building", "lat": 40.4415091, "lng": -79.9967693, "subtitle": "1953 · Harrison & Abramovitz"}, {"id": "pit-08", "name": "The Tower at PNC Plaza", "lat": 40.440612, "lng": -80.000293, "subtitle": "2015 · Gensler"}, {"id": "pit-09", "name": "Allegheny County Courthouse", "lat": 40.4390325, "lng": -79.9972317, "subtitle": "1888 · H.H. Richardson"}, {"id": "pit-10", "name": "Heinz Hall", "lat": 40.442703, "lng": -80.001962, "subtitle": "1927 · Rapp & Rapp"}, {"id": "pit-11", "name": "Apple Shadyside", "lat": 40.4508561, "lng": -79.934531, "subtitle": "2025 · Bohlin Cywinski Jackson"}, {"id": "pit-12", "name": "U.S. Steel Tower", "lat": 40.4413073, "lng": -79.9945084, "subtitle": "1970 · Harrison & Abramovitz"}, {"id": "pit-13", "name": "Frick Building", "lat": 40.4391819, "lng": -79.997314, "subtitle": "1902 · Daniel Burnham"}, {"id": "pit-14", "name": "Benedum Center for the Performing Arts", "lat": 40.4430914, "lng": -79.9996284, "subtitle": "1928 · Hoffman-Henon"}, {"id": "pit-15", "name": "Koppers Building", "lat": 40.4421088, "lng": -79.9955426, "subtitle": "1929 · Graham, Anderson, Probst & White"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

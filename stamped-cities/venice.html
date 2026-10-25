@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Venice"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "venice-st-marks", "name": "St Mark's Basilica", "lat": 45.4341, "lng": 12.3397, "subtitle": "1094 · Various Byzantine architects"}, {"id": "venice-doges-palace", "name": "Doge's Palace", "lat": 45.4337, "lng": 12.3408, "subtitle": "1340 · Giovanni and Bartolomeo Bon"}, {"id": "venice-rialto-bridge", "name": "Rialto Bridge", "lat": 45.4381, "lng": 12.3358, "subtitle": "1591 · Antonio da Ponte"}, {"id": "venice-grand-canal", "name": "Grand Canal (Venice)", "lat": 45.4378, "lng": 12.3275, "subtitle": "1200 · Natural waterway / city planning"}, {"id": "venice-bridge-of-sighs", "name": "Bridge of Sighs", "lat": 45.4339, "lng": 12.3413, "subtitle": "1600 · Antonio Contino"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

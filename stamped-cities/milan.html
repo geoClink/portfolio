@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Milan"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "mil_duomo", "name": "Duomo di Milano", "lat": 45.4639102, "lng": 9.1906398, "subtitle": "1386 · Simone da Orsenigo"}, {"id": "mil_galleria", "name": "Galleria Vittorio Emanuele II", "lat": 45.4639102, "lng": 9.1906398, "subtitle": "1877 · Giuseppe Mengoni"}, {"id": "mil_bosco", "name": "Bosco Verticale", "lat": 45.4856052, "lng": 9.1908346, "subtitle": "2014 · Stefano Boeri"}, {"id": "mil_velasca", "name": "Torre Velasca", "lat": 45.4600514, "lng": 9.1904367, "subtitle": "1958 · BBPR"}, {"id": "mil_prada", "name": "Fondazione Prada", "lat": 45.4442572, "lng": 9.2053389, "subtitle": "2015 · Rem Koolhaas"}, {"id": "mil_pirelli", "name": "Pirelli Tower", "lat": 45.4849273, "lng": 9.2008316, "subtitle": "1958 · Gio Ponti"}, {"id": "mil_castello", "name": "Castello Sforzesco", "lat": 45.471037, "lng": 9.1811406, "subtitle": "1450 · Filarete"}, {"id": "mil_feltrinelli", "name": "Fondazione Feltrinelli", "lat": 45.4814162, "lng": 9.1843119, "subtitle": "2016 · Herzog & de Meuron"}, {"id": "mil_stazione", "name": "Milano Centrale", "lat": 45.4852065, "lng": 9.2052893, "subtitle": "1931 · Ulisse Stacchini"}, {"id": "mil_villa_necchi", "name": "Villa Necchi Campiglio", "lat": 45.4683, "lng": 9.2018, "subtitle": "1935 · Piero Portaluppi"}, {"id": "mil_apple_liberty", "name": "Apple Piazza Liberty", "lat": 45.4655046, "lng": 9.1942913, "subtitle": "2018 · Foster + Partners"}, {"id": "mil_unicredit", "name": "UniCredit Tower", "lat": 45.4834778, "lng": 9.1902248, "subtitle": "2012 · Cesar Pelli"}, {"id": "mil_triennale", "name": "Palazzo dell'Arte (Triennale)", "lat": 45.4721606, "lng": 9.1735004, "subtitle": "1933 · Giovanni Muzio"}, {"id": "mil_generali", "name": "Generali Tower (Lo Storto)", "lat": 45.4783108, "lng": 9.1570584, "subtitle": "2017 · Zaha Hadid"}, {"id": "mil_ca_brutta", "name": "Ca' Brütta", "lat": 45.47562, "lng": 9.1962699, "subtitle": "1922 · Giovanni Muzio"}, {"id": "mil_san_siro", "name": "San Siro Stadium", "lat": 45.478178, "lng": 9.1212742, "subtitle": "1926 · Ulisse Stacchini / Alberto Cugini"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

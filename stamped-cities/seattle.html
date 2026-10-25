@@ -183,6 +183,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Seattle"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "sea_space_needle", "name": "Space Needle", "lat": 47.6205131, "lng": -122.3493036, "subtitle": "1962 · Edward E. Carlson / John Graham"}, {"id": "sea_central_library", "name": "Seattle Central Library", "lat": 47.6067142, "lng": -122.3326983, "subtitle": "2004 · Rem Koolhaas (OMA)"}, {"id": "sea_amazon_spheres", "name": "The Spheres (Amazon HQ)", "lat": 47.6158629, "lng": -122.3390022, "subtitle": "2018 · NBBJ"}, {"id": "sea_mopop", "name": "Museum of Pop Culture (MoPOP)", "lat": 47.6214931, "lng": -122.3482253, "subtitle": "2000 · Frank Gehry"}, {"id": "sea_columbia_center", "name": "Columbia Center", "lat": 47.6045429, "lng": -122.3307181, "subtitle": "1985 · Chester L. Lindsey"}, {"id": "sea_rainier_tower", "name": "Rainier Tower", "lat": 47.6088172, "lng": -122.3343526, "subtitle": "1977 · Minoru Yamasaki"}, {"id": "sea_pike_place", "name": "Pike Place Market", "lat": 47.6087536, "lng": -122.3401999, "subtitle": "1907 · Frank Goodwin (Founder)"}, {"id": "sea_smith_tower", "name": "Smith Tower", "lat": 47.6020094, "lng": -122.3317853, "subtitle": "1914 · Gaggin & Gaggin"}, {"id": "sea_bullitt_center", "name": "Bullitt Center", "lat": 47.614394, "lng": -122.3124501, "subtitle": "2013 · Miller Hull Partnership"}, {"id": "sea_pacific_science_arches", "name": "Pacific Science Center (Arches)", "lat": 47.6194061, "lng": -122.350778, "subtitle": "1962 · Minoru Yamasaki"}, {"id": "sea_apple_u_village", "name": "Apple University Village", "lat": 47.6644178, "lng": -122.2988382, "subtitle": "2018 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -323,5 +338,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

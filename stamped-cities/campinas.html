@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Campinas"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cpq-sirius", "name": "Sirius (LNLS)", "lat": -22.807778, "lng": -47.0525, "subtitle": "2018 · Rafic Farah / Paulo Bruna"}, {"id": "cpq-mercado-municipal", "name": "Mercado Municipal", "lat": -22.903558, "lng": -47.063853, "subtitle": "1908 · Ramos de Azevedo"}, {"id": "cpq-torre-do-castelo", "name": "Torre do Castelo", "lat": -22.890066, "lng": -47.076873, "subtitle": "1940 · Vicente de Castro"}, {"id": "cpq-metropolitan-cathedral", "name": "Catedral Metropolitana", "lat": -22.90597, "lng": -47.060371, "subtitle": "1883 · Ramos de Azevedo"}, {"id": "cpq-estacao-cultura", "name": "Estação Cultura", "lat": -22.908612, "lng": -47.067431, "subtitle": "1872 · CPFE Engineers"}, {"id": "cpq-unicamp-library", "name": "Biblioteca Central Unicamp", "lat": -22.816336, "lng": -47.071528, "subtitle": "1989 · Lelé (João Filgueiras Lima)"}, {"id": "cpq-jockey-club", "name": "Jockey Club Campineiro", "lat": -22.90556, "lng": -47.06083, "subtitle": "1925 · Ramos de Azevedo"}, {"id": "cpq-brinco-de-ouro", "name": "Estádio Brinco de Ouro", "lat": -22.9095729, "lng": -47.0433697, "subtitle": "1953 · Ícaro de Castro Mello"}, {"id": "cpq-palacio-dos-jequitibas", "name": "Palácio dos Jequitibás", "lat": -22.9009117, "lng": -47.0572706, "subtitle": "1970 · Rubens G. Carneiro Vianna"}, {"id": "cpq-teatro-castro-mendes", "name": "Teatro Castro Mendes", "lat": -22.910975, "lng": -47.065292, "subtitle": "1970 · Unknown (Original) / City Engineers (Restoration)"}, {"id": "cpq-fazenda-santa-genebra", "name": "Mata de Santa Genebra Gatehouse", "lat": -22.822222, "lng": -47.111111, "subtitle": "1870 · Unknown (Colonial)"}, {"id": "cpq-galleria-shopping", "name": "Galleria Shopping Campinas", "lat": -22.863372, "lng": -47.023258, "subtitle": "1992 · Collaço & Monteiro"}, {"id": "cpq-apple-iguatemi", "name": "iPlace Apple Premium Partner (Iguatemi)", "lat": -22.8924024, "lng": -47.0272094, "subtitle": "2021 · iPlace Design / Apple Retail Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Vancouver"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "yvr-01", "name": "Marine Building", "lat": 49.2874964, "lng": -123.1170986, "subtitle": "1930 · McCarter & Nairne"}, {"id": "yvr-02", "name": "Vancouver Art Gallery (Old Courthouse)", "lat": 49.2828495, "lng": -123.1206248, "subtitle": "1911 · Francis Rattenbury / Arthur Erickson (Renovation)"}, {"id": "yvr-03", "name": "Canada Place", "lat": 49.2878972, "lng": -123.113048, "subtitle": "1986 · Zeidler Roberts Partnership"}, {"id": "yvr-04", "name": "Vancouver Public Library (Central Branch)", "lat": 49.279659, "lng": -123.115614, "subtitle": "1995 · Moshe Safdie"}, {"id": "yvr-05", "name": "Hotel Vancouver", "lat": 49.2837697, "lng": -123.1209858, "subtitle": "1939 · Archibald & Schofield"}, {"id": "yvr-06", "name": "Museum of Anthropology (MOA)", "lat": 49.2694691, "lng": -123.2594145, "subtitle": "1976 · Arthur Erickson"}, {"id": "yvr-07", "name": "The Electra (B.C. Electric Building)", "lat": 49.2812824, "lng": -123.125337, "subtitle": "1957 · Ned Pratt / Thompson, Berwick & Pratt"}, {"id": "yvr-08", "name": "Bloedel Conservatory", "lat": 49.2421, "lng": -123.1138, "subtitle": "1969 · Underwood, McKinley, Cameron, Wilson & Smith"}, {"id": "yvr-09", "name": "Living Shangri-La", "lat": 49.2857822, "lng": -123.1239175, "subtitle": "2008 · James K.M. Cheng"}, {"id": "yvr-10", "name": "Sun Tower", "lat": 49.2810077, "lng": -123.1084552, "subtitle": "1912 · W.T. Whiteway"}, {"id": "yvr-11", "name": "Vancouver House", "lat": 49.2749095, "lng": -123.1310166, "subtitle": "2020 · Bjarke Ingels Group (BIG)"}, {"id": "yvr-12", "name": "Gastown Steam Clock", "lat": 49.2843841, "lng": -123.10889, "subtitle": "1977 · Raymond Saunders"}, {"id": "yvr-13", "name": "Harbour Centre", "lat": 49.2846668, "lng": -123.1119122, "subtitle": "1977 · W.Z.M.H. Group"}, {"id": "yvr-14", "name": "Woodward’s Building", "lat": 49.282344, "lng": -123.1090797, "subtitle": "2009 · Henriquez Partners Architects"}, {"id": "yvr-15", "name": "The Qube", "lat": 49.2890055, "lng": -123.1275092, "subtitle": "1969 · Rhone & Iredale"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

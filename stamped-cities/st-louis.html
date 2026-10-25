@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in St. Louis"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "stl-01", "name": "Gateway Arch", "lat": 38.6246257, "lng": -90.1849637, "subtitle": "1965 · Eero Saarinen"}, {"id": "stl-02", "name": "Wainwright Building", "lat": 38.626905, "lng": -90.1921302, "subtitle": "1891 · Louis Sullivan / Dankmar Adler"}, {"id": "stl-03", "name": "St. Louis Union Station", "lat": 38.6281219, "lng": -90.2080262, "subtitle": "1894 · Theodore Link"}, {"id": "stl-04", "name": "Cathedral Basilica of Saint Louis", "lat": 38.6425329, "lng": -90.2546376, "subtitle": "1914 · Barnett, Haynes & Barnett"}, {"id": "stl-05", "name": "City Museum", "lat": 38.6337006, "lng": -90.2004142, "subtitle": "1931 · Isaac Taylor (Original) / Bob Cassilly (Artist)"}, {"id": "stl-06", "name": "Anheuser-Busch Brew House", "lat": 38.5991061, "lng": -90.2145576, "subtitle": "1892 · Edmund Jungenfeld"}, {"id": "stl-07", "name": "The Fox Theatre", "lat": 38.6391224, "lng": -90.2323843, "subtitle": "1929 · C. Howard Crane"}, {"id": "stl-08", "name": "One Hundred (100 Above Park)", "lat": 38.6427365, "lng": -90.2646384, "subtitle": "2020 · Studio Gang (Jeanne Gang)"}, {"id": "stl-09", "name": "Soldiers Memorial Military Museum", "lat": 38.6290173, "lng": -90.2000503, "subtitle": "1938 · Mauran, Russell & Crowell"}, {"id": "stl-10", "name": "Pulitzer Arts Foundation", "lat": 38.6402169, "lng": -90.2345979, "subtitle": "2001 · Tadao Ando"}, {"id": "stl-11", "name": "The Old Courthouse", "lat": 38.6246257, "lng": -90.1849637, "subtitle": "1864 · William Rumbold"}, {"id": "stl-12", "name": "Saint Louis Art Museum", "lat": 38.6394679, "lng": -90.2944031, "subtitle": "1904 · Cass Gilbert (Original) / David Chipperfield (Expansion)"}, {"id": "stl-13", "name": "The Jewel Box", "lat": 38.6361767, "lng": -90.2755225, "subtitle": "1936 · William C. E. Becker"}, {"id": "stl-apple-galleria", "name": "Apple Saint Louis Galleria", "lat": 38.6356793, "lng": -90.3481344, "subtitle": "2011 · Bohlin Cywinski Jackson / Apple Retail"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

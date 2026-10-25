@@ -138,6 +138,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Buenos Aires"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "palacio-barolo", "name": "Palacio Barolo", "lat": -34.6096625, "lng": -58.3857277, "subtitle": "1923 · Mario Palanti"}, {"id": "teatro-colon", "name": "Teatro Colón", "lat": -34.6010855, "lng": -58.3831869, "subtitle": "1908 · Francesco Tamburini"}, {"id": "kavanagh-building", "name": "Kavanagh Building", "lat": -34.5954656, "lng": -58.374821, "subtitle": "1936 · Sánchez, Lagos, and de la Paura"}, {"id": "casa-rosada", "name": "Casa Rosada", "lat": -34.6080692, "lng": -58.3702762, "subtitle": "1898 · Carl Kihlberg / Francisco Tamburini"}, {"id": "puente-de-la-mujer", "name": "Puente de la Mujer", "lat": -34.6086483, "lng": -58.3641039, "subtitle": "2001 · Santiago Calatrava"}, {"id": "el-ateneo-grand-splendid", "name": "El Ateneo Grand Splendid", "lat": -34.5959828, "lng": -58.3942623, "subtitle": "1919 · Peró and Torres Armengol"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -238,5 +253,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Rome"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "rom_colosseum", "name": "The Colosseum", "lat": 41.891635, "lng": 12.4927622, "subtitle": "80 · Vespasian / Titus"}, {"id": "rom_pantheon", "name": "The Pantheon", "lat": 41.8994796, "lng": 12.4764874, "subtitle": "126 · Apollodorus of Damascus"}, {"id": "rom_st_peters", "name": "St. Peter's Basilica", "lat": 41.9022351, "lng": 12.4573573, "subtitle": "1626 · Michelangelo / Bramante"}, {"id": "rom_vittorio", "name": "Altare della Patria", "lat": 41.8963001, "lng": 12.4823475, "subtitle": "1911 · Giuseppe Sacconi"}, {"id": "rom_maxxi", "name": "MAXXI Museum", "lat": 41.9288233, "lng": 12.4666714, "subtitle": "2010 · Zaha Hadid"}, {"id": "rom_fendi", "name": "Palazzo della Civiltà Italiana", "lat": 41.8366672, "lng": 12.4654704, "subtitle": "1943 · Giovanni Guerrini"}, {"id": "rom_castel_sant", "name": "Castel Sant'Angelo", "lat": 41.90308, "lng": 12.4661811, "subtitle": "139 · Demetrianus"}, {"id": "rom_villa_medici", "name": "Villa Medici", "lat": 41.9083045, "lng": 12.4824664, "subtitle": "1544 · Annibale Lippi"}, {"id": "rom_doria_pamphilj", "name": "Palazzo Doria Pamphilj", "lat": 41.8978235, "lng": 12.4815609, "subtitle": "1734 · Gabriele Valvassori"}, {"id": "rom_auditorium", "name": "Auditorium Parco della Musica", "lat": 41.9292508, "lng": 12.4720097, "subtitle": "2002 · Renzo Piano"}, {"id": "rom_apple_corso", "name": "Apple Via del Corso", "lat": 41.9022472, "lng": 12.4801326, "subtitle": "1873 · Foster + Partners"}, {"id": "rom_ara_pacis", "name": "Ara Pacis Museum", "lat": 41.9058841, "lng": 12.4752027, "subtitle": "2006 · Richard Meier"}, {"id": "rom_vatican_museums", "name": "Vatican Museums (The Spiral Ramp)", "lat": 41.9057435, "lng": 12.4499096, "subtitle": "1932 · Giuseppe Momo"}, {"id": "rom_borromini_church", "name": "San Carlo alle Quattro Fontane", "lat": 41.9011938, "lng": 12.4896073, "subtitle": "1646 · Francesco Borromini"}, {"id": "rom_la_nuvola", "name": "La Nuvola (The Cloud)", "lat": 41.830872, "lng": 12.4715943, "subtitle": "2016 · Massimiliano Fuksas"}, {"id": "rom_villa_borghese", "name": "Galleria Borghese", "lat": 41.9141133, "lng": 12.4921053, "subtitle": "1613 · Flaminio Ponzio"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

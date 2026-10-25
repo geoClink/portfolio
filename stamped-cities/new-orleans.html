@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in New Orleans"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "nola_st_louis_cathedral", "name": "St. Louis Cathedral", "lat": 29.957999, "lng": -90.0637541, "subtitle": "1850 · J.N.B. de Pouilly"}, {"id": "nola_apple_lakeside", "name": "Apple Lakeside Shopping Center", "lat": 30.0087798, "lng": -90.1589001, "subtitle": "2010 · Apple Inc. Design Team"}, {"id": "nola_the_sazerac_house", "name": "The Sazerac House", "lat": 29.9516891, "lng": -90.0675554, "subtitle": "2019 · Trapolin-Peer Architects"}, {"id": "nola_preservation_hall", "name": "Preservation Hall", "lat": 29.9582989, "lng": -90.0654337, "subtitle": "1803"}, {"id": "nola_hotel_monteleone", "name": "Hotel Monteleone", "lat": 29.9541881, "lng": -90.067944, "subtitle": "1886 · Toledano & Wogan"}, {"id": "nola_superdome", "name": "Caesars Superdome", "lat": 29.9510489, "lng": -90.0823076, "subtitle": "1975 · Curtis and Davis"}, {"id": "nola_custom_house", "name": "U.S. Custom House", "lat": 29.9515122, "lng": -90.0662021, "subtitle": "1881 · Alexander Thompson Wood"}, {"id": "nola_commanders_palace", "name": "Commander's Palace", "lat": 29.928834, "lng": -90.0842132, "subtitle": "1893"}, {"id": "nola_old_ursuline_convent", "name": "Old Ursuline Convent", "lat": 29.9608478, "lng": -90.0606573, "subtitle": "1752 · Ignace François Broutin"}, {"id": "nola_gallier_hall", "name": "Gallier Hall", "lat": 29.9485713, "lng": -90.0713568, "subtitle": "1853 · James Gallier"}, {"id": "nola_contemporary_arts_center", "name": "Contemporary Arts Center", "lat": 29.9437776, "lng": -90.0708533, "subtitle": "1976 · Concordia Architects (Renovation)"}, {"id": "nola_pitot_house", "name": "The Pitot House", "lat": 29.9819676, "lng": -90.0890948, "subtitle": "1799"}, {"id": "nola_hancock_whitney", "name": "Hancock Whitney Center", "lat": 29.9502763, "lng": -90.0707983, "subtitle": "1972 · Skidmore, Owings & Merrill (SOM)"}, {"id": "nola_cornstalk_hotel", "name": "The Cornstalk Hotel", "lat": 29.9600973, "lng": -90.0632816, "subtitle": "1816"}, {"id": "nola_wwii_museum", "name": "The National WWII Museum", "lat": 29.9421393, "lng": -90.0707711, "subtitle": "2000 · Voorsanger Mathes LLC"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Riyadh"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ruh-01", "name": "Kingdom Centre", "lat": 24.7113, "lng": 46.6744, "subtitle": "2002 · Ellerbe Becket / Omrania"}, {"id": "ruh-02", "name": "Al Masmak Fortress", "lat": 24.63225, "lng": 46.71058, "subtitle": "1865 · Traditional / Unknown"}, {"id": "ruh-03", "name": "Al Faisaliah Center", "lat": 24.690278, "lng": 46.685278, "subtitle": "2000 · Foster + Partners"}, {"id": "ruh-14", "name": "King Fahad National Library", "lat": 24.686355, "lng": 46.683314, "subtitle": "2015 · Gerber Architekten"}, {"id": "ruh-05", "name": "The National Museum of Saudi Arabia", "lat": 24.66097, "lng": 46.70373, "subtitle": "1999 · Raymond Moriyama"}, {"id": "ruh-06", "name": "KAFD World Trade Center", "lat": 24.7656964, "lng": 46.6407087, "subtitle": "2017 · Gensler"}, {"id": "ruh-07", "name": "KAPSARC", "lat": 24.87924, "lng": 46.722068, "subtitle": "2017 · Zaha Hadid Architects"}, {"id": "ruh-08", "name": "At-Turaif District (Diriyah)", "lat": 24.733333, "lng": 46.575556, "subtitle": "1744 · Traditional / Unknown"}, {"id": "ruh-09", "name": "KAFD Metro Station", "lat": 24.7656964, "lng": 46.6407087, "subtitle": "2023 · Zaha Hadid Architects"}, {"id": "ruh-10", "name": "Al Rajhi Grand Mosque", "lat": 24.677222, "lng": 46.778889, "subtitle": "2004 · Various"}, {"id": "ruh-11", "name": "PIF Tower", "lat": 24.7656964, "lng": 46.6407087, "subtitle": "2021 · HOK / Omrania"}, {"id": "ruh-12", "name": "Tuwaiq Palace", "lat": 24.6816491, "lng": 46.6236184, "subtitle": "1985 · Omrania / Frei Otto"}, {"id": "ruh-13", "name": "King Khalid International Airport (Terminal 5)", "lat": 24.957778, "lng": 46.698889, "subtitle": "2016 · GMW Mimarlik"}, {"id": "ruh-apple-roshn", "name": "Apple ROSHN Front", "lat": 24.84143, "lng": 46.733354, "subtitle": "2021 · Apple Retail Design / Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

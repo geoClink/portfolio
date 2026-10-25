@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Sana&#x27;a"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "sanaa-old-city", "name": "Old Sana'a", "lat": 15.3543, "lng": 44.208, "subtitle": "500 BC · Traditional Yemeni"}, {"id": "sanaa-great-mosque", "name": "Great Mosque of Sanaa", "lat": 15.3557, "lng": 44.2075, "subtitle": "630 · Early Islamic builders"}, {"id": "sanaa-bab-al-yemen", "name": "Bab al-Yemen", "lat": 15.349, "lng": 44.2083, "subtitle": "1200 · Traditional Yemeni"}, {"id": "sanaa-dar-al-hajar", "name": "Dar al-Hajar", "lat": 15.44108, "lng": 44.12513, "subtitle": "1930 · Imam Yahya (commissioner)"}, {"id": "sanaa-al-saleh-mosque", "name": "Al-Saleh Mosque", "lat": 15.3258, "lng": 44.2077, "subtitle": "2008 · Various Arab architects"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

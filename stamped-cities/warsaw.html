@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Warsaw"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "warsaw-old-town", "name": "Warsaw Old Town", "lat": 52.2497, "lng": 21.0122, "subtitle": "1250 · Medieval original, post-war reconstruction"}, {"id": "warsaw-royal-castle", "name": "Royal Castle, Warsaw", "lat": 52.2478, "lng": 21.0142, "subtitle": "1350 · Various, reconstructed by Jan Zachwatowicz"}, {"id": "warsaw-palace-of-culture", "name": "Palace of Culture and Science", "lat": 52.2319, "lng": 21.0067, "subtitle": "1955 · Lev Rudnev"}, {"id": "warsaw-polin-museum", "name": "POLIN Museum of the History of Polish Jews", "lat": 52.2497, "lng": 20.9941, "subtitle": "2013 · Rainer Mahlamäki"}, {"id": "warsaw-uprising-museum", "name": "Warsaw Rising Museum", "lat": 52.232, "lng": 20.9813, "subtitle": "2004 · Various"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

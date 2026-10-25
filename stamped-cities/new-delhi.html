@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in New Delhi"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "in_qutb_minar", "name": "Qutb Minar", "lat": 28.5245, "lng": 77.1855, "subtitle": "1193 · Qutb ud-Din Aibak"}, {"id": "in_humayuns_tomb", "name": "Humayun's Tomb", "lat": 28.5933, "lng": 77.2507, "subtitle": "1572 · Mirak Mirza Ghiyas"}, {"id": "in_india_gate", "name": "India Gate", "lat": 28.6129, "lng": 77.2295, "subtitle": "1931 · Edwin Lutyens"}, {"id": "in_lotus_temple", "name": "Lotus Temple", "lat": 28.5535, "lng": 77.2588, "subtitle": "1986 · Fariborz Sahba"}, {"id": "in_red_fort", "name": "Red Fort, Delhi", "lat": 28.6562, "lng": 77.241, "subtitle": "1648 · Ustad Ahmad Lahori"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Beijing"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "pek_forbidden_city", "name": "Forbidden City (Hall of Supreme Harmony)", "lat": 39.915833, "lng": 116.390833, "subtitle": "1420 · Kuai Xiang"}, {"id": "pek_birds_nest", "name": "National Stadium", "lat": 39.9710491, "lng": 116.4013719, "subtitle": "2008 · Herzog & de Meuron"}, {"id": "pek_cctv", "name": "CCTV Headquarters", "lat": 39.9158128, "lng": 116.4459674, "subtitle": "2012 · Rem Koolhaas (OMA)"}, {"id": "pek_temple_heaven", "name": "Temple of Heaven (Hall of Prayer)", "lat": 39.8867875, "lng": 116.3977728, "subtitle": "1420 · Imperial Architects"}, {"id": "pek_galaxy_soho", "name": "Galaxy SOHO", "lat": 39.93264, "lng": 116.41834, "subtitle": "2012 · Zaha Hadid"}, {"id": "pek_water_cube", "name": "National Aquatics Center", "lat": 39.9915785, "lng": 116.3841726, "subtitle": "2008 · PTW Architects"}, {"id": "pek_great_hall", "name": "Great Hall of the People", "lat": 39.903333, "lng": 116.3875, "subtitle": "1959 · Zhang Bo"}, {"id": "pek_citic_tower", "name": "CITIC Tower (China Zun)", "lat": 39.911389, "lng": 116.460278, "subtitle": "2018 · Kohn Pedersen Fox"}, {"id": "pek_national_theatre", "name": "National Centre for the Performing Arts", "lat": 39.903333, "lng": 116.383611, "subtitle": "2007 · Paul Andreu"}, {"id": "pek_daxing_airport", "name": "Beijing Daxing International", "lat": 39.509167, "lng": 116.410556, "subtitle": "2019 · Zaha Hadid"}, {"id": "glbl_apple_sanlitun", "name": "Apple Sanlitun", "lat": 39.9335515, "lng": 116.4481984, "subtitle": "2020 · Foster + Partners"}, {"id": "pek_white_pagoda", "name": "White Dagoba (Miaoying Temple)", "lat": 39.9223313, "lng": 116.3542957, "subtitle": "1279 · Araniko"}, {"id": "pek_leeza_soho", "name": "Leeza SOHO", "lat": 39.865556, "lng": 116.324167, "subtitle": "2019 · Zaha Hadid Architects"}, {"id": "pek_poly_victory", "name": "New Poly Plaza", "lat": 39.95462, "lng": 116.5029, "subtitle": "2007 · Skidmore, Owings & Merrill (SOM)"}, {"id": "pek_white_mountain", "name": "Chaoyang Park Plaza", "lat": 39.9325388, "lng": 116.4666179, "subtitle": "2017 · MAD Architects (Ma Yansong)"}, {"id": "pek_drum_tower", "name": "Drum and Bell Towers", "lat": 39.9398054, "lng": 116.3896604, "subtitle": "1272 · Imperial Architects"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

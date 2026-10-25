@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Chicago"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "chi-01", "name": "Willis Tower", "lat": 41.8787381, "lng": -87.6359612, "subtitle": "1974 · Skidmore, Owings & Merrill"}, {"id": "us_apple_michigan_ave", "name": "Apple Michigan Avenue", "lat": 41.8894215, "lng": -87.6235164, "subtitle": "2017 · Foster + Partners"}, {"id": "chi-02", "name": "Tribune Tower", "lat": 41.890584, "lng": -87.6232046, "subtitle": "1925 · Howells & Hood"}, {"id": "chi-03", "name": "875 North Michigan", "lat": 41.8988813, "lng": -87.6230962, "subtitle": "1969 · Bruce Graham (SOM)"}, {"id": "chi-04", "name": "Marina City", "lat": 41.8882027, "lng": -87.6284883, "subtitle": "1968 · Bertrand Goldberg"}, {"id": "chi-05", "name": "St. Regis Chicago", "lat": 41.8875465, "lng": -87.6187974, "subtitle": "2020 · Jeanne Gang (Studio Gang)"}, {"id": "chi-06", "name": "The Rookery", "lat": 41.879122, "lng": -87.6321736, "subtitle": "1888 · Burnham & Root"}, {"id": "chi-07", "name": "Aqua Tower", "lat": 41.8863356, "lng": -87.6199063, "subtitle": "2009 · Jeanne Gang (Studio Gang)"}, {"id": "chi-08", "name": "Carson Pirie Scott Building", "lat": 41.8814633, "lng": -87.6272684, "subtitle": "1899 · Louis Sullivan"}, {"id": "chi-09", "name": "The Merchandise Mart", "lat": 41.8884976, "lng": -87.6344561, "subtitle": "1930 · Graham, Anderson, Probst & White"}, {"id": "chi-10", "name": "Auditorium Building", "lat": 41.8761349, "lng": -87.6251817, "subtitle": "1889 · Adler & Sullivan"}, {"id": "chi-11", "name": "Chicago Board of Trade Building", "lat": 41.8778674, "lng": -87.6320417, "subtitle": "1930 · Holabird & Root"}, {"id": "chi-12", "name": "The Wrigley Building", "lat": 41.8895686, "lng": -87.6247284, "subtitle": "1924 · Graham, Anderson, Probst & White"}, {"id": "chi-13", "name": "S.R. Crown Hall (IIT)", "lat": 41.8331989, "lng": -87.6272734, "subtitle": "1956 · Ludwig Mies van der Rohe"}, {"id": "chi-14", "name": "Carbide & Carbon Building", "lat": 41.8865558, "lng": -87.6250085, "subtitle": "1929 · Burnham Brothers"}, {"id": "chi-15", "name": "Frederick C. Robie House", "lat": 41.7897893, "lng": -87.595994, "subtitle": "1910 · Frank Lloyd Wright"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -422,5 +437,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

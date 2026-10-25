@@ -120,6 +120,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Queenstown"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "zqn_skyline_queenstown", "name": "Skyline Queenstown", "lat": -45.0315233, "lng": 168.6588795, "subtitle": "1967 · Architectus"}, {"id": "zqn_tss_earnslaw", "name": "TSS Earnslaw", "lat": -45.0332545, "lng": 168.6577993, "subtitle": "1912 · Hugh McRae (naval architect) / John McGregor & Co."}, {"id": "zqn_kawarau_bridge", "name": "Kawarau Gorge Suspension Bridge", "lat": -45.009, "lng": 168.899, "subtitle": "1880 · Harry Higginson"}, {"id": "zqn_queenstown_gardens", "name": "Queenstown Gardens", "lat": -45.037704, "lng": 168.659836, "subtitle": "1867 · Borough of Queenstown (community planting)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -204,5 +219,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

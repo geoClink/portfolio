@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Boston"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "bos-01", "name": "200 Clarendon", "lat": 42.3491677, "lng": -71.075124, "subtitle": "1976 · Henry N. Cobb (I.M. Pei)"}, {"id": "bos-02", "name": "Custom House Tower", "lat": 42.3590801, "lng": -71.0536495, "subtitle": "1915 · Peabody & Stearns"}, {"id": "bos-03", "name": "Prudential Tower", "lat": 42.3471718, "lng": -71.0825069, "subtitle": "1964 · Charles Luckman"}, {"id": "bos-04", "name": "Old State House", "lat": 42.3586922, "lng": -71.0575878, "subtitle": "1713"}, {"id": "bos-05", "name": "Boston City Hall", "lat": 42.3603713, "lng": -71.0579762, "subtitle": "1968 · Kallmann McKinnell & Knowles"}, {"id": "bos-06", "name": "Trinity Church", "lat": 42.3500677, "lng": -71.0754254, "subtitle": "1877 · H.H. Richardson"}, {"id": "bos-07", "name": "Ray and Maria Stata Center (MIT)", "lat": 42.3616394, "lng": -71.0911163, "subtitle": "2004 · Frank Gehry"}, {"id": "bos-08", "name": "The Rowes Wharf", "lat": 42.3566602, "lng": -71.0503163, "subtitle": "1987 · Skidmore, Owings & Merrill (SOM)"}, {"id": "bos-09", "name": "Winthrop Center", "lat": 42.3236576, "lng": -71.0767362, "subtitle": "2023 · Handel Architects"}, {"id": "bos-10", "name": "Boston Public Library (McKim Building)", "lat": 42.3493298, "lng": -71.0786547, "subtitle": "1895 · Charles Follen McKim"}, {"id": "bos-11", "name": "Apple Boylston Street", "lat": 42.3487978, "lng": -71.0823878, "subtitle": "2008 · Bohlin Cywinski Jackson"}, {"id": "bos-12", "name": "Massachusetts State House", "lat": 42.358602, "lng": -71.0638751, "subtitle": "1798 · Charles Bulfinch"}, {"id": "bos-13", "name": "Institute of Contemporary Art", "lat": 42.3528651, "lng": -71.0429628, "subtitle": "2006 · Diller Scofidio + Renfro"}, {"id": "bos-14", "name": "Faneuil Hall", "lat": 42.3600335, "lng": -71.0562341, "subtitle": "1742 · John Smibert"}, {"id": "bos-15", "name": "Federal Reserve Bank Building", "lat": 42.352744, "lng": -71.0533737, "subtitle": "1977 · Hugh Stubbins & Associates"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

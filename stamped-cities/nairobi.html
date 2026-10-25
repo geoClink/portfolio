@@ -156,6 +156,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Nairobi"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "britam-tower", "name": "Britam Tower", "lat": -1.2946974, "lng": 36.8060237, "subtitle": "2017 · GAPP Architects / Triad Architects"}, {"id": "kicc-nairobi", "name": "Kenyatta International Convention Centre", "lat": -1.2884884, "lng": 36.8253662, "subtitle": "1973 · Karl Henrik Nøstvik"}, {"id": "apple_premium_nairobi", "name": "iStore Westgate (Apple Premium)", "lat": -1.2570443, "lng": 36.803133, "subtitle": "2015 · N/A (Mall Interior)"}, {"id": "gtc-office-tower", "name": "GTC Office Tower", "lat": -1.2635123, "lng": 36.8010774, "subtitle": "2022 · Julius Talaam / Sujesh Patel"}, {"id": "all-saints-cathedral", "name": "All Saints' Cathedral", "lat": -1.2834527, "lng": 36.8236328, "subtitle": "1917 · Temple Moore"}, {"id": "uap-old-mutual-tower", "name": "UAP Old Mutual Tower", "lat": -1.2971316, "lng": 36.8175921, "subtitle": "2016 · BPM Architects / Triad Architects"}, {"id": "nairobi-national-museum", "name": "Nairobi National Museum", "lat": -1.273889, "lng": 36.815, "subtitle": "1930 · Triad Architects (Renovation)"}, {"id": "cbk-pension-tower", "name": "CBK Pension Tower", "lat": -1.2884884, "lng": 36.8253662, "subtitle": "2022 · Aprim Consultants"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -272,5 +287,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

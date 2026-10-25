@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Amman"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "amman-citadel", "name": "Amman Citadel", "lat": 31.9526, "lng": 35.9314, "subtitle": "1500 BC · Various ancient civilisations"}, {"id": "amman-roman-theatre", "name": "Roman Theatre (Amman)", "lat": 31.9517, "lng": 35.9344, "subtitle": "169 · Roman architects"}, {"id": "amman-jordan-museum", "name": "Jordan Museum", "lat": 31.9466, "lng": 35.9196, "subtitle": "2014 · Dar Al-Omran"}, {"id": "amman-rainbow-street", "name": "Rainbow Street, Amman", "lat": 31.9573, "lng": 35.9218, "subtitle": "1920 · N/A (historic street)"}, {"id": "amman-king-abdullah-mosque", "name": "King Abdullah I Mosque", "lat": 31.9682, "lng": 35.9093, "subtitle": "1989 · Rasem Badran"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

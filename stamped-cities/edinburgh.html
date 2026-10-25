@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Edinburgh"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "edinburgh-castle", "name": "Edinburgh Castle", "lat": 55.9486, "lng": -3.1999, "subtitle": "1150 · Various"}, {"id": "edinburgh-holyrood", "name": "Palace of Holyroodhouse", "lat": 55.9524, "lng": -3.172, "subtitle": "1671 · William Bruce"}, {"id": "edinburgh-royal-mile", "name": "Royal Mile", "lat": 55.9501, "lng": -3.1885, "subtitle": "1200 · Medieval urban development"}, {"id": "edinburgh-scott-monument", "name": "Scott Monument", "lat": 55.9518, "lng": -3.194, "subtitle": "1844 · George Meikle Kemp"}, {"id": "edinburgh-national-museum", "name": "National Museum of Scotland", "lat": 55.9472, "lng": -3.1898, "subtitle": "1866 · Francis Fowke, Robert Matheson"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

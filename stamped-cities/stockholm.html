@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Stockholm"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "stockholm-vasa-museum", "name": "Vasa Museum", "lat": 59.328, "lng": 18.0914, "subtitle": "1990 · Göran Månsson, Marianne Dahlbäck (museum)"}, {"id": "stockholm-gamla-stan", "name": "Gamla stan", "lat": 59.3251, "lng": 18.0711, "subtitle": "1250 · Medieval urban development"}, {"id": "stockholm-city-hall", "name": "Stockholm City Hall", "lat": 59.3274, "lng": 18.0543, "subtitle": "1923 · Ragnar Östberg"}, {"id": "stockholm-skansen", "name": "Skansen", "lat": 59.3249, "lng": 18.1038, "subtitle": "1891 · Artur Hazelius (founder)"}, {"id": "stockholm-royal-palace", "name": "Royal Palace, Stockholm", "lat": 59.3268, "lng": 18.0718, "subtitle": "1754 · Nicodemus Tessin the Younger"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

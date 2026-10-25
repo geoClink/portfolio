@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Osaka"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "osaka-castle", "name": "Osaka Castle", "lat": 34.6873, "lng": 135.5262, "subtitle": "1583 · Toyotomi Hideyoshi (commissioner)"}, {"id": "osaka-dotonbori", "name": "Dotonbori", "lat": 34.6688, "lng": 135.5013, "subtitle": "1612 · N/A (urban district)"}, {"id": "osaka-kaiyukan", "name": "Osaka Aquarium Kaiyukan", "lat": 34.6551, "lng": 135.4296, "subtitle": "1990 · Cambridge Seven Associates"}, {"id": "osaka-sumiyoshi-taisha", "name": "Sumiyoshi-taisha", "lat": 34.6134, "lng": 135.4923, "subtitle": "250 · Traditional Sumiyoshi-zukuri"}, {"id": "osaka-shinsekai", "name": "Shinsekai", "lat": 34.6525, "lng": 135.5062, "subtitle": "1912 · Various"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

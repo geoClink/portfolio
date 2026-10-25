@@ -183,6 +183,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Las Vegas"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "lv_luxor", "name": "Luxor Las Vegas", "lat": 36.0958724, "lng": -115.1758074, "subtitle": "1993 · Veldon Simpson"}, {"id": "lv_strator", "name": "The STRAT Hotel & Tower", "lat": 36.1476992, "lng": -115.1561024, "subtitle": "1996 · Ned Baldwin"}, {"id": "lv_bellagio", "name": "Bellagio Las Vegas", "lat": 36.113056, "lng": -115.176389, "subtitle": "1998 · DeRuyter Butler"}, {"id": "lv_sphere", "name": "Sphere at The Venetian Resort", "lat": 36.1212076, "lng": -115.1620674, "subtitle": "2023 · Populous"}, {"id": "lv_caesars", "name": "Caesars Palace", "lat": 36.117778, "lng": -115.175, "subtitle": "1966 · Jay Sarno"}, {"id": "lv_lou_ruvo", "name": "Lou Ruvo Center for Brain Health", "lat": 36.1676691, "lng": -115.1544511, "subtitle": "2010 · Frank Gehry"}, {"id": "lv_vegas_city_hall", "name": "Las Vegas City Hall", "lat": 36.1672954, "lng": -115.1484965, "subtitle": "2012 · Elkus Manfredi Architects"}, {"id": "lv_circus_circus", "name": "Circus Circus Adventuredome", "lat": 36.1377199, "lng": -115.1658402, "subtitle": "1993 · Veldon Simpson"}, {"id": "lv_new_york", "name": "New York-New York Hotel", "lat": 36.1021436, "lng": -115.1744946, "subtitle": "1997 · Gaskin Bezanski Architecture"}, {"id": "lv_encore", "name": "Encore at Wynn Las Vegas", "lat": 36.1274, "lng": -115.166211, "subtitle": "2008 · Wynn Design & Development"}, {"id": "lv_apple_forum_shops", "name": "Apple The Forum Shops", "lat": 36.1190618, "lng": -115.173594, "subtitle": "2004 · Foster + Partners / Apple Design Team"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -323,5 +338,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

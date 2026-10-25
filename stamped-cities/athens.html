@@ -138,6 +138,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Athens"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "athens-acropolis", "name": "Acropolis of Athens", "lat": 37.9715, "lng": 23.7267, "subtitle": "447 BC · Ictinus, Callicrates, Mnesicles"}, {"id": "athens-parthenon", "name": "Parthenon", "lat": 37.9716, "lng": 23.7262, "subtitle": "432 BC · Ictinus and Callicrates"}, {"id": "athens-agora", "name": "Ancient Agora of Athens", "lat": 37.9761, "lng": 23.7215, "subtitle": "600 BC · Various"}, {"id": "athens-zeus-temple", "name": "Temple of Olympian Zeus, Athens", "lat": 37.9691, "lng": 23.7328, "subtitle": "131 · Cossutius, Libon"}, {"id": "athens-panathenaic", "name": "Panathenaic Stadium", "lat": 37.968, "lng": 23.7419, "subtitle": "330 BC · Lykourgos (original), Ernst Ziller (restored)"}, {"id": "athens-acropolis-museum", "name": "Acropolis Museum", "lat": 37.9683, "lng": 23.7285, "subtitle": "2009 · Bernard Tschumi"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -238,5 +253,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Dallas"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "dal_reunion_tower", "name": "Reunion Tower", "lat": 32.775236, "lng": -96.809941, "subtitle": "1978 · Welton Becket & Associates"}, {"id": "dal_bank_of_america", "name": "Bank of America Plaza", "lat": 32.7800722, "lng": -96.8038898, "subtitle": "1985 · JPJ Architects"}, {"id": "dal_perot_museum", "name": "Perot Museum of Nature and Science", "lat": 32.7869273, "lng": -96.8064108, "subtitle": "2012 · Thom Mayne (Morphosis)"}, {"id": "dal_fountain_place", "name": "Fountain Place", "lat": 32.7847974, "lng": -96.8025421, "subtitle": "1986 · I.M. Pei & Partners"}, {"id": "dal_city_hall", "name": "Dallas City Hall", "lat": 32.7762715, "lng": -96.7969417, "subtitle": "1978 · I.M. Pei"}, {"id": "dal_old_red", "name": "Old Red Courthouse", "lat": 32.7786089, "lng": -96.8073166, "subtitle": "1892 · Max A. Orlopp Jr."}, {"id": "dal_adolphus_hotel", "name": "The Adolphus Hotel", "lat": 32.7799374, "lng": -96.800204, "subtitle": "1912 · Barnett, Haynes & Barnett"}, {"id": "dal_winspear", "name": "Winspear Opera House", "lat": 32.7909512, "lng": -96.7980077, "subtitle": "2009 · Foster + Partners"}, {"id": "dal_hunt_hill_bridge", "name": "Margaret Hunt Hill Bridge", "lat": 32.7800134, "lng": -96.8220017, "subtitle": "2012 · Santiago Calatrava"}, {"id": "dal_jfk_memorial", "name": "John F. Kennedy Memorial", "lat": 32.7789963, "lng": -96.8065296, "subtitle": "1970 · Philip Johnson"}, {"id": "dal_meyerson_center", "name": "Morton H. Meyerson Symphony Center", "lat": 32.7899506, "lng": -96.7986258, "subtitle": "1989 · I.M. Pei"}, {"id": "dal_chase_tower", "name": "Chase Tower", "lat": 32.787973, "lng": -96.7966332, "subtitle": "1987 · Skidmore, Owings & Merrill (SOM)"}, {"id": "dal_apple_northpark", "name": "Apple NorthPark Center", "lat": 32.8677706, "lng": -96.7749486, "subtitle": "1965 · Omniplan (Mall Architect)"}, {"id": "dal_apple_knox_street", "name": "Apple Knox Street", "lat": 32.8225906, "lng": -96.7878798, "subtitle": "2010 · Apple Retail Design"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

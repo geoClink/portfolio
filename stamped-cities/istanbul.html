@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Istanbul"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ist_topkapi_palace", "name": "Topkapı Palace", "lat": 41.0055376, "lng": 28.9830122, "subtitle": "1478 · Alaüddin & Davud Ağa"}, {"id": "ist_dolmabahce_palace", "name": "Dolmabahçe Palace", "lat": 41.039444, "lng": 29.001667, "subtitle": "1856 · Garabet Balyan"}, {"id": "ist_maidens_tower", "name": "Maiden's Tower (Kız Kulesi)", "lat": 41.0087, "lng": 29.0173, "subtitle": "1725 · Damat İbrahim Pasha (Restoration)"}, {"id": "ist_chora_mosque", "name": "Chora Mosque (Kariye)", "lat": 41.0349, "lng": 28.9481, "subtitle": "1077 · Theodore Metochites (Patron)"}, {"id": "ist_haydarpasa_station", "name": "Haydarpaşa Terminal", "lat": 40.9970269, "lng": 29.0265413, "subtitle": "1909 · Otto Ritter & Helmut Cuno"}, {"id": "ist_apple_bagdat", "name": "Apple Bağdat Caddesi", "lat": 40.9669, "lng": 29.0658, "subtitle": "2021 · Foster + Partners"}, {"id": "ist_hagia_sophia", "name": "Hagia Sophia", "lat": 41.004, "lng": 28.9788, "subtitle": "537 · Isidore of Miletus & Anthemius of Tralles"}, {"id": "ist_galata_tower", "name": "Galata Tower", "lat": 41.0941, "lng": 28.9757, "subtitle": "1348 · Genoese Colony"}, {"id": "ist_suleymaniye", "name": "Süleymaniye Mosque", "lat": 41.0162287, "lng": 28.9639548, "subtitle": "1557 · Mimar Sinan"}, {"id": "ist_sapphire", "name": "Istanbul Sapphire", "lat": 41.0887396, "lng": 29.006075, "subtitle": "2010 · Tabanlıoğlu Architects"}, {"id": "ist_ataturk_cultural_center", "name": "Atatürk Cultural Center (AKM)", "lat": 41.0398701, "lng": 28.9894785, "subtitle": "2021 · Murat Tabanlıoğlu"}, {"id": "ist_basilica_cistern", "name": "Basilica Cistern (Yerebatan Sarnıcı)", "lat": 41.0177, "lng": 28.9744, "subtitle": "532 · Byzantine Engineers (Justinian I)"}, {"id": "ist_apple_zorlu", "name": "Apple Zorlu Center", "lat": 41.065, "lng": 29.0296, "subtitle": "2014 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

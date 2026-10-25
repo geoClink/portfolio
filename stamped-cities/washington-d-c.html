@@ -183,6 +183,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Washington D.C."></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "dc-01", "name": "The United States Capitol", "lat": 38.889722, "lng": -77.008889, "subtitle": "1800 · William Thornton / Thomas U. Walter"}, {"id": "glbl_apple_carnegie_library", "name": "Apple Carnegie Library", "lat": 38.9025677, "lng": -77.0229533, "subtitle": "1903 · Ackerman & Ross / Foster + Partners"}, {"id": "dc-02", "name": "The White House", "lat": 38.8976387, "lng": -77.0365528, "subtitle": "1800 · James Hoban"}, {"id": "dc-03", "name": "Library of Congress (Jefferson Building)", "lat": 38.8867409, "lng": -77.0047055, "subtitle": "1897 · John L. Smithmeyer / Paul J. Pelz"}, {"id": "dc-04", "name": "National Museum of African American History and Culture", "lat": 38.891067, "lng": -77.032704, "subtitle": "2016 · David Adjaye / Philip Freelon"}, {"id": "dc-05", "name": "The Pentagon", "lat": 38.873342, "lng": -77.057715, "subtitle": "1943 · George Bergstrom"}, {"id": "dc-06", "name": "National Cathedral", "lat": 38.930651, "lng": -77.0705952, "subtitle": "1990 · George Frederick Bodley / Philip Hubert Frohman"}, {"id": "dc-07", "name": "Hirshhorn Museum", "lat": 38.8878698, "lng": -77.0220725, "subtitle": "1974 · Gordon Bunshaft (SOM)"}, {"id": "dc-08", "name": "Union Station DC", "lat": 38.8977149, "lng": -77.0070889, "subtitle": "1907 · Daniel Burnham"}, {"id": "dc-09", "name": "The Watergate Complex", "lat": 38.8993379, "lng": -77.0558434, "subtitle": "1971 · Luigi Moretti"}, {"id": "dc-10", "name": "National Gallery of Art (East Building)", "lat": 38.892075, "lng": -77.019911, "subtitle": "1978 · I.M. Pei"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -323,5 +338,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

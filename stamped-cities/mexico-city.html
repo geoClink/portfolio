@@ -210,6 +210,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Mexico City"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "mex_bellas_artes", "name": "Palacio de Bellas Artes", "lat": 19.4353, "lng": -99.1414, "subtitle": "1934 · Adamo Boari"}, {"id": "mex_soumaya", "name": "Museo Soumaya", "lat": 19.4410129, "lng": -99.1968752, "subtitle": "2011 · Fernando Romero"}, {"id": "mex_met_cathedral", "name": "Mexico City Metropolitan Cathedral", "lat": 19.44506, "lng": -99.14612, "subtitle": "1813 · Claudio de Arciniega"}, {"id": "mex_torre_latino", "name": "Torre Latinoamericana", "lat": 19.44506, "lng": -99.14612, "subtitle": "1956 · Augusto H. Álvarez"}, {"id": "mex_vasconcelos", "name": "Biblioteca Vasconcelos", "lat": 19.4455855, "lng": -99.1489572, "subtitle": "2006 · Alberto Kalach"}, {"id": "mex_torre_reforma", "name": "Torre Reforma", "lat": 19.4247518, "lng": -99.1744162, "subtitle": "2016 · L. Benjamin Romano"}, {"id": "mex_estadio_azteca", "name": "Estadio Azteca", "lat": 19.2997079, "lng": -99.1481247, "subtitle": "1966 · Pedro Ramírez Vázquez"}, {"id": "mex_camino_real", "name": "Camino Real Polanco", "lat": 19.43471, "lng": -99.20091, "subtitle": "1968 · Ricardo Legorreta"}, {"id": "mex_jumex", "name": "Museo Jumex", "lat": 19.4410129, "lng": -99.1968752, "subtitle": "2013 · David Chipperfield"}, {"id": "mex_casas_estudio", "name": "Museo Casa Estudio Diego Rivera y Frida Kahlo", "lat": 19.3492727, "lng": -99.1977649, "subtitle": "1932 · Juan O'Gorman"}, {"id": "mex_apple_antara", "name": "Apple Antara", "lat": 19.4393996, "lng": -99.2018178, "subtitle": "2019 · Foster + Partners"}, {"id": "mex_postal_palace", "name": "Palacio de Correos de México", "lat": 19.435686, "lng": -99.1404, "subtitle": "1907 · Adamo Boari"}, {"id": "mex_casa_barragan", "name": "Casa Luis Barragán", "lat": 19.4111222, "lng": -99.1924403, "subtitle": "1948 · Luis Barragán"}, {"id": "mex_torre_bbva", "name": "Torre BBVA México", "lat": 19.4301958, "lng": -99.1600089, "subtitle": "2016 · Legorreta + Rogers Stirk Harbour"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -374,5 +389,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Curitiba"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cwb-botanical-garden", "name": "Botanical Garden of Curitiba", "lat": -25.4393623, "lng": -49.23854, "subtitle": "1991 · Abraão Assad"}, {"id": "cwb-mon-museum", "name": "Oscar Niemeyer Museum (MON)", "lat": -25.4098954, "lng": -49.2662046, "subtitle": "2002 · Oscar Niemeyer"}, {"id": "cwb-wire-opera", "name": "Wire Opera House (Ópera de Arame)", "lat": -25.3855096, "lng": -49.2769068, "subtitle": "1992 · Domingos Bongestabs"}, {"id": "cwb-unilivre", "name": "University of the Environment (Unilivre)", "lat": -25.3983193, "lng": -49.2820013, "subtitle": "1992 · Domingos Bongestabs"}, {"id": "cwb-panoramic-tower", "name": "Panoramic Tower (Torre das Mercês)", "lat": -25.4238911, "lng": -49.2940444, "subtitle": "1991"}, {"id": "cwb-paco-da-liberdade", "name": "Paço da Liberdade", "lat": -25.4296227, "lng": -49.2697089, "subtitle": "1916 · Cândido de Abreu"}, {"id": "cwb-memorial-ucraniano", "name": "Ukrainian Memorial", "lat": -25.40222, "lng": -49.30472, "subtitle": "1995 · Unknown (Traditional Design)"}, {"id": "cwb-tube-station", "name": "Estação Tubo (Tube Station)", "lat": -25.4297354, "lng": -49.2719544, "subtitle": "1991 · Abraão Assad"}, {"id": "cwb-castelo-batel", "name": "Castelo do Batel", "lat": -25.442682, "lng": -49.2856866, "subtitle": "1928 · Eduardo Fernando Chaves"}, {"id": "cwb-cathedral-basilica", "name": "Cathedral Basilica of Curitiba", "lat": -25.4297354, "lng": -49.2719544, "subtitle": "1893 · Alphonse Conde des Plas"}, {"id": "cwb-ufpr-historic", "name": "Federal University of Paraná (Historic Building)", "lat": -25.4281729, "lng": -49.2660489, "subtitle": "1913 · Baeta de Faria"}, {"id": "cwb-municipal-market", "name": "Mercado Municipal de Curitiba", "lat": -25.434744, "lng": -49.25702, "subtitle": "1958 · Alfredo Trindade"}, {"id": "cwb-apple-barigui", "name": "iPlace Apple Premium Partner (ParkShoppingBarigui)", "lat": -25.42778, "lng": -49.27306, "subtitle": "2023 · iPlace Design / Apple Retail Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

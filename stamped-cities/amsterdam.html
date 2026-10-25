@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Amsterdam"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "ams_rijksmuseum", "name": "Rijksmuseum", "lat": 52.3596632, "lng": 4.8842791, "subtitle": "1885 · Pierre Cuypers"}, {"id": "ams_royal_palace", "name": "Royal Palace", "lat": 52.3731449, "lng": 4.8913363, "subtitle": "1655 · Jacob van Campen"}, {"id": "ams_eye_film", "name": "Eye Film Institute", "lat": 52.384335, "lng": 4.900812, "subtitle": "2012 · Delugan Meissl"}, {"id": "ams_nemo", "name": "NEMO Science Museum", "lat": 52.3738532, "lng": 4.9121113, "subtitle": "1997 · Renzo Piano"}, {"id": "ams_het_schip", "name": "Het Schip", "lat": 52.3904885, "lng": 4.8737264, "subtitle": "1921 · Michel de Klerk"}, {"id": "ams_centraal", "name": "Amsterdam Centraal Station", "lat": 52.37798, "lng": 4.9016073, "subtitle": "1889 · Pierre Cuypers"}, {"id": "ams_westerkerk", "name": "Westerkerk", "lat": 52.374427, "lng": 4.8834988, "subtitle": "1631 · Hendrick de Keyser"}, {"id": "ams_arcam", "name": "ARCAM", "lat": 52.3715088, "lng": 4.9124742, "subtitle": "2003 · René van Zuuk"}, {"id": "ams_beurs_van_berlage", "name": "Beurs van Berlage", "lat": 52.3750218, "lng": 4.8962647, "subtitle": "1903 · Hendrik Petrus Berlage"}, {"id": "ams_black_diamond", "name": "The Rock (Zuidas)", "lat": 52.3374936, "lng": 4.8703748, "subtitle": "2009 · Erick van Egeraat"}, {"id": "ams_apple_hirsch", "name": "Apple Haarlemmerstraat (Leidseplein)", "lat": 52.3635832, "lng": 4.8825438, "subtitle": "1912 · Alphonsus Maria Leonardus Aloysius Jacot"}, {"id": "ams_valley", "name": "Valley", "lat": 52.3376238, "lng": 4.8772228, "subtitle": "2021 · MVRDV"}, {"id": "ams_scheepvaartmuseum", "name": "National Maritime Museum", "lat": 52.372005, "lng": 4.9149527, "subtitle": "1656 · Daniël Stalpaert / Ney & Partners (Roof)"}, {"id": "ams_silodam", "name": "Silodam", "lat": 52.3902604, "lng": 4.8913251, "subtitle": "2003 · MVRDV"}, {"id": "ams_stedelijk", "name": "Stedelijk Museum (The Bathtub)", "lat": 52.3579003, "lng": 4.8798598, "subtitle": "2012 · A.W. Weissman / Benthem Crouwel"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

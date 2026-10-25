@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Porto Alegre"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "poa-ibere-camargo", "name": "Iberê Camargo Foundation", "lat": -30.077732, "lng": -51.2453919, "subtitle": "2008 · Álvaro Siza"}, {"id": "poa-public-market", "name": "Public Market of Porto Alegre", "lat": -30.0280671, "lng": -51.2276134, "subtitle": "1869 · Friedrich Heydtmann"}, {"id": "poa-cathedral", "name": "Metropolitan Cathedral of Porto Alegre", "lat": -30.0333192, "lng": -51.2317838, "subtitle": "1986 · Giovanni Battista Giovenale"}, {"id": "poa-ccmq", "name": "Casa de Cultura Mario Quintana", "lat": -30.0310943, "lng": -51.2344781, "subtitle": "1933 · Theodor Wiederspahn"}, {"id": "poa-beira-rio", "name": "Beira-Rio Stadium", "lat": -30.0654898, "lng": -51.2349178, "subtitle": "1969 · Hype Studio"}, {"id": "poa-farol-santander", "name": "Farol Santander (Old Guardianship Bank)", "lat": -30.0287413, "lng": -51.2304012, "subtitle": "1922 · Theodor Wiederspahn"}, {"id": "poa-gasometro", "name": "Usina do Gasômetro", "lat": -30.0340842, "lng": -51.2410902, "subtitle": "1928 · Engineer Joao Neves da Fontoura"}, {"id": "poa-theatro-sao-pedro", "name": "Theatro São Pedro", "lat": -30.0323687, "lng": -51.2305979, "subtitle": "1858 · Felipe de Oliveira"}, {"id": "poa-piratini", "name": "Palácio Piratini", "lat": -30.03306, "lng": -51.23, "subtitle": "1921 · Maurice Gras"}, {"id": "poa-margs", "name": "MARGS (Museum of Art of RS)", "lat": -30.0296672, "lng": -51.2303215, "subtitle": "1913 · Theodor Wiederspahn"}, {"id": "poa-cais-embarcadero", "name": "Cais Embarcadero", "lat": -30.0270249, "lng": -51.2311512, "subtitle": "2021 · Transversal Architecture"}, {"id": "poa-viaduto-otavio-rocha", "name": "Viaduto Otávio Rocha", "lat": -30.0386962, "lng": -51.2284076, "subtitle": "1932 · Manoel Barbosa Itaquy"}, {"id": "poa-apple-iguatemi", "name": "iPlace Apple Premium Partner (Iguatemi POA)", "lat": -30.03306, "lng": -51.23, "subtitle": "2016 · iPlace Design / Apple Retail Concept"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

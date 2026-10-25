@@ -219,6 +219,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Victoria"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "vic-01", "name": "British Columbia Parliament Buildings", "lat": 48.4193828, "lng": -123.3702957, "subtitle": "1897 · Francis Rattenbury"}, {"id": "vic-02", "name": "The Fairmont Empress", "lat": 48.4215129, "lng": -123.3679561, "subtitle": "1908 · Francis Rattenbury"}, {"id": "vic-03", "name": "Craigdarroch Castle", "lat": 48.4226307, "lng": -123.3437592, "subtitle": "1890 · Warren Heywood Williams"}, {"id": "vic-04", "name": "Royal BC Museum", "lat": 48.4197241, "lng": -123.3678678, "subtitle": "1968 · Fiset, Deschamps, Papanek"}, {"id": "vic-05", "name": "Fan Tan Alley (Building Complex)", "lat": 48.4289362, "lng": -123.3679221, "subtitle": "1885 · Various"}, {"id": "vic-06", "name": "Victoria Public Library (Central)", "lat": 48.4230466, "lng": -123.3641874, "subtitle": "1980 · Middletone & Stanton"}, {"id": "vic-07", "name": "St. Andrew’s Cathedral", "lat": 48.4254175, "lng": -123.3628055, "subtitle": "1892 · Perrault & Mesnard"}, {"id": "vic-08", "name": "Hatley Castle", "lat": 48.4343, "lng": -123.4724, "subtitle": "1908 · Samuel Maclure"}, {"id": "vic-09", "name": "The Customs House", "lat": 48.423392, "lng": -123.3687477, "subtitle": "1914 · F.M. Rattenbury / Merrick Architecture"}, {"id": "vic-10", "name": "Mayfair Shopping Centre", "lat": 48.4466353, "lng": -123.369845, "subtitle": "2018"}, {"id": "vic-11", "name": "Christ Church Cathedral", "lat": 48.4218983, "lng": -123.3586835, "subtitle": "1929 · John Charles Rogers"}, {"id": "vic-12", "name": "Victoria City Hall", "lat": 48.4283126, "lng": -123.3650195, "subtitle": "1878 · John Teague"}, {"id": "vic-13", "name": "The Janion Building", "lat": 48.4329875, "lng": -123.3697294, "subtitle": "1891 · John Teague / Dialog"}, {"id": "vic-14", "name": "The Bay Centre", "lat": 48.4253202, "lng": -123.3657405, "subtitle": "1989 · Waisman Dewar Grout Carter"}, {"id": "vic-15", "name": "Market Square", "lat": 48.4277744, "lng": -123.3688615, "subtitle": "1880 · Various"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -391,5 +406,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

@@ -300,11 +300,26 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in San Francisco"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "sf-01", "name": "Transamerica Pyramid", "lat": 37.7951883, "lng": -122.4027902, "subtitle": "1972 · William Pereira"}, {"id": "sf-02", "name": "Salesforce Tower", "lat": 37.7897744, "lng": -122.3969321, "subtitle": "2018 · Pelli Clarke Pelli"}, {"id": "sf-03", "name": "Ferry Building", "lat": 37.7955487, "lng": -122.3934746, "subtitle": "1898 · A. Page Brown"}, {"id": "sf-04", "name": "Palace of Fine Arts", "lat": 37.801491, "lng": -122.447875, "subtitle": "1915 · Bernard Maybeck"}, {"id": "sf-05", "name": "The Painted Ladies", "lat": 37.7705056, "lng": -122.4318265, "subtitle": "1892 · Matthew Kavanaugh"}, {"id": "sf-06", "name": "Coit Tower", "lat": 37.8022765, "lng": -122.4062978, "subtitle": "1933 · Arthur Brown Jr."}, {"id": "sf-07", "name": "Saint Mary's Cathedral", "lat": 37.7840235, "lng": -122.4253376, "subtitle": "1970 · Pietro Belluschi / Pier Luigi Nervi"}, {"id": "sf-08", "name": "City Hall", "lat": 37.7792929, "lng": -122.4192601, "subtitle": "1915 · Arthur Brown Jr."}, {"id": "sf-09", "name": "Ghirardelli Square", "lat": 37.8058477, "lng": -122.4229027, "subtitle": "1893 · William Mooser"}, {"id": "sf-10", "name": "de Young Museum", "lat": 37.7714976, "lng": -122.4690915, "subtitle": "2005 · Herzog & de Meuron"}, {"id": "us_apple_union_square", "name": "Apple Union Square", "lat": 37.788561, "lng": -122.406941, "subtitle": "2016 · Foster + Partners"}, {"id": "sf_mira_tower", "name": "Mira Tower", "lat": 37.7902956, "lng": -122.3913992, "subtitle": "2020 · Studio Gang (Jeanne Gang)"}, {"id": "sf_hyatt_regency", "name": "Hyatt Regency San Francisco", "lat": 37.7945298, "lng": -122.3951458, "subtitle": "1973 · John Portman"}, {"id": "sf_grace_cathedral", "name": "Grace Cathedral", "lat": 37.7858499, "lng": -122.4211811, "subtitle": "1964 · Lewis Hobart"}, {"id": "sf-11", "name": "Golden Gate Bridge", "lat": 37.8202408, "lng": -122.47857, "subtitle": "1937 · Irving Morrow / Joseph Strauss"}, {"id": "sf-12", "name": "Lombard Street", "lat": 37.802219, "lng": -122.418152, "subtitle": "1922 · Clyde Healy"}, {"id": "sf-13", "name": "Alcatraz Cellhouse", "lat": 37.8262551, "lng": -122.422295, "subtitle": "1912 · Major Reuben Turner"}, {"id": "sf-14", "name": "The Castro Theatre", "lat": 37.7619914, "lng": -122.43475, "subtitle": "1922 · Timothy Pflueger"}, {"id": "sf-15", "name": "Oracle Park", "lat": 37.7786059, "lng": -122.3894716, "subtitle": "2000 · HOK Sport (Populous)"}, {"id": "sf-16", "name": "Japanese Tea Garden", "lat": 37.770293, "lng": -122.4701237, "subtitle": "1894 · Makoto Hagiwara"}, {"id": "sf-17", "name": "City Lights Bookstore", "lat": 37.7976525, "lng": -122.4066167, "subtitle": "1953 · Unknown (Historic Italianate)"}, {"id": "sf-18", "name": "The Exploratorium (Pier 15)", "lat": 37.8016231, "lng": -122.3973665, "subtitle": "2013 · EHDD Architecture"}, {"id": "sf-19", "name": "Sentinel Building (Columbus Tower)", "lat": 37.7965795, "lng": -122.4050553, "subtitle": "1907 · Salfield & Kohlberg"}, {"id": "sf-20", "name": "Levi’s Plaza", "lat": 37.801869, "lng": -122.4018137, "subtitle": "1981 · Lawrence Halprin (Landscape) / Hellmuth, Obata & Kassabaum"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
             <ul class="fact-grid">
-                <li><span class="fact-label">Fly into</span><strong>SFO (SFO)</strong><p>SFO is home to the &#x27;Wag Brigade,&#x27; a team of therapy animals including a famous pig named LiLou that helps calm stressed travelers. The airport is a global leader in sustainability, featuring a terminal that was the first in the world to be LEED Gold certified and a strict ban on plastic water bottles.</p></li>
+                <li><span class="fact-label">Fly into</span><strong>SFO</strong><p>SFO is home to the &#x27;Wag Brigade,&#x27; a team of therapy animals including a famous pig named LiLou that helps calm stressed travelers. The airport is a global leader in sustainability, featuring a terminal that was the first in the world to be LEED Gold certified and a strict ban on plastic water bottles.</p></li>
                 <li><span class="fact-label">Currency</span><strong>US Dollar ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>English</strong><p>English is the primary language, though the city&#x27;s tech-heavy influence has introduced a specialized vocabulary of &#x27;disruption&#x27; and &#x27;innovation.&#x27; The culture is highly progressive and diverse, with sustainability and social mindfulness often driving public discourse.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>BART &amp; Cable Cars</strong><p>The Cable Cars are the only moving National Historic Landmark in the United States and are powered by underground cables. BART is the high-speed regional backbone, famously crossing under the Bay via the Transbay Tube. Muni operates a diverse fleet of light rail, trolleybuses, and historic F-Line streetcars.</p></li>
@@ -544,5 +559,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

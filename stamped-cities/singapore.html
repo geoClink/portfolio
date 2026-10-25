@@ -192,6 +192,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Singapore"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "sg_marina_bay_sands", "name": "Marina Bay Sands", "lat": 1.2833026, "lng": 103.8582884, "subtitle": "2010 · Moshe Safdie"}, {"id": "sg_artscience_museum", "name": "ArtScience Museum", "lat": 1.2861382, "lng": 103.8592297, "subtitle": "2011 · Moshe Safdie"}, {"id": "sg_the_interlace", "name": "The Interlace", "lat": 1.2818153, "lng": 103.8030293, "subtitle": "2013 · Ole Scheeren"}, {"id": "sg_jewel_changi", "name": "Jewel Changi Airport", "lat": 1.3602243, "lng": 103.9896749, "subtitle": "2019 · Moshe Safdie"}, {"id": "sg_victoria_theatre", "name": "Victoria Theatre & Concert Hall", "lat": 1.2869662, "lng": 103.8519142, "subtitle": "1862 · John Bennett"}, {"id": "sg_parkroyal_pickering", "name": "PARKROYAL COLLECTION Pickering", "lat": 1.2856566, "lng": 103.8462571, "subtitle": "2013 · WOHA Architects"}, {"id": "sg_the_hive", "name": "The Hive (Learning Hub North)", "lat": 1.3555658, "lng": 103.6884216, "subtitle": "2015 · Thomas Heatherwick"}, {"id": "sg_duxton_plain", "name": "Pinnacle@Duxton", "lat": 1.2770334, "lng": 103.8419461, "subtitle": "2009 · ARC Studio Architecture"}, {"id": "sg_old_hill_street", "name": "Old Hill Street Police Station", "lat": 1.2908517, "lng": 103.8482775, "subtitle": "1934 · F. Dorrington Ward"}, {"id": "sg_capitaspring", "name": "CapitaSpring", "lat": 1.2842204, "lng": 103.8501314, "subtitle": "2021 · BIG (Bjarke Ingels Group)"}, {"id": "sg-apple-mbs", "name": "Apple Marina Bay Sands", "lat": 1.2833109, "lng": 103.8575712, "subtitle": "2020 · Foster + Partners"}, {"id": "sg-apple-amk", "name": "Apple Ang Mo Kio Campus", "lat": 1.3904385, "lng": 103.8465536, "subtitle": "2024 · Foster + Partners (Expansion)"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -340,5 +355,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

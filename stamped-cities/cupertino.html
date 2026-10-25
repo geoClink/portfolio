@@ -228,6 +228,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Cupertino"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cup_apple_park", "name": "Apple Park", "lat": 37.3349372, "lng": -122.0126936, "subtitle": "2017 · Foster + Partners"}, {"id": "hq-02", "name": "Steve Jobs Theater", "lat": 37.332577, "lng": -122.005789, "subtitle": "2017 · Foster + Partners"}, {"id": "cup_le_petit_trianon", "name": "Le Petit Trianon", "lat": 37.3209709, "lng": -122.0461135, "subtitle": "1895 · Willis Polk"}, {"id": "cup_apple_infinite_loop", "name": "Apple Infinite Loop", "lat": 37.3316697, "lng": -122.0300982, "subtitle": "1993 · HOK (Hellmuth, Obata + Kassabaum)"}, {"id": "cup_fujitsu_planetarium", "name": "Fujitsu Planetarium", "lat": 37.3209709, "lng": -122.0461135, "subtitle": "1970 · Kwan Henmi"}, {"id": "cup_city_hall", "name": "Cupertino City Hall", "lat": 37.3189504, "lng": -122.0287409, "subtitle": "1965 · Unknown (City Commission)"}, {"id": "cup_cupertino_library", "name": "Cupertino Library", "lat": 37.3178237, "lng": -122.0289235, "subtitle": "2004 · HMC Architects"}, {"id": "cup_quinlan_center", "name": "Quinlan Community Center", "lat": 37.3258474, "lng": -122.0424025, "subtitle": "1991 · Noll & Tam"}, {"id": "cup_main_street_garage", "name": "Main Street Parking Structure", "lat": 37.324194, "lng": -122.0098622, "subtitle": "2016 · IPD / KRP Architects"}, {"id": "cup_mcclellan_ranch", "name": "McClellan Ranch Milk Barn", "lat": 37.3132039, "lng": -122.0627561, "subtitle": "1930 · N/A (Traditional)"}, {"id": "cup_vallco_redevelopment", "name": "The Hills at Vallco (Phase 1)", "lat": 37.3243845, "lng": -122.0146307, "subtitle": "2024 · Rafael Viñoly Architects"}, {"id": "cup_apple_visitor_center", "name": "Apple Park Visitor Center", "lat": 37.331483, "lng": -122.005697, "subtitle": "2017 · Foster + Partners"}, {"id": "cup_vpac_de_anza", "name": "Visual & Performing Arts Center (VPAC)", "lat": 37.3209709, "lng": -122.0461135, "subtitle": "2009 · LPAS Architecture + Design"}, {"id": "cup_st_jude", "name": "St. Jude the Apostle Church", "lat": 37.3265556, "lng": -122.0285427, "subtitle": "1962"}, {"id": "cup_apple_results_way", "name": "Apple Results Way", "lat": 37.3167459, "lng": -122.05094, "subtitle": "2012 · Gensler"}, {"id": "cup_memorial_park_amphitheater", "name": "Cupertino Memorial Park Amphitheater", "lat": 37.3227003, "lng": -122.0468305, "subtitle": "1970 · City of Cupertino"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -408,5 +423,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

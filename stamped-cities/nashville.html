@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Nashville"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "nsh_the_parthenon", "name": "The Parthenon", "lat": 36.1542254, "lng": -86.7930645, "subtitle": "1897 · William Crawford Smith"}, {"id": "nsh_ryman_auditorium", "name": "Ryman Auditorium", "lat": 36.1612473, "lng": -86.7784951, "subtitle": "1892 · Hugh Cathcart Thompson"}, {"id": "nsh_batman_building", "name": "AT&T Building", "lat": 36.1625089, "lng": -86.776915, "subtitle": "1994 · Earl Swensson Associates"}, {"id": "nsh_union_station", "name": "Union Station Hotel", "lat": 36.157754, "lng": -86.784504, "subtitle": "1900 · Richard Montfort"}, {"id": "nsh_state_capitol", "name": "Tennessee State Capitol", "lat": 36.165833, "lng": -86.784167, "subtitle": "1859 · William Strickland"}, {"id": "nsh_country_music_hof", "name": "Country Music Hall of Fame", "lat": 36.1581728, "lng": -86.7760929, "subtitle": "2001 · Tuck-Hinton Architects"}, {"id": "nsh_customs_house", "name": "U.S. Customs House", "lat": 36.1587806, "lng": -86.7812365, "subtitle": "1877 · William Appleton Potter"}, {"id": "nsh_belmont_mansion", "name": "Belmont Mansion", "lat": 36.135233, "lng": -86.795485, "subtitle": "1853 · Adolphus Heiman"}, {"id": "nsh_frist_art", "name": "Frist Art Museum", "lat": 36.1575982, "lng": -86.7836099, "subtitle": "1934 · Marr & Holman"}, {"id": "nsh_schermerhorn", "name": "Schermerhorn Symphony Center", "lat": 36.1602291, "lng": -86.7758709, "subtitle": "2006 · David M. Schwarz Architects"}, {"id": "nsh_pinnacle_tower", "name": "Pinnacle at Symphony Place", "lat": 36.1610366, "lng": -86.7755294, "subtitle": "2010 · Pickard Chilton"}, {"id": "nsh_john_seigenthaler_bridge", "name": "John Seigenthaler Pedestrian Bridge", "lat": 36.157811, "lng": -86.771581, "subtitle": "1909 · Howard M. Jones"}, {"id": "us_apple_green_hills", "name": "Apple Green Hills", "lat": 36.1075183, "lng": -86.8164804, "subtitle": "2019 · Foster + Partners"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

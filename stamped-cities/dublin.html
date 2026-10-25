@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Dublin"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "dublin-trinity-college", "name": "Trinity College Dublin", "lat": 53.3438, "lng": -6.2546, "subtitle": "1592 · Thomas Burgh (library), various"}, {"id": "dublin-castle", "name": "Dublin Castle", "lat": 53.3429, "lng": -6.2673, "subtitle": "1204 · Various"}, {"id": "dublin-st-patricks", "name": "St Patrick's Cathedral, Dublin", "lat": 53.3395, "lng": -6.2717, "subtitle": "1191 · Unknown (medieval)"}, {"id": "dublin-guinness-storehouse", "name": "Guinness Storehouse", "lat": 53.3419, "lng": -6.2867, "subtitle": "1904 · Various"}, {"id": "dublin-ha-penny-bridge", "name": "Ha'penny Bridge", "lat": 53.346, "lng": -6.2641, "subtitle": "1816 · John Windsor"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

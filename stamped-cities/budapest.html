@@ -138,6 +138,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Budapest"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "budapest-parliament", "name": "Hungarian Parliament Building", "lat": 47.5071, "lng": 19.0466, "subtitle": "1904 · Imre Steindl"}, {"id": "budapest-fishermans-bastion", "name": "Fisherman's Bastion", "lat": 47.5018, "lng": 19.0345, "subtitle": "1905 · Frigyes Schulek"}, {"id": "budapest-buda-castle", "name": "Buda Castle", "lat": 47.496, "lng": 19.0399, "subtitle": "1265 · Miklós Ybl, Alajos Hauszmann"}, {"id": "budapest-szechenyi-bath", "name": "Széchenyi Thermal Bath", "lat": 47.5189, "lng": 19.0818, "subtitle": "1913 · Győző Czigler, Ede Dvorak"}, {"id": "budapest-chain-bridge", "name": "Chain Bridge (Budapest)", "lat": 47.4984, "lng": 19.0448, "subtitle": "1849 · William Tierney Clark, Adam Clark"}, {"id": "budapest-st-stephens", "name": "St. Stephen's Basilica", "lat": 47.5009, "lng": 19.0534, "subtitle": "1905 · József Hild, Miklós Ybl"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -238,5 +253,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

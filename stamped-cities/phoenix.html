@@ -201,6 +201,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Phoenix"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "phx-01", "name": "Taliesin West", "lat": 33.6046921, "lng": -111.8420527, "subtitle": "1937 · Frank Lloyd Wright"}, {"id": "phx-02", "name": "Arizona Biltmore", "lat": 33.5203477, "lng": -112.0176764, "subtitle": "1929 · Albert Chase McArthur"}, {"id": "phx-03", "name": "Burton Barr Central Library", "lat": 33.4624422, "lng": -112.0731695, "subtitle": "1995 · Will Bruder"}, {"id": "phx-04", "name": "Luhrs Tower", "lat": 33.447063, "lng": -112.0743959, "subtitle": "1929 · Trost & Trost"}, {"id": "phx-05", "name": "Chase Tower", "lat": 33.4508805, "lng": -112.0731909, "subtitle": "1972 · Welton Becket & Associates"}, {"id": "phx-06", "name": "Heard Museum", "lat": 33.4715984, "lng": -112.0721993, "subtitle": "1929 · Herbert Prince"}, {"id": "phx-07", "name": "Phoenix Financial Center", "lat": 33.4883939, "lng": -112.0734145, "subtitle": "1964 · W.A. Sarmiento"}, {"id": "phx-08", "name": "Science Center (Dorrance Planetarium)", "lat": 33.44867, "lng": -112.0666392, "subtitle": "1997 · Antoine Predock"}, {"id": "phx-09", "name": "Orpheum Theatre", "lat": 33.4490155, "lng": -112.07687, "subtitle": "1929 · Lescher & Mahoney"}, {"id": "phx-10", "name": "The Rosson House", "lat": 33.45654, "lng": -112.066255, "subtitle": "1895 · Alexander Preston Pettit"}, {"id": "phx-11", "name": "Tovrea Castle", "lat": 33.4509, "lng": -111.9732, "subtitle": "1930 · Carraro / H.C. Hoffman"}, {"id": "phx-12", "name": "Westward Ho", "lat": 33.45526, "lng": -112.0742742, "subtitle": "1928 · Louis L. Dorr"}, {"id": "phx-13", "name": "St. Mary's Basilica", "lat": 33.4507598, "lng": -112.0693927, "subtitle": "1914 · Robert Kiernan"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -357,5 +372,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

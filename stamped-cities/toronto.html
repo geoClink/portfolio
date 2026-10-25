@@ -174,6 +174,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Toronto"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "cn-tower", "name": "CN Tower", "lat": 43.6425637, "lng": -79.3870872, "subtitle": "1976 · WZMH Architects"}, {"id": "royal-ontario-museum", "name": "Royal Ontario Museum (ROM)", "lat": 43.667798, "lng": -79.394213, "subtitle": "2007 · Daniel Libeskind"}, {"id": "gooderham-building", "name": "Gooderham Building", "lat": 43.6483668, "lng": -79.3743953, "subtitle": "1892 · David Roberts Jr."}, {"id": "toronto-city-hall", "name": "Toronto City Hall", "lat": 43.6536032, "lng": -79.3840055, "subtitle": "1965 · Viljo Revell"}, {"id": "ocad-university", "name": "OCAD University (Sharp Centre)", "lat": 43.6532853, "lng": -79.3915144, "subtitle": "2004 · Will Alsop"}, {"id": "brookfield-place", "name": "Brookfield Place (Allen Lambert Galleria)", "lat": 43.6465062, "lng": -79.3786735, "subtitle": "1992 · Santiago Calatrava"}, {"id": "casa-loma", "name": "Casa Loma", "lat": 43.6781015, "lng": -79.4094159, "subtitle": "1914 · E.J. Lennox"}, {"id": "old-city-hall-toronto", "name": "Old City Hall", "lat": 43.6526536, "lng": -79.3821434, "subtitle": "1899 · E.J. Lennox"}, {"id": "first-canadian-place", "name": "First Canadian Place", "lat": 43.6487681, "lng": -79.3816921, "subtitle": "1975 · B+H Architects"}, {"id": "distillery-district", "name": "Distillery District (Stone Distillery)", "lat": 43.6511815, "lng": -79.3575749, "subtitle": "1859 · David Roberts Sr."}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -306,5 +321,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>

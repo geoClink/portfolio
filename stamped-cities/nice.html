@@ -129,6 +129,21 @@
         </div>
     </section>
 
+    <section class="city-map-section" data-city-map hidden aria-labelledby="map-title">
+        <div class="container">
+            <h2 id="map-title" class="section-title">Map and Look Around</h2>
+            <p class="map-hint">Tap a numbered pin to see that landmark from the street with Apple Look Around.</p>
+            <div class="map-layout">
+                <div class="city-map" role="region" aria-label="Map of the landmarks in Nice"></div>
+                <div class="look-around-wrap">
+                    <div class="look-around"></div>
+                    <p class="look-around-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+        <script type="application/json" id="map-data">{"landmarks": [{"id": "fr_promenade_des_anglais", "name": "Promenade des Anglais", "lat": 43.6957, "lng": 7.2659, "subtitle": "1820 · Lewis Way (initiator)"}, {"id": "fr_castle_hill_nice", "name": "Castle Hill, Nice", "lat": 43.6944, "lng": 7.2831, "subtitle": "1885"}, {"id": "fr_nice_cathedral", "name": "Nice Cathedral", "lat": 43.697, "lng": 7.277, "subtitle": "1699 · Jean-Andre Guiberto"}, {"id": "fr_matisse_museum_nice", "name": "Matisse Museum", "lat": 43.7182, "lng": 7.2714, "subtitle": "1963 · Unknown (17th century villa)"}, {"id": "fr_mamac_nice", "name": "Musée d'Art Moderne et d'Art Contemporain de Nice", "lat": 43.7025, "lng": 7.2768, "subtitle": "1990 · Yves Bayard and Henri Vidal"}]}</script>
+    </section>
+
     <section class="facts" aria-labelledby="facts-title">
         <div class="container">
             <h2 id="facts-title" class="section-title">Before you go</h2>
@@ -221,5 +236,7 @@
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
+    <script src="map-token.js"></script>
+    <script src="map.js"></script>
 </body>
 </html>
