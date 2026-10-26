@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-10-26" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -314,6 +314,17 @@
             display: none;
         }
 
+        .resume-bullets {
+            list-style: disc !important;
+            padding-left: 1.2em !important;
+            margin: 0.5em 0 0 !important;
+        }
+        .resume-section .resume-bullets li {
+            margin: 0 0 0.3em;
+            line-height: 1.7;
+        }
+        .resume-section .resume-bullets li:last-child { margin-bottom: 0; }
+
         .resume-accordion-body p {
             margin: 0.5em 0 0;
             font-size: 0.95em;
@@ -416,7 +427,7 @@
 
             /* ── Hide all web chrome ── */
             #header, #menuOverlay, .menu-overlay, #footer,
-            .resume-actions, .page-cta, #gc-consent,
+            .resume-actions, .page-cta, #gc-consent, .bg-bubbles,
             .resume-title, .resume-tagline { display: none !important; }
 
             /* ── Hide Contact section — info is in print-header instead ── */
@@ -454,9 +465,10 @@
                 margin-left: 0.08in;
             }
             .print-contact {
-                font-size: 8pt;
+                font-size: 7.5pt;
                 color: #444;
                 line-height: 1.3;
+                white-space: nowrap;
             }
             #print-qr {
                 display: block !important;
@@ -528,6 +540,8 @@
 
             /* ── Page breaks — avoid splitting individual entries ── */
             .resume-accordion-list li { break-inside: avoid; page-break-inside: avoid; }
+            .resume-bullets { margin: 0.01in 0 0 !important; padding-left: 1.1em !important; }
+            .resume-section .resume-bullets li { font-size: 8pt; line-height: 1.25; margin: 0 0 0.01in; }
 
             a { color: #111 !important; text-decoration: none !important; }
 
@@ -603,8 +617,8 @@
 
         <div class="print-header">
             <div class="print-header-left">
-                <div class="print-name">George Clinkscales Jr. <span class="print-location">Detroit, MI</span></div>
-                <div class="print-contact">GeorgeClinkscalesDev@proton.me &nbsp;&middot;&nbsp; linkedin.com/in/george-clinkscales &nbsp;&middot;&nbsp; github.com/geoClink</div>
+                <div class="print-name">George Clinkscales Jr. <span class="print-location">Detroit, MI &middot; 832-441-0065</span></div>
+                <div class="print-contact">GeorgeClinkscalesDev@proton.me &middot; georgeclinkscalesdev.com &middot; linkedin.com/in/george-clinkscales &middot; github.com/geoClink</div>
             </div>
             <img id="print-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6AQAAAAAxdWpcAAABoUlEQVR4nM2YQY7DIAxFPzFSlyD1AD0KuVpuBjdylpWMPLLTzKozyzh/USVhwZf5PEyT4qvG8v07cMnATKaZkr3tCRj2Xq+ZHH8OFFXtpJoq5kszoKpy1eR/aLHiVGBfZV/zvgpw1C3alWlWkG4oG06Fusrnw5gZ8rx28uWfgaYMFH0wHtwyQKrxrvaU0gqM96u/63hXpJRysCuoS9BUu7IVytVjXUlRKd3sMYDm35qUaFdo5LX6rRIABLtaiA3pxOPtcZrVkh9NURjYuUlRYls+Un+4wQpK6V6fptyIbSkpOu3qcnuQ0m+SK2AAg7TnotjXWd1efK7U8X7wqpF2KRpdK4h3MihdAIu94TQ+V2Lk/ByFVi7LVfwe1E/UGzGIjfBqi3gHV434YwxWsfBcLdZ5lm2+HAho4i1E9B7M5JcceeLBFS9Oheezz2gyyPl7bD34ZpR7kEHtmmO8gjU24bmCH4JOTuMVXEbU6BPHRDwEzY8bszTDb6mnctksV36DDu/b5cjVAU9Yo2W0j+YVHFCzIlWnKOyKSBxbq3TL/2R+ABYQHPWXQ7stAAAAAElFTkSuQmCC" alt="Portfolio QR code" />
         </div>
@@ -613,7 +627,7 @@
         <p class="resume-tagline">Full-stack engineer and co-founder of CH Studios LLC with 5 apps live on the App Store and production web platforms serving real clients.</p>
 
         <div class="resume-actions">
-            <a href="assets/docs/Resume_George_Clinkscales.pdf?v=2026-10-24b" class="button primary" target="_blank" rel="noopener">
+            <a href="assets/docs/Resume_George_Clinkscales.pdf?v=2026-10-25c" class="button primary" target="_blank" rel="noopener">
                 Download PDF <i class="fa fa-download"></i>
             </a>
         </div>
@@ -657,7 +671,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="skill-group-label">iOS</div>
+                    <div class="skill-group-label">iOS &amp; Mobile</div>
                     <div class="skill-tags">
                         <span class="skill-tag">Swift</span>
                         <span class="skill-tag">SwiftUI</span>
@@ -671,6 +685,8 @@
                         <span class="skill-tag">SwiftData</span>
                         <span class="skill-tag">CoreML</span>
                         <span class="skill-tag">Apple Intelligence</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Android</span>
                     </div>
                 </div>
                 <div>
@@ -693,18 +709,124 @@
                         <span class="skill-tag">LLM Integration</span>
                     </div>
                 </div>
-                <div class="skill-print-hide">
+                <div>
                     <div class="skill-group-label">Tools</div>
                     <div class="skill-tags">
                         <span class="skill-tag">Xcode</span>
-                        <span class="skill-tag">VSCode</span>
                         <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Claude Code</span>
-                        <span class="skill-tag">Docker</span>
                         <span class="skill-tag">TestFlight</span>
+                        <span class="skill-tag">App Store Connect</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Claude Code</span>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="resume-section">
+            <h3>Apps</h3>
+            <ul class="resume-accordion-list">
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">Tally - Time Tracker</a></div>
+                            <div class="resume-item-meta">Swift · SwiftUI · Catalyst · StoreKit · RevenueCat · React · Supabase &middot; Jul 2026 · Solo build</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="tally.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                        </div>
+                        <ul class="resume-bullets">
+                            <li>Built and shipped native iPhone, iPad, Apple Watch and Mac apps, a React web app and an Android beta, all on one Supabase backend.</li>
+                            <li>Connected 13 integrations, including Jira, Linear, GitHub and Google Calendar; tracked time posts to Jira as worklogs.</li>
+                            <li>Reached 63K+ App Store impressions and ~300 downloads.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer">Squishy Butter</a></div>
+                            <div class="resume-item-meta">Three.js · Capacitor · Supabase · Stripe · RevenueCat · Vite &middot; Sep 2026 · Solo build</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="squishy-butter.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+                            <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">Web ↗</a>
+                        </div>
+                        <ul class="resume-bullets">
+                            <li>Shipped a 3D squishy fidget from one codebase to iOS, Android and web.</li>
+                            <li>Built a Supabase backend with 12 Edge Functions for Stripe and in-app purchases, push notifications and an admin revenue dashboard.</li>
+                            <li>Reached 1,500+ downloads across the App Store and Google Play (100+ in the first 3 days) and 69,000+ squishes on the web.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City Passport</a></div>
+                            <div class="resume-item-meta">Swift · SwiftUI · MapKit 3D · Apple Intelligence · iCloud &middot; Mar 2026 · Solo build</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="stamped.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                        </div>
+                        <ul class="resume-bullets">
+                            <li>Built a SwiftUI app covering 1,800+ landmarks across 140 cities and 101 campuses, with a photoreal 3D city map and a day-by-day trip planner.</li>
+                            <li>Added passport stamps with mastery tiers, iCloud sync and Apple Intelligence itineraries.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">CoastCast</a></div>
+                            <div class="resume-item-meta">Swift · SwiftUI · CoreML · WeatherKit · WidgetKit · Python · FastAPI &middot; May 2026 · Co-developer</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="coastcast.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                        </div>
+                        <ul class="resume-bullets">
+                            <li>Co-developed real-time conditions for 54 Michigan beaches, with an on-device XGBoost CoreML model trained on 40 years of attendance data.</li>
+                            <li>Shipped Dynamic Island and WidgetKit support, backed by 120+ parameterized tests.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button class="resume-accordion-header">
+                        <div>
+                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">TakeFlight</a></div>
+                            <div class="resume-item-meta">Swift · SpriteKit · GameKit &middot; Apr 2026 · Co-developer</div>
+                        </div>
+                        <span class="resume-accordion-icon">+</span>
+                    </button>
+                    <div class="resume-accordion-body">
+                        <div class="resume-item-links">
+                            <a href="takeflight.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
+                            <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                        </div>
+                        <ul class="resume-bullets">
+                            <li>Co-built a SpriteKit survival game in 6 weeks at the Apple Developer Academy, with four connected mini-games and full keyboard support.</li>
+                            <li>Selected by Apple to demo at a downtown Detroit event.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
         </section>
 
         <section class="resume-section">
@@ -719,7 +841,10 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Selected for the advanced Year 2 Renaissance cohort (25 of 240 first-year students). Working on a team of 5 building a Vision Pro healthcare application for a real client using visionOS and RealityKit — project details are confidential.</p>
+                        <ul class="resume-bullets">
+                            <li>Selected for the advanced Year 2 Renaissance cohort, 25 of 240 first-year students.</li>
+                            <li>Building a Vision Pro healthcare app for a real client on a team of 5, using visionOS and RealityKit (details confidential).</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -731,7 +856,10 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Software development on a confidential project. Helped write the curriculum for, and advise, a 5-student MSU CSE senior capstone team building on the project.</p>
+                        <ul class="resume-bullets">
+                            <li>Develop software for a confidential project.</li>
+                            <li>Helped write the curriculum for, and advise, a 5-student MSU CSE senior capstone team building on the project.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -743,8 +871,11 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Co-founded a Detroit software studio with Jaiden Henley. Registered the LLC and handled scoping, pricing, and master service agreements directly with clients.</p>
-                        <p><strong>Client: <a href="https://www.tripsetta.com/" target="_blank" rel="noopener noreferrer">Tripsetta</a>.</strong> Part-time contract shipping feature updates across iOS, Android, and web for an early-stage travel startup. Picked up Kotlin and Android cold mid-contract and kept the platform moving without interruption.</p>
+                        <ul class="resume-bullets">
+                            <li>Co-founded a Detroit software studio with Jaiden Henley; registered the LLC and handle scoping, pricing and master service agreements with clients.</li>
+                            <li><strong>Client: <a href="https://www.tripsetta.com/" target="_blank" rel="noopener noreferrer">Tripsetta</a>.</strong> Ship feature updates across iOS, Android and web for an early-stage travel startup on a part-time contract.</li>
+                            <li>Picked up Kotlin and Android from scratch mid-contract and kept the platform moving without interruption.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -756,7 +887,10 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Year 1 program covering Swift and SwiftUI development, design principles, project management, and collaborative team-based development. Shipped multiple App Store submissions and participated in Apple-led events and workshops throughout Detroit.</p>
+                        <ul class="resume-bullets">
+                            <li>Learned Swift, SwiftUI, design principles, project management and team-based development; shipped multiple App Store submissions.</li>
+                            <li>Took part in Apple-led events and workshops throughout Detroit.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -768,7 +902,9 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Self-directed career transition into software engineering — coursework in Python (University of Michigan), front-end development (Meta), Swift, and JavaScript. Accepted into MSU Apple Developer Academy Sep 2025.</p>
+                        <ul class="resume-bullets">
+                            <li>Self-directed coursework in Python (University of Michigan), front-end development (Meta), Swift and JavaScript; accepted into the MSU Apple Developer Academy in Sep 2025.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -780,7 +916,9 @@
                         <span class="resume-accordion-icon">+</span>
                     </button>
                     <div class="resume-accordion-body">
-                        <p>Field data collection, controlled environment trials, and lab sample analysis supporting wheat genetics research.</p>
+                        <ul class="resume-bullets">
+                            <li>Field data collection, controlled environment trials and lab sample analysis supporting wheat genetics research.</li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -802,7 +940,10 @@
                             <a href="wellness-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://whitebearharmonics.com/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Took a solo wellness practitioner from no web presence to a full booking platform in 2 weeks — Stripe payments, automated confirmation and cancellation emails, JWT-protected admin dashboard, and multi-tenant architecture. Replaced a $100–200/month Mindbody subscription. 100/100/100 Lighthouse scores.</p>
+                        <ul class="resume-bullets">
+                            <li>Took a solo wellness practitioner from no web presence to a full booking platform in 2 weeks: Stripe payments, automated confirmation and cancellation emails, a JWT-protected admin dashboard and multi-tenant architecture.</li>
+                            <li>Replaced a $100–200/month Mindbody subscription.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -818,7 +959,10 @@
                             <a href="inn-co.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://crystallakeresortmi.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Direct booking platform for a boutique Michigan resort — Stripe reservations, self-serve cancellation, and an admin dashboard that saves the owner the 15% OTA commission on every booking. $2,680 in confirmed stays, rooms booked 3 months out.</p>
+                        <ul class="resume-bullets">
+                            <li>Built a direct booking platform for a boutique Michigan resort, with Stripe reservations, self-serve cancellation and an admin dashboard that saves the owner the 15% OTA commission on every booking.</li>
+                            <li>Processed $1,935 across 7 bookings in the first week; 60+ reservations across 15+ rooms as of Oct 2026.</li>
+                        </ul>
                     </div>
                 </li>
                 <li>
@@ -834,95 +978,10 @@
                             <a href="sort-tek.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
                             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
                         </div>
-                        <p>Replaced a 30-year inspection company's "under construction" placeholder with a full 6-page site in under one week. Plain HTML/CSS/JS, 100/100 Lighthouse on mobile and desktop; first inbound lead within weeks of launch.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="resume-section">
-            <h3>Apps</h3>
-            <ul class="resume-accordion-list">
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer">Squishy Butter</a></div>
-                            <div class="resume-item-meta">Three.js · Capacitor · Supabase · Stripe · RevenueCat · Vite &middot; Sep 2026 · Solo build</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="squishy-butter.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-                            <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">Web ↗</a>
-                        </div>
-                        <p>3D squishy fidget shipped from one codebase to iOS, Android, and web. Supabase backend with 12 Edge Functions covering Stripe and in-app purchases, push notifications, and an admin revenue dashboard. 1,500+ downloads across App Store and Google Play, 100+ in the first 3 days, and 69,000+ squishes on the web.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">Tally - Time Tracker</a></div>
-                            <div class="resume-item-meta">Swift · SwiftUI · Catalyst · StoreKit · RevenueCat · React · Supabase &middot; Jul 2026 · Solo build</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="tally.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/tally-time-tracker/id6775275483" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                        </div>
-                        <p>Time tracker for freelancers and small teams on iPhone, iPad, Apple Watch, Mac, web, and Android (beta), on one Supabase backend with 9+ integrations including Jira, Linear, GitHub, and Google Calendar. 63K+ App Store impressions, ~300 downloads.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">CoastCast</a></div>
-                            <div class="resume-item-meta">Swift · SwiftUI · CoreML · WeatherKit · WidgetKit · Python · FastAPI &middot; May 2026 · Co-developer</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="coastcast.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                        </div>
-                        <p>Real-time conditions for 54 Michigan beaches — on-device XGBoost CoreML model trained on 40 years of attendance data, Dynamic Island, WidgetKit, and 120+ parameterized tests.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">TakeFlight</a></div>
-                            <div class="resume-item-meta">Swift · SpriteKit · GameKit &middot; Apr 2026 · Co-developer</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="takeflight.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                            <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                        </div>
-                        <p>SpriteKit survival game built in 6 weeks at the Apple Developer Academy — four connected mini-games, full keyboard support, selected by Apple to demo at a downtown Detroit event.</p>
-                    </div>
-                </li>
-                <li>
-                    <button class="resume-accordion-header">
-                        <div>
-                            <div class="resume-item-title"><a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City Passport</a></div>
-                            <div class="resume-item-meta">Swift · SwiftUI · MapKit 3D · Apple Intelligence · iCloud &middot; Mar 2026 · Solo build</div>
-                        </div>
-                        <span class="resume-accordion-icon">+</span>
-                    </button>
-                    <div class="resume-accordion-body">
-                        <div class="resume-item-links">
-                            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                            <a href="stamped.html" target="_blank" rel="noopener noreferrer">Case Study ↗</a>
-                        </div>
-                        <p>1,800+ landmarks across 140 cities and 101 campuses: a photoreal 3D city map, day-by-day trip planner, passport stamps with mastery tiers, iCloud sync, and Apple Intelligence itineraries.</p>
+                        <ul class="resume-bullets">
+                            <li>Replaced a 30-year inspection company's "under construction" placeholder with a 6-page site in plain HTML, CSS and JavaScript in under one week.</li>
+                            <li>Launched with 100/100 Lighthouse scores on mobile and desktop; first inbound lead within weeks of launch.</li>
+                        </ul>
                     </div>
                 </li>
             </ul>

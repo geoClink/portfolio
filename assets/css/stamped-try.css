@@ -1,0 +1,191 @@
+/* "Try it" on the Stamped! landing pages: live Apple Map, Look Around and a stamp. Uses the page's tokens. */
+.try { padding-top: 72px; padding-bottom: 72px; }
+.try[hidden] { display: none; }
+
+.try-cities {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0 0 4px;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.try-cities::-webkit-scrollbar { display: none; }
+.try-cities li { flex: 0 0 auto; }
+.try-cities button {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 0 16px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-card);
+    color: var(--color-ink);
+    font: 600 15px var(--font-sans);
+    white-space: nowrap;
+    cursor: pointer;
+}
+.try-cities button[aria-pressed="true"] {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+.try-cities button:focus-visible,
+.try-list button:focus-visible,
+.try-actions a:focus-visible,
+.try-stamp-btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+.try-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+.try-map {
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper-deep);
+}
+
+.try-card {
+    position: relative;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+}
+.try-look {
+    position: relative;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-paper-deep);
+}
+.try-look.is-empty::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(135deg, transparent 0 10px, rgba(127, 110, 90, 0.08) 10px 20px);
+}
+.try-status { margin: 0; font-size: 14px; color: var(--color-muted); }
+.try-name { margin: 0; font-family: var(--font-serif); font-size: 26px; line-height: 1.15; }
+.try-sub {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--color-accent-ink);
+}
+
+.try-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.try-stamp-btn {
+    min-height: 44px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-button);
+    color: #fff;
+    font: 600 16px var(--font-sans);
+    cursor: pointer;
+}
+.try-stamp-btn[aria-pressed="true"] { background: var(--color-stamp-green); }
+.try-actions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-ink);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.try-note { margin: 16px 0 0; font-size: 14px; color: var(--color-muted); }
+.try-progress { margin: 0; font-family: var(--font-mono); font-size: 13px; color: var(--color-muted); }
+
+.try-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px 12px;
+}
+@media (min-width: 600px) {
+    .try-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.try-list button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 36px;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    color: var(--color-ink);
+    font: 14px var(--font-sans);
+    text-align: left;
+    cursor: pointer;
+}
+.try-list button:hover { background: var(--color-paper-deep); }
+.try-list button[aria-current="true"] { background: var(--color-paper-deep); font-weight: 600; }
+.try-num {
+    flex: 0 0 auto;
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font: 700 12px var(--font-sans);
+}
+.try-list .is-stamped .try-num { background: var(--color-stamp-green); }
+.try-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* The stamp that thumps down on the Look Around preview */
+.try-stamp {
+    position: absolute;
+    top: 24px;
+    right: 22px;
+    width: 128px;
+    height: 128px;
+    color: var(--color-stamp-red);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transform: rotate(-12deg) scale(1.8);
+}
+.try-stamp text {
+    fill: currentColor;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-anchor: middle;
+}
+.try-stamp .try-stamp-arc { font-size: 7.5px; letter-spacing: 0.1em; }
+.try-stamp .try-stamp-big { font-size: 15px; letter-spacing: 0.04em; }
+.try-stamp .try-stamp-small { font-size: 8px; }
+.try-stamp.is-down { animation: try-stamp-down 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards; }
+@keyframes try-stamp-down {
+    0%   { opacity: 0; transform: rotate(-12deg) scale(1.8); }
+    60%  { opacity: 0.95; transform: rotate(-12deg) scale(0.94); }
+    100% { opacity: 0.92; transform: rotate(-12deg) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .try-stamp.is-down { animation: none; opacity: 0.92; transform: rotate(-12deg); }
+}
+
+@media (min-width: 900px) {
+    .try { padding-top: 104px; padding-bottom: 104px; }
+    .try-layout { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: stretch; }
+    .try-map { height: auto; min-height: 600px; }
+    .try-look { height: 240px; }
+}

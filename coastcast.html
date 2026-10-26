@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-10-26" />
     <link rel="stylesheet" href="assets/css/case-study.css?v=4" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
@@ -216,6 +216,11 @@
             <p>The crowd prediction model is an XGBoost classifier trained on 40 years of attendance data, converted to CoreML and running fully on-device. It uses cyclical month encoding so the model understands seasonal proximity, and falls back to historical Lake Michigan water temperature averages when live buoy data isn't available. The beach detail screen fires the FastAPI backend and WeatherKit simultaneously using <code>async let</code>, cutting load time roughly in half.</p>
 
             <p>Beyond the core experience, the app ships with: a home screen WidgetKit widget that users can configure per beach, Live Activities and Dynamic Island showing crowd level and water temp while traveling, two App Intents for Siri, three-tier push notifications (daily best beach, score threshold, and NWS severe weather alerts), and a hand-built map clustering algorithm with no third-party dependencies.</p>
+        </div>
+
+        <div class="case-section">
+            <h3>What Was Hard</h3>
+            <p>CoastCast was one of my first times building a product on a real team. My earlier work was in restaurants and a research lab, so sharing one product with two designers, another developer and a project manager was new to me. I adapted by owning my role as a developer and trusting everyone else to own theirs, and I took feedback on my work without taking it personally. That's a big part of why we shipped a successful app.</p>
         </div>
 
         <div class="case-section">
