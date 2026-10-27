@@ -8,7 +8,9 @@ mirrors WikimediaService.swift) so the site shows the same photo as the app. The
 only photos that are on Wikimedia Commons under a free license (public domain or Creative
 Commons), and records the author, license and file page for the credit line.
 
-Writes stamped-cities/photos.json, which build_city_pages.py reads. Needs `requests`.
+Writes stamped-cities/photos.json, which build_city_pages.py reads. With --campuses it looks up
+the campus buildings instead and writes stamped-colleges/photos.json for build_campus_pages.py.
+Needs `requests`.
 """
 import argparse
 import html
@@ -20,6 +22,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "stamped-cities" / "photos.json"
+CAMPUS_OUT = ROOT / "stamped-colleges" / "photos.json"
 CACHE = ROOT / "tools" / "stamped" / ".cache" / "wiki_http_cache.json"   # git-ignored
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 THUMB_WIDTH = 800
@@ -42,7 +45,9 @@ def commons_file(url):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--app", default=str(Path.home() / "Documents/Stamped-A-City-Passport"))
+    parser.add_argument("--campuses", action="store_true", help="look up campus buildings instead of city landmarks")
     args = parser.parse_args()
+    out = CAMPUS_OUT if args.campuses else OUT
     sys.path.insert(0, str(Path(args.app).expanduser() / "tools" / "photo-audit"))
     import wiki            # the app's lookup
     import audit           # the app's ok / far_away / logo checks
@@ -55,7 +60,7 @@ def main():
 
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from build_city_pages import PLACES
-    landmarks = [l for l in wiki.load_landmarks() if l.city in PLACES]
+    landmarks = [l for l in wiki.load_landmarks() if (l.city not in PLACES) == args.campuses]
 
     # 1. The photo the app shows, kept only when the app's audit calls it "ok"
     files = {}
@@ -113,8 +118,9 @@ def main():
         entry = info.get(name.replace("_", " "))
         if entry:
             photos[landmark_id] = entry
-    OUT.write_text(json.dumps(photos, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
-    print(f"{len(photos)} of {len(landmarks)} landmarks have a free photo -> {OUT.relative_to(ROOT)}")
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(photos, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
+    print(f"{len(photos)} of {len(landmarks)} landmarks have a free photo -> {out.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

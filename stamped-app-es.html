@@ -282,26 +282,94 @@
         .cta .qr-card strong { color: var(--color-band-ink); }
         .cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
 
-        /* A phone drawn with CSS around a plain screenshot */
+        /* A phone drawn with CSS around a plain screenshot: a brushed metal rim, a thin black bezel and side buttons */
         .phone {
             position: relative;
             width: 100%;
             max-width: 280px;
             margin: 0 auto;
-            border: 9px solid var(--color-phone);
-            border-radius: 44px;
-            overflow: hidden;
-            background: var(--color-phone);
-            box-shadow: var(--shadow-phone);
+            padding: 7px;
+            border: 3px solid transparent;
+            border-radius: 50px;
+            background:
+                linear-gradient(#050505, #050505) padding-box,
+                linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
+            box-shadow: var(--shadow-phone), 0 0 0 1px rgba(0, 0, 0, 0.35);
+        }
+        /* Action and volume buttons on the left, side button on the right */
+        .phone::before,
+        .phone::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #2a2a2d, #6e6e73);
+        }
+        /* One strip painted as three buttons: action, volume up, volume down */
+        .phone::before {
+            left: -6px;
+            top: 17%;
+            height: 25%;
+            background: linear-gradient(180deg,
+                #55555a 0 16%, transparent 16% 30%,
+                #55555a 30% 62%, transparent 62% 70%,
+                #55555a 70% 100%);
+        }
+        .phone::after {
+            right: -6px;
+            top: 25%;
+            height: 11%;
+            background: linear-gradient(270deg, #2a2a2d, #6e6e73);
         }
         .phone img,
         .phone video {
+            display: block;
             width: 100%;
             aspect-ratio: 600 / 1304;
             object-fit: cover;
-            border-radius: 35px;
+            border-radius: 40px;
         }
         .phone--hero { max-width: 300px; }
+
+        /* The hero screen gets a Dynamic Island and status bar drawn over the screenshot */
+        .phone-screen {
+            position: relative;
+            container-type: inline-size;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+        .phone-island {
+            position: absolute;
+            top: 2.8cqw;
+            left: 50%;
+            width: 31cqw;
+            height: 9.2cqw;
+            transform: translateX(-50%);
+            border-radius: 99px;
+            background: #000;
+        }
+        .phone-status {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 12.6cqw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8cqw 0 11cqw;
+            color: #000;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-size: 4.1cqw;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .phone-status svg { display: block; height: 3cqw; width: auto; fill: currentColor; }
+        .phone-status-icons { display: flex; align-items: center; gap: 1.4cqw; }
+        .phone-status--light { color: #fff; }
+        /* Stamps beside a phone sit behind it and peek out, so none ever covers the screen */
+        .phone { z-index: 1; }
+        .phone ~ .stamp { z-index: 0; }
 
         /* Passport stamp: an SVG that uses the shared frame and ring frame defined at the top of <body> */
         .stamp {
@@ -1270,10 +1338,12 @@
                 </div>
                 <div class="hero-visual">
                     <div class="phone phone--hero">
-                        <video class="hero-video" data-src="assets/videos/stamped/stamped-3d-map-screen.mp4"
-                               poster="assets/images/stamped/app/city-3d.webp" width="600" height="1304"
-                               muted loop playsinline preload="none"
-                               aria-label="Stamped! sobrevolando a baja altura un Manhattan fotorrealista en 3D junto al Empire State Building y bajando después a pie de calle en la Quinta Avenida"></video>
+                        <div class="phone-screen">
+                            <video class="hero-video" data-src="assets/videos/stamped/stamped-3d-map-screen.mp4"
+                                   poster="assets/images/stamped/app/city-3d.webp" width="600" height="1304"
+                                   muted loop playsinline preload="none"
+                                   aria-label="Stamped! sobrevolando a baja altura un Manhattan fotorrealista en 3D junto al Empire State Building y bajando después a pie de calle en la Quinta Avenida"></video>
+                        </div>
                         <button class="video-toggle" type="button" aria-label="Pausar vídeo"><i class="fas fa-pause" aria-hidden="true"></i></button>
                     </div>
                     <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">NEW YORK · USA</textPath></text><text class="stamp-big" x="60" y="64">NYC</text><text class="stamp-small" x="60" y="77">2026</text></svg>
@@ -1326,15 +1396,20 @@
                 <div class="phone-pair reveal">
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/city-map-card.webp" width="600" height="1304" loading="lazy"
-                                 alt="Mapa 3D de Nueva York con la tarjeta del Empire State Building, una vista previa de Mirar alrededor y los botones Sellar, Quiero ir y Añadir al viaje" />
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/city-map-card.webp" width="600" height="1304" loading="lazy"
+                                     alt="Mapa 3D de Nueva York con la tarjeta del Empire State Building, una vista previa de Mirar alrededor y los botones Sellar, Quiero ir y Añadir al viaje" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                            </div>
                         </div>
                         <figcaption><strong>Sobrevuela</strong>Todos los monumentos en un mapa 3D.</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/city-look-around.webp" width="600" height="1304" loading="lazy"
-                                 alt="Vista a pie de calle con Mirar alrededor del cubo de cristal de Apple Fifth Avenue en Manhattan" />
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/city-look-around.webp" width="600" height="1304" loading="lazy"
+                                     alt="Vista a pie de calle con Mirar alrededor del cubo de cristal de Apple Fifth Avenue en Manhattan" />
+                            </div>
                         </div>
                         <figcaption><strong>Recorre la calle</strong>Para no pasar de largo nunca más.</figcaption>
                     </figure>
@@ -1394,33 +1469,41 @@
                 <div class="tour-row reveal">
                     <figure>
                         <div class="phone">
-                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" poster="assets/videos/stamped/stamped-tour-paris-poster.jpg"
-                                   width="492" height="1070" muted loop playsinline preload="none"
-                                   aria-label="Visita guiada de París en la app Stamped!: la cámara sobrevuela París en 3D desde el Palais Garnier hasta el Louvre, la Sainte-Chapelle, el Centro Pompidou, el Panteón y la Torre Eiffel"></video>
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" poster="assets/videos/stamped/stamped-tour-paris-poster.jpg"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Visita guiada de París en la app Stamped!: la cámara sobrevuela París en 3D desde el Palais Garnier hasta el Louvre, la Sainte-Chapelle, el Centro Pompidou, el Panteón y la Torre Eiffel"></video>
+                            </div>
                         </div>
                         <figcaption><strong>París</strong>Del Palais Garnier a la Torre Eiffel</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" poster="assets/videos/stamped/stamped-tour-chicago-poster.jpg"
-                                   width="492" height="1070" muted loop playsinline preload="none"
-                                   aria-label="Visita guiada de Chicago en la app Stamped!: la cámara sobrevuela el centro de Chicago en 3D junto al Carbide and Carbon Building, el Wrigley Building, la Tribune Tower y el St. Regis"></video>
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" poster="assets/videos/stamped/stamped-tour-chicago-poster.jpg"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Visita guiada de Chicago en la app Stamped!: la cámara sobrevuela el centro de Chicago en 3D junto al Carbide and Carbon Building, el Wrigley Building, la Tribune Tower y el St. Regis"></video>
+                            </div>
                         </div>
                         <figcaption><strong>Chicago</strong>De Michigan Avenue al St. Regis</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
-                                   width="492" height="1070" muted loop playsinline preload="none"
-                                   aria-label="Visita guiada de Londres en la app Stamped!: la cámara sobrevuela Londres en 3D desde la Tate Modern hasta la catedral de San Pablo, el Barbican, el Gherkin y el edificio Lloyd's"></video>
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Visita guiada de Londres en la app Stamped!: la cámara sobrevuela Londres en 3D desde la Tate Modern hasta la catedral de San Pablo, el Barbican, el Gherkin y el edificio Lloyd's"></video>
+                            </div>
                         </div>
                         <figcaption><strong>Londres</strong>De la Tate Modern al edificio Lloyd's</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
-                                   width="492" height="1070" muted loop playsinline preload="none"
-                                   aria-label="Visita guiada de Roma en la app Stamped!: la cámara sobrevuela Roma en 3D desde el Panteón hasta el Palazzo Doria Pamphilj, el Altare della Patria y San Carlo alle Quattro Fontane"></video>
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Visita guiada de Roma en la app Stamped!: la cámara sobrevuela Roma en 3D desde el Panteón hasta el Palazzo Doria Pamphilj, el Altare della Patria y San Carlo alle Quattro Fontane"></video>
+                            </div>
                         </div>
                         <figcaption><strong>Roma</strong>Del Panteón al Altare della Patria</figcaption>
                     </figure>
@@ -1604,8 +1687,11 @@
                 </div>
                 <div class="feature-visual reveal">
                     <div class="phone">
-                        <img src="assets/images/stamped/app/city-journey.webp" width="600" height="1304" loading="lazy"
-                             alt="Pantalla Mi viaje con 171 sellos, ciudades visitadas y dominadas, y Albert Kahn como arquitecto favorito" />
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-journey.webp" width="600" height="1304" loading="lazy"
+                                 alt="Pantalla Mi viaje con 171 sellos, ciudades visitadas y dominadas, y Albert Kahn como arquitecto favorito" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
                     </div>
                     <svg class="stamp stamp--gold" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ARQUITECTO FAVORITO</textPath></text><text class="stamp-big" x="60" y="64">KAHN</text><text class="stamp-small" x="60" y="77">DETROIT</text></svg>
                 </div>
@@ -1641,8 +1727,11 @@
                 </div>
                 <div class="feature-visual reveal">
                     <div class="phone">
-                        <img src="assets/images/stamped/app/city-quiz.webp" width="600" height="1304" loading="lazy"
-                             alt="Quiz de Nueva York que pregunta cuántas plantas tiene el Flatiron Building, con un botón para responder por voz" />
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-quiz.webp" width="600" height="1304" loading="lazy"
+                                 alt="Quiz de Nueva York que pregunta cuántas plantas tiene el Flatiron Building, con un botón para responder por voz" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1664,8 +1753,11 @@
                 </div>
                 <div class="feature-visual reveal">
                     <div class="phone">
-                        <img src="assets/images/stamped/app/city-trip.webp" width="600" height="1304" loading="lazy"
-                             alt="Viaje «NYC Long Weekend» con mapa de la ruta, tres días, un botón para recorrer el viaje en 3D y paradas en el Flatiron y el Empire State Building" />
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-trip.webp" width="600" height="1304" loading="lazy"
+                                 alt="Viaje «NYC Long Weekend» con mapa de la ruta, tres días, un botón para recorrer el viaje en 3D y paradas en el Flatiron y el Empire State Building" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
                     </div>
                     <svg class="stamp stamp--orange" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ESCAPADA</textPath></text><text class="stamp-big" x="60" y="64">3 DÍAS</text><text class="stamp-small" x="60" y="77">NYC</text></svg>
                 </div>
@@ -1750,22 +1842,34 @@
                 <div class="phone-row reveal">
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
-                                 alt="Viaje por universidades con cinco centros en un orden de conducción corto" />
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
+                                     alt="Viaje por universidades con cinco centros en un orden de conducción corto" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
                         </div>
                         <figcaption><strong>Viaje por universidades</strong>Un día en cada universidad, en el orden de ruta más corto.</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
-                                 alt="Mi lista de universidades con cinco centros guardados y un botón Planificar un viaje por universidades" />
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                     alt="Mi lista de universidades con cinco centros guardados y un botón Planificar un viaje por universidades" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
                         </div>
                         <figcaption><strong>Mi lista de universidades</strong>Guarda las universidades que te interesan.</figcaption>
                     </figure>
                     <figure>
                         <div class="phone">
-                            <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
-                                 alt="Lista de tradiciones del campus de Michigan State con dos tradiciones marcadas" />
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
+                                     alt="Lista de tradiciones del campus de Michigan State con dos tradiciones marcadas" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
                         </div>
                         <figcaption><strong>Más de 250 tradiciones</strong>Frota la estatua de la suerte, toca la campana y márcalo.</figcaption>
                     </figure>
@@ -1789,8 +1893,11 @@
                 </div>
                 <div class="feature-visual passport-page">
                     <div class="phone reveal">
-                        <img src="assets/images/stamped/app/achievements.webp" width="600" height="1304" loading="lazy"
-                             alt="Pantalla de logros con varios logros desbloqueados, entre ellos Primer sello y Club de los cien" />
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/achievements.webp" width="600" height="1304" loading="lazy"
+                                 alt="Pantalla de logros con varios logros desbloqueados, entre ellos Primer sello y Club de los cien" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
                     </div>
                     <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">LOGRO</textPath></text><text class="stamp-big" x="60" y="62">CENTURY</text><text class="stamp-small" x="60" y="76">CLUB</text></svg>
                     <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CAIRO · EGYPT</textPath></text><text class="stamp-big" x="60" y="64">GIZA</text><text class="stamp-small" x="60" y="77">2560 a. C.</text></svg>
