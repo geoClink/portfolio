@@ -177,7 +177,7 @@
         <div class="case-hero">
             <img src="assets/images/tallyios/appicon.png" alt="Tally app icon" class="case-hero-icon" />
             <h2 class="case-title">Tally - Time Tracker</h2>
-            <p class="case-tagline">A time tracker for freelancers and small teams. Native iPhone, iPad, Apple Watch, Mac and Vision Pro apps, a web app, and an Android beta, all on one backend, connected to Jira, Linear, Asana, ClickUp, GitHub, GitLab, Slack, and Google Calendar. Designed, built, and shipped solo.</p>
+            <p class="case-tagline">A time tracker for freelancers and small teams. Native iPhone, iPad, Apple Watch, Mac and Vision Pro apps, a web app, and an Android beta, all on one backend, connected to Jira, Linear, Asana, ClickUp, Trello, monday.com, Basecamp, GitHub, GitLab, Slack, and Google Calendar. Designed, built, and shipped solo.</p>
         </div>
 
         <div class="case-links">
@@ -212,7 +212,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Integrations</div>
-                <div class="case-glance-value">Jira · Linear · Notion · Asana · ClickUp · Todoist · Figma · GitHub · GitLab · Slack · Calendar · Stripe · Claude</div>
+                <div class="case-glance-value">Jira · Linear · Asana · ClickUp · Trello · monday.com · Basecamp · Notion · Todoist · GitHub · GitLab · Figma · Slack · Calendar · Stripe · Claude</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
@@ -476,27 +476,38 @@
                         <li>Stripe</li>
                         <li>Jira</li>
                         <li>Linear</li>
+                        <li>Asana</li>
+                        <li>ClickUp</li>
+                        <li>Trello</li>
+                        <li>monday.com</li>
+                        <li>Basecamp</li>
                         <li>Notion</li>
                         <li>Todoist</li>
                         <li>Figma</li>
                         <li>GitHub</li>
+                        <li>GitLab</li>
+                        <li>Slack</li>
                         <li>Calendar</li>
                         <li>Claude</li>
                     </ul>
                 </div>
                 <figcaption id="tally-arch-caption">Every app reads and writes the same Supabase project. Integrations connect through Edge Functions, so tokens and secrets stay on the server.</figcaption>
             </figure>
-            <p><strong>Payments.</strong> StoreKit, Google Play Billing and Stripe all feed one Supabase subscriptions table, with no third-party billing service. Only the server writes to it (Stripe through a webhook, App Store purchases verified against Apple's signature), so a client can't grant itself Pro. App Review took nearly 10 rejections, each for a different guideline, before the first release.</p>
+            <p><strong>Payments.</strong> Tally is free for up to five clients, with one paid plan, Tally Premium, at $4.99 a month or $39.99 a year. StoreKit, Google Play Billing and Stripe all feed one Supabase subscriptions table, with no third-party billing service. Only the server writes to it (Stripe through a webhook, App Store purchases verified against Apple's signature), so a client can't grant itself Premium. App Review took nearly 10 rejections, each for a different guideline, before the first release.</p>
             <p><strong>Push notifications.</strong> An Edge Function delivers through APNs and Firebase Cloud Messaging, signing a JWT per request and pruning dead tokens. Permission is asked after the first tracked session, not at launch.</p>
             <p><strong>Automated email.</strong> A weekly summary of each user's hours and a note for users who've gone quiet, sent by scheduled jobs through Resend with signed one-click unsubscribe links.</p>
-            <p><strong>Integrations.</strong> Jira and Linear tokens are encrypted before they're stored, and saved sessions post back as a Jira worklog or a Linear comment. GitHub is read-only and limited to the repositories you pick. The Claude connector is an MCP server over the same data the apps use.</p>
+            <p><strong>Integrations.</strong> Integration tokens are encrypted before they're stored, and saved sessions post back to the tool they came from: a Jira worklog, a Linear comment, an Asana or ClickUp time entry, a Trello comment, a monday.com update or a Basecamp timesheet entry. Inside Tally, a Jira ticket shows its details and comments, and you can reply or change its status without leaving the timer. GitHub is read-only and limited to the repositories you pick. The Claude connector is an MCP server over the same data the apps use.</p>
         </div>
 
         <div class="case-section">
             <h3>Engineering Highlights</h3>
             <ul>
                 <li><strong>Open-source CLI</strong>: a Python timer for the Mac terminal that syncs to the same account and logs time to Jira. It's MIT licensed, so you can <a href="https://github.com/geoClink/Tally-CLI" target="_blank" rel="noopener noreferrer">read the code on GitHub ↗</a></li>
-                <li><strong>Public API</strong>: a REST API (<a href="https://www.tallytimetracker.com/developers" target="_blank" rel="noopener noreferrer">docs</a>, <a href="https://www.tallytimetracker.com/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI spec</a>) with scoped API keys, safe retries and signed webhooks. Version 1 only ever adds, never removes</li>
+                <li><strong>Chrome extension</strong>: a Start Tally button on tasks in Jira, GitHub, Linear, Asana, Trello and ClickUp, <a href="https://chromewebstore.google.com/detail/ajkmkjolilbcfleagbdhccgnpmkdkkdj" target="_blank" rel="noopener noreferrer">live on the Chrome Web Store ↗</a></li>
+                <li><strong>Public API</strong>: a REST API (<a href="https://www.tallytimetracker.com/developers" target="_blank" rel="noopener noreferrer">docs</a>, <a href="https://www.tallytimetracker.com/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI spec</a>) with scoped API keys, safe retries and signed webhooks. Version 1 only ever adds, never removes. Zapier, Make and n8n connect through it</li>
+                <li><strong>Switching in</strong>: import your history from Toggl Track, Harvest or Clockify from a CSV export</li>
+                <li><strong>Team billing</strong>: client budgets in hours or money with alerts at 80% and 100%, and weekly timesheets a team admin approves or sends back, after which the week locks</li>
+                <li><strong>Native Mac touches</strong>: a menu bar timer, ⌘K quick search and keyboard keys for the timer, and Apple Watch complications</li>
                 <li><strong>Shared business logic</strong>: contract math (minimums, makeup hours, time off, caps) lives in one JavaScript module used by the web app and the server, mirrored in Swift, with tests that keep the two in step</li>
                 <li><strong>Automated tests</strong>: Deno tests for the server functions, Swift tests for the Mac app, and end-to-end browser tests that sign in, run a timer, and save a session against a local stack</li>
                 <li><strong>Security</strong>: row-level security on every table, integration tokens encrypted at rest, and client report links with unguessable tokens that can be turned off</li>
@@ -552,7 +563,8 @@
 
         <div class="case-section" id="outcome" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>About 300 downloads and 63K+ App Store impressions since launch, built and shipped solo, with one account across every platform. Version 1.9.2 went out everywhere on the same day.</p>
+            <p>I use Tally every day on a real freelance contract: the person I work with and I both track our hours for the client in it. That daily use is where most fixes and features come from.</p>
+            <p>About 300 downloads and 63K+ App Store impressions since launch, built and shipped solo, with one account across every platform. Version 1.10.0 went out on every Apple platform, the web and Android together.</p>
             <p>It's the most complex thing I've built. Not because any single piece is hard, but because seven platforms, several payment paths, a shared backend and a growing list of integrations all have to be right at once.</p>
         </div>
 
@@ -560,8 +572,7 @@
             <h3>What I Learned, and What's Next</h3>
             <p>Shipping the same feature to every platform taught me to put the rules in one place first. When the server owns the truth (the shared timer, the subscription record, the "logged once" claim), every app can be simple, and a new platform like Vision Pro is mostly layout work.</p>
             <ul>
-                <li><strong>Android to production</strong> once the closed test is done, with a wide-window layout for tablets and Chromebooks</li>
-                <li><strong>An installable web app</strong> for Windows and Chromebooks, straight from the browser</li>
+                <li><strong>Android to production</strong> once the closed test is done. The tablet and Chromebook layout and the installable web app for Windows and Chromebooks have already shipped</li>
                 <li><strong>Translations</strong> for the apps and the store listings, starting with Spanish, French, German and Portuguese</li>
             </ul>
         </div>

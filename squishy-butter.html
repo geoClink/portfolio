@@ -280,7 +280,7 @@
             <div class="sb-results-label">Results</div>
             <ul>
                 <li><strong>1,800+ downloads, zero ad spend.</strong> 4.7 stars on the App Store.</li>
-                <li><strong>283 automated tests</strong> on pulls, payments and permissions. They caught four real money bugs, each fixed and deployed the same day.</li>
+                <li><strong>More than 850 automated tests</strong> on pulls, payments, permissions and the game itself. They caught four real money bugs, each fixed and deployed the same day.</li>
                 <li><strong>Translated for the 69%</strong> of players who don't use English, and Play listing conversion went up.</li>
                 <li><strong>Shipped solo</strong> to web, iPhone, iPad, Android, Mac and Apple Watch, plus VR in the headset browser.</li>
             </ul>
@@ -333,7 +333,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
             <div class="skin-pan-wrap">
                 <img src="assets/images/squishy-butter/butter-skins-grid.webp" alt="Squishy Butter skin lineup: Classic, Aurora, Striped, Wood, and more" width="969" height="1969" loading="lazy" decoding="async">
             </div>
-            <p style="font-size:0.8em;color:var(--color-text-muted);margin:-1em 0 1.5em;text-align:center;">Every skin is also a bundled iMessage sticker. Hover to pause the lineup.</p>
+            <p style="font-size:0.8em;color:var(--color-text-muted);margin:-1em 0 1.5em;text-align:center;">148 of the skins are also bundled iMessage stickers. Hover to pause the lineup.</p>
             <p>A skin is data plus a look: a compressed texture map, or for around 50 skins a generator that paints it at runtime, plus its own material, physics and sound. The same engine, shaders, sound model and certificate system drive all of them, so adding a skin means describing it, not building a new feature. That's what made a 214-skin catalogue practical for one person.</p>
             <p>Some skins push the engine further. Frozen barely yields until you warm it, and it warms where you touch it, so one end can soften while the rest stays solid. Fur is 16 stacked shell layers, each run through the squish shader so the coat dents with the butter. Gold reflects the actual room instead of painted highlights. Sound is generated live in Web Audio and fed the dent's depth and speed every frame, so it tracks what your hand is doing.</p>
         </div>
@@ -378,7 +378,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                 <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
                 <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Postgres</span><strong style="font-size:0.95em;">Credit exactly once</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Server-only functions, per-user lock, idempotent transaction IDs. Profile changes allow-listed.</span></div>
             </div>
-            <p>To test that without touching real players, I rebuilt the backend so a complete local copy comes up with one command, seeded with the full catalogue and test accounts. Now 202 SQL tests cover pulls, payments and permissions, 81 more run the payment server functions against forged and replayed store receipts, and continuous integration runs every suite on each push. The tests found four more real bugs, all fixed and deployed the same day, each with the test that proves it: limited skins could sell past their supply cap, two players pulling at the same instant could get the same serial number, buying the same coin pack on Mac and then iPhone didn't credit the second one, and a web bank transfer was credited before the money arrived.</p>
+            <p>To test that without touching real players, I rebuilt the backend so a complete local copy comes up with one command, seeded with the full catalogue and test accounts. Now more than 250 SQL tests cover pulls, payments, permissions, consent and account deletion, 105 more run the server functions against forged and replayed store receipts, and 500 Vitest tests cover the game code. One command runs every suite locally before each push. The tests found four more real bugs, all fixed and deployed the same day, each with the test that proves it: limited skins could sell past their supply cap, two players pulling at the same instant could get the same serial number, buying the same coin pack on Mac and then iPhone didn't credit the second one, and a web bank transfer was credited before the money arrived.</p>
         </div>
 
         <div class="case-section" id="hard" style="margin-top:3em;">
@@ -410,7 +410,8 @@ return Math.max(6, Math.min(cap, affordable));</div>
             <ul>
                 <li><strong>Auth.</strong> Sign in with Apple, Google or an eight-digit email code, chosen over a magic link so you stay in the same app whichever email client opens. Profiles track coins, squishes and time squished, with 38 colours, 59 expressions and unlockable titles.</li>
                 <li><strong>Four languages.</strong> About 69% of players use Indonesian, Spanish or Portuguese, so in October I translated everything, including about 5,000 lines of skin lore per language. A screen smoke test runs 104 checks across all four languages at two viewport sizes.</li>
-                <li><strong>Beyond the phone.</strong> Three home-screen widget sizes, an Apple Watch app that keeps your count on your wrist, and every butter as an iMessage sticker.</li>
+                <li><strong>Beyond the phone.</strong> Three home-screen widget sizes plus Lock Screen widgets, an Apple Watch app that keeps your count on your wrist, 148 butters as iMessage stickers, and an App Clip that lets someone squish before installing.</li>
+                <li><strong>Reminders and privacy.</strong> Push reminders arrive in the player's own language. Email opt-in keeps a consent record, EU and UK visitors get a cookie choice, and the app ships an Apple privacy manifest.</li>
                 <li><strong>VR on Vision Pro, Quest and Android XR.</strong> Open squishybutter.app in the headset browser and pinch to squish across five themed rooms. It's WebXR, so there's no native port, and an automated test drives the flow in an emulated Quest headset.</li>
                 <li><strong>On every screen.</strong> One Capacitor and Three.js codebase for web, iPhone, iPad, Android, Mac and Apple Watch, with 120 localized store screenshots rendered from the running app by a headless-browser pipeline.</li>
                 <li><strong>The landing page.</strong> <a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">A full product page ↗</a> with the collection, rarity tiers, drop rates and coin packs, responsive down to a phone.</li>
@@ -477,7 +478,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     </div>
 
                     <h4>Beyond the Phone</h4>
-                    <p>The same account follows you off the main screen: three home-screen widget sizes show your squish stats, the Apple Watch app keeps your count on your wrist, and every butter ships as an iMessage sticker bundled with the app.</p>
+                    <p>The same account follows you off the main screen: home-screen and Lock Screen widgets show your squish stats, the Apple Watch app keeps your count on your wrist, and 148 butters ship as iMessage stickers bundled with the app.</p>
                     <div style="display:flex;gap:1.5em;align-items:center;flex-wrap:wrap;margin-top:1.25em;">
                         <img src="assets/images/squishy-butter/widget-background-and-widgets.webp" alt="All three Squishy Butter widgets - large, medium, and small" width="1538" height="759" loading="lazy" decoding="async" style="height:auto;flex:1 1 360px;min-width:0;width:100%;display:block;border-radius:12px;">
                         <img src="assets/images/squishy-butter/squishy-watch.webp" alt="Squishy Butter Apple Watch app with the butter to tap and 12,847 squishes" width="275" height="450" loading="lazy" decoding="async" style="height:auto;flex:0 0 140px;width:140px;margin:0 auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,0.22));">
