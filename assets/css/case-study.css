@@ -81,6 +81,11 @@
     transition: color 0.2s ease, border-bottom-color 0.2s ease !important;
 }
 
+.case-links a.button .fab {
+    font-size: 1.25em;
+    margin-right: 0.45em;
+}
+
 .case-links-label {
     width: 100%;
     font-size: 0.7em;
