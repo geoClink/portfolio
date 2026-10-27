@@ -288,9 +288,11 @@
             width: 100%;
             max-width: 280px;
             margin: 0 auto;
-            padding: 7px;
+            /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
+               so small phones on a narrow screen keep the same shape instead of turning blobby */
+            padding: 2.5%;
             border: 3px solid transparent;
-            border-radius: 50px;
+            border-radius: 18% / 8.5%;
             background:
                 linear-gradient(#050505, #050505) padding-box,
                 linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
@@ -327,7 +329,7 @@
             width: 100%;
             aspect-ratio: 600 / 1304;
             object-fit: cover;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
         }
         .phone--hero { max-width: 300px; }
 
@@ -335,7 +337,7 @@
         .phone-screen {
             position: relative;
             container-type: inline-size;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
             overflow: hidden;
         }
         .phone-island {
