@@ -208,7 +208,7 @@ FOOT = """
                 <a href="../contact.html">Support</a>
                 <a href="../privacy.html">Privacy</a>
             </nav>
-            <p>Landmark details come from the Stamped! app. Photos are from Wikimedia Commons; each is credited with its author and license. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>Landmark details come from the Stamped! app. Photos are openly licensed, mostly from Wikimedia Commons; each is credited with its author, license and source. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
@@ -231,7 +231,7 @@ def photo_figure(photo, name, eager=False):
     loading = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
     return (f'<figure class="landmark-photo"><img src="{e(photo["src"])}" width="{photo["width"]}" height="{photo["height"]}" '
             f'alt="{e(name)}" {loading} referrerpolicy="no-referrer" />'
-            f'<figcaption>Photo: <a href="{e(photo["page"])}" rel="noopener">{e(photo["author"])}</a>, {license_html}, via Wikimedia Commons</figcaption></figure>')
+            f'<figcaption>Photo: <a href="{e(photo["page"])}" rel="noopener">{e(photo["author"])}</a>, {license_html}, via {e(photo.get("site", "Wikimedia Commons"))}</figcaption></figure>')
 
 
 def suggest_section(place, url, heading, intro, kinds):
@@ -588,7 +588,7 @@ ARCHITECTS = {
 
 def credit_text(photo):
     """Plain-text credit for photos inside links (a link can't hold another link)."""
-    return f"Photo: {photo['author']}, {photo['license']}, Wikimedia Commons"
+    return f"Photo: {photo['author']}, {photo['license']}, {photo.get('site', 'Wikimedia Commons')}"
 
 
 def fold(text):

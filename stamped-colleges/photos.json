@@ -395,6 +395,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Clemson_Memorial_Stadium_-_Clemson_University_-_DSC07484.JPG/960px-Clemson_Memorial_Stadium_-_Clemson_University_-_DSC07484.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_clemson_tillman_hall": {
+  "author": "Dick Rochester from Lafayette, Colorado, United States",
+  "height": 536,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tillman_Hall_January_2008.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Tillman_Hall_January_2008.jpg/960px-Tillman_Hall_January_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 34 m",
+  "width": 800
+ },
  "campus_columbia_butler_library": {
   "author": "JSquish",
   "height": 465,
@@ -881,6 +892,17 @@
   "src": "https://upload.wikimedia.org/wikipedia/commons/4/4f/WidenerLibrary_HarvardUniversity_Springtime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "width": 800
  },
+ "campus_iastate_beardshear": {
+  "author": "Alex Hanson from Ames, Iowa",
+  "height": 494,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beardshear_2-8_(26234786023).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Beardshear_2-8_%2826234786023%29.jpg/960px-Beardshear_2-8_%2826234786023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 30 m",
+  "width": 800
+ },
  "campus_iastate_campanile": {
   "author": "Cburnett",
   "height": 1200,
@@ -1277,6 +1299,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/BreslinCenterA.jpg/960px-BreslinCenterA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_michstate_broad_art_museum": {
+  "author": "Andrew Martin",
+  "height": 450,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Eli_and_Edythe_Broad_Art_Museum_-_panoramio.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Eli_and_Edythe_Broad_Art_Museum_-_panoramio.jpg/960px-Eli_and_Edythe_Broad_Art_Museum_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 49 m",
+  "width": 800
+ },
  "campus_michstate_cowles_house": {
   "author": "The original uploader was Jeffness at English Wikipedia.",
   "height": 533,
@@ -1626,6 +1659,17 @@
   "licenseUrl": null,
   "page": "https://commons.wikimedia.org/wiki/File:Kennon_Observatory.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Kennon_Observatory.jpg/960px-Kennon_Observatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_olemiss_lyceum": {
+  "author": "Fredlyfish4",
+  "height": 1200,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Lyceum_University_of_Mississippi_2018_3.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/The_Lyceum_University_of_Mississippi_2018_3.jpg/960px-The_Lyceum_University_of_Mississippi_2018_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 37 m",
   "width": 800
  },
  "campus_olemiss_rowan_oak": {
@@ -1997,6 +2041,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Kirkpatrick_Chapel%2C_Rutgers_University_-_looking_north.jpg/960px-Kirkpatrick_Chapel%2C_Rutgers_University_-_looking_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_rutgers_old_queens": {
+  "author": "ajay_suresh",
+  "height": 450,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Old_Queens_-_Rutgers_University_(55142886116).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Old_Queens_-_Rutgers_University_%2855142886116%29.jpg/960px-Old_Queens_-_Rutgers_University_%2855142886116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 37 m",
+  "width": 800
+ },
  "campus_rutgers_winants_hall": {
   "author": "ajay_suresh",
   "height": 450,
@@ -2204,6 +2259,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Stanford_Memorial_Church_%282025%29-L1007381.jpg/960px-Stanford_Memorial_Church_%282025%29-L1007381.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_syracuse_carnegie_library": {
+  "author": "Elstad Ranch",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:SU_Carnegie_Library.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/SU_Carnegie_Library.jpg/960px-SU_Carnegie_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 7 m",
+  "width": 800
+ },
  "campus_syracuse_crouse_college": {
   "author": "Unknown author",
   "height": 600,
@@ -2285,6 +2351,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/LuptonStadiumOutside.jpg/960px-LuptonStadiumOutside.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_tcu_robert_carr_chapel": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Texas_Christian_University_June_2017_46_(Robert_Carr_Chapel).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Texas_Christian_University_June_2017_46_%28Robert_Carr_Chapel%29.jpg/960px-Texas_Christian_University_June_2017_46_%28Robert_Carr_Chapel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 61 m",
+  "width": 800
+ },
  "campus_tcu_schollmaier_arena": {
   "author": "Michael Barera",
   "height": 533,
@@ -2364,6 +2441,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:University_of_Arizona_May_2019_44_(Bear_Down_Gymnasium).jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/University_of_Arizona_May_2019_44_%28Bear_Down_Gymnasium%29.jpg/960px-University_of_Arizona_May_2019_44_%28Bear_Down_Gymnasium%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_uarizona_centennial_hall": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:University_of_Arizona_May_2019_69_(Centennial_Hall).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/University_of_Arizona_May_2019_69_%28Centennial_Hall%29.jpg/960px-University_of_Arizona_May_2019_69_%28Centennial_Hall%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 97 m",
   "width": 800
  },
  "campus_uarizona_old_main": {
@@ -2850,6 +2938,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Watsco_center_2009_cropped.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Watsco_center_2009_cropped.jpg/960px-Watsco_center_2009_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_umich_burton_tower": {
+  "author": "w_lemay",
+  "height": 1067,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burton_Memorial_Tower,_Ingalls_Mall,_University_of_Michigan,_University_Avenue,_Ann_Arbor,_MI_-_54380292047.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Burton_Memorial_Tower%2C_Ingalls_Mall%2C_University_of_Michigan%2C_University_Avenue%2C_Ann_Arbor%2C_MI_-_54380292047.jpg/960px-Burton_Memorial_Tower%2C_Ingalls_Mall%2C_University_of_Michigan%2C_University_Avenue%2C_Ann_Arbor%2C_MI_-_54380292047.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 45 m",
   "width": 800
  },
  "campus_umich_clements_library": {
@@ -3392,6 +3491,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Natural_History_Museum_of_Utah.jpg/960px-Natural_History_Museum_of_Utah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_uutah_park_building": {
+  "author": "Mangoman88",
+  "height": 1161,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:John_R._Park_Building_-_front_entrance_-_25_August_2012.JPG",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/John_R._Park_Building_-_front_entrance_-_25_August_2012.JPG/960px-John_R._Park_Building_-_front_entrance_-_25_August_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 45 m",
+  "width": 800
+ },
  "campus_uva_carrs_hill": {
   "author": "Rwhaley",
   "height": 600,
@@ -3417,6 +3527,17 @@
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:The_Lawn,_University_of_Virginia.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/The_Lawn%2C_University_of_Virginia.jpg/960px-The_Lawn%2C_University_of_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_uva_rotunda": {
+  "author": "Rex Hammock from USA",
+  "height": 1195,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rotunda,_University_of_Virginia_(2349832703).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Rotunda%2C_University_of_Virginia_%282349832703%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "via": "commons-nearby 12 m",
   "width": 800
  },
  "campus_uw_denny_hall": {
@@ -3509,6 +3630,17 @@
   "src": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Old_Gymnasium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "width": 800
  },
+ "campus_vt_burruss_hall": {
+  "author": "Ben Schumin from Montgomery Village, Maryland, USA",
+  "height": 600,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burruss_Hall_-02-_(12349794314).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Burruss_Hall_-02-_%2812349794314%29.jpg/960px-Burruss_Hall_-02-_%2812349794314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 72 m",
+  "width": 800
+ },
  "campus_vt_cassell_coliseum": {
   "author": "User:B",
   "height": 441,
@@ -3516,6 +3648,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cassell_Coliseum_wide_shot.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Cassell_Coliseum_wide_shot.jpg/960px-Cassell_Coliseum_wide_shot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_vt_lane_hall": {
+  "author": "Eric T Gunther",
+  "height": 600,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lane_Hall_Virginia_Tech.JPG",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Lane_Hall_Virginia_Tech.JPG/960px-Lane_Hall_Virginia_Tech.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 60 m",
   "width": 800
  },
  "campus_vt_lane_stadium": {

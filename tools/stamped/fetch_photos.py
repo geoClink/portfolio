@@ -57,6 +57,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--app", default=str(Path.home() / "Documents/Stamped-A-City-Passport"))
     parser.add_argument("--campuses", action="store_true", help="look up campus buildings instead of city landmarks")
+    parser.add_argument("--fill", action="store_true", help="for landmarks still without a photo, search Commons nearby and Openverse (photo_fallbacks.py)")
     args = parser.parse_args()
     out = CAMPUS_OUT if args.campuses else OUT
     sys.path.insert(0, str(Path(args.app).expanduser() / "tools" / "photo-audit"))
@@ -130,6 +131,11 @@ def main():
         entry = info.get(name.replace("_", " "))
         if entry:
             photos[landmark_id] = entry
+    if args.fill:
+        from photo_fallbacks import fill
+        added = fill(client, landmarks, photos, set(), PLACES)
+        print(f"{added} more from Commons (nearby) and Openverse")
+
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(photos, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
     print(f"{len(photos)} of {len(landmarks)} landmarks have a free photo -> {out.relative_to(ROOT)}")
