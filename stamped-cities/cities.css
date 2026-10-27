@@ -394,7 +394,10 @@ a { color: inherit; }
 @media (min-width: 768px) {
     .hero-photos { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
     .hero-photos li:first-child { grid-column: 1; grid-row: 1 / span 2; }
-    .hero-photos li:first-child img { aspect-ratio: auto; min-height: 360px; }
+    /* The two small photos set the height; the big one fills it, cropped, whatever its shape */
+    .hero-photos li:first-child a { height: 100%; min-height: 360px; }
+    .hero-photos li:first-child img { position: absolute; inset: 0; aspect-ratio: auto; }
+    .hero-photos li:not(:first-child) a { height: 100%; }
     .hero-photos.count-1 li:first-child { grid-column: 1 / -1; }
     .hero-photos.count-2 { grid-template-rows: 1fr; }
     .hero-photos img { aspect-ratio: 4 / 3; }
