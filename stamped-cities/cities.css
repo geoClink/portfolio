@@ -205,6 +205,7 @@ a { color: inherit; }
 }
 .fact-grid strong { display: block; font-size: 17px; margin-bottom: 6px; }
 .fact-grid p { margin: 0; font-size: 15px; color: var(--color-muted); }
+.look-around-status a { white-space: nowrap; }
 
 /* ===== Landmarks ===== */
 .landmarks { padding: 64px 0; }
@@ -329,6 +330,8 @@ a { color: inherit; }
     .stats { grid-template-columns: repeat(4, 1fr); }
     .section-title { font-size: 38px; }
     .fact-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Exactly three cards sit in one row, so the third isn't alone on a half-empty line */
+    .fact-grid:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); }
     .landmark-list li { padding: 28px 30px 24px; }
     .landmark-list dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .cta h2 { font-size: 44px; }

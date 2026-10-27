@@ -29,7 +29,9 @@
 
         preview = new mapkit.LookAroundPreview(panel, marker.coordinate);
         preview.addEventListener('load', function () {
-            status.innerHTML = '<strong></strong> · Tap the preview to look around. <a>Read more</a>';
+            // Apple picks the nearest street photo and the web API can't aim it at the building,
+            // so the caption says "nearest" rather than promising a view of it
+            status.innerHTML = 'Street view nearest <strong></strong> · Tap it to look around. <a>Read more</a>';
             status.querySelector('strong').textContent = landmark.name;
             status.querySelector('a').href = '#' + landmark.id;
         });
@@ -47,11 +49,15 @@
             return;
         }
         var markers = data.landmarks.map(function (landmark, index) {
+            // Names show only on the selected pin; on a compact campus all of them at once overlap
+            var hidden = mapkit.FeatureVisibility ? mapkit.FeatureVisibility.Hidden : 'hidden';
             var marker = new mapkit.MarkerAnnotation(new mapkit.Coordinate(landmark.lat, landmark.lng), {
                 title: landmark.name,
                 subtitle: landmark.subtitle,
                 color: '#F2743F',
-                glyphText: String(index + 1)
+                glyphText: String(index + 1),
+                titleVisibility: hidden,
+                subtitleVisibility: hidden
             });
             marker.landmark = landmark;
             return marker;
@@ -66,7 +72,10 @@
         map.addEventListener('select', function (event) {
             if (event.annotation && event.annotation.landmark) showLookAround(event.annotation);
         });
-        if (markers.length) showLookAround(markers[0]);
+        if (markers.length) {
+            markers[0].selected = true;   // shows its name, matching the Look Around preview
+            showLookAround(markers[0]);
+        }
     };
 
     function loadMapKit() {
