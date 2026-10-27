@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Southern Methodist University Campus Tour: 5 Buildings to See | Stamped!</title>
+    <title>Southern Methodist University Campus Visit Guide: Architecture and Traditions | Stamped!</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A campus visit guide to Southern Methodist University: Dallas Hall, McFarlin Memorial Auditorium, Perkins Hall of Administration and more, plus 2 campus traditions to try. Architects, build dates and history, from the Stamped! app." />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-colleges/southern-methodist-university.html" />
     <link rel="icon" href="../assets/images/stamped/app/icon.webp" type="image/webp" />
-    <meta name="apple-itunes-app" content="app-id=6759680336" />
-    <meta property="og:title" content="Southern Methodist University Campus Tour: 5 Buildings to See | Stamped!" />
+    <meta name="apple-itunes-app" content="app-id=6759680336, app-argument=https://georgeclinkscalesdev.com/stamped-colleges/southern-methodist-university.html" />
+    <meta property="og:title" content="Southern Methodist University Campus Visit Guide: Architecture and Traditions | Stamped!" />
     <meta property="og:description" content="A campus visit guide to Southern Methodist University: Dallas Hall, McFarlin Memorial Auditorium, Perkins Hall of Administration and more, plus 2 campus traditions to try. Architects, build dates and history, from the Stamped! app." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-colleges/southern-methodist-university.html" />
-    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dallas_Hall_on_the_campus_of_Southern_Methodist_University%2C_Dallas%2C_Texas_LCCN2015630915.jpg/960px-Dallas_Hall_on_the_campus_of_Southern_Methodist_University%2C_Dallas%2C_Texas_LCCN2015630915.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="../stamped-cities/cities.css" />
     <link rel="stylesheet" href="campus.css" />
@@ -215,6 +215,30 @@
         </div>
     </section>
 
+    <section class="suggest" aria-labelledby="suggest-title">
+        <div class="container">
+            <h2 id="suggest-title" class="section-title">Know Southern Methodist University well?</h2>
+            <p class="map-hint">Students and alumni know the traditions best. Suggest one we&#x27;re missing, a building worth a stamp, or a fix. Every suggestion is checked against a source before it goes into the app.</p>
+            <form class="suggest-form" data-place="Southern Methodist University" data-page="https://georgeclinkscalesdev.com/stamped-colleges/southern-methodist-university.html">
+                <fieldset>
+                    <legend class="fact-label">I'm suggesting</legend>
+                    <label><input type="radio" name="kind" value="Tradition" checked /> A tradition</label>
+                    <label><input type="radio" name="kind" value="Building" /> A building</label>
+                    <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                </fieldset>
+                <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
+                <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="suggest-row">
+                    <label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" required /></label>
+                    <label>Your email<input type="email" name="email" maxlength="200" autocomplete="email" required /></label>
+                </div>
+                <input class="suggest-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <button type="submit">Send suggestion</button>
+                <p class="suggest-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More ACC schools</h2>
@@ -249,5 +273,6 @@
     </footer>
     <script src="../stamped-cities/map-token.js"></script>
     <script src="../stamped-cities/map.js"></script>
+    <script src="../stamped-cities/suggest.js" defer></script>
 </body>
 </html>

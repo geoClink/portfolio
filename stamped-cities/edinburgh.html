@@ -7,7 +7,7 @@
     <meta name="description" content="A guide to 5 architectural landmarks in Edinburgh, United Kingdom: Edinburgh Castle, Palace of Holyroodhouse, Royal Mile and more. Architects, build dates, styles and history, from the Stamped! app." />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-cities/edinburgh.html" />
     <link rel="icon" href="../assets/images/stamped/app/icon.webp" type="image/webp" />
-    <meta name="apple-itunes-app" content="app-id=6759680336" />
+    <meta name="apple-itunes-app" content="app-id=6759680336, app-argument=https://georgeclinkscalesdev.com/stamped-cities/edinburgh.html" />
     <meta property="og:title" content="Edinburgh Architecture: 5 Landmarks to See | Stamped!" />
     <meta property="og:description" content="A guide to 5 architectural landmarks in Edinburgh, United Kingdom: Edinburgh Castle, Palace of Holyroodhouse, Royal Mile and more. Architects, build dates, styles and history, from the Stamped! app." />
     <meta property="og:type" content="website" />
@@ -204,6 +204,29 @@
         </div>
     </section>
 
+    <section class="suggest" aria-labelledby="suggest-title">
+        <div class="container">
+            <h2 id="suggest-title" class="section-title">Know Edinburgh well?</h2>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <form class="suggest-form" data-place="Edinburgh" data-page="https://georgeclinkscalesdev.com/stamped-cities/edinburgh.html">
+                <fieldset>
+                    <legend class="fact-label">I'm suggesting</legend>
+                    <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
+                    <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                </fieldset>
+                <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
+                <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="suggest-row">
+                    <label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" required /></label>
+                    <label>Your email<input type="email" name="email" maxlength="200" autocomplete="email" required /></label>
+                </div>
+                <input class="suggest-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <button type="submit">Send suggestion</button>
+                <p class="suggest-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
@@ -238,5 +261,6 @@
     </footer>
     <script src="map-token.js"></script>
     <script src="map.js"></script>
+    <script src="suggest.js" defer></script>
 </body>
 </html>

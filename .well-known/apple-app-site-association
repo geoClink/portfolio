@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["S4RSN4KFD3.name.GeorgeClinkscales.Stamped--A-City-Passport"],
+        "components": [
+          { "/": "/stamped-cities/index.html", "exclude": true },
+          { "/": "/stamped-cities/architect-*", "exclude": true },
+          { "/": "/stamped-cities/europe.html", "exclude": true },
+          { "/": "/stamped-cities/asia.html", "exclude": true },
+          { "/": "/stamped-cities/north-america.html", "exclude": true },
+          { "/": "/stamped-cities/south-america.html", "exclude": true },
+          { "/": "/stamped-cities/africa.html", "exclude": true },
+          { "/": "/stamped-cities/oceania.html", "exclude": true },
+          { "/": "/stamped-cities/*.html" },
+          { "/": "/stamped-colleges/*.html" }
+        ]
+      }
+    ]
+  }
+}

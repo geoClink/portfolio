@@ -140,7 +140,7 @@ HEAD = """<!DOCTYPE HTML>
     <meta name="description" content="{description}" />
     <link rel="canonical" href="{url}" />
     <link rel="icon" href="../assets/images/stamped/app/icon.webp" type="image/webp" />
-    <meta name="apple-itunes-app" content="app-id=6759680336" />
+    <meta name="apple-itunes-app" content="app-id=6759680336, app-argument={url}" />
     <meta property="og:title" content="{title}" />
     <meta property="og:description" content="{description}" />
     <meta property="og:type" content="website" />
@@ -214,6 +214,36 @@ def photo_figure(photo, name, eager=False):
     return (f'<figure class="landmark-photo"><img src="{e(photo["src"])}" width="{photo["width"]}" height="{photo["height"]}" '
             f'alt="{e(name)}" {loading} referrerpolicy="no-referrer" />'
             f'<figcaption>Photo: <a href="{e(photo["page"])}" rel="noopener">{e(photo["author"])}</a>, {license_html}, via Wikimedia Commons</figcaption></figure>')
+
+
+def suggest_section(place, url, heading, intro, kinds):
+    """A short form that emails a suggestion for this page to George (sent by suggest.js)."""
+    options = "".join(
+        f'\n                    <label><input type="radio" name="kind" value="{e(k)}"{" checked" if i == 0 else ""} /> '
+        f'{"An" if k[0] in "AEIOU" else "A"} {e(k.lower())}</label>'
+        for i, k in enumerate(kinds))
+    return f"""
+    <section class="suggest" aria-labelledby="suggest-title">
+        <div class="container">
+            <h2 id="suggest-title" class="section-title">{e(heading)}</h2>
+            <p class="map-hint">{e(intro)}</p>
+            <form class="suggest-form" data-place="{e(place)}" data-page="{url}">
+                <fieldset>
+                    <legend class="fact-label">I'm suggesting</legend>{options}
+                </fieldset>
+                <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
+                <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="suggest-row">
+                    <label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" required /></label>
+                    <label>Your email<input type="email" name="email" maxlength="200" autocomplete="email" required /></label>
+                </div>
+                <input class="suggest-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <button type="submit">Send suggestion</button>
+                <p class="suggest-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+"""
 
 
 def city_page(city, landmarks, details, siblings, photos):
@@ -398,6 +428,12 @@ def city_page(city, landmarks, details, siblings, photos):
     </section>
 """)
 
+    out.append(suggest_section(
+        city, url, f"Know {city} well?",
+        "Locals know their city best. Suggest a landmark we're missing or a fix to one we have. "
+        "Every suggestion is checked against a source before it goes into the app.",
+        ["Landmark", "Correction"]))
+
     # More cities on the same continent
     if siblings:
         links = "".join(f'<li><a href="{slug(c)}.html">{e(c)}</a></li>' for c in siblings)
@@ -411,7 +447,8 @@ def city_page(city, landmarks, details, siblings, photos):
 """)
 
     out.append(FOOT.format(
-        scripts='    <script src="map-token.js"></script>\n    <script src="map.js"></script>\n' if pins else "",
+        scripts=('    <script src="map-token.js"></script>\n    <script src="map.js"></script>\n' if pins else "")
+                + '    <script src="suggest.js" defer></script>\n',
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} in Stamped!" if n > 1 else "Stamp it in Stamped!",
         cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone and iPad."))

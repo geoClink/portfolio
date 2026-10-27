@@ -42,6 +42,17 @@ def commons_file(url):
     return unquote(name)
 
 
+def campus_title_overrides(app):
+    """The `campusTitleOverrides` table in CampusList.swift (building id -> exact Wikipedia title).
+    The app checks it after `titleOverrides`; wiki.swift_title_overrides() only reads the first."""
+    source = (app / "Stamped! A City Passport" / "Models" / "CampusList.swift").read_text(encoding="utf-8")
+    block = re.search(r"campusTitleOverrides: \[String: String\] = \[(.*?)\n    \]", source, re.DOTALL)
+    if block is None:
+        return {}
+    pairs = re.findall(r'^\s*"((?:[^"\\]|\\.)*)":\s*"((?:[^"\\]|\\.)*)",', block.group(1), re.MULTILINE)
+    return {key.replace('\\"', '"'): value.replace('\\"', '"') for key, value in pairs}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--app", default=str(Path.home() / "Documents/Stamped-A-City-Passport"))
@@ -55,6 +66,7 @@ def main():
     wiki.CACHE_FILE = CACHE   # keep the HTTP cache in this repo, not the app's
     client = wiki.WikiClient()
     overrides = wiki.swift_title_overrides()
+    overrides.update(campus_title_overrides(Path(args.app).expanduser()))
     logos = wiki.swift_logo_patterns()
     skipped = wiki.swift_skip_wikipedia()
 

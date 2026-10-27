@@ -501,3 +501,56 @@ a { color: inherit; }
 .photo-note { margin: 20px 0 0; font-size: 13px; color: var(--color-muted); }
 .card-credit { display: block; margin-top: 6px; font-size: 10px; line-height: 1.35; color: var(--color-muted); opacity: 0.85; }
 .photo-note { margin-top: 10px; font-size: 11px; }
+
+/* "Know this place well?" suggestion form */
+.suggest { padding: 0 0 64px; }
+.suggest-form {
+    display: grid;
+    gap: 14px;
+    max-width: 640px;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 18px;
+    padding: 20px;
+}
+.suggest-form fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.suggest-form legend { margin-bottom: 8px; }
+.suggest-form fieldset label { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
+.suggest-form > label,
+.suggest-row label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.suggest-row { display: grid; gap: 14px; }
+.suggest-form input[type="text"],
+.suggest-form input[type="email"],
+.suggest-form input[type="url"],
+.suggest-form textarea {
+    width: 100%;
+    font: inherit;
+    font-weight: 400;
+    font-size: 16px;   /* 16px stops iOS from zooming into the field */
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+.suggest-form textarea { resize: vertical; }
+.suggest-form input[type="radio"] { accent-color: var(--color-accent-ink); }
+.suggest-form button {
+    justify-self: start;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-button);
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 22px;
+    cursor: pointer;
+}
+.suggest-form button:disabled { opacity: 0.6; cursor: default; }
+.suggest-trap { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.suggest-status { margin: 0; font-size: 14px; color: var(--color-muted); }
+.suggest-status:empty { display: none; }
+
+@media (min-width: 768px) {
+    .suggest-row { grid-template-columns: 1fr 1fr; }
+}

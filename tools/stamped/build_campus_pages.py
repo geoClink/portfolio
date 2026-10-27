@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, e, height_label, jsonld, known,
-                              photo_figure, slug, year_label, year_sort)
+                              photo_figure, slug, suggest_section, year_label, year_sort)
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "stamped-colleges"
@@ -71,7 +71,7 @@ def campus_page(campus, buildings, traditions, siblings, photos):
     n = len(buildings)
     t = len(traditions)
     names = [b["name"] for b in buildings]
-    title = f"{name} Campus Tour: {n} Buildings to See | Stamped!"
+    title = f"{name} Campus Visit Guide: Architecture and Traditions | Stamped!"
     description = (f"A campus visit guide to {name}: {', '.join(names[:3])}" + (" and more" if n > 3 else "")
                    + (f", plus {t} campus tradition{'s' if t != 1 else ''} to try" if t else "")
                    + ". Architects, build dates and history, from the Stamped! app.")
@@ -95,8 +95,13 @@ def campus_page(campus, buildings, traditions, siblings, photos):
     ]
 
     colors = "".join(f'<span style="background:{e(c)}"></span>' for c in campus.get("colors", []))
-    out = [CAMPUS_HEAD.format(title=e(title), description=e(description), url=url, site=SITE,
-                              jsonld=jsonld(ld), app_store=APP_STORE)]
+    head = CAMPUS_HEAD.format(title=e(title), description=e(description), url=url, site=SITE,
+                              jsonld=jsonld(ld), app_store=APP_STORE)
+    # Shared links preview the school's own photo instead of the app's
+    share = next((photos[b["id"]] for b in buildings if b["id"] in photos), None)
+    if share:
+        head = head.replace(f'content="{SITE}/assets/images/stamped/app/og-image.png"', f'content="{e(share["src"])}"')
+    out = [head]
     out.append(f"""
     <main id="main">
     <section class="hero">
@@ -234,6 +239,12 @@ def campus_page(campus, buildings, traditions, siblings, photos):
     </section>
 """)
 
+    out.append(suggest_section(
+        name, url, f"Know {name} well?",
+        "Students and alumni know the traditions best. Suggest one we're missing, a building worth a stamp, "
+        "or a fix. Every suggestion is checked against a source before it goes into the app.",
+        ["Tradition", "Building", "Correction"]))
+
     if siblings:
         links = "".join(f'<li><a href="{slug(c)}.html">{e(c)}</a></li>' for c in siblings)
         heading = "More schools around the world" if group == "Around the world" else (
@@ -248,7 +259,8 @@ def campus_page(campus, buildings, traditions, siblings, photos):
 """)
 
     out.append(CAMPUS_FOOT.format(
-        scripts='    <script src="../stamped-cities/map-token.js"></script>\n    <script src="../stamped-cities/map.js"></script>\n' if pins else "",
+        scripts=('    <script src="../stamped-cities/map-token.js"></script>\n    <script src="../stamped-cities/map.js"></script>\n' if pins else "")
+                + '    <script src="../stamped-cities/suggest.js" defer></script>\n',
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} on your visit.",
         cta_text=f"Tour {e(name)} in 3D before you go, add it to a college road trip and earn a passport stamp at every building. Free on iPhone and iPad."))
