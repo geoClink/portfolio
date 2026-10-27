@@ -1,0 +1,1516 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Plan College Visits with Stamped! | Campus Road Trips for iPhone</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Plan college visits with Stamped!: save the schools you like, map a road trip with a day at each campus, tour every Big Ten, SEC, ACC and Big 12 campus in 3D, and check off 250+ campus traditions. Free on iPhone and iPad." />
+    <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-colleges.html" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
+
+    <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
+    <meta name="apple-itunes-app" content="app-id=6759680336" />
+
+    <meta property="og:title" content="Stamped! for college visits" />
+    <meta property="og:description" content="101 campuses, one road trip. Save the schools you like, get a day at each in a short driving order, and tour every campus in 3D before you go." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-colleges.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+
+    <!-- App details for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Stamped! A City Passport",
+        "description": "Plan college visits with Stamped!: save the schools you like, map a road trip with a day at each campus, tour every Big Ten, SEC, ACC and Big 12 campus in 3D, and check off 250+ campus traditions. Free on iPhone and iPad.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, iPadOS",
+        "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
+        "url": "https://georgeclinkscalesdev.com/stamped-colleges.html",
+        "downloadUrl": "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336",
+        "inLanguage": ["en", "de", "es", "fr", "it", "ja", "ko", "pt", "zh"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
+    }
+    </script>
+
+    <link rel="preload" href="assets/images/stamped/app/07-road-trip.webp" as="image" type="image/webp" fetchpriority="high" />
+
+    <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
+    <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
+    <style>
+        /* ===== Tokens (colors and fonts from the app's style guide) ===== */
+        :root {
+            --color-paper: #F5EFE4;
+            --color-paper-deep: #EDE4D3;   /* slightly darker paper for alternating sections */
+            --color-card: #FFFDF8;
+            --color-ink: #1F1B16;
+            --color-muted: #6B6358;
+            --color-line: #E2D8C7;
+            --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
+            --color-accent-ink: #A8441A;   /* darker orange for small text on paper (4.7:1 on both paper tones) */
+            --color-accent-text: #D4592A;  /* orange for large boxed headline words (3:1 on both paper tones) */
+            --color-button: #C4521F;       /* orange that keeps white button text readable (4.6:1) */
+            --color-gold: #D9A621;         /* Reward Gold: mastery only */
+            --color-stamp-green: #2F5D4A;
+            --color-stamp-navy: #24375E;
+            --color-stamp-red: #B2333B;
+            --color-phone: #1A1A1A;
+            --color-band: #1F1B16;         /* dark full-width band */
+            --color-band-ink: #F5EFE4;
+            --color-right: #2F5D4A;
+            --color-wrong: #B2333B;
+
+            --font-serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
+            --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+
+            --gutter: 16px;
+            --max-width: 1120px;
+            --shadow-phone: 0 30px 60px -20px rgba(31, 27, 22, 0.35), 0 12px 24px -12px rgba(31, 27, 22, 0.2);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-paper: #191612;
+                --color-paper-deep: #14110E;
+                --color-card: #231F1A;
+                --color-ink: #F3ECE0;
+                --color-muted: #A79E90;
+                --color-line: #3A332A;
+                --color-accent-ink: #F2743F;
+                --color-accent-text: #F2743F;
+                --color-stamp-green: #7FB59C;
+                --color-stamp-navy: #8EA5D6;
+                --color-stamp-red: #E07A80;
+                --color-phone: #000000;
+                --color-band: #0F0D0A;
+                --color-band-ink: #F3ECE0;
+                --color-right: #7FB59C;
+                --color-wrong: #E07A80;
+                --shadow-phone: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        /* ===== Base ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        body {
+            margin: 0;
+            background: var(--color-paper);
+            color: var(--color-ink);
+            font-family: var(--font-sans);
+            font-size: 17px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tilted stamps hang off the edges; never let them make the page scroll sideways */
+        main { overflow-x: clip; }
+
+        img, video { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        .skip-link { position: absolute; left: -9999px; }
+        .skip-link:focus {
+            left: var(--gutter);
+            top: var(--gutter);
+            background: var(--color-card);
+            padding: 8px 12px;
+            z-index: 30;
+        }
+
+        :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+        /* ===== Shared pieces ===== */
+
+        /* Small monospaced label, like a customs form */
+        .kicker {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent-ink);
+            margin: 0 0 12px;
+        }
+
+        /* Boxed orange word, same as the App Store screenshots */
+        .highlight {
+            color: var(--color-accent-text);
+            border: 2px solid var(--color-accent-text);
+            padding: 0 0.15em;
+            white-space: nowrap;
+        }
+        /* On very narrow phones a long boxed phrase may wrap, with the box drawn on each line */
+        @media (max-width: 400px) {
+            .highlight {
+                white-space: normal;
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+            margin: 0 0 14px;
+            text-wrap: balance;
+        }
+
+        .section-lead {
+            color: var(--color-muted);
+            font-size: 18px;
+            margin: 0 0 28px;
+            max-width: 38em;
+            text-wrap: pretty;
+        }
+
+        .section { padding: 72px 0; }
+        .section--deep { background: var(--color-paper-deep); }
+        .section-head { margin-bottom: 36px; }
+        .section-head--center { text-align: center; }
+        .section-head--center .section-lead { margin-left: auto; margin-right: auto; }
+
+        /* Apple's official "Download on the App Store" badge, used as is */
+        .app-store-badge {
+            display: inline-block;
+            border-radius: 10px;
+            line-height: 0;
+        }
+        .app-store-badge img { width: auto; height: 54px; }
+        .app-store-badge:hover,
+        .app-store-badge:focus-visible { transform: translateY(-1px); }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 18px;
+        }
+        .cta-note {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        /* Two quick paths for the two main audiences */
+        .hero-paths {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .hero-paths a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 8px 14px;
+            border: 1px solid var(--color-line);
+            border-radius: 999px;
+            background: var(--color-card);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+        .hero-paths a:hover { border-color: var(--color-accent); }
+        .hero-paths i { color: var(--color-accent-ink); font-size: 14px; }
+        @media (max-width: 400px) {
+            .hero-paths a { gap: 6px; padding: 8px 11px; font-size: 14px; }
+        }
+
+        /* QR code for desktop visitors: scan it with the iPhone camera to open the App Store */
+        .qr-card {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 14px;
+            padding: 8px 14px 8px 8px;
+            text-align: left;
+        }
+        .qr-card img {
+            width: 64px;
+            height: 64px;
+            padding: 5px;
+            background: #FFFFFF;   /* QR codes need a light background, even in dark mode */
+            border-radius: 8px;
+            image-rendering: pixelated;
+        }
+        .qr-card span {
+            font-size: 13px;
+            line-height: 1.3;
+            color: var(--color-muted);
+        }
+        .qr-card strong { display: block; color: var(--color-ink); font-size: 14px; }
+        /* Only on big screens with a mouse, where you can't install an iPhone app directly */
+        @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+            .qr-card { display: flex; }
+            .cta-row .cta-note { display: none; }
+        }
+        .cta .qr-card { background: rgba(245, 239, 228, 0.06); border-color: rgba(245, 239, 228, 0.18); }
+        .cta .qr-card strong { color: var(--color-band-ink); }
+        .cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
+
+        /* A phone drawn with CSS around a plain screenshot */
+        .phone {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border: 9px solid var(--color-phone);
+            border-radius: 44px;
+            overflow: hidden;
+            background: var(--color-phone);
+            box-shadow: var(--shadow-phone);
+        }
+        .phone img,
+        .phone video {
+            width: 100%;
+            aspect-ratio: 600 / 1304;
+            object-fit: cover;
+            border-radius: 35px;
+        }
+        .phone--hero { max-width: 300px; }
+
+        /* Passport stamp: an SVG that uses the shared frame and ring frame defined at the top of <body> */
+        .stamp {
+            position: absolute;
+            width: 118px;
+            height: 118px;
+            transform: rotate(var(--tilt, -12deg));
+            opacity: 0.92;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .stamp text {
+            fill: currentColor;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            text-anchor: middle;
+            letter-spacing: 0.08em;
+        }
+        .stamp .stamp-arc { font-size: 9px; letter-spacing: 0.16em; }
+        .stamp .stamp-big { font-size: 15px; letter-spacing: 0.04em; }
+        .stamp .stamp-small { font-size: 8px; }
+        .stamp--green { color: var(--color-stamp-green); }
+        .stamp--navy { color: var(--color-stamp-navy); }
+        .stamp--red { color: var(--color-stamp-red); }
+        .stamp--orange { color: var(--color-accent); }
+        .stamp--gold { color: var(--color-gold); }
+        .stamp--band { color: var(--color-band-ink); opacity: 0.35; }
+
+        /* Stamps thud onto the page the first time they scroll into view */
+        .motion .stamp {
+            opacity: 0;
+            transform: rotate(var(--tilt, -12deg)) scale(1.6);
+            transition:
+                opacity 0.25s ease var(--delay, 0s),
+                transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.25) var(--delay, 0s);
+        }
+        .motion .stamp.is-in { opacity: 0.92; transform: rotate(var(--tilt, -12deg)) scale(1); }
+        .motion .stamp--band.is-in { opacity: 0.35; }
+
+        /* Sections fade up as they come into view */
+        .motion .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .motion .reveal.is-in { opacity: 1; transform: none; }
+
+        /* ===== Header ===== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+            -webkit-backdrop-filter: saturate(1.4) blur(14px);
+            backdrop-filter: saturate(1.4) blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .site-header.is-scrolled { border-bottom-color: var(--color-line); }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .brand img { width: 34px; height: 34px; border-radius: 8px; }
+        .header-nav { display: flex; align-items: center; gap: 14px; }
+        .header-nav > a:not(.header-button) {
+            display: none;
+            font-size: 15px;
+            color: var(--color-muted);
+            text-decoration: none;
+        }
+        .header-nav > a:not(.header-button):hover { color: var(--color-ink); }
+        .header-button {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--color-button);
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 7px 16px;
+        }
+        .header-button:hover { filter: brightness(1.05); }
+
+        /* Language switcher: a small menu in the header */
+        .lang-switch { position: relative; }
+        .lang-switch summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            color: var(--color-muted);
+            padding: 6px 4px;
+        }
+        .lang-switch summary::-webkit-details-marker { display: none; }
+        .lang-switch summary:hover { color: var(--color-ink); }
+        .lang-switch ul {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 6px);
+            min-width: 150px;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
+        }
+        .lang-switch li a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .lang-switch li a:hover { background: var(--color-paper); }
+        .lang-switch li a[aria-current="page"] { color: var(--color-accent-ink); font-weight: 600; }
+
+        /* Japanese pages: system Japanese fonts, and no breaking words mid-phrase in headings */
+        :lang(ja) {
+            --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+            --font-sans: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        }
+        :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
+        :lang(ja) .highlight { white-space: normal; }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            isolation: isolate;
+            padding: 40px 0 64px;
+        }
+        /* Faint map grid that fades out toward the bottom, plus a warm glow behind the phone */
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hero::before {
+            background-image:
+                linear-gradient(var(--color-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: center top;
+            opacity: 0.6;
+            -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+            mask-image: linear-gradient(to bottom, #000 40%, transparent);
+        }
+        .hero::after {
+            background: radial-gradient(ellipse 55% 50% at 78% 50%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%);
+        }
+        .hero .container { display: grid; gap: 44px; }
+        /* Grid children may shrink below their content, so the long passport line can't widen the page */
+        .hero .container > *,
+        .feature .container > * { min-width: 0; }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            line-height: 1.06;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            margin: 0 0 18px;
+            text-wrap: balance;
+        }
+        .hero-lead {
+            font-size: 19px;
+            color: var(--color-muted);
+            margin: 0 0 28px;
+            max-width: 32em;
+            text-wrap: pretty;
+        }
+
+        /* Stats as the data page of a passport */
+        .passport-strip {
+            margin: 36px 0 0;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 560px;
+        }
+        .passport-strip-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 14px;
+            background: var(--color-stamp-navy);
+            color: #F5EFE4;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        @media (prefers-color-scheme: dark) {
+            .passport-strip-head { background: #24375E; }
+        }
+        .stats {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .stats li {
+            min-width: 0;
+            padding: 12px 14px;
+            border-right: 1px dashed var(--color-line);
+            border-bottom: 1px dashed var(--color-line);
+        }
+        .stats li:nth-child(3n) { border-right: 0; }
+        .stats li:nth-last-child(-n+3) { border-bottom: 0; }
+        .stats strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        .stats span {
+            display: block;
+            overflow-wrap: break-word;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        /* Machine-readable line at the bottom of a passport */
+        .passport-mrz {
+            margin: 0;
+            padding: 8px 14px;
+            border-top: 1px solid var(--color-line);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--color-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+        }
+
+        .hero-visual {
+            position: relative;
+            padding: 0 28px;
+            overflow-x: clip;   /* keeps the tilted stamps from making small phones scroll sideways */
+            overflow-y: visible;
+        }
+        .hero-visual .stamp { width: 108px; height: 108px; }
+        .hero-visual .stamp--navy { left: 0; top: 40px; --tilt: 12deg; }
+        .hero-visual .stamp--red { right: 0; bottom: 110px; --tilt: -14deg; --delay: 0.25s; }
+        .hero-visual .stamp--green { left: 14px; bottom: 30px; width: 88px; height: 88px; --tilt: -6deg; --delay: 0.5s; }
+        .video-toggle {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            z-index: 3;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 0;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            cursor: pointer;
+            display: none;
+            place-items: center;
+            font-size: 13px;
+        }
+        .video-toggle.is-ready { display: grid; }
+
+        /* ===== How it works ===== */
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+            counter-reset: step;
+        }
+        .steps li {
+            position: relative;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 18px;
+            padding: 22px 22px 22px 22px;
+        }
+        .steps li::before {
+            counter-increment: step;
+            content: "0" counter(step);
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            color: var(--color-muted);
+        }
+        .step-icon {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+            color: var(--color-accent);
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+        .steps h3 { font-family: var(--font-serif); font-size: 22px; margin: 0 0 6px; }
+        .steps p { margin: 0; color: var(--color-muted); font-size: 15px; }
+
+        /* ===== Continents band ===== */
+        .continents {
+            position: relative;
+            background: var(--color-band);
+            color: var(--color-band-ink);
+            padding: 72px 0;
+            overflow: hidden;
+        }
+        .continents .kicker { color: var(--color-accent); }
+        .continents .section-lead { color: var(--color-band-ink); opacity: 0.75; }
+        .continents .stamp { width: 160px; height: 160px; right: -56px; top: -44px; --tilt: 16deg; }
+        .continent-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .continent-grid li {
+            border: 1px dashed rgba(245, 239, 228, 0.25);
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .continent-grid li:hover {
+            border-color: var(--color-accent);
+            background: rgba(242, 116, 63, 0.06);
+        }
+        .continent-grid h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .continent-grid h3 span {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+        }
+        .continent-grid p {
+            margin: 6px 0 0;
+            font-size: 14px;
+            opacity: 0.75;
+        }
+        .continent-grid li > a { display: block; color: inherit; text-decoration: none; }
+        .continent-grid li:has(a):hover h3 { color: var(--color-accent); }
+        .architects a { color: inherit; text-decoration: none; }
+        .architects li:has(a):hover { border-color: var(--color-accent); }
+        .band-link { margin: 28px 0 0; }
+        .band-link a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .band-link a:hover { text-decoration: underline; }
+
+        /* ===== Landmark photo strip ===== */
+        .photo-strip {
+            list-style: none;
+            margin: 0;
+            padding: 0 var(--gutter) 8px;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(220px, 260px);
+            gap: 14px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 var(--gutter);
+            scrollbar-width: thin;
+        }
+        .photo-strip li { scroll-snap-align: start; min-width: 0; }
+        .strip-photo {
+            position: relative;
+            display: block;
+            border-radius: 18px;
+            overflow: hidden;
+            text-decoration: none;
+            background: var(--color-paper-deep);
+            box-shadow: 0 16px 32px -18px rgba(31, 27, 22, 0.45);
+        }
+        .strip-photo img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .strip-photo:hover img { transform: scale(1.04); }
+        .strip-photo span {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 40px 16px 14px;
+            color: #fff;
+            font-size: 13px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        }
+        .strip-photo strong { display: block; font-family: var(--font-serif); font-size: 19px; line-height: 1.2; }
+        .photo-strip small {
+            display: block;
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.4;
+            color: var(--color-muted);
+        }
+        .photo-strip small a { color: inherit; }
+
+        /* ===== Guided tour clips ===== */
+        .tour-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .tour-row figure { margin: 0; }
+        .tour-row figure:nth-child(even) { margin-top: 48px; }
+        .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
+        .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
+
+        /* ===== Feature rows ===== */
+        .feature .container {
+            display: grid;
+            gap: 40px;
+            align-items: center;
+        }
+        .feature p { color: var(--color-muted); margin: 0 0 16px; }
+        .feature-list { list-style: none; margin: 20px 0 0; padding: 0; }
+        .feature-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+        }
+        .feature-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.35em;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
+            background:
+                radial-gradient(circle, var(--color-accent) 0 3px, transparent 3.5px);
+        }
+        .feature-visual { position: relative; }
+        .feature-visual .stamp { right: 2%; bottom: 8%; }
+
+        /* Two phones side by side: sky view and street view */
+        .phone-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        .phone-pair figure { margin: 0; }
+        .phone-pair figure:last-child { margin-top: 48px; }
+        .phone-pair figcaption,
+        .phone-row figcaption {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 14px;
+            color: var(--color-muted);
+        }
+        .phone-pair figcaption strong,
+        .phone-row figcaption strong {
+            display: block;
+            color: var(--color-ink);
+            font-size: 16px;
+        }
+
+        /* Architect name tags */
+        .architects {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .architects li {
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+        .architects strong {
+            font-family: var(--font-mono);
+            color: var(--color-accent-ink);
+            margin-left: 6px;
+        }
+
+        /* Timeline from oldest to newest landmark */
+        .timeline {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 16px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            border-top: 2px dashed var(--color-accent);
+        }
+        .timeline::after {
+            content: "4,500+ years";
+            position: absolute;
+            left: 50%;
+            top: -9px;
+            transform: translateX(-50%);
+            background: var(--color-paper-deep);
+            padding: 0 8px;
+            color: var(--color-accent-ink);
+            font-size: 11px;
+        }
+        .timeline strong {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 22px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--color-ink);
+        }
+        .timeline div:last-child { text-align: right; }
+
+        /* ===== Quiz ===== */
+        .quiz-card {
+            position: relative;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 20px;
+            padding: 22px;
+            margin-top: 24px;
+            max-width: 460px;
+        }
+        .quiz-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+        .quiz-dots { display: flex; gap: 6px; }
+        .quiz-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-line);
+        }
+        .quiz-dots span.is-right { background: var(--color-right); }
+        .quiz-dots span.is-wrong { background: var(--color-wrong); }
+        .quiz-question {
+            font-family: var(--font-serif);
+            font-size: 21px;
+            line-height: 1.25;
+            margin: 0 0 16px;
+            color: var(--color-ink);
+        }
+        .quiz-options { display: grid; gap: 8px; }
+        .quiz-options button {
+            font: inherit;
+            font-size: 16px;
+            text-align: left;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            border: 1.5px solid var(--color-line);
+            border-radius: 12px;
+            padding: 12px 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.15s, background 0.15s;
+        }
+        .quiz-options button:hover:not(:disabled) { border-color: var(--color-accent); }
+        .quiz-options button:disabled { cursor: default; }
+        .quiz-options button.is-right {
+            border-color: var(--color-right);
+            background: color-mix(in srgb, var(--color-right) 12%, var(--color-paper));
+        }
+        .quiz-options button.is-wrong {
+            border-color: var(--color-wrong);
+            background: color-mix(in srgb, var(--color-wrong) 10%, var(--color-paper));
+        }
+        .quiz-options button i { font-size: 14px; }
+        .quiz-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            min-height: 40px;
+            margin-top: 14px;
+        }
+        .quiz-feedback { margin: 0; font-size: 14px; color: var(--color-muted); }
+        .quiz-next {
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background: var(--color-button);
+            border: 0;
+            border-radius: 999px;
+            padding: 8px 16px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .quiz-next[hidden] { display: none; }
+        .quiz-card .stamp {
+            right: -14px;
+            top: -28px;
+            width: 104px;
+            height: 104px;
+            --tilt: 14deg;
+        }
+        .quiz-card .stamp[hidden] { display: none; }
+
+        /* ===== Tool grid ("Once you land") ===== */
+        .tool-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .tool-grid li {
+            min-width: 0;
+            hyphens: auto;      /* long German words break cleanly in the narrow two-column grid */
+            overflow-wrap: break-word;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 16px;
+            padding: 18px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .tool-grid li:hover { transform: translateY(-2px); border-color: var(--color-accent); }
+        .tool-grid i {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+            color: var(--color-accent);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .tool-grid h3 { font-size: 16px; margin: 0 0 4px; }
+        .tool-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Campus section with three phones ===== */
+        .phone-row {
+            display: grid;
+            gap: 32px;
+            margin-top: 8px;
+        }
+        .phone-row figure { margin: 0; }
+        @media (max-width: 767px) {
+            .phone-row {
+                grid-auto-flow: column;
+                grid-auto-columns: 68%;
+                gap: 16px;
+                margin: 8px calc(var(--gutter) * -1) 0;
+                padding: 0 var(--gutter) 40px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-padding: 0 var(--gutter);
+                scrollbar-width: thin;
+            }
+            .phone-row figure { scroll-snap-align: start; }
+        }
+        .campus-list { margin: -8px 0 24px; max-width: 40em; }
+        .conferences {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .conferences li {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1.5px solid var(--color-ink);
+            border-radius: 6px;
+            padding: 5px 10px;
+        }
+
+        /* ===== Collect: a passport page full of stamps ===== */
+        .passport-page {
+            position: relative;
+            min-height: 520px;
+        }
+        .passport-page .phone { position: relative; z-index: 1; }
+        .passport-page .stamp:nth-of-type(1) { left: 0; top: 4%; --tilt: -16deg; }
+        .passport-page .stamp:nth-of-type(2) { right: 0; top: 16%; --tilt: 10deg; --delay: 0.15s; }
+        .passport-page .stamp:nth-of-type(3) { left: 2%; bottom: 18%; --tilt: 8deg; --delay: 0.3s; }
+        .passport-page .stamp:nth-of-type(4) { right: 3%; bottom: 4%; --tilt: -8deg; --delay: 0.45s; }
+        @media (max-width: 767px) {
+            .passport-page { min-height: 0; padding: 24px 0; }
+            .passport-page .stamp { width: 84px; height: 84px; }
+            .passport-page .stamp:nth-of-type(1) { left: -6px; top: -6px; }
+            .passport-page .stamp:nth-of-type(4) { right: -6px; bottom: 0; }
+            .passport-page .stamp:nth-of-type(2),
+            .passport-page .stamp:nth-of-type(3) { display: none; }
+        }
+
+        /* ===== Small extras grid ===== */
+        .more-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 20px;
+        }
+        .more-grid li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .more-grid i {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            color: var(--color-accent);
+        }
+        .more-grid h3 { font-size: 16px; margin: 0 0 2px; }
+        .more-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+        /* ===== Final call to action ===== */
+        .cta {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 0;
+            text-align: center;
+            background: var(--color-band);
+            color: var(--color-band-ink);
+        }
+        .cta .container { position: relative; z-index: 1; }
+        .cta img.cta-icon {
+            width: 84px;
+            height: 84px;
+            border-radius: 20px;
+            margin: 0 auto 22px;
+            box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+        }
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            line-height: 1.1;
+            margin: 0 0 12px;
+        }
+        .cta p { opacity: 0.75; margin: 0 0 28px; }
+        .cta .cta-row { justify-content: center; }
+        .cta .stamp { width: 170px; height: 170px; }
+        .cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
+        .cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            padding: 32px 0 40px;
+            font-size: 14px;
+            color: var(--color-muted);
+        }
+        .site-footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-bottom: 16px;
+        }
+        .site-footer nav a { color: var(--color-ink); font-weight: 600; }
+        .site-footer p { margin: 0 0 8px; }
+
+        /* ===== Larger screens ===== */
+        @media (min-width: 768px) {
+            .section { padding: 104px 0; }
+            .section-title { font-size: 46px; }
+
+            .header-nav { gap: 22px; }
+            .header-nav > a:not(.header-button) { display: inline; }
+
+            .hero { padding: 64px 0 96px; }
+            .hero-visual .stamp { width: 132px; height: 132px; }
+            .hero-visual .stamp--green { width: 104px; height: 104px; }
+            .hero .container {
+                grid-template-columns: 1.25fr 1fr;
+                align-items: center;
+            }
+            .hero h1 { font-size: 66px; }
+
+            .steps { grid-template-columns: repeat(3, 1fr); }
+
+            .continents { padding: 104px 0; }
+            .continents .stamp { width: 300px; height: 300px; right: 4%; top: 40px; }
+            .continent-grid { grid-template-columns: repeat(3, 1fr); }
+
+            .feature .container { grid-template-columns: 1fr 1fr; gap: 64px; }
+            /* Every other row puts the visual on the left */
+            .feature.flip .feature-visual { order: -1; }
+
+            .phone-pair { gap: 24px; }
+            .photo-strip {
+                grid-auto-columns: minmax(240px, 280px);
+                padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+                scroll-padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+            }
+            .tour-row { gap: 40px; }
+
+            .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+            .phone-row { grid-template-columns: repeat(3, 1fr); }
+            .phone-row figure:nth-child(2) { margin-top: 40px; }
+
+            .more-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+            .cta { padding: 120px 0; }
+            .cta h2 { font-size: 56px; }
+            .cta .stamp { width: 220px; height: 220px; }
+            .cta .stamp:nth-of-type(1) { left: 6%; top: 50px; }
+            .cta .stamp:nth-of-type(2) { right: 6%; bottom: 40px; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: 64px; }
+            .phone--hero { max-width: 320px; }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .app-store-badge { transition: transform 0.15s; }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/stamped-try.css?v=3" />
+    <style>
+        /* College page additions */
+        .hero-visual .phone img { display: block; }
+        .school-groups {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 2.25rem;
+        }
+        .school-group {
+            background: var(--color-card);
+            border: 1px solid var(--color-line);
+            border-radius: 14px;
+            padding: 1.1rem 1.25rem 1.2rem;
+        }
+        .school-group h3 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+        .school-group h3 span { font-weight: 500; color: var(--color-muted); font-size: 0.85em; margin-left: 0.35em; }
+        .school-group ul { list-style: none; margin: 0; padding: 0; font-size: 0.9rem; line-height: 1.55; }
+        .back-link { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Shared pieces for every passport stamp: the ring frame and the arc the city name sits on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+            <nav class="header-nav" aria-label="Page sections">
+                <a href="#road-trip">Road trip</a>
+                <a href="#traditions">Traditions</a>
+                <a href="#schools">Schools</a>
+                <a href="stamped-app.html">Cities</a>
+                <a class="header-button" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">Get the app</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">For college visits · Free on iPhone &amp; iPad</p>
+                    <h1 id="hero-title">College visits, <span class="highlight">mapped.</span></h1>
+                    <p class="hero-lead">Save the schools your family is looking at, and Stamped! turns them into a road trip: a day at each campus, in a short driving order. Tour every campus in 3D before you go, and check off the traditions students actually do once you're there.</p>
+                    <div class="cta-row">
+                        <a class="app-store-badge" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
+                        </a>
+                        <span class="cta-note">Free · iPhone &amp; iPad</span>
+                        <div class="qr-card">
+                            <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="QR code that opens Stamped! on the App Store" />
+                            <span><strong>On your computer?</strong>Scan with your iPhone camera.</span>
+                        </div>
+                    </div>
+                    <div class="passport-strip">
+                        <div class="passport-strip-head" aria-hidden="true"><span>Passport · Stamped!</span><span>Campus</span></div>
+                        <ul class="stats">
+                            <li><strong>101</strong><span>Campuses</span></li>
+                            <li><strong>450+</strong><span>Buildings</span></li>
+                            <li><strong>250+</strong><span>Traditions</span></li>
+                            <li><strong>3D</strong><span>Maps</span></li>
+                            <li><strong>101</strong><span>Quizzes</span></li>
+                            <li><strong>9</strong><span>Languages</span></li>
+                        </ul>
+                        <p class="passport-mrz" aria-hidden="true">P&lt;CAMPUS&lt;&lt;ROAD&lt;TRIP&lt;&lt;STAMPED&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone phone--hero">
+                        <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" fetchpriority="high"
+                             alt="College Road Trip with five schools in driving order: Michigan State, Michigan, Notre Dame, Duke and Georgia, one day each" />
+                    </div>
+                    <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CAMPUS VISIT</textPath></text><text class="stamp-big" x="60" y="64">DAY 1</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ROAD TRIP</textPath></text><text class="stamp-big" x="60" y="64">5 DAYS</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">TRADITION</textPath></text><text class="stamp-big" x="60" y="64">DONE</text><text class="stamp-small" x="60" y="77">★</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section section--deep" aria-labelledby="how-title">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="kicker">How it works</p>
+                    <h2 id="how-title" class="section-title">Save. Drive. <span class="highlight">Stamp.</span></h2>
+                </div>
+                <ol class="steps reveal">
+                    <li>
+                        <span class="step-icon"><i class="fas fa-heart" aria-hidden="true"></i></span>
+                        <h3>Save the schools</h3>
+                        <p>Tap the heart on any campus to add it to My College List. Find schools by nickname, like "UGA" or "Ole Miss".</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
+                        <h3>Plan the road trip</h3>
+                        <p>One tap lines them up: a day at each school, in a short driving order, with the miles between them.</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-stamp" aria-hidden="true"></i></span>
+                        <h3>Visit and stamp</h3>
+                        <p>Walk each campus's landmarks, do its traditions, and collect a stamp in school colors.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- College list and road trip -->
+        <section class="section feature" id="road-trip" aria-labelledby="trip-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Plan · My College List + College Road Trip</p>
+                    <h2 id="trip-title" class="section-title">From a short list <span class="highlight">to a road trip.</span></h2>
+                    <p>Most families visit several schools in one trip. Stamped! keeps the list, works out the order, and gives you one plan to follow.</p>
+                    <ul class="feature-list">
+                        <li>A day at each school, sorted into a short driving order</li>
+                        <li>Find hotels near campus for each night of the trip</li>
+                        <li>Trips and your college list sync over iCloud between iPhone and iPad</li>
+                    </ul>
+                </div>
+                <div class="phone-pair reveal">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                 alt="My College List with five saved schools and a Plan a College Road Trip button" />
+                        </div>
+                        <figcaption><strong>My College List</strong>Every school you're considering.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/08-trip.webp" width="600" height="1304" loading="lazy"
+                                 alt="A five-campus road trip on a map with the Michigan State day open and a Tour Michigan State in 3D button" />
+                        </div>
+                        <figcaption><strong>The trip</strong>Day by day, with a 3D tour.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus visit and 3D -->
+        <section class="section section--deep feature flip" aria-labelledby="visit-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Visit · Campus maps in 3D</p>
+                    <h2 id="visit-title" class="section-title">Know the campus <span class="highlight">before you park.</span></h2>
+                    <p>Fly over each campus in photoreal 3D, then use Plan a Campus Visit for a one-day walking tour of its landmark buildings, with the walking time between stops.</p>
+                    <ul class="feature-list">
+                        <li>The landmark buildings on every campus, with the story behind each one</li>
+                        <li>Food, coffee and places to stay on the campus map</li>
+                        <li>A 10-question architecture quiz for every campus</li>
+                    </ul>
+                </div>
+                <div class="phone-pair reveal">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/05-map3d.webp" width="600" height="1304" loading="lazy"
+                                 alt="Photoreal 3D map of the Michigan State campus with a landmark card for Cowles House" />
+                        </div>
+                        <figcaption><strong>Fly over it</strong>Every campus in photoreal 3D.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/03-campus.webp" width="600" height="1304" loading="lazy"
+                                 alt="Michigan State University campus page with landmarks stamped, an architecture quiz, Plan a Trip and Campus Visit" />
+                        </div>
+                        <figcaption><strong>The campus page</strong>Landmarks, quiz and a one-day visit.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditions -->
+        <section class="section feature" id="traditions" aria-labelledby="traditions-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Do · Campus traditions</p>
+                    <h2 id="traditions-title" class="section-title">Rub the statue. <span class="highlight">Ring the bell.</span></h2>
+                    <p>Over 250 traditions students actually do, from lucky statues to bells and famous gates. Check them off as you go and earn the Traditions Keeper badge. It gives a long day of tours something to look forward to.</p>
+                    <ul class="feature-list">
+                        <li>Each tradition on the map, with what it is and why students do it</li>
+                        <li>Campus stamps in school colors</li>
+                        <li>Achievements for stamping every campus in a conference</li>
+                    </ul>
+                </div>
+                <div class="phone-pair reveal">
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
+                                 alt="Campus traditions checklist for Michigan State with The Rock and The Spartan Statue checked off" />
+                        </div>
+                        <figcaption><strong>250+ traditions</strong>Check them off as you go.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <img src="assets/images/stamped/app/09-celebration.webp" width="600" height="1304" loading="lazy"
+                                 alt="Campus Explored celebration with a Michigan State passport stamp" />
+                        </div>
+                        <figcaption><strong>Campus explored</strong>A stamp for every school.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Every school -->
+        <section class="section section--deep" id="schools" aria-labelledby="schools-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Every school · 101 campuses</p>
+                    <h2 id="schools-title" class="section-title">Is your list <span class="highlight">in here?</span></h2>
+                    <p class="section-lead">Every Big Ten, SEC, ACC and Big 12 school, the whole Ivy League, and great campuses from Oxford to Melbourne.</p>
+                </div>
+                <ul class="school-groups reveal" role="list">
+                    <li class="school-group">
+                        <h3>Big Ten<span>18</span></h3>
+                        <ul><li>Indiana University Bloomington</li><li>Michigan State University</li><li>Northwestern University</li><li>Ohio State University</li><li>Pennsylvania State University</li><li>Purdue University</li><li>Rutgers University–New Brunswick</li><li>University of California, Los Angeles</li><li>University of Illinois Urbana-Champaign</li><li>University of Iowa</li><li>University of Maryland, College Park</li><li>University of Michigan</li><li>University of Minnesota Twin Cities</li><li>University of Nebraska–Lincoln</li><li>University of Oregon</li><li>University of Southern California</li><li>University of Washington</li><li>University of Wisconsin–Madison</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>SEC<span>16</span></h3>
+                        <ul><li>Auburn University</li><li>Louisiana State University</li><li>Mississippi State University</li><li>Texas A&amp;M University</li><li>University of Alabama</li><li>University of Arkansas</li><li>University of Florida</li><li>University of Georgia</li><li>University of Kentucky</li><li>University of Mississippi</li><li>University of Missouri</li><li>University of Oklahoma</li><li>University of South Carolina</li><li>University of Tennessee</li><li>University of Texas at Austin</li><li>Vanderbilt University</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>ACC<span>18</span></h3>
+                        <ul><li>Boston College</li><li>Clemson University</li><li>Duke University</li><li>Florida State University</li><li>Georgia Institute of Technology</li><li>North Carolina State University</li><li>Southern Methodist University</li><li>Stanford University</li><li>Syracuse University</li><li>University of California, Berkeley</li><li>University of Louisville</li><li>University of Miami</li><li>University of North Carolina at Chapel Hill</li><li>University of Notre Dame</li><li>University of Pittsburgh</li><li>University of Virginia</li><li>Virginia Tech</li><li>Wake Forest University</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>Big 12<span>16</span></h3>
+                        <ul><li>Arizona State University</li><li>Baylor University</li><li>Brigham Young University</li><li>Iowa State University</li><li>Kansas State University</li><li>Oklahoma State University</li><li>Texas Christian University</li><li>Texas Tech University</li><li>University of Arizona</li><li>University of Central Florida</li><li>University of Cincinnati</li><li>University of Colorado Boulder</li><li>University of Houston</li><li>University of Kansas</li><li>University of Utah</li><li>West Virginia University</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>Ivy League<span>8</span></h3>
+                        <ul><li>Brown University</li><li>Columbia University</li><li>Cornell University</li><li>Dartmouth College</li><li>Harvard University</li><li>Princeton University</li><li>University of Pennsylvania</li><li>Yale University</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>More U.S. schools<span>5</span></h3>
+                        <ul><li>Florida Southern College</li><li>Georgetown University</li><li>Illinois Institute of Technology</li><li>Massachusetts Institute of Technology</li><li>University of Chicago</li></ul>
+                    </li>
+                    <li class="school-group">
+                        <h3>Around the world<span>20</span></h3>
+                        <ul><li>Aalto University</li><li>Durham University</li><li>KU Leuven</li><li>King&#x27;s College London</li><li>McGill University</li><li>National Autonomous University of Mexico</li><li>Trinity College Dublin</li><li>University College London</li><li>University of British Columbia</li><li>University of Cambridge</li><li>University of Edinburgh</li><li>University of Glasgow</li><li>University of Melbourne</li><li>University of Oxford</li><li>University of Padua</li><li>University of Paris (Sorbonne)</li><li>University of St Andrews</li><li>University of Sydney</li><li>University of Toronto</li><li>Uppsala University</li></ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final call to action -->
+        <section class="cta" aria-labelledby="cta-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CAMPUS VISIT</textPath></text><text class="stamp-big" x="60" y="64">DEPART</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ROAD TRIP</textPath></text><text class="stamp-big" x="60" y="64">HOME</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container reveal">
+                <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
+                <h2 id="cta-title">Plan the visits. Enjoy the drive.</h2>
+                <p>101 campuses. One road trip. Free on iPhone and iPad.</p>
+                <div class="cta-row">
+                    <a class="app-store-badge" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
+                        </a>
+                    <div class="qr-card">
+                            <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="QR code that opens Stamped! on the App Store" />
+                            <span><strong>On your computer?</strong>Scan with your iPhone camera.</span>
+                        </div>
+                </div>
+                <p><a class="back-link" href="stamped-app.html">Traveling to a city instead? See all 140 cities →</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="App links">
+                <a href="stamped-app.html">Stamped! home</a>
+                <a href="contact.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="stamped-cities/index.html">City guides</a>
+                <a href="stamped.html">How it was built</a>
+            </nav>
+            <p>Stamped! is not affiliated with or endorsed by any university. School names and colors are used only to identify them.</p>
+            <p>Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!reduceMotion && 'IntersectionObserver' in window) {
+                document.documentElement.classList.add('motion');
+            }
+
+            // Header gets a bottom line once the page scrolls
+            var header = document.querySelector('.site-header');
+            function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Fade sections in and thud stamps down as they scroll into view
+            if (document.documentElement.classList.contains('motion')) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-in');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                document.querySelectorAll('.reveal, .stamp:not([hidden])').forEach(function (el) { observer.observe(el); });
+            }
+        })();
+    </script>
+</body>
+</html>
