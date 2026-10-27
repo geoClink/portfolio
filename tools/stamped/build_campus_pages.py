@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, e, height_label, jsonld, known,
-                              photo_figure, slug, suggest_section, year_label, year_sort)
+                              photo_figure, slug, suggest_section, versioned, year_label, year_sort)
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "stamped-colleges"
@@ -332,7 +332,7 @@ def main():
         name = campus["name"]
         siblings = [c for c in groups[group_of(campus)] if c != name]
         page = campus_page(campus, registry[name], traditions.get(name, []), siblings, photos)
-        (OUT / f"{slug(name)}.html").write_text(page, encoding="utf-8")
+        (OUT / f"{slug(name)}.html").write_text(versioned(page, OUT, "../stamped-cities/"), encoding="utf-8")
     update_landing(groups, len(campuses))
     update_sitemap(sorted(slug(c["name"]) for c in campuses))
     with_photos = sum(1 for c in campuses if any(b["id"] in photos for b in registry[c["name"]]))

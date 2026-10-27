@@ -516,11 +516,7 @@ a { color: inherit; }
 .suggest-form fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .suggest-form legend { margin-bottom: 8px; }
 .suggest-form fieldset label { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
-.suggest-form > label,
-.suggest-row label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
-.suggest-row { display: grid; gap: 14px; }
-.suggest-form input[type="text"],
-.suggest-form input[type="email"],
+.suggest-form > label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
 .suggest-form input[type="url"],
 .suggest-form textarea {
     width: 100%;
@@ -547,10 +543,6 @@ a { color: inherit; }
     cursor: pointer;
 }
 .suggest-form button:disabled { opacity: 0.6; cursor: default; }
-.suggest-trap { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.suggest-note { margin: -6px 0 0; font-size: 13px; color: var(--color-muted); }
 .suggest-status { margin: 0; font-size: 14px; color: var(--color-muted); }
 .suggest-status:empty { display: none; }
-
-@media (min-width: 768px) {
-    .suggest-row { grid-template-columns: 1fr 1fr; }
-}

@@ -93,6 +93,24 @@ PLACES_BY_ID = {}   # landmark id -> city, filled in by main()
 CONTINENTS = ["Europe", "Asia", "North America", "South America", "Africa", "Oceania"]
 
 
+# Shared files the pages link to. Each link gets ?v=<hash of the file>, so browsers fetch the new
+# copy after every change instead of a stale one (GitHub Pages lets them cache files for a day).
+ASSETS = ["cities.css", "map.js", "map-token.js", "suggest.js"]
+
+
+def versioned(page, folder=OUT, prefix=""):
+    """`page` with every link to a shared file stamped with that file's content hash."""
+    import hashlib
+    for name in ASSETS + (["campus.css"] if folder != OUT else []):
+        path = (folder if name == "campus.css" else OUT) / name
+        if not path.exists():
+            continue
+        stamp = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
+        link = (prefix if name != "campus.css" else "") + name
+        page = page.replace(f'"{link}"', f'"{link}?v={stamp}"')
+    return page
+
+
 def e(text):
     return html.escape(str(text), quote=True)
 
@@ -217,7 +235,7 @@ def photo_figure(photo, name, eager=False):
 
 
 def suggest_section(place, url, heading, intro, kinds):
-    """A short form that emails a suggestion for this page to George (sent by suggest.js)."""
+    """A short form that opens the visitor's own email app with the suggestion filled in (suggest.js)."""
     options = "".join(
         f'\n                    <label><input type="radio" name="kind" value="{e(k)}"{" checked" if i == 0 else ""} /> '
         f'{"An" if k[0] in "AEIOU" else "A"} {e(k.lower())}</label>'
@@ -233,12 +251,8 @@ def suggest_section(place, url, heading, intro, kinds):
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
-                <div class="suggest-row">
-                    <label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" required /></label>
-                    <label>Your email<input type="email" name="email" maxlength="200" autocomplete="email" required /></label>
-                </div>
-                <input class="suggest-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-                <button type="submit">Send suggestion</button>
+                <button type="submit">Write the email</button>
+                <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
             </form>
         </div>
@@ -698,15 +712,15 @@ def main():
     for city in cities:
         siblings = [c for c in by_continent[PLACES[city][1]] if c != city]
         page = city_page(city, registry[city], details.get(city, {}), siblings, photos)
-        (OUT / f"{slug(city)}.html").write_text(page, encoding="utf-8")
-    (OUT / "index.html").write_text(index_page(by_continent, counts), encoding="utf-8")
+        (OUT / f"{slug(city)}.html").write_text(versioned(page), encoding="utf-8")
+    (OUT / "index.html").write_text(versioned(index_page(by_continent, counts)), encoding="utf-8")
     for name, (patterns, intro) in ARCHITECTS.items():
         works = [(place, l) for place, items in registry.items() for l in items
                  if any(pattern in fold(l["architect"]) for pattern in patterns)]
-        (OUT / f"{architect_slug(name)}.html").write_text(architect_page(name, intro, works, photos), encoding="utf-8")
+        (OUT / f"{architect_slug(name)}.html").write_text(versioned(architect_page(name, intro, works, photos)), encoding="utf-8")
     for continent in CONTINENTS:
         page = continent_page(continent, by_continent[continent], registry, details, photos)
-        (OUT / f"{slug(continent)}.html").write_text(page, encoding="utf-8")
+        (OUT / f"{slug(continent)}.html").write_text(versioned(page), encoding="utf-8")
     print(f"wrote {len(cities)} city pages and index.html to {OUT.relative_to(ROOT)}/ "
           f"({sum(counts.values()):,} landmarks)")
     for k in CONTINENTS:
