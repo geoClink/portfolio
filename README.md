@@ -2,7 +2,7 @@
 
 Live site: https://geoclink.github.io/portfolio/
 
-Personal portfolio for George Clinkscales Jr., iOS & full-stack engineer and co-founder of CH Studios LLC, based in Detroit, MI.
+Personal portfolio for George Clinkscales Jr., iOS & full-stack engineer, based in Detroit, MI.
 
 Built from scratch on top of the HTML5 UP Future Imperfect template (heavily customized — custom design system, mobile nav, animations, and all content).
 
