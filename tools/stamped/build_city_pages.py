@@ -653,7 +653,7 @@ def architect_page(name, intro, works, photos):
 
 # Proves to impact.com (the affiliate network SeatGeek and Ticketmaster use) that this site
 # is ours. It's checked on the city guides homepage, which is the property registered there.
-IMPACT_VERIFICATION = "    <meta name='impact-site-verification' value='49a266fc-7cfd-457d-a3ab-bb4d22fb638d'>"
+IMPACT_VERIFICATION = "    <meta name='impact-site-verification' value='50bace8a-3bde-46aa-9461-4bbeba216ce6'>"
 
 
 def index_page(by_continent, counts):
