@@ -13,6 +13,7 @@ import html
 import json
 import re
 import unicodedata
+from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -260,6 +261,23 @@ def suggest_section(place, url, heading, intro, kinds):
 """
 
 
+# Expedia Group Affiliate Program (Partnerize). The same camref as the app's Find Hotels
+# button; pubref labels these clicks "website" in Expedia's reports.
+EXPEDIA_CAMREF = "1110lStp6"
+
+
+def hotel_link(city, country, pins):
+    """A tracked Expedia hotel search for the city, centred on its landmarks like the app's."""
+    name = "Minneapolis" if city == "Minnesota" else city   # Stamped calls Minneapolis "Minnesota"
+    query = [("destination", name if name in country else f"{name}, {country}")]
+    if pins:
+        lat = sorted(l["latitude"] for l in pins)[len(pins) // 2]
+        lng = sorted(l["longitude"] for l in pins)[len(pins) // 2]
+        query.append(("latLong", f"{lat:.5f},{lng:.5f}"))
+    search = "https://www.expedia.com/Hotel-Search?" + "&".join(f"{k}={quote(v, safe='')}" for k, v in query)
+    return f"https://prf.hn/click/camref:{EXPEDIA_CAMREF}/pubref:website/destination:{quote(search, safe='')}"
+
+
 def city_page(city, landmarks, details, siblings, photos):
     country, continent = PLACES[city]
     s = slug(city)
@@ -367,6 +385,10 @@ def city_page(city, landmarks, details, siblings, photos):
         facts.append(("Language", e(details["language"]), details.get("languageInfo")))
     if known(details.get("transportation")):
         facts.append(("Getting around", e(details["transportation"]), details.get("transportationFact")))
+    hotels = hotel_link(city, country, pins)
+    facts.append(("Where to stay",
+                  f'<a class="hotel-link" href="{e(hotels)}" rel="sponsored noopener" target="_blank">Find hotels in {e(city)} on Expedia</a>',
+                  "Stamped! may earn a commission when you book through this link."))
     if facts:
         out.append("""
     <section class="facts" aria-labelledby="facts-title">
