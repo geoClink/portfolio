@@ -2035,6 +2035,15 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Frederick_C._Robie_House.JPG/960px-Frederick_C._Robie_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "chi-16": {
+  "author": "Basil D Soufi",
+  "height": 1199,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Trump_International_Hotel_and_Tower_in_Chicago_2010.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Trump_International_Hotel_and_Tower_in_Chicago_2010.jpg/960px-Trump_International_Hotel_and_Tower_in_Chicago_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "cle-01": {
   "author": "GordonMakryllos",
   "height": 533,
@@ -3316,6 +3325,15 @@
   "site": "Wikimedia Commons",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Western_side_with_Burj.jpg/960px-Western_side_with_Burj.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "via": "commons-nearby 135 m",
+  "width": 800
+ },
+ "dxb_burj_khalifa": {
+  "author": "imran shahabuddin",
+  "height": 534,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(worlds_tallest_building)_and_the_Dubai_skyline_(25781049892).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg/960px-Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "edinburgh-castle": {

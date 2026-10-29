@@ -583,6 +583,7 @@ ARCHITECTS = {
     "Santiago Calatrava": (["calatrava"], "Spanish architect and engineer, born in 1951, known for skeletal, bird-like structures like the Oculus in New York."),
     "Le Corbusier": (["le corbusier"], "Swiss-French pioneer of modern architecture (1887–1965). Seventeen of his works are listed together as a UNESCO World Heritage Site."),
     "Antoni Gaudí": (["gaudi"], "Catalan architect (1852–1926) and the master of Modernisme behind the Sagrada Família in Barcelona."),
+    "Adrian Smith": (["adrian smith"], "American architect, born in 1944, who designed the Burj Khalifa while at Skidmore, Owings & Merrill. In 2006 he co-founded Adrian Smith + Gordon Gill Architecture in Chicago."),
 }
 
 
