@@ -651,6 +651,11 @@ def architect_page(name, intro, works, photos):
     return "".join(out)
 
 
+# Proves to impact.com (the affiliate network SeatGeek and Ticketmaster use) that this site
+# is ours. It's checked on the city guides homepage, which is the property registered there.
+IMPACT_VERIFICATION = "    <meta name='impact-site-verification' value='49a266fc-7cfd-457d-a3ab-bb4d22fb638d'>"
+
+
 def index_page(by_continent, counts):
     total = sum(counts.values())
     title = "City Guides: 140 Cities of Great Architecture | Stamped!"
@@ -658,8 +663,9 @@ def index_page(by_continent, counts):
                    "architects, build dates, styles and history, from the Stamped! app.")
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Stamped! city guides",
            "url": f"{SITE}/stamped-cities/index.html", "description": description}]
-    out = [HEAD.format(title=e(title), description=e(description), url=f"{SITE}/stamped-cities/index.html",
-                       site=SITE, jsonld=jsonld(ld), app_store=APP_STORE)]
+    head = HEAD.format(title=e(title), description=e(description), url=f"{SITE}/stamped-cities/index.html",
+                       site=SITE, jsonld=jsonld(ld), app_store=APP_STORE)
+    out = [head.replace("</head>", IMPACT_VERIFICATION + "\n</head>", 1)]
     out.append(f"""
     <main id="main">
     <section class="hero">
