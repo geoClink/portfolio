@@ -278,6 +278,18 @@ def hotel_link(city, country, pins):
     return f"https://prf.hn/click/camref:{EXPEDIA_CAMREF}/pubref:website/destination:{quote(search, safe='')}"
 
 
+# GetYourGuide partner ID. Search links (/s/?q=) with it are credited to Stamped!;
+# cmp labels these clicks "website" in GetYourGuide's reports (the app uses "app").
+GETYOURGUIDE_PARTNER_ID = "PBXFUP9"
+
+
+def tours_link(city, country):
+    """A GetYourGuide search for tours in the city, credited to Stamped!."""
+    name = "Minneapolis" if city == "Minnesota" else city
+    q = name if name in country else f"{name}, {country}"
+    return f"https://www.getyourguide.com/s/?partner_id={GETYOURGUIDE_PARTNER_ID}&cmp=website&q={quote(q, safe='')}"
+
+
 def city_page(city, landmarks, details, siblings, photos):
     country, continent = PLACES[city]
     s = slug(city)
@@ -389,6 +401,9 @@ def city_page(city, landmarks, details, siblings, photos):
     facts.append(("Where to stay",
                   f'<a class="hotel-link" href="{e(hotels)}" rel="sponsored noopener" target="_blank">Find hotels in {e(city)} on Expedia</a>',
                   "Stamped! may earn a commission when you book through this link."))
+    facts.append(("Tours and tickets",
+                  f'<a class="hotel-link" href="{e(tours_link(city, country))}" rel="sponsored noopener" target="_blank">Find tours in {e(city)} on GetYourGuide</a>',
+                  "Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission."))
     if facts:
         out.append("""
     <section class="facts" aria-labelledby="facts-title">
