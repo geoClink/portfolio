@@ -309,6 +309,33 @@ def tours_link(city, country):
     return f"https://www.getyourguide.com/s/?partner_id={GETYOURGUIDE_PARTNER_ID}&cmp=website&q={quote(q, safe='')}"
 
 
+# Vrbo USA's Partnerize camref (Creator Hub → Search widgets → vrbo.com), the same as the app's
+# Vacation Rentals on Vrbo button; pubref labels these clicks "website".
+VRBO_CAMREF = "1100l6yuA7"
+
+
+def rentals_link(city, country):
+    """A tracked Vrbo search for vacation rentals in the city."""
+    name = "Minneapolis" if city == "Minnesota" else city
+    destination = name if name in country else f"{name}, {country}"
+    search = f"https://www.vrbo.com/search?destination={quote(destination, safe='')}"
+    return f"https://prf.hn/click/camref:{VRBO_CAMREF}/pubref:website/destination:{quote(search, safe='')}"
+
+
+# Viator partner ID and campaign number (Viator Partner Program); campaign labels these clicks
+# "website" in Viator's reports (the app uses "app").
+VIATOR_PARTNER_ID = "P00329078"
+VIATOR_CAMPAIGN_NUMBER = "42383"
+
+
+def viator_link(city, country):
+    """A Viator search for tours in the city, credited to Stamped!."""
+    name = "Minneapolis" if city == "Minnesota" else city
+    q = name if name in country else f"{name}, {country}"
+    return (f"https://www.viator.com/searchResults/all?text={quote(q, safe='')}"
+            f"&pid={VIATOR_PARTNER_ID}&mcid={VIATOR_CAMPAIGN_NUMBER}&medium=link&campaign=website")
+
+
 def city_page(city, landmarks, details, siblings, photos, links=None):
     country, continent = PLACES[city]
     s = slug(city)
@@ -426,10 +453,12 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
         facts.append(("Getting around", e(details["transportation"]), details.get("transportationFact")))
     hotels = hotel_link(city, country, pins)
     facts.append(("Where to stay",
-                  f'<a class="hotel-link" href="{e(hotels)}" rel="sponsored noopener" target="_blank">Find hotels in {e(city)} on Expedia</a>',
-                  "Stamped! may earn a commission when you book through this link."))
+                  f'<a class="hotel-link" href="{e(hotels)}" rel="sponsored noopener" target="_blank">Find hotels in {e(city)} on Expedia</a>'
+                  f' <a class="hotel-link" href="{e(rentals_link(city, country))}" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a>',
+                  "Stamped! may earn a commission when you book through these links."))
     facts.append(("Tours and tickets",
-                  f'<a class="hotel-link" href="{e(tours_link(city, country))}" rel="sponsored noopener" target="_blank">Find tours in {e(city)} on GetYourGuide</a>',
+                  f'<a class="hotel-link" href="{e(tours_link(city, country))}" rel="sponsored noopener" target="_blank">Find tours in {e(city)} on GetYourGuide</a>'
+                  f' <a class="hotel-link" href="{e(viator_link(city, country))}" rel="sponsored noopener" target="_blank">More tours on Viator</a>',
                   "Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission."))
     if facts:
         out.append("""

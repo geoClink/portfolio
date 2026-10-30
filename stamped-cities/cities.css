@@ -677,3 +677,7 @@ a { color: inherit; }
 @media (min-width: 768px) {
     .nearby-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
 }
+
+/* Before you go: each partner link on its own line (Expedia and Vrbo, GetYourGuide and Viator) */
+.fact-grid .hotel-link { display: block; }
+.fact-grid .hotel-link + .hotel-link { margin-top: 6px; }
