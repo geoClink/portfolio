@@ -624,8 +624,14 @@ a { color: inherit; }
 .suggest-form fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .suggest-form legend { margin-bottom: 8px; }
 .suggest-form fieldset label { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
-.suggest-form > label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.suggest-form > label,
+.photo-fields > label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.photo-fields { display: grid; gap: 12px; }
+.photo-fields[hidden] { display: none; }
+.photo-fields .check { display: flex; align-items: flex-start; gap: 8px; font-weight: 400; font-size: 15px; }
+.photo-fields .check input { margin-top: 4px; accent-color: var(--color-accent-ink); }
 .suggest-form input[type="url"],
+.suggest-form input[type="text"],
 .suggest-form textarea {
     width: 100%;
     font: inherit;
