@@ -1,0 +1,127 @@
+/* Site search (search.js): the header Search button, its panel and the in-page boxes.
+   Its own file because the schools page (stamped-colleges.html) uses it without cities.css.
+   Colors and fonts are the tokens both pages define. */
+
+/* ===== Header button ===== */
+.search-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: inherit;
+    font-size: 15px;
+    color: var(--color-muted);
+    background: transparent;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 6px 9px;
+    cursor: pointer;
+}
+.search-toggle:hover,
+.search-toggle[aria-expanded="true"] { color: var(--color-ink); border-color: var(--color-accent); }
+/* Phones show the icon only; the word stays for screen readers */
+.search-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ===== Panel under the header ===== */
+.search-panel {
+    border-top: 1px solid var(--color-line);
+    padding: 12px 0 16px;
+}
+
+/* ===== Search box and results ===== */
+.site-search { position: relative; max-width: 640px; }
+.hero .site-search,
+.section-head .site-search { margin-top: 24px; }
+.site-search-label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+.site-search-field { position: relative; }
+.site-search-field svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-muted);
+    pointer-events: none;
+}
+.site-search-field input {
+    width: 100%;
+    font: inherit;
+    font-size: 16px;   /* 16px stops iOS from zooming into the field */
+    color: var(--color-ink);
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 11px 16px 11px 42px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.site-search-field input:focus { border-color: var(--color-accent); }
+
+.site-search-results {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 6px;
+    max-height: min(60vh, 460px);
+    overflow-y: auto;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
+}
+.site-search-option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: baseline;
+    padding: 9px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: 1.35;
+}
+.site-search-option:hover,
+.site-search-option[aria-selected="true"] { background: color-mix(in srgb, var(--color-accent) 14%, transparent); }
+.site-search-option[aria-selected="true"] { box-shadow: inset 0 0 0 2px var(--color-accent); }
+.site-search-option strong { font-size: 16px; }
+.site-search-detail { grid-column: 2; font-size: 13px; color: var(--color-muted); }
+.site-search-type {
+    grid-row: span 2;
+    min-width: 76px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-ink);
+}
+.site-search-status { margin: 6px 0 0; font-size: 13px; color: var(--color-muted); }
+.site-search-status:empty { display: none; }
+/* The result count is for screen readers; "Nothing found" shows for everyone */
+.site-search-results:not([hidden]) + .site-search-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+@media (max-width: 380px) {
+    .site-search-option { grid-template-columns: 1fr; }
+    .site-search-type { min-width: 0; grid-row: auto; }
+    .site-search-detail { grid-column: auto; }
+}
+
+@media (min-width: 768px) {
+    .search-toggle-label { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+}

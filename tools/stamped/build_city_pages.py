@@ -119,6 +119,8 @@ ASSETS = ["cities.css", "map.js", "map-token.js", "nearby.js", "suggest.js"]
 def versioned(page, folder=OUT, prefix=""):
     """`page` with every link to a shared file stamped with that file's content hash."""
     import hashlib
+    import quiz_search   # the quiz section and site search (quiz_search.py)
+    page = quiz_search.decorate(page, folder, prefix)
     for name in ASSETS + (["campus.css"] if folder != OUT else []):
         path = (folder if name == "campus.css" else OUT) / name
         if not path.exists():
