@@ -56,7 +56,10 @@
             background: radial-gradient(70% 70% at 80% 30%, rgba(67, 97, 238, 0.12), transparent 70%), var(--color-surface); }
         .tally-try .case-links { margin-bottom: 0; }
         /* Watch: crop the store headline off the top so only the watch shows */
-        .tally-watch-img { aspect-ratio: 1248 / 1060; object-fit: cover; object-position: 50% 100%; }
+        /* Real Watch screens in a drawn case, not marketing shots */
+        .tally-watch-frame { width: 170px; margin: 0 auto; padding: 10px; background: #1c1c1e; border-radius: 44px; box-shadow: inset 0 0 0 1.5px #3a3a3c, 0 18px 40px -18px rgba(0,0,0,0.45); position: relative; }
+        .tally-watch-frame::after { content: ""; position: absolute; right: -5px; top: 30%; width: 5px; height: 34px; background: #3a3a3c; border-radius: 0 4px 4px 0; }
+        .tally-watch-frame img { display: block; width: 100%; height: auto; border-radius: 34px; }
         /* iPad pair: side by side, stacked on phones where two-up is too small to read */
         .tally-ipad-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 1.25em; }
         @media (max-width: 600px) { .tally-ipad-grid { grid-template-columns: 1fr; gap: 24px; } }
@@ -236,6 +239,7 @@
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#hard">What was hard</a></li>
                 <li><a href="#research">User research</a></li>
+                <li><a href="#activation">Drop-off</a></li>
                 <li><a href="#outcome">The outcome</a></li>
                 <li><a href="#try">Try Tally</a></li>
             </ul>
@@ -245,6 +249,7 @@
             <h3>The Problem</h3>
             <p>Freelancers and small teams lose billable hours when tracking lives in a spreadsheet or someone's memory, and the hours that do get logged rarely make it back to the ticket the client is looking at.</p>
             <p>Every tool we tried was either built for solo freelancers with no team layer, or enterprise software that cost more than the project was worth. Tally works for one person or a whole team, runs on the devices people already use, and meets them in the tools they already work in: a timer starts from the ticket you're on, and the time lands back where your team will see it.</p>
+            <p>The other half of the problem is trust. A client paying by the hour sees a number and has to take it on faith. Tally gives every hour a receipt: the pull requests, commits, meetings and design saves behind it, on a report link the client can open without an account.</p>
         </div>
 
         <div class="case-section" id="see-it-work">
@@ -409,15 +414,15 @@
             <p>Start, pause, and stop a timer from your wrist — no phone needed. When you stop, the session syncs to your iPhone and every other device.</p>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item" style="width:220px;">
-                    <img class="screenshot-bezel tally-watch-img" src="assets/images/tallyios/tally-watch-01.webp" alt="Tally on Apple Watch: pick a client and tap play to start the timer" width="416" height="496" loading="lazy" style="border-radius:12px;">
+                    <div class="tally-watch-frame"><img src="assets/images/tallyios/tally-watch-start.webp" alt="Tally on Apple Watch: Acme Corp with a green play button to start the timer" width="422" height="514" loading="lazy"></div>
                     <p>Tap to start</p>
                 </div>
                 <div class="screenshot-scroll-item" style="width:220px;">
-                    <img class="screenshot-bezel tally-watch-img" src="assets/images/tallyios/tally-watch-02.webp" alt="Tally on Apple Watch: timer running for River North Group at 1:22:50" width="416" height="496" loading="lazy" style="border-radius:12px;">
+                    <div class="tally-watch-frame"><img src="assets/images/tallyios/tally-watch-running.webp" alt="Tally on Apple Watch: timer running" width="422" height="514" loading="lazy"></div>
                     <p>Timer running</p>
                 </div>
                 <div class="screenshot-scroll-item" style="width:220px;">
-                    <img class="screenshot-bezel tally-watch-img" src="assets/images/tallyios/tally-watch-03.webp" alt="Tally on Apple Watch: timer paused with resume and stop buttons" width="416" height="496" loading="lazy" style="border-radius:12px;">
+                    <div class="tally-watch-frame"><img src="assets/images/tallyios/tally-watch-paused.webp" alt="Tally on Apple Watch: timer paused with resume and stop buttons" width="422" height="514" loading="lazy"></div>
                     <p>Pause &amp; resume</p>
                 </div>
             </div>
@@ -544,6 +549,18 @@
             <p>One respondent who explains their workflow is worth more than a hundred survey answers.</p>
         </div>
 
+        <div class="case-section" id="activation">
+            <h3>Finding Where People Drop Off</h3>
+            <p>Downloads were growing, so I queried who actually used Tally after signing up. Of 125 accounts, only about a third had ever tracked a single session. The biggest drop wasn't between free and paid; it was between creating an account and starting the first timer.</p>
+            <p>The setup pushed people through the wrong things first: rates, a plan picker, integrations. So I changed the order of the first minutes:</p>
+            <ul>
+                <li>A "Start your first timer" card on the web Dashboard that starts a timer for the client in one tap</li>
+                <li>The setup checklist and activation emails now lead with tracking, and the hourly rate is marked optional</li>
+                <li>The iPhone onboarding lost its plan page: two screens, then straight to the timer</li>
+            </ul>
+            <p>The number to watch is the share of new sign-ups who track at least once, against that one-third baseline. Sign-up source is now tagged too, so I can see which channel brings people who stay.</p>
+        </div>
+
     <!-- Vision Pro teaser -->
     <div style="background:linear-gradient(150deg,#1e1b4b 0%,#312e81 100%);padding:4rem 1.5rem;border-radius:16px;">
         <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;flex-wrap:wrap;">
@@ -565,7 +582,7 @@
         <div class="case-section" id="outcome" style="margin-top:3em;">
             <h3>The Outcome</h3>
             <p>I use Tally every day on a real freelance contract: the person I work with and I both track our hours for the client in it. That daily use is where most fixes and features come from.</p>
-            <p>About 300 downloads and 63K+ App Store impressions since launch, built and shipped solo, with one account across every platform. Version 1.10.0 went out on every Apple platform, the web and Android together.</p>
+            <p>About 300 downloads and 63K+ App Store impressions since launch, built and shipped solo, with one account across every platform. Each release goes out on every Apple platform, the web and Android together; 1.11.0 is the latest.</p>
             <p>It's the most complex thing I've built. Not because any single piece is hard, but because seven platforms, several payment paths, a shared backend and a growing list of integrations all have to be right at once.</p>
         </div>
 
@@ -574,7 +591,7 @@
             <p>Shipping the same feature to every platform taught me to put the rules in one place first. When the server owns the truth (the shared timer, the subscription record, the "logged once" claim), every app can be simple, and a new platform like Vision Pro is mostly layout work.</p>
             <ul>
                 <li><strong>Android to production</strong> once the closed test is done. The tablet and Chromebook layout and the installable web app for Windows and Chromebooks have already shipped</li>
-                <li><strong>Translations</strong> for the apps and the store listings, starting with Spanish, French, German and Portuguese</li>
+                <li><strong>Measure the first-run changes</strong> and keep cutting steps between sign-up and the first tracked hour, before spending on translations</li>
             </ul>
         </div>
 
