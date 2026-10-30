@@ -4,7 +4,7 @@
     <title>Stamped! A City Passport：世界の名建築をスタンプで集めよう</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="6大陸140都市の1,900以上の名建築と、112の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。iPhone・iPad・Apple Vision Proで無料。" />
+    <meta name="description" content="6大陸156都市の2,100以上の名建築と、112の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。iPhone・iPad・Apple Vision Proで無料。" />
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
@@ -20,7 +20,7 @@
     <meta name="apple-itunes-app" content="app-id=6759680336" />
 
     <meta property="og:title" content="Stamped! A City Passport" />
-    <meta property="og:description" content="1,900以上の名建築、140都市、6大陸、112キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。" />
+    <meta property="og:description" content="2,100以上の名建築、156都市、6大陸、112キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Stamped! A City Passport",
-        "description": "6大陸140都市の1,900以上の名建築と、112の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。",
+        "description": "6大陸156都市の2,100以上の名建築と、112の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, iPadOS, visionOS",
         "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
@@ -288,9 +288,11 @@
             width: 100%;
             max-width: 280px;
             margin: 0 auto;
-            padding: 7px;
+            /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
+               so small phones on a narrow screen keep the same shape instead of turning blobby */
+            padding: 2.5%;
             border: 3px solid transparent;
-            border-radius: 50px;
+            border-radius: 18% / 8.5%;
             background:
                 linear-gradient(#050505, #050505) padding-box,
                 linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
@@ -327,7 +329,7 @@
             width: 100%;
             aspect-ratio: 600 / 1304;
             object-fit: cover;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
         }
         .phone--hero { max-width: 300px; }
 
@@ -335,7 +337,7 @@
         .phone-screen {
             position: relative;
             container-type: inline-size;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
             overflow: hidden;
         }
         .phone-island {
@@ -1309,7 +1311,7 @@
                 <div>
                     <p class="kicker">都市のパスポート · iPhone・iPad・Vision Proで無料</p>
                     <h1 id="hero-title">世界の名建築を、<span class="highlight">スタンプで。</span></h1>
-                    <p class="hero-lead">世界の名建築を、スタンプで埋めるパスポートに変えるiPhoneアプリ。140都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。</p>
+                    <p class="hero-lead">世界の名建築を、スタンプで埋めるパスポートに変えるiPhoneアプリ。156都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。</p>
                     <div class="cta-row">
                         <a class="app-store-badge" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336">
                             <img src="assets/images/site/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="162" height="54" alt="Download on the App Store" />
@@ -1327,8 +1329,8 @@
                     <div class="passport-strip">
                         <div class="passport-strip-head" aria-hidden="true"><span>パスポート · Stamped!</span><span>タイプ P</span></div>
                         <ul class="stats">
-                            <li><strong>1,900+</strong><span>名建築</span></li>
-                            <li><strong>140</strong><span>都市</span></li>
+                            <li><strong>2,100+</strong><span>名建築</span></li>
+                            <li><strong>156</strong><span>都市</span></li>
                             <li><strong>6</strong><span>大陸</span></li>
                             <li><strong>60+</strong><span>か国</span></li>
                             <li><strong>112</strong><span>キャンパス</span></li>
@@ -1365,7 +1367,7 @@
                     <li>
                         <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
                         <h3>ソファから探検</h3>
-                        <p>140都市をフォトリアルな3Dで飛び回り、建物ごとの物語を読もう。</p>
+                        <p>156都市をフォトリアルな3Dで飛び回り、建物ごとの物語を読もう。</p>
                     </li>
                     <li>
                         <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
@@ -1424,7 +1426,7 @@
                 <div class="section-head reveal">
                     <p class="kicker">Try it · Live Apple Maps</p>
                     <h2 id="try-title" class="section-title">Tap a landmark. <span class="highlight">Stamp it.</span></h2>
-                    <p class="section-lead">Look Around付きの本物のAppleマップを、このブラウザで。都市を選んでピンをタップし、ストリートレベルで見回してスタンプを押そう。アプリでは同じことを、1,900以上の名建築でフォトリアルな3Dで楽しめます。</p>
+                    <p class="section-lead">Look Around付きの本物のAppleマップを、このブラウザで。都市を選んでピンをタップし、ストリートレベルで見回してスタンプを押そう。アプリでは同じことを、2,100以上の名建築でフォトリアルな3Dで楽しめます。</p>
                 </div>
                 <ul class="try-cities" aria-label="Choose a city">
                     <li><button type="button" data-city="new-york" aria-pressed="false">ニューヨーク</button></li>
@@ -1514,12 +1516,12 @@
 
         <!-- Every continent -->
         <section class="continents" aria-labelledby="continents-title">
-            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">6大陸</textPath></text><text class="stamp-big" x="60" y="64">140</text><text class="stamp-small" x="60" y="77">都市</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">6大陸</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">都市</text></svg>
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">6大陸 · 140都市</p>
+                    <p class="kicker">6大陸 · 156都市</p>
                     <h2 id="continents-title" class="section-title">飛行機で行けるすべての大陸へ。</h2>
-                    <p class="section-lead">定番の首都だけではありません。レイキャビクからザンジバルまで140都市を収録。どの都市にも名建築、クイズ、スタンプがあります。</p>
+                    <p class="section-lead">定番の首都だけではありません。レイキャビクからザンジバルまで156都市を収録。どの都市にも名建築、クイズ、スタンプがあります。</p>
                 </div>
                 <ul class="continent-grid reveal">
                     <li>
@@ -1559,7 +1561,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="band-link"><a href="stamped-cities/index.html">140都市のガイドを見る（英語） <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+                <p class="band-link"><a href="stamped-cities/index.html">156都市のガイドを見る（英語） <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </section>
 
@@ -1567,7 +1569,7 @@
         <section class="section photo-strip-section" aria-labelledby="strip-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">アプリの中 · 1,900以上の名建築</p>
+                    <p class="kicker">アプリの中 · 2,100以上の名建築</p>
                     <h2 id="strip-title" class="section-title">あなたを待つ<span class="highlight">名建築の一部。</span></h2>
                     <p class="section-lead">タップすると都市ガイド（英語）が開き、建築家、建築年、建物の物語を読めます。</p>
                 </div>
@@ -1668,17 +1670,17 @@
                     <h2 id="architects-title" class="section-title"><span class="highlight">建築家に会おう。</span></h2>
                     <p>名建築ごとに建築家、様式、建築年、高さ、歴史を紹介。建築家をタップすると、アプリ内のその人の建物がすべて見られます。Stamped!は見た建物の建築家を記録し、お気に入りの建築家を表示します。</p>
                     <ul class="architects" aria-label="Stamped!に登場する建築家の一部と、アプリ内の作品数">
-                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>18</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>31</strong></a></li>
                         <li><a href="stamped-cities/architect-oscar-niemeyer.html">Oscar Niemeyer<strong>16</strong></a></li>
-                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>14</strong></a></li>
-                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>15</strong></a></li>
-                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>12</strong></a></li>
-                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>11</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>15</strong></a></li>
+                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>17</strong></a></li>
+                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>13</strong></a></li>
+                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>13</strong></a></li>
                         <li><a href="stamped-cities/architect-mies-van-der-rohe.html">Mies van der Rohe<strong>8</strong></a></li>
                         <li><a href="stamped-cities/architect-renzo-piano.html">Renzo Piano<strong>7</strong></a></li>
                         <li><a href="stamped-cities/architect-jean-nouvel.html">Jean Nouvel<strong>7</strong></a></li>
-                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>6</strong></a></li>
-                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>5</strong></a></li>
+                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>10</strong></a></li>
+                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>12</strong></a></li>
                         <li><a href="stamped-cities/architect-antoni-gaudi.html">Antoni Gaudí<strong>3</strong></a></li>
                         <li><a href="stamped-cities/architect-adrian-smith.html">Adrian Smith<strong>3</strong></a></li>
                     </ul>
@@ -1941,7 +1943,7 @@
             <div class="container reveal">
                 <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
                 <h2 id="cta-title">パスポートが待っています。</h2>
-                <p>1,900以上の名建築。それぞれにスタンプ。iPhone・iPad・Apple Vision Proで無料。</p>
+                <p>2,100以上の名建築。それぞれにスタンプ。iPhone・iPad・Apple Vision Proで無料。</p>
                 <div class="cta-row">
                     <a class="app-store-badge" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336">
                         <img src="assets/images/site/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="162" height="54" alt="Download on the App Store" />

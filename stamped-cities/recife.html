@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/recife.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -212,6 +212,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "rec-kahal-zur", "name": "Kahal Zur Israel Synagogue", "lat": -8.0618906, "lng": -34.871362, "subtitle": "1636 · Unknown (Restored by Lina Bo Bardi)"}, {"id": "rec-brennand-institute", "name": "Ricardo Brennand Institute", "lat": -8.068747, "lng": -34.878844, "subtitle": "2002 · Ricardo Brennand (Visionary)"}, {"id": "rec-santa-isabel", "name": "Santa Isabel Theater", "lat": -8.0613709, "lng": -34.8775682, "subtitle": "1850 · Louis Léger Vauthier"}, {"id": "rec-paco-frevo", "name": "Paço do Frevo", "lat": -8.0587934, "lng": -34.8723948, "subtitle": "1908 · Unknown (Restored by Robert Pajewski)"}, {"id": "rec-malakoff-tower", "name": "Malakoff Tower", "lat": -8.0608, "lng": -34.8708, "subtitle": "1855 · José Mamede Alves Ferreira"}, {"id": "rec-capibaribe-building", "name": "Capibaribe Building (Edifício Capibaribe)", "lat": -8.0601398, "lng": -34.8804122, "subtitle": "1956 · Delfim Amorim"}, {"id": "rec-brennand-sculpture", "name": "Brennand Sculpture Park", "lat": -8.063943, "lng": -34.869131, "subtitle": "2000 · Francisco Brennand"}, {"id": "rec-mirante-da-aurora", "name": "Mirante da Aurora", "lat": -8.0530544, "lng": -34.875893, "subtitle": "2022 · Augusto Reinaldo"}, {"id": "rec-paco-alfandega", "name": "Paço Alfândega", "lat": -8.0649155, "lng": -34.8738084, "subtitle": "1732 · Unknown (Original) / Jorge Passos (Renovation)"}, {"id": "rec-casa-cultura", "name": "Recife House of Culture", "lat": -8.0646827, "lng": -34.8815882, "subtitle": "1855 · José Mamede Alves Ferreira"}, {"id": "rec-officina-brennand", "name": "Officina Francisco Brennand", "lat": -8.0516, "lng": -34.9735, "subtitle": "1971 · Francisco Brennand"}, {"id": "rec-cais-do-sertao", "name": "Cais do Sertão Museum", "lat": -8.0663168, "lng": -34.8731953, "subtitle": "2014 · Brasil Arquitetura"}, {"id": "rec-apple-shopping-recife", "name": "iPlace Apple Premium Partner (Shopping Recife)", "lat": -8.1190199, "lng": -34.9048827, "subtitle": "2021 · iPlace Design / Apple Retail Concept"}]}</script>
     </section>
@@ -394,7 +402,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

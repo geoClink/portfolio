@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/brisbane.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "au_story_bridge", "name": "Story Bridge", "lat": -27.4647, "lng": 153.0349, "subtitle": "1940 · John Bradfield"}, {"id": "au_south_bank_parklands", "name": "South Bank Parklands", "lat": -27.4751, "lng": 153.0188, "subtitle": "1992 · Various (1988 Expo and subsequent development)"}, {"id": "au_goma_brisbane", "name": "GOMA - Gallery of Modern Art, Brisbane", "lat": -27.4753, "lng": 153.0175, "subtitle": "2006 · Architectus"}, {"id": "au_brisbane_city_hall", "name": "Brisbane City Hall", "lat": -27.4683, "lng": 153.0238, "subtitle": "1930 · Hall & Prentice"}, {"id": "au_mt_coottha_lookout", "name": "Mount Coot-tha Lookout", "lat": -27.4767, "lng": 152.9773, "subtitle": "1958"}]}</script>
     </section>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

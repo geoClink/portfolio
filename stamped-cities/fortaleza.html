@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/fortaleza.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -212,6 +212,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "for-dragao-do-mar", "name": "Dragão do Mar Center", "lat": -3.7216677, "lng": -38.5201742, "subtitle": "1999 · Delberg Ponce de Leon"}, {"id": "for-cathedral", "name": "Metropolitan Cathedral of Fortaleza", "lat": -3.724771, "lng": -38.524488, "subtitle": "1978 · George Maunier"}, {"id": "for-jose-de-alencar", "name": "Theatro José de Alencar", "lat": -3.727786, "lng": -38.5317064, "subtitle": "1910 · Bernardo José de Melo"}, {"id": "for-fortress-assuncao", "name": "Fortress of Nossa Senhora da Assunção", "lat": -3.7217985, "lng": -38.5233894, "subtitle": "1649 · Matias Beck (Dutch founder)"}, {"id": "for-one-residencial", "name": "One Residencial", "lat": -3.7233377, "lng": -38.4876583, "subtitle": "2022 · Nasser Hissa"}, {"id": "for-estoril", "name": "Estoril", "lat": -3.7190974, "lng": -38.516258, "subtitle": "1925"}, {"id": "for-mucuripe-lighthouse", "name": "Mucuripe Lighthouse", "lat": -3.7140581, "lng": -38.4734732, "subtitle": "1846"}, {"id": "for-mis", "name": "Museum of Image and Sound (MIS)", "lat": -3.7276821, "lng": -38.5046208, "subtitle": "2022 · Carvalho Araújo"}, {"id": "for-cine-sao-luiz", "name": "Cineteatro São Luiz", "lat": -3.7273553, "lng": -38.5281144, "subtitle": "1958 · Humberto da Justa Menescal"}, {"id": "for-escritorio-nasser-hissa", "name": "BS Design Corporate", "lat": -3.7375352, "lng": -38.4993738, "subtitle": "2019 · Daniel Arruda"}, {"id": "for-mercado-central", "name": "Mercado Central de Fortaleza", "lat": -3.723429, "lng": -38.5239495, "subtitle": "1998 · Luiz Fiúza"}, {"id": "for-casa-jose-alencar", "name": "Casa de José de Alencar", "lat": -3.8262821, "lng": -38.4816911, "subtitle": "1826 · Unknown (Colonial Design)"}, {"id": "for-apple-iguatemi", "name": "iPlace Apple Premium Partner (Iguatemi Bosque)", "lat": -3.75543, "lng": -38.488766, "subtitle": "2021 · iPlace Design / Apple Retail Concept"}]}</script>
     </section>
@@ -394,7 +402,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

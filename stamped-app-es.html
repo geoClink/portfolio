@@ -4,7 +4,7 @@
     <title>Stamped! A City Passport: los grandes edificios del mundo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Consigue un sello en tu pasaporte en más de 1.900 monumentos de arquitectura en 140 ciudades de seis continentes y 112 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje. Gratis para iPhone, iPad y Apple Vision Pro." />
+    <meta name="description" content="Consigue un sello en tu pasaporte en más de 2.100 monumentos de arquitectura en 156 ciudades de seis continentes y 112 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje. Gratis para iPhone, iPad y Apple Vision Pro." />
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
@@ -20,7 +20,7 @@
     <meta name="apple-itunes-app" content="app-id=6759680336" />
 
     <meta property="og:title" content="Stamped! A City Passport" />
-    <meta property="og:description" content="Más de 1.900 monumentos, 140 ciudades, seis continentes, 112 campus. Sobrevuélalos en 3D y consigue un sello en cada uno que visites." />
+    <meta property="og:description" content="Más de 2.100 monumentos, 156 ciudades, seis continentes, 112 campus. Sobrevuélalos en 3D y consigue un sello en cada uno que visites." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-es.html" />
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Stamped! A City Passport",
-        "description": "Consigue un sello en tu pasaporte en más de 1.900 monumentos de arquitectura en 140 ciudades de seis continentes y 112 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje.",
+        "description": "Consigue un sello en tu pasaporte en más de 2.100 monumentos de arquitectura en 156 ciudades de seis continentes y 112 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, iPadOS, visionOS",
         "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
@@ -288,9 +288,11 @@
             width: 100%;
             max-width: 280px;
             margin: 0 auto;
-            padding: 7px;
+            /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
+               so small phones on a narrow screen keep the same shape instead of turning blobby */
+            padding: 2.5%;
             border: 3px solid transparent;
-            border-radius: 50px;
+            border-radius: 18% / 8.5%;
             background:
                 linear-gradient(#050505, #050505) padding-box,
                 linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
@@ -327,7 +329,7 @@
             width: 100%;
             aspect-ratio: 600 / 1304;
             object-fit: cover;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
         }
         .phone--hero { max-width: 300px; }
 
@@ -335,7 +337,7 @@
         .phone-screen {
             position: relative;
             container-type: inline-size;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
             overflow: hidden;
         }
         .phone-island {
@@ -1309,7 +1311,7 @@
                 <div>
                     <p class="kicker">Un pasaporte de ciudades · Gratis para iPhone, iPad y Vision Pro</p>
                     <h1 id="hero-title">Los grandes edificios del mundo, <span class="highlight">sellados.</span></h1>
-                    <p class="hero-lead">Una app para iPhone que convierte los monumentos del mundo en un pasaporte que llenas de sellos. Sobrevuela 140 ciudades en 3D, descubre quién construyó cada monumento y por qué, y consigue un sello en cada uno que visites.</p>
+                    <p class="hero-lead">Una app para iPhone que convierte los monumentos del mundo en un pasaporte que llenas de sellos. Sobrevuela 156 ciudades en 3D, descubre quién construyó cada monumento y por qué, y consigue un sello en cada uno que visites.</p>
                     <div class="cta-row">
                         <a class="app-store-badge" href="https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336">
                             <img src="assets/images/site/Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg" width="162" height="54" alt="Download on the App Store" />
@@ -1327,8 +1329,8 @@
                     <div class="passport-strip">
                         <div class="passport-strip-head" aria-hidden="true"><span>Pasaporte · Stamped!</span><span>Tipo P</span></div>
                         <ul class="stats">
-                            <li><strong>1.900+</strong><span>Monumentos</span></li>
-                            <li><strong>140</strong><span>Ciudades</span></li>
+                            <li><strong>2.100+</strong><span>Monumentos</span></li>
+                            <li><strong>156</strong><span>Ciudades</span></li>
                             <li><strong>6</strong><span>Continentes</span></li>
                             <li><strong>60+</strong><span>Países</span></li>
                             <li><strong>112</strong><span>Campus</span></li>
@@ -1365,7 +1367,7 @@
                     <li>
                         <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
                         <h3>Explora desde el sofá</h3>
-                        <p>Sobrevuela 140 ciudades en 3D fotorrealista y lee la historia de cada edificio.</p>
+                        <p>Sobrevuela 156 ciudades en 3D fotorrealista y lee la historia de cada edificio.</p>
                     </li>
                     <li>
                         <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
@@ -1424,7 +1426,7 @@
                 <div class="section-head reveal">
                     <p class="kicker">Try it · Live Apple Maps</p>
                     <h2 id="try-title" class="section-title">Tap a landmark. <span class="highlight">Stamp it.</span></h2>
-                    <p class="section-lead">Un mapa real de Apple con Look Around, aquí mismo en tu navegador. Elige una ciudad, toca un marcador, mira a pie de calle y séllalo. La app hace lo mismo en 3D fotorrealista, para más de 1.900 monumentos.</p>
+                    <p class="section-lead">Un mapa real de Apple con Look Around, aquí mismo en tu navegador. Elige una ciudad, toca un marcador, mira a pie de calle y séllalo. La app hace lo mismo en 3D fotorrealista, para más de 2.100 monumentos.</p>
                 </div>
                 <ul class="try-cities" aria-label="Choose a city">
                     <li><button type="button" data-city="new-york" aria-pressed="false">Nueva York</button></li>
@@ -1514,12 +1516,12 @@
 
         <!-- Every continent -->
         <section class="continents" aria-labelledby="continents-title">
-            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SEIS CONTINENTES</textPath></text><text class="stamp-big" x="60" y="64">140</text><text class="stamp-small" x="60" y="77">CIUDADES</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SEIS CONTINENTES</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">CIUDADES</text></svg>
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">Seis continentes · 140 ciudades</p>
+                    <p class="kicker">Seis continentes · 156 ciudades</p>
                     <h2 id="continents-title" class="section-title">Todos los continentes a los que puedes volar.</h2>
-                    <p class="section-lead">No solo las capitales de siempre. Stamped! cubre 140 ciudades, de Reikiavik a Zanzíbar, cada una con sus monumentos, su quiz y su sello.</p>
+                    <p class="section-lead">No solo las capitales de siempre. Stamped! cubre 156 ciudades, de Reikiavik a Zanzíbar, cada una con sus monumentos, su quiz y su sello.</p>
                 </div>
                 <ul class="continent-grid reveal">
                     <li>
@@ -1559,7 +1561,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="band-link"><a href="stamped-cities/index.html">Ver las 140 guías de ciudades (en inglés) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+                <p class="band-link"><a href="stamped-cities/index.html">Ver las 156 guías de ciudades (en inglés) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </section>
 
@@ -1567,7 +1569,7 @@
         <section class="section photo-strip-section" aria-labelledby="strip-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">Dentro de la app · Más de 1.900 monumentos</p>
+                    <p class="kicker">Dentro de la app · Más de 2.100 monumentos</p>
                     <h2 id="strip-title" class="section-title">Algunos de los lugares <span class="highlight">que te esperan.</span></h2>
                     <p class="section-lead">Cada uno abre su guía de la ciudad (en inglés), con el arquitecto, el año de construcción y su historia.</p>
                 </div>
@@ -1668,17 +1670,17 @@
                     <h2 id="architects-title" class="section-title">Conoce a los <span class="highlight">arquitectos.</span></h2>
                     <p>Cada monumento incluye su arquitecto, estilo, fecha de construcción, altura e historia. Toca un arquitecto para ver todos sus edificios en la app. Stamped! recuerda de quién son los edificios que has visto y te muestra tu arquitecto favorito.</p>
                     <ul class="architects" aria-label="Algunos de los arquitectos de Stamped!, con cuántos de sus edificios hay en la app">
-                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>18</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>31</strong></a></li>
                         <li><a href="stamped-cities/architect-oscar-niemeyer.html">Oscar Niemeyer<strong>16</strong></a></li>
-                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>14</strong></a></li>
-                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>15</strong></a></li>
-                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>12</strong></a></li>
-                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>11</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>15</strong></a></li>
+                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>17</strong></a></li>
+                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>13</strong></a></li>
+                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>13</strong></a></li>
                         <li><a href="stamped-cities/architect-mies-van-der-rohe.html">Mies van der Rohe<strong>8</strong></a></li>
                         <li><a href="stamped-cities/architect-renzo-piano.html">Renzo Piano<strong>7</strong></a></li>
                         <li><a href="stamped-cities/architect-jean-nouvel.html">Jean Nouvel<strong>7</strong></a></li>
-                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>6</strong></a></li>
-                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>5</strong></a></li>
+                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>10</strong></a></li>
+                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>12</strong></a></li>
                         <li><a href="stamped-cities/architect-antoni-gaudi.html">Antoni Gaudí<strong>3</strong></a></li>
                         <li><a href="stamped-cities/architect-adrian-smith.html">Adrian Smith<strong>3</strong></a></li>
                     </ul>
@@ -1941,7 +1943,7 @@
             <div class="container reveal">
                 <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
                 <h2 id="cta-title">Tu pasaporte te espera.</h2>
-                <p>Más de 1.900 monumentos. Un sello en cada uno. Gratis para iPhone, iPad y Apple Vision Pro.</p>
+                <p>Más de 2.100 monumentos. Un sello en cada uno. Gratis para iPhone, iPad y Apple Vision Pro.</p>
                 <div class="cta-row">
                     <a class="app-store-badge" href="https://apps.apple.com/es/app/stamped-a-city-passport/id6759680336">
                         <img src="assets/images/site/Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg" width="162" height="54" alt="Download on the App Store" />

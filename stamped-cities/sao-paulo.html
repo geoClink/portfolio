@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/sao-paulo.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -230,6 +230,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "br_masp", "name": "MASP (São Paulo Museum of Art)", "lat": -23.5614961, "lng": -46.6559677, "subtitle": "1968 · Lina Bo Bardi"}, {"id": "br_copan", "name": "Edifício Copan", "lat": -23.546617, "lng": -46.644375, "subtitle": "1966 · Oscar Niemeyer"}, {"id": "br_altino_arantes", "name": "Farol Santander (Altino Arantes Building)", "lat": -23.545833, "lng": -46.633889, "subtitle": "1947 · Plínio Botelho do Amaral"}, {"id": "br_estaiada_bridge", "name": "Octávio Frias de Oliveira Bridge", "lat": -23.6154391, "lng": -46.6992167, "subtitle": "2008 · Catão Francisco Ribeiro"}, {"id": "br_theatre_municipal", "name": "Theatro Municipal de São Paulo", "lat": -23.545278, "lng": -46.638611, "subtitle": "1911 · Ramos de Azevedo"}, {"id": "br_pinacoteca", "name": "Pinacoteca do Estado", "lat": -23.5342741, "lng": -46.6339157, "subtitle": "1900 · Ramos de Azevedo / Paulo Mendes da Rocha (Renovation)"}, {"id": "br_estacao_da_luz", "name": "Luz Station", "lat": -23.5351161, "lng": -46.6353906, "subtitle": "1901 · Charles Henry Driver"}, {"id": "br_cathedral_se", "name": "São Paulo Cathedral (Catedral da Sé)", "lat": -23.551168, "lng": -46.63434, "subtitle": "1954 · Maximilian Emil Hehl"}, {"id": "br_sesc_pompeia", "name": "SESC Pompéia", "lat": -23.5247354, "lng": -46.7036039, "subtitle": "1982 · Lina Bo Bardi"}, {"id": "br_italia_building", "name": "Edifício Itália", "lat": -23.5453075, "lng": -46.6436337, "subtitle": "1965 · Franz Heep"}, {"id": "br_mosteiro_sao_bento", "name": "Saint Benedict Monastery", "lat": -23.54361, "lng": -46.63389, "subtitle": "1922 · Richard Berndl"}, {"id": "br_mercadao", "name": "Municipal Market of São Paulo", "lat": -23.5417, "lng": -46.62917, "subtitle": "1933 · Ramos de Azevedo"}, {"id": "br_ibirapuera_auditorium", "name": "Ibirapuera Auditorium", "lat": -23.5879351, "lng": -46.6514106, "subtitle": "2005 · Oscar Niemeyer"}, {"id": "br_japan_house", "name": "Japan House São Paulo", "lat": -23.5705607, "lng": -46.6447649, "subtitle": "2017 · Kengo Kuma"}, {"id": "br_casa_das_rosas", "name": "Casa das Rosas", "lat": -23.5707488, "lng": -46.6448342, "subtitle": "1935 · Ramos de Azevedo"}]}</script>
     </section>
@@ -266,7 +274,7 @@
                     <h3>Edifício Copan</h3>
                     <p class="address">Av. Ipiranga, 200, Centro Histórico, São Paulo - SP</p>
                     <p>One of the largest residential buildings in the world, known for its iconic S-shaped wave facade and brise-soleil concrete slats. It contains over 1,100 apartments and a ground-floor commercial arcade, embodying a &#x27;city within a building&#x27; concept.</p>
-                    <dl><div><dt>Built</dt><dd>1966</dd></div><div><dt>Architect</dt><dd>Oscar Niemeyer</dd></div><div><dt>Style</dt><dd>Modernist</dd></div><div><dt>Height</dt><dd>115 m (377 ft)</dd></div><div><dt>Stories</dt><dd>38</dd></div><div><dt>Today</dt><dd>Residential / Commercial</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1966</dd></div><div><dt>Architect</dt><dd><a href="architect-oscar-niemeyer.html">Oscar Niemeyer</a></dd></div><div><dt>Style</dt><dd>Modernist</dd></div><div><dt>Height</dt><dd>115 m (377 ft)</dd></div><div><dt>Stories</dt><dd>38</dd></div><div><dt>Today</dt><dd>Residential / Commercial</dd></div></dl>
                 </li>
                 <li id="br_altino_arantes" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Altino_Arantes_Building.jpg/960px-Altino_Arantes_Building.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1196" alt="Farol Santander (Altino Arantes Building)" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Altino_Arantes_Building.jpg" rel="noopener">Dornicke</a>, Public domain, via Wikimedia Commons</figcaption></figure>
@@ -290,7 +298,7 @@
                     <h3>Theatro Municipal de São Paulo</h3>
                     <p class="address">Praça Ramos de Azevedo, Centro, São Paulo - SP</p>
                     <p>Inspired by the Palais Garnier in Paris, this lavish building features an eclectic mix of Renaissance, Baroque, and Art Nouveau styles. It was the stage for the 1922 Modern Art Week, which revolutionized Brazilian culture.</p>
-                    <dl><div><dt>Built</dt><dd>1911</dd></div><div><dt>Architect</dt><dd>Ramos de Azevedo</dd></div><div><dt>Style</dt><dd>Eclectic / Neo-Classical</dd></div><div><dt>Height</dt><dd>28 m (92 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Opera House / Concert Hall</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1911</dd></div><div><dt>Architect</dt><dd><a href="architect-ramos-de-azevedo.html">Ramos de Azevedo</a></dd></div><div><dt>Style</dt><dd>Eclectic / Neo-Classical</dd></div><div><dt>Height</dt><dd>28 m (92 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Opera House / Concert Hall</dd></div></dl>
                 </li>
                 <li id="br_pinacoteca" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Pinacoteca_de_S%C3%A3o_Paulo%2C_Brazil.jpg/960px-Pinacoteca_de_S%C3%A3o_Paulo%2C_Brazil.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="462" alt="Pinacoteca do Estado" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Pinacoteca_de_S%C3%A3o_Paulo,_Brazil.jpg" rel="noopener">Wilfredor</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -298,7 +306,7 @@
                     <h3>Pinacoteca do Estado</h3>
                     <p class="address">Praça da Luz, 2, Luz, São Paulo - SP</p>
                     <p>The oldest art museum in São Paulo. A 1990s renovation by Pritzker-winner Paulo Mendes da Rocha left the internal exposed brickwork and added steel walkways and glass roofs, creating a stunning dialogue between old and new.</p>
-                    <dl><div><dt>Built</dt><dd>1900</dd></div><div><dt>Architect</dt><dd>Ramos de Azevedo / Paulo Mendes da Rocha (Renovation)</dd></div><div><dt>Style</dt><dd>Neo-Renaissance / Industrial</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1900</dd></div><div><dt>Architect</dt><dd><a href="architect-ramos-de-azevedo.html">Ramos de Azevedo</a> / Paulo Mendes da Rocha (Renovation)</dd></div><div><dt>Style</dt><dd>Neo-Renaissance / Industrial</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="br_estacao_da_luz" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Esta%C3%A7%C3%A3o_da_Luz%2C_S%C3%A3o_Paulo_%28SP%29.jpg/960px-Esta%C3%A7%C3%A3o_da_Luz%2C_S%C3%A3o_Paulo_%28SP%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="794" alt="Luz Station" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_da_Luz,_S%C3%A3o_Paulo_(SP).jpg" rel="noopener">Marcos Elias de Oliveira Júnior</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a>, via Wikimedia Commons</figcaption></figure>
@@ -346,7 +354,7 @@
                     <h3>Municipal Market of São Paulo</h3>
                     <p class="address">Rua Cantareira, 306, Centro, São Paulo - SP</p>
                     <p>Commonly known as &#x27;Mercadão,&#x27; this building is famous for its massive stained-glass windows depicting agricultural life. It is the gastronomic heart of the city, renowned for its giant mortadella sandwiches and exotic fruit stalls.</p>
-                    <dl><div><dt>Built</dt><dd>1933</dd></div><div><dt>Architect</dt><dd>Ramos de Azevedo</dd></div><div><dt>Style</dt><dd>Eclectic / Art Deco Influence</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Gastronomic Market</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1933</dd></div><div><dt>Architect</dt><dd><a href="architect-ramos-de-azevedo.html">Ramos de Azevedo</a></dd></div><div><dt>Style</dt><dd>Eclectic / Art Deco Influence</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Gastronomic Market</dd></div></dl>
                 </li>
                 <li id="br_ibirapuera_auditorium" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Parque_Ibirapuera%2C_Oscar_Niemeyer_%285877297727%29.jpg/960px-Parque_Ibirapuera%2C_Oscar_Niemeyer_%285877297727%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="Ibirapuera Auditorium" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Parque_Ibirapuera,_Oscar_Niemeyer_(5877297727).jpg" rel="noopener">Arte Fora do Museu</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -354,7 +362,7 @@
                     <h3>Ibirapuera Auditorium</h3>
                     <p class="address">Av. Pedro Álvares Cabral, s/n, Ibirapuera, São Paulo - SP</p>
                     <p>A stark white concrete trapezoid in Ibirapuera Park, featuring a &#x27;red tongue&#x27; sculpture at the entrance. The back of the stage has a giant door that opens to the park, allowing thousands of people outside to watch performances.</p>
-                    <dl><div><dt>Built</dt><dd>2005</dd></div><div><dt>Architect</dt><dd>Oscar Niemeyer</dd></div><div><dt>Style</dt><dd>Modernist</dd></div><div><dt>Height</dt><dd>15 m (49 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Auditorium / Music Venue</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2005</dd></div><div><dt>Architect</dt><dd><a href="architect-oscar-niemeyer.html">Oscar Niemeyer</a></dd></div><div><dt>Style</dt><dd>Modernist</dd></div><div><dt>Height</dt><dd>15 m (49 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Auditorium / Music Venue</dd></div></dl>
                 </li>
                 <li id="br_japan_house">
                     
@@ -370,7 +378,7 @@
                     <h3>Casa das Rosas</h3>
                     <p class="address">Av. Paulista, 37, Bela Vista, São Paulo - SP</p>
                     <p>One of the few remaining mansions from the era when Paulista Avenue was a residential street for coffee barons. It is a French-style manor house that now functions as a &#x27;space for poetry&#x27; and literature, surrounded by a famous rose garden.</p>
-                    <dl><div><dt>Built</dt><dd>1935</dd></div><div><dt>Architect</dt><dd>Ramos de Azevedo</dd></div><div><dt>Style</dt><dd>Classical French Eclectic</dd></div><div><dt>Height</dt><dd>14 m (46 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Cultural Center / Poetry Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1935</dd></div><div><dt>Architect</dt><dd><a href="architect-ramos-de-azevedo.html">Ramos de Azevedo</a></dd></div><div><dt>Style</dt><dd>Classical French Eclectic</dd></div><div><dt>Height</dt><dd>14 m (46 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Cultural Center / Poetry Museum</dd></div></dl>
                 </li>
             </ol>
         </div>
@@ -428,7 +436,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

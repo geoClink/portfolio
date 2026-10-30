@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/milan.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -239,6 +239,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "mil_duomo", "name": "Duomo di Milano", "lat": 45.4639102, "lng": 9.1906398, "subtitle": "1386 · Simone da Orsenigo"}, {"id": "mil_galleria", "name": "Galleria Vittorio Emanuele II", "lat": 45.4639102, "lng": 9.1906398, "subtitle": "1877 · Giuseppe Mengoni"}, {"id": "mil_bosco", "name": "Bosco Verticale", "lat": 45.4856052, "lng": 9.1908346, "subtitle": "2014 · Stefano Boeri"}, {"id": "mil_velasca", "name": "Torre Velasca", "lat": 45.4600514, "lng": 9.1904367, "subtitle": "1958 · BBPR"}, {"id": "mil_prada", "name": "Fondazione Prada", "lat": 45.4442572, "lng": 9.2053389, "subtitle": "2015 · Rem Koolhaas"}, {"id": "mil_pirelli", "name": "Pirelli Tower", "lat": 45.4849273, "lng": 9.2008316, "subtitle": "1958 · Gio Ponti"}, {"id": "mil_castello", "name": "Castello Sforzesco", "lat": 45.471037, "lng": 9.1811406, "subtitle": "1450 · Filarete"}, {"id": "mil_feltrinelli", "name": "Fondazione Feltrinelli", "lat": 45.4814162, "lng": 9.1843119, "subtitle": "2016 · Herzog & de Meuron"}, {"id": "mil_stazione", "name": "Milano Centrale", "lat": 45.4852065, "lng": 9.2052893, "subtitle": "1931 · Ulisse Stacchini"}, {"id": "mil_villa_necchi", "name": "Villa Necchi Campiglio", "lat": 45.4683, "lng": 9.2018, "subtitle": "1935 · Piero Portaluppi"}, {"id": "mil_apple_liberty", "name": "Apple Piazza Liberty", "lat": 45.4655046, "lng": 9.1942913, "subtitle": "2018 · Foster + Partners"}, {"id": "mil_unicredit", "name": "UniCredit Tower", "lat": 45.4834778, "lng": 9.1902248, "subtitle": "2012 · Cesar Pelli"}, {"id": "mil_triennale", "name": "Palazzo dell'Arte (Triennale)", "lat": 45.4721606, "lng": 9.1735004, "subtitle": "1933 · Giovanni Muzio"}, {"id": "mil_generali", "name": "Generali Tower (Lo Storto)", "lat": 45.4783108, "lng": 9.1570584, "subtitle": "2017 · Zaha Hadid"}, {"id": "mil_ca_brutta", "name": "Ca' Brütta", "lat": 45.47562, "lng": 9.1962699, "subtitle": "1922 · Giovanni Muzio"}, {"id": "mil_san_siro", "name": "San Siro Stadium", "lat": 45.478178, "lng": 9.1212742, "subtitle": "1926 · Ulisse Stacchini / Alberto Cugini"}]}</script>
     </section>
@@ -299,7 +307,7 @@
                     <h3>Fondazione Prada</h3>
                     <p class="address">Largo Isarco, 2, 20139 Milano MI, Italy</p>
                     <p>This art and culture center is located within a repurposed gin distillery dating back to the 1910s. It features the famous &#x27;Haunted House,&#x27; a four-story building entirely clad in shimmering 24-karat gold leaf. The architectural design by Rem Koolhaas seamlessly blends industrial heritage with bold contemporary structures. Various exhibition spaces are connected by a series of courtyards that encourage public interaction and exploration. It stands as a prime example of how Milanese industrial sites can be transformed into world-class cultural hubs.</p>
-                    <dl><div><dt>Built</dt><dd>2015</dd></div><div><dt>Architect</dt><dd>Rem Koolhaas</dd></div><div><dt>Style</dt><dd>Contemporary / Industrial</dd></div><div><dt>Height</dt><dd>60 m (197 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2015</dd></div><div><dt>Architect</dt><dd><a href="architect-rem-koolhaas.html">Rem Koolhaas</a></dd></div><div><dt>Style</dt><dd>Contemporary / Industrial</dd></div><div><dt>Height</dt><dd>60 m (197 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="mil_pirelli">
                     
@@ -323,7 +331,7 @@
                     <h3>Fondazione Feltrinelli</h3>
                     <p class="address">Viale Pasubio, 5, 20154 Milano MI, Italy</p>
                     <p>This incredibly long and thin glass structure was inspired by the traditional linear farmhouses found in the Lombardy region. The building&#x27;s rhythmic concrete frame and sharp angles give it the appearance of a crystalline mountain ridge. It serves as a modern cultural center, housing a vast library, archives, and multi-functional office spaces. The design emphasizes transparency and openness, integrating seamlessly into the surrounding urban parkland. It represents the successful redevelopment of the Porta Volta area into a contemporary knowledge district.</p>
-                    <dl><div><dt>Built</dt><dd>2016</dd></div><div><dt>Architect</dt><dd>Herzog &amp; de Meuron</dd></div><div><dt>Style</dt><dd>Contemporary</dd></div><div><dt>Height</dt><dd>22 m (72 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Library / Office</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2016</dd></div><div><dt>Architect</dt><dd><a href="architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron</a></dd></div><div><dt>Style</dt><dd>Contemporary</dd></div><div><dt>Height</dt><dd>22 m (72 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Library / Office</dd></div></dl>
                 </li>
                 <li id="mil_stazione" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Milan_CentralStation_016_4294.jpg/960px-Milan_CentralStation_016_4294.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="Milano Centrale" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Milan_CentralStation_016_4294.jpg" rel="noopener">Ludvig14</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -347,7 +355,7 @@
                     <h3>Apple Piazza Liberty</h3>
                     <p class="address">Piazza del Liberty, 1, 20121 Milano MI, Italy</p>
                     <p>This store is a masterclass in urban integration that revitalizes a previously overlooked city square. Instead of a traditional building, visitors enter through a 12-meter tall glass fountain that serves as a portal. The fountain creates a stunning visual effect and acts as a sound barrier against the bustling city streets. Below ground, the retail space is bright and expansive, featuring local Beola Grigia stone throughout. The exterior amphitheater doubles as a public plaza and an outdoor cinema for community events.</p>
-                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd>Foster + Partners</dd></div><div><dt>Style</dt><dd>Contemporary / Minimalism</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Retail / Public Plaza</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd><a href="architect-foster-partners.html">Foster + Partners</a></dd></div><div><dt>Style</dt><dd>Contemporary / Minimalism</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Retail / Public Plaza</dd></div></dl>
                 </li>
                 <li id="mil_unicredit">
                     
@@ -355,7 +363,7 @@
                     <h3>UniCredit Tower</h3>
                     <p class="address">Piazza Gae Aulenti, 3, 20154 Milano MI, Italy</p>
                     <p>Standing as Italy&#x27;s tallest building, this skyscraper is defined by its sleek LED-encrusted spire. The tower sits atop Piazza Gae Aulenti, a circular raised podium that serves as a modern civic center. Its sinuous glass facade is designed to reflect the changing light and colors of the Lombardy sky. The spire itself is 85 meters tall and is often lit up to mark significant city events or holidays. It has quickly become the most recognizable symbol of the &#x27;New Milan&#x27; business district.</p>
-                    <dl><div><dt>Built</dt><dd>2012</dd></div><div><dt>Architect</dt><dd>Cesar Pelli</dd></div><div><dt>Style</dt><dd>Neo-futurism</dd></div><div><dt>Height</dt><dd>231 m (758 ft)</dd></div><div><dt>Stories</dt><dd>31</dd></div><div><dt>Today</dt><dd>Office / Bank HQ</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2012</dd></div><div><dt>Architect</dt><dd><a href="architect-cesar-pelli.html">Cesar Pelli</a></dd></div><div><dt>Style</dt><dd>Neo-futurism</dd></div><div><dt>Height</dt><dd>231 m (758 ft)</dd></div><div><dt>Stories</dt><dd>31</dd></div><div><dt>Today</dt><dd>Office / Bank HQ</dd></div></dl>
                 </li>
                 <li id="mil_triennale" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Parco_Sempione_%28Milan%29%2C_Wikimania_2016%2C_MP_003.jpg/960px-Parco_Sempione_%28Milan%29%2C_Wikimania_2016%2C_MP_003.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="Palazzo dell&#x27;Arte (Triennale)" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Parco_Sempione_(Milan),_Wikimania_2016,_MP_003.jpg" rel="noopener">Photograph by Mike Peel (www.mikepeel.net).</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -371,7 +379,7 @@
                     <h3>Generali Tower (Lo Storto)</h3>
                     <p class="address">Piazza Tre Torri, 20145 Milano MI, Italy</p>
                     <p>Affectionately known as &#x27;The Twisted One,&#x27; this tower features a dramatic torsion effect as it rises. The floors rotate slightly at each level to respond to the surrounding urban pathways and forces. Located in the futuristic CityLife district, it is part of a trio of towers designed by world-renowned architects. The building&#x27;s geometry creates a sense of dynamic movement that shifts depending on the viewer&#x27;s angle. It serves as a major office hub while providing stunning panoramic views of the Alps.</p>
-                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd>Zaha Hadid</dd></div><div><dt>Style</dt><dd>Parametricism</dd></div><div><dt>Height</dt><dd>177 m (581 ft)</dd></div><div><dt>Stories</dt><dd>44</dd></div><div><dt>Today</dt><dd>Office Tower</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd><a href="architect-zaha-hadid.html">Zaha Hadid</a></dd></div><div><dt>Style</dt><dd>Parametricism</dd></div><div><dt>Height</dt><dd>177 m (581 ft)</dd></div><div><dt>Stories</dt><dd>44</dd></div><div><dt>Today</dt><dd>Office Tower</dd></div></dl>
                 </li>
                 <li id="mil_ca_brutta">
                     
@@ -415,7 +423,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -445,7 +453,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/auckland.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "sky-tower-auckland", "name": "Sky Tower", "lat": -36.8490776, "lng": 174.7616161, "subtitle": "1997 · Craig Craig Moller"}, {"id": "auckland-art-gallery", "name": "Auckland Art Gallery Toi o Tāmaki", "lat": -36.8520151, "lng": 174.7665069, "subtitle": "2011 · FJMT + Archimedia"}, {"id": "auckland-museum", "name": "Auckland War Memorial Museum", "lat": -36.860278, "lng": 174.777778, "subtitle": "1929 · Grierson, Aimer, and Draffin"}, {"id": "pwc-tower-commercial-bay", "name": "PwC Tower at Commercial Bay", "lat": -36.8442296, "lng": 174.7658072, "subtitle": "2020 · Warren and Mahoney"}, {"id": "britomart-transport-centre", "name": "Britomart Transport Centre", "lat": -36.8440815, "lng": 174.7674151, "subtitle": "1912 · Claude Paton (1912) / Mario Madayag"}]}</script>
     </section>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>
