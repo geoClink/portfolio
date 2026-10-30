@@ -12,8 +12,8 @@
     const PER_LIST = 5;
     const WALK_METRES_PER_MINUTE = 80;   // about 4.8 km/h
     const KINDS = [
-        { list: 'restaurants', category: 'Restaurant', color: '#8E6CEF', glyph: 'R' },
-        { list: 'hotels', category: 'Hotel', color: '#2F7DD1', glyph: 'H' }
+        { list: 'restaurants', category: 'Restaurant', query: 'restaurant', color: '#8E6CEF', glyph: 'R' },
+        { list: 'hotels', category: 'Hotel', query: 'hotel', color: '#2F7DD1', glyph: 'H' }
     ];
 
     const results = {};   // landmark id -> { restaurants: [...], hotels: [...] }, so a repeat pick is instant
@@ -43,16 +43,23 @@
         return `https://maps.apple.com/?${query.toString()}`;
     };
 
-    // One points-of-interest search; resolves to the closest places of that category, nearest first
+    // One search; resolves to the closest places of that category, nearest first. Like the app
+    // (StaysNearbySection.swift), it searches for the word ("hotel") within the category: a
+    // category-only search also returned offices Apple Maps files as hotels (a staffing agency,
+    // an engineering firm, a hotel chain's head office).
     const search = (center, kind) => new Promise((resolve) => {
         try {
             const category = mapkit.PointOfInterestCategory[kind.category];
-            const searcher = new mapkit.PointsOfInterestSearch({
-                center: center,
-                radius: RADIUS_METRES,
-                pointOfInterestFilter: mapkit.PointOfInterestFilter.including([category])
+            // A box about twice the search radius across, so places up to MAX_METRES can come back
+            const degreesLat = (RADIUS_METRES * 2) / 111000;
+            const degreesLng = degreesLat / Math.max(0.2, Math.cos(center.latitude * Math.PI / 180));
+            const searcher = new mapkit.Search({
+                region: new mapkit.CoordinateRegion(center, new mapkit.CoordinateSpan(degreesLat, degreesLng)),
+                pointOfInterestFilter: mapkit.PointOfInterestFilter.including([category]),
+                includeAddresses: false,
+                includeQueries: false
             });
-            searcher.search((error, data) => {
+            searcher.search(kind.query, (error, data) => {
                 if (error || !data || !Array.isArray(data.places)) {
                     resolve([]);
                     return;
