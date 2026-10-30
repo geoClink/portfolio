@@ -9,7 +9,9 @@ page per campus to stamped-colleges/<slug>.html. It also rewrites the school lis
 stamped-colleges.html, so every name links to its page and the counts match the app, and refreshes
 the school pages in sitemap.xml. Re-run after the app's campus data changes.
 
-Photos come from stamped-colleges/photos.json, written by `fetch_photos.py --campuses`.
+Photos come from stamped-colleges/photos.json, written by `fetch_photos.py --campuses`, and the
+History card from stamped-colleges/history.json, written by `fetch_campus_history.py`. The other
+campus cards (Student life, Game day, Campus events) are in campus_cards.py.
 """
 import argparse
 import json
@@ -21,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, e, height_label, jsonld, known,
                               photo_figure, slug, suggest_section, versioned, year_label, year_sort)
+from campus_cards import CampusData, campus_cards
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "stamped-colleges"
@@ -61,7 +64,7 @@ def sort_name(name):
     return name.lower()
 
 
-def campus_page(campus, buildings, traditions, siblings, photos):
+def campus_page(campus, buildings, traditions, siblings, photos, data):
     name = campus["name"]
     details = campus.get("details", {})
     group = group_of(campus)
@@ -239,6 +242,10 @@ def campus_page(campus, buildings, traditions, siblings, photos):
     </section>
 """)
 
+    # The app's campus cards: History, Student life, Game day, Campus events
+    cards, live_events = campus_cards(campus, data)
+    out.append(cards)
+
     out.append(suggest_section(
         name, url, f"Know {name} well?",
         "Students and alumni know the traditions best. Suggest one we're missing, a building worth a stamp, "
@@ -260,7 +267,8 @@ def campus_page(campus, buildings, traditions, siblings, photos):
 
     out.append(CAMPUS_FOOT.format(
         scripts=('    <script src="../stamped-cities/map-token.js"></script>\n    <script src="../stamped-cities/map.js"></script>\n' if pins else "")
-                + '    <script src="../stamped-cities/suggest.js" defer></script>\n',
+                + '    <script src="../stamped-cities/suggest.js" defer></script>\n'
+                + ('    <script src="campus-events.js" defer></script>\n' if live_events else ""),
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} on your visit.",
         cta_text=f"Tour {e(name)} in 3D before you go, add it to a college road trip and earn a passport stamp at every building. Free on iPhone and iPad."))
@@ -318,6 +326,7 @@ def main():
                 for c in json.loads(f.read_text(encoding="utf-8"))]
     photos_file = OUT / "photos.json"   # written by fetch_photos.py --campuses
     photos = json.loads(photos_file.read_text(encoding="utf-8")) if photos_file.exists() else {}
+    data = CampusData(app, OUT)   # History, Student life, Game day and event feeds for the cards
 
     missing = [c["name"] for c in campuses if c["name"] not in registry]
     if missing:
@@ -331,7 +340,7 @@ def main():
     for campus in campuses:
         name = campus["name"]
         siblings = [c for c in groups[group_of(campus)] if c != name]
-        page = campus_page(campus, registry[name], traditions.get(name, []), siblings, photos)
+        page = campus_page(campus, registry[name], traditions.get(name, []), siblings, photos, data)
         (OUT / f"{slug(name)}.html").write_text(versioned(page, OUT, "../stamped-cities/"), encoding="utf-8")
     update_landing(groups, len(campuses))
     update_sitemap(sorted(slug(c["name"]) for c in campuses))
