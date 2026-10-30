@@ -4,7 +4,7 @@
     <title>Stamped! A City Passport: die großen Bauwerke der Welt</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Sammle Stempel für deinen Reisepass an mehr als 1.900 Bauwerken in 140 Städten auf sechs Kontinenten und auf 112 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise. Kostenlos für iPhone, iPad und Apple Vision Pro." />
+    <meta name="description" content="Sammle Stempel für deinen Reisepass an mehr als 2.100 Bauwerken in 156 Städten auf sechs Kontinenten und auf 112 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise. Kostenlos für iPhone, iPad und Apple Vision Pro." />
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
@@ -20,7 +20,7 @@
     <meta name="apple-itunes-app" content="app-id=6759680336" />
 
     <meta property="og:title" content="Stamped! A City Passport" />
-    <meta property="og:description" content="1.900+ Sehenswürdigkeiten, 140 Städte, sechs Kontinente, 112 Campusse. Fliege in 3D hindurch und sammle an jedem Ort, den du besuchst, einen Stempel." />
+    <meta property="og:description" content="2.100+ Sehenswürdigkeiten, 156 Städte, sechs Kontinente, 112 Campusse. Fliege in 3D hindurch und sammle an jedem Ort, den du besuchst, einen Stempel." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-de.html" />
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Stamped! A City Passport",
-        "description": "Sammle Stempel für deinen Reisepass an mehr als 1.900 Bauwerken in 140 Städten auf sechs Kontinenten und auf 112 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise.",
+        "description": "Sammle Stempel für deinen Reisepass an mehr als 2.100 Bauwerken in 156 Städten auf sechs Kontinenten und auf 112 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, iPadOS, visionOS",
         "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
@@ -288,9 +288,11 @@
             width: 100%;
             max-width: 280px;
             margin: 0 auto;
-            padding: 7px;
+            /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
+               so small phones on a narrow screen keep the same shape instead of turning blobby */
+            padding: 2.5%;
             border: 3px solid transparent;
-            border-radius: 50px;
+            border-radius: 18% / 8.5%;
             background:
                 linear-gradient(#050505, #050505) padding-box,
                 linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
@@ -327,7 +329,7 @@
             width: 100%;
             aspect-ratio: 600 / 1304;
             object-fit: cover;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
         }
         .phone--hero { max-width: 300px; }
 
@@ -335,7 +337,7 @@
         .phone-screen {
             position: relative;
             container-type: inline-size;
-            border-radius: 40px;
+            border-radius: 15.4% / 7.1%;
             overflow: hidden;
         }
         .phone-island {
@@ -1309,7 +1311,7 @@
                 <div>
                     <p class="kicker">Ein Städte-Reisepass · Kostenlos für iPhone, iPad &amp; Vision Pro</p>
                     <h1 id="hero-title">Die großen Bauwerke der Welt, <span class="highlight">gestempelt.</span></h1>
-                    <p class="hero-lead">Eine iPhone-App, die die Wahrzeichen der Welt in einen Reisepass verwandelt, den du mit Stempeln füllst. Fliege in 3D durch 140 Städte, erfahre, wer jedes Bauwerk gebaut hat und warum, und sammle an jedem, das du besuchst, einen Stempel.</p>
+                    <p class="hero-lead">Eine iPhone-App, die die Wahrzeichen der Welt in einen Reisepass verwandelt, den du mit Stempeln füllst. Fliege in 3D durch 156 Städte, erfahre, wer jedes Bauwerk gebaut hat und warum, und sammle an jedem, das du besuchst, einen Stempel.</p>
                     <div class="cta-row">
                         <a class="app-store-badge" href="https://apps.apple.com/de/app/stamped-a-city-passport/id6759680336">
                             <img src="assets/images/site/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
@@ -1327,8 +1329,8 @@
                     <div class="passport-strip">
                         <div class="passport-strip-head" aria-hidden="true"><span>Reisepass · Stamped!</span><span>Typ P</span></div>
                         <ul class="stats">
-                            <li><strong>1.900+</strong><span>Bauwerke</span></li>
-                            <li><strong>140</strong><span>Städte</span></li>
+                            <li><strong>2.100+</strong><span>Bauwerke</span></li>
+                            <li><strong>156</strong><span>Städte</span></li>
                             <li><strong>6</strong><span>Kontinente</span></li>
                             <li><strong>60+</strong><span>Länder</span></li>
                             <li><strong>112</strong><span>Campusse</span></li>
@@ -1365,7 +1367,7 @@
                     <li>
                         <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
                         <h3>Entdecke vom Sofa aus</h3>
-                        <p>Fliege in fotorealistischem 3D durch 140 Städte und lies die Geschichte hinter jedem Gebäude.</p>
+                        <p>Fliege in fotorealistischem 3D durch 156 Städte und lies die Geschichte hinter jedem Gebäude.</p>
                     </li>
                     <li>
                         <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
@@ -1424,7 +1426,7 @@
                 <div class="section-head reveal">
                     <p class="kicker">Try it · Live Apple Maps</p>
                     <h2 id="try-title" class="section-title">Tap a landmark. <span class="highlight">Stamp it.</span></h2>
-                    <p class="section-lead">Eine echte Apple Karte mit Umsehen, direkt hier im Browser. Wähle eine Stadt, tippe auf eine Nadel, sieh dich auf Straßenhöhe um und stempele sie. Die App macht das Gleiche in fotorealistischem 3D, für 1.900+ Sehenswürdigkeiten.</p>
+                    <p class="section-lead">Eine echte Apple Karte mit Umsehen, direkt hier im Browser. Wähle eine Stadt, tippe auf eine Nadel, sieh dich auf Straßenhöhe um und stempele sie. Die App macht das Gleiche in fotorealistischem 3D, für 2.100+ Sehenswürdigkeiten.</p>
                 </div>
                 <ul class="try-cities" aria-label="Choose a city">
                     <li><button type="button" data-city="new-york" aria-pressed="false">New York</button></li>
@@ -1514,12 +1516,12 @@
 
         <!-- Every continent -->
         <section class="continents" aria-labelledby="continents-title">
-            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SECHS KONTINENTE</textPath></text><text class="stamp-big" x="60" y="64">140</text><text class="stamp-small" x="60" y="77">STÄDTE</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SECHS KONTINENTE</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">STÄDTE</text></svg>
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">Sechs Kontinente · 140 Städte</p>
+                    <p class="kicker">Sechs Kontinente · 156 Städte</p>
                     <h2 id="continents-title" class="section-title">Alle Kontinente, die du anfliegen kannst.</h2>
-                    <p class="section-lead">Nicht nur die üblichen Hauptstädte. Stamped! umfasst 140 Städte von Reykjavík bis Sansibar, jede mit eigenen Sehenswürdigkeiten, eigenem Quiz und eigenem Stempel.</p>
+                    <p class="section-lead">Nicht nur die üblichen Hauptstädte. Stamped! umfasst 156 Städte von Reykjavík bis Sansibar, jede mit eigenen Sehenswürdigkeiten, eigenem Quiz und eigenem Stempel.</p>
                 </div>
                 <ul class="continent-grid reveal">
                     <li>
@@ -1559,7 +1561,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="band-link"><a href="stamped-cities/index.html">Alle 140 Stadtführer ansehen (auf Englisch) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+                <p class="band-link"><a href="stamped-cities/index.html">Alle 156 Stadtführer ansehen (auf Englisch) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
             </div>
         </section>
 
@@ -1567,7 +1569,7 @@
         <section class="section photo-strip-section" aria-labelledby="strip-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">In der App · 1.900+ Sehenswürdigkeiten</p>
+                    <p class="kicker">In der App · 2.100+ Sehenswürdigkeiten</p>
                     <h2 id="strip-title" class="section-title">Ein paar der Orte, <span class="highlight">die auf dich warten.</span></h2>
                     <p class="section-lead">Jeder öffnet den Stadtführer (auf Englisch) mit Architekt, Baujahr und der Geschichte dahinter.</p>
                 </div>
@@ -1668,17 +1670,17 @@
                     <h2 id="architects-title" class="section-title">Triff die <span class="highlight">Architekten.</span></h2>
                     <p>Zu jeder Sehenswürdigkeit gibt es Architekt, Stil, Baujahr, Höhe und Geschichte. Tippe auf einen Architekten, um alle seine Bauwerke in der App zu sehen. Stamped! merkt sich, wessen Bauwerke du gesehen hast, und zeigt deinen Lieblingsarchitekten.</p>
                     <ul class="architects" aria-label="Einige Architekten in Stamped! und wie viele ihrer Bauwerke in der App sind">
-                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>18</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>31</strong></a></li>
                         <li><a href="stamped-cities/architect-oscar-niemeyer.html">Oscar Niemeyer<strong>16</strong></a></li>
-                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>14</strong></a></li>
-                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>15</strong></a></li>
-                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>12</strong></a></li>
-                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>11</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>15</strong></a></li>
+                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>17</strong></a></li>
+                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>13</strong></a></li>
+                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>13</strong></a></li>
                         <li><a href="stamped-cities/architect-mies-van-der-rohe.html">Mies van der Rohe<strong>8</strong></a></li>
                         <li><a href="stamped-cities/architect-renzo-piano.html">Renzo Piano<strong>7</strong></a></li>
                         <li><a href="stamped-cities/architect-jean-nouvel.html">Jean Nouvel<strong>7</strong></a></li>
-                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>6</strong></a></li>
-                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>5</strong></a></li>
+                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>10</strong></a></li>
+                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>12</strong></a></li>
                         <li><a href="stamped-cities/architect-antoni-gaudi.html">Antoni Gaudí<strong>3</strong></a></li>
                         <li><a href="stamped-cities/architect-adrian-smith.html">Adrian Smith<strong>3</strong></a></li>
                     </ul>
@@ -1941,7 +1943,7 @@
             <div class="container reveal">
                 <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
                 <h2 id="cta-title">Dein Reisepass wartet.</h2>
-                <p>1.900+ Sehenswürdigkeiten. Ein Stempel für jede. Kostenlos für iPhone, iPad und Apple Vision Pro.</p>
+                <p>2.100+ Sehenswürdigkeiten. Ein Stempel für jede. Kostenlos für iPhone, iPad und Apple Vision Pro.</p>
                 <div class="cta-row">
                     <a class="app-store-badge" href="https://apps.apple.com/de/app/stamped-a-city-passport/id6759680336">
                         <img src="assets/images/site/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />

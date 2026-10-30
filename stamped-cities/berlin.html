@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/berlin.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -230,6 +230,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "ber_reichstag", "name": "Reichstag Building", "lat": 52.5186538, "lng": 13.3761015, "subtitle": "1894 · Paul Wallot / Norman Foster"}, {"id": "ber_brandenburg_gate", "name": "Brandenburg Gate", "lat": 52.5163514, "lng": 13.3786908, "subtitle": "1791 · Carl Gotthard Langhans"}, {"id": "ber_tv_tower", "name": "Berliner Fernsehturm", "lat": 52.5208279, "lng": 13.4094214, "subtitle": "1969 · Hermann Henselmann"}, {"id": "ber_jewish_museum", "name": "Jewish Museum Berlin", "lat": 52.5016941, "lng": 13.3951413, "subtitle": "2001 · Daniel Libeskind"}, {"id": "ber_philharmonic", "name": "Berliner Philharmonie", "lat": 52.5099888, "lng": 13.3696059, "subtitle": "1963 · Hans Scharoun"}, {"id": "ber_neue_national", "name": "Neue Nationalgalerie", "lat": 52.5070409, "lng": 13.3676212, "subtitle": "1968 · Ludwig Mies van der Rohe"}, {"id": "ber_kaiser_wilhelm", "name": "Kaiser Wilhelm Memorial Church", "lat": 52.5049676, "lng": 13.335294, "subtitle": "1895 · Franz Schwechten / Egon Eiermann"}, {"id": "ber_chancellery", "name": "Federal Chancellery", "lat": 52.5201946, "lng": 13.3691292, "subtitle": "2001 · Axel Schultes"}, {"id": "ber_unite_d_habitation", "name": "Corbusierhaus", "lat": 52.5102002, "lng": 13.2438932, "subtitle": "1958 · Le Corbusier"}, {"id": "ber_shell_haus", "name": "Shell-Haus", "lat": 52.5060586, "lng": 13.3629876, "subtitle": "1932 · Emil Fahrenkamp"}, {"id": "ber_apple_rosenthaler", "name": "Apple Rosenthaler Straße", "lat": 52.5243125, "lng": 13.4031361, "subtitle": "2021 · Tchoban Voss Architekten"}, {"id": "ber_humboldt_forum", "name": "Humboldt Forum", "lat": 52.516714, "lng": 13.4031305, "subtitle": "2020 · Franco Stella"}, {"id": "ber_sony_center", "name": "Sony Center", "lat": 52.5098014, "lng": 13.3755898, "subtitle": "2000 · Helmut Jahn"}, {"id": "ber_gsw_hq", "name": "GSW Headquarters (Rocket Tower)", "lat": 52.5065424, "lng": 13.392988, "subtitle": "1999 · Sauerbruch Hutton"}, {"id": "ber_james_simon_galerie", "name": "James-Simon-Galerie", "lat": 52.5201352, "lng": 13.3993615, "subtitle": "2018 · David Chipperfield"}]}</script>
     </section>
@@ -258,7 +266,7 @@
                     <h3>Reichstag Building</h3>
                     <p class="address">Platz der Republik 1, 11011 Berlin</p>
                     <p>This historic structure serves as the seat of the German Parliament. It is most famous for its large transparent glass dome added during a major renovation. This dome was designed to symbolize the transparency and accessibility of the democratic process. Visitors can walk up a spiral ramp inside the dome to look down upon the debating chamber below. It remains one of the most visited landmarks in Berlin due to its architectural blend of old and new.</p>
-                    <dl><div><dt>Built</dt><dd>1894</dd></div><div><dt>Architect</dt><dd>Paul Wallot / Norman Foster</dd></div><div><dt>Style</dt><dd>Neorenaissance / Postmodern</dd></div><div><dt>Height</dt><dd>47 m (154 ft)</dd></div><div><dt>Stories</dt><dd>6</dd></div><div><dt>Today</dt><dd>Parliament</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1894</dd></div><div><dt>Architect</dt><dd>Paul Wallot / <a href="architect-norman-foster.html">Norman Foster</a></dd></div><div><dt>Style</dt><dd>Neorenaissance / Postmodern</dd></div><div><dt>Height</dt><dd>47 m (154 ft)</dd></div><div><dt>Stories</dt><dd>6</dd></div><div><dt>Today</dt><dd>Parliament</dd></div></dl>
                 </li>
                 <li id="ber_brandenburg_gate" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/960px-Brandenburger_Tor_abends.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="Brandenburg Gate" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg" rel="noopener">Thomas Wolf, www.foto-tw.de</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -282,7 +290,7 @@
                     <h3>Jewish Museum Berlin</h3>
                     <p class="address">Lindenstraße 9-14, 10969 Berlin</p>
                     <p>This museum is considered a zig-zagging deconstructivist masterpiece of modern architecture. The building&#x27;s design features &#x27;voids,&#x27; which are empty spaces representing the absence of Jewish life following the Holocaust. Its exterior is clad in zinc plates that will naturally weather and change color over time. Inside, the disorienting axes and slanted floors are meant to evoke feelings of exile and loss. It stands as a profound architectural memorial to the history of Jews in Germany.</p>
-                    <dl><div><dt>Built</dt><dd>2001</dd></div><div><dt>Architect</dt><dd>Daniel Libeskind</dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2001</dd></div><div><dt>Architect</dt><dd><a href="architect-daniel-libeskind.html">Daniel Libeskind</a></dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Museum</dd></div></dl>
                 </li>
                 <li id="ber_philharmonic" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Berlin_-_Berliner_Philharmonie_%283%29.jpg/960px-Berlin_-_Berliner_Philharmonie_%283%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="Berliner Philharmonie" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Berlin_-_Berliner_Philharmonie_(3).jpg" rel="noopener">Fred Romero from Paris, France</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -298,7 +306,7 @@
                     <h3>Neue Nationalgalerie</h3>
                     <p class="address">Potsdamer Straße 50, 10785 Berlin</p>
                     <p>This &#x27;temple of light and glass&#x27; is one of the most famous examples of the International Style. It features a massive steel roof supported by only eight columns to create a vast, open interior space. The building is considered a pure expression of its architect&#x27;s minimalist philosophy and obsession with geometry. Most of the museum&#x27;s permanent collection is actually housed in galleries located underground. It recently underwent a meticulous multi-year restoration to preserve its original 1960s aesthetic.</p>
-                    <dl><div><dt>Built</dt><dd>1968</dd></div><div><dt>Architect</dt><dd>Ludwig Mies van der Rohe</dd></div><div><dt>Style</dt><dd>International Style</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Art Gallery</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1968</dd></div><div><dt>Architect</dt><dd><a href="architect-mies-van-der-rohe.html">Ludwig Mies van der Rohe</a></dd></div><div><dt>Style</dt><dd>International Style</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Art Gallery</dd></div></dl>
                 </li>
                 <li id="ber_kaiser_wilhelm" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Ged%C3%A4chtniskirche1.JPG/960px-Ged%C3%A4chtniskirche1.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1263" alt="Kaiser Wilhelm Memorial Church" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Ged%C3%A4chtniskirche1.JPG" rel="noopener">nl:User:GerardM</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -322,7 +330,7 @@
                     <h3>Corbusierhaus</h3>
                     <p class="address">Flatowallee 16, 14055 Berlin</p>
                     <p>This massive housing block was built for the 1957 Interbau exhibition near the Olympic Stadium. It is a classic example of the &#x27;vertical city&#x27; living concept developed by its famous architect. The building contains hundreds of apartments designed to provide light, space, and greenery to all residents. Its brutalist facade is characterized by the use of raw concrete and primary colors on the balconies. Today, the building is a protected monument and remains a popular residence for modernist architecture fans.</p>
-                    <dl><div><dt>Built</dt><dd>1958</dd></div><div><dt>Architect</dt><dd>Le Corbusier</dd></div><div><dt>Style</dt><dd>Brutalist / Modern</dd></div><div><dt>Height</dt><dd>53 m (174 ft)</dd></div><div><dt>Stories</dt><dd>17</dd></div><div><dt>Today</dt><dd>Apartments</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1958</dd></div><div><dt>Architect</dt><dd><a href="architect-le-corbusier.html">Le Corbusier</a></dd></div><div><dt>Style</dt><dd>Brutalist / Modern</dd></div><div><dt>Height</dt><dd>53 m (174 ft)</dd></div><div><dt>Stories</dt><dd>17</dd></div><div><dt>Today</dt><dd>Apartments</dd></div></dl>
                 </li>
                 <li id="ber_shell_haus" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Berlin%2C_Tiergarten%2C_Reichpietschufer%2C_Shell-Haus.jpg/960px-Berlin%2C_Tiergarten%2C_Reichpietschufer%2C_Shell-Haus.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="439" alt="Shell-Haus" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Berlin,_Tiergarten,_Reichpietschufer,_Shell-Haus.jpg" rel="noopener">Jörg Zägel</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -354,7 +362,7 @@
                     <h3>Sony Center</h3>
                     <p class="address">Potsdamer Platz, 10785 Berlin</p>
                     <p>This futuristic complex at Potsdamer Platz is known for its iconic tent-like roof structure. The roof was designed to resemble the silhouette of Mount Fuji as a nod to the company&#x27;s heritage. It is a masterpiece of fabric and glass engineering that covers a large central public forum. The complex helped transform the former &#x27;death strip&#x27; into a bustling high-tech urban hub after the Wall fell. It remains a popular destination for visitors seeking cinema, dining, and modern corporate architecture.</p>
-                    <dl><div><dt>Built</dt><dd>2000</dd></div><div><dt>Architect</dt><dd>Helmut Jahn</dd></div><div><dt>Style</dt><dd>High-Tech / Postmodern</dd></div><div><dt>Height</dt><dd>103 m (338 ft)</dd></div><div><dt>Stories</dt><dd>26</dd></div><div><dt>Today</dt><dd>Mixed-use / Cinema / Office</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2000</dd></div><div><dt>Architect</dt><dd><a href="architect-helmut-jahn.html">Helmut Jahn</a></dd></div><div><dt>Style</dt><dd>High-Tech / Postmodern</dd></div><div><dt>Height</dt><dd>103 m (338 ft)</dd></div><div><dt>Stories</dt><dd>26</dd></div><div><dt>Today</dt><dd>Mixed-use / Cinema / Office</dd></div></dl>
                 </li>
                 <li id="ber_gsw_hq" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/GSW-Hochhaus-Maerz-2020.jpg/960px-GSW-Hochhaus-Maerz-2020.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="800" alt="GSW Headquarters (Rocket Tower)" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:GSW-Hochhaus-Maerz-2020.jpg" rel="noopener">Gunnar Klack</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -370,7 +378,7 @@
                     <h3>James-Simon-Galerie</h3>
                     <p class="address">Bodestraße, 10178 Berlin</p>
                     <p>This building serves as the modern gateway and visitor center for the historic Museum Island. Its slender, bone-white colonnades pay homage to the classical language of the surrounding 19th-century museums. The structure is built atop a massive forest of concrete piles to stabilize it on the swampy ground. It functions as the central point for ticket sales and provides a cafe overlooking the Spree. Underground, it links the various museum buildings through a continuous Archaeological Promenade.</p>
-                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd>David Chipperfield</dd></div><div><dt>Style</dt><dd>Neoclassical Minimalism</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Museum Entrance / Gallery</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd><a href="architect-david-chipperfield.html">David Chipperfield</a></dd></div><div><dt>Style</dt><dd>Neoclassical Minimalism</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Museum Entrance / Gallery</dd></div></dl>
                 </li>
             </ol>
         </div>
@@ -398,7 +406,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -428,7 +436,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

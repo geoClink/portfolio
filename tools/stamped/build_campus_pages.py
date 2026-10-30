@@ -21,8 +21,8 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, e, height_label, jsonld, known,
-                              photo_figure, slug, suggest_section, versioned, year_label, year_sort)
+from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, e, height_label,
+                              jsonld, known, photo_figure, slug, suggest_section, versioned, year_label, year_sort)
 from campus_cards import CampusData, campus_cards
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -64,7 +64,7 @@ def sort_name(name):
     return name.lower()
 
 
-def campus_page(campus, buildings, traditions, siblings, photos, data):
+def campus_page(campus, buildings, traditions, siblings, photos, data, architect_links=None):
     name = campus["name"]
     details = campus.get("details", {})
     group = group_of(campus)
@@ -210,7 +210,10 @@ def campus_page(campus, buildings, traditions, siblings, photos, data):
             meta.append(("Stories", f"{b['numberOfStories']:,}"))
         if known(b.get("newUse")):
             meta.append(("Today", b["newUse"]))
-        meta_html = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in meta)
+        # Architect names with a page link to it (architect pages live with the city guides)
+        meta_html = "".join(
+            f"<div><dt>{e(k)}</dt><dd>{architect_html(b, architect_links, '../stamped-cities/') if k == 'Architect' and architect_links else e(v)}</dd></div>"
+            for k, v in meta)
         address = f'<p class="address">{e(b["address"])}</p>' if known(b.get("address")) else ""
         out.append(f"""
                 <li id="{e(b['id'])}"{' class="has-photo"' if b['id'] in photos else ''}>
@@ -337,10 +340,11 @@ def main():
 
     groups = {g: sorted((c["name"] for c in campuses if group_of(c) == g), key=sort_name) for g in GROUPS}
     OUT.mkdir(exist_ok=True)
+    architect_links = ArchitectLinks(registry)
     for campus in campuses:
         name = campus["name"]
         siblings = [c for c in groups[group_of(campus)] if c != name]
-        page = campus_page(campus, registry[name], traditions.get(name, []), siblings, photos, data)
+        page = campus_page(campus, registry[name], traditions.get(name, []), siblings, photos, data, architect_links)
         (OUT / f"{slug(name)}.html").write_text(versioned(page, OUT, "../stamped-cities/"), encoding="utf-8")
     update_landing(groups, len(campuses))
     update_sitemap(sorted(slug(c["name"]) for c in campuses))

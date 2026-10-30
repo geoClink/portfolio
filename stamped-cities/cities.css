@@ -552,3 +552,26 @@ a { color: inherit; }
 .suggest-note { margin: -6px 0 0; font-size: 13px; color: var(--color-muted); }
 .suggest-status { margin: 0; font-size: 14px; color: var(--color-muted); }
 .suggest-status:empty { display: none; }
+
+/* ===== Restaurants and hotels near the picked landmark (nearby.js) ===== */
+.nearby {
+    margin-top: 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--color-line);
+    border-radius: 18px;
+    background: var(--color-card);
+}
+.nearby[hidden],
+.nearby-group[hidden] { display: none; }
+.nearby-title { margin: 0 0 14px; font-family: var(--font-serif); font-size: 20px; }
+.nearby-grid { display: grid; gap: 16px; }
+.nearby-group h4 { margin: 0 0 8px; }
+.nearby-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.nearby-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; font-size: 15px; }
+.nearby-list a { color: var(--color-ink); font-weight: 600; text-decoration-color: var(--color-line); }
+.nearby-list a:hover { color: var(--color-accent-ink); }
+.nearby-walk { font-size: 13px; color: var(--color-muted); white-space: nowrap; }
+.nearby-note { margin: 14px 0 0; font-size: 13px; color: var(--color-muted); }
+@media (min-width: 768px) {
+    .nearby-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+}

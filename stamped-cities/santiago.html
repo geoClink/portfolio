@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/santiago.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "gran-torre-santiago", "name": "Gran Torre Santiago", "lat": -33.417987, "lng": -70.6064246, "subtitle": "2013 · César Pelli"}, {"id": "la-moneda-palace", "name": "La Moneda Palace", "lat": -33.4426721, "lng": -70.6583109, "subtitle": "1805 · Joaquín Toesca"}, {"id": "bahai-temple-south-america", "name": "Bahá'í Temple of South America", "lat": -33.47992, "lng": -70.523453, "subtitle": "2016 · Siamak Hariri"}, {"id": "museo-historico-nacional", "name": "National History Museum", "lat": -33.4371206, "lng": -70.6506217, "subtitle": "1807 · Juan José de Goycolea"}, {"id": "gabriela-mistral-cultural-center", "name": "GAM (Gabriela Mistral Cultural Center)", "lat": -33.4393115, "lng": -70.6399272, "subtitle": "1972 · Cristián Fernández / Sebastián Hernández"}]}</script>
     </section>
@@ -168,7 +176,7 @@
                     <h3>Gran Torre Santiago</h3>
                     <p class="address">Avenida Andrés Bello 2425, Providencia, 7510689 Santiago, Chile</p>
                     <p>Standing as the tallest building in South America, this skyscraper is a definitive landmark of the Santiago skyline. It forms the centerpiece of the Costanera Center complex and was designed to withstand the region&#x27;s frequent seismic activity. The glass facade reflects the changing colors of the sky and the surrounding Andean peaks throughout the day. Visitors can ascend to the &#x27;Sky Costanera&#x27; observation deck for a breathtaking 360-degree view of the entire metropolitan area. It serves as a hub for international business, housing high-tech offices and a world-class shopping mall at its base.</p>
-                    <dl><div><dt>Built</dt><dd>2013</dd></div><div><dt>Architect</dt><dd>César Pelli</dd></div><div><dt>Style</dt><dd>Modernist / Glass Curtain Wall</dd></div><div><dt>Height</dt><dd>300 m (984 ft)</dd></div><div><dt>Stories</dt><dd>62</dd></div><div><dt>Today</dt><dd>Office / Observation</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2013</dd></div><div><dt>Architect</dt><dd><a href="architect-cesar-pelli.html">César Pelli</a></dd></div><div><dt>Style</dt><dd>Modernist / Glass Curtain Wall</dd></div><div><dt>Height</dt><dd>300 m (984 ft)</dd></div><div><dt>Stories</dt><dd>62</dd></div><div><dt>Today</dt><dd>Office / Observation</dd></div></dl>
                 </li>
                 <li id="la-moneda-palace" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Palacio_de_La_Moneda_-_miguelreflex.jpg/960px-Palacio_de_La_Moneda_-_miguelreflex.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="533" alt="La Moneda Palace" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Palacio_de_La_Moneda_-_miguelreflex.jpg" rel="noopener">Miguel hernandez</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" rel="license noopener">CC BY-SA 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

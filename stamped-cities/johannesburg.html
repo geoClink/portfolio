@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/johannesburg.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "johannesburg-apartheid-museum", "name": "Apartheid Museum", "lat": -26.2268, "lng": 28.0033, "subtitle": "2001 · Mashabane Rose Architects"}, {"id": "johannesburg-constitution-hill", "name": "Constitution Hill", "lat": -26.1904, "lng": 28.0414, "subtitle": "1892 · OMM Design Workshop (Constitutional Court)"}, {"id": "johannesburg-walter-sisulu-garden", "name": "Walter Sisulu National Botanical Garden", "lat": -26.088889, "lng": 27.844722, "subtitle": "1982 · N/A (botanical garden)"}, {"id": "johannesburg-vilakazi-street", "name": "Vilakazi Street", "lat": -26.2521, "lng": 27.9384, "subtitle": "1950 · N/A (historic street)"}, {"id": "johannesburg-gold-reef-city", "name": "Gold Reef City", "lat": -26.229, "lng": 28.0054, "subtitle": "1987 · Various"}]}</script>
     </section>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

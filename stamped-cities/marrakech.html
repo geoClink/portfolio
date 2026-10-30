@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/marrakech.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -167,6 +167,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "koutoubia-mosque", "name": "Koutoubia Mosque", "lat": 31.624124, "lng": -7.993541, "subtitle": "1199 · Almohad Dynasty"}, {"id": "yves-saint-laurent-museum", "name": "Musée Yves Saint Laurent", "lat": 31.6412481, "lng": -8.0020919, "subtitle": "2017 · Studio KO"}, {"id": "bahia-palace", "name": "Bahia Palace", "lat": 31.6205, "lng": -7.98466, "subtitle": "1860 · Si Moussa / Ba Ahmed"}, {"id": "ben-youssef-madrasa", "name": "Ben Youssef Madrasa", "lat": 31.6317026, "lng": -7.9867621, "subtitle": "1564 · Sultan Abdallah al-Ghalib"}, {"id": "el-badi-palace", "name": "El Badi Palace", "lat": 31.6205, "lng": -7.98466, "subtitle": "1578 · Ahmad al-Mansur"}, {"id": "royal-mansour", "name": "Royal Mansour Marrakech", "lat": 31.6244887, "lng": -8.0000969, "subtitle": "2010 · OBMI / 3bis"}, {"id": "saadian-tombs", "name": "Saadian Tombs", "lat": 31.6232198, "lng": -7.9890269, "subtitle": "1557 · Sultan Ahmad al-Mansur"}, {"id": "dar-si-said", "name": "Dar Si Said Museum", "lat": 31.623333, "lng": -7.983806, "subtitle": "1894 · Si Sa'id ibn Musa"}]}</script>
     </section>
@@ -309,7 +317,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

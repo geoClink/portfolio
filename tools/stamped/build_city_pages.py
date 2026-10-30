@@ -7,17 +7,31 @@ Reads the app's Resources/BuildingRegistry.json (landmarks) and Resources/CityDe
 (nickname, fun fact, airport, currency, language, transit) and writes one page per city to
 stamped-cities/<slug>.html plus stamped-cities/index.html. Campuses in the registry are
 skipped. Re-run after the app's data changes.
+
+It also writes a page for every architect with MIN_WORKS or more buildings (grouped like the app's
+ArchitectIndex.swift, see architect_index.py) plus stamped-cities/architects.html, links each
+landmark's architect name to its page, refreshes the architect counts on stamped-app.html (re-run
+build_translations.py afterwards) and rewrites the stamped-cities entries in sitemap.xml.
+The restaurants and hotels near each landmark are looked up in the browser (nearby.js).
 """
 import argparse
 import html
 import json
 import re
+import sys
 import unicodedata
+from datetime import date
 from urllib.parse import quote
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from architect_index import ArchitectIndex, is_linkable, key as architect_key
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "stamped-cities"
+COLLEGES = ROOT / "stamped-colleges"
+LANDING = ROOT / "stamped-app.html"
+SITEMAP = ROOT / "sitemap.xml"
 SITE = "https://georgeclinkscalesdev.com"
 APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336"
 
@@ -28,7 +42,9 @@ PLACES = {
         "Detroit", "Los Angeles", "New Orleans", "Las Vegas", "Orlando", "Seattle", "Portland",
         "Washington D.C.", "Miami", "Atlanta", "Honolulu", "Chicago", "Boston", "Denver", "Pittsburgh",
         "Philadelphia", "Cleveland", "Cupertino", "Buffalo", "Houston", "New York", "San Francisco",
-        "Dallas", "Nashville", "Phoenix", "Austin", "St. Louis", "Minnesota", "Asheville"]},
+        "Dallas", "Nashville", "Phoenix", "Austin", "St. Louis", "Minnesota", "Asheville",
+        "Columbus, Indiana", "Oak Park", "Palm Springs", "Fort Worth", "Kansas City", "Savannah",
+        "Charleston", "Baltimore", "San Diego"]},
     **{c: ("Canada", "North America") for c in ["Vancouver", "Victoria", "Montreal", "Toronto", "Quebec City"]},
     "Mexico City": ("Mexico", "North America"), "Guadalajara": ("Mexico", "North America"),
     "Havana": ("Cuba", "North America"),
@@ -41,11 +57,12 @@ PLACES = {
     "Medellín": ("Colombia", "South America"), "Cartagena": ("Colombia", "South America"),
     # Europe
     "Bath": ("United Kingdom", "Europe"), "London": ("United Kingdom", "Europe"),
-    "Edinburgh": ("United Kingdom", "Europe"), "Berlin": ("Germany", "Europe"),
-    "Amsterdam": ("Netherlands", "Europe"),
+    "Edinburgh": ("United Kingdom", "Europe"), "Glasgow": ("United Kingdom", "Europe"),
+    **{c: ("Germany", "Europe") for c in ["Berlin", "Munich", "Hamburg"]},
+    "Amsterdam": ("Netherlands", "Europe"), "Rotterdam": ("Netherlands", "Europe"),
     **{c: ("Italy", "Europe") for c in ["Milan", "Rome", "Naples", "Florence", "Venice"]},
     "Copenhagen": ("Denmark", "Europe"),
-    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville"]},
+    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville", "Bilbao", "Valencia"]},
     "Cork": ("Ireland", "Europe"), "Dublin": ("Ireland", "Europe"),
     "Paris": ("France", "Europe"), "Nice": ("France", "Europe"),
     "Istanbul": ("Türkiye", "Europe"), "Vienna": ("Austria", "Europe"), "Salzburg": ("Austria", "Europe"),
@@ -57,7 +74,7 @@ PLACES = {
     # Asia
     "Dubai": ("United Arab Emirates", "Asia"), "Abu Dhabi": ("United Arab Emirates", "Asia"),
     "Singapore": ("Singapore", "Asia"),
-    **{c: ("India", "Asia") for c in ["Bengaluru", "Mumbai", "New Delhi", "Jaipur"]},
+    **{c: ("India", "Asia") for c in ["Bengaluru", "Mumbai", "New Delhi", "Jaipur", "Chandigarh"]},
     "Hong Kong": ("China (Hong Kong SAR)", "Asia"),
     **{c: ("China", "Asia") for c in ["Beijing", "Shanghai", "Xi'an", "Chengdu"]},
     "Tel Aviv": ("Israel", "Asia"), "Bangkok": ("Thailand", "Asia"), "Chiang Mai": ("Thailand", "Asia"),
@@ -96,7 +113,7 @@ CONTINENTS = ["Europe", "Asia", "North America", "South America", "Africa", "Oce
 
 # Shared files the pages link to. Each link gets ?v=<hash of the file>, so browsers fetch the new
 # copy after every change instead of a stale one (GitHub Pages lets them cache files for a day).
-ASSETS = ["cities.css", "map.js", "map-token.js", "suggest.js"]
+ASSETS = ["cities.css", "map.js", "map-token.js", "nearby.js", "suggest.js"]
 
 
 def versioned(page, folder=OUT, prefix=""):
@@ -290,7 +307,7 @@ def tours_link(city, country):
     return f"https://www.getyourguide.com/s/?partner_id={GETYOURGUIDE_PARTNER_ID}&cmp=website&q={quote(q, safe='')}"
 
 
-def city_page(city, landmarks, details, siblings, photos):
+def city_page(city, landmarks, details, siblings, photos, links=None):
     country, continent = PLACES[city]
     s = slug(city)
     url = f"{SITE}/stamped-cities/{s}.html"
@@ -380,6 +397,14 @@ def city_page(city, landmarks, details, siblings, photos):
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{json.dumps(map_data, ensure_ascii=False).replace("</", "<\\/")}</script>
     </section>
@@ -462,7 +487,9 @@ def city_page(city, landmarks, details, siblings, photos):
         use = l.get("newUse") if known(l.get("newUse")) else None
         if use:
             meta.append(("Today", use))
-        meta_html = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in meta)
+        meta_html = "".join(
+            f"<div><dt>{e(k)}</dt><dd>{architect_html(l, links) if k == 'Architect' and links else e(v)}</dd></div>"
+            for k, v in meta)
         address = f'<p class="address">{e(l["address"])}</p>' if known(l.get("address")) else ""
         out.append(f"""
                 <li id="{e(l['id'])}"{' class="has-photo"' if l['id'] in photos else ''}>
@@ -498,7 +525,7 @@ def city_page(city, landmarks, details, siblings, photos):
 """)
 
     out.append(FOOT.format(
-        scripts=('    <script src="map-token.js"></script>\n    <script src="map.js"></script>\n' if pins else "")
+        scripts=('    <script src="map-token.js"></script>\n    <script src="nearby.js"></script>\n    <script src="map.js"></script>\n' if pins else "")
                 + '    <script src="suggest.js" defer></script>\n',
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} in Stamped!" if n > 1 else "Stamp it in Stamped!",
@@ -637,10 +664,101 @@ def architect_slug(name):
     return "architect-" + slug(name.replace("&", "and"))
 
 
-def architect_page(name, intro, works, photos):
-    """Every building by one architect in the app, linking to its city guide."""
+MIN_WORKS = 3   # an architect needs this many buildings in the app to get a page
+
+
+def curated_architect(name):
+    """The featured architect (ARCHITECTS) a name belongs to, when exactly one matches it."""
+    matches = [a for a, (patterns, _) in ARCHITECTS.items() if any(p in fold(name) for p in patterns)]
+    return matches[0] if len(matches) == 1 else None
+
+
+def oldest_first(works):
+    """The app's order: oldest first, undated last, then by name."""
+    return sorted(works, key=lambda work: (year_sort(work[1]["yearBuilt"]) is None,
+                                           year_sort(work[1]["yearBuilt"]) or 0, work[1]["name"]))
+
+
+class ArchitectLinks:
+    """Which architects get a page, and the page each landmark's architect name links to.
+
+    The featured ARCHITECTS keep their hand-written intros and match by substring, as before.
+    Every other architect or firm with MIN_WORKS buildings, grouped the way the app's
+    ArchitectIndex.swift does (architect_index.py), gets a page too. Joint credits the app keeps
+    whole ("A / B" where B has no other building) get no page of their own."""
+
+    def __init__(self, registry):
+        self.index = ArchitectIndex(registry)
+        self.pages = {}    # display name -> (intro or None, [(place, landmark)])
+        for name, (patterns, intro) in ARCHITECTS.items():
+            works = [(place, l) for place, items in registry.items() for l in items
+                     if any(pattern in fold(l["architect"]) for pattern in patterns)]
+            self.pages[name] = (intro, oldest_first(works))
+        featured_slugs = {architect_slug(name) for name in ARCHITECTS}
+        for name_key, works in self.index.landmarks.items():
+            name = self.index.display_names[name_key]
+            covered = any(p in fold(name) for patterns, _ in ARCHITECTS.values() for p in patterns)
+            if (len(works) < MIN_WORKS or not is_linkable(name) or covered or " / " in name or ";" in name
+                    or architect_slug(name) in featured_slugs):
+                continue
+            self.pages[name] = (None, oldest_first(works))
+        # Architect key -> page slug, for linking names on city and campus pages
+        self.slugs = {}
+        for name_key in self.index.landmarks:
+            name = self.index.display_names[name_key]
+            page = curated_architect(name) or (name if name in self.pages else None)
+            if page:
+                self.slugs[name_key] = architect_slug(page)
+
+    def slug_for(self, name):
+        return self.slugs.get(architect_key(name))
+
+
+def architect_html(landmark, links, prefix=""):
+    """The landmark's architect text, escaped, with each name that has a page linked to it."""
+    text = str(landmark["architect"]).strip()
+    out, position = [], 0
+    for name in links.index.names_of(landmark):
+        page = links.slug_for(name)
+        at = text.find(name, position)
+        if not page or at < 0:
+            continue
+        out.append(e(text[position:at]) + f'<a href="{prefix}{page}.html">{e(name)}</a>')
+        position = at + len(name)
+    out.append(e(text[position:]))
+    return "".join(out)
+
+
+def generated_intro(name, works):
+    """A one-line intro from the app's data, for architects without a hand-written one."""
+    places = list(dict.fromkeys(place for place, _ in works))
+    if len(places) > 3:
+        places = places[:3] + [f"{len(places) - 3} more"]
+    where = places[0] if len(places) == 1 else ", ".join(places[:-1]) + " and " + places[-1]
+    intro = f"Stamped! has {len(works)} buildings by {name}, in {where}."
+    dated = [(year_sort(l["yearBuilt"]), l) for _, l in works if year_sort(l["yearBuilt"]) is not None]
+    if dated:
+        first, last = min(dated, key=lambda d: d[0]), max(dated, key=lambda d: d[0])
+        if first[0] != last[0]:
+            intro += (f" They date from {year_label(first[1]['yearBuilt'])} ({first[1]['name']})"
+                      f" to {year_label(last[1]['yearBuilt'])} ({last[1]['name']}).")
+    return intro
+
+
+def work_link(place, landmark):
+    """Where a work's card links: its city guide, or its school page when it's on a campus."""
+    if place in PLACES:
+        return f'{slug(place)}.html#{e(landmark["id"])}'
+    if (COLLEGES / f"{slug(place)}.html").exists():
+        return f'../stamped-colleges/{slug(place)}.html#{e(landmark["id"])}'
+    return None
+
+
+def architect_page(name, intro, works, photos, featured=()):
+    """Every building by one architect in the app, linking to its city guide or school page."""
     url = f"{SITE}/stamped-cities/{architect_slug(name)}.html"
     places = sorted({place for place, _ in works})
+    intro = intro or generated_intro(name, works)
     title = f"{name}: {len(works)} Buildings to See | Stamped!"
     description = f"{len(works)} buildings by {name} in the Stamped! app, in {', '.join(places[:4])}{' and more' if len(places) > 4 else ''}. {intro}"
     ld = [{"@context": "https://schema.org", "@type": "Person", "name": name, "description": intro, "url": url}]
@@ -649,7 +767,7 @@ def architect_page(name, intro, works, photos):
     <main id="main">
     <section class="hero">
         <div class="container">
-            <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> Architects</nav>
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> <a href="architects.html">Architects</a></nav>
             <p class="kicker">Architect · {len(works)} buildings in Stamped!</p>
             <h1>{e(name)}</h1>
             <p class="lead">{e(intro)}</p>
@@ -667,10 +785,10 @@ def architect_page(name, intro, works, photos):
         meta = " · ".join(x for x in [e(place), e(year_label(l["yearBuilt"])), e(l["buildingStyle"]) if known(l.get("buildingStyle")) else ""] if x)
         credit = f'<span class="card-credit">{e(credit_text(ph))}</span>' if ph else ""
         inner = f'{img}<span class="city-card-text"><strong>{e(l["name"])}</strong><small>{meta}</small>{credit}</span>'
-        href = f'{slug(place)}.html#{e(l["id"])}' if place in PLACES else None
+        href = work_link(place, l)
         out.append(f"""
                 <li>{f'<a href="{href}">{inner}</a>' if href else f'<div class="card-static">{inner}</div>'}</li>""")
-    others = "".join(f'<li><a href="{architect_slug(a)}.html">{e(a)}</a></li>' for a in ARCHITECTS if a != name)
+    others = "".join(f'<li><a href="{architect_slug(a)}.html">{e(a)}</a></li>' for a in featured if a != name)
     out.append(f"""
             </ul>
         </div>
@@ -679,13 +797,91 @@ def architect_page(name, intro, works, photos):
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More architects</h2>
-            <ul class="city-chips">{others}</ul>
+            <ul class="city-chips">{others}<li><a href="architects.html">All architects</a></li></ul>
         </div>
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Collect every {name} building.",
                            cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
     return "".join(out)
+
+
+def sort_name(name):
+    """Alphabetical, ignoring accents and case."""
+    return fold(name)
+
+
+def architects_index_page(pages):
+    """Every architect with a page, A to Z, with how many of their buildings are in the app."""
+    url = f"{SITE}/stamped-cities/architects.html"
+    title = f"{len(pages)} Architects and Their Buildings | Stamped!"
+    description = (f"Every architect with {MIN_WORKS} or more buildings in the Stamped! app, from "
+                   "Frank Lloyd Wright to Zaha Hadid, with each building's city, build date and style.")
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Architects in Stamped!",
+           "url": url, "description": description}]
+    out = [HEAD.format(title=e(title), description=e(description), url=url, site=SITE, jsonld=jsonld(ld), app_store=APP_STORE)]
+    out.append(f"""
+    <main id="main">
+    <section class="hero">
+        <div class="container">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> Architects</nav>
+            <p class="kicker">Architects · The people behind the buildings</p>
+            <h1>{len(pages)} architects</h1>
+            <p class="lead">Every architect and firm with {MIN_WORKS} or more buildings in Stamped!, with each building's city, build date and style.</p>
+        </div>
+    </section>
+
+    <section class="continent" aria-labelledby="architects-title">
+        <div class="container">
+            <h2 id="architects-title" class="section-title">A to Z</h2>
+            <ul class="city-grid">""")
+    for name in sorted(pages, key=sort_name):
+        works = pages[name][1]
+        places = list(dict.fromkeys(place for place, _ in works))
+        where = ", ".join(places[:2]) + (" and more" if len(places) > 2 else "")
+        out.append(f"""
+                <li><a href="{architect_slug(name)}.html"><strong>{e(name)}</strong><span>{len(works)} buildings · {e(where)}</span></a></li>""")
+    out.append("""
+            </ul>
+        </div>
+    </section>
+""")
+    out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Meet the architects.",
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+    return "".join(out)
+
+
+def update_landing_architects(pages):
+    """Refresh the building counts in the architect list on stamped-app.html."""
+    page = LANDING.read_text(encoding="utf-8")
+    for name in ARCHITECTS:
+        page = re.sub(rf'(<li><a href="stamped-cities/{architect_slug(name)}\.html">[^<]*<strong>)\d+(</strong>)',
+                      rf"\g<1>{len(pages[name][1])}\g<2>", page)
+    LANDING.write_text(page, encoding="utf-8")
+
+
+def update_sitemap(city_slugs, other_slugs):
+    """Rewrite the stamped-cities entries in sitemap.xml: the index, continents and architects, then cities."""
+    xml = SITEMAP.read_text(encoding="utf-8")
+    entry = re.compile(r"  <url>\n    <loc>[^<]*/stamped-cities/[^<]*</loc>\n(?:    <[^\n]*\n)*?  </url>\n")
+    first = entry.search(xml)
+    if first is None:
+        raise SystemExit("sitemap.xml has no stamped-cities entries to replace")
+    position = first.start()
+    xml = entry.sub("", xml)
+    today = date.today().isoformat()
+
+    def url(page, priority):
+        return f"""  <url>
+    <loc>{SITE}/stamped-cities/{page}.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>{priority}</priority>
+  </url>
+"""
+    entries = (url("index", "0.7") + "".join(url(s, "0.6") for s in sorted(other_slugs))
+               + "".join(url(s, "0.5") for s in sorted(city_slugs)))
+    SITEMAP.write_text(xml[:position] + entries + xml[position:], encoding="utf-8")
 
 
 # Proves to impact.com (the affiliate network SeatGeek and Ticketmaster use) that this site
@@ -695,8 +891,9 @@ IMPACT_VERIFICATION = "    <meta name='impact-site-verification' value='50bace8a
 
 def index_page(by_continent, counts):
     total = sum(counts.values())
-    title = "City Guides: 140 Cities of Great Architecture | Stamped!"
-    description = (f"Architecture guides to 140 cities on six continents, with {total:,} landmarks: "
+    cities = len(counts)
+    title = f"City Guides: {cities} Cities of Great Architecture | Stamped!"
+    description = (f"Architecture guides to {cities} cities on six continents, with {total:,} landmarks: "
                    "architects, build dates, styles and history, from the Stamped! app.")
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Stamped! city guides",
            "url": f"{SITE}/stamped-cities/index.html", "description": description}]
@@ -709,7 +906,7 @@ def index_page(by_continent, counts):
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> City guides</nav>
             <p class="kicker">City guides · Six continents</p>
-            <h1>140 cities of great architecture</h1>
+            <h1>{cities} cities of great architecture</h1>
             <p class="lead">Every city in the Stamped! app, with its landmarks, architects, build dates and the story behind each building. {total:,} landmarks in all.</p>
         </div>
     </section>
@@ -728,7 +925,7 @@ def index_page(by_continent, counts):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Your passport is waiting.",
-                           cta_text="Fly through all 140 cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone and iPad."))
+                           cta_text=f"Fly through all {cities} cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone and iPad."))
     return "".join(out)
 
 
@@ -753,20 +950,33 @@ def main():
     counts = {c: len(registry[c]) for c in cities}
 
     OUT.mkdir(exist_ok=True)
+    links = ArchitectLinks(registry)
     for city in cities:
         siblings = [c for c in by_continent[PLACES[city][1]] if c != city]
-        page = city_page(city, registry[city], details.get(city, {}), siblings, photos)
+        page = city_page(city, registry[city], details.get(city, {}), siblings, photos, links)
         (OUT / f"{slug(city)}.html").write_text(versioned(page), encoding="utf-8")
     (OUT / "index.html").write_text(versioned(index_page(by_continent, counts)), encoding="utf-8")
-    for name, (patterns, intro) in ARCHITECTS.items():
-        works = [(place, l) for place, items in registry.items() for l in items
-                 if any(pattern in fold(l["architect"]) for pattern in patterns)]
-        (OUT / f"{architect_slug(name)}.html").write_text(versioned(architect_page(name, intro, works, photos)), encoding="utf-8")
+
+    # Architect pages show campus buildings too, with the school pages' photos
+    campus_photos_file = COLLEGES / "photos.json"
+    all_photos = {**(json.loads(campus_photos_file.read_text(encoding="utf-8")) if campus_photos_file.exists() else {}), **photos}
+    for name, (intro, works) in links.pages.items():
+        page = architect_page(name, intro, works, all_photos, featured=list(ARCHITECTS))
+        (OUT / f"{architect_slug(name)}.html").write_text(versioned(page), encoding="utf-8")
+    (OUT / "architects.html").write_text(versioned(architects_index_page(links.pages)), encoding="utf-8")
+    stale = {p.stem for p in OUT.glob("architect-*.html")} - {architect_slug(n) for n in links.pages}
+    for old in stale:   # an architect who dropped below MIN_WORKS
+        (OUT / f"{old}.html").unlink()
+
     for continent in CONTINENTS:
         page = continent_page(continent, by_continent[continent], registry, details, photos)
         (OUT / f"{slug(continent)}.html").write_text(versioned(page), encoding="utf-8")
+    update_landing_architects(links.pages)
+    update_sitemap([slug(c) for c in cities],
+                   [slug(k) for k in CONTINENTS] + [architect_slug(n) for n in links.pages] + ["architects"])
     print(f"wrote {len(cities)} city pages and index.html to {OUT.relative_to(ROOT)}/ "
-          f"({sum(counts.values()):,} landmarks)")
+          f"({sum(counts.values()):,} landmarks), {len(links.pages)} architect pages, "
+          f"and updated {LANDING.name} and {SITEMAP.name}")
     for k in CONTINENTS:
         print(f"  {k}: {len(by_continent[k])}")
 

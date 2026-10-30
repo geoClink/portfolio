@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/addis-ababa.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "addis-holy-trinity-cathedral", "name": "Holy Trinity Cathedral (Addis Ababa)", "lat": 9.0203, "lng": 38.7548, "subtitle": "1941 · Various Ethiopian architects"}, {"id": "addis-national-museum-ethiopia", "name": "National Museum of Ethiopia", "lat": 9.0282, "lng": 38.7617, "subtitle": "1936 · Various"}, {"id": "addis-african-union", "name": "African Union headquarters building", "lat": 9.0173, "lng": 38.7636, "subtitle": "2012 · China State Construction Engineering Corporation"}, {"id": "addis-red-terror-museum", "name": "Red Terror Martyrs' Memorial Museum", "lat": 9.0133, "lng": 38.7581, "subtitle": "2010 · Various"}, {"id": "addis-entoto-mountain", "name": "Mount Entoto", "lat": 9.115556, "lng": 38.772222, "subtitle": "0 · N/A (natural mountain)"}]}</script>
     </section>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/cape-town.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=69baedfc" />
     <script type="application/ld+json">
     [
         {
@@ -140,6 +140,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "zeitz-mocaa", "name": "Zeitz MOCAA", "lat": -33.9084, "lng": 18.423, "subtitle": "2017 · Thomas Heatherwick"}, {"id": "cape-town-city-hall", "name": "Cape Town City Hall", "lat": -33.9234248, "lng": 18.4217087, "subtitle": "1905 · Harry Austin Reid"}, {"id": "castle-of-good-hope", "name": "Castle of Good Hope", "lat": -33.9258, "lng": 18.4232, "subtitle": "1666 · Pieter Dombaer"}, {"id": "portside-tower", "name": "Portside Tower", "lat": -33.9170756, "lng": 18.4220748, "subtitle": "2014 · Louis Karol Architects / DHK"}, {"id": "groot-constantia-manor", "name": "Groot Constantia Manor House", "lat": -34.0250643, "lng": 18.4280242, "subtitle": "1685 · Simon van der Stel (Original)"}]}</script>
     </section>
@@ -168,7 +176,7 @@
                     <h3>Zeitz MOCAA</h3>
                     <p class="address">Silo District, S Arm Rd, V&amp;A Waterfront, Cape Town, 8001, South Africa</p>
                     <p>This architectural marvel is a breathtaking conversion of a historic 1920s grain silo complex. The interior was meticulously &#x27;carved out&#x27; to create a cathedral-like atrium in the shape of a single grain of corn. It now houses the world&#x27;s largest museum dedicated to contemporary art from Africa and its diaspora. The exterior is defined by its iconic &#x27;pillow&#x27; glass windows that reflect the Atlantic Ocean and Table Mountain. This project successfully preserved the industrial heritage of the V&amp;A Waterfront while creating a futuristic cultural landmark.</p>
-                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd>Thomas Heatherwick</dd></div><div><dt>Style</dt><dd>Industrial Renovation</dd></div><div><dt>Height</dt><dd>57 m (187 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd><a href="architect-thomas-heatherwick.html">Thomas Heatherwick</a></dd></div><div><dt>Style</dt><dd>Industrial Renovation</dd></div><div><dt>Height</dt><dd>57 m (187 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="cape-town-city-hall" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Ayuntamiento%2C_Ciudad_del_Cabo%2C_Sud%C3%A1frica%2C_2018-07-19%2C_DD_08.jpg/960px-Ayuntamiento%2C_Ciudad_del_Cabo%2C_Sud%C3%A1frica%2C_2018-07-19%2C_DD_08.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="441" alt="Cape Town City Hall" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Ayuntamiento,_Ciudad_del_Cabo,_Sud%C3%A1frica,_2018-07-19,_DD_08.jpg" rel="noopener">Diego Delso</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -258,7 +266,8 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
+    <script src="nearby.js?v=f1f1d185"></script>
+    <script src="map.js?v=74a487fb"></script>
     <script src="suggest.js?v=5195e66f" defer></script>
 </body>
 </html>
