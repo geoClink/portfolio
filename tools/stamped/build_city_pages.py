@@ -271,6 +271,12 @@ def suggest_section(place, url, heading, intro, kinds):
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -539,9 +545,9 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
 
     out.append(suggest_section(
         city, url, f"Know {city} well?",
-        "Locals know their city best. Suggest a landmark we're missing or a fix to one we have. "
-        "Every suggestion is checked against a source before it goes into the app.",
-        ["Landmark", "Correction"]))
+        "Locals know their city best. Suggest a landmark we're missing, a fix to one we have, "
+        "or share your own photo of one. Every suggestion is checked before it goes into the app.",
+        ["Landmark", "Correction", "Photo"]))
 
     # More cities on the same continent
     if siblings:

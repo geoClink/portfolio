@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-colleges/uppsala-university.html" />
     <meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Universitas_Regia_Upsaliensis.jpg/960px-Universitas_Regia_Upsaliensis.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="../stamped-cities/cities.css?v=37c158d8" />
+    <link rel="stylesheet" href="../stamped-cities/cities.css?v=db8479f3" />
     <link rel="stylesheet" href="campus.css?v=7e3d85d5" />
     <script type="application/ld+json">
     [
@@ -222,16 +222,23 @@
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Uppsala University well?</h2>
-            <p class="map-hint">Students and alumni know the traditions best. Suggest one we&#x27;re missing, a building worth a stamp, or a fix. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Students and alumni know the traditions best. Suggest one we&#x27;re missing, a building worth a stamp, a fix, or your own photo of a building. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Uppsala University" data-page="https://georgeclinkscalesdev.com/stamped-colleges/uppsala-university.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Tradition" checked /> A tradition</label>
                     <label><input type="radio" name="kind" value="Building" /> A building</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -273,7 +280,7 @@
     </footer>
     <script src="../stamped-cities/map-token.js?v=cd7de5df"></script>
     <script src="../stamped-cities/map.js?v=74a487fb"></script>
-    <script src="../stamped-cities/suggest.js?v=5195e66f" defer></script>
+    <script src="../stamped-cities/suggest.js?v=bfea474c" defer></script>
     <script src="../stamped-cities/search.js?v=e6fa562b" defer></script>
     <script src="../stamped-cities/quiz.js?v=94f1e54f" defer></script>
 </body>

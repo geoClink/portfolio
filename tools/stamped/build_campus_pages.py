@@ -252,8 +252,8 @@ def campus_page(campus, buildings, traditions, siblings, photos, data, architect
     out.append(suggest_section(
         name, url, f"Know {name} well?",
         "Students and alumni know the traditions best. Suggest one we're missing, a building worth a stamp, "
-        "or a fix. Every suggestion is checked against a source before it goes into the app.",
-        ["Tradition", "Building", "Correction"]))
+        "a fix, or your own photo of a building. Every suggestion is checked before it goes into the app.",
+        ["Tradition", "Building", "Correction", "Photo"]))
 
     if siblings:
         links = "".join(f'<li><a href="{slug(c)}.html">{e(c)}</a></li>' for c in siblings)
