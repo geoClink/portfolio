@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/ho-chi-minh-city.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "hcmc-reunification-palace", "name": "Reunification Palace", "lat": 10.7769, "lng": 106.6953, "subtitle": "1966 · Ngô Viết Thụ"}, {"id": "hcmc-war-remnants-museum", "name": "War Remnants Museum", "lat": 10.7796, "lng": 106.6925, "subtitle": "1975 · Various"}, {"id": "hcmc-notre-dame", "name": "Notre-Dame Cathedral Basilica of Saigon", "lat": 10.7798, "lng": 106.6991, "subtitle": "1880 · Jules Bourard"}, {"id": "hcmc-ben-thanh-market", "name": "Bến Thành Market", "lat": 10.7726, "lng": 106.6984, "subtitle": "1914 · French colonial engineers"}, {"id": "hcmc-cu-chi-tunnels", "name": "Cu Chi tunnels", "lat": 11.060833, "lng": 106.528611, "subtitle": "1948 · Viet Cong forces"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Vietnamese Dong (₫)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Vietnamese</strong><p>Vietnamese is a tonal language with six distinct tones, meaning the same syllable spoken at different pitches carries entirely different meanings. It uses a Latin-based alphabet (quốc ngữ) developed by 17th-century missionaries, making it more immediately readable to Western visitors than most Southeast Asian scripts. Southern Vietnamese as spoken in Ho Chi Minh City has a warmer, more melodic quality than the northern Hanoi dialect.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>Buses &amp; Grab Motorbikes</strong><p>Ho Chi Minh City&#x27;s public bus network covers the entire city, but the most practical transport for visitors is Grab — Southeast Asia&#x27;s dominant ride-hailing app — which offers both car rides and motorbike taxis. Metro Line 1 connecting Bến Thành Market to the eastern suburbs opened in late 2024, marking a landmark step in modernizing the city&#x27;s transit infrastructure.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DHo%2520Chi%2520Minh%2520City%252C%2520Vietnam%26latLong%3D10.77960%252C106.69530" rel="sponsored noopener" target="_blank">Find hotels in Ho Chi Minh City on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Ho%20Chi%20Minh%20City%2C%20Vietnam" rel="sponsored noopener" target="_blank">Find tours in Ho Chi Minh City on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DHo%2520Chi%2520Minh%2520City%252C%2520Vietnam%26latLong%3D10.77960%252C106.69530" rel="sponsored noopener" target="_blank">Find hotels in Ho Chi Minh City on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DHo%2520Chi%2520Minh%2520City%252C%2520Vietnam" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Ho%20Chi%20Minh%20City%2C%20Vietnam" rel="sponsored noopener" target="_blank">Find tours in Ho Chi Minh City on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Ho%20Chi%20Minh%20City%2C%20Vietnam&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/ho-chi-minh-city.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Ho Chi Minh City?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Ho Chi Minh City well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Ho Chi Minh City" data-page="https://georgeclinkscalesdev.com/stamped-cities/ho-chi-minh-city.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -228,7 +253,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Asia</h2>
-            <ul class="city-chips"><li><a href="abu-dhabi.html">Abu Dhabi</a></li><li><a href="amman.html">Amman</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
+            <ul class="city-chips"><li><a href="abu-dhabi.html">Abu Dhabi</a></li><li><a href="amman.html">Amman</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chandigarh.html">Chandigarh</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
         </div>
     </section>
 
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

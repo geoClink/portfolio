@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/bogota.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "bogota-gold-museum", "name": "Gold Museum (Bogotá)", "lat": 4.6013, "lng": -74.0729, "subtitle": "1968 · Various"}, {"id": "bogota-monserrate", "name": "Monserrate", "lat": 4.6058, "lng": -74.0555, "subtitle": "1650 · N/A (natural peak)"}, {"id": "bogota-botero-museum", "name": "Botero Museum", "lat": 4.5977, "lng": -74.073, "subtitle": "2000 · Colonial building"}, {"id": "bogota-la-candelaria", "name": "La Candelaria", "lat": 4.5977, "lng": -74.0753, "subtitle": "1538 · Various colonial architects"}, {"id": "bogota-museo-nacional", "name": "Museo Nacional de Colombia", "lat": 4.6185, "lng": -74.0696, "subtitle": "1874 · Thomas Reed"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Colombian Peso ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Spanish</strong><p>Bogotá&#x27;s Spanish is widely regarded as some of the clearest and most neutral-sounding in the Spanish-speaking world, making it popular for Spanish-language learners. The city&#x27;s intellectual tradition — reflected in its UNESCO City of Book designation and the nickname Athens of South America — runs through everyday speech, which tends to be formal and eloquent. Colombian Spanish uses usted (formal you) even in casual and family settings, reflecting a culture of respectful address.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>TransMilenio BRT</strong><p>Bogotá&#x27;s TransMilenio is one of the world&#x27;s largest and most successful Bus Rapid Transit (BRT) systems, with dedicated bus lanes and pre-boarding fare payment that allows it to move passengers at metro-like speeds across the city. It carries over 2 million passengers on a typical weekday. The city&#x27;s permanent network of 550km of protected bike lanes — the largest in Latin America — makes cycling a mainstream way to get around.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBogot%25C3%25A1%252C%2520Colombia%26latLong%3D4.60130%252C-74.07290" rel="sponsored noopener" target="_blank">Find hotels in Bogotá on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Bogot%C3%A1%2C%20Colombia" rel="sponsored noopener" target="_blank">Find tours in Bogotá on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBogot%25C3%25A1%252C%2520Colombia%26latLong%3D4.60130%252C-74.07290" rel="sponsored noopener" target="_blank">Find hotels in Bogotá on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DBogot%25C3%25A1%252C%2520Colombia" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Bogot%C3%A1%2C%20Colombia" rel="sponsored noopener" target="_blank">Find tours in Bogotá on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Bogot%C3%A1%2C%20Colombia&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/bogota.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Bogotá?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Bogotá well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Bogotá" data-page="https://georgeclinkscalesdev.com/stamped-cities/bogota.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

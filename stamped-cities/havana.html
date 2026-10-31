@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/havana.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "havana-old-havana", "name": "Old Havana", "lat": 23.1367, "lng": -82.3489, "subtitle": "1519 · Spanish colonial architects"}, {"id": "havana-el-capitolio", "name": "El Capitolio", "lat": 23.1364, "lng": -82.359, "subtitle": "1929 · Raúl Otero"}, {"id": "havana-malecon", "name": "Malecón (Havana)", "lat": 23.144, "lng": -82.3679, "subtitle": "1901 · N/A (urban promenade)"}, {"id": "havana-morro-castle", "name": "Morro Castle", "lat": 23.1503, "lng": -82.3612, "subtitle": "1589 · Juan de Tejeda, Cristóbal de Roda"}, {"id": "havana-museum-of-revolution", "name": "Museum of the Revolution (Cuba)", "lat": 23.1394, "lng": -82.3559, "subtitle": "1920 · Paul Belau, Carlos Maruri"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Cuban Peso (₱)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Spanish</strong><p>Cuban Spanish has a distinctive and musical character — fast-paced, with a tendency to drop the final &#x27;s&#x27; from words and merge syllables. It is heavily influenced by African languages brought by enslaved people, which have shaped Cuban music, religion (Santería), and everyday vocabulary in ways unique in the Spanish-speaking world. Habaneros (Havana residents) are warm, expressive, and intensely proud of their city&#x27;s culture, and conversation is an art form here.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>Almendrones &amp; Coco Taxis</strong><p>Havana&#x27;s most distinctive transport is the almendrón — vintage 1950s American cars in pastel colors that serve as shared taxis along fixed routes, carrying up to five passengers. Coco taxis, shaped like yellow coconuts on three wheels, are a popular tourist option for short trips. Bicitaxis (bicycle rickshaws) navigate the narrow streets of Old Havana. The Habana Bus Tour, a hop-on hop-off double-decker, connects the main tourist sites. Standard yellow metered taxis are available for point-to-point travel.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DHavana%252C%2520Cuba%26latLong%3D23.13940%252C-82.35900" rel="sponsored noopener" target="_blank">Find hotels in Havana on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Havana%2C%20Cuba" rel="sponsored noopener" target="_blank">Find tours in Havana on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DHavana%252C%2520Cuba%26latLong%3D23.13940%252C-82.35900" rel="sponsored noopener" target="_blank">Find hotels in Havana on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DHavana%252C%2520Cuba" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Havana%2C%20Cuba" rel="sponsored noopener" target="_blank">Find tours in Havana on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Havana%2C%20Cuba&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/havana.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Havana?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Havana well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Havana" data-page="https://georgeclinkscalesdev.com/stamped-cities/havana.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -228,7 +253,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in North America</h2>
-            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="boston.html">Boston</a></li><li><a href="buffalo.html">Buffalo</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="orlando.html">Orlando</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
+            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="baltimore.html">Baltimore</a></li><li><a href="boston.html">Boston</a></li><li><a href="buffalo.html">Buffalo</a></li><li><a href="charleston.html">Charleston</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="columbus-indiana.html">Columbus, Indiana</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="fort-worth.html">Fort Worth</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="kansas-city.html">Kansas City</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="oak-park.html">Oak Park</a></li><li><a href="orlando.html">Orlando</a></li><li><a href="palm-springs.html">Palm Springs</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-diego.html">San Diego</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="savannah.html">Savannah</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
         </div>
     </section>
 
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

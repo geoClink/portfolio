@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/buffalo.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -186,6 +186,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -230,6 +231,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "buf_city_hall", "name": "Buffalo City Hall", "lat": 42.8867082, "lng": -78.879256, "subtitle": "1931 · Dietel, Wade & Jones"}, {"id": "buf_darwin_martin", "name": "Darwin D. Martin House", "lat": 42.9361233, "lng": -78.8480871, "subtitle": "1905 · Frank Lloyd Wright"}, {"id": "buf_guaranty_building", "name": "Guaranty Building", "lat": 42.8831811, "lng": -78.8767925, "subtitle": "1896 · Louis Sullivan & Dankmar Adler"}, {"id": "buf_richardson_olmsted", "name": "Richardson Olmsted Campus", "lat": 42.9278044, "lng": -78.882447, "subtitle": "1870 · Henry Hobson Richardson"}, {"id": "buf_albright_knox", "name": "Buffalo AKG Art Museum", "lat": 42.9322857, "lng": -78.8756377, "subtitle": "1905 · Edward B. Green / OMA"}, {"id": "buf_electric_tower", "name": "Electric Tower", "lat": 42.8881832, "lng": -78.872376, "subtitle": "1912 · Esenwein & Johnson"}, {"id": "buf_gold_dome", "name": "Buffalo Savings Bank (Gold Dome)", "lat": 42.8884035, "lng": -78.8734005, "subtitle": "1901 · Green & Wicks"}, {"id": "buf_grain_elevators", "name": "Concrete Central Grain Elevator", "lat": 42.8574845, "lng": -78.869203, "subtitle": "1917 · Wheeler & Case"}, {"id": "buf_kleinhans", "name": "Kleinhans Music Hall", "lat": 42.9029244, "lng": -78.8816923, "subtitle": "1940 · Eliel & Eero Saarinen"}, {"id": "buf_st_louis", "name": "St. Louis Roman Catholic Church", "lat": 42.8956242, "lng": -78.8718674, "subtitle": "1889 · Schickel & Ditmars"}, {"id": "buf_apple_walden_galleria", "name": "Apple Walden Galleria", "lat": 42.913815, "lng": -78.7628999, "subtitle": "2000 · Apple Architecture / Bohlin Cywinski Jackson"}, {"id": "buf_old_post_office", "name": "Old Post Office (ECC City Campus)", "lat": 42.8817738, "lng": -78.8725853, "subtitle": "1901 · Jeremiah O'Rourke"}, {"id": "buf_seneca_one", "name": "Seneca One Tower", "lat": 42.8795322, "lng": -78.8759022, "subtitle": "1972 · Skidmore, Owings & Merrill (SOM)"}, {"id": "buf_statler_city", "name": "Statler City", "lat": 42.8874079, "lng": -78.8769715, "subtitle": "1923 · George B. Post & Sons"}, {"id": "buf_darwin_martin_gardners", "name": "Gardner's Cottage (Martin House Complex)", "lat": 42.936585, "lng": -78.8477754, "subtitle": "1908 · Frank Lloyd Wright"}]}</script>
     </section>
@@ -242,8 +251,8 @@
                 <li><span class="fact-label">Currency</span><strong>US Dollar ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>English</strong><p>Residents typically speak with a distinctive &#x27;Inland Northern&#x27; accent characterized by very crisp, bright vowels. The tone of the city is famously neighborly, often referred to as the &#x27;City of Good Neighbors,&#x27; where small talk with strangers is standard practice.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>NFTA-Metro</strong><p>The light rail system is completely free to ride within the downtown &#x27;Free Fare Zone&#x27; above ground. An extensive bus network connects the city to the famous Niagara Falls border crossing. The historic DL&amp;W Terminal is being revitalized to serve as a major multi-modal transit hub.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBuffalo%252C%2520United%2520States%26latLong%3D42.88840%252C-78.87340" rel="sponsored noopener" target="_blank">Find hotels in Buffalo on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Buffalo%2C%20United%20States" rel="sponsored noopener" target="_blank">Find tours in Buffalo on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBuffalo%252C%2520United%2520States%26latLong%3D42.88840%252C-78.87340" rel="sponsored noopener" target="_blank">Find hotels in Buffalo on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DBuffalo%252C%2520United%2520States" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Buffalo%2C%20United%20States" rel="sponsored noopener" target="_blank">Find tours in Buffalo on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Buffalo%2C%20United%20States&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -266,7 +275,7 @@
                     <h3>Darwin D. Martin House</h3>
                     <p class="address">125 Jewett Pkwy, Buffalo, NY 14214, United States</p>
                     <p>This estate is considered one of Frank Lloyd Wright&#x27;s most important and highly developed Prairie School works from his early career. The complex features a series of interconnected buildings, including the main house, a conservatory, and a stunning 100-foot pergola. A replica of the &#x27;Nike of Samothrace&#x27; statue stands at the end of the long vista, emphasizing Wright’s focus on integrated art. Its horizontal planes, deep eaves, and nearly 400 pieces of art glass windows exemplify the principles of organic architecture. Today, the site has been meticulously restored and serves as a premier museum for architecture enthusiasts worldwide.</p>
-                    <dl><div><dt>Built</dt><dd>1905</dd></div><div><dt>Architect</dt><dd>Frank Lloyd Wright</dd></div><div><dt>Style</dt><dd>Prairie School</dd></div><div><dt>Height</dt><dd>10 m (33 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1905</dd></div><div><dt>Architect</dt><dd><a href="architect-frank-lloyd-wright.html">Frank Lloyd Wright</a></dd></div><div><dt>Style</dt><dd>Prairie School</dd></div><div><dt>Height</dt><dd>10 m (33 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Museum</dd></div></dl>
                 </li>
                 <li id="buf_guaranty_building" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Guaranty_%28Prudential%29_Building%2C_Church_Street_and_Pearl_Street%2C_Buffalo%2C_NY_-_52674539907.jpg/960px-Guaranty_%28Prudential%29_Building%2C_Church_Street_and_Pearl_Street%2C_Buffalo%2C_NY_-_52674539907.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1067" alt="Guaranty Building" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Guaranty_(Prudential)_Building,_Church_Street_and_Pearl_Street,_Buffalo,_NY_-_52674539907.jpg" rel="noopener">w_lemay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" rel="license noopener">CC BY-SA 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -274,7 +283,7 @@
                     <h3>Guaranty Building</h3>
                     <p class="address">28 Church St, Buffalo, NY 14202, United States</p>
                     <p>Designed by Louis Sullivan and Dankmar Adler, this structure is a pioneering example of the modern high-rise skyscraper. The building is world-famous for its revolutionary steel-frame construction that allowed for large windows and unprecedented height. Its exterior is clad entirely in ornate, salmon-colored terra cotta tiles featuring intricate geometric and floral patterns. Sullivan&#x27;s philosophy that &#x27;form follows function&#x27; is visible in the distinct division of the building&#x27;s base, shaft, and decorative cornice. It remains a global architectural landmark and continues to serve as an active office building and interpretive museum.</p>
-                    <dl><div><dt>Built</dt><dd>1896</dd></div><div><dt>Architect</dt><dd>Louis Sullivan &amp; Dankmar Adler</dd></div><div><dt>Style</dt><dd>Early Modernism (Sullivanesque)</dd></div><div><dt>Height</dt><dd>45 m (148 ft)</dd></div><div><dt>Stories</dt><dd>13</dd></div><div><dt>Today</dt><dd>Office Building / Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1896</dd></div><div><dt>Architect</dt><dd><a href="architect-louis-sullivan.html">Louis Sullivan</a> &amp; Dankmar Adler</dd></div><div><dt>Style</dt><dd>Early Modernism (Sullivanesque)</dd></div><div><dt>Height</dt><dd>45 m (148 ft)</dd></div><div><dt>Stories</dt><dd>13</dd></div><div><dt>Today</dt><dd>Office Building / Museum</dd></div></dl>
                 </li>
                 <li id="buf_richardson_olmsted" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Central_Wing%2C_Old_Buffalo_State_Hospital%2C_Richardson_Olmsted_Complex%2C_Elmwood_Village%2C_Buffalo%2C_NY_-_52596088993.jpg/960px-Central_Wing%2C_Old_Buffalo_State_Hospital%2C_Richardson_Olmsted_Complex%2C_Elmwood_Village%2C_Buffalo%2C_NY_-_52596088993.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="640" alt="Richardson Olmsted Campus" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Central_Wing,_Old_Buffalo_State_Hospital,_Richardson_Olmsted_Complex,_Elmwood_Village,_Buffalo,_NY_-_52596088993.jpg" rel="noopener">w_lemay</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" rel="license noopener">CC BY-SA 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -290,7 +299,7 @@
                     <h3>Buffalo AKG Art Museum</h3>
                     <p class="address">1285 Elmwood Ave, Buffalo, NY 14222, United States</p>
                     <p>The museum&#x27;s original 1905 building is a striking Greek Revival gallery featuring an iconic caryatid porch overlooking Delaware Park. A recent expansion added the &#x27;Gundlach Building,&#x27; a transparent and wrap-around glass structure designed by architect Shohei Shigematsu. This modern addition creates a stunning visual contrast between the heavy stone of Neoclassicism and the light transparency of 21st-century Modernism. The museum houses one of the world&#x27;s most impressive collections of modern and contemporary art, including works by Picasso and Pollock. Visitors can now enjoy an enclosed town square that connects the various wings of the campus through a vibrant social space.</p>
-                    <dl><div><dt>Built</dt><dd>1905</dd></div><div><dt>Architect</dt><dd>Edward B. Green / OMA</dd></div><div><dt>Style</dt><dd>Greek Revival / Contemporary</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1905</dd></div><div><dt>Architect</dt><dd>Edward B. Green / <a href="architect-oma.html">OMA</a></dd></div><div><dt>Style</dt><dd>Greek Revival / Contemporary</dd></div><div><dt>Height</dt><dd>18 m (59 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="buf_electric_tower" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/ElectricTower2024.jpg/960px-ElectricTower2024.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1063" alt="Electric Tower" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:ElectricTower2024.jpg" rel="noopener">SebastianJFromTheBurg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -354,7 +363,7 @@
                     <h3>Seneca One Tower</h3>
                     <p class="address">1 Seneca St, Buffalo, NY 14203, United States</p>
                     <p>Standing at 161 meters, this is the tallest building in both Buffalo and the Western New York region. Its dark, monolithic facade defines the city&#x27;s skyline and represents the Brutalist architectural movement of the early 1970s. Recently, the tower underwent a massive transformation to become a vibrant tech hub and residential complex. The building is uniquely positioned directly over the city&#x27;s light rail line, making it a centerpiece for transit-oriented development. It now features modern plazas, collaborative workspaces, and some of the highest residential units in the state outside of Manhattan.</p>
-                    <dl><div><dt>Built</dt><dd>1972</dd></div><div><dt>Architect</dt><dd>Skidmore, Owings &amp; Merrill (SOM)</dd></div><div><dt>Style</dt><dd>Modernist / Brutalist</dd></div><div><dt>Height</dt><dd>161 m (528 ft)</dd></div><div><dt>Stories</dt><dd>40</dd></div><div><dt>Today</dt><dd>Tech Hub / Mixed-use</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1972</dd></div><div><dt>Architect</dt><dd><a href="architect-skidmore-owings-and-merrill.html">Skidmore, Owings &amp; Merrill</a> (SOM)</dd></div><div><dt>Style</dt><dd>Modernist / Brutalist</dd></div><div><dt>Height</dt><dd>161 m (528 ft)</dd></div><div><dt>Stories</dt><dd>40</dd></div><div><dt>Today</dt><dd>Tech Hub / Mixed-use</dd></div></dl>
                 </li>
                 <li id="buf_statler_city">
                     
@@ -370,24 +379,40 @@
                     <h3>Gardner&#x27;s Cottage (Martin House Complex)</h3>
                     <p class="address">118 Summit Ave, Buffalo, NY 14214, United States</p>
                     <p>This modest yet beautiful structure is an integral part of the larger Darwin Martin House estate. Frank Lloyd Wright designed the cottage specifically for the estate&#x27;s caretaker, ensuring it complemented the main mansion&#x27;s aesthetic. It reflects the same signature Prairie School principles, such as a strong horizontal emphasis and an open floor plan. While much smaller than the primary residence, the cottage shows Wright&#x27;s ability to apply his architectural genius to a more intimate scale. Today, it has been fully restored and is used as part of the public museum&#x27;s educational and administrative space.</p>
-                    <dl><div><dt>Built</dt><dd>1908</dd></div><div><dt>Architect</dt><dd>Frank Lloyd Wright</dd></div><div><dt>Style</dt><dd>Prairie School</dd></div><div><dt>Height</dt><dd>8 m (26 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Museum Space</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1908</dd></div><div><dt>Architect</dt><dd><a href="architect-frank-lloyd-wright.html">Frank Lloyd Wright</a></dd></div><div><dt>Style</dt><dd>Prairie School</dd></div><div><dt>Height</dt><dd>8 m (26 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Museum Space</dd></div></dl>
                 </li>
             </ol>
+        </div>
+    </section>
+
+    <section class="quiz" data-quiz="quiz/buffalo.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Buffalo?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
         </div>
     </section>
 
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Buffalo well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Buffalo" data-page="https://georgeclinkscalesdev.com/stamped-cities/buffalo.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -398,7 +423,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in North America</h2>
-            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="boston.html">Boston</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="havana.html">Havana</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="orlando.html">Orlando</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
+            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="baltimore.html">Baltimore</a></li><li><a href="boston.html">Boston</a></li><li><a href="charleston.html">Charleston</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="columbus-indiana.html">Columbus, Indiana</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="fort-worth.html">Fort Worth</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="havana.html">Havana</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="kansas-city.html">Kansas City</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="oak-park.html">Oak Park</a></li><li><a href="orlando.html">Orlando</a></li><li><a href="palm-springs.html">Palm Springs</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-diego.html">San Diego</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="savannah.html">Savannah</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
         </div>
     </section>
 
@@ -428,7 +453,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/bath.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -186,6 +186,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -230,6 +231,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "uk_roman_baths", "name": "The Roman Baths", "lat": 51.3813419, "lng": -2.3596754, "subtitle": "70 · Ancient Romans / John Wood the Elder & Younger"}, {"id": "uk_royal_crescent", "name": "The Royal Crescent", "lat": 51.3872718, "lng": -2.3682297, "subtitle": "1774 · John Wood the Younger"}, {"id": "uk_bath_abbey", "name": "Bath Abbey", "lat": 51.3813177, "lng": -2.3587036, "subtitle": "1499 · Robert and William Vertue"}, {"id": "uk_pulteney_bridge", "name": "Pulteney Bridge", "lat": 51.3828263, "lng": -2.358643, "subtitle": "1774 · Robert Adam"}, {"id": "uk_thermae_bath_spa", "name": "Thermae Bath Spa", "lat": 51.38032, "lng": -2.361506, "subtitle": "2006 · Grimshaw Architects"}, {"id": "uk_holburne_museum", "name": "The Holburne Museum", "lat": 51.3853491, "lng": -2.3518749, "subtitle": "1799 · Charles Harcourt Masters / Eric Parry (Extension)"}, {"id": "uk_the_circus", "name": "The Circus", "lat": 51.3862004, "lng": -2.3637578, "subtitle": "1768 · John Wood the Elder"}, {"id": "uk_prior_park", "name": "Prior Park Mansion", "lat": 51.3676817, "lng": -2.3461435, "subtitle": "1742 · John Wood the Elder"}, {"id": "uk_assembly_rooms", "name": "Bath Assembly Rooms", "lat": 51.3865985, "lng": -2.362584, "subtitle": "1771 · John Wood the Younger"}, {"id": "uk_guildhall", "name": "Bath Guildhall", "lat": 51.3820103, "lng": -2.3590679, "subtitle": "1775 · Thomas Baldwin"}, {"id": "uk_beckfords_tower", "name": "Beckford's Tower", "lat": 51.4067969, "lng": -2.3784787, "subtitle": "1827 · Henry Goodridge"}, {"id": "uk_theatre_royal", "name": "Theatre Royal Bath", "lat": 51.3817229, "lng": -2.3624992, "subtitle": "1805 · George Dance the Younger"}, {"id": "uk_milsom_place", "name": "Milsom Place", "lat": 51.3841215, "lng": -2.3616233, "subtitle": "1762 · Various / Modern Restoration"}, {"id": "uk_victoria_art_gallery", "name": "Victoria Art Gallery", "lat": 51.3828263, "lng": -2.358643, "subtitle": "1900 · John McKean Brydon"}, {"id": "uk_green_park_station", "name": "Green Park Station", "lat": 51.381065, "lng": -2.3662473, "subtitle": "1870 · James Henry Lynde"}]}</script>
     </section>
@@ -242,8 +251,8 @@
                 <li><span class="fact-label">Currency</span><strong>British Pound (£)</strong></li>
                 <li><span class="fact-label">Language</span><strong>British English</strong><p>The local accent is a gentle &#x27;West Country&#x27; lilt, characterized by soft &#x27;r&#x27; sounds and a rhythmic pace. While modern and cosmopolitan, the city retains a polite, sophisticated tone reflective of its history as a 18th-century social resort.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>First Bus / Bath Park &amp; Ride</strong><p>The city center is highly walkable and mostly pedestrianized. For reaching the outskirts, the comprehensive bus network and the &#x27;Park &amp; Ride&#x27; system are the primary modes of transit, as driving in the narrow, historic streets can be a challenge.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBath%252C%2520United%2520Kingdom%26latLong%3D51.38283%252C-2.36151" rel="sponsored noopener" target="_blank">Find hotels in Bath on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Bath%2C%20United%20Kingdom" rel="sponsored noopener" target="_blank">Find tours in Bath on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DBath%252C%2520United%2520Kingdom%26latLong%3D51.38283%252C-2.36151" rel="sponsored noopener" target="_blank">Find hotels in Bath on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DBath%252C%2520United%2520Kingdom" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Bath%2C%20United%20Kingdom" rel="sponsored noopener" target="_blank">Find tours in Bath on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Bath%2C%20United%20Kingdom&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -376,18 +385,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/bath.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Bath?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Bath well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Bath" data-page="https://georgeclinkscalesdev.com/stamped-cities/bath.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -398,7 +423,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -428,7 +453,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

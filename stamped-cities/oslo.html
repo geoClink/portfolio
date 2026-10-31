@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/oslo.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "oslo-opera-house", "name": "Oslo Opera House", "lat": 59.9075, "lng": 10.7528, "subtitle": "2008 · Snøhetta"}, {"id": "oslo-vigeland-park", "name": "Vigeland installation", "lat": 59.9266, "lng": 10.7001, "subtitle": "1940 · Gustav Vigeland"}, {"id": "oslo-akershus-fortress", "name": "Akershus Fortress", "lat": 59.908, "lng": 10.7353, "subtitle": "1299 · Haakon V of Norway (commissioner)"}, {"id": "oslo-munch-museum", "name": "Munch Museum", "lat": 59.906, "lng": 10.7573, "subtitle": "2021 · Estudio Herreros"}, {"id": "oslo-royal-palace", "name": "Royal Palace, Oslo", "lat": 59.9169, "lng": 10.7274, "subtitle": "1849 · Hans Linstow"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Norwegian Krone (kr)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Norwegian</strong><p>Norway has two official written standards: Bokmål (used by about 85% of the population) and Nynorsk. Both are taught in schools. The spoken Norwegian dialects vary significantly across the country, but Oslo&#x27;s dialect (Eastern Norwegian) is most commonly heard in media and considered a neutral standard. Norwegians have extraordinarily high English proficiency — communication in English is completely seamless throughout Oslo. Norwegian is closely related to Danish and Swedish, and speakers of these languages can generally understand each other.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>T-bane &amp; Trams</strong><p>Oslo&#x27;s T-bane (metro) has six lines that converge in the city center and fan out to the suburbs. The Ruter transit authority integrates the metro, trams, buses, and ferries to the Oslofjord islands under a single ticketing system. Oslo&#x27;s electric trams are among the oldest continuously operating tram lines in the world. The city has invested heavily in cycling infrastructure and electric vehicles — Oslo has more EVs per capita than almost any city on Earth.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DOslo%252C%2520Norway%26latLong%3D59.90800%252C10.73530" rel="sponsored noopener" target="_blank">Find hotels in Oslo on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Oslo%2C%20Norway" rel="sponsored noopener" target="_blank">Find tours in Oslo on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DOslo%252C%2520Norway%26latLong%3D59.90800%252C10.73530" rel="sponsored noopener" target="_blank">Find hotels in Oslo on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DOslo%252C%2520Norway" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Oslo%2C%20Norway" rel="sponsored noopener" target="_blank">Find tours in Oslo on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Oslo%2C%20Norway&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/oslo.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Oslo?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Oslo well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Oslo" data-page="https://georgeclinkscalesdev.com/stamped-cities/oslo.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -228,7 +253,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

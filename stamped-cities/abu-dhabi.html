@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/abu-dhabi.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -186,6 +186,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -230,6 +231,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "glbl_apple_al_maryah", "name": "Apple Al Maryah Island", "lat": 24.501449, "lng": 54.3890553, "subtitle": "2022 · Foster + Partners"}, {"id": "auh_sheikh_zayed_mosque", "name": "Sheikh Zayed Grand Mosque", "lat": 24.412, "lng": 54.474, "subtitle": "2007 · Yusef Abdelky"}, {"id": "auh_louvre_abudhabi", "name": "Louvre Abu Dhabi", "lat": 24.533, "lng": 54.40001, "subtitle": "2017 · Jean Nouvel"}, {"id": "auh_capital_gate", "name": "Capital Gate", "lat": 24.418637, "lng": 54.434692, "subtitle": "2011 · RMJM"}, {"id": "auh_aldar_hq", "name": "Aldar Headquarters", "lat": 24.4478529, "lng": 54.5963, "subtitle": "2010 · MZ Architects"}, {"id": "auh_emirates_palace", "name": "Emirates Palace", "lat": 24.4619, "lng": 54.3167, "subtitle": "2005 · John Elliott / WATG"}, {"id": "auh_etihad_towers", "name": "Etihad Towers (Tower 2)", "lat": 24.4650615, "lng": 54.32567, "subtitle": "2011 · DBI Design"}, {"id": "auh_yas_viceroy", "name": "W Abu Dhabi - Yas Island", "lat": 24.467402, "lng": 54.606059, "subtitle": "2009 · Asymptote Architecture"}, {"id": "auh_al_bahr_towers", "name": "Al Bahr Towers", "lat": 24.4561887, "lng": 54.4009387, "subtitle": "2012 · Aedas"}, {"id": "auh_qasr_al_hosn", "name": "Qasr Al Hosn", "lat": 24.4823376, "lng": 54.3552764, "subtitle": "1761 · Unknown (Restored by DCT)"}, {"id": "auh_abrahamic_family_house", "name": "Abrahamic Family House", "lat": 24.530933, "lng": 54.406101, "subtitle": "2023 · Sir David Adjaye"}, {"id": "auh_masdar_hq", "name": "Siemens Middle East HQ (Masdar City)", "lat": 24.4274827, "lng": 54.6234876, "subtitle": "2014 · Sheppard Robson"}, {"id": "auh_qasr_al_watan", "name": "Qasr Al Watan", "lat": 24.4621308, "lng": 54.3101907, "subtitle": "2017 · WATG / Jean-Michel Wilmotte"}, {"id": "auh_guggenheim", "name": "Guggenheim Abu Dhabi (Upcoming)", "lat": 24.539514, "lng": 54.398958, "subtitle": "2025 · Frank Gehry"}, {"id": "auh_warner_bros", "name": "Warner Bros. World Abu Dhabi", "lat": 24.486404, "lng": 54.6090712, "subtitle": "2018 · AECOM"}]}</script>
     </section>
@@ -242,8 +251,8 @@
                 <li><span class="fact-label">Currency</span><strong>UAE Dirham (د.إ)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Arabic &amp; English</strong><p>While Arabic is the official language, English is the primary bridge for the city&#x27;s vast expat population. You will find that business and street signs are almost universally bilingual.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>ART &amp; Buses</strong><p>Abu Dhabi utilizes high-tech, trackless &#x27;Automated Rapid Transit&#x27; (ART) vehicles that look like a blend of a bus and a train. The city&#x27;s bus network is entirely air-conditioned and features dedicated waiting shelters to protect riders from the heat. Regional buses also provide a high-frequency link to the neighboring city of Dubai.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAbu%2520Dhabi%252C%2520United%2520Arab%2520Emirates%26latLong%3D24.46506%252C54.40094" rel="sponsored noopener" target="_blank">Find hotels in Abu Dhabi on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Abu%20Dhabi%2C%20United%20Arab%20Emirates" rel="sponsored noopener" target="_blank">Find tours in Abu Dhabi on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAbu%2520Dhabi%252C%2520United%2520Arab%2520Emirates%26latLong%3D24.46506%252C54.40094" rel="sponsored noopener" target="_blank">Find hotels in Abu Dhabi on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DAbu%2520Dhabi%252C%2520United%2520Arab%2520Emirates" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Abu%20Dhabi%2C%20United%20Arab%20Emirates" rel="sponsored noopener" target="_blank">Find tours in Abu Dhabi on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Abu%20Dhabi%2C%20United%20Arab%20Emirates&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -258,7 +267,7 @@
                     <h3>Apple Al Maryah Island</h3>
                     <p class="address">The Galleria, Al Maryah Island, Abu Dhabi, United Arab Emirates</p>
                     <p>This unique retail flagship sits atop a dramatic black granite pyramid water feature in the heart of Abu Dhabi. Water cascades down the sides of the base to provide a natural cooling effect for the surrounding promenade. Visitors access the store through a mirrored stainless steel portal and a stone-lined transitional hallway. The main floor features soaring glass walls that offer 360-degree views of the Al Maryah Island waterfront. It serves as a striking example of how modern retail design can integrate seamlessly with maritime surroundings.</p>
-                    <dl><div><dt>Built</dt><dd>2022</dd></div><div><dt>Architect</dt><dd>Foster + Partners</dd></div><div><dt>Style</dt><dd>Water-based Pavilion</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Retail Flagship</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2022</dd></div><div><dt>Architect</dt><dd><a href="architect-foster-partners.html">Foster + Partners</a></dd></div><div><dt>Style</dt><dd>Water-based Pavilion</dd></div><div><dt>Height</dt><dd>12 m (39 ft)</dd></div><div><dt>Stories</dt><dd>2</dd></div><div><dt>Today</dt><dd>Retail Flagship</dd></div></dl>
                 </li>
                 <li id="auh_sheikh_zayed_mosque">
                     
@@ -274,7 +283,7 @@
                     <h3>Louvre Abu Dhabi</h3>
                     <p class="address">Saadiyat Cultural District, Saadiyat Island, Abu Dhabi, United Arab Emirates</p>
                     <p>This &#x27;museum city&#x27; in the sea is famous for its vast silver dome that spans 180 meters in diameter. The dome is composed of 7,850 unique metal stars layered in a complex geometric pattern. When sunlight passes through these layers, it creates a magical &#x27;rain of light&#x27; effect on the galleries below. This design was specifically inspired by the overlapping palm fronds found in traditional desert oases. The museum hosts a massive collection of global art that bridges the gap between Eastern and Western cultures.</p>
-                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd>Jean Nouvel</dd></div><div><dt>Style</dt><dd>Contemporary / High-Tech</dd></div><div><dt>Height</dt><dd>36 m (118 ft)</dd></div><div><dt>Stories</dt><dd>1</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2017</dd></div><div><dt>Architect</dt><dd><a href="architect-jean-nouvel.html">Jean Nouvel</a></dd></div><div><dt>Style</dt><dd>Contemporary / High-Tech</dd></div><div><dt>Height</dt><dd>36 m (118 ft)</dd></div><div><dt>Stories</dt><dd>1</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="auh_capital_gate">
                     
@@ -362,7 +371,7 @@
                     <h3>Guggenheim Abu Dhabi (Upcoming)</h3>
                     <p class="address">Saadiyat Cultural District, Saadiyat Island, Abu Dhabi, United Arab Emirates</p>
                     <p>This colossal museum ensemble features a collection of cones and cubes that redefine the coastal landscape. The distinctive cones are inspired by traditional Barjeel wind towers once used to cool desert homes. Upon its expected completion in 2025, it will become the largest Guggenheim museum in the world. The structure is surrounded by water on three sides to create a dramatic peninsula on Saadiyat Island. It is designed to be a premier global destination for modern and contemporary art.</p>
-                    <dl><div><dt>Built</dt><dd>2025</dd></div><div><dt>Architect</dt><dd>Frank Gehry</dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>88 m (289 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Modern Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2025</dd></div><div><dt>Architect</dt><dd><a href="architect-frank-gehry.html">Frank Gehry</a></dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>88 m (289 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Modern Art Museum</dd></div></dl>
                 </li>
                 <li id="auh_warner_bros">
                     
@@ -376,18 +385,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/abu-dhabi.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Abu Dhabi?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Abu Dhabi well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Abu Dhabi" data-page="https://georgeclinkscalesdev.com/stamped-cities/abu-dhabi.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -398,7 +423,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Asia</h2>
-            <ul class="city-chips"><li><a href="amman.html">Amman</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="ho-chi-minh-city.html">Ho Chi Minh City</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
+            <ul class="city-chips"><li><a href="amman.html">Amman</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chandigarh.html">Chandigarh</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="ho-chi-minh-city.html">Ho Chi Minh City</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
         </div>
     </section>
 
@@ -428,7 +453,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/copenhagen.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -195,6 +195,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -239,6 +240,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "cph_copenhill", "name": "CopenHill", "lat": 55.684214, "lng": 12.619183, "subtitle": "2017 · Bjarke Ingels (BIG)"}, {"id": "cph_black_diamond", "name": "The Black Diamond", "lat": 55.6730401, "lng": 12.5810081, "subtitle": "1999 · Schmidt Hammer Lassen"}, {"id": "cph_opera", "name": "Copenhagen Opera House", "lat": 55.682035, "lng": 12.602023, "subtitle": "2005 · Henning Larsen"}, {"id": "cph_blox", "name": "BLOX (Danish Architecture Center)", "lat": 55.672076, "lng": 12.579179, "subtitle": "2018 · Rem Koolhaas (OMA)"}, {"id": "cph_grundtvig", "name": "Grundtvig's Church", "lat": 55.716477, "lng": 12.533685, "subtitle": "1940 · Peder Jensen-Klint"}, {"id": "cph_round_tower", "name": "Rundetårn", "lat": 55.681339, "lng": 12.575772, "subtitle": "1642 · Hans van Steenwinckel"}, {"id": "cph_axeltowers", "name": "Axel Towers", "lat": 55.675515, "lng": 12.565704, "subtitle": "2017 · Lundgaard & Tranberg"}, {"id": "cph_amalienborg", "name": "Amalienborg Palace", "lat": 55.6839722, "lng": 12.5932212, "subtitle": "1760 · Nicolai Eigtved"}, {"id": "cph_silo", "name": "The Silo", "lat": 55.708396, "lng": 12.598071, "subtitle": "2017 · COBE"}, {"id": "cph_superkilen", "name": "Superkilen Park (Red Square)", "lat": 55.698991, "lng": 12.54212, "subtitle": "2012 · BIG / Topotek 1"}, {"id": "cph_apple_kongens", "name": "Apple Kongens Nytorv", "lat": 55.681331, "lng": 12.584993, "subtitle": "1866 · Foster + Partners"}, {"id": "cph_8_house", "name": "8 House", "lat": 55.616765, "lng": 12.570585, "subtitle": "2010 · Bjarke Ingels (BIG)"}, {"id": "cph_royal_library", "name": "Old Royal Library", "lat": 55.6730401, "lng": 12.5810081, "subtitle": "1906 · Hans J. Holm"}, {"id": "cph_bicycle_snake", "name": "Cykelslangen (The Bicycle Snake)", "lat": 55.6626217, "lng": 12.563508, "subtitle": "2014 · Dissing+Weitling"}, {"id": "cph_tivoli_nimb", "name": "Nimb Hotel (Tivoli Gardens)", "lat": 55.673606, "lng": 12.566004, "subtitle": "1909 · Knud Arne-Petersen"}, {"id": "cph_royal_playhouse", "name": "Royal Danish Playhouse", "lat": 55.680448, "lng": 12.594691, "subtitle": "2008 · Lundgaard & Tranberg"}]}</script>
     </section>
@@ -251,8 +260,8 @@
                 <li><span class="fact-label">Currency</span><strong>Danish Krone (kr)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Danish</strong><p>Danish is the native tongue, though the linguistic transition for travelers is seamless as nearly every resident is completely fluent in English. The local culture emphasizes &#x27;Hygge,&#x27; which often translates to a warm and friendly style of social interaction.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>The Metro</strong><p>The Copenhagen Metro is a 24/7 fully driverless system that is renowned for its punctuality. S-trains provide the suburban rail backbone, connecting the city center to the surrounding Finger Plan districts. Movia &#x27;Havnebusser&#x27; are bright yellow harbor buses that serve as water taxis across the city&#x27;s canals.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DCopenhagen%252C%2520Denmark%26latLong%3D55.68133%252C12.58101" rel="sponsored noopener" target="_blank">Find hotels in Copenhagen on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Copenhagen%2C%20Denmark" rel="sponsored noopener" target="_blank">Find tours in Copenhagen on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DCopenhagen%252C%2520Denmark%26latLong%3D55.68133%252C12.58101" rel="sponsored noopener" target="_blank">Find hotels in Copenhagen on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DCopenhagen%252C%2520Denmark" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Copenhagen%2C%20Denmark" rel="sponsored noopener" target="_blank">Find tours in Copenhagen on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Copenhagen%2C%20Denmark&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -291,7 +300,7 @@
                     <h3>BLOX (Danish Architecture Center)</h3>
                     <p class="address">Bryghuspladsen 10, 1473 København K, Denmark</p>
                     <p>This complex structure is designed as a stack of glass boxes that straddles a busy ring road along the harbor. It serves as the headquarters for the Danish Architecture Center and includes apartments, offices, and a fitness center. The building was envisioned as an urban connector to link the quiet waterfront with the bustling city core. Its pixelated green glass exterior reflects the surrounding water and the historic buildings of the Bryghuspladsen area. Below ground level, the structure features a fully automated public car park that is a marvel of local engineering.</p>
-                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd>Rem Koolhaas (OMA)</dd></div><div><dt>Style</dt><dd>Contemporary</dd></div><div><dt>Height</dt><dd>26 m (85 ft)</dd></div><div><dt>Stories</dt><dd>8</dd></div><div><dt>Today</dt><dd>Architecture Center</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2018</dd></div><div><dt>Architect</dt><dd><a href="architect-rem-koolhaas.html">Rem Koolhaas</a> (OMA)</dd></div><div><dt>Style</dt><dd>Contemporary</dd></div><div><dt>Height</dt><dd>26 m (85 ft)</dd></div><div><dt>Stories</dt><dd>8</dd></div><div><dt>Today</dt><dd>Architecture Center</dd></div></dl>
                 </li>
                 <li id="cph_grundtvig" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Grundtvig%E2%80%99s_Church_02_%28level_and_colour_adjust%29.jpg/960px-Grundtvig%E2%80%99s_Church_02_%28level_and_colour_adjust%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="535" alt="Grundtvig&#x27;s Church" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Grundtvig%E2%80%99s_Church_02_(level_and_colour_adjust).jpg" rel="noopener">Haydn Blackey from Cardiff, Wales</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" rel="license noopener">CC BY-SA 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -347,7 +356,7 @@
                     <h3>Apple Kongens Nytorv</h3>
                     <p class="address">Kongens Nytorv 26, 1050 København K, Denmark</p>
                     <p>Housed in the historic Brønnums Hus, this flagship store is located on one of Copenhagen&#x27;s most prestigious public squares. The renovation carefully preserved the 19th-century facade and its intricate stonework to respect the city&#x27;s heritage. Inside, the design seamlessly integrates Apple&#x27;s signature minimalism with restored period ceilings and grand architectural details. A central courtyard was opened to the public, creating a serene gathering space in the heart of the retail district. It serves as a prime example of modern retail taking residence within a high-value historic preservation project.</p>
-                    <dl><div><dt>Built</dt><dd>1866</dd></div><div><dt>Architect</dt><dd>Foster + Partners</dd></div><div><dt>Style</dt><dd>Renaissance Revival</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Retail (Apple Store)</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1866</dd></div><div><dt>Architect</dt><dd><a href="architect-foster-partners.html">Foster + Partners</a></dd></div><div><dt>Style</dt><dd>Renaissance Revival</dd></div><div><dt>Height</dt><dd>20 m (66 ft)</dd></div><div><dt>Stories</dt><dd>4</dd></div><div><dt>Today</dt><dd>Retail (Apple Store)</dd></div></dl>
                 </li>
                 <li id="cph_8_house" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/BIG_-_8_House.jpg/960px-BIG_-_8_House.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="535" alt="8 House" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:BIG_-_8_House.jpg" rel="noopener">準建築人手札網站 Forgemind ArchiMedia from Taichung, Taiwan, Taiwan</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -393,18 +402,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/copenhagen.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Copenhagen?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Copenhagen well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Copenhagen" data-page="https://georgeclinkscalesdev.com/stamped-cities/copenhagen.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -415,7 +440,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="prague.html">Prague</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -445,7 +470,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

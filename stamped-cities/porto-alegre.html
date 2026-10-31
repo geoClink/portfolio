@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/porto-alegre.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -168,6 +168,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -212,6 +213,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "poa-ibere-camargo", "name": "Iberê Camargo Foundation", "lat": -30.077732, "lng": -51.2453919, "subtitle": "2008 · Álvaro Siza"}, {"id": "poa-public-market", "name": "Public Market of Porto Alegre", "lat": -30.0280671, "lng": -51.2276134, "subtitle": "1869 · Friedrich Heydtmann"}, {"id": "poa-cathedral", "name": "Metropolitan Cathedral of Porto Alegre", "lat": -30.0333192, "lng": -51.2317838, "subtitle": "1986 · Giovanni Battista Giovenale"}, {"id": "poa-ccmq", "name": "Casa de Cultura Mario Quintana", "lat": -30.0310943, "lng": -51.2344781, "subtitle": "1933 · Theodor Wiederspahn"}, {"id": "poa-beira-rio", "name": "Beira-Rio Stadium", "lat": -30.0654898, "lng": -51.2349178, "subtitle": "1969 · Hype Studio"}, {"id": "poa-farol-santander", "name": "Farol Santander (Old Guardianship Bank)", "lat": -30.0287413, "lng": -51.2304012, "subtitle": "1922 · Theodor Wiederspahn"}, {"id": "poa-gasometro", "name": "Usina do Gasômetro", "lat": -30.0340842, "lng": -51.2410902, "subtitle": "1928 · Engineer Joao Neves da Fontoura"}, {"id": "poa-theatro-sao-pedro", "name": "Theatro São Pedro", "lat": -30.0323687, "lng": -51.2305979, "subtitle": "1858 · Felipe de Oliveira"}, {"id": "poa-piratini", "name": "Palácio Piratini", "lat": -30.03306, "lng": -51.23, "subtitle": "1921 · Maurice Gras"}, {"id": "poa-margs", "name": "MARGS (Museum of Art of RS)", "lat": -30.0296672, "lng": -51.2303215, "subtitle": "1913 · Theodor Wiederspahn"}, {"id": "poa-cais-embarcadero", "name": "Cais Embarcadero", "lat": -30.0270249, "lng": -51.2311512, "subtitle": "2021 · Transversal Architecture"}, {"id": "poa-viaduto-otavio-rocha", "name": "Viaduto Otávio Rocha", "lat": -30.0386962, "lng": -51.2284076, "subtitle": "1932 · Manoel Barbosa Itaquy"}, {"id": "poa-apple-iguatemi", "name": "iPlace Apple Premium Partner (Iguatemi POA)", "lat": -30.03306, "lng": -51.23, "subtitle": "2016 · iPlace Design / Apple Retail Concept"}]}</script>
     </section>
@@ -224,8 +233,8 @@
                 <li><span class="fact-label">Currency</span><strong>Brazilian Real (R$)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Portuguese</strong><p>Portuguese is the sole official language and is spoken with a musical, open accent that differs significantly from the European version. Most locals appreciate any effort to speak &#x27;Português&#x27; and are very patient with learners.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>Curitiba BRT &amp; Metrô</strong><p>Curitiba was the global pioneer of the &#x27;Bus as a Train&#x27; concept, using iconic glass tube stations for level boarding. São Paulo&#x27;s Metrô is one of the cleanest and most efficient in the world, serving millions of passengers across six lines. Rio de Janeiro utilizes the &#x27;Bondinho&#x27; tram in Santa Teresa and a modern VLT light rail system in the revitalized port area.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DPorto%2520Alegre%252C%2520Brazil%26latLong%3D-30.03306%252C-51.23060" rel="sponsored noopener" target="_blank">Find hotels in Porto Alegre on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Porto%20Alegre%2C%20Brazil" rel="sponsored noopener" target="_blank">Find tours in Porto Alegre on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DPorto%2520Alegre%252C%2520Brazil%26latLong%3D-30.03306%252C-51.23060" rel="sponsored noopener" target="_blank">Find hotels in Porto Alegre on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DPorto%2520Alegre%252C%2520Brazil" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Porto%20Alegre%2C%20Brazil" rel="sponsored noopener" target="_blank">Find tours in Porto Alegre on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Porto%20Alegre%2C%20Brazil&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -264,7 +273,7 @@
                     <h3>Casa de Cultura Mario Quintana</h3>
                     <p class="address">Rua dos Andradas, 736, Centro Histórico, Porto Alegre, RS, 90020-004, Brazil</p>
                     <p>Originally known as the Hotel Majestic, this striking pink building is one of the most beloved cultural spaces in Porto Alegre. It is famous for its unique architecture, featuring two distinct wings connected by suspended walkways that span over a public street below. For many years, it served as the permanent home of the legendary Brazilian poet Mario Quintana, whose room is now a preserved museum. The building was saved from demolition and transformed into a multifaceted cultural center housing cinemas, libraries, and theaters. Its rooftop terrace offers one of the best spots in the city to watch the sunset over the Guaíba waters.</p>
-                    <dl><div><dt>Built</dt><dd>1933</dd></div><div><dt>Architect</dt><dd>Theodor Wiederspahn</dd></div><div><dt>Style</dt><dd>Eclectic</dd></div><div><dt>Height</dt><dd>30 m (98 ft)</dd></div><div><dt>Stories</dt><dd>7</dd></div><div><dt>Today</dt><dd>Cultural Center / Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1933</dd></div><div><dt>Architect</dt><dd><a href="architect-theodor-wiederspahn.html">Theodor Wiederspahn</a></dd></div><div><dt>Style</dt><dd>Eclectic</dd></div><div><dt>Height</dt><dd>30 m (98 ft)</dd></div><div><dt>Stories</dt><dd>7</dd></div><div><dt>Today</dt><dd>Cultural Center / Museum</dd></div></dl>
                 </li>
                 <li id="poa-beira-rio">
                     
@@ -280,7 +289,7 @@
                     <h3>Farol Santander (Old Guardianship Bank)</h3>
                     <p class="address">Rua Sete de Setembro, 1028, Centro Histórico, Porto Alegre, RS, 90010-191, Brazil</p>
                     <p>Farol Santander is a temple of French Neoclassical architecture that reflects the economic prosperity of the early 20th century in Southern Brazil. The building’s interior is a marvel of craftsmanship, featuring a massive stained-glass dome and ceilings adorned with genuine gold leaf. Originally built to house the state&#x27;s primary bank, the space has been meticulously restored into a world-class cultural center. Visitors can explore grand art galleries, a coin museum, and historical vaults that still retain their original heavy iron doors. It is a stunning example of how historic financial buildings can be repurposed to serve the public through art and education.</p>
-                    <dl><div><dt>Built</dt><dd>1922</dd></div><div><dt>Architect</dt><dd>Theodor Wiederspahn</dd></div><div><dt>Style</dt><dd>Neoclassical / Beaux-Arts</dd></div><div><dt>Height</dt><dd>28 m (92 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Cultural Center / Art Gallery</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1922</dd></div><div><dt>Architect</dt><dd><a href="architect-theodor-wiederspahn.html">Theodor Wiederspahn</a></dd></div><div><dt>Style</dt><dd>Neoclassical / Beaux-Arts</dd></div><div><dt>Height</dt><dd>28 m (92 ft)</dd></div><div><dt>Stories</dt><dd>5</dd></div><div><dt>Today</dt><dd>Cultural Center / Art Gallery</dd></div></dl>
                 </li>
                 <li id="poa-gasometro" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Usina_do_Gas%C3%B4metro_in_2025_%28zoom%29.jpg/960px-Usina_do_Gas%C3%B4metro_in_2025_%28zoom%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="600" alt="Usina do Gasômetro" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Usina_do_Gas%C3%B4metro_in_2025_(zoom).jpg" rel="noopener">Lenny Maidana</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -312,7 +321,7 @@
                     <h3>MARGS (Museum of Art of RS)</h3>
                     <p class="address">Praça da Alfândega, s/n, Centro Histórico, Porto Alegre, RS, 90010-150, Brazil</p>
                     <p>The Museum of Art of Rio Grande do Sul, known as MARGS, is the state&#x27;s most important institution for the visual arts. Originally built to house the regional tax office, the building features monumental statues and a grand central hall with a magnificent stained-glass ceiling. It is located in the historic Praça da Alfândega, surrounded by other architectural gems from the city&#x27;s &#x27;Great Center&#x27; era. The museum’s collection includes thousands of works by local masters and international artists, making it a primary destination for art lovers. Its neoclassical and eclectic details have been carefully preserved to provide a grand setting for contemporary exhibitions.</p>
-                    <dl><div><dt>Built</dt><dd>1913</dd></div><div><dt>Architect</dt><dd>Theodor Wiederspahn</dd></div><div><dt>Style</dt><dd>Neoclassical / Eclectic</dd></div><div><dt>Height</dt><dd>22 m (72 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1913</dd></div><div><dt>Architect</dt><dd><a href="architect-theodor-wiederspahn.html">Theodor Wiederspahn</a></dd></div><div><dt>Style</dt><dd>Neoclassical / Eclectic</dd></div><div><dt>Height</dt><dd>22 m (72 ft)</dd></div><div><dt>Stories</dt><dd>3</dd></div><div><dt>Today</dt><dd>Art Museum</dd></div></dl>
                 </li>
                 <li id="poa-cais-embarcadero">
                     
@@ -342,18 +351,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/porto-alegre.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Porto Alegre?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Porto Alegre well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Porto Alegre" data-page="https://georgeclinkscalesdev.com/stamped-cities/porto-alegre.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -394,7 +419,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

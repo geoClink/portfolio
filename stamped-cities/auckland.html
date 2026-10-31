@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/auckland.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "sky-tower-auckland", "name": "Sky Tower", "lat": -36.8490776, "lng": 174.7616161, "subtitle": "1997 · Craig Craig Moller"}, {"id": "auckland-art-gallery", "name": "Auckland Art Gallery Toi o Tāmaki", "lat": -36.8520151, "lng": 174.7665069, "subtitle": "2011 · FJMT + Archimedia"}, {"id": "auckland-museum", "name": "Auckland War Memorial Museum", "lat": -36.860278, "lng": 174.777778, "subtitle": "1929 · Grierson, Aimer, and Draffin"}, {"id": "pwc-tower-commercial-bay", "name": "PwC Tower at Commercial Bay", "lat": -36.8442296, "lng": 174.7658072, "subtitle": "2020 · Warren and Mahoney"}, {"id": "britomart-transport-centre", "name": "Britomart Transport Centre", "lat": -36.8440815, "lng": 174.7674151, "subtitle": "1912 · Claude Paton (1912) / Mario Madayag"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>New Zealand Dollar ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>English &amp; Māori</strong><p>English is the main language, but you will see a heavy and proud influence of Te Reo Māori in place names and daily greetings. Most official communications and signs are bilingual to honor the country&#x27;s indigenous heritage.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>Britomart &amp; AT Metro</strong><p>Britomart is a major transit hub and serves as the world&#x27;s only underground diesel railway station. AT Metro operates a fleet of electric trains that connect the southern, western, and eastern suburbs to the city center. Auckland&#x27;s extensive ferry network is a vital link for residents living on the North Shore and Waiheke Island.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAuckland%252C%2520New%2520Zealand%26latLong%3D-36.84908%252C174.76651" rel="sponsored noopener" target="_blank">Find hotels in Auckland on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Auckland%2C%20New%20Zealand" rel="sponsored noopener" target="_blank">Find tours in Auckland on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAuckland%252C%2520New%2520Zealand%26latLong%3D-36.84908%252C174.76651" rel="sponsored noopener" target="_blank">Find hotels in Auckland on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DAuckland%252C%2520New%2520Zealand" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Auckland%2C%20New%20Zealand" rel="sponsored noopener" target="_blank">Find tours in Auckland on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Auckland%2C%20New%20Zealand&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/auckland.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Auckland?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Auckland well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Auckland" data-page="https://georgeclinkscalesdev.com/stamped-cities/auckland.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

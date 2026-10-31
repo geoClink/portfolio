@@ -143,6 +143,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Moody_Memorial_Library_Waco_Texas_2016.jpg/960px-Moody_Memorial_Library_Waco_Texas_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_baylor_pat_neff_hall": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baylor_University_June_2016_19_(Founders_Mall_and_Pat_Neff_Hall).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Baylor_University_June_2016_19_%28Founders_Mall_and_Pat_Neff_Hall%29.jpg/960px-Baylor_University_June_2016_19_%28Founders_Mall_and_Pat_Neff_Hall%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 63 m",
+  "width": 800
+ },
  "campus_bc_bapst_library": {
   "author": "User:Boston Starbucks Rebel",
   "height": 1067,
@@ -305,6 +316,24 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/MOA_North_entrance.JPG/960px-MOA_North_entrance.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_caltech_athenaeum": {
+  "author": "Nick Webb",
+  "height": 531,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Caltech_Athenaeum_Exterior.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Caltech_Athenaeum_Exterior.jpg/960px-Caltech_Athenaeum_Exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_caltech_beckman_institute": {
+  "author": "Ross Berteig",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Reflecting_Beckman_Institute,_Caltech.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Reflecting_Beckman_Institute%2C_Caltech.jpg/960px-Reflecting_Beckman_Institute%2C_Caltech.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "campus_cambridge_bridge_of_sighs": {
   "author": "Diliff",
   "height": 533,
@@ -406,6 +435,111 @@
   "via": "commons-nearby 34 m",
   "width": 800
  },
+ "campus_cmich_kelly_shorts_stadium": {
+  "author": "PureMichiganChip",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kelly_Shorts_Stadium.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Kelly_Shorts_Stadium.jpg/960px-Kelly_Shorts_Stadium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_cmich_mcguirk_arena": {
+  "author": "The original uploader was Djfam at English Wikipedia.",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:McGuirk_Arena,_Central_Michigan_University.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/c/c1/McGuirk_Arena%2C_Central_Michigan_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_cmich_park_library": {
+  "author": "Stihl170",
+  "height": 600,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Atrium,_Park_Library.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/7/75/Atrium%2C_Park_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_cmu_doherty_hall": {
+  "author": "Tony Webster",
+  "height": 549,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Doherty_Hall_-_Engineering_and_Science_-_Carnegie_Mellon_University_(48069291522).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Doherty_Hall_-_Engineering_and_Science_-_Carnegie_Mellon_University_%2848069291522%29.jpg/960px-Doherty_Hall_-_Engineering_and_Science_-_Carnegie_Mellon_University_%2848069291522%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 77 m",
+  "width": 800
+ },
+ "campus_cmu_gates_hillman": {
+  "author": "Sdkb",
+  "height": 602,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gates_and_Hillman_Centers,_Carnegie_Mellon_University.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Gates_and_Hillman_Centers%2C_Carnegie_Mellon_University.jpg/960px-Gates_and_Hillman_Centers%2C_Carnegie_Mellon_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 36 m",
+  "width": 800
+ },
+ "campus_cmu_hamburg_hall": {
+  "author": "Nyttend",
+  "height": 425,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Main_Building,_U.S._Bureau_of_Mines.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Main_Building%2C_U.S._Bureau_of_Mines.jpg/960px-Main_Building%2C_U.S._Bureau_of_Mines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_cmu_hamerschlag_hall": {
+  "author": "Jiuguang Wang from Pittsburgh, Pennsylvania, United States",
+  "height": 533,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hamerschlag_Hall_at_Carnegie_Mellon_University.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Hamerschlag_Hall_at_Carnegie_Mellon_University.jpg/960px-Hamerschlag_Hall_at_Carnegie_Mellon_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 17 m",
+  "width": 800
+ },
+ "campus_cmu_mellon_institute": {
+  "author": "No machine-readable author provided. Piotrus assumed (based on copyright claims).",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mellon_Institute_01.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Mellon_Institute_01.JPG/960px-Mellon_Institute_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_cmu_walking_to_the_sky": {
+  "author": "doreen from Shanghai, China",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Walking_to_the_sky_in_NY.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/6/63/Walking_to_the_sky_in_NY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_colostate_canvas_stadium": {
+  "author": "FarGah1",
+  "height": 338,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Canvas_Stadium.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Canvas_Stadium.jpg/960px-Canvas_Stadium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_colostate_moby_arena": {
+  "author": "Porterland",
+  "height": 456,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Moby_Arena_2022.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Moby_Arena_2022.jpg/960px-Moby_Arena_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "campus_columbia_butler_library": {
   "author": "JSquish",
   "height": 465,
@@ -440,6 +574,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Philohall.JPEG",
   "src": "https://upload.wikimedia.org/wikipedia/commons/9/96/Philohall.JPEG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_columbia_st_pauls_chapel": {
+  "author": "Beyond My Ken",
+  "height": 978,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2014_Columbia_University_St._Paul%27s_Chapel_entrance.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/2014_Columbia_University_St._Paul%27s_Chapel_entrance.jpg/960px-2014_Columbia_University_St._Paul%27s_Chapel_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 20 m",
   "width": 800
  },
  "campus_cornell_andrew_dickson_white_house": {
@@ -685,6 +830,107 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Teviot_House%2C_University_of_Edinburgh_-_geograph.org.uk_-_7342053.jpg/960px-Teviot_House%2C_University_of_Edinburgh_-_geograph.org.uk_-_7342053.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_emory_candler_library": {
+  "author": "Marc Merlin",
+  "height": 450,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Asa_Griggs_Candler_Library_on_the_Quad_at_Emory_University.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Asa_Griggs_Candler_Library_on_the_Quad_at_Emory_University.jpg/960px-Asa_Griggs_Candler_Library_on_the_Quad_at_Emory_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 8 m",
+  "width": 800
+ },
+ "campus_emory_carlos_museum": {
+  "author": "Gary Todd from Xinzheng, China",
+  "height": 533,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Michael_C._Carlos_Museum,_Atlanta_(10453374255).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Michael_C._Carlos_Museum%2C_Atlanta_%2810453374255%29.jpg/960px-Michael_C._Carlos_Museum%2C_Atlanta_%2810453374255%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emory_goizueta": {
+  "author": "Alexanderfernbank",
+  "height": 710,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Goizuetabusinessschool.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Goizuetabusinessschool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_emory_lullwater_house": {
+  "author": "Donutboy102",
+  "height": 600,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Lullwater_House_Front.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Lullwater_House_Front.jpg/960px-Lullwater_House_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emory_schwartz_center": {
+  "author": "Daniel Mayer",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Donna_and_Marvin_Schwartz_Center_for_Performing_Arts.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Donna_and_Marvin_Schwartz_Center_for_Performing_Arts.JPG/960px-Donna_and_Marvin_Schwartz_Center_for_Performing_Arts.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emory_university_hospital": {
+  "author": "Emory University",
+  "height": 601,
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Emory_University_Hospital_Front_Entrance.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Emory_University_Hospital_Front_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_emory_woodruff_library": {
+  "author": "Brett Weinstein",
+  "height": 532,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Woodruff_Library.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Woodruff_Library.jpg/960px-Woodruff_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emu_bowen_field_house": {
+  "author": "SecretName101",
+  "height": 756,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bowen_Field_House_20190206_111011.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Bowen_Field_House_20190206_111011.jpg/960px-Bowen_Field_House_20190206_111011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emu_halle_library": {
+  "author": "Dwight Burdette",
+  "height": 363,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bruce_T._Halle_Library_Eastern_Michigan_University_Ypsilanti_Michigan.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Bruce_T._Halle_Library_Eastern_Michigan_University_Ypsilanti_Michigan.JPG/960px-Bruce_T._Halle_Library_Eastern_Michigan_University_Ypsilanti_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emu_pease_auditorium": {
+  "author": "Andrew Jameson",
+  "height": 484,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:PeaseAuditoriumEMUYpsilantiMI.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/PeaseAuditoriumEMUYpsilantiMI.jpg/960px-PeaseAuditoriumEMUYpsilantiMI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_emu_starkweather_hall": {
+  "author": "Pwojdacz",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Starkweather_Hall_2011_main_entrance.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Starkweather_Hall_2011_main_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
  "campus_fsu_doak_campbell": {
   "author": "SeminoleNation",
   "height": 600,
@@ -728,6 +974,17 @@
   "licenseUrl": null,
   "page": "https://commons.wikimedia.org/wiki/File:FSU_Westcott.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/FSU_Westcott.jpg/960px-FSU_Westcott.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_gatech_kendeda": {
+  "author": "KBISD",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Kendeda_Building.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/The_Kendeda_Building.jpg/960px-The_Kendeda_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 69 m",
   "width": 800
  },
  "campus_gatech_kessler_campanile": {
@@ -836,6 +1093,42 @@
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
   "page": "https://commons.wikimedia.org/wiki/File:Wfm_glasgow_university_union.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Wfm_glasgow_university_union.jpg/960px-Wfm_glasgow_university_union.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_gvsu_cook_carillon_tower": {
+  "author": "Photo: Mr. Kjetil Ree. Architect: ?",
+  "height": 1067,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Cook_Carillon_Tower.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cook_Carillon_Tower.JPG/960px-Cook_Carillon_Tower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_gvsu_fieldhouse": {
+  "author": "Demhem",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:GVSU_Fieldhouse.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/GVSU_Fieldhouse.JPG/960px-GVSU_Fieldhouse.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_gvsu_kirkhof_center": {
+  "author": "Mr. Kjetil Ree",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Kirkhof_Center_GVSU.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Kirkhof_Center_GVSU.JPG/960px-Kirkhof_Center_GVSU.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_gvsu_lubbers_stadium": {
+  "author": "WestMichigander",
+  "height": 467,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:LubbersStadium2021_Air.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/LubbersStadium2021_Air.jpg/960px-LubbersStadium2021_Air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_harvard_carpenter_center": {
@@ -1045,6 +1338,42 @@
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:WylieHouseBloomingtonIndiana.JPG",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/WylieHouseBloomingtonIndiana.JPG/960px-WylieHouseBloomingtonIndiana.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_jhu_homewood_field": {
+  "author": "Frederic C. Chalfant",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:HomewoodFIeld2008.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/HomewoodFIeld2008.jpg/960px-HomewoodFIeld2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_jhu_homewood_museum": {
+  "author": "Daderot",
+  "height": 600,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Homewood_Museum,_Johns_Hopkins_University,_Baltimore,_MD.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Homewood_Museum%2C_Johns_Hopkins_University%2C_Baltimore%2C_MD.jpg/960px-Homewood_Museum%2C_Johns_Hopkins_University%2C_Baltimore%2C_MD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_jhu_stsci": {
+  "author": "Space Telescope Science Institute",
+  "height": 600,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Muller_jhu_stsci.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Muller_jhu_stsci.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_jhu_wyman_park_building": {
+  "author": "Baltimore Heritage from Baltimore, MD, USA",
+  "height": 600,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:U.S._Marine_Hospital_Former_Wyman_Park_Health_System_(1934),_3100_Wyman_Park_Drive,_Baltimore,_MD_21211_(48865004811).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/U.S._Marine_Hospital_Former_Wyman_Park_Health_System_%281934%29%2C_3100_Wyman_Park_Drive%2C_Baltimore%2C_MD_21211_%2848865004811%29.jpg/960px-U.S._Marine_Hospital_Former_Wyman_Park_Health_System_%281934%29%2C_3100_Wyman_Park_Drive%2C_Baltimore%2C_MD_21211_%2848865004811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_kcl_chapel": {
@@ -1463,6 +1792,33 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/DavisWadeStadiumExpansion.jpg/960px-DavisWadeStadiumExpansion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_mtu_college_club_house": {
+  "author": "Andrew Jameson",
+  "height": 456,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:College_Club_House_and_Gymnasium_Houghton_MI.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/College_Club_House_and_Gymnasium_Houghton_MI.jpg/960px-College_Club_House_and_Gymnasium_Houghton_MI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_mtu_macinnes_arena": {
+  "author": "ObiusX at English Wikipedia",
+  "height": 600,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Macinnes.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Macinnes.JPG/960px-Macinnes.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_mtu_memorial_union": {
+  "author": "Bobak Ha'Eri",
+  "height": 511,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2009-0617-MTU-MemorialUnion.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/2009-0617-MTU-MemorialUnion.jpg/960px-2009-0617-MTU-MemorialUnion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "campus_ncstate_belltower": {
   "author": "Surrahwall",
   "height": 1202,
@@ -1578,6 +1934,116 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:WalshHallArchitecture1.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/WalshHallArchitecture1.jpg/960px-WalshHallArchitecture1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_bobst_library": {
+  "author": "Beyond My Ken",
+  "height": 1067,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bobst_Library_south_facade.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Bobst_Library_south_facade.jpg/960px-Bobst_Library_south_facade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_brown_building": {
+  "author": "Epicgenius",
+  "height": 1067,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Greenwich_Village_Manhattan_Oct_2025_51.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Greenwich_Village_Manhattan_Oct_2025_51.jpg/960px-Greenwich_Village_Manhattan_Oct_2025_51.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_casa_italiana": {
+  "author": "Dmadeo",
+  "height": 1067,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:24-west-12th.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/7/7c/24-west-12th.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_nyu_provincetown_playhouse": {
+  "author": "Beyond My Ken",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Provincetown_Playhouse_entrance.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Provincetown_Playhouse_entrance.jpg/960px-Provincetown_Playhouse_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_silver_center": {
+  "author": "ajay_suresh",
+  "height": 450,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:NYU_-_Silver_Center_(51661015069).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/NYU_-_Silver_Center_%2851661015069%29.jpg/960px-NYU_-_Silver_Center_%2851661015069%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_silver_towers": {
+  "author": "SilverTowers-wide.jpg: how_long_it_takes derivative work: MBisanz talk",
+  "height": 717,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:UniversityVillage-cropped.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/UniversityVillage-cropped.jpg/960px-UniversityVillage-cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_nyu_skirball_center": {
+  "author": "Ajay Suresh from New York, NY, USA",
+  "height": 450,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Skirball_Center_(48072764727).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Skirball_Center_%2848072764727%29.jpg/960px-Skirball_Center_%2848072764727%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_oakland_elliott_tower": {
+  "author": "Local hero",
+  "height": 690,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:ElliottTowerOU.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/ElliottTowerOU.jpg/960px-ElliottTowerOU.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_oakland_john_dodge_house": {
+  "author": "ajay_suresh",
+  "height": 450,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:John_Dodge_House_(51379083883).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/John_Dodge_House_%2851379083883%29.jpg/960px-John_Dodge_House_%2851379083883%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_oakland_meadow_brook_hall": {
+  "author": "Wm. Chris Rowland, II",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Meadowbrook_Hall.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Meadowbrook_Hall.JPG/960px-Meadowbrook_Hall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_oakland_orena": {
+  "author": "Stillnotjayjay",
+  "height": 603,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:OU_Credit_Union_O%27rena.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/OU_Credit_Union_O%27rena.jpg/960px-OU_Credit_Union_O%27rena.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ohiostate_knowlton_hall": {
+  "author": "Blervis",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Knowlton_Hall_OSU_South.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Knowlton_Hall_OSU_South.jpg/960px-Knowlton_Hall_OSU_South.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 33 m",
   "width": 800
  },
  "campus_ohiostate_ohio_stadium": {
@@ -2023,6 +2489,53 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Purdue_Student_Union.JPG/960px-Purdue_Student_Union.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_rice_baker_hall": {
+  "author": "U.S. Department of State from United States",
+  "height": 533,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Secretary_Kerry_Walks_With_Rice_University_Historian_Brinkley_Across_Rice%27s_Campus_in_Houston_(26667575775).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Secretary_Kerry_Walks_With_Rice_University_Historian_Brinkley_Across_Rice%27s_Campus_in_Houston_%2826667575775%29.jpg/960px-Secretary_Kerry_Walks_With_Rice_University_Historian_Brinkley_Across_Rice%27s_Campus_in_Houston_%2826667575775%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_rice_fondren_library": {
+  "author": "Leonard Lane",
+  "height": 450,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fondren_Library,_Rice_University.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Fondren_Library%2C_Rice_University.JPG/960px-Fondren_Library%2C_Rice_University.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_rice_maxfield_hall": {
+  "author": "Kenneth C. Zirkel",
+  "height": 380,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Maxfield_Hall_Rice_University,_Houston,_Texas.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Maxfield_Hall_Rice_University%2C_Houston%2C_Texas.jpg/960px-Maxfield_Hall_Rice_University%2C_Houston%2C_Texas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 61 m",
+  "width": 800
+ },
+ "campus_rice_stadium": {
+  "author": "Quintin Soloviev",
+  "height": 591,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Rice_Stadium_in_Houston,_Texas_2024.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Aerial_view_of_Rice_Stadium_in_Houston%2C_Texas_2024.jpg/960px-Aerial_view_of_Rice_Stadium_in_Houston%2C_Texas_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_rice_tudor_fieldhouse": {
+  "author": "2C2K Photography",
+  "height": 533,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rice_vs._Jarvis_Christian_MBB_12-19-22_(3).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Rice_vs._Jarvis_Christian_MBB_12-19-22_%283%29.jpg/960px-Rice_vs._Jarvis_Christian_MBB_12-19-22_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "campus_rutgers_geology_hall": {
   "author": "Zeete",
   "height": 533,
@@ -2315,6 +2828,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/George_Bush_Presidential_Library.jpg/960px-George_Bush_Presidential_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_tcd_museum_building": {
+  "author": "David Purchase",
+  "height": 1067,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_entrance_hall_of_the_Museum_Building,_Trinity_College_Dublin_-_geograph.org.uk_-_4090631.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/The_entrance_hall_of_the_Museum_Building%2C_Trinity_College_Dublin_-_geograph.org.uk_-_4090631.jpg/960px-The_entrance_hall_of_the_Museum_Building%2C_Trinity_College_Dublin_-_geograph.org.uk_-_4090631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 2 m",
+  "width": 800
+ },
  "campus_tcd_old_library": {
   "author": "Patrick Theiner",
   "height": 419,
@@ -2396,6 +2920,62 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:West_Hall_at_Texas_Tech_University.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/West_Hall_at_Texas_Tech_University.jpg/960px-West_Hall_at_Texas_Tech_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_tulane_devlin_fieldhouse": {
+  "author": "DHSgov",
+  "height": 533,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:DHS_Agencies_Support_Super_Bowl_LIX_Security_February_2025_-_21.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/DHS_Agencies_Support_Super_Bowl_LIX_Security_February_2025_-_21.jpg/960px-DHS_Agencies_Support_Super_Bowl_LIX_Security_February_2025_-_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_tulane_gibson_hall": {
+  "author": "Unknown author",
+  "height": 402,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:TulaneUGibson1910s.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TulaneUGibson1910s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_tulane_howard_tilton_library": {
+  "author": "ajay_suresh",
+  "height": 533,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Howard-Tilton_Memorial_Library_-_Tulane_University_February_2026.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Howard-Tilton_Memorial_Library_-_Tulane_University_February_2026.jpg/960px-Howard-Tilton_Memorial_Library_-_Tulane_University_February_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_tulane_richardson_memorial": {
+  "author": "EEJCC",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Richardson_Memorial,_Tulane_University.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Richardson_Memorial%2C_Tulane_University.jpg/960px-Richardson_Memorial%2C_Tulane_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 28 m",
+  "width": 800
+ },
+ "campus_tulane_woldenberg_art_center": {
+  "author": "HarrietSophie",
+  "height": 1142,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Newcomb_Art_Museum,_Woldenberg_Art_Center.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Newcomb_Art_Museum%2C_Woldenberg_Art_Center.jpg/960px-Newcomb_Art_Museum%2C_Woldenberg_Art_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_tulane_yulman_stadium": {
+  "author": "ajay_suresh",
+  "height": 450,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Yulman_Stadium_-_Tulane_Green_Wave_(55143965690).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Yulman_Stadium_-_Tulane_Green_Wave_%2855143965690%29.jpg/960px-Yulman_Stadium_-_Tulane_Green_Wave_%2855143965690%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_ua_denny_chimes": {
@@ -2508,6 +3088,17 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Old_Main_Arkansas_view.jpg/960px-Old_Main_Arkansas_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_ubc_chan_centre": {
+  "author": "Guilhem Vellut from Annecy, France",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chan_Centre_for_the_Performing_Arts_@_UBC_(5648184223).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Chan_Centre_for_the_Performing_Arts_%40_UBC_%285648184223%29.jpg/960px-Chan_Centre_for_the_Performing_Arts_%40_UBC_%285648184223%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 40 m",
+  "width": 800
+ },
  "campus_ubc_nitobe_memorial_garden": {
   "author": "AirplaneMood",
   "height": 600,
@@ -2605,6 +3196,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rockefeller_Chapel_by_Matthew_Bisanz.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Rockefeller_Chapel_by_Matthew_Bisanz.jpg/960px-Rockefeller_Chapel_by_Matthew_Bisanz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucincy_aronoff_center": {
+  "author": "fusion-of-horizons",
+  "height": 800,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Aronoff_Center_for_Design_and_Art_(2134119492).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Aronoff_Center_for_Design_and_Art_%282134119492%29.jpg/960px-Aronoff_Center_for_Design_and_Art_%282134119492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 37 m",
   "width": 800
  },
  "campus_ucincy_nippert_stadium": {
@@ -2994,6 +3596,17 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Coffman_Memorial_Union_2020.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Coffman_Memorial_Union_2020.jpg/960px-Coffman_Memorial_Union_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_umn_northrop": {
+  "author": "August Schwerdfeger",
+  "height": 1212,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Northrop_Memorial_Auditorium_front_lobby_2017-04-08.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Northrop_Memorial_Auditorium_front_lobby_2017-04-08.jpg/960px-Northrop_Memorial_Auditorium_front_lobby_2017-04-08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 28 m",
   "width": 800
  },
  "campus_umn_walter_library": {
@@ -3679,6 +4292,107 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Solitude_building%2C_winter_2012.JPG/960px-Solitude_building%2C_winter_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_washu_brookings_hall": {
+  "author": "Endersan",
+  "height": 600,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:WUBrook.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/WUBrook.JPG/960px-WUBrook.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_washu_francis_gymnasium": {
+  "author": "LittleT889",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Francis_Gymnasium.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Francis_Gymnasium.jpg/960px-Francis_Gymnasium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_washu_kemper_art_museum": {
+  "author": "Shubinator",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kemper_Art_Museum_at_Wash_U.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Kemper_Art_Museum_at_Wash_U.jpg/960px-Kemper_Art_Museum_at_Wash_U.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_freer_house": {
+  "author": "Andrew Jameson (talk) at en.wikipedia",
+  "height": 425,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Charles_Lang_Freer_House.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Charles_Lang_Freer_House.jpg/960px-Charles_Lang_Freer_House.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_hilberry_gateway": {
+  "author": "Saul Vielmetti",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hilberry_Gateway_Construction_1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Hilberry_Gateway_Construction_1.jpg/960px-Hilberry_Gateway_Construction_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_hilberry_theatre": {
+  "author": "Saul Vielmetti",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Valade_Jazz_Center_Construction_Progress.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Valade_Jazz_Center_Construction_Progress.jpg/960px-Valade_Jazz_Center_Construction_Progress.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_maccabees_building": {
+  "author": "Andrew Jameson",
+  "height": 963,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MacabeesBuilding2010.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/MacabeesBuilding2010.jpg/960px-MacabeesBuilding2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_mcgregor_center": {
+  "author": "Matt Joseph",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2025-07-23_-_McGregor_Memorial_Conference_Center_in_Detroit_MI_US_1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/2025-07-23_-_McGregor_Memorial_Conference_Center_in_Detroit_MI_US_1.jpg/960px-2025-07-23_-_McGregor_Memorial_Conference_Center_in_Detroit_MI_US_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_old_main": {
+  "author": "Del arte at English Wikipedia",
+  "height": 622,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Old_Main_WSU_-_Detroit_Michigan.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Old_Main_WSU_-_Detroit_Michigan.jpg/960px-Old_Main_WSU_-_Detroit_Michigan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wayne_reuther_library": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Detroit_December_2021_04_(Wayne_State_University_Walter_P._Reuther_Library).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Detroit_December_2021_04_%28Wayne_State_University_Walter_P._Reuther_Library%29.jpg/960px-Detroit_December_2021_04_%28Wayne_State_University_Walter_P._Reuther_Library%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 52 m",
+  "width": 800
+ },
+ "campus_wayne_undergraduate_library": {
+  "author": "Friendsforever3050",
+  "height": 600,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:David_Adamany_Undergraduate_Library_02565.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/David_Adamany_Undergraduate_Library_02565.jpg/960px-David_Adamany_Undergraduate_Library_02565.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "campus_wfu_reynolda_hall": {
   "author": "Seasider53",
   "height": 1067,
@@ -3758,6 +4472,69 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Washburn_Observatory_(53325395055).jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Washburn_Observatory_%2853325395055%29.jpg/960px-Washburn_Observatory_%2853325395055%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_fetzer_center": {
+  "author": "Auxiliary Enterprises, Western Michigan University",
+  "height": 540,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Fetzer_Center_WMU.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Fetzer_Center_WMU.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_wmu_heritage_hall": {
+  "author": "Fbthpg",
+  "height": 599,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Western_Michigan_University_East_Hall.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Western_Michigan_University_East_Hall.JPG/960px-Western_Michigan_University_East_Hall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_hyames_field": {
+  "author": "Joel Dinda",
+  "height": 536,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hyames_Field_(7166939224).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Hyames_Field_%287166939224%29.jpg/960px-Hyames_Field_%287166939224%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_lawson_arena": {
+  "author": "Brian Rawson-Ketchum from Springfield, MI, US",
+  "height": 600,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Michigan_State_at_Western_Michigan_(5165745908).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Michigan_State_at_Western_Michigan_%285165745908%29.jpg/960px-Michigan_State_at_Western_Michigan_%285165745908%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_richmond_center": {
+  "author": "C4jones2",
+  "height": 450,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Richmond_Center_for_Visual_Arts,_Western_Michigan_University,_Kalamazoo,_Michigan,_front_of_building_from_fountain,_fall_2012.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Richmond_Center_for_Visual_Arts%2C_Western_Michigan_University%2C_Kalamazoo%2C_Michigan%2C_front_of_building_from_fountain%2C_fall_2012.jpg/960px-Richmond_Center_for_Visual_Arts%2C_Western_Michigan_University%2C_Kalamazoo%2C_Michigan%2C_front_of_building_from_fountain%2C_fall_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_university_arena": {
+  "author": "BenjaminSmithChef",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Western_Michigan_Broncos_women%27s_basketball_1985_MAC.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Western_Michigan_Broncos_women%27s_basketball_1985_MAC.jpg/960px-Western_Michigan_Broncos_women%27s_basketball_1985_MAC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_wmu_waldo_stadium": {
+  "author": "Whippdog",
+  "height": 345,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Waldo_Stadium,_October_8,_2016.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Waldo_Stadium%2C_October_8%2C_2016.jpg/960px-Waldo_Stadium%2C_October_8%2C_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_wvu_elizabeth_moore": {

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/orlando.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -150,6 +150,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -194,6 +195,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "orl_cinderella_castle", "name": "Cinderella Castle", "lat": 28.4190753, "lng": -81.5817158, "subtitle": "1971 · Herbert Ryman"}, {"id": "orl_spaceship_earth", "name": "Spaceship Earth", "lat": 28.3714061, "lng": -81.5489587, "subtitle": "1982 · Wallace Floyd Design Group"}, {"id": "orl_dr_phillips_center", "name": "Dr. Phillips Center for the Performing Arts", "lat": 28.5377847, "lng": -81.377297, "subtitle": "2014 · Barton Myers Associates"}, {"id": "orl_lake_eola_pagoda", "name": "Chinese Pagoda at Lake Eola", "lat": 28.5436641, "lng": -81.3673426, "subtitle": "1987"}, {"id": "orl_orlando_public_library", "name": "Orlando Public Library", "lat": 28.5425394, "lng": -81.3766818, "subtitle": "1966 · John M. Johansen"}, {"id": "orl_creative_village_ea", "name": "EA Orlando (Creative Village)", "lat": 28.5493884, "lng": -81.3825015, "subtitle": "2021 · Baker Barrios Architects"}, {"id": "orl_suntrust_center", "name": "Truist Plaza (SunTrust Center)", "lat": 28.5400099, "lng": -81.3794971, "subtitle": "1988 · Skidmore, Owings & Merrill"}, {"id": "orl_citrus_bowl", "name": "Camping World Stadium", "lat": 28.538374, "lng": -81.401394, "subtitle": "1936 · HNTB (Renovation)"}, {"id": "orl_science_center", "name": "Orlando Science Center", "lat": 28.5702808, "lng": -81.3647912, "subtitle": "1997 · HHCP Architects"}, {"id": "orl_the_wheel", "name": "The Wheel at ICON Park", "lat": 28.4436157, "lng": -81.468754, "subtitle": "2015 · Intamin"}, {"id": "orl_apple_millenia", "name": "Apple Millenia", "lat": 28.4840857, "lng": -81.4300389, "subtitle": "2002 · Apple Inc. Design Team"}]}</script>
     </section>
@@ -206,8 +215,8 @@
                 <li><span class="fact-label">Currency</span><strong>US Dollar ($)</strong></li>
                 <li><span class="fact-label">Language</span><strong>English</strong><p>The language here is generally a very neutral &#x27;Standard American,&#x27; largely to accommodate the millions of international tourists that visit annually. However, the presence of a large Puerto Rican community ensures that Spanish is also a major and influential part of the local linguistic landscape.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>SunRail &amp; Lynx</strong><p>SunRail is a double-decker commuter train system equipped with work tables and free Wi-Fi. The Lynx bus network provides the primary local transit, including the free LYMMO circulator in the downtown core. Brightline&#x27;s high-speed rail now connects Orlando International Airport directly to South Florida.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DOrlando%252C%2520United%2520States%26latLong%3D28.53837%252C-81.38250" rel="sponsored noopener" target="_blank">Find hotels in Orlando on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Orlando%2C%20United%20States" rel="sponsored noopener" target="_blank">Find tours in Orlando on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DOrlando%252C%2520United%2520States%26latLong%3D28.53837%252C-81.38250" rel="sponsored noopener" target="_blank">Find hotels in Orlando on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DOrlando%252C%2520United%2520States" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Orlando%2C%20United%20States" rel="sponsored noopener" target="_blank">Find tours in Orlando on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Orlando%2C%20United%20States&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -270,7 +279,7 @@
                     <h3>Truist Plaza (SunTrust Center)</h3>
                     <p class="address">200 S Orange Ave, Orlando, FL 32801</p>
                     <p>Standing as the tallest building in downtown Orlando, this tower is a landmark of the city skyline. It is easily recognized by the four green-lit pyramids that sit atop its roof. The post-modern design utilizes pink granite and reflective glass to create a commanding presence. It has served as the dominant commercial hub of the city since the late 1980s. The plaza at its base offers a sophisticated environment for business professionals and visitors alike.</p>
-                    <dl><div><dt>Built</dt><dd>1988</dd></div><div><dt>Architect</dt><dd>Skidmore, Owings &amp; Merrill</dd></div><div><dt>Style</dt><dd>Post-Modern</dd></div><div><dt>Height</dt><dd>134 m (440 ft)</dd></div><div><dt>Stories</dt><dd>30</dd></div><div><dt>Today</dt><dd>Office Tower</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1988</dd></div><div><dt>Architect</dt><dd><a href="architect-skidmore-owings-and-merrill.html">Skidmore, Owings &amp; Merrill</a></dd></div><div><dt>Style</dt><dd>Post-Modern</dd></div><div><dt>Height</dt><dd>134 m (440 ft)</dd></div><div><dt>Stories</dt><dd>30</dd></div><div><dt>Today</dt><dd>Office Tower</dd></div></dl>
                 </li>
                 <li id="orl_citrus_bowl" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Camping_World_Stadium.jpg/960px-Camping_World_Stadium.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="572" alt="Camping World Stadium" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:Camping_World_Stadium.jpg" rel="noopener">Quintin Soloviev</a>, <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener">CC BY 4.0</a>, via Wikimedia Commons</figcaption></figure>
@@ -302,24 +311,40 @@
                     <h3>Apple Millenia</h3>
                     <p class="address">4200 Conroy Rd, Orlando, FL 32839</p>
                     <p>Located within the luxury Mall at Millenia, this retail space features a soaring glass facade. The interior design emphasizes symmetry and light through a wide-open &#x27;forum&#x27; layout. It utilizes premium materials like bead-blasted stainless steel and Italian light-gray stone. Following a major renovation in 2018, the store became a flagship example of modern minimalism. It serves as a sleek architectural anchor for Orlando&#x27;s premier high-fashion shopping district.</p>
-                    <dl><div><dt>Built</dt><dd>2002</dd></div><div><dt>Architect</dt><dd>Apple Inc. Design Team</dd></div><div><dt>Style</dt><dd>Modern Minimalism</dd></div><div><dt>Height</dt><dd>10 m (33 ft)</dd></div><div><dt>Stories</dt><dd>1</dd></div><div><dt>Today</dt><dd>Retail</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>2002</dd></div><div><dt>Architect</dt><dd><a href="architect-apple-inc-design-team.html">Apple Inc. Design Team</a></dd></div><div><dt>Style</dt><dd>Modern Minimalism</dd></div><div><dt>Height</dt><dd>10 m (33 ft)</dd></div><div><dt>Stories</dt><dd>1</dd></div><div><dt>Today</dt><dd>Retail</dd></div></dl>
                 </li>
             </ol>
+        </div>
+    </section>
+
+    <section class="quiz" data-quiz="quiz/orlando.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Orlando?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
         </div>
     </section>
 
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Orlando well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Orlando" data-page="https://georgeclinkscalesdev.com/stamped-cities/orlando.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -330,7 +355,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in North America</h2>
-            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="boston.html">Boston</a></li><li><a href="buffalo.html">Buffalo</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="havana.html">Havana</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
+            <ul class="city-chips"><li><a href="asheville.html">Asheville</a></li><li><a href="atlanta.html">Atlanta</a></li><li><a href="austin.html">Austin</a></li><li><a href="baltimore.html">Baltimore</a></li><li><a href="boston.html">Boston</a></li><li><a href="buffalo.html">Buffalo</a></li><li><a href="charleston.html">Charleston</a></li><li><a href="chicago.html">Chicago</a></li><li><a href="cleveland.html">Cleveland</a></li><li><a href="columbus-indiana.html">Columbus, Indiana</a></li><li><a href="cupertino.html">Cupertino</a></li><li><a href="dallas.html">Dallas</a></li><li><a href="denver.html">Denver</a></li><li><a href="detroit.html">Detroit</a></li><li><a href="fort-worth.html">Fort Worth</a></li><li><a href="guadalajara.html">Guadalajara</a></li><li><a href="havana.html">Havana</a></li><li><a href="honolulu.html">Honolulu</a></li><li><a href="houston.html">Houston</a></li><li><a href="kansas-city.html">Kansas City</a></li><li><a href="las-vegas.html">Las Vegas</a></li><li><a href="los-angeles.html">Los Angeles</a></li><li><a href="mexico-city.html">Mexico City</a></li><li><a href="miami.html">Miami</a></li><li><a href="minnesota.html">Minnesota</a></li><li><a href="montreal.html">Montreal</a></li><li><a href="nashville.html">Nashville</a></li><li><a href="new-orleans.html">New Orleans</a></li><li><a href="new-york.html">New York</a></li><li><a href="oak-park.html">Oak Park</a></li><li><a href="palm-springs.html">Palm Springs</a></li><li><a href="philadelphia.html">Philadelphia</a></li><li><a href="phoenix.html">Phoenix</a></li><li><a href="pittsburgh.html">Pittsburgh</a></li><li><a href="portland.html">Portland</a></li><li><a href="quebec-city.html">Quebec City</a></li><li><a href="san-diego.html">San Diego</a></li><li><a href="san-francisco.html">San Francisco</a></li><li><a href="savannah.html">Savannah</a></li><li><a href="seattle.html">Seattle</a></li><li><a href="st-louis.html">St. Louis</a></li><li><a href="toronto.html">Toronto</a></li><li><a href="vancouver.html">Vancouver</a></li><li><a href="victoria.html">Victoria</a></li><li><a href="washington-d-c.html">Washington D.C.</a></li></ul>
         </div>
     </section>
 
@@ -360,7 +385,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

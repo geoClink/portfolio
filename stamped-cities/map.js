@@ -1,5 +1,7 @@
 // Live Apple Map for a city guide: every landmark pinned, and a Look Around preview of the
 // one you tap. MapKit JS only loads when the map scrolls near. The token comes from map-token.js.
+// Each pick is announced with a "stamped:landmark" event on the section, which nearby.js uses
+// to list restaurants and hotels around that landmark.
 (function () {
     var section = document.querySelector('[data-city-map]');
     var dataEl = document.getElementById('map-data');
@@ -69,12 +71,18 @@
             isRotationEnabled: true
         });
         map.showItems(markers, { animate: false, padding: new mapkit.Padding(56, 40, 56, 40) });
+        function pick(marker) {
+            showLookAround(marker);
+            section.dispatchEvent(new CustomEvent('stamped:landmark', {
+                detail: { map: map, landmark: marker.landmark, coordinate: marker.coordinate }
+            }));
+        }
         map.addEventListener('select', function (event) {
-            if (event.annotation && event.annotation.landmark) showLookAround(event.annotation);
+            if (event.annotation && event.annotation.landmark) pick(event.annotation);
         });
         if (markers.length) {
             markers[0].selected = true;   // shows its name, matching the Look Around preview
-            showLookAround(markers[0]);
+            pick(markers[0]);
         }
     };
 
@@ -84,7 +92,7 @@
         script.crossOrigin = 'anonymous';
         script.async = true;
         script.dataset.callback = 'initStampedCityMap';
-        script.dataset.libraries = 'map,annotations,look-around';
+        script.dataset.libraries = 'map,annotations,look-around,services';   // services: nearby.js's search
         script.dataset.token = window.STAMPED_MAPKIT_TOKEN;
         script.onerror = fail;
         document.head.appendChild(script);

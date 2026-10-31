@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/amman.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "amman-citadel", "name": "Amman Citadel", "lat": 31.9526, "lng": 35.9314, "subtitle": "1500 BC · Various ancient civilisations"}, {"id": "amman-roman-theatre", "name": "Roman Theatre (Amman)", "lat": 31.9517, "lng": 35.9344, "subtitle": "169 · Roman architects"}, {"id": "amman-jordan-museum", "name": "Jordan Museum", "lat": 31.9466, "lng": 35.9196, "subtitle": "2014 · Dar Al-Omran"}, {"id": "amman-rainbow-street", "name": "Rainbow Street, Amman", "lat": 31.9573, "lng": 35.9218, "subtitle": "1920 · N/A (historic street)"}, {"id": "amman-king-abdullah-mosque", "name": "King Abdullah I Mosque", "lat": 31.9682, "lng": 35.9093, "subtitle": "1989 · Rasem Badran"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Jordanian Dinar (JD)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Arabic</strong><p>Jordanian Arabic (Levantine dialect) is the everyday spoken language and is considered one of the most clearly pronounced and accessible Arabic dialects for learners. Modern Standard Arabic is used in formal writing and media. English is widely spoken in business, hotels, and by the young educated population. Jordan has a long tradition of welcoming refugees and hosting diaspora communities, making Amman a uniquely cosmopolitan city by regional standards.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>JETT Buses &amp; Taxis</strong><p>Amman does not have a metro or light rail system — the city is built across seven hills (originally, now more) and has historically resisted underground transit development. The Jordan Express Tourist Transport (JETT) runs intercity buses to major destinations including Petra and Aqaba. Within the city, yellow taxis are metered and widely available. A Bus Rapid Transit line was approved and is planned for the city&#x27;s busiest corridor.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAmman%252C%2520Jordan%26latLong%3D31.95260%252C35.92180" rel="sponsored noopener" target="_blank">Find hotels in Amman on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Amman%2C%20Jordan" rel="sponsored noopener" target="_blank">Find tours in Amman on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DAmman%252C%2520Jordan%26latLong%3D31.95260%252C35.92180" rel="sponsored noopener" target="_blank">Find hotels in Amman on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DAmman%252C%2520Jordan" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Amman%2C%20Jordan" rel="sponsored noopener" target="_blank">Find tours in Amman on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Amman%2C%20Jordan&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/amman.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Amman?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Amman well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Amman" data-page="https://georgeclinkscalesdev.com/stamped-cities/amman.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -228,7 +253,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Asia</h2>
-            <ul class="city-chips"><li><a href="abu-dhabi.html">Abu Dhabi</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="ho-chi-minh-city.html">Ho Chi Minh City</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
+            <ul class="city-chips"><li><a href="abu-dhabi.html">Abu Dhabi</a></li><li><a href="bali.html">Bali</a></li><li><a href="bangkok.html">Bangkok</a></li><li><a href="batam.html">Batam</a></li><li><a href="beijing.html">Beijing</a></li><li><a href="bengaluru.html">Bengaluru</a></li><li><a href="central-jakarta.html">Central Jakarta</a></li><li><a href="chandigarh.html">Chandigarh</a></li><li><a href="chengdu.html">Chengdu</a></li><li><a href="chiang-mai.html">Chiang Mai</a></li><li><a href="colombo.html">Colombo</a></li><li><a href="dhaka.html">Dhaka</a></li><li><a href="doha.html">Doha</a></li><li><a href="dubai.html">Dubai</a></li><li><a href="fukuoka.html">Fukuoka</a></li><li><a href="ho-chi-minh-city.html">Ho Chi Minh City</a></li><li><a href="hong-kong.html">Hong Kong</a></li><li><a href="jaipur.html">Jaipur</a></li><li><a href="kathmandu.html">Kathmandu</a></li><li><a href="kuala-lumpur.html">Kuala Lumpur</a></li><li><a href="kyoto.html">Kyoto</a></li><li><a href="manila.html">Manila</a></li><li><a href="mumbai.html">Mumbai</a></li><li><a href="muscat.html">Muscat</a></li><li><a href="new-delhi.html">New Delhi</a></li><li><a href="osaka.html">Osaka</a></li><li><a href="pohang.html">Pohang</a></li><li><a href="riyadh.html">Riyadh</a></li><li><a href="sanaa.html">Sana&#x27;a</a></li><li><a href="seoul.html">Seoul</a></li><li><a href="shanghai.html">Shanghai</a></li><li><a href="singapore.html">Singapore</a></li><li><a href="surabaya.html">Surabaya</a></li><li><a href="taipei.html">Taipei</a></li><li><a href="tangerang.html">Tangerang</a></li><li><a href="tel-aviv.html">Tel Aviv</a></li><li><a href="tokyo.html">Tokyo</a></li><li><a href="xian.html">Xi&#x27;an</a></li></ul>
         </div>
     </section>
 
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>

@@ -35,3 +35,53 @@
 @media (min-width: 768px) {
     .tradition-list { grid-template-columns: 1fr 1fr; }
 }
+
+/* The app's campus cards: History, Student life, Game day, Campus events */
+.campus-card { padding: 0 0 56px; }
+.campus-card .source-note { color: var(--color-muted); font-size: 14px; margin: 8px 0 0; }
+.campus-card .source-note a { color: inherit; }
+.card-link { margin: 16px 0 0; }
+.card-link a { color: var(--color-accent-ink); font-weight: 600; text-decoration: none; }
+.card-link a:hover { text-decoration: underline; }
+
+.founded {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    font-weight: 600;
+}
+.history-text { max-width: 70ch; line-height: 1.65; margin: 8px 0 0; }
+
+.life-heading, .titles-heading { font-family: var(--font-serif); font-size: 20px; margin: 24px 0 12px; }
+.titles-heading .count { color: var(--color-accent-ink); margin-left: 8px; }
+.life-list, .title-list, .event-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.life-list li, .title-list li, .event-list li {
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    padding: 16px 18px;
+}
+.life-list h4 { margin: 0 0 4px; font-family: var(--font-serif); font-size: 18px; }
+.life-list p { margin: 0 0 8px; color: var(--color-muted); line-height: 1.55; }
+.map-link { color: var(--color-accent-ink); font-size: 14px; font-weight: 600; text-decoration: none; }
+.title-list li { display: flex; flex-direction: column; gap: 2px; }
+.title-list span { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+/* Stadium and arena photos scroll sideways, like the app */
+.venue-photos { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+.venue-photos figure { flex: 0 0 min(280px, 80vw); margin: 0; scroll-snap-align: start; }
+.venue-photos img { width: 100%; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 12px; display: block; }
+.venue-photos figcaption { display: flex; flex-direction: column; gap: 2px; margin-top: 6px; font-size: 14px; }
+.venue-photos figcaption a { color: var(--color-muted); font-size: 12px; }
+
+.event-list a { display: flex; flex-direction: column; gap: 2px; color: inherit; text-decoration: none; }
+.event-list strong { font-family: var(--font-serif); font-size: 17px; }
+.event-when, .event-where { color: var(--color-muted); font-size: 14px; }
+.event-list a:hover strong { color: var(--color-accent-ink); }
+
+@media (min-width: 768px) {
+    .life-list, .title-list, .event-list { grid-template-columns: 1fr 1fr; }
+}

@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-cities/prague.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="cities.css?v=d8e36791" />
+    <link rel="stylesheet" href="cities.css?v=db8479f3" />
     <script type="application/ld+json">
     [
         {
@@ -96,6 +96,7 @@
         }
     ]
     </script>
+    <link rel="stylesheet" href="search.css?v=8486feb1" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -140,6 +141,14 @@
                     <p class="look-around-status" aria-live="polite"></p>
                 </div>
             </div>
+            <div class="nearby" data-nearby hidden>
+                <h3 class="nearby-title">Eat and stay near <span class="nearby-landmark"></span></h3>
+                <div class="nearby-grid">
+                    <div class="nearby-group"><h4 class="fact-label">Restaurants</h4><ul class="nearby-list" data-list="restaurants"></ul></div>
+                    <div class="nearby-group"><h4 class="fact-label">Hotels</h4><ul class="nearby-list" data-list="hotels"></ul></div>
+                </div>
+                <p class="nearby-note">From Apple Maps. Walking times are estimates from straight-line distance.</p>
+            </div>
         </div>
         <script type="application/json" id="map-data">{"landmarks": [{"id": "dancing-house", "name": "Dancing House", "lat": 50.0755185, "lng": 14.4141995, "subtitle": "1996 · Frank Gehry / Vlado Milunić"}, {"id": "st-vitus-cathedral", "name": "St. Vitus Cathedral", "lat": 50.090833, "lng": 14.400556, "subtitle": "1344 · Matthias of Arras / Peter Parler"}, {"id": "charles-bridge", "name": "Charles Bridge", "lat": 50.0861526, "lng": 14.4137572, "subtitle": "1357 · Peter Parler"}, {"id": "house-of-the-black-madonna", "name": "House of the Black Madonna", "lat": 50.0869368, "lng": 14.4254679, "subtitle": "1912 · Josef Gočár"}, {"id": "zizkov-tv-tower", "name": "Žižkov Television Tower", "lat": 50.0810217, "lng": 14.4510584, "subtitle": "1992 · Václav Aulický"}]}</script>
     </section>
@@ -152,8 +161,8 @@
                 <li><span class="fact-label">Currency</span><strong>Czech Koruna (Kč)</strong></li>
                 <li><span class="fact-label">Language</span><strong>Czech</strong><p>Czech is a melodic Slavic language that is the pride of the nation&#x27;s literary history. While English is common in the Old Town, learning a simple &#x27;Děkuji&#x27; (thank you) is considered a sign of great respect by the locals.</p></li>
                 <li><span class="fact-label">Getting around</span><strong>Prague Metro</strong><p>The Prague Metro features unique &#x27;A Line&#x27; stations decorated with metallic, futuristic bubble-patterned walls. An extensive tram network serves as the primary way to navigate the historic Lesser Town and Castle districts. The Petřín Funicular offers a scenic ascent to the top of Petřín Hill for views of the city.</p></li>
-                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DPrague%252C%2520Czech%2520Republic%26latLong%3D50.08615%252C14.41420" rel="sponsored noopener" target="_blank">Find hotels in Prague on Expedia</a></strong><p>Stamped! may earn a commission when you book through this link.</p></li>
-                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Prague%2C%20Czech%20Republic" rel="sponsored noopener" target="_blank">Find tours in Prague on GetYourGuide</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
+                <li><span class="fact-label">Where to stay</span><strong><a class="hotel-link" href="https://prf.hn/click/camref:1110lStp6/pubref:website/destination:https%3A%2F%2Fwww.expedia.com%2FHotel-Search%3Fdestination%3DPrague%252C%2520Czech%2520Republic%26latLong%3D50.08615%252C14.41420" rel="sponsored noopener" target="_blank">Find hotels in Prague on Expedia</a> <a class="hotel-link" href="https://prf.hn/click/camref:1100l6yuA7/pubref:website/destination:https%3A%2F%2Fwww.vrbo.com%2Fsearch%3Fdestination%3DPrague%252C%2520Czech%2520Republic" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a></strong><p>Stamped! may earn a commission when you book through these links.</p></li>
+                <li><span class="fact-label">Tours and tickets</span><strong><a class="hotel-link" href="https://www.getyourguide.com/s/?partner_id=PBXFUP9&amp;cmp=website&amp;q=Prague%2C%20Czech%20Republic" rel="sponsored noopener" target="_blank">Find tours in Prague on GetYourGuide</a> <a class="hotel-link" href="https://www.viator.com/searchResults/all?text=Prague%2C%20Czech%20Republic&amp;pid=P00329078&amp;mcid=42383&amp;medium=link&amp;campaign=website" rel="sponsored noopener" target="_blank">More tours on Viator</a></strong><p>Skip-the-line tickets and guided tours of the landmarks. Stamped! may earn a commission.</p></li>
             </ul>
         </div>
     </section>
@@ -168,7 +177,7 @@
                     <h3>Dancing House</h3>
                     <p class="address">Jiráskovo nám. 1981/6, 120 00 Nové Město, Prague, Czechia</p>
                     <p>Originally nicknamed &#x27;Fred and Ginger,&#x27; this deconstructivist building resembles a pair of dancers caught in a graceful embrace. One tower is made of solid rock to represent the male dancer, while the other is a glass sleeve representing his partner. This striking architectural contrast reflects the transition of Czechoslovakia from a communist regime to a parliamentary democracy. It was built on a vacant riverfront plot where a previous building had been destroyed by a 1945 bombing. Today, it stands as one of the most iconic and photographed modern landmarks in the historic city of Prague.</p>
-                    <dl><div><dt>Built</dt><dd>1996</dd></div><div><dt>Architect</dt><dd>Frank Gehry / Vlado Milunić</dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>35 m (115 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Office / Hotel / Restaurant</dd></div></dl>
+                    <dl><div><dt>Built</dt><dd>1996</dd></div><div><dt>Architect</dt><dd><a href="architect-frank-gehry.html">Frank Gehry</a> / Vlado Milunić</dd></div><div><dt>Style</dt><dd>Deconstructivism</dd></div><div><dt>Height</dt><dd>35 m (115 ft)</dd></div><div><dt>Stories</dt><dd>9</dd></div><div><dt>Today</dt><dd>Office / Hotel / Restaurant</dd></div></dl>
                 </li>
                 <li id="st-vitus-cathedral" class="has-photo">
                     <figure class="landmark-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/PragueCathedral03.jpg/960px-PragueCathedral03.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="595" alt="St. Vitus Cathedral" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:PragueCathedral03.jpg" rel="noopener">MathKnight and Zachi Evenor</a>, <a href="https://creativecommons.org/licenses/by/2.5" rel="license noopener">CC BY 2.5</a>, via Wikimedia Commons</figcaption></figure>
@@ -206,18 +215,34 @@
         </div>
     </section>
 
+    <section class="quiz" data-quiz="quiz/prague.json" data-app-store="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" hidden aria-labelledby="quiz-title">
+        <div class="container">
+            <p class="kicker">The app's quiz · 10 questions</p>
+            <h2 id="quiz-title" class="section-title">How well do you know Prague?</h2>
+            <p class="map-hint">The same quiz as in Stamped!: name the landmark, its architect, its style or the year it was finished. Every round is different.</p>
+            <div class="quiz-card"></div>
+        </div>
+    </section>
+
     <section class="suggest" aria-labelledby="suggest-title">
         <div class="container">
             <h2 id="suggest-title" class="section-title">Know Prague well?</h2>
-            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing or a fix to one we have. Every suggestion is checked against a source before it goes into the app.</p>
+            <p class="map-hint">Locals know their city best. Suggest a landmark we&#x27;re missing, a fix to one we have, or share your own photo of one. Every suggestion is checked before it goes into the app.</p>
             <form class="suggest-form" data-place="Prague" data-page="https://georgeclinkscalesdev.com/stamped-cities/prague.html">
                 <fieldset>
                     <legend class="fact-label">I'm suggesting</legend>
                     <label><input type="radio" name="kind" value="Landmark" checked /> A landmark</label>
                     <label><input type="radio" name="kind" value="Correction" /> A correction</label>
+                    <label><input type="radio" name="kind" value="Photo" /> A photo</label>
                 </fieldset>
                 <label>What is it, and where?<textarea name="details" rows="4" maxlength="2000" required></textarea></label>
                 <label>A link we can check (optional)<input type="url" name="source" maxlength="300" placeholder="https://" /></label>
+                <div class="photo-fields" hidden>
+                    <label>Credit the photo to<input type="text" name="credit" maxlength="100" autocomplete="name" placeholder="Your name, as it should appear" /></label>
+                    <label class="check"><input type="checkbox" name="own" /> <span>I took this photo myself.</span></label>
+                    <label class="check"><input type="checkbox" name="license" /> <span>I share it under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: Stamped! may use it free, in the app and on this site, credited to the name above.</span></label>
+                    <p class="suggest-note">Your email app opens next. Attach the photo there, full size if you can. Every photo is looked at before it's used.</p>
+                </div>
                 <button type="submit">Write the email</button>
                 <p class="suggest-note">Opens your email app with this filled in, addressed to GeorgeClinkscalesDev@proton.me.</p>
                 <p class="suggest-status" aria-live="polite"></p>
@@ -228,7 +253,7 @@
     <section class="more-cities" aria-labelledby="more-title">
         <div class="container">
             <h2 id="more-title" class="section-title">More cities in Europe</h2>
-            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
+            <ul class="city-chips"><li><a href="amsterdam.html">Amsterdam</a></li><li><a href="athens.html">Athens</a></li><li><a href="barcelona.html">Barcelona</a></li><li><a href="bath.html">Bath</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="bilbao.html">Bilbao</a></li><li><a href="brussels.html">Brussels</a></li><li><a href="budapest.html">Budapest</a></li><li><a href="copenhagen.html">Copenhagen</a></li><li><a href="cork.html">Cork</a></li><li><a href="dublin.html">Dublin</a></li><li><a href="edinburgh.html">Edinburgh</a></li><li><a href="florence.html">Florence</a></li><li><a href="glasgow.html">Glasgow</a></li><li><a href="hamburg.html">Hamburg</a></li><li><a href="helsinki.html">Helsinki</a></li><li><a href="istanbul.html">Istanbul</a></li><li><a href="lisbon.html">Lisbon</a></li><li><a href="london.html">London</a></li><li><a href="madrid.html">Madrid</a></li><li><a href="milan.html">Milan</a></li><li><a href="munich.html">Munich</a></li><li><a href="naples.html">Naples</a></li><li><a href="nice.html">Nice</a></li><li><a href="oslo.html">Oslo</a></li><li><a href="paris.html">Paris</a></li><li><a href="reykjavik.html">Reykjavik</a></li><li><a href="rome.html">Rome</a></li><li><a href="rotterdam.html">Rotterdam</a></li><li><a href="salzburg.html">Salzburg</a></li><li><a href="seville.html">Seville</a></li><li><a href="st-petersburg.html">St. Petersburg</a></li><li><a href="stockholm.html">Stockholm</a></li><li><a href="tbilisi.html">Tbilisi</a></li><li><a href="valencia.html">Valencia</a></li><li><a href="venice.html">Venice</a></li><li><a href="vienna.html">Vienna</a></li><li><a href="warsaw.html">Warsaw</a></li><li><a href="zurich.html">Zurich</a></li></ul>
         </div>
     </section>
 
@@ -258,7 +283,10 @@
         </div>
     </footer>
     <script src="map-token.js?v=cd7de5df"></script>
-    <script src="map.js?v=56ebdfac"></script>
-    <script src="suggest.js?v=5195e66f" defer></script>
+    <script src="nearby.js?v=3a166750"></script>
+    <script src="map.js?v=74a487fb"></script>
+    <script src="suggest.js?v=bfea474c" defer></script>
+    <script src="search.js?v=e6fa562b" defer></script>
+    <script src="quiz.js?v=94f1e54f" defer></script>
 </body>
 </html>
