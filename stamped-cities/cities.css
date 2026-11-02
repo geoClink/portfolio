@@ -678,6 +678,10 @@ a { color: inherit; }
 .nearby-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; font-size: 15px; }
 .nearby-list a { color: var(--color-ink); font-weight: 600; text-decoration-color: var(--color-line); }
 .nearby-list a:hover { color: var(--color-accent-ink); }
+/* "Check prices" next to a nearby hotel: smaller and in the accent colour, so the hotel name stays the main link */
+.nearby-list a.nearby-prices { color: var(--color-accent-ink); font-weight: 500; font-size: 14px; white-space: nowrap; }
+.nearby-meta { display: inline-flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.nearby-commission { margin: 8px 0 0; font-size: 13px; color: var(--color-muted); }
 .nearby-walk { font-size: 13px; color: var(--color-muted); white-space: nowrap; }
 .nearby-note { margin: 14px 0 0; font-size: 13px; color: var(--color-muted); }
 @media (min-width: 768px) {
