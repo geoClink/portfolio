@@ -32,7 +32,7 @@
 
     const walkLabel = (metres) => {
         const minutes = Math.max(1, Math.round(metres / WALK_METRES_PER_MINUTE));
-        return `about ${minutes} min walk`;
+        return `${minutes} min walk`;
     };
 
     const appleMapsLink = (place) => {
@@ -127,11 +127,11 @@
             const walk = document.createElement('span');
             walk.className = 'nearby-walk';
             walk.textContent = walkLabel(item.metres);
-            // Walking time and, for hotels, Check prices stay together on one line
-            const meta = document.createElement('span');
-            meta.className = 'nearby-meta';
-            meta.append(walk);
-            row.append(link, meta);
+            // Name on top, walking time under it; hotels get a Check prices button on the right
+            const text = document.createElement('div');
+            text.className = 'nearby-text';
+            text.append(link, walk);
+            row.append(text);
             if (kind.list === 'hotels') {
                 const prices = document.createElement('a');
                 prices.className = 'nearby-prices';
@@ -140,7 +140,7 @@
                 prices.target = '_blank';
                 prices.textContent = 'Check prices';
                 prices.setAttribute('aria-label', `Check prices for ${item.place.name} on Booking.com`);
-                meta.append(prices);
+                row.append(prices);
             }
             list.append(row);
         });
