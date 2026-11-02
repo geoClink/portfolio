@@ -299,6 +299,9 @@ a { color: inherit; }
 .cta-icon { margin: 0 auto 18px; border-radius: 18px; }
 .cta h2 { font-family: var(--font-serif); font-size: 34px; line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
 .cta p { opacity: 0.78; max-width: 34em; margin: 0 auto 24px; }
+/* A small tip line under the download button (Stripe Payment Link) */
+.cta .cta-tip { margin: 22px auto 0; font-size: 15px; opacity: 0.85; }
+.cta .cta-tip a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .app-store-button {
     display: inline-flex;
     align-items: center;

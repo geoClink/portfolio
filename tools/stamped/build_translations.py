@@ -51,6 +51,10 @@ T = [
     ("Trips", "Viajes", "Reisen", "旅行"),
     ("Campuses", "Campus", "Campusse", "キャンパス"),
     ("Get the app", "Descargar", "App laden", "アプリを入手"),
+    ("Enjoying Stamped!? ", "¿Te gusta Stamped!? ", "Gefällt dir Stamped!? ", "Stamped!を楽しんでいますか？ "),
+    ("Leave a tip", "Deja una propina", "Gib ein Trinkgeld", "チップを贈る"),
+    (" to help keep new cities coming.", " para que sigan llegando nuevas ciudades.", ", damit weitere Städte dazukommen.", "で、新しい都市の追加を応援してください。"),
+    ("Tip jar", "Propinas", "Trinkgeld", "チップ"),
 
     # ----- Hero -----
     ("A city passport · Free on iPhone, iPad &amp; Vision Pro",
