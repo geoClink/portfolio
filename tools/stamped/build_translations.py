@@ -53,6 +53,9 @@ T = [
     ("Get the app", "Descargar", "App laden", "アプリを入手"),
     ("Enjoying Stamped!? ", "¿Te gusta Stamped!? ", "Gefällt dir Stamped!? ", "Stamped!を楽しんでいますか？ "),
     ("Leave a tip", "Deja una propina", "Gib ein Trinkgeld", "チップを贈る"),
+    ("Get an email when new cities and campuses arrive.", "Recibe un correo cuando lleguen nuevas ciudades y campus.", "Erhalte eine E-Mail, wenn neue Städte und Campusse dazukommen.", "新しい都市やキャンパスが追加されたらメールでお知らせします。"),
+    ("Notify me", "Avísame", "Benachrichtige mich", "通知を受け取る"),
+    ("A few emails a year. Unsubscribe anytime.", "Unos pocos correos al año. Date de baja cuando quieras.", "Ein paar E-Mails im Jahr. Jederzeit abbestellbar.", "メールは年に数回。いつでも配信停止できます。"),
     (" to help keep new cities coming.", " para que sigan llegando nuevas ciudades.", ", damit weitere Städte dazukommen.", "で、新しい都市の追加を応援してください。"),
     ("Tip jar", "Propinas", "Trinkgeld", "チップ"),
 
