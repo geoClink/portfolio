@@ -181,7 +181,15 @@
         .stamped-principles li { padding-left: 1.6em; position: relative; font-size: 0.95em; line-height: 1.6; }
         .stamped-principles li::before { content: ''; position: absolute; left: 0; top: 0.45em; width: 0.8em; height: 0.8em; border-radius: 50%; border: 2px dashed var(--case-accent); }
 
+        /* Wide shots: Mac and Vision Pro screens are landscape, so they sit in a plain rounded frame, not a phone bezel */
+        .stamped-wide-shots { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); gap: 1.4em; margin-top: 1.25em; }
+        .stamped-wide-shots figure { margin: 0; }
+        .stamped-wide-shots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+        .stamped-wide-shots figcaption { font-size: 0.8em; color: var(--color-text-muted); margin-top: 0.9em; line-height: 1.45; }
+        .stamped-wide-shots figcaption strong { display: block; color: var(--color-heading); font-size: 1.05em; margin-bottom: 0.1em; }
+
         @media (max-width: 736px) {
+            .stamped-wide-shots { grid-template-columns: 1fr; }
             .stamped-shots { --cols: 2 !important; }
             .stamped-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .stamped-type { grid-template-columns: 1fr; }
@@ -208,7 +216,7 @@
        "name": "Stamped! A City Passport",
        "description": "A SwiftUI iOS app for discovering and collecting passport stamps at 2,100+ architectural landmarks across 156 cities and 117 university campuses.",
        "applicationCategory": "TravelApplication",
-       "operatingSystem": "iOS",
+       "operatingSystem": "iOS, iPadOS, macOS, visionOS",
        "url": "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336",
        "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
     }
@@ -278,7 +286,7 @@
         </figure>
         <p class="case-caption">The map card, the photoreal 3D map, and street-level Look Around</p>
 
-        <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · WidgetKit · visionOS · Open-Meteo · Ticketmaster API · 2026</div>
+        <div class="case-meta">Swift · SwiftUI · MapKit 3D · Look Around · Apple Intelligence · iCloud · WidgetKit · visionOS · RealityKit · WeatherKit · Ticketmaster API · 2026</div>
 
         <div class="case-glance">
             <div class="case-glance-item">
@@ -287,7 +295,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Platforms</div>
-                <div class="case-glance-value">iPhone · iPad · Vision Pro</div>
+                <div class="case-glance-value">iPhone · iPad · Mac · Vision Pro</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Content</div>
@@ -299,7 +307,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">2.5 live, with college road trips (as of Oct 2026)</div>
+                <div class="case-glance-value">2.7 live on iPhone and iPad, Mac and Vision Pro 2.6; 2.8 coming (as of Nov 2026)</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Origin</div>
@@ -315,6 +323,9 @@
                 <li><a href="#design">Design</a></li>
                 <li><a href="#trips">Trip planner</a></li>
                 <li><a href="#college">College visits</a></li>
+                <li><a href="#vision-pro">Vision Pro</a></li>
+                <li><a href="#campus-pages">Campus pages</a></li>
+                <li><a href="#offline-mac">Offline &amp; Mac</a></li>
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#hard">What was hard</a></li>
                 <li><a href="#next">Where it could go</a></li>
@@ -455,6 +466,121 @@
             </div>
         </div>
 
+        <section class="case-section" id="vision-pro">
+            <h3>2.6: Apple Vision Pro</h3>
+            <p>2.6 put Stamped! on Apple Vision Pro, under the same App Store listing as the iPhone app, and shipped a native Mac app alongside it. Stamps you earn on iPhone show up on Vision Pro through iCloud.</p>
+            <div class="stamped-wide-shots">
+                <figure>
+                    <img src="assets/images/stamped/app/v26-vision-map.webp" alt="Stamped! on Apple Vision Pro: a window with the city list on the left and a satellite map of New York with landmark pins" width="1200" height="778" loading="lazy">
+                    <figcaption><strong>Every city on the 3D map</strong>Landmark pins, cards and stamp progress in one window.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/images/stamped/app/v26-vision-globe.webp" alt="A 3D globe floating in a living room in front of the Stamped! window, with orange pins on stamped cities" width="1200" height="778" loading="lazy">
+                    <figcaption><strong>A globe of your stamps</strong>Drag to spin and tilt; tap a city to turn it toward you.</figcaption>
+                </figure>
+            </div>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>Shared iCloud Stamps</h4>
+                    <p>Stamps and the Want to Visit list sync with iPhone through iCloud. No account.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>A 24 MB Download</h4>
+                    <p>The quiz and 9 languages came along, and leaving out the Detroit 3D model cut the download from 355 MB to about 24 MB.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Weather from WeatherKit</h4>
+                    <p>City weather moved to Apple's WeatherKit, and Look Around opens full screen.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Website Links Open the App</h4>
+                    <p>A link to a city or campus page on the Stamped! website opens that place in the app.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" id="campus-pages">
+            <h3>2.7: Campus Pages, Food and Stays</h3>
+            <p>2.7 turned each campus into a page worth planning a visit around and gave every landmark a "what's nearby" answer. City pages split into Landmarks, Plan and Local tabs so they're no longer one long scroll.</p>
+            <div class="stamped-shots">
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/v27-campus-plan.webp" alt="Michigan State's Plan tab: College Facts with acceptance rate, tuition and graduation rate, then Upcoming Events with ticket links" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>College Facts &amp; events</strong>College Scorecard numbers and a campus calendar.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/v27-campus-history.webp" alt="Michigan State's History card, founded 1855, from Wikipedia, followed by Student Life residence halls" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>History</strong>Founding year and a few lines from Wikipedia on every campus.</figcaption>
+                </figure>
+                <figure>
+                    <div class="phone-mockup"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="assets/images/stamped/app/v27-food-stays.webp" alt="A Chicago landmark page with Local Flavors restaurants and Stays Near Here hotels, each with a street photo and walking time" width="600" height="1304" loading="lazy"></div></div>
+                    <figcaption><strong>Food &amp; stays nearby</strong>Restaurants and hotels by walking time.</figcaption>
+                </figure>
+            </div>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>11 New Campuses</h4>
+                    <p>Wayne State to Caltech, with Game Day home games and events from schools' own public calendars.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Architect Pages</h4>
+                    <p>Tap "Designed by" for the architect's photo, a short bio and all their landmarks in the app.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Photo Galleries</h4>
+                    <p>A gallery on every landmark, plus historic photos and drawings from the Library of Congress.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Tours &amp; More Events</h4>
+                    <p>GetYourGuide tours on landmark pages, and events from SeatGeek merged with Ticketmaster, six months out.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" id="offline-mac">
+            <h3>2.8: Offline, Listen and a Real Mac App</h3>
+            <p>2.8 is in final prep for iPhone, iPad, Mac and Vision Pro. It adds 16 cities and 5 campuses (156 cities, 117 campuses, about 2,200 landmarks) and gives each platform a pass of its own.</p>
+            <div class="stamped-wide-shots" style="--cols:1;">
+                <figure>
+                    <img src="assets/images/stamped/app/v28-mac-city.webp" alt="Stamped! on Mac: a sidebar of Detroit landmarks, a satellite map with orange stamp pins, and the Detroit city panel with its passport stamp" width="1400" height="869" loading="lazy">
+                    <figcaption><strong>The Mac app</strong>Sidebar, map and city panel side by side. In 2.8, World Map, My Journey, trips and the quiz open in their own windows.</figcaption>
+                </figure>
+            </div>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>Save for Offline</h4>
+                    <p>Keep a city's Wikipedia text and photos on the device, with progress, Cancel, and its size in Settings.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Listen</h4>
+                    <p>The device's own voice reads a landmark's story aloud: its name, date, architect and style, then the history.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Hotels &amp; Tours</h4>
+                    <p>Expedia, Booking.com and Vrbo for stays; Viator next to GetYourGuide for tours. All tracked partner links.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Mac Windows</h4>
+                    <p>Features that opened as iPhone-style sheets on Mac now open in their own resizable windows.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>iPad Design Review</h4>
+                    <p>A wider sidebar, a full-screen World Map, larger sheets and a cleaner Passport.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Vision Pro: 360° Panoramas</h4>
+                    <p>Stand inside 26 landmarks, like the Colosseum, in a full-immersion panorama, with the photographer credited.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Vision Pro: Play Tour</h4>
+                    <p>The map flies landmark to landmark and reads each story aloud. Look Around comes to the landmark cards.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Campaign Tracking</h4>
+                    <p>App Store links on the website and in shared passports carry campaign tags, so I can see which ones bring downloads.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="case-section">
             <h3>App Store Screenshots</h3>
             <p>The 2.5 product page, now live.</p>
@@ -567,6 +693,10 @@
             <p>Stamped! is pure SwiftUI with no backend. Landmark, city and campus content ships with the app as bundled JSON (<code>BuildingRegistry.json</code>, <code>CityDetails.json</code>, <code>CampusTraditions.json</code>), so browsing and tracking work offline; weather, events, and dining layer on top when there's a connection. The one shared piece is building scans: 3D scans people capture with ARKit go to a CloudKit public database so everyone can see them, still with no server of my own.</p>
             <p>One <code>ObservableObject</code>, <code>GlobalProgressManager</code>, owns visited IDs and photos. It writes to <code>UserDefaults</code> and <code>NSUbiquitousKeyValueStore</code>, so progress syncs through iCloud with no account. Rank and completion are computed from the visited set, so they can never drift out of sync.</p>
             <p>The 3D map is SwiftUI's <code>Map</code> with realistic elevation and a <code>MapCamera</code> pitched 60–65°. Guided and trip tours are one cancellable <code>Task</code> that flies stop to stop; any tap cancels it, so the tour never fights you for the camera.</p>
+            <p><strong>One codebase, four platforms.</strong> iPhone, iPad and Mac share the SwiftUI views; on the Mac, sheets become windows. A <code>MacPanelWindows</code> scene declares a <code>Window</code> for single panels (World Map, My Journey) and a <code>WindowGroup(for:)</code> for ones that take a value (one quiz window per city). An <code>opensWindow(id:when:)</code> modifier turns the existing <code>showingX = true</code> flags into <code>openWindow</code> calls on macOS, so none of the call sites changed and iOS keeps its sheets. The Vision Pro app is its own target that reuses the models, the bundled JSON and the iCloud key-value store.</p>
+            <p><strong>Immersive panoramas on visionOS.</strong> A 360° photo is wrapped on the inside of a 1,000 m RealityKit sphere: a sphere's faces point outward, so its x scale is flipped to <code>-1</code> to turn it inside out without mirroring the photo. It opens in a full-immersion <code>ImmersiveSpace</code>, and since visionOS allows one immersive space at a time, opening a panorama first dismisses any open one. The 26 panoramas were found by a Python script (Wikidata, Commons categories, per-city searches), every pick checked by eye, and each licence is credited on screen.</p>
+            <p><strong>Partner links with tests.</strong> Hotel and tour buttons are built by small link builders (<code>HotelLinks.swift</code>, <code>TourLinks.swift</code>) across three styles of tracking: Partnerize click links for Expedia and Vrbo, CJ deep links for Booking.com, and plain query-parameter IDs for GetYourGuide and Viator. Each button hides itself when its ID isn't set, and unit tests pin down the tracking parameters, place names and trip dates in every link.</p>
+            <p><strong>Offline cache.</strong> Save for Offline writes a manifest, one JSON file per city and shared photo files to Application Support, excluded from iCloud backup. The Wikipedia service reads memory first, then the saved copy, then the network, so a saved city works without a connection and an unsaved one behaves as before. Removing a city keeps photos another saved city still uses; that rule has its own tests.</p>
         </div>
 
         <div class="case-section" id="hard">
@@ -575,11 +705,13 @@
             <p><strong>Camera framing.</strong> Centering on a landmark hid it under the card, so the camera aims slightly south. One far-off pin (JFK in New York) zoomed whole cities out, so city framing now uses the closest 80% of landmarks.</p>
             <p><strong>Bad data.</strong> Flying to a pin in 3D makes a wrong pin obvious. For 2.4 I audited every landmark: 181 pins moved to their real locations, 200+ photos fixed.</p>
             <p><strong>App Review.</strong> Apple pushed back on the camera usage string, Ticketmaster links, and the location flow. Getting all three right was the last hurdle to launch.</p>
+            <p><strong>Aiming Look Around.</strong> On Vision Pro, asking Apple for the street view nearest a landmark's pin often faced the wrong thing: a café awning at the Colosseum, a concrete wall at Willis Tower. Now the app first runs an <code>MKLocalSearch</code> for the landmark by name around the pin, keeps the closest match within 300 m, and requests the scene for that map item, so Apple points the camera at the building. With no match it falls back to the old request.</p>
+            <p><strong>Four platforms, one design.</strong> A layout that's right on iPhone can look like a stretched phone on iPad and like an iPad app on a Mac. For 2.8 I did a design pass on each platform and fixed what didn't fit: a solid top bar on iPhone, a wider sidebar and larger sheets on iPad, windows on Mac, and card buttons and translated building styles on Vision Pro.</p>
         </div>
 
         <div class="case-section" id="next">
             <h3>Where the Idea Could Go</h3>
-            <p>When MSU students visited the Apple Developer Academy, one of them said Stamped! would be perfect for learning your way around campus as a freshman, with dining halls as landmarks and orientation as stamps. I wrote it up as a pitch doc and deck. The first piece is now real: 2.4 added a Campus Architecture collection, and 2.5 grows it to 101 campuses, every Big Ten, SEC, ACC and Big 12 school, Michigan State included, grouped by conference.</p>
+            <p>When MSU students visited the Apple Developer Academy, one of them said Stamped! would be perfect for learning your way around campus as a freshman, with dining halls as landmarks and orientation as stamps. I wrote it up as a pitch doc and deck. The first piece is now real: 2.4 added a Campus Architecture collection, 2.5 grew it to 101 campuses, every Big Ten, SEC, ACC and Big 12 school, Michigan State included, grouped by conference, and 2.7 gave each campus its own History, Game Day and events. With 2.8 it reaches 117 campuses.</p>
         </div>
 
     <!-- Vision Pro teaser -->
@@ -598,7 +730,7 @@
 
         <div class="case-section" id="outcome" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.6, and 2.6 shipped on Apple Vision Pro too. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally. See the app itself on the <a href="stamped-app.html">Stamped! website</a>.</p>
+            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.7 on iPhone and iPad, with 2.6 on Mac and Apple Vision Pro and 2.8 coming to all of them. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally. See the app itself on the <a href="stamped-app.html">Stamped! website</a>.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
