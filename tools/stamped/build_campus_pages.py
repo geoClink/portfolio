@@ -21,8 +21,9 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, e, height_label,
-                              jsonld, known, photo_figure, slug, suggest_section, versioned, year_label, year_sort)
+from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, booking_link, e,
+                              expedia_link, height_label, jsonld, known, photo_figure, slug, suggest_section,
+                              versioned, vrbo_link, year_label, year_sort)
 from campus_cards import CampusData, campus_cards
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -174,6 +175,12 @@ def campus_page(campus, buildings, traditions, siblings, photos, data, architect
         facts.append(("Getting around", e(details["transportation"]), details.get("transportationFact")))
     if known(details.get("languageInfo")):
         facts.append(("Colors and teams", "", details.get("languageInfo")))
+    # Hotels for a campus visit, searched by the campus name (hotel sites know it as a landmark)
+    facts.append(("Where to stay",
+                  f'<a class="hotel-link" href="{e(expedia_link(name, pins))}" rel="sponsored noopener" target="_blank">Find hotels near {e(name)} on Expedia</a>'
+                  f' <a class="hotel-link" href="{e(booking_link(name, pins))}" rel="sponsored noopener" target="_blank">Compare on Booking.com</a>'
+                  f' <a class="hotel-link" href="{e(vrbo_link(name))}" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a>',
+                  "Stamped! may earn a commission when you book through these links."))
     if facts:
         out.append("""
     <section class="facts" aria-labelledby="facts-title">

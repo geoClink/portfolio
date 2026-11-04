@@ -45,6 +45,35 @@
         });
     }
 
+    // Apple's web map can turn but not tilt, and turning is hidden behind Option-drag or a
+    // two-finger twist, so show buttons and say how. The tilted 3D view is in the app.
+    function addTurnControls(map) {
+        var controls = document.createElement('div');
+        controls.className = 'map-turn-controls';
+        [['↺', 'Turn the map left', -45], ['↻', 'Turn the map right', 45]].forEach(function (item) {
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = item[0];
+            button.setAttribute('aria-label', item[1]);
+            button.title = item[1];
+            button.addEventListener('click', function () {
+                map.setRotationAnimated((map.rotation + item[2] + 360) % 360, true);
+            });
+            controls.appendChild(button);
+        });
+        mapEl.appendChild(controls);
+
+        var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+        var hint = document.createElement('p');
+        hint.className = 'map-turn-hint';
+        hint.textContent = (touch ? 'Twist with two fingers' : 'Option-drag, or twist on a trackpad,') + ' to turn the map. ';
+        var app = document.createElement('a');
+        app.href = 'https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&ct=website-map&mt=8';
+        app.textContent = 'Tilt it and fly through in 3D in the app';
+        hint.appendChild(app);
+        mapEl.insertAdjacentElement('afterend', hint);
+    }
+
     window.initStampedCityMap = function () {
         if (!window.mapkit || !mapkit.Map) {
             fail();
@@ -68,8 +97,11 @@
         var map = new mapkit.Map(mapEl, {
             mapType: mapTypes.Hybrid,
             showsPointsOfInterest: false,
-            isRotationEnabled: true
+            isRotationEnabled: true,
+            // The compass points north once the map is turned; tapping it turns it back
+            showsCompass: mapkit.FeatureVisibility ? mapkit.FeatureVisibility.Visible : 'visible'
         });
+        addTurnControls(map);
         map.showItems(markers, { animate: false, padding: new mapkit.Padding(56, 40, 56, 40) });
         function pick(marker) {
             showLookAround(marker);
