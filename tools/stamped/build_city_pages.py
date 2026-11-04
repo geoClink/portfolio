@@ -246,7 +246,9 @@ FOOT = """
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
-{scripts}</body>
+{scripts}    <!-- GoatCounter: cookie-free page counts, no banner needed -->
+    <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
 </html>
 """
 # Tip jar: a Stripe Payment Link ("Customers choose what to pay", $1–$100). Filled in here rather
