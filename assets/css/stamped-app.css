@@ -472,6 +472,19 @@ a { color: inherit; }
 :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
 :lang(ja) .highlight { white-space: normal; }
 
+/* Korean and Chinese pages: system fonts with those scripts, same phrase-friendly headings */
+:lang(ko) {
+    --font-serif: "AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+    --font-sans: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
+:lang(ko) h1, :lang(ko) h2, :lang(ko) h3 { word-break: keep-all; letter-spacing: 0; }
+:lang(zh-Hans) {
+    --font-serif: "Songti SC", "STSong", "Noto Serif SC", serif;
+    --font-sans: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+:lang(zh-Hans) h1, :lang(zh-Hans) h2, :lang(zh-Hans) h3 { word-break: auto-phrase; letter-spacing: 0; }
+:lang(ko) .highlight, :lang(zh-Hans) .highlight { white-space: normal; }
+
 /* ===== Hero ===== */
 .hero {
     position: relative;
@@ -994,6 +1007,45 @@ a { color: inherit; }
 }
 .quiz-card .stamp[hidden] { display: none; }
 
+/* ===== Vision Pro and Mac: landscape screenshots instead of a phone ===== */
+.device-stack { display: grid; gap: 20px; }
+.device-shot { margin: 0; }
+.device-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    border: 1px solid var(--color-line);
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.45);
+}
+.device-shot--mac img { border-radius: 12px; }
+.device-shot figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+.device-shot figcaption strong {
+    display: block;
+    color: var(--color-ink);
+    font-size: 16px;
+}
+.device-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* "10 more cities arrive in the next update" under the continents intro */
+.coming-note {
+    margin: -8px 0 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);   /* it sits on the dark continents band */
+}
+
 /* ===== Tool grid ("Once you land") ===== */
 .tool-grid {
     list-style: none;
@@ -1176,6 +1228,8 @@ a { color: inherit; }
 
     .header-nav { gap: 22px; }
     .header-nav > a:not(.header-button) { display: inline; }
+    .header-nav > a { white-space: nowrap; }
+    .header-nav > a.nav-wide { display: none; }   /* no room for it on tablets */
 
     .hero { padding: 64px 0 96px; }
     .hero-visual .stamp { width: 132px; height: 132px; }
@@ -1197,6 +1251,7 @@ a { color: inherit; }
     .feature.flip .feature-visual { order: -1; }
 
     .phone-pair { gap: 24px; }
+    .device-stack figure:last-child { width: 82%; margin-left: auto; }
     .photo-strip {
         grid-auto-columns: minmax(240px, 280px);
         padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
@@ -1220,6 +1275,7 @@ a { color: inherit; }
 
 @media (min-width: 1024px) {
     .hero h1 { font-size: 64px; }
+    .header-nav > a.nav-wide { display: inline; }
     .phone--hero { max-width: 320px; }
 }
 

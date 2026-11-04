@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
-"""Build the Spanish, German and Japanese Stamped! landing pages from the English one.
+"""Build the translated Stamped! landing pages from the English one.
 
     python3 tools/stamped/build_translations.py
 
-Reads stamped-app.html and writes stamped-app-es.html, stamped-app-de.html and
-stamped-app-ja.html. Edit the English page, then re-run this. If an English string
-below no longer exists on the page the script stops and names it, so a changed
+Reads stamped-app.html and writes stamped-app-<lang>.html for every language in LANGS.
+Edit the English page, then re-run this. If an English string no longer exists on the page
+(or a language is missing a translation) the script stops and names it, so a changed
 sentence never silently stays in English.
+
+Where the translations live:
+  es, de, ja                 the T table below, one (english, spanish, german, japanese) row per string
+  fr, it, ko, pt, zh         tools/stamped/landing_translations/<lang>.json, shaped
+                             {"rows": {english: translation, ...}, "copy": "<the stampedCopy block>"}
+                             with the same English keys as column one of T
+So when you change an English string: update its T row AND the same key in the five JSON files.
 
 It also sets the ?v= hash on the shared CSS and JS links (SHARED) in all four pages.
 
@@ -18,15 +25,22 @@ Each entry is (english, spanish, german, japanese). The english string is matche
   "!" prefix   -> anywhere, exactly as written (CSS, JSON, URLs)
 """
 import hashlib
+import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "stamped-app.html"
-LANGS = ["es", "de", "ja"]
-STORE = {"es": "es", "de": "de", "ja": "jp"}          # App Store country codes
-LOCALE = {"es": "es_ES", "de": "de_DE", "ja": "ja_JP"}
-NAME = {"es": "español", "de": "Deutsch", "ja": "日本語"}
+LANGS = ["es", "de", "ja", "fr", "it", "ko", "pt", "zh"]
+TABLE_LANGS = ["es", "de", "ja"]                      # the columns of T, in order
+JSON_DIR = ROOT / "tools" / "stamped" / "landing_translations"   # the other languages
+STORE = {"es": "es", "de": "de", "ja": "jp", "fr": "fr", "it": "it", "ko": "kr", "pt": "br", "zh": "cn"}  # App Store countries
+LOCALE = {"es": "es_ES", "de": "de_DE", "ja": "ja_JP", "fr": "fr_FR", "it": "it_IT", "ko": "ko_KR", "pt": "pt_BR",
+          "zh": "zh_CN"}
+NAME = {"es": "español", "de": "Deutsch", "ja": "日本語", "fr": "Français", "it": "Italiano", "ko": "한국어",
+        "pt": "Português", "zh": "简体中文"}
+# The page's file name uses the short code; <html lang> and hreflang use this when it differs
+HTML_LANG = {"zh": "zh-Hans"}
 # Shared files all four pages link to; each link gets ?v=<hash of the file> (versioned())
 SHARED = ["assets/css/stamped-app.css", "assets/js/stamped-app.js"]
 
@@ -36,18 +50,18 @@ T = [
      "Stamped! A City Passport: los grandes edificios del mundo",
      "Stamped! A City Passport: die großen Bauwerke der Welt",
      "Stamped! A City Passport：世界の名建築をスタンプで集めよう"),
-    ("@Collect a passport stamp at more than 2,100 architectural landmarks in 166 cities on six continents and 122 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip. Free on iPhone, iPad, Mac and Apple Vision Pro.",
-     "Consigue un sello en tu pasaporte en más de 2.100 monumentos de arquitectura en 166 ciudades de seis continentes y 122 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje. Gratis para iPhone, iPad, Mac y Apple Vision Pro.",
-     "Sammle Stempel für deinen Reisepass an mehr als 2.100 Bauwerken in 166 Städten auf sechs Kontinenten und auf 122 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise. Kostenlos für iPhone, iPad, Mac und Apple Vision Pro.",
-     "6大陸156都市の2,100以上の名建築と、122の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。iPhone・iPad・Mac・Apple Vision Proで無料。"),
-    ("!\"description\": \"Collect a passport stamp at more than 2,100 architectural landmarks in 166 cities on six continents and 122 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip.\"",
-     "\"description\": \"Consigue un sello en tu pasaporte en más de 2.100 monumentos de arquitectura en 166 ciudades de seis continentes y 122 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje.\"",
-     "\"description\": \"Sammle Stempel für deinen Reisepass an mehr als 2.100 Bauwerken in 166 Städten auf sechs Kontinenten und auf 122 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise.\"",
-     "\"description\": \"6大陸156都市の2,100以上の名建築と、122の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。\""),
-    ("@2,100+ landmarks, 166 cities, six continents, 122 campuses. Fly through them in 3D and collect a stamp at every one you visit.",
-     "Más de 2.100 monumentos, 166 ciudades, seis continentes, 117 campus. Sobrevuélalos en 3D y consigue un sello en cada uno que visites.",
-     "2.100+ Sehenswürdigkeiten, 166 Städte, sechs Kontinente, 117 Campusse. Fliege in 3D hindurch und sammle an jedem Ort, den du besuchst, einen Stempel.",
-     "2,100以上の名建築、166都市、6大陸、122キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。"),
+    ("@Collect a passport stamp at 2,100+ landmarks in 156 cities and 117 campuses. Fly through them in 3D. Free on iPhone, iPad, Mac and Apple Vision Pro.",
+     "Consigue un sello en más de 2.100 monumentos de 156 ciudades y 117 campus. Sobrevuélalos en 3D. Gratis para iPhone, iPad, Mac y Apple Vision Pro.",
+     "Sammle Stempel an 2.100+ Bauwerken in 156 Städten und auf 117 Campussen. Fliege in 3D hindurch. Kostenlos für iPhone, iPad, Mac und Apple Vision Pro.",
+     "156都市と117キャンパス、2,100以上の名建築でスタンプを集めよう。3Dで飛び回れます。iPhone・iPad・Mac・Apple Vision Proで無料。"),
+    ("!\"description\": \"Collect a passport stamp at more than 2,100 architectural landmarks in 156 cities on six continents and 117 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip.\"",
+     "\"description\": \"Consigue un sello en tu pasaporte en más de 2.100 monumentos de arquitectura en 156 ciudades de seis continentes y 117 campus universitarios. Sobrevuela ciudades en 3D, conoce a los arquitectos, haz el quiz y planifica tu viaje.\"",
+     "\"description\": \"Sammle Stempel für deinen Reisepass an mehr als 2.100 Bauwerken in 156 Städten auf sechs Kontinenten und auf 117 Universitätscampussen. Fliege in 3D durch Städte, lerne die Architekten kennen, mach das Quiz und plane deine Reise.\"",
+     "\"description\": \"6大陸156都市の2,100以上の名建築と、117の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。\""),
+    ("@2,100+ landmarks, 156 cities, six continents, 117 campuses. Fly through them in 3D and collect a stamp at every one you visit.",
+     "Más de 2.100 monumentos, 156 ciudades, seis continentes, 117 campus. Sobrevuélalos en 3D y consigue un sello en cada uno que visites.",
+     "2.100+ Sehenswürdigkeiten, 156 Städte, sechs Kontinente, 117 Campusse. Fliege in 3D hindurch und sammle an jedem Ort, den du besuchst, einen Stempel.",
+     "2,100以上の名建築、156都市、6大陸、117キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。"),
 
     # ----- Header -----
     ("Skip to content", "Saltar al contenido", "Zum Inhalt springen", "本文へスキップ"),
@@ -72,10 +86,10 @@ T = [
      "都市のパスポート · iPhone・iPad・Mac・Vision Proで無料"),
     ("The world's great buildings, ", "Los grandes edificios del mundo, ", "Die großen Bauwerke der Welt, ", "世界の名建築を、"),
     ("stamped.", "sellados.", "gestempelt.", "スタンプで。"),
-    ("An iPhone app that turns the world's landmarks into a passport you fill with stamps. Fly through 166 cities in 3D, learn who built each landmark and why, and collect a stamp at every one you visit.",
-     "Una app para iPhone que convierte los monumentos del mundo en un pasaporte que llenas de sellos. Sobrevuela 166 ciudades en 3D, descubre quién construyó cada monumento y por qué, y consigue un sello en cada uno que visites.",
-     "Eine iPhone-App, die die Wahrzeichen der Welt in einen Reisepass verwandelt, den du mit Stempeln füllst. Fliege in 3D durch 166 Städte, erfahre, wer jedes Bauwerk gebaut hat und warum, und sammle an jedem, das du besuchst, einen Stempel.",
-     "世界の名建築を、スタンプで埋めるパスポートに変えるiPhoneアプリ。166都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。"),
+    ("An app for iPhone, iPad, Mac and Apple Vision Pro that turns the world's landmarks into a passport you fill with stamps. Fly through 156 cities in 3D, learn who built each landmark and why, and collect a stamp at every one you visit.",
+     "Una app para iPhone, iPad, Mac y Apple Vision Pro que convierte los monumentos del mundo en un pasaporte que llenas de sellos. Sobrevuela 156 ciudades en 3D, descubre quién construyó cada monumento y por qué, y consigue un sello en cada uno que visites.",
+     "Eine App für iPhone, iPad, Mac und Apple Vision Pro, die die Wahrzeichen der Welt in einen Reisepass verwandelt, den du mit Stempeln füllst. Fliege in 3D durch 156 Städte, erfahre, wer jedes Bauwerk gebaut hat und warum, und sammle an jedem, das du besuchst, einen Stempel.",
+     "世界の名建築を、スタンプで埋めるパスポートに変えるアプリ。iPhone・iPad・Mac・Apple Vision Proに対応。156都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。"),
     ("!Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",
      "Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg",
      "Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg",
@@ -125,10 +139,10 @@ T = [
     ("Explore. Go. ", "Explora. Viaja. ", "Entdecken. Reisen. ", "探して、旅して、"),
     ("Stamp.", "Sella.", "Stempeln.", "スタンプ。"),
     ("Explore from your couch", "Explora desde el sofá", "Entdecke vom Sofa aus", "ソファから探検"),
-    ("Fly through 166 cities in photoreal 3D and read the story behind every building.",
-     "Sobrevuela 166 ciudades en 3D fotorrealista y lee la historia de cada edificio.",
-     "Fliege in fotorealistischem 3D durch 166 Städte und lies die Geschichte hinter jedem Gebäude.",
-     "166都市をフォトリアルな3Dで飛び回り、建物ごとの物語を読もう。"),
+    ("Fly through 156 cities in photoreal 3D and read the story behind every building.",
+     "Sobrevuela 156 ciudades en 3D fotorrealista y lee la historia de cada edificio.",
+     "Fliege in fotorealistischem 3D durch 156 Städte und lies die Geschichte hinter jedem Bauwerk.",
+     "156都市をフォトリアルな3Dで飛び回り、すべての建物の物語を読もう。"),
     ("Plan the trip", "Planifica el viaje", "Plane die Reise", "旅を計画"),
     ("Line up landmarks day by day, add hotels and places to eat, and preview the route in 3D.",
      "Organiza los monumentos día a día, añade hoteles y sitios para comer y previsualiza la ruta en 3D.",
@@ -143,21 +157,33 @@ T = [
     # ----- Continents -----
     ("SIX CONTINENTS", "SEIS CONTINENTES", "SECHS KONTINENTE", "6大陸"),
     ("CITIES", "CIUDADES", "STÄDTE", "都市"),
-    ("Six continents · 166 cities", "Seis continentes · 166 ciudades", "Sechs Kontinente · 166 Städte", "6大陸 · 166都市"),
+    ("Six continents · 156 cities",
+     "Seis continentes · 156 ciudades",
+     "Sechs Kontinente · 156 Städte",
+     "6大陸 · 156都市"),
     ("Every continent you can fly to.", "Todos los continentes a los que puedes volar.", "Alle Kontinente, die du anfliegen kannst.", "飛行機で行けるすべての大陸へ。"),
-    ("Not just the usual capitals. Stamped! covers 166 cities, from Reykjavik to Zanzibar, each with its own landmarks, quiz and stamp.",
-     "No solo las capitales de siempre. Stamped! cubre 166 ciudades, de Reikiavik a Zanzíbar, cada una con sus monumentos, su quiz y su sello.",
-     "Nicht nur die üblichen Hauptstädte. Stamped! umfasst 166 Städte von Reykjavík bis Sansibar, jede mit eigenen Sehenswürdigkeiten, eigenem Quiz und eigenem Stempel.",
-     "定番の首都だけではありません。レイキャビクからザンジバルまで156都市を収録。どの都市にも名建築、クイズ、スタンプがあります。"),
+    ("Not just the usual capitals. Stamped! covers 156 cities, from Reykjavik to Zanzibar, each with its own landmarks, quiz and stamp.",
+     "No solo las capitales de siempre. Stamped! abarca 156 ciudades, de Reikiavik a Zanzíbar, cada una con sus monumentos, su quiz y su sello.",
+     "Nicht nur die üblichen Hauptstädte. Stamped! umfasst 156 Städte, von Reykjavík bis Sansibar, jede mit eigenen Sehenswürdigkeiten, Quiz und Stempel.",
+     "定番の首都だけではありません。レイキャビクからザンジバルまで156都市を収録。それぞれに名建築、クイズ、スタンプがあります。"),
     ("Europe ", "Europa ", "Europa ", "ヨーロッパ "),
     ("Asia ", "Asia ", "Asien ", "アジア "),
     ("North America ", "Norteamérica ", "Nordamerika ", "北米 "),
     ("South America ", "Sudamérica ", "Südamerika ", "南米 "),
     ("Africa ", "África ", "Afrika ", "アフリカ "),
     ("Oceania ", "Oceanía ", "Ozeanien ", "オセアニア "),
-    ("34 cities", "34 ciudades", "34 Städte", "34都市"),
-    ("38 cities", "38 ciudades", "38 Städte", "38都市"),
-    ("37 cities", "37 ciudades", "37 Städte", "37都市"),
+    ("28 cities",
+     "28 ciudades",
+     "28 Städte",
+     "28都市"),
+    ("36 cities",
+     "36 ciudades",
+     "36 Städte",
+     "36都市"),
+    ("35 cities",
+     "35 ciudades",
+     "35 Städte",
+     "35都市"),
     ("15 cities", "15 ciudades", "15 Städte", "15都市"),
     ("11 cities", "11 ciudades", "11 Städte", "11都市"),
     ("5 cities", "5 ciudades", "5 Städte", "5都市"),
@@ -247,10 +273,10 @@ T = [
     ("Play · Architecture quiz", "Juega · Quiz de arquitectura", "Spielen · Architektur-Quiz", "遊ぶ · 建築クイズ"),
     ("Test your ", "Pon a prueba ", "Teste dein ", "あなたの"),
     ("smarts.", "lo que sabes.", "Wissen.", "知識を試そう。"),
-    ("Every city and every campus has its own 10-question quiz built from its real landmarks: the style, the year, the architect, the number of floors. 288 quizzes in all, in 9 languages. Tap your answer or say it out loud.",
-     "Cada ciudad y cada campus tiene su propio quiz de 10 preguntas basado en sus monumentos reales: el estilo, el año, el arquitecto, el número de plantas. 288 quizzes en total, en 9 idiomas. Toca tu respuesta o dila en voz alta.",
-     "Jede Stadt und jeder Campus hat ein eigenes Quiz mit 10 Fragen zu seinen echten Sehenswürdigkeiten: Stil, Baujahr, Architekt, Anzahl der Stockwerke. Insgesamt 288 Quizze in 9 Sprachen. Tippe deine Antwort an oder sag sie laut.",
-     "どの都市・キャンパスにも、実在の名建築から作られた10問のクイズがあります。様式、建築年、建築家、階数。全288クイズ、9言語に対応。タップでも音声でも答えられます。"),
+    ("Every city and every campus has its own 10-question quiz built from its real landmarks: the style, the year, the architect, the number of floors. 273 quizzes in all, in 9 languages. Tap your answer or say it out loud.",
+     "Cada ciudad y cada campus tiene su propio quiz de 10 preguntas sobre sus monumentos reales: el estilo, el año, el arquitecto, el número de plantas. 273 quizzes en total, en 9 idiomas. Toca tu respuesta o dila en voz alta.",
+     "Jede Stadt und jeder Campus hat ein eigenes Quiz mit 10 Fragen zu den echten Bauwerken: Stil, Baujahr, Architekt, Anzahl der Stockwerke. 273 Quizze insgesamt, in 9 Sprachen. Tippe deine Antwort an oder sag sie laut.",
+     "各都市・各キャンパスに、実在の名建築から作った10問のクイズがあります。様式、建築年、建築家、階数。全273クイズ、9言語に対応。タップでも声でも答えられます。"),
     ("Question 1 of 3", "Pregunta 1 de 3", "Frage 1 von 3", "第1問（全3問）"),
     ("How many stories tall is the Flatiron Building?", "¿Cuántas plantas tiene el Flatiron Building?", "Wie viele Stockwerke hat das Flatiron Building?", "フラットアイアン・ビルは何階建て？"),
     ("Try it. Three questions.", "Pruébalo. Tres preguntas.", "Probier's aus. Drei Fragen.", "3問だけ、挑戦してみよう。"),
@@ -404,7 +430,10 @@ T = [
      "Englisch, Deutsch, Spanisch, Französisch, Italienisch, Japanisch, Koreanisch, Portugiesisch und Chinesisch.",
      "英語、ドイツ語、スペイン語、フランス語、イタリア語、日本語、韓国語、ポルトガル語、中国語。"),
     ("Made for everyone", "Para todo el mundo", "Für alle gemacht", "だれでも使いやすく"),
-    ("High-contrast and reduced-motion options, plus a dark mode.", "Opciones de alto contraste y movimiento reducido, y modo oscuro.", "Optionen für hohen Kontrast und reduzierte Bewegung, dazu ein Dunkelmodus.", "高コントラスト、視差効果を減らす設定、ダークモードに対応。"),
+    ("VoiceOver, Dynamic Type and Reduce Motion, plus high contrast and a dark mode.",
+     "VoiceOver, texto dinámico y reducir movimiento, además de alto contraste y modo oscuro.",
+     "VoiceOver, dynamische Schrift und „Bewegung reduzieren“, dazu hoher Kontrast und ein Dunkelmodus.",
+     "VoiceOver、Dynamic Type、視差効果を減らす設定に加え、高コントラストとダークモードにも対応。"),
 
     # ----- Closing call to action -----
     ("BON VOYAGE", "BUEN VIAJE", "GUTE REISE", "よい旅を"),
@@ -532,6 +561,163 @@ T = [
      "Apple, el logotipo de Apple, iPhone, iPad, Mac y Apple Vision Pro son marcas comerciales de Apple Inc. App Store y Mac App Store son marcas de servicio de Apple Inc.",
      "Apple, das Apple Logo, iPhone, iPad, Mac und Apple Vision Pro sind Marken der Apple Inc. App Store und Mac App Store sind Dienstleistungsmarken der Apple Inc.",
      "Apple、Appleのロゴ、iPhone、iPad、Mac、Apple Vision Proは、Apple Inc.の商標です。App StoreおよびMac App Storeは、Apple Inc.のサービスマークです。"),
+
+    # ----- Added with the Vision Pro, Mac and feature cards (2.10 refresh) -----
+    ("@Stamped! A City Passport: passport stamps over a 3D city map",
+     "Stamped! A City Passport: sellos de pasaporte sobre un mapa 3D de una ciudad",
+     "Stamped! A City Passport: Reisepass-Stempel über einer 3D-Stadtkarte",
+     "Stamped! A City Passport：3D都市マップに重なるパスポートスタンプ"),
+    ("10 more cities, from Porto and Kraków to Hiroshima and Hanoi, arrive in the next update.",
+     "10 ciudades más, de Oporto y Cracovia a Hiroshima y Hanói, llegan en la próxima actualización.",
+     "10 weitere Städte, von Porto und Krakau bis Hiroshima und Hanoi, kommen mit dem nächsten Update.",
+     "ポルト、クラクフから広島、ハノイまで、さらに10都市が次のアップデートで登場します。"),
+    ("Save for Offline",
+     "Guardar sin conexión",
+     "Offline sichern",
+     "オフライン保存"),
+    ("Keep a city's photos and stories on your device for flights and trips abroad.",
+     "Guarda las fotos y las historias de una ciudad en tu dispositivo para vuelos y viajes al extranjero.",
+     "Speichere Fotos und Geschichten einer Stadt auf deinem Gerät, für Flüge und Reisen ins Ausland.",
+     "都市の写真と物語を端末に保存。機内や海外旅行でも読めます。"),
+    ("Listen",
+     "Escuchar",
+     "Anhören",
+     "読み上げ"),
+    ("Any landmark's story, read aloud while you stand in front of it.",
+     "La historia de cualquier monumento, leída en voz alta mientras lo tienes delante.",
+     "Die Geschichte jedes Bauwerks, vorgelesen, während du davor stehst.",
+     "名建築の物語を、目の前に立ちながら音声で聞けます。"),
+    ("Share a stamp",
+     "Comparte un sello",
+     "Stempel teilen",
+     "スタンプを共有"),
+    ("Send a city or campus stamp to friends as a picture card.",
+     "Envía el sello de una ciudad o un campus a tus amigos como tarjeta con imagen.",
+     "Schick Freunden den Stempel einer Stadt oder eines Campus als Bildkarte.",
+     "都市やキャンパスのスタンプを画像カードにして友だちに送れます。"),
+    ("Siri and Shortcuts",
+     "Siri y Atajos",
+     "Siri und Kurzbefehle",
+     "Siriとショートカット"),
+    ("Say \"Open Paris in Stamped!\" or add Stamped! to a shortcut.",
+     "Di «Abre París en Stamped!» o añade Stamped! a un atajo.",
+     "Sag „Öffne Paris in Stamped!“ oder füge Stamped! einem Kurzbefehl hinzu.",
+     "「Stamped!でパリを開いて」と話しかけたり、ショートカットに追加したりできます。"),
+    ("Tours and tickets",
+     "Visitas y entradas",
+     "Touren und Tickets",
+     "ツアーとチケット"),
+    ("Find tours and tickets for any city landmark with GetYourGuide.",
+     "Encuentra visitas y entradas para cualquier monumento con GetYourGuide.",
+     "Finde Touren und Tickets für jedes Bauwerk in der Stadt mit GetYourGuide.",
+     "GetYourGuideで、都市の名建築のツアーやチケットを探せます。"),
+    ("Historic photos",
+     "Fotos históricas",
+     "Historische Fotos",
+     "歴史的な写真"),
+    ("Old photos and drawings of US landmarks from the Library of Congress.",
+     "Fotos y planos antiguos de monumentos de EE. UU. de la Biblioteca del Congreso.",
+     "Alte Fotos und Zeichnungen von US-Bauwerken aus der Library of Congress.",
+     "米国議会図書館所蔵の、アメリカの名建築の古い写真や図面。"),
+    ("Apple Vision Pro · Spatial",
+     "Apple Vision Pro · Espacial",
+     "Apple Vision Pro · Räumlich",
+     "Apple Vision Pro · 空間"),
+    ("Stand inside ",
+     "Entra en ",
+     "Steh mitten ",
+     "名建築の"),
+    ("the landmark.",
+     "el monumento.",
+     "im Bauwerk.",
+     "中に立とう。"),
+    ("On Apple Vision Pro, every city floats in your room on a photoreal 3D map, and the stamps you collect on iPhone come with you.",
+     "En Apple Vision Pro, cada ciudad flota en tu habitación sobre un mapa 3D fotorrealista, y los sellos que consigues en el iPhone te acompañan.",
+     "Auf der Apple Vision Pro schwebt jede Stadt als fotorealistische 3D-Karte in deinem Raum, und deine Stempel vom iPhone sind dabei.",
+     "Apple Vision Proでは、すべての都市がフォトリアルな3Dマップとして部屋に浮かび、iPhoneで集めたスタンプもそのまま使えます。"),
+    ("A 3D globe of every city, with live pins for the places you've stamped",
+     "Un globo 3D con todas las ciudades y marcadores en vivo de los lugares que has sellado",
+     "Ein 3D-Globus mit allen Städten und Live-Nadeln für die Orte, die du gestempelt hast",
+     "全都市を収めた3D地球儀。スタンプ済みの場所がピンでリアルタイムに表示"),
+    ("360° panoramas: stand inside 26 landmarks",
+     "Panorámicas de 360°: entra en 26 monumentos",
+     "360°-Panoramen: Steh mitten in 26 Bauwerken",
+     "360°パノラマ：26の名建築の中に立てます"),
+    ("Play Tour: a narrated flight from landmark to landmark",
+     "Play Tour: un vuelo narrado de monumento en monumento",
+     "Play Tour: ein kommentierter Flug von Bauwerk zu Bauwerk",
+     "Play Tour：ナレーション付きで名建築から名建築へ飛ぶツアー"),
+    ("Detroit in full 3D, downloaded only when you want it",
+     "Detroit en 3D completo, que se descarga solo cuando quieras",
+     "Detroit komplett in 3D, nur geladen, wenn du es willst",
+     "デトロイトをまるごと3Dで。必要なときだけダウンロード"),
+    ("Coming in the next update: Explore Together with SharePlay, so friends on a FaceTime call fly through a city with you",
+     "En la próxima actualización: Explorar juntos con SharePlay, para que tus amigos en una llamada de FaceTime sobrevuelen una ciudad contigo",
+     "Mit dem nächsten Update: Gemeinsam entdecken mit SharePlay, damit Freunde in einem FaceTime-Anruf mit dir durch eine Stadt fliegen",
+     "次のアップデートで登場：SharePlayの「一緒に探索」。FaceTime中の友だちと一緒に街を飛び回れます"),
+    ("@Download on the App Store for Apple Vision Pro",
+     "Descargar en el App Store para Apple Vision Pro",
+     "Im App Store für Apple Vision Pro laden",
+     "Apple Vision Pro向けにApp Storeからダウンロード"),
+    ("On Apple Vision Pro",
+     "En Apple Vision Pro",
+     "Auf der Apple Vision Pro",
+     "Apple Vision Pro版"),
+    ("@Stamped! on Apple Vision Pro: the Mumbai map window floating inside a 360° panorama of the Taj Mahal Palace Hotel's staircase",
+     "Stamped! en Apple Vision Pro: la ventana del mapa de Bombay flotando dentro de una panorámica de 360° de la escalera del hotel Taj Mahal Palace",
+     "Stamped! auf der Apple Vision Pro: Das Kartenfenster von Mumbai schwebt in einem 360°-Panorama der Treppe des Taj Mahal Palace Hotels",
+     "Apple Vision ProのStamped!：タージ・マハル・パレス・ホテルの階段の360°パノラマの中に浮かぶムンバイの地図ウインドウ"),
+    ("360° panoramas",
+     "Panorámicas de 360°",
+     "360°-Panoramen",
+     "360°パノラマ"),
+    ("Stand inside the landmark.",
+     "Entra en el monumento.",
+     "Steh mitten im Bauwerk.",
+     "名建築の中に立とう。"),
+    ("@A 3D globe with stamp pins floating in a living room in front of the Stamped! New York map",
+     "Un globo 3D con marcadores de sellos flotando en un salón delante del mapa de Nueva York de Stamped!",
+     "Ein 3D-Globus mit Stempel-Nadeln schwebt in einem Wohnzimmer vor der New-York-Karte von Stamped!",
+     "Stamped!のニューヨークの地図の前、リビングに浮かぶスタンプのピン付き3D地球儀"),
+    ("The globe",
+     "El globo",
+     "Der Globus",
+     "地球儀"),
+    ("Spin it, and a city turns toward you.",
+     "Hazlo girar y una ciudad se vuelve hacia ti.",
+     "Dreh ihn, und eine Stadt wendet sich dir zu.",
+     "回すと、都市があなたの方を向きます。"),
+    ("Mac · The big screen",
+     "Mac · La pantalla grande",
+     "Mac · Der große Bildschirm",
+     "Mac · 大きな画面で"),
+    ("Plan it all ",
+     "Planifícalo todo ",
+     "Plane alles ",
+     "すべての計画を"),
+    ("on your Mac.",
+     "en tu Mac.",
+     "auf dem Mac.",
+     "Macで。"),
+    ("The same passport on a bigger screen: your cities in the sidebar, the 3D map in the middle and the city page beside it. Plan on the Mac, then pick the trip up on your iPhone with iCloud.",
+     "El mismo pasaporte en una pantalla más grande: tus ciudades en la barra lateral, el mapa 3D en el centro y la página de la ciudad al lado. Planifica en el Mac y retoma el viaje en tu iPhone con iCloud.",
+     "Derselbe Reisepass auf einem größeren Bildschirm: deine Städte in der Seitenleiste, die 3D-Karte in der Mitte und die Stadtseite daneben. Plane auf dem Mac und mach auf dem iPhone mit iCloud weiter.",
+     "同じパスポートを大きな画面で。サイドバーに都市、中央に3Dマップ、その横に都市のページ。Macで計画して、iCloudでiPhoneに引き継げます。"),
+    ("World Map, My Journey, Achievements, My College List, trips and the quiz each open in their own window",
+     "El mapa del mundo, Mi viaje, Logros, Mi lista de universidades, los viajes y el quiz se abren cada uno en su propia ventana",
+     "Weltkarte, Meine Reise, Erfolge, Meine College-Liste, Reisen und das Quiz öffnen sich jeweils in einem eigenen Fenster",
+     "世界地図、マイジャーニー、実績、マイ大学リスト、旅程、クイズをそれぞれ別のウインドウで開けます"),
+    ("Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts",
+     "En la próxima actualización: arrastra monumentos a un viaje, efectos al pasar el puntero y atajos de teclado",
+     "Mit dem nächsten Update: Bauwerke in eine Reise ziehen, Hover-Effekte und Tastaturkurzbefehle",
+     "次のアップデートで登場：名建築をドラッグして旅程に追加、ホバー効果、キーボードショートカット"),
+    ("@Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped",
+     "Stamped! en un Mac: una barra lateral de ciudades, un mapa 3D de Chicago con monumentos sellados y la página de Chicago con 17 de 17 monumentos sellados",
+     "Stamped! auf dem Mac: eine Seitenleiste mit Städten, eine 3D-Karte von Chicago mit gestempelten Bauwerken und die Chicago-Seite mit 17 von 17 gestempelten Bauwerken",
+     "MacのStamped!：都市のサイドバー、スタンプ済みの名建築が並ぶシカゴの3Dマップ、17件中17件スタンプ済みのシカゴのページ"),
+    # Hero shortcuts for the two main audiences
+    ("Planning a city trip?", "¿Planeas un viaje a una ciudad?", "Städtereise geplant?", "都市旅行の計画中？"),
+    ("Visiting colleges?", "¿Visitas universidades?", "College-Besuche geplant?", "大学見学に行く？"),
 ]
 
 # Text the quiz and video script (assets/js/stamped-app.js) write at runtime
@@ -548,7 +734,7 @@ COPY = {
                 done: 'Listo',
                 perfect: '¡Puntuación perfecta!',
                 yourScore: 'Has acertado {score} de {total}.',
-                more: 'La app tiene 288 quizzes y 2.880 preguntas.',
+                more: 'La app tiene 273 quizzes y 2.730 preguntas.',
                 playAgain: 'Jugar otra vez',
                 intro: 'Pruébalo. Tres preguntas.',
                 ranks: ['TURISTA', 'VIAJERO', 'LOCAL', 'EXPERTO'],
@@ -572,7 +758,7 @@ COPY = {
                 done: 'Fertig',
                 perfect: 'Volle Punktzahl.',
                 yourScore: 'Du hast {score} von {total} richtig.',
-                more: 'Die App hat 288 Quizze mit 2.880 Fragen.',
+                more: 'Die App hat 273 Quizze mit 2.730 Fragen.',
                 playAgain: 'Noch mal spielen',
                 intro: "Probier's aus. Drei Fragen.",
                 ranks: ['TOURIST', 'REISENDER', 'KENNER', 'EXPERTE'],
@@ -596,7 +782,7 @@ COPY = {
                 done: '結果',
                 perfect: '満点です。',
                 yourScore: '{total}問中{score}問正解。',
-                more: 'アプリには288のクイズ、2,880問があります。',
+                more: 'アプリには273のクイズ、2,730問があります。',
                 playAgain: 'もう一度',
                 intro: '3問だけ、挑戦してみよう。',
                 ranks: ['旅行者', 'トラベラー', '地元通', 'エキスパート'],
@@ -620,27 +806,40 @@ def pattern(english):
     return f">{english}<", lambda t: f">{t}<"
 
 
+def translations(lang):
+    """(rows, copy) for one language: rows are (english, translation) pairs in T's order."""
+    if lang in TABLE_LANGS:
+        col = TABLE_LANGS.index(lang) + 1
+        return [(row[0], row[col]) for row in T], COPY[lang]
+    data = json.loads((JSON_DIR / f"{lang}.json").read_text(encoding="utf-8"))
+    untranslated = [row[0] for row in T if row[0] not in data["rows"]]
+    if untranslated:
+        raise SystemExit(f"{lang}.json has no translation for:\n  " + "\n  ".join(untranslated))
+    return [(row[0], data["rows"][row[0]]) for row in T], data["copy"]
+
+
 def build(lang, source):
     html = source
-    col = LANGS.index(lang) + 1
+    rows, copy = translations(lang)
+    hl = HTML_LANG.get(lang, lang)
     missing = []
-    for row in T:
-        find, wrap = pattern(row[0])
+    for english, translated in rows:
+        find, wrap = pattern(english)
         if find not in html:
-            missing.append(row[0])
+            missing.append(english)
             continue
-        html = html.replace(find, wrap(row[col]))
+        html = html.replace(find, wrap(translated))
     if missing:
         raise SystemExit("These English strings are no longer on the page; update the table:\n  " + "\n  ".join(missing))
 
     # The runtime text block
     start = html.index("            window.stampedCopy = {")
     end = html.index("};", start) + 2
-    html = html[:start] + "            window.stampedCopy = " + COPY[lang] + ";" + html[end:]
+    html = html[:start] + "            window.stampedCopy = " + copy + ";" + html[end:]
 
     page = f"stamped-app-{lang}.html"
     swaps = [
-        ('<html lang="en">', f'<html lang="{lang}">'),
+        ('<html lang="en">', f'<html lang="{hl}">'),
         ('<link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app.html" />',
          f'<link rel="canonical" href="https://georgeclinkscalesdev.com/{page}" />'),
         ('<meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app.html" />',
@@ -652,8 +851,8 @@ def build(lang, source):
         ('<summary aria-label="Language: English"><i class="fas fa-globe" aria-hidden="true"></i>EN</summary>',
          f'<summary aria-label="{NAME[lang]}"><i class="fas fa-globe" aria-hidden="true"></i>{lang.upper()}</summary>'),
         ('hreflang="en" lang="en" aria-current="page">', 'hreflang="en" lang="en">'),
-        (f'<li><a href="{page}" hreflang="{lang}" lang="{lang}">',
-         f'<li><a href="{page}" hreflang="{lang}" lang="{lang}" aria-current="page">'),
+        (f'<li><a href="{page}" hreflang="{hl}" lang="{hl}">',
+         f'<li><a href="{page}" hreflang="{hl}" lang="{hl}" aria-current="page">'),
         ('<a class="brand" href="stamped-app.html">', f'<a class="brand" href="{page}">'),
         ('"downloadUrl": "https://apps.apple.com/us/', f'"downloadUrl": "https://apps.apple.com/{STORE[lang]}/'),
     ]

@@ -21,7 +21,8 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, booking_link, e,
+from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, booking_link, COMING_SOON_CAMPUSES, coming_soon_note,
+                              coming_soon_tag, e,
                               expedia_link, height_label, jsonld, known, local_photos, photo_figure, slug,
                               suggest_section, versioned, vrbo_link, year_label, year_sort)
 from campus_cards import CampusData, campus_cards
@@ -115,7 +116,7 @@ def campus_page(campus, buildings, traditions, siblings, photos, data, architect
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-colleges.html">College visits</a> <span aria-hidden="true">/</span> <a href="../stamped-colleges.html#schools">{e(group)}</a> <span aria-hidden="true">/</span> {e(country)}</nav>
             <p class="kicker"><span class="school-colors" aria-hidden="true">{colors}</span>{e(details.get('nickname') or 'Campus guide')}</p>
-            <h1>{e(name)}</h1>
+            <h1>{e(name)}</h1>{coming_soon_note(name)}
             <p class="lead">{e(details.get('funFact', ''))}</p>
             <ul class="stats">
                 <li><strong>{n}</strong><span>Buildings</span></li>""")
@@ -293,7 +294,7 @@ def school_list_html(groups):
     out = []
     for group in GROUPS:
         names = groups[group]
-        links = "".join(f'<li><a href="stamped-colleges/{slug(c)}.html">{e(c)}</a></li>' for c in names)
+        links = "".join(f'<li><a href="stamped-colleges/{slug(c)}.html">{e(c)}{coming_soon_tag(c)}</a></li>' for c in names)
         out.append(f"""
                     <li class="school-group">
                         <h3>{e(group)}<span>{len(names)}</span></h3>
@@ -307,7 +308,10 @@ def update_landing(groups, total):
     start = page.index('<ul class="school-groups reveal" role="list">') + len('<ul class="school-groups reveal" role="list">')
     end = page.index("</ul>\n            </div>\n        </section>", start)
     page = page[:start] + school_list_html(groups) + page[end:]
-    page = re.sub(r"Every school · \d+ campuses", f"Every school · {total} campuses", page)
+    # The count is what the App Store version has; coming-soon campuses are listed but tagged
+    soon = len(COMING_SOON_CAMPUSES)
+    label = f"Every school · {total - soon} campuses" + (f" + {soon} coming soon" if soon else "")
+    page = re.sub(r"Every school · \d+ campuses( \+ \d+ coming soon)?", label, page)
     LANDING.write_text(page, encoding="utf-8")
 
 

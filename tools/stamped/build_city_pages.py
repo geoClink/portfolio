@@ -37,6 +37,31 @@ SITE = "https://georgeclinkscalesdev.com"
 # so App Analytics → Acquisition → Campaigns counts downloads that came from these pages.
 APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&ct=website-guides&mt=8"
 
+# Places already in the app's data but not yet in the App Store version people can download.
+# Their pages, cards and list entries say "Coming in the next update". Empty both sets once that
+# version (2.10) is live. Campus names are the registry's own spelling.
+COMING_SOON_CITIES = {"Porto", "Kraków", "Granada", "Marseille", "Antwerp", "Riga", "Hiroshima", "Hanoi",
+                      "Milwaukee", "Tulsa"}
+COMING_SOON_CAMPUSES = {"Cranbrook Academy of Art", "University of California, San Diego", "University of Coimbra",
+                        "University of Salamanca", "University of Tokyo"}
+COMING_SOON = "Coming in the next update"
+
+
+def coming_soon_note(place):
+    """The note under a coming-soon place's title (empty for every other place)."""
+    if place not in COMING_SOON_CITIES | COMING_SOON_CAMPUSES:
+        return ""
+    return (f'\n            <p class="coming-soon"><strong>{COMING_SOON}</strong> '
+            f'{e(place)} isn\'t in the App Store version yet. Get the app now and it arrives with the update.</p>')
+
+
+def coming_soon_tag(place):
+    """A small "Coming soon" tag for a place's card or list entry (empty for every other place)."""
+    if place not in COMING_SOON_CITIES | COMING_SOON_CAMPUSES:
+        return ""
+    return '<em class="soon-tag">Coming soon</em>'
+
+
 # City -> (country, continent). Continents match the groups on stamped-app.html.
 PLACES = {
     # North America
@@ -452,7 +477,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">City guides</a> <span aria-hidden="true">/</span> <a href="{slug(continent)}.html">{e(continent)}</a> <span aria-hidden="true">/</span> {e(country)}</nav>
             <p class="kicker">{e(details.get('nickname') or 'City guide')}</p>
-            <h1>{e(city)} architecture</h1>
+            <h1>{e(city)} architecture</h1>{coming_soon_note(city)}
             <p class="lead">{e(details.get('funFact', ''))}</p>
             <ul class="stats">
                 <li><strong>{n}</strong><span>{noun.title()}</span></li>""")
@@ -719,7 +744,7 @@ def continent_page(continent, cities, registry, details, photos):
         nick = details.get(city, {}).get("nickname")
         n = len(registry[city])
         out.append(f"""
-                <li><a href="{slug(city)}.html">{img}<span class="city-card-text"><strong>{e(city)}</strong>{f"<em>{e(nick)}</em>" if known(nick) else ""}<small>{e(PLACES[city][0])} · {n} landmark{"s" if n != 1 else ""}</small>{f'<span class="card-credit">{e(credit_text(ph))}</span>' if ph else ""}</span></a></li>""")
+                <li><a href="{slug(city)}.html">{img}<span class="city-card-text"><strong>{e(city)}</strong>{coming_soon_tag(city)}{f"<em>{e(nick)}</em>" if known(nick) else ""}<small>{e(PLACES[city][0])} · {n} landmark{"s" if n != 1 else ""}</small>{f'<span class="card-credit">{e(credit_text(ph))}</span>' if ph else ""}</span></a></li>""")
     out.append("""
             </ul>
         </div>
@@ -998,6 +1023,8 @@ IMPACT_VERIFICATION = "    <meta name='impact-site-verification' value='50bace8a
 def index_page(by_continent, counts):
     total = sum(counts.values())
     cities = len(counts)
+    soon = len([c for c in counts if c in COMING_SOON_CITIES])
+    soon_text = f" {soon} of them, marked Coming soon, arrive in the next app update." if soon else ""
     title = f"City Guides: {cities} Cities of Great Architecture | Stamped!"
     description = (f"Architecture guides to {cities} cities on six continents, with {total:,} landmarks: "
                    "architects, build dates, styles and history, from the Stamped! app.")
@@ -1013,14 +1040,14 @@ def index_page(by_continent, counts):
             <nav class="crumbs" aria-label="Breadcrumb"><a href="../stamped-app.html">Stamped!</a> <span aria-hidden="true">/</span> City guides</nav>
             <p class="kicker">City guides · Six continents</p>
             <h1>{cities} cities of great architecture</h1>
-            <p class="lead">Every city in the Stamped! app, with its landmarks, architects, build dates and the story behind each building. {total:,} landmarks in all.</p>
+            <p class="lead">Every city in the Stamped! app, with its landmarks, architects, build dates and the story behind each building. {total:,} landmarks in all.{soon_text}</p>
         </div>
     </section>
 """)
     for continent in CONTINENTS:
         cities = by_continent[continent]
         items = "".join(
-            f'<li><a href="{slug(c)}.html"><strong>{e(c)}</strong><span>{e(PLACES[c][0])} · {counts[c]} landmark{"s" if counts[c] != 1 else ""}</span></a></li>'
+            f'<li><a href="{slug(c)}.html"><strong>{e(c)}</strong>{coming_soon_tag(c)}<span>{e(PLACES[c][0])} · {counts[c]} landmark{"s" if counts[c] != 1 else ""}</span></a></li>'
             for c in cities)
         out.append(f"""
     <section class="continent" aria-labelledby="{slug(continent)}">

@@ -750,3 +750,38 @@ a { color: inherit; }
 /* Before you go: each partner link on its own line (Expedia and Vrbo, GetYourGuide and Viator) */
 .fact-grid .hotel-link { display: block; }
 .fact-grid .hotel-link + .hotel-link { margin-top: 6px; }
+
+/* ----- Coming soon: places in the app's data that the App Store version doesn't have yet ----- */
+.coming-soon {
+    display: inline-block;
+    max-width: 62ch;
+    margin: 4px 0 18px;
+    padding: 10px 14px;
+    border: 1px dashed var(--color-accent-ink);
+    border-radius: 10px;
+    color: var(--color-ink);
+    font-size: 15px;
+    line-height: 1.45;
+}
+.coming-soon strong {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-ink);
+}
+.soon-tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    opacity: 0.8;
+}

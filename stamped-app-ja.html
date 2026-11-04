@@ -4,7 +4,7 @@
     <title>Stamped! A City Passport：世界の名建築をスタンプで集めよう</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="6大陸156都市の2,100以上の名建築と、122の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。iPhone・iPad・Mac・Apple Vision Proで無料。" />
+    <meta name="description" content="156都市と117キャンパス、2,100以上の名建築でスタンプを集めよう。3Dで飛び回れます。iPhone・iPad・Mac・Apple Vision Proで無料。" />
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
@@ -12,19 +12,28 @@
     <link rel="alternate" hreflang="es" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
     <link rel="alternate" hreflang="de" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
     <link rel="alternate" hreflang="ja" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
+    <link rel="alternate" hreflang="fr" href="https://georgeclinkscalesdev.com/stamped-app-fr.html" />
+    <link rel="alternate" hreflang="it" href="https://georgeclinkscalesdev.com/stamped-app-it.html" />
+    <link rel="alternate" hreflang="ko" href="https://georgeclinkscalesdev.com/stamped-app-ko.html" />
+    <link rel="alternate" hreflang="pt" href="https://georgeclinkscalesdev.com/stamped-app-pt.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://georgeclinkscalesdev.com/stamped-app-zh.html" />
     <link rel="alternate" hreflang="x-default" href="https://georgeclinkscalesdev.com/stamped-app.html" />
     <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
-    <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
 
     <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
     <meta name="apple-itunes-app" content="app-id=6759680336" />
 
     <meta property="og:title" content="Stamped! A City Passport" />
-    <meta property="og:description" content="2,100以上の名建築、166都市、6大陸、122キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。" />
+    <meta property="og:description" content="2,100以上の名建築、156都市、6大陸、117キャンパス。3Dで飛び回り、訪れた場所ごとにスタンプを集めよう。" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stamped! A City Passport" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Stamped! A City Passport：3D都市マップに重なるパスポートスタンプ" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
 
@@ -34,7 +43,7 @@
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Stamped! A City Passport",
-        "description": "6大陸156都市の2,100以上の名建築と、122の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。",
+        "description": "6大陸156都市の2,100以上の名建築と、117の大学キャンパスでパスポートスタンプを集めよう。3Dで街を飛び回り、建築家を知り、クイズに挑戦して、旅を計画。",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, iPadOS, macOS, visionOS",
         "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
@@ -51,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=bcbe6755" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=5d471580" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -84,6 +93,7 @@
                 <a href="#quiz">クイズ</a>
                 <a href="#trips">旅行</a>
                 <a href="#campuses">キャンパス</a>
+                <a class="nav-wide" href="#vision">Vision Pro</a>
                 <details class="lang-switch">
                     <summary aria-label="日本語"><i class="fas fa-globe" aria-hidden="true"></i>JA</summary>
                     <ul>
@@ -91,6 +101,11 @@
                         <li><a href="stamped-app-es.html" hreflang="es" lang="es">Español</a></li>
                         <li><a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a></li>
                         <li><a href="stamped-app-ja.html" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+                        <li><a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a></li>
+                        <li><a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a></li>
+                        <li><a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a></li>
+                        <li><a href="stamped-app-pt.html" hreflang="pt" lang="pt">Português</a></li>
+                        <li><a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
                     </ul>
                 </details>
                 <a class="header-button" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">アプリを入手</a>
@@ -106,7 +121,7 @@
                 <div>
                     <p class="kicker">都市のパスポート · iPhone・iPad・Mac・Vision Proで無料</p>
                     <h1 id="hero-title">世界の名建築を、<span class="highlight">スタンプで。</span></h1>
-                    <p class="hero-lead">世界の名建築を、スタンプで埋めるパスポートに変えるiPhoneアプリ。166都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。</p>
+                    <p class="hero-lead">世界の名建築を、スタンプで埋めるパスポートに変えるアプリ。iPhone・iPad・Mac・Apple Vision Proに対応。156都市を3Dで飛び回り、誰がなぜ建てたのかを知り、訪れた名建築ごとにスタンプを集めよう。</p>
                     <div class="cta-row">
                         <a class="app-store-badge" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">
                             <img src="assets/images/site/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="162" height="54" alt="Download on the App Store" />
@@ -121,17 +136,17 @@
                         </div>
                     </div>
                     <ul class="hero-paths">
-                        <li><a href="#trips"><i class="fas fa-suitcase-rolling" aria-hidden="true"></i>Planning a city trip?</a></li>
-                        <li><a href="stamped-colleges.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Visiting colleges?</a></li>
+                        <li><a href="#trips"><i class="fas fa-suitcase-rolling" aria-hidden="true"></i>都市旅行の計画中？</a></li>
+                        <li><a href="stamped-colleges.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i>大学見学に行く？</a></li>
                     </ul>
                     <div class="passport-strip">
                         <div class="passport-strip-head" aria-hidden="true"><span>パスポート · Stamped!</span><span>タイプ P</span></div>
                         <ul class="stats">
                             <li><strong>2,100+</strong><span>名建築</span></li>
-                            <li><strong>166</strong><span>都市</span></li>
+                            <li><strong>156</strong><span>都市</span></li>
                             <li><strong>6</strong><span>大陸</span></li>
                             <li><strong>60+</strong><span>か国</span></li>
-                            <li><strong>122</strong><span>キャンパス</span></li>
+                            <li><strong>117</strong><span>キャンパス</span></li>
                             <li><strong>9</strong><span>言語</span></li>
                         </ul>
                         <p class="passport-mrz" aria-hidden="true">P&lt;WORLD&lt;&lt;GREAT&lt;BUILDINGS&lt;&lt;STAMPED&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
@@ -165,7 +180,7 @@
                     <li>
                         <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
                         <h3>ソファから探検</h3>
-                        <p>166都市をフォトリアルな3Dで飛び回り、建物ごとの物語を読もう。</p>
+                        <p>156都市をフォトリアルな3Dで飛び回り、すべての建物の物語を読もう。</p>
                     </li>
                     <li>
                         <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
@@ -314,29 +329,30 @@
 
         <!-- Every continent -->
         <section class="continents" aria-labelledby="continents-title">
-            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">6大陸</textPath></text><text class="stamp-big" x="60" y="64">166</text><text class="stamp-small" x="60" y="77">都市</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">6大陸</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">都市</text></svg>
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">6大陸 · 166都市</p>
+                    <p class="kicker">6大陸 · 156都市</p>
                     <h2 id="continents-title" class="section-title">飛行機で行けるすべての大陸へ。</h2>
-                    <p class="section-lead">定番の首都だけではありません。レイキャビクからザンジバルまで156都市を収録。どの都市にも名建築、クイズ、スタンプがあります。</p>
+                    <p class="section-lead">定番の首都だけではありません。レイキャビクからザンジバルまで156都市を収録。それぞれに名建築、クイズ、スタンプがあります。</p>
+                    <p class="coming-note">ポルト、クラクフから広島、ハノイまで、さらに10都市が次のアップデートで登場します。</p>
                 </div>
                 <ul class="continent-grid reveal">
                     <li>
                         <a href="stamped-cities/europe.html">
-                        <h3>ヨーロッパ <span>34都市</span></h3>
+                        <h3>ヨーロッパ <span>28都市</span></h3>
                         <p>パリ、ローマ、バルセロナ、ロンドン、プラハ、イスタンブール、レイキャビク、トビリシ…</p>
                         </a>
                     </li>
                     <li>
                         <a href="stamped-cities/asia.html">
-                        <h3>アジア <span>38都市</span></h3>
+                        <h3>アジア <span>36都市</span></h3>
                         <p>東京、京都、ソウル、シンガポール、ドバイ、ムンバイ、カトマンズ、西安…</p>
                         </a>
                     </li>
                     <li>
                         <a href="stamped-cities/north-america.html">
-                        <h3>北米 <span>37都市</span></h3>
+                        <h3>北米 <span>35都市</span></h3>
                         <p>ニューヨーク、シカゴ、メキシコシティ、ハバナ、トロント、ホノルル、デトロイト…</p>
                         </a>
                     </li>
@@ -506,7 +522,7 @@
                 <div class="reveal">
                     <p class="kicker">遊ぶ · 建築クイズ</p>
                     <h2 id="quiz-title" class="section-title">あなたの<span class="highlight">知識を試そう。</span></h2>
-                    <p>どの都市・キャンパスにも、実在の名建築から作られた10問のクイズがあります。様式、建築年、建築家、階数。全288クイズ、9言語に対応。タップでも音声でも答えられます。</p>
+                    <p>各都市・各キャンパスに、実在の名建築から作った10問のクイズがあります。様式、建築年、建築家、階数。全273クイズ、9言語に対応。タップでも声でも答えられます。</p>
 
                     <!-- A three-question sample of the in-app quiz -->
                     <div class="quiz-card" data-quiz>
@@ -619,6 +635,68 @@
             </div>
         </section>
 
+        <!-- Apple Vision Pro -->
+        <section class="section section--deep feature" id="vision" aria-labelledby="vision-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Apple Vision Pro · 空間</p>
+                    <h2 id="vision-title" class="section-title">名建築の<span class="highlight">中に立とう。</span></h2>
+                    <p>Apple Vision Proでは、すべての都市がフォトリアルな3Dマップとして部屋に浮かび、iPhoneで集めたスタンプもそのまま使えます。</p>
+                    <ul class="feature-list">
+                        <li>全都市を収めた3D地球儀。スタンプ済みの場所がピンでリアルタイムに表示</li>
+                        <li>360°パノラマ：26の名建築の中に立てます</li>
+                        <li>Play Tour：ナレーション付きで名建築から名建築へ飛ぶツアー</li>
+                        <li>デトロイトをまるごと3Dで。必要なときだけダウンロード</li>
+                        <li>次のアップデートで登場：SharePlayの「一緒に探索」。FaceTime中の友だちと一緒に街を飛び回れます</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336?platform=vision&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="162" height="54" alt="Apple Vision Pro向けにApp Storeからダウンロード" />
+                        </a>
+                        <span class="cta-note">Apple Vision Pro版</span>
+                    </div>
+                </div>
+                <div class="device-stack reveal">
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-panorama.webp" width="1600" height="900" loading="lazy"
+                             alt="Apple Vision ProのStamped!：タージ・マハル・パレス・ホテルの階段の360°パノラマの中に浮かぶムンバイの地図ウインドウ" />
+                        <figcaption><strong>360°パノラマ</strong>名建築の中に立とう。</figcaption>
+                    </figure>
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
+                             alt="Stamped!のニューヨークの地図の前、リビングに浮かぶスタンプのピン付き3D地球儀" />
+                        <figcaption><strong>地球儀</strong>回すと、都市があなたの方を向きます。</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mac -->
+        <section class="section feature flip" id="mac" aria-labelledby="mac-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Mac · 大きな画面で</p>
+                    <h2 id="mac-title" class="section-title">すべての計画を<span class="highlight">Macで。</span></h2>
+                    <p>同じパスポートを大きな画面で。サイドバーに都市、中央に3Dマップ、その横に都市のページ。Macで計画して、iCloudでiPhoneに引き継げます。</p>
+                    <ul class="feature-list">
+                        <li>世界地図、マイジャーニー、実績、マイ大学リスト、旅程、クイズをそれぞれ別のウインドウで開けます</li>
+                        <li>次のアップデートで登場：名建築をドラッグして旅程に追加、ホバー効果、キーボードショートカット</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/jp/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="211" height="54" alt="Download on the Mac App Store" />
+                        </a>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <figure class="device-shot device-shot--mac">
+                        <img src="assets/images/stamped/app/mac-chicago.webp" width="1400" height="875" loading="lazy"
+                             alt="MacのStamped!：都市のサイドバー、スタンプ済みの名建築が並ぶシカゴの3Dマップ、17件中17件スタンプ済みのシカゴのページ" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <!-- Campuses -->
         <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
             <div class="container">
@@ -728,7 +806,31 @@
                     </li>
                     <li>
                         <i class="fas fa-universal-access" aria-hidden="true"></i>
-                        <div><h3>だれでも使いやすく</h3><p>高コントラスト、視差効果を減らす設定、ダークモードに対応。</p></div>
+                        <div><h3>だれでも使いやすく</h3><p>VoiceOver、Dynamic Type、視差効果を減らす設定に加え、高コントラストとダークモードにも対応。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-download-alt" aria-hidden="true"></i>
+                        <div><h3>オフライン保存</h3><p>都市の写真と物語を端末に保存。機内や海外旅行でも読めます。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-headphones" aria-hidden="true"></i>
+                        <div><h3>読み上げ</h3><p>名建築の物語を、目の前に立ちながら音声で聞けます。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-share-square" aria-hidden="true"></i>
+                        <div><h3>スタンプを共有</h3><p>都市やキャンパスのスタンプを画像カードにして友だちに送れます。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-microphone" aria-hidden="true"></i>
+                        <div><h3>Siriとショートカット</h3><p>「Stamped!でパリを開いて」と話しかけたり、ショートカットに追加したりできます。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <div><h3>ツアーとチケット</h3><p>GetYourGuideで、都市の名建築のツアーやチケットを探せます。</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-camera-retro" aria-hidden="true"></i>
+                        <div><h3>歴史的な写真</h3><p>米国議会図書館所蔵の、アメリカの名建築の古い写真や図面。</p></div>
                     </li>
                 </ul>
             </div>
@@ -784,6 +886,11 @@
                 <a href="stamped-app-es.html" hreflang="es" lang="es">Español</a>
                 <a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a>
                 <a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a>
+                <a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a>
+                <a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a>
+                <a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a>
+                <a href="stamped-app-pt.html" hreflang="pt" lang="pt">Português</a>
+                <a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
             </nav>
             <p>Stamped!はいかなる大学とも提携しておらず、承認も受けていません。大学名とスクールカラーは識別のためにのみ使用しています。</p>
             <p>Apple、Appleのロゴ、iPhone、iPad、Mac、Apple Vision Proは、Apple Inc.の商標です。App StoreおよびMac App Storeは、Apple Inc.のサービスマークです。</p>
@@ -805,7 +912,7 @@
                 done: '結果',
                 perfect: '満点です。',
                 yourScore: '{total}問中{score}問正解。',
-                more: 'アプリには288のクイズ、2,880問があります。',
+                more: 'アプリには273のクイズ、2,730問があります。',
                 playAgain: 'もう一度',
                 intro: '3問だけ、挑戦してみよう。',
                 ranks: ['旅行者', 'トラベラー', '地元通', 'エキスパート'],
