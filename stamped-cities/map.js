@@ -1,5 +1,5 @@
 // Live Apple Map for a city guide: every landmark pinned, and a Look Around preview of the
-// one you tap. MapKit JS only loads when the map scrolls near. The token comes from map-token.js.
+// one you tap. MapKit JS only loads once the map is on screen. The token comes from map-token.js.
 // Each pick is announced with a "stamped:landmark" event on the section, which nearby.js uses
 // to list restaurants and hotels around that landmark.
 (function () {
@@ -130,13 +130,15 @@
         document.head.appendChild(script);
     }
 
+    // Wait until the map is actually on screen: MapKit, its tiles and the first Look Around are
+    // about 5 MB, and on a phone the section starts within 400px of the top of the page
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function (entries) {
             if (entries.some(function (entry) { return entry.isIntersecting; })) {
                 observer.disconnect();
                 loadMapKit();
             }
-        }, { rootMargin: '400px 0px' });
+        }, { threshold: 0.1 });
         observer.observe(section);
     } else {
         loadMapKit();
