@@ -33,7 +33,9 @@ COLLEGES = ROOT / "stamped-colleges"
 LANDING = ROOT / "stamped-app.html"
 SITEMAP = ROOT / "sitemap.xml"
 SITE = "https://georgeclinkscalesdev.com"
-APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336"
+# App Store link with an App Store Connect campaign (pt = our provider token, ct = campaign name),
+# so App Analytics → Acquisition → Campaigns counts downloads that came from these pages.
+APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&ct=website-guides&mt=8"
 
 # City -> (country, continent). Continents match the groups on stamped-app.html.
 PLACES = {
