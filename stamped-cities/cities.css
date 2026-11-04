@@ -674,10 +674,34 @@ a { color: inherit; }
 .nearby-title { margin: 0 0 14px; font-family: var(--font-serif); font-size: 20px; }
 .nearby-grid { display: grid; gap: 16px; }
 .nearby-group h4 { margin: 0 0 8px; }
-.nearby-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.nearby-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; font-size: 15px; }
+.nearby-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+/* Each place is a row: name and walking time stacked on the left, an optional button on the right */
+.nearby-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-line);
+    font-size: 15px;
+}
+.nearby-list li:last-child { border-bottom: 0; }
+.nearby-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .nearby-list a { color: var(--color-ink); font-weight: 600; text-decoration-color: var(--color-line); }
 .nearby-list a:hover { color: var(--color-accent-ink); }
+/* "Check prices" next to a nearby hotel: smaller and in the accent colour, so the hotel name stays the main link */
+.nearby-list a.nearby-prices {
+    padding: 6px 12px;
+    border: 1px solid var(--color-accent-ink);
+    border-radius: 999px;
+    color: var(--color-accent-ink);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nearby-list a.nearby-prices:hover { background: var(--color-accent-ink); color: #fff; }
+.nearby-commission { margin: 8px 0 0; font-size: 13px; color: var(--color-muted); }
 .nearby-walk { font-size: 13px; color: var(--color-muted); white-space: nowrap; }
 .nearby-note { margin: 14px 0 0; font-size: 13px; color: var(--color-muted); }
 @media (min-width: 768px) {
