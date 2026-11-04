@@ -17,6 +17,9 @@
     --color-stamp-navy: #24375E;
     --color-stamp-red: #B2333B;
     --color-phone: #1A1A1A;
+    --phone-rim: 1.5px;            /* metal edge of the CSS phone mockup */
+    --phone-bezel: 4px;            /* black glass between the edge and the screen */
+    --phone-button: 2.5px;         /* side buttons */
     --color-band: #1F1B16;         /* dark full-width band */
     --color-band-ink: #F5EFE4;
     --color-right: #2F5D4A;
@@ -230,17 +233,16 @@ a { color: inherit; }
 .cta .qr-card strong { color: var(--color-band-ink); }
 .cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
 
-/* A phone drawn with CSS around a plain screenshot: a brushed metal rim, a thin black bezel and side buttons */
+/* A phone drawn with CSS around a plain screenshot: a thin metal rim, a thin black bezel and side buttons */
 .phone {
     position: relative;
     width: 100%;
     max-width: 280px;
     margin: 0 auto;
-    /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
-       so small phones on a narrow screen keep the same shape instead of turning blobby */
-    padding: 2.5%;
-    border: 3px solid transparent;
-    border-radius: 18% / 8.5%;
+    padding: var(--phone-bezel);
+    border: var(--phone-rim) solid transparent;
+    /* Outer corner = screen corner plus the thin bezel, so the black ring stays even all the way round */
+    border-radius: 16.8% / 7.9%;
     background:
         linear-gradient(#050505, #050505) padding-box,
         linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
@@ -251,13 +253,13 @@ a { color: inherit; }
 .phone::after {
     content: "";
     position: absolute;
-    width: 3px;
+    width: var(--phone-button);
     border-radius: 2px;
     background: linear-gradient(90deg, #2a2a2d, #6e6e73);
 }
 /* One strip painted as three buttons: action, volume up, volume down */
 .phone::before {
-    left: -6px;
+    left: calc(-1 * (var(--phone-rim) + var(--phone-button)));
     top: 17%;
     height: 25%;
     background: linear-gradient(180deg,
@@ -266,7 +268,7 @@ a { color: inherit; }
         #55555a 70% 100%);
 }
 .phone::after {
-    right: -6px;
+    right: calc(-1 * (var(--phone-rim) + var(--phone-button)));
     top: 25%;
     height: 11%;
     background: linear-gradient(270deg, #2a2a2d, #6e6e73);
