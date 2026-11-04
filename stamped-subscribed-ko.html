@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <title>구독 완료 · Stamped! A City Passport</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- A thank-you page people reach after confirming their email, so search engines can skip it -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1F1B16" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F0D0A" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+</head>
+<body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <!-- The same stamp pieces as the landing page: the ring frame and the arc the words sit on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app-ko.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="cta subscribed" aria-labelledby="subscribed-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">즐거운 여행 되세요</textPath></text><text class="stamp-big" x="60" y="64">출발</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">환영합니다</textPath></text><text class="stamp-big" x="60" y="64">도착</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container">
+                <svg class="stamp stamp--orange subscribed-stamp" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">구독 완료</textPath></text><text class="stamp-big" x="60" y="64">소식</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                <h1 id="subscribed-title">구독이 완료되었어요.</h1>
+                <p>확인해 주셔서 감사합니다. 새로운 도시와 캠퍼스가 추가되면 이메일로 알려 드릴게요.</p>
+                <p class="signup-note">이메일은 1년에 몇 번만 보내요. 언제든 수신을 거부할 수 있어요.</p>
+                <a class="header-button subscribed-back" href="stamped-app-ko.html">Stamped!로 돌아가기</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="App links">
+                <a href="contact.html">지원</a>
+                <a href="stamped-privacy.html">개인정보 처리방침</a>
+                <a href="stamped-cities/index.html">도시 가이드</a>
+            </nav>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+</body>
+</html>

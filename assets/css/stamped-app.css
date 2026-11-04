@@ -1202,6 +1202,26 @@ a { color: inherit; }
 .cta .signup button { padding: 11px 18px; border: 0; border-radius: 999px; background: #F2743F; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
 .cta .signup button:focus-visible, .cta .signup input:focus-visible { outline: 2px solid #F2743F; outline-offset: 2px; }
 .cta .signup-note { margin: 8px 0 0; font-size: 13px; opacity: 0.6; }
+/* The stamped "check your inbox" note that replaces the form once it's sent */
+.cta .signup-done { max-width: 26rem; margin: 30px auto 0; outline: none; }
+.cta .signup-done[hidden] { display: none; }
+.cta .signup-done .stamp { position: static; display: block; width: 104px; height: 104px; margin: 0 auto 10px; --tilt: -8deg; --delay: 0.1s; }
+.cta .signup-done-title { font-family: var(--font-serif); font-size: 24px; opacity: 1; margin: 0 0 6px; }
+.cta .signup-done p { margin-bottom: 0; }
+
+/* ===== Thank-you page (stamped-subscribed.html): the closing band, filling the screen ===== */
+.subscribed { min-height: calc(100vh - 160px); display: flex; align-items: center; }
+.subscribed .container { width: 100%; }
+.cta.subscribed .container .subscribed-stamp { position: static; display: block; width: 140px; height: 140px; margin: 0 auto 18px; --tilt: -10deg; }
+.subscribed h1 { font-family: var(--font-serif); font-size: 40px; line-height: 1.1; margin: 0 0 12px; }
+.subscribed p { margin-bottom: 8px; }
+.subscribed .subscribed-back { display: inline-block; margin-top: 22px; padding: 11px 22px; font-size: 16px; }
+/* On phones the two faint band stamps tuck into the corners so they don't cover the words */
+@media (max-width: 767px) {
+    .cta.subscribed > .stamp { width: 120px; height: 120px; }
+    .cta.subscribed > .stamp:nth-of-type(1) { left: -44px; top: -14px; }
+    .cta.subscribed > .stamp:nth-of-type(2) { right: -40px; bottom: -24px; }
+}
 .cta .stamp { width: 170px; height: 170px; }
 .cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
 .cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }

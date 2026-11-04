@@ -60,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=5d471580" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -866,6 +866,14 @@
                     </div>
                     <p class="signup-note">이메일은 1년에 몇 번만 보내요. 언제든 수신을 거부할 수 있어요.</p>
                 </form>
+                <!-- Shown in place of the form once it's sent (assets/js/stamped-app.js). Without JavaScript
+                     the form still works: Buttondown's page opens in a new tab, as before. -->
+                <div class="signup-done" role="status" tabindex="-1" hidden>
+                    <svg class="stamp stamp--orange" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">거의 다 됐어요</textPath></text><text class="stamp-big" x="60" y="64">메일</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <p class="signup-done-title">받은편지함을 확인하세요.</p>
+                    <p>메일 속 링크를 탭해 확인하면 구독이 완료돼요.</p>
+                    <p class="signup-note">새 탭에서 사람인지 확인을 요청하면 먼저 완료해 주세요.</p>
+                </div>
                 <p class="cta-tip">Stamped!를 즐기고 계신가요? <a href="https://buy.stripe.com/aFabIVa0y4D4dQ4f7248000" rel="noopener">팁 남기기</a>로 새로운 도시 추가를 응원해 주세요.</p>
             </div>
         </section>
@@ -926,7 +934,7 @@
                 ]
             };
     </script>
-    <script src="assets/js/stamped-app.js?v=4c949fd0" defer></script>
+    <script src="assets/js/stamped-app.js?v=43cd62dc" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->

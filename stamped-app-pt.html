@@ -60,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=5d471580" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -866,6 +866,14 @@
                     </div>
                     <p class="signup-note">Poucos e-mails por ano. Cancele quando quiser.</p>
                 </form>
+                <!-- Shown in place of the form once it's sent (assets/js/stamped-app.js). Without JavaScript
+                     the form still works: Buttondown's page opens in a new tab, as before. -->
+                <div class="signup-done" role="status" tabindex="-1" hidden>
+                    <svg class="stamp stamp--orange" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">QUASE LÁ</textPath></text><text class="stamp-big" x="60" y="64">E-MAIL</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <p class="signup-done-title">Confira seu e-mail.</p>
+                    <p>Toque no link do nosso e-mail para confirmar e você estará na lista.</p>
+                    <p class="signup-note">Se a nova aba pedir para provar que você é humano, faça isso primeiro.</p>
+                </div>
                 <p class="cta-tip">Curtindo o Stamped!? <a href="https://buy.stripe.com/aFabIVa0y4D4dQ4f7248000" rel="noopener">Deixe uma gorjeta</a> para ajudar a trazer novas cidades.</p>
             </div>
         </section>
@@ -926,7 +934,7 @@
                 ]
             };
     </script>
-    <script src="assets/js/stamped-app.js?v=4c949fd0" defer></script>
+    <script src="assets/js/stamped-app.js?v=43cd62dc" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->

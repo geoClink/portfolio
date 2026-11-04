@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <title>Schau in dein Postfach · Stamped! A City Passport</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Buttondown sends people here right after they sign up, so search engines can skip it -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1F1B16" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F0D0A" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <!-- The same stamp pieces as the landing page: the ring frame and the arc the words sit on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app-de.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="cta subscribed" aria-labelledby="subscribed-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">GUTE REISE</textPath></text><text class="stamp-big" x="60" y="64">ABFLUG</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">WILLKOMMEN</textPath></text><text class="stamp-big" x="60" y="64">ANKUNFT</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container">
+                <svg class="stamp stamp--orange subscribed-stamp" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">FAST GESCHAFFT</textPath></text><text class="stamp-big" x="60" y="64">E-MAIL</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                <h1 id="subscribed-title">Schau in dein Postfach.</h1>
+                <p>Tippe zur Bestätigung auf den Link in unserer E-Mail, dann bist du dabei.</p>
+                <p class="signup-note">Nicht gefunden? Schau im Spam- oder Werbung-Ordner nach.</p>
+                <a class="header-button subscribed-back" href="stamped-app-de.html">Zurück zu Stamped!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="App links">
+                <a href="contact.html">Support</a>
+                <a href="stamped-privacy.html">Datenschutz</a>
+                <a href="stamped-cities/index.html">Stadtführer</a>
+            </nav>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+</body>
+</html>

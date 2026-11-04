@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="it">
+<head>
+    <title>Sei nella lista · Stamped! A City Passport</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- A thank-you page people reach after confirming their email, so search engines can skip it -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1F1B16" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F0D0A" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Vai al contenuto</a>
+
+    <!-- The same stamp pieces as the landing page: the ring frame and the arc the words sit on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app-it.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="cta subscribed" aria-labelledby="subscribed-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BUON VIAGGIO</textPath></text><text class="stamp-big" x="60" y="64">PARTENZA</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BENVENUTO</textPath></text><text class="stamp-big" x="60" y="64">ARRIVO</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container">
+                <svg class="stamp stamp--orange subscribed-stamp" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">NELLA LISTA</textPath></text><text class="stamp-big" x="60" y="64">NOVITÀ</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                <h1 id="subscribed-title">Sei nella lista.</h1>
+                <p>Grazie per la conferma. Ti scriveremo quando arriveranno nuove città e nuovi campus.</p>
+                <p class="signup-note">Poche email all’anno. Puoi annullare l’iscrizione quando vuoi.</p>
+                <a class="header-button subscribed-back" href="stamped-app-it.html">Torna a Stamped!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="App links">
+                <a href="contact.html">Assistenza</a>
+                <a href="stamped-privacy.html">Privacy</a>
+                <a href="stamped-cities/index.html">Guide delle città</a>
+            </nav>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+</body>
+</html>
