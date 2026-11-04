@@ -117,6 +117,9 @@
         .stamped-new-item { background: var(--color-surface); border-radius: 8px; border-left: 3px solid var(--case-accent); padding: 1.1em 1.2em; }
         .case-section .stamped-new-item h4 { font-size: 0.9em; margin: 0 0 0.35em; }
         .case-section .stamped-new-item p { font-size: 0.9em; line-height: 1.65; color: var(--color-text-muted); margin: 0; }
+        /* "Coming in 2.9" label on a section for a version that isn't out yet */
+        .case-coming { display: inline-block; font-size: 0.72em; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--case-accent); border: 1px solid var(--case-accent); border-radius: 99px; padding: 0.25em 0.75em; margin-bottom: 0.75em; }
 
         /* 3D map demo: the video, with chapter buttons beside it */
         .stamped-demo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5em; align-items: center; margin-top: 1.25em;
@@ -277,6 +280,7 @@
         <div class="case-links">
             <a href="stamped-app.html" class="button" style="align-self:flex-end;">App Website</a>
             <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="108" height="36" style="display:block;"></a>
+            <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the Mac App Store" width="141" height="36" style="display:block;"></a>
         </div>
 
         <figure class="stamped-hero-shots" style="margin-inline:0;">
@@ -307,7 +311,7 @@
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Status</div>
-                <div class="case-glance-value">2.7 live on iPhone and iPad, Mac and Vision Pro 2.6; 2.8 coming (as of Nov 2026)</div>
+                <div class="case-glance-value">2.8 live on iPhone, iPad, Mac and Vision Pro; 2.9 coming (as of Nov 2026)</div>
             </div>
             <div class="case-glance-item">
                 <div class="case-glance-label">Origin</div>
@@ -326,6 +330,7 @@
                 <li><a href="#vision-pro">Vision Pro</a></li>
                 <li><a href="#campus-pages">Campus pages</a></li>
                 <li><a href="#offline-mac">Offline &amp; Mac</a></li>
+                <li><a href="#next-version">Coming in 2.9</a></li>
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#hard">What was hard</a></li>
                 <li><a href="#next">Where it could go</a></li>
@@ -538,7 +543,7 @@
 
         <section class="case-section" id="offline-mac">
             <h3>2.8: Offline, Listen and a Real Mac App</h3>
-            <p>2.8 is in final prep for iPhone, iPad, Mac and Vision Pro. It adds 16 cities and 5 campuses (156 cities, 117 campuses, about 2,200 landmarks) and gives each platform a pass of its own.</p>
+            <p>2.8 is live on iPhone, iPad, Mac and Vision Pro. It adds 16 cities and 5 campuses (156 cities, 117 campuses, about 2,200 landmarks) and gives each platform a pass of its own.</p>
             <div class="stamped-wide-shots" style="--cols:1;">
                 <figure>
                     <img src="assets/images/stamped/app/v28-mac-city.webp" alt="Stamped! on Mac: a sidebar of Detroit landmarks, a satellite map with orange stamp pins, and the Detroit city panel with its passport stamp" width="1400" height="869" loading="lazy">
@@ -577,6 +582,26 @@
                 <div class="stamped-new-item">
                     <h4>Campaign Tracking</h4>
                     <p>App Store links on the website and in shared passports carry campaign tags, so I can see which ones bring downloads.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" id="next-version">
+            <span class="case-coming">Coming in 2.9</span>
+            <h3>2.9: A Better Voice, Detroit on Demand and a Tip Jar</h3>
+            <p>2.9 is finished and waiting to ship. It makes Listen sound better, keeps the Vision Pro download small, and adds a way to support the app without ads or a paywall.</p>
+            <div class="stamped-new-grid">
+                <div class="stamped-new-item">
+                    <h4>A Better Listen Voice</h4>
+                    <p>Listen now picks the best voice installed on the device, a Premium or Enhanced one if you have it. If you only have the basic voice, a tip shows how to download a better one in Settings.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Vision Pro: Detroit on Demand</h4>
+                    <p>The Detroit 3D model is an Apple-hosted asset pack that Vision Pro downloads with Background Assets when you first open it, so the app itself stays about 26 MB.</p>
+                </div>
+                <div class="stamped-new-item">
+                    <h4>Tip Jar</h4>
+                    <p>An optional tip jar in Settings, and on Vision Pro, built with StoreKit 2: three consumable tips you can leave as often as you like. Nothing in the app is locked behind it.</p>
                 </div>
             </div>
         </section>
@@ -730,7 +755,7 @@
 
         <div class="case-section" id="outcome" style="margin-top:3em;">
             <h3>The Outcome</h3>
-            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In eight months it went from 1.0 to 2.7 on iPhone and iPad, with 2.6 on Mac and Apple Vision Pro and 2.8 coming to all of them. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally. See the app itself on the <a href="stamped-app.html">Stamped! website</a>.</p>
+            <p>Stamped! started in February 2026 as my Swift Student Challenge entry and became the first app I took from zero to the App Store on my own. In nine months it went from 1.0 to 2.8 on iPhone, iPad, Mac and Apple Vision Pro, with 2.9 coming to all of them. The patterns I worked out here (one observable store, computed state instead of duplicates, a clean split between content, state, and UI) are the ones I've used in every app since, including Tally. See the app itself on the <a href="stamped-app.html">Stamped! website</a>.</p>
         </div>
 
         <nav class="spec-nav" aria-label="Case study navigation">
