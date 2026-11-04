@@ -4,7 +4,7 @@
     <title>Stamped! A City Passport: The World's Great Buildings</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Collect a passport stamp at more than 2,100 architectural landmarks in 166 cities on six continents and 122 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip. Free on iPhone, iPad, Mac and Apple Vision Pro." />
+    <meta name="description" content="Collect a passport stamp at 2,100+ landmarks in 156 cities and 117 campuses. Fly through them in 3D. Free on iPhone, iPad, Mac and Apple Vision Pro." />
     <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app.html" />
@@ -12,19 +12,28 @@
     <link rel="alternate" hreflang="es" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
     <link rel="alternate" hreflang="de" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
     <link rel="alternate" hreflang="ja" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
+    <link rel="alternate" hreflang="fr" href="https://georgeclinkscalesdev.com/stamped-app-fr.html" />
+    <link rel="alternate" hreflang="it" href="https://georgeclinkscalesdev.com/stamped-app-it.html" />
+    <link rel="alternate" hreflang="ko" href="https://georgeclinkscalesdev.com/stamped-app-ko.html" />
+    <link rel="alternate" hreflang="pt" href="https://georgeclinkscalesdev.com/stamped-app-pt.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://georgeclinkscalesdev.com/stamped-app-zh.html" />
     <link rel="alternate" hreflang="x-default" href="https://georgeclinkscalesdev.com/stamped-app.html" />
     <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
-    <link rel="apple-touch-icon" href="assets/images/stamped/app/icon.webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
 
     <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
     <meta name="apple-itunes-app" content="app-id=6759680336" />
 
     <meta property="og:title" content="Stamped! A City Passport" />
-    <meta property="og:description" content="2,100+ landmarks, 166 cities, six continents, 122 campuses. Fly through them in 3D and collect a stamp at every one you visit." />
+    <meta property="og:description" content="2,100+ landmarks, 156 cities, six continents, 117 campuses. Fly through them in 3D and collect a stamp at every one you visit." />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stamped! A City Passport" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app.html" />
     <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Stamped! A City Passport: passport stamps over a 3D city map" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
 
@@ -34,7 +43,7 @@
         "@context": "https://schema.org",
         "@type": "MobileApplication",
         "name": "Stamped! A City Passport",
-        "description": "Collect a passport stamp at more than 2,100 architectural landmarks in 166 cities on six continents and 122 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip.",
+        "description": "Collect a passport stamp at more than 2,100 architectural landmarks in 156 cities on six continents and 117 university campuses. Fly through cities in 3D, meet the architects, take the quiz, and plan your trip.",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, iPadOS, macOS, visionOS",
         "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
@@ -51,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=bcbe6755" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=5d471580" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -84,6 +93,7 @@
                 <a href="#quiz">Quiz</a>
                 <a href="#trips">Trips</a>
                 <a href="#campuses">Campuses</a>
+                <a class="nav-wide" href="#vision">Vision Pro</a>
                 <details class="lang-switch">
                     <summary aria-label="Language: English"><i class="fas fa-globe" aria-hidden="true"></i>EN</summary>
                     <ul>
@@ -91,6 +101,11 @@
                         <li><a href="stamped-app-es.html" hreflang="es" lang="es">Español</a></li>
                         <li><a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a></li>
                         <li><a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a></li>
+                        <li><a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a></li>
+                        <li><a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a></li>
+                        <li><a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a></li>
+                        <li><a href="stamped-app-pt.html" hreflang="pt" lang="pt">Português</a></li>
+                        <li><a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
                     </ul>
                 </details>
                 <a class="header-button" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">Get the app</a>
@@ -106,7 +121,7 @@
                 <div>
                     <p class="kicker">A city passport · Free on iPhone, iPad, Mac &amp; Vision Pro</p>
                     <h1 id="hero-title">The world's great buildings, <span class="highlight">stamped.</span></h1>
-                    <p class="hero-lead">An iPhone app that turns the world's landmarks into a passport you fill with stamps. Fly through 166 cities in 3D, learn who built each landmark and why, and collect a stamp at every one you visit.</p>
+                    <p class="hero-lead">An app for iPhone, iPad, Mac and Apple Vision Pro that turns the world's landmarks into a passport you fill with stamps. Fly through 156 cities in 3D, learn who built each landmark and why, and collect a stamp at every one you visit.</p>
                     <div class="cta-row">
                         <a class="app-store-badge" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">
                             <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
@@ -128,10 +143,10 @@
                         <div class="passport-strip-head" aria-hidden="true"><span>Passport · Stamped!</span><span>Type P</span></div>
                         <ul class="stats">
                             <li><strong>2,100+</strong><span>Landmarks</span></li>
-                            <li><strong>166</strong><span>Cities</span></li>
+                            <li><strong>156</strong><span>Cities</span></li>
                             <li><strong>6</strong><span>Continents</span></li>
                             <li><strong>60+</strong><span>Countries</span></li>
-                            <li><strong>122</strong><span>Campuses</span></li>
+                            <li><strong>117</strong><span>Campuses</span></li>
                             <li><strong>9</strong><span>Languages</span></li>
                         </ul>
                         <p class="passport-mrz" aria-hidden="true">P&lt;WORLD&lt;&lt;GREAT&lt;BUILDINGS&lt;&lt;STAMPED&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
@@ -165,7 +180,7 @@
                     <li>
                         <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
                         <h3>Explore from your couch</h3>
-                        <p>Fly through 166 cities in photoreal 3D and read the story behind every building.</p>
+                        <p>Fly through 156 cities in photoreal 3D and read the story behind every building.</p>
                     </li>
                     <li>
                         <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
@@ -314,29 +329,30 @@
 
         <!-- Every continent -->
         <section class="continents" aria-labelledby="continents-title">
-            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SIX CONTINENTS</textPath></text><text class="stamp-big" x="60" y="64">166</text><text class="stamp-small" x="60" y="77">CITIES</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SIX CONTINENTS</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">CITIES</text></svg>
             <div class="container">
                 <div class="section-head reveal">
-                    <p class="kicker">Six continents · 166 cities</p>
+                    <p class="kicker">Six continents · 156 cities</p>
                     <h2 id="continents-title" class="section-title">Every continent you can fly to.</h2>
-                    <p class="section-lead">Not just the usual capitals. Stamped! covers 166 cities, from Reykjavik to Zanzibar, each with its own landmarks, quiz and stamp.</p>
+                    <p class="section-lead">Not just the usual capitals. Stamped! covers 156 cities, from Reykjavik to Zanzibar, each with its own landmarks, quiz and stamp.</p>
+                    <p class="coming-note">10 more cities, from Porto and Kraków to Hiroshima and Hanoi, arrive in the next update.</p>
                 </div>
                 <ul class="continent-grid reveal">
                     <li>
                         <a href="stamped-cities/europe.html">
-                        <h3>Europe <span>34 cities</span></h3>
+                        <h3>Europe <span>28 cities</span></h3>
                         <p>Paris, Rome, Barcelona, London, Prague, Istanbul, Reykjavik, Tbilisi…</p>
                         </a>
                     </li>
                     <li>
                         <a href="stamped-cities/asia.html">
-                        <h3>Asia <span>38 cities</span></h3>
+                        <h3>Asia <span>36 cities</span></h3>
                         <p>Tokyo, Kyoto, Seoul, Singapore, Dubai, Mumbai, Kathmandu, Xi'an…</p>
                         </a>
                     </li>
                     <li>
                         <a href="stamped-cities/north-america.html">
-                        <h3>North America <span>37 cities</span></h3>
+                        <h3>North America <span>35 cities</span></h3>
                         <p>New York, Chicago, Mexico City, Havana, Toronto, Honolulu, Detroit…</p>
                         </a>
                     </li>
@@ -506,7 +522,7 @@
                 <div class="reveal">
                     <p class="kicker">Play · Architecture quiz</p>
                     <h2 id="quiz-title" class="section-title">Test your <span class="highlight">smarts.</span></h2>
-                    <p>Every city and every campus has its own 10-question quiz built from its real landmarks: the style, the year, the architect, the number of floors. 288 quizzes in all, in 9 languages. Tap your answer or say it out loud.</p>
+                    <p>Every city and every campus has its own 10-question quiz built from its real landmarks: the style, the year, the architect, the number of floors. 273 quizzes in all, in 9 languages. Tap your answer or say it out loud.</p>
 
                     <!-- A three-question sample of the in-app quiz -->
                     <div class="quiz-card" data-quiz>
@@ -619,6 +635,68 @@
             </div>
         </section>
 
+        <!-- Apple Vision Pro -->
+        <section class="section section--deep feature" id="vision" aria-labelledby="vision-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Apple Vision Pro · Spatial</p>
+                    <h2 id="vision-title" class="section-title">Stand inside <span class="highlight">the landmark.</span></h2>
+                    <p>On Apple Vision Pro, every city floats in your room on a photoreal 3D map, and the stamps you collect on iPhone come with you.</p>
+                    <ul class="feature-list">
+                        <li>A 3D globe of every city, with live pins for the places you've stamped</li>
+                        <li>360° panoramas: stand inside 26 landmarks</li>
+                        <li>Play Tour: a narrated flight from landmark to landmark</li>
+                        <li>Detroit in full 3D, downloaded only when you want it</li>
+                        <li>Coming in the next update: Explore Together with SharePlay, so friends on a FaceTime call fly through a city with you</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?platform=vision&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store for Apple Vision Pro" />
+                        </a>
+                        <span class="cta-note">On Apple Vision Pro</span>
+                    </div>
+                </div>
+                <div class="device-stack reveal">
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-panorama.webp" width="1600" height="900" loading="lazy"
+                             alt="Stamped! on Apple Vision Pro: the Mumbai map window floating inside a 360° panorama of the Taj Mahal Palace Hotel's staircase" />
+                        <figcaption><strong>360° panoramas</strong>Stand inside the landmark.</figcaption>
+                    </figure>
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
+                             alt="A 3D globe with stamp pins floating in a living room in front of the Stamped! New York map" />
+                        <figcaption><strong>The globe</strong>Spin it, and a city turns toward you.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mac -->
+        <section class="section feature flip" id="mac" aria-labelledby="mac-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Mac · The big screen</p>
+                    <h2 id="mac-title" class="section-title">Plan it all <span class="highlight">on your Mac.</span></h2>
+                    <p>The same passport on a bigger screen: your cities in the sidebar, the 3D map in the middle and the city page beside it. Plan on the Mac, then pick the trip up on your iPhone with iCloud.</p>
+                    <ul class="feature-list">
+                        <li>World Map, My Journey, Achievements, My College List, trips and the quiz each open in their own window</li>
+                        <li>Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="211" height="54" alt="Download on the Mac App Store" />
+                        </a>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <figure class="device-shot device-shot--mac">
+                        <img src="assets/images/stamped/app/mac-chicago.webp" width="1400" height="875" loading="lazy"
+                             alt="Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <!-- Campuses -->
         <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
             <div class="container">
@@ -728,7 +806,31 @@
                     </li>
                     <li>
                         <i class="fas fa-universal-access" aria-hidden="true"></i>
-                        <div><h3>Made for everyone</h3><p>High-contrast and reduced-motion options, plus a dark mode.</p></div>
+                        <div><h3>Made for everyone</h3><p>VoiceOver, Dynamic Type and Reduce Motion, plus high contrast and a dark mode.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-download-alt" aria-hidden="true"></i>
+                        <div><h3>Save for Offline</h3><p>Keep a city's photos and stories on your device for flights and trips abroad.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-headphones" aria-hidden="true"></i>
+                        <div><h3>Listen</h3><p>Any landmark's story, read aloud while you stand in front of it.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-share-square" aria-hidden="true"></i>
+                        <div><h3>Share a stamp</h3><p>Send a city or campus stamp to friends as a picture card.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-microphone" aria-hidden="true"></i>
+                        <div><h3>Siri and Shortcuts</h3><p>Say "Open Paris in Stamped!" or add Stamped! to a shortcut.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <div><h3>Tours and tickets</h3><p>Find tours and tickets for any city landmark with GetYourGuide.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-camera-retro" aria-hidden="true"></i>
+                        <div><h3>Historic photos</h3><p>Old photos and drawings of US landmarks from the Library of Congress.</p></div>
                     </li>
                 </ul>
             </div>
@@ -784,6 +886,11 @@
                 <a href="stamped-app-es.html" hreflang="es" lang="es">Español</a>
                 <a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a>
                 <a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a>
+                <a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a>
+                <a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a>
+                <a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a>
+                <a href="stamped-app-pt.html" hreflang="pt" lang="pt">Português</a>
+                <a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
             </nav>
             <p>Stamped! is not affiliated with or endorsed by any university. School names and colors are used only to identify them.</p>
             <p>Apple, the Apple logo, iPhone, iPad, Mac and Apple Vision Pro are trademarks of Apple Inc. App Store and Mac App Store are service marks of Apple Inc.</p>
@@ -805,7 +912,7 @@
                 done: 'Done',
                 perfect: 'Perfect score.',
                 yourScore: 'You got {score} of {total}.',
-                more: 'The app has 288 quizzes and 2,880 questions.',
+                more: 'The app has 273 quizzes and 2,730 questions.',
                 playAgain: 'Play again',
                 intro: 'Try it. Three questions.',
                 ranks: ['TOURIST', 'TRAVELER', 'LOCAL', 'EXPERT'],

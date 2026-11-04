@@ -1,0 +1,935 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+<head>
+    <title>Stamped! A City Passport: os grandes edifícios do mundo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ganhe um carimbo no passaporte em mais de 2.100 pontos turísticos, em 156 cidades e 117 campi. Sobrevoe tudo em 3D. Grátis para iPhone, iPad, Mac e Apple Vision Pro." />
+    <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191612" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/stamped-app-pt.html" />
+    <link rel="alternate" hreflang="en" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="alternate" hreflang="es" href="https://georgeclinkscalesdev.com/stamped-app-es.html" />
+    <link rel="alternate" hreflang="de" href="https://georgeclinkscalesdev.com/stamped-app-de.html" />
+    <link rel="alternate" hreflang="ja" href="https://georgeclinkscalesdev.com/stamped-app-ja.html" />
+    <link rel="alternate" hreflang="fr" href="https://georgeclinkscalesdev.com/stamped-app-fr.html" />
+    <link rel="alternate" hreflang="it" href="https://georgeclinkscalesdev.com/stamped-app-it.html" />
+    <link rel="alternate" hreflang="ko" href="https://georgeclinkscalesdev.com/stamped-app-ko.html" />
+    <link rel="alternate" hreflang="pt" href="https://georgeclinkscalesdev.com/stamped-app-pt.html" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://georgeclinkscalesdev.com/stamped-app-zh.html" />
+    <link rel="alternate" hreflang="x-default" href="https://georgeclinkscalesdev.com/stamped-app.html" />
+    <link rel="icon" href="assets/images/stamped/app/icon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/stamped/app/apple-touch-icon.png" sizes="180x180" />
+
+    <!-- Safari on iPhone shows a "Get the app" banner at the top of the page -->
+    <meta name="apple-itunes-app" content="app-id=6759680336" />
+
+    <meta property="og:title" content="Stamped! A City Passport" />
+    <meta property="og:description" content="Mais de 2.100 pontos turísticos, 156 cidades, seis continentes, 117 campi. Sobrevoe tudo em 3D e ganhe um carimbo em cada lugar que você visitar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stamped! A City Passport" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/stamped-app-pt.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Stamped! A City Passport: carimbos de passaporte sobre um mapa 3D de uma cidade" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png" />
+
+    <!-- App details for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Stamped! A City Passport",
+        "description": "Ganhe um carimbo no passaporte em mais de 2.100 pontos turísticos de arquitetura, em 156 cidades de seis continentes e 117 campi universitários. Sobrevoe cidades em 3D, conheça os arquitetos, faça o quiz e planeje sua viagem.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, iPadOS, macOS, visionOS",
+        "image": "https://georgeclinkscalesdev.com/assets/images/stamped/app/og-image.png",
+        "url": "https://georgeclinkscalesdev.com/stamped-app-pt.html",
+        "downloadUrl": "https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336",
+        "inLanguage": ["en", "de", "es", "fr", "it", "ja", "ko", "pt", "zh"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
+    }
+    </script>
+
+    <link rel="preload" href="assets/images/stamped/app/city-3d.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
+
+    <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
+    <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=5d471580" />
+    <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
+    <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
+</head>
+<body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <!-- Shared pieces for every passport stamp: the ring frame and the arc the city name sits on -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <path id="stamp-arc-path" d="M 19 60 A 41 41 0 0 1 101 60" />
+            <symbol id="stamp-frame" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="40 1.5 22 2 60 1 30 2.5" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="60" cy="60" r="32" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <text x="60" y="100" font-size="9" text-anchor="middle" fill="currentColor">★ ★ ★</text>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="stamped-app-pt.html">
+                <img src="assets/images/stamped/app/icon.webp" alt="" width="34" height="34" />
+                Stamped!
+            </a>
+            <nav class="header-nav" aria-label="Seções da página">
+                <a href="#try">Try it</a>
+                <a href="#explore">Explorar</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#trips">Viagens</a>
+                <a href="#campuses">Campi</a>
+                <a class="nav-wide" href="#vision">Vision Pro</a>
+                <details class="lang-switch">
+                    <summary aria-label="Português"><i class="fas fa-globe" aria-hidden="true"></i>PT</summary>
+                    <ul>
+                        <li><a href="stamped-app.html" hreflang="en" lang="en">English</a></li>
+                        <li><a href="stamped-app-es.html" hreflang="es" lang="es">Español</a></li>
+                        <li><a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a></li>
+                        <li><a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a></li>
+                        <li><a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a></li>
+                        <li><a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a></li>
+                        <li><a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a></li>
+                        <li><a href="stamped-app-pt.html" hreflang="pt" lang="pt" aria-current="page">Português</a></li>
+                        <li><a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+                    </ul>
+                </details>
+                <a class="header-button" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">Baixar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div>
+                    <p class="kicker">Um passaporte de cidades · Grátis para iPhone, iPad, Mac e Vision Pro</p>
+                    <h1 id="hero-title">Os grandes edifícios do mundo, <span class="highlight">carimbados.</span></h1>
+                    <p class="hero-lead">Um app para iPhone, iPad, Mac e Apple Vision Pro que transforma os pontos turísticos do mundo em um passaporte que você enche de carimbos. Sobrevoe 156 cidades em 3D, descubra quem construiu cada ponto turístico e por quê, e ganhe um carimbo em cada lugar que você visitar.</p>
+                    <div class="cta-row">
+                        <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
+                        </a>
+                        <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="211" height="54" alt="Download on the Mac App Store" />
+                        </a>
+                        <span class="cta-note">Grátis · iPhone, iPad, Mac e Vision Pro</span>
+                        <div class="qr-card">
+                            <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="Código QR que abre o Stamped! na App Store" />
+                            <span><strong>No computador?</strong>Escaneie com a câmera do seu iPhone.</span>
+                        </div>
+                    </div>
+                    <ul class="hero-paths">
+                        <li><a href="#trips"><i class="fas fa-suitcase-rolling" aria-hidden="true"></i>Planejando uma viagem?</a></li>
+                        <li><a href="stamped-colleges.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Visitando universidades?</a></li>
+                    </ul>
+                    <div class="passport-strip">
+                        <div class="passport-strip-head" aria-hidden="true"><span>Passaporte · Stamped!</span><span>Tipo P</span></div>
+                        <ul class="stats">
+                            <li><strong>2.100+</strong><span>Pontos turísticos</span></li>
+                            <li><strong>156</strong><span>Cidades</span></li>
+                            <li><strong>6</strong><span>Continentes</span></li>
+                            <li><strong>60+</strong><span>Países</span></li>
+                            <li><strong>117</strong><span>Campi</span></li>
+                            <li><strong>9</strong><span>Idiomas</span></li>
+                        </ul>
+                        <p class="passport-mrz" aria-hidden="true">P&lt;WORLD&lt;&lt;GREAT&lt;BUILDINGS&lt;&lt;STAMPED&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone phone--hero">
+                        <div class="phone-screen">
+                            <video class="hero-video" data-src="assets/videos/stamped/stamped-3d-map-screen.mp4"
+                                   poster="assets/images/stamped/app/city-3d.webp" width="600" height="1304"
+                                   muted loop playsinline preload="none"
+                                   aria-label="Stamped! sobrevoando em baixa altitude uma Manhattan fotorrealista em 3D, passando pelo Empire State Building, e depois descendo para a vista no nível da rua da Quinta Avenida"></video>
+                        </div>
+                        <button class="video-toggle" type="button" aria-label="Pausar vídeo"><i class="fas fa-pause" aria-hidden="true"></i></button>
+                    </div>
+                    <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">NEW YORK · USA</textPath></text><text class="stamp-big" x="60" y="64">NYC</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">PARIS · FRANCE</textPath></text><text class="stamp-big" x="60" y="64">PARIS</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">KYOTO · JAPAN</textPath></text><text class="stamp-big" x="60" y="64">KYOTO</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section section--deep" aria-labelledby="how-title">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="kicker">Como funciona</p>
+                    <h2 id="how-title" class="section-title">Explore. Viaje. <span class="highlight">Carimbe.</span></h2>
+                </div>
+                <ol class="steps reveal">
+                    <li>
+                        <span class="step-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
+                        <h3>Explore do sofá</h3>
+                        <p>Sobrevoe 156 cidades em 3D fotorrealista e leia a história por trás de cada edifício.</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></span>
+                        <h3>Planeje a viagem</h3>
+                        <p>Organize os pontos turísticos dia a dia, adicione hotéis e lugares para comer e veja a rota em 3D antes de partir.</p>
+                    </li>
+                    <li>
+                        <span class="step-icon"><i class="fas fa-stamp" aria-hidden="true"></i></span>
+                        <h3>Encha seu passaporte</h3>
+                        <p>Ganhe um carimbo em cada ponto turístico que visitar e domine uma cidade carimbando todos.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 3D map and Look Around -->
+        <section class="section feature" id="explore" aria-labelledby="map-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Explorar · 3D fotorrealista + Olhe ao Redor</p>
+                    <h2 id="map-title" class="section-title">Do céu <span class="highlight">até a rua.</span></h2>
+                    <p>Imagens de satélite sobre a altura real dos edifícios. Toque em um pino e a câmera voa direto até ele, ou inicie um tour guiado que voa entre todos os pontos turísticos por você. Depois, desça ao nível da rua e veja como é o edifício antes de chegar.</p>
+                    <ul class="feature-list">
+                        <li>Percorra os pontos turísticos em ordem de caminhada direto do cartão do mapa</li>
+                        <li>Filtre por não visitados, carimbados, quero visitar e estilo arquitetônico</li>
+                        <li>Atalhos para comida, café, cultura e lugares para ficar</li>
+                    </ul>
+                </div>
+                <div class="phone-pair reveal">
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/city-map-card.webp" width="600" height="1304" loading="lazy"
+                                     alt="Mapa 3D de Nova York com um cartão do Empire State Building, uma prévia do Olhe ao Redor e os botões Carimbar, Quero ir e Adicionar à viagem" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                        <figcaption><strong>Sobrevoe</strong>Todos os pontos turísticos em um mapa 3D.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/city-look-around.webp" width="600" height="1304" loading="lazy"
+                                     alt="Vista no nível da rua com Olhe ao Redor do cubo de vidro da Apple Fifth Avenue, em Manhattan" />
+                            </div>
+                        </div>
+                        <figcaption><strong>Caminhe pela rua</strong>Para você nunca passar direto por ele.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Try it: live Apple Map, Look Around and a stamp (assets/js/stamped-try.js) -->
+        <section class="section try" id="try" data-stamped-try hidden aria-labelledby="try-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Experimente · Apple Maps ao vivo</p>
+                    <h2 id="try-title" class="section-title">Toque em um ponto turístico. <span class="highlight">Carimbe.</span></h2>
+                    <p class="section-lead">Um mapa real da Apple com Olhe ao Redor, bem aqui no seu navegador. Escolha uma cidade, toque em um pino, olhe ao redor no nível da rua e carimbe. O app faz o mesmo em 3D fotorrealista, para mais de 2.100 pontos turísticos.</p>
+                </div>
+                <ul class="try-cities" aria-label="Escolha uma cidade">
+                    <li><button type="button" data-city="new-york" aria-pressed="false">Nova York</button></li>
+                    <li><button type="button" data-city="paris" aria-pressed="false">Paris</button></li>
+                    <li><button type="button" data-city="london" aria-pressed="false">Londres</button></li>
+                    <li><button type="button" data-city="rome" aria-pressed="false">Roma</button></li>
+                    <li><button type="button" data-city="tokyo" aria-pressed="false">Tóquio</button></li>
+                    <li><button type="button" data-city="chicago" aria-pressed="false">Chicago</button></li>
+                </ul>
+                <div class="try-layout">
+                    <div class="try-map" role="region" aria-label="Mapa dos pontos turísticos da cidade escolhida"></div>
+                    <div class="try-card">
+                        <div class="try-look"></div>
+                        <svg class="try-stamp" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="try-stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%"></textPath></text><text class="try-stamp-big" x="60" y="64"></text><text class="try-stamp-small" x="60" y="77"></text></svg>
+                        <p class="try-status" aria-live="polite"></p>
+                        <div>
+                            <p class="try-name"></p>
+                            <p class="try-sub"></p>
+                        </div>
+                        <div class="try-actions">
+                            <button type="button" class="try-stamp-btn" aria-pressed="false">Carimbar</button>
+                            <a class="try-maps" href="https://maps.apple.com/" target="_blank" rel="noopener">Abrir no Apple Maps</a>
+                            <a class="try-guide" href="stamped-cities/index.html"></a>
+                        </div>
+                        <p class="try-progress" aria-live="polite"></p>
+                        <ul class="try-list" aria-label="Pontos turísticos"></ul>
+                    </div>
+                </div>
+                <p class="try-note">Os carimbos que você ganha aqui ficam neste navegador. No app, eles são sincronizados entre seus dispositivos com o iCloud.</p>
+            </div>
+            <script type="application/json" id="try-data">[{"slug": "new-york", "code": "NYC", "name": "Nova York", "landmarks": [{"id": "nyc-01", "name": "Empire State Building", "lat": 40.7484421, "lng": -73.9856589, "subtitle": "1931 · Shreve, Lamb & Harmon"}, {"id": "us_apple_upper_east_side", "name": "Apple Upper East Side", "lat": 40.7733551, "lng": -73.9644948, "subtitle": "2015 · Bohlin Cywinski Jackson"}, {"id": "nyc-02", "name": "Chrysler Building", "lat": 40.7516676, "lng": -73.9755644, "subtitle": "1930 · William Van Alen"}, {"id": "nyc-03", "name": "One World Trade Center", "lat": 40.7129992, "lng": -74.0131894, "subtitle": "2014 · David Childs (SOM)"}, {"id": "nyc-04", "name": "The Flatiron Building", "lat": 40.7410592, "lng": -73.9896416, "subtitle": "1902 · Daniel Burnham"}, {"id": "nyc-05", "name": "Woolworth Building", "lat": 40.7124684, "lng": -74.0079294, "subtitle": "1913 · Cass Gilbert"}, {"id": "nyc-06", "name": "Rockefeller Center (30 Rock)", "lat": 40.7591232, "lng": -73.979556, "subtitle": "1933 · Raymond Hood"}, {"id": "nyc-07", "name": "The Guggenheim Museum", "lat": 40.7829932, "lng": -73.958925, "subtitle": "1959 · Frank Lloyd Wright"}, {"id": "nyc-08", "name": "Seagram Building", "lat": 40.7584073, "lng": -73.9719841, "subtitle": "1958 · Ludwig Mies van der Rohe"}, {"id": "nyc-09", "name": "The Vessel (Hudson Yards)", "lat": 40.7559064, "lng": -74.0005322, "subtitle": "2019 · Thomas Heatherwick"}, {"id": "nyc-10", "name": "Grand Central Terminal", "lat": 40.7528064, "lng": -73.9771792, "subtitle": "1913 · Reed and Stem / Warren and Wetmore"}, {"id": "glbl_apple_fifth_ave", "name": "Apple Fifth Avenue", "lat": 40.7638426, "lng": -73.9729641, "subtitle": "2006 · Foster + Partners"}, {"id": "nyc_twa_flight_center", "name": "TWA Flight Center", "lat": 40.645833, "lng": -73.7775, "subtitle": "1962 · Eero Saarinen"}, {"id": "nyc_oculus", "name": "The Oculus", "lat": 40.7115549, "lng": -74.0114199, "subtitle": "2016 · Santiago Calatrava"}, {"id": "nyc_apple_soho", "name": "Apple SoHo", "lat": 40.725039, "lng": -73.9991532, "subtitle": "2002 · Bohlin Cywinski Jackson"}, {"id": "nyc_un_hq", "name": "United Nations Headquarters", "lat": 40.7489457, "lng": -73.9680842, "subtitle": "1952 · Wallace Harrison / Le Corbusier / Oscar Niemeyer"}]}, {"slug": "paris", "code": "PARIS", "name": "Paris", "landmarks": [{"id": "paris-eiffel-tower", "name": "Eiffel Tower", "lat": 48.856463, "lng": 2.3061652, "subtitle": "1889 · Gustave Eiffel"}, {"id": "paris-louvre-pyramid", "name": "Louvre Museum (Pyramid)", "lat": 48.8624906, "lng": 2.3360431, "subtitle": "1989 · I.M. Pei"}, {"id": "paris-sacre-coeur", "name": "Sacré-Cœur Basilica", "lat": 48.8871066, "lng": 2.3434906, "subtitle": "1914 · Paul Abadie"}, {"id": "paris-arc-de-triomphe", "name": "Arc de Triomphe", "lat": 48.8737673, "lng": 2.2954441, "subtitle": "1836 · Jean Chalgrin"}, {"id": "paris-centre-pompidou", "name": "Centre Pompidou", "lat": 48.8607767, "lng": 2.3517736, "subtitle": "1977 · Renzo Piano & Richard Rogers"}, {"id": "paris-palais-garnier", "name": "Palais Garnier", "lat": 48.8709021, "lng": 2.332151, "subtitle": "1875 · Charles Garnier"}, {"id": "paris-pantheon", "name": "The Panthéon", "lat": 48.8464478, "lng": 2.3448919, "subtitle": "1790 · Jacques-Germain Soufflot"}, {"id": "paris-fondation-lv", "name": "Fondation Louis Vuitton", "lat": 48.87665, "lng": 2.2633381, "subtitle": "2014 · Frank Gehry"}, {"id": "paris-sainte-chapelle", "name": "Sainte-Chapelle", "lat": 48.8546638, "lng": 2.3449698, "subtitle": "1248 · Pierre de Montreuil"}, {"id": "paris-grande-arche", "name": "La Grande Arche", "lat": 48.8921627, "lng": 2.2380913, "subtitle": "1989 · Johan Otto von Spreckelsen"}]}, {"slug": "london", "code": "LONDON", "name": "Londres", "landmarks": [{"id": "the-shard", "name": "The Shard", "lat": 51.5043655, "lng": -0.0864741, "subtitle": "2012 · Renzo Piano"}, {"id": "st-pauls-cathedral", "name": "St. Paul's Cathedral", "lat": 51.5142205, "lng": -0.0986513, "subtitle": "1710 · Christopher Wren"}, {"id": "the-gherkin", "name": "The Gherkin", "lat": 51.514497, "lng": -0.0803325, "subtitle": "2004 · Norman Foster"}, {"id": "tower-of-london", "name": "Tower of London", "lat": 51.5101234, "lng": -0.0769284, "subtitle": "1078 · Gundulf of Rochester"}, {"id": "palace-of-westminster", "name": "Palace of Westminster", "lat": 51.5004439, "lng": -0.1265398, "subtitle": "1859 · Charles Barry & Augustus Pugin"}, {"id": "lloyds-building", "name": "Lloyd's Building", "lat": 51.5129645, "lng": -0.0824073, "subtitle": "1986 · Richard Rogers"}, {"id": "walkie-talkie", "name": "The Walkie Talkie", "lat": 51.51127, "lng": -0.0835396, "subtitle": "2014 · Rafael Viñoly"}, {"id": "battersea-power-station", "name": "Battersea Power Station", "lat": 51.4817519, "lng": -0.1460471, "subtitle": "1941 · Giles Gilbert Scott"}, {"id": "tate-modern", "name": "Tate Modern", "lat": 51.508176, "lng": -0.0991338, "subtitle": "2000 · Herzog & de Meuron"}, {"id": "natural-history-museum", "name": "Natural History Museum", "lat": 51.4949176, "lng": -0.1848924, "subtitle": "1881 · Alfred Waterhouse"}, {"id": "apple-battersea", "name": "Apple London Headquarters", "lat": 51.4810677, "lng": -0.1406001, "subtitle": "2023 · Foster + Partners"}, {"id": "the-barbican", "name": "The Barbican Centre", "lat": 51.5207582, "lng": -0.092396, "subtitle": "1982 · Chamberlin, Powell and Bon"}, {"id": "buckingham-palace", "name": "Buckingham Palace", "lat": 51.5008349, "lng": -0.1430045, "subtitle": "1837 · John Nash / Sir Aston Webb"}, {"id": "apple-regent-street", "name": "Apple Regent Street", "lat": 51.5142744, "lng": -0.1421067, "subtitle": "2016 · Foster + Partners"}]}, {"slug": "rome", "code": "ROME", "name": "Roma", "landmarks": [{"id": "rom_colosseum", "name": "The Colosseum", "lat": 41.891635, "lng": 12.4927622, "subtitle": "80 · Vespasian / Titus"}, {"id": "rom_pantheon", "name": "The Pantheon", "lat": 41.8994796, "lng": 12.4764874, "subtitle": "126 · Apollodorus of Damascus"}, {"id": "rom_st_peters", "name": "St. Peter's Basilica", "lat": 41.9022351, "lng": 12.4573573, "subtitle": "1626 · Michelangelo / Bramante"}, {"id": "rom_vittorio", "name": "Altare della Patria", "lat": 41.8963001, "lng": 12.4823475, "subtitle": "1911 · Giuseppe Sacconi"}, {"id": "rom_maxxi", "name": "MAXXI Museum", "lat": 41.9288233, "lng": 12.4666714, "subtitle": "2010 · Zaha Hadid"}, {"id": "rom_fendi", "name": "Palazzo della Civiltà Italiana", "lat": 41.8366672, "lng": 12.4654704, "subtitle": "1943 · Giovanni Guerrini"}, {"id": "rom_castel_sant", "name": "Castel Sant'Angelo", "lat": 41.90308, "lng": 12.4661811, "subtitle": "139 · Demetrianus"}, {"id": "rom_villa_medici", "name": "Villa Medici", "lat": 41.9083045, "lng": 12.4824664, "subtitle": "1544 · Annibale Lippi"}, {"id": "rom_doria_pamphilj", "name": "Palazzo Doria Pamphilj", "lat": 41.8978235, "lng": 12.4815609, "subtitle": "1734 · Gabriele Valvassori"}, {"id": "rom_auditorium", "name": "Auditorium Parco della Musica", "lat": 41.9292508, "lng": 12.4720097, "subtitle": "2002 · Renzo Piano"}, {"id": "rom_apple_corso", "name": "Apple Via del Corso", "lat": 41.9022472, "lng": 12.4801326, "subtitle": "1873 · Foster + Partners"}, {"id": "rom_ara_pacis", "name": "Ara Pacis Museum", "lat": 41.9058841, "lng": 12.4752027, "subtitle": "2006 · Richard Meier"}, {"id": "rom_vatican_museums", "name": "Vatican Museums (The Spiral Ramp)", "lat": 41.9057435, "lng": 12.4499096, "subtitle": "1932 · Giuseppe Momo"}, {"id": "rom_borromini_church", "name": "San Carlo alle Quattro Fontane", "lat": 41.9011938, "lng": 12.4896073, "subtitle": "1646 · Francesco Borromini"}, {"id": "rom_la_nuvola", "name": "La Nuvola (The Cloud)", "lat": 41.830872, "lng": 12.4715943, "subtitle": "2016 · Massimiliano Fuksas"}, {"id": "rom_villa_borghese", "name": "Galleria Borghese", "lat": 41.9141133, "lng": 12.4921053, "subtitle": "1613 · Flaminio Ponzio"}]}, {"slug": "tokyo", "code": "TOKYO", "name": "Tóquio", "landmarks": [{"id": "tokyo-skytree", "name": "Tokyo Skytree", "lat": 35.7117, "lng": 139.8162, "subtitle": "2012 · Nikken Sekkei"}, {"id": "cocoon-tower", "name": "Mode Gakuen Cocoon Tower", "lat": 35.6914, "lng": 139.6932, "subtitle": "2008 · Tange Associates"}, {"id": "glbl_apple_marunouchi", "name": "Apple Marunouchi", "lat": 35.6802, "lng": 139.7642, "subtitle": "2019 · Foster + Partners"}, {"id": "tokyo-station", "name": "Tokyo Station (Marunouchi)", "lat": 35.6802, "lng": 139.7642, "subtitle": "1914 · Tatsuno Kingo"}, {"id": "sensoji-temple", "name": "Sensō-ji Temple (Main Hall)", "lat": 35.7167, "lng": 139.7966, "subtitle": "645 · Traditional / Reconstruction"}, {"id": "tokyo-tower", "name": "Tokyo Tower", "lat": 35.6576, "lng": 139.7499, "subtitle": "1958 · Tachu Naito"}, {"id": "nakagin-capsule", "name": "Nakagin Capsule Tower (Legacy)", "lat": 35.6706, "lng": 139.7649, "subtitle": "1972 · Kisho Kurokawa"}, {"id": "tokyo-gov-building", "name": "Tokyo Metropolitan Government Building", "lat": 35.68802, "lng": 139.68897, "subtitle": "1991 · Kenzo Tange"}, {"id": "prada-aoyama", "name": "Prada Aoyama", "lat": 35.6657, "lng": 139.7178, "subtitle": "2003 · Herzog & de Meuron"}, {"id": "shibuya-scramble", "name": "Shibuya Scramble Square", "lat": 35.6593, "lng": 139.7054, "subtitle": "2019 · Nikken Sekkei"}, {"id": "fuji-tv-building", "name": "Fuji TV Building", "lat": 35.6288, "lng": 139.7757, "subtitle": "1996 · Kenzo Tange"}, {"id": "apple-japan-hq", "name": "Apple Japan Headquarters (Roppongi Hills Mori Tower)", "lat": 35.660556, "lng": 139.729167, "subtitle": "2003 · Kohn Pedersen Fox (KPF)"}, {"id": "yoyogi-gymnasium", "name": "Yoyogi National Gymnasium", "lat": 35.6633, "lng": 139.7004, "subtitle": "1964 · Kenzo Tange"}, {"id": "nmwa-ueno", "name": "National Museum of Western Art", "lat": 35.7164, "lng": 139.775, "subtitle": "1959 · Le Corbusier"}, {"id": "meiji-jingu", "name": "Meiji Jingu Shrine", "lat": 35.65835, "lng": 139.702, "subtitle": "1920 · Chuta Ito"}, {"id": "glbl_apple_ginza", "name": "Apple Ginza", "lat": 35.6706, "lng": 139.7649, "subtitle": "2022 · Foster + Partners"}]}, {"slug": "chicago", "code": "CHICAGO", "name": "Chicago", "landmarks": [{"id": "chi-01", "name": "Willis Tower", "lat": 41.8787381, "lng": -87.6359612, "subtitle": "1974 · Skidmore, Owings & Merrill"}, {"id": "us_apple_michigan_ave", "name": "Apple Michigan Avenue", "lat": 41.8894215, "lng": -87.6235164, "subtitle": "2017 · Foster + Partners"}, {"id": "chi-02", "name": "Tribune Tower", "lat": 41.890584, "lng": -87.6232046, "subtitle": "1925 · Howells & Hood"}, {"id": "chi-03", "name": "875 North Michigan", "lat": 41.8988813, "lng": -87.6230962, "subtitle": "1969 · Bruce Graham (SOM)"}, {"id": "chi-04", "name": "Marina City", "lat": 41.8882027, "lng": -87.6284883, "subtitle": "1968 · Bertrand Goldberg"}, {"id": "chi-05", "name": "St. Regis Chicago", "lat": 41.8875465, "lng": -87.6187974, "subtitle": "2020 · Jeanne Gang (Studio Gang)"}, {"id": "chi-06", "name": "The Rookery", "lat": 41.879122, "lng": -87.6321736, "subtitle": "1888 · Burnham & Root"}, {"id": "chi-07", "name": "Aqua Tower", "lat": 41.8863356, "lng": -87.6199063, "subtitle": "2009 · Jeanne Gang (Studio Gang)"}, {"id": "chi-08", "name": "Carson Pirie Scott Building", "lat": 41.8814633, "lng": -87.6272684, "subtitle": "1899 · Louis Sullivan"}, {"id": "chi-09", "name": "The Merchandise Mart", "lat": 41.8884976, "lng": -87.6344561, "subtitle": "1930 · Graham, Anderson, Probst & White"}, {"id": "chi-10", "name": "Auditorium Building", "lat": 41.8761349, "lng": -87.6251817, "subtitle": "1889 · Adler & Sullivan"}, {"id": "chi-11", "name": "Chicago Board of Trade Building", "lat": 41.8778674, "lng": -87.6320417, "subtitle": "1930 · Holabird & Root"}, {"id": "chi-12", "name": "The Wrigley Building", "lat": 41.8895686, "lng": -87.6247284, "subtitle": "1924 · Graham, Anderson, Probst & White"}, {"id": "chi-13", "name": "S.R. Crown Hall (IIT)", "lat": 41.8331989, "lng": -87.6272734, "subtitle": "1956 · Ludwig Mies van der Rohe"}, {"id": "chi-14", "name": "Carbide & Carbon Building", "lat": 41.8865558, "lng": -87.6250085, "subtitle": "1929 · Burnham Brothers"}, {"id": "chi-15", "name": "Frederick C. Robie House", "lat": 41.7897893, "lng": -87.595994, "subtitle": "1910 · Frank Lloyd Wright"}]}]</script>
+            <script type="application/json" id="try-strings">{"stamp": "Carimbar", "stamped": "Carimbado ✓", "loading": "Carregando o Olhe ao Redor…", "hint": "Toque na prévia para andar pela rua com o Olhe ao Redor.", "noImagery": "A Apple ainda não tem imagens no nível da rua aqui.", "progress": "{n} de {total} carimbados em {city}", "guide": "Guia de {city}"}</script>
+        </section>
+
+        <!-- Guided tours recorded in the app -->
+        <section class="section section--deep tours" aria-labelledby="tours-title">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="kicker">Tour guiado · Gravado no app</p>
+                    <h2 id="tours-title" class="section-title">Aperte o play e <span class="highlight">deixe voar.</span></h2>
+                    <p class="section-lead">O tour guiado voa sozinho de um ponto turístico a outro, com um cartão e uma prévia do Olhe ao Redor em cada parada.</p>
+                </div>
+                <div class="tour-row reveal">
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" data-poster="assets/videos/stamped/stamped-tour-paris-poster.webp"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Tour guiado por Paris no app Stamped!: a câmera sobrevoa Paris em 3D do Palais Garnier ao Louvre, à Sainte-Chapelle, ao Centro Pompidou, ao Panteão e à Torre Eiffel"></video>
+                            </div>
+                        </div>
+                        <figcaption><strong>Paris</strong>Do Palais Garnier à Torre Eiffel</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" data-poster="assets/videos/stamped/stamped-tour-chicago-poster.webp"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Tour guiado por Chicago no app Stamped!: a câmera sobrevoa o centro de Chicago em 3D, passando pelo Carbide and Carbon Building, o Wrigley Building, a Tribune Tower e o St. Regis"></video>
+                            </div>
+                        </div>
+                        <figcaption><strong>Chicago</strong>Da Michigan Avenue ao St. Regis</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" data-poster="assets/videos/stamped/stamped-tour-london-poster.webp"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Tour guiado por Londres no app Stamped!: a câmera sobrevoa Londres em 3D da Tate Modern à Catedral de São Paulo, ao Barbican, ao Gherkin e ao Lloyd’s Building"></video>
+                            </div>
+                        </div>
+                        <figcaption><strong>Londres</strong>Da Tate Modern ao Lloyd's Building</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" data-poster="assets/videos/stamped/stamped-tour-rome-poster.webp"
+                                       width="492" height="1070" muted loop playsinline preload="none"
+                                       aria-label="Tour guiado por Roma no app Stamped!: a câmera sobrevoa Roma em 3D do Panteão ao Palazzo Doria Pamphilj, ao Altare della Patria e a San Carlo alle Quattro Fontane"></video>
+                            </div>
+                        </div>
+                        <figcaption><strong>Roma</strong>Do Panteão ao Altare della Patria</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Every continent -->
+        <section class="continents" aria-labelledby="continents-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">SEIS CONTINENTES</textPath></text><text class="stamp-big" x="60" y="64">156</text><text class="stamp-small" x="60" y="77">CIDADES</text></svg>
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Seis continentes · 156 cidades</p>
+                    <h2 id="continents-title" class="section-title">Todos os continentes para onde você pode voar.</h2>
+                    <p class="section-lead">Não são só as capitais de sempre. O Stamped! reúne 156 cidades, de Reykjavik a Zanzibar, cada uma com seus pontos turísticos, seu quiz e seu carimbo.</p>
+                    <p class="coming-note">Mais 10 cidades, de Porto e Cracóvia a Hiroshima e Hanói, chegam na próxima atualização.</p>
+                </div>
+                <ul class="continent-grid reveal">
+                    <li>
+                        <a href="stamped-cities/europe.html">
+                        <h3>Europa <span>28 cidades</span></h3>
+                        <p>Paris, Roma, Barcelona, Londres, Praga, Istambul, Reykjavik, Tbilisi…</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="stamped-cities/asia.html">
+                        <h3>Ásia <span>36 cidades</span></h3>
+                        <p>Tóquio, Quioto, Seul, Singapura, Dubai, Mumbai, Katmandu, Xi'an…</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="stamped-cities/north-america.html">
+                        <h3>América do Norte <span>35 cidades</span></h3>
+                        <p>Nova York, Chicago, Cidade do México, Havana, Toronto, Honolulu, Detroit…</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="stamped-cities/south-america.html">
+                        <h3>América do Sul <span>15 cidades</span></h3>
+                        <p>Rio de Janeiro, Buenos Aires, Brasília, Lima, Cartagena, Medellín…</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="stamped-cities/africa.html">
+                        <h3>África <span>11 cidades</span></h3>
+                        <p>Cairo, Marrakech, Cidade do Cabo, Lagos, Nairobi, Adis Abeba, Zanzibar…</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="stamped-cities/oceania.html">
+                        <h3>Oceania <span>5 cidades</span></h3>
+                        <p>Sydney, Melbourne, Brisbane, Auckland, Queenstown</p>
+                        </a>
+                    </li>
+                </ul>
+                <p class="band-link"><a href="stamped-cities/index.html">Veja os 166 guias de cidades (em inglês) <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+            </div>
+        </section>
+
+        <!-- Landmark photos (Wikimedia Commons, each credited) -->
+        <section class="section photo-strip-section" aria-labelledby="strip-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Dentro do app · Mais de 2.100 pontos turísticos</p>
+                    <h2 id="strip-title" class="section-title">Alguns dos lugares <span class="highlight">que esperam por você.</span></h2>
+                    <p class="section-lead">Cada um abre o guia da cidade (em inglês), com o arquiteto, o ano de construção e a história por trás dele.</p>
+                </div>
+            </div>
+            <ul class="photo-strip reveal" aria-label="Pontos turísticos no Stamped!">
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/paris.html#paris-eiffel-tower">
+                            <img src="stamped-cities/photos/tour-eiffel-wikimedia-commons-cropped-ea381d.webp" width="480" height="800" alt="Torre Eiffel" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Torre Eiffel</strong>Paris</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons_(cropped).jpg" rel="noopener">Benh LIEU SONG</a>, Public domain</small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/rome.html#rom_colosseum">
+                            <img src="stamped-cities/photos/colosseo-2020-6e12f3.webp" width="640" height="449" alt="O Coliseu" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>O Coliseu</strong>Roma</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg" rel="noopener">FeaturedPics</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/barcelona.html#bcn_sagrada_familia">
+                            <img src="stamped-cities/photos/sf-maig-2-cropped-6000c0.webp" width="550" height="800" alt="Sagrada Família" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Sagrada Família</strong>Barcelona</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg" rel="noopener">Canaan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/cairo.html#cai_great_pyramid">
+                            <img src="stamped-cities/photos/great-pyramid-of-giza-pyramid-of-khufu-2ce6cb.webp" width="640" height="360" alt="Grande Pirâmide de Gizé" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Grande Pirâmide de Gizé</strong>Cairo</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg" rel="noopener">Douwe C. van der Zee</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/sydney.html#syd_opera_house">
+                            <img src="stamped-cities/photos/sydney-australia-21339175489-ad7159.webp" width="640" height="393" alt="Ópera de Sydney" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Ópera de Sydney</strong>Sydney</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Sydney_Australia._(21339175489).jpg" rel="noopener">Bernard Spragg. NZ from Christchurch, New Zealand</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/rio-de-janeiro.html#rio-christ-redeemer">
+                            <img src="stamped-cities/photos/christ-the-redeemer-cristo-redentor-423e5d.webp" width="534" height="800" alt="Cristo Redentor" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Cristo Redentor</strong>Rio de Janeiro</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg" rel="noopener">Arne Müseler</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" rel="license noopener">CC BY-SA 3.0 de</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/new-york.html#nyc-01">
+                            <img src="stamped-cities/photos/empire-state-building-aerial-view-beb4e8.webp" width="533" height="800" alt="Empire State Building" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Empire State Building</strong>Nova York</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Empire_State_Building_(aerial_view).jpg" rel="noopener">Sam Valadi</a>, Public domain</small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/kyoto.html#kyo_kinkaku_ji">
+                            <img src="stamped-cities/photos/golden-pavilion-kinkaku-ji-water-mirror-2024-fc2a24.webp" width="533" height="800" alt="Kinkaku-ji" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Kinkaku-ji</strong>Quioto</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg" rel="noopener">Nacaru</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/istanbul.html#ist_hagia_sophia">
+                            <img src="stamped-cities/photos/hagia-sophia-228968325-5a4f70.webp" width="640" height="387" alt="Santa Sofia" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Santa Sofia</strong>Istambul</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg" rel="noopener">Adli Wahid</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener">CC BY-SA 3.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/kuala-lumpur.html#kl-petronas">
+                            <img src="stamped-cities/photos/the-twins-se-asia-2019-49171985716-cropped-2-a0b4e4.webp" width="449" height="800" alt="Torres Petronas" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Torres Petronas</strong>Kuala Lumpur</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:The_Twins_SE_Asia_2019_(49171985716)_(cropped)_2.jpg" rel="noopener">James Kerwin from Tbilisi</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/pittsburgh.html#pit-04">
+                            <img src="stamped-cities/photos/fallingwater3-d48398.webp" width="640" height="420" alt="Casa da Cascata" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Casa da Cascata</strong>Pittsburgh</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Fallingwater3.jpg" rel="noopener">lachrimae72</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
+                    </li>
+                    <li>
+                        <a class="strip-photo" href="stamped-cities/reykjavik.html#is_hallgrimskirkja">
+                            <img src="stamped-cities/photos/hallgrimskirkja-mai-2026-e7bf06.webp" width="640" height="562" alt="Hallgrímskirkja" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <span><strong>Hallgrímskirkja</strong>Reykjavik</span>
+                        </a>
+                        <small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Hallgrimskirkja_mai_2026.jpg" rel="noopener">Steinninn</a>, <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener">CC BY 4.0</a></small>
+                    </li>
+            </ul>
+        </section>
+
+        <!-- Architects -->
+        <section class="section section--deep feature flip" aria-labelledby="architects-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Descubra · As pessoas por trás dos edifícios</p>
+                    <h2 id="architects-title" class="section-title">Conheça os <span class="highlight">arquitetos.</span></h2>
+                    <p>Cada ponto turístico traz seu arquiteto, estilo, data de construção, altura e história. Toque em um arquiteto para ver todos os edifícios dele no app. O Stamped! acompanha de quem são os edifícios que você já viu e mostra seu arquiteto favorito.</p>
+                    <ul class="architects" aria-label="Alguns dos arquitetos do Stamped!, com quantos edifícios deles estão no app">
+                        <li><a href="stamped-cities/architect-frank-lloyd-wright.html">Frank Lloyd Wright<strong>34</strong></a></li>
+                        <li><a href="stamped-cities/architect-oscar-niemeyer.html">Oscar Niemeyer<strong>16</strong></a></li>
+                        <li><a href="stamped-cities/architect-frank-gehry.html">Frank Gehry<strong>15</strong></a></li>
+                        <li><a href="stamped-cities/architect-i-m-pei.html">I. M. Pei<strong>17</strong></a></li>
+                        <li><a href="stamped-cities/architect-zaha-hadid.html">Zaha Hadid<strong>15</strong></a></li>
+                        <li><a href="stamped-cities/architect-herzog-and-de-meuron.html">Herzog &amp; de Meuron<strong>13</strong></a></li>
+                        <li><a href="stamped-cities/architect-mies-van-der-rohe.html">Mies van der Rohe<strong>8</strong></a></li>
+                        <li><a href="stamped-cities/architect-renzo-piano.html">Renzo Piano<strong>7</strong></a></li>
+                        <li><a href="stamped-cities/architect-jean-nouvel.html">Jean Nouvel<strong>7</strong></a></li>
+                        <li><a href="stamped-cities/architect-santiago-calatrava.html">Santiago Calatrava<strong>11</strong></a></li>
+                        <li><a href="stamped-cities/architect-le-corbusier.html">Le Corbusier<strong>13</strong></a></li>
+                        <li><a href="stamped-cities/architect-antoni-gaudi.html">Antoni Gaudí<strong>3</strong></a></li>
+                        <li><a href="stamped-cities/architect-adrian-smith.html">Adrian Smith<strong>3</strong></a></li>
+                    </ul>
+                    <div class="timeline" data-span="mais de 4.500 anos" aria-label="Os pontos turísticos vão de 2560 a.C. a 2026">
+                        <div><strong>2560 a.C.</strong>Grande Pirâmide de Gizé</div>
+                        <div><strong>2026</strong>Waterline, Austin</div>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-journey.webp" width="600" height="1304" loading="lazy"
+                                 alt="Tela Minha jornada com 171 carimbos, cidades visitadas e dominadas, e um cartão de arquiteto favorito de Albert Kahn" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <svg class="stamp stamp--gold" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">ARQUITETO FAVORITO</textPath></text><text class="stamp-big" x="60" y="64">KAHN</text><text class="stamp-small" x="60" y="77">DETROIT</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section class="section feature" id="quiz" aria-labelledby="quiz-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Jogue · Quiz de arquitetura</p>
+                    <h2 id="quiz-title" class="section-title">Teste seus <span class="highlight">conhecimentos.</span></h2>
+                    <p>Cada cidade e cada campus tem seu próprio quiz de 10 perguntas, feito com seus pontos turísticos reais: o estilo, o ano, o arquiteto, o número de andares. São 273 quizzes no total, em 9 idiomas. Toque na resposta ou diga em voz alta.</p>
+
+                    <!-- A three-question sample of the in-app quiz -->
+                    <div class="quiz-card" data-quiz>
+                        <div class="quiz-top">
+                            <span data-quiz-count>Pergunta 1 de 3</span>
+                            <span class="quiz-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                        </div>
+                        <p class="quiz-question" data-quiz-question>Quantos andares tem o Flatiron Building?</p>
+                        <div class="quiz-options" data-quiz-options>
+                            <button type="button">16</button>
+                            <button type="button">22</button>
+                            <button type="button">31</button>
+                        </div>
+                        <div class="quiz-foot">
+                            <p class="quiz-feedback" data-quiz-feedback aria-live="polite">Experimente. Três perguntas.</p>
+                            <button class="quiz-next" type="button" data-quiz-next hidden>Próxima</button>
+                        </div>
+                        <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true" data-quiz-stamp hidden><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">RESULTADO DO QUIZ</textPath></text><text class="stamp-big" x="60" y="64" data-quiz-score>3 / 3</text><text class="stamp-small" x="60" y="77" data-quiz-rank>ESPECIALISTA</text></svg>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-quiz.webp" width="600" height="1304" loading="lazy"
+                                 alt="Quiz de Nova York perguntando quantos andares tem o Flatiron Building, com um botão para responder por voz" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip planner -->
+        <section class="section section--deep feature flip" id="trips" aria-labelledby="trip-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Planeje · Viagens</p>
+                    <h2 id="trip-title" class="section-title">Planeje a viagem, <span class="highlight">dia a dia.</span></h2>
+                    <p>Monte uma viagem de vários dias com pontos turísticos e seus próprios lugares salvos, e sobrevoe tudo no mapa 3D antes de sair.</p>
+                    <ul class="feature-list">
+                        <li>Reordene as paradas, veja os tempos de caminhada e otimize a rota com um toque</li>
+                        <li>Adicione qualquer restaurante, loja ou local do Apple Maps</li>
+                        <li>Encontre hotéis para cada noite com uma busca para as suas datas</li>
+                        <li>As viagens são sincronizadas pelo iCloud entre iPhone, iPad e Mac</li>
+                    </ul>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/city-trip.webp" width="600" height="1304" loading="lazy"
+                                 alt="Viagem “NYC Long Weekend” com mapa da rota, três dias, um botão para fazer o tour da viagem em 3D e paradas no Flatiron e no Empire State Building" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <svg class="stamp stamp--orange" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">FIM DE SEMANA</textPath></text><text class="stamp-big" x="60" y="64">3 DIAS</text><text class="stamp-small" x="60" y="77">NYC</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Once you land -->
+        <section class="section" aria-labelledby="tools-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Em cada cidade</p>
+                    <h2 id="tools-title" class="section-title">Tudo o que você precisa <span class="highlight">quando chegar.</span></h2>
+                    <p class="section-lead">Cada página de cidade responde ao “e agora?”, então você não precisa de outros cinco apps.</p>
+                </div>
+                <ul class="tool-grid reveal">
+                    <li>
+                        <i class="fas fa-bed" aria-hidden="true"></i>
+                        <h3>Hotéis</h3>
+                        <p>Hotéis perto de cada ponto turístico, com fotos da rua, e uma busca de hotéis para as datas da sua viagem.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <h3>Onde comer</h3>
+                        <p>Restaurantes perto de cada ponto turístico com tempos de caminhada, tours gastronômicos e cafés no mapa.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <h3>Eventos</h3>
+                        <p>Shows, espetáculos e jogos com até seis meses de antecedência, além da agenda de bibliotecas e museus em algumas cidades.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                        <h3>Clima</h3>
+                        <p>A previsão do tempo da cidade que você está explorando.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        <h3>Moeda</h3>
+                        <p>Um conversor rápido para a moeda local.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-plane" aria-hidden="true"></i>
+                        <h3>Aeroporto</h3>
+                        <p>O aeroporto principal, seu código e o que o torna interessante.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                        <h3>Diga olá</h3>
+                        <p>Como cumprimentar as pessoas no idioma local.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        <h3>Quero visitar</h3>
+                        <p>Toque no coração de qualquer ponto turístico ou lugar do Apple Maps para salvá-lo para depois.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Apple Vision Pro -->
+        <section class="section section--deep feature" id="vision" aria-labelledby="vision-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Apple Vision Pro · Espacial</p>
+                    <h2 id="vision-title" class="section-title">Entre no <span class="highlight">ponto turístico.</span></h2>
+                    <p>No Apple Vision Pro, cada cidade flutua na sua sala em um mapa 3D fotorrealista, e os carimbos que você ganha no iPhone vão com você.</p>
+                    <ul class="feature-list">
+                        <li>Um globo 3D com todas as cidades e pinos ao vivo dos lugares que você carimbou</li>
+                        <li>Panoramas de 360°: entre em 26 pontos turísticos</li>
+                        <li>Play Tour: um voo narrado de ponto turístico em ponto turístico</li>
+                        <li>Detroit em 3D completo, baixada apenas quando você quiser</li>
+                        <li>Na próxima atualização: Explorar juntos com o SharePlay, para que seus amigos em uma chamada do FaceTime sobrevoem uma cidade com você</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?platform=vision&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Baixar na App Store para Apple Vision Pro" />
+                        </a>
+                        <span class="cta-note">No Apple Vision Pro</span>
+                    </div>
+                </div>
+                <div class="device-stack reveal">
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-panorama.webp" width="1600" height="900" loading="lazy"
+                             alt="Stamped! no Apple Vision Pro: a janela do mapa de Mumbai flutuando dentro de um panorama de 360° da escadaria do Taj Mahal Palace Hotel" />
+                        <figcaption><strong>Panoramas de 360°</strong>Entre no ponto turístico.</figcaption>
+                    </figure>
+                    <figure class="device-shot">
+                        <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
+                             alt="Um globo 3D com pinos de carimbos flutuando em uma sala de estar, diante do mapa de Nova York do Stamped!" />
+                        <figcaption><strong>O globo</strong>Gire-o e uma cidade se vira para você.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mac -->
+        <section class="section feature flip" id="mac" aria-labelledby="mac-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Mac · A tela grande</p>
+                    <h2 id="mac-title" class="section-title">Planeje tudo <span class="highlight">no seu Mac.</span></h2>
+                    <p>O mesmo passaporte em uma tela maior: suas cidades na barra lateral, o mapa 3D no meio e a página da cidade ao lado. Planeje no Mac e retome a viagem no iPhone com o iCloud.</p>
+                    <ul class="feature-list">
+                        <li>Mapa-múndi, Minha jornada, Conquistas, Minha lista de universidades, viagens e o quiz abrem cada um em sua própria janela</li>
+                        <li>Na próxima atualização: arraste pontos turísticos para uma viagem, efeitos ao passar o ponteiro e atalhos de teclado</li>
+                    </ul>
+                    <div class="device-cta">
+                        <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                            <img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="211" height="54" alt="Download on the Mac App Store" />
+                        </a>
+                    </div>
+                </div>
+                <div class="feature-visual reveal">
+                    <figure class="device-shot device-shot--mac">
+                        <img src="assets/images/stamped/app/mac-chicago.webp" width="1400" height="875" loading="lazy"
+                             alt="Stamped! em um Mac: uma barra lateral de cidades, um mapa 3D de Chicago com pontos turísticos carimbados e a página de Chicago com 17 de 17 pontos turísticos carimbados" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campuses -->
+        <section class="section section--deep" id="campuses" aria-labelledby="campus-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="kicker">Para visitas a universidades · Novidade na 2.7</p>
+                    <h2 id="campus-title" class="section-title">Planejando visitas a universidades? <span class="highlight">Deixe o Stamped! traçar o mapa.</span></h2>
+                    <p class="section-lead">Salve as universidades que sua família está avaliando e o Stamped! as organiza em uma viagem de carro: um campus por dia, em uma ordem de trajeto curta. Todas as universidades da Big Ten, SEC, ACC e Big 12, a Ivy League e grandes campi, de Oxford a Melbourne.</p>
+                    <ul class="feature-list campus-list">
+                        <li>Faça um tour 3D por cada campus antes de ir de carro</li>
+                        <li>Veja os edifícios marcantes e as histórias por trás deles</li>
+                        <li>Marque as tradições que os estudantes realmente fazem, como esfregar a estátua da sorte</li>
+                        <li>Leia a história de cada universidade, veja os próximos jogos em casa e explore os eventos do campus</li>
+                        <li>Grátis para iPhone, iPad e Mac, com viagens sincronizadas pelo iCloud</li>
+                    </ul>
+                    <ul class="conferences" aria-label="Conferências incluídas">
+                        <li>Big Ten</li>
+                        <li>SEC</li>
+                        <li>ACC</li>
+                        <li>Big 12</li>
+                        <li>Ivy League</li>
+                        <li>+ pelo mundo</li>
+                    </ul>
+                    <p class="band-link campus-link"><a href="stamped-colleges.html">Veja todas as universidades e como funciona a viagem <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+                </div>
+                <div class="phone-row reveal">
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/07-road-trip.webp" width="600" height="1304" loading="lazy"
+                                     alt="Viagem por universidades com cinco escolas em uma ordem de trajeto curta" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
+                        </div>
+                        <figcaption><strong>Viagem por universidades</strong>Um dia em cada universidade, em uma ordem de trajeto curta.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/02-college-list.webp" width="600" height="1304" loading="lazy"
+                                     alt="Minha lista de universidades com cinco escolas salvas e um botão Planejar uma viagem por universidades" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
+                        </div>
+                        <figcaption><strong>Minha lista de universidades</strong>Salve as universidades que você está considerando.</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <img src="assets/images/stamped/app/04-traditions.webp" width="600" height="1304" loading="lazy"
+                                     alt="Lista de tradições do campus da Michigan State com duas tradições marcadas" />
+                                <div class="phone-island" aria-hidden="true"></div>
+                                <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-status-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.3-1.4A10.3 10.3 0 0 0 8 .5C5.2.5 2.6 1.6.7 3.4L2 4.8a8.4 8.4 0 0 1 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 4.3c-1.8 0-3.4.7-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.7a1.6 1.6 0 0 0-1.2.5L8 11.6l1.2-1.2A1.6 1.6 0 0 0 8 9.9Z"/></svg><svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4Z" fill-opacity="0.4"/></svg></span></div>
+                            </div>
+                        </div>
+                        <figcaption><strong>Mais de 250 tradições</strong>Esfregue a estátua da sorte, toque o sino, marque como feito.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collect -->
+        <section class="section feature" aria-labelledby="collect-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="kicker">Colecione · Seu passaporte</p>
+                    <h2 id="collect-title" class="section-title">Colecione <span class="highlight">todos.</span></h2>
+                    <p>Ganhe um carimbo por cada ponto turístico que visitar e veja seu passaporte se encher, cidade por cidade e país por país. Domine uma cidade quando tiver carimbado todos os pontos turísticos dela.</p>
+                    <ul class="feature-list">
+                        <li>Conquistas por primeiros carimbos, corujas noturnas, viajantes de fim de semana e mais</li>
+                        <li>Um mapa-múndi de todos os lugares por onde você passou</li>
+                        <li>Carimbos de campus nas cores de cada universidade</li>
+                        <li>Compartilhe seu passaporte e veja-o na Tela de Início com o widget</li>
+                    </ul>
+                </div>
+                <div class="feature-visual passport-page">
+                    <div class="phone reveal">
+                        <div class="phone-screen">
+                            <img src="assets/images/stamped/app/achievements.webp" width="600" height="1304" loading="lazy"
+                                 alt="Tela de Conquistas com várias conquistas desbloqueadas, entre elas Primeiro carimbo e Clube dos cem" />
+                            <div class="phone-island" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <svg class="stamp stamp--red" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CONQUISTA</textPath></text><text class="stamp-big" x="60" y="62">CENTURY</text><text class="stamp-small" x="60" y="76">CLUB</text></svg>
+                    <svg class="stamp stamp--navy" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CAIRO · EGYPT</textPath></text><text class="stamp-big" x="60" y="64">GIZA</text><text class="stamp-small" x="60" y="77">2560 a.C.</text></svg>
+                    <svg class="stamp stamp--green" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">RIO · BRAZIL</textPath></text><text class="stamp-big" x="60" y="64">RIO</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+                    <svg class="stamp stamp--gold" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">CIDADE DOMINADA</textPath></text><text class="stamp-big" x="60" y="64">SYDNEY</text><text class="stamp-small" x="60" y="77">★ OURO ★</text></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extras -->
+        <section class="section section--deep" aria-labelledby="more-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 id="more-title" class="section-title">E os pequenos detalhes.</h2>
+                </div>
+                <ul class="more-grid reveal">
+                    <li>
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
+                        <div><h3>Sincronização com o iCloud</h3><p>Carimbos, viagens e listas acompanham você entre os dispositivos.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-language" aria-hidden="true"></i>
+                        <div><h3>9 idiomas</h3><p>Inglês, alemão, espanhol, francês, italiano, japonês, coreano, português e chinês.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        <div><h3>Feito para todos</h3><p>VoiceOver, Dynamic Type e Reduzir Movimento, além de alto contraste e modo escuro.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-download-alt" aria-hidden="true"></i>
+                        <div><h3>Salvar para uso offline</h3><p>Mantenha as fotos e as histórias de uma cidade no seu dispositivo para voos e viagens ao exterior.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-headphones" aria-hidden="true"></i>
+                        <div><h3>Ouvir</h3><p>A história de qualquer ponto turístico, lida em voz alta enquanto você está diante dele.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-share-square" aria-hidden="true"></i>
+                        <div><h3>Compartilhe um carimbo</h3><p>Envie o carimbo de uma cidade ou de um campus para seus amigos como um cartão com imagem.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-microphone" aria-hidden="true"></i>
+                        <div><h3>Siri e Atalhos</h3><p>Diga “Abrir Paris no Stamped!” ou adicione o Stamped! a um atalho.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        <div><h3>Tours e ingressos</h3><p>Encontre tours e ingressos para qualquer ponto turístico da cidade com o GetYourGuide.</p></div>
+                    </li>
+                    <li>
+                        <i class="fas fa-camera-retro" aria-hidden="true"></i>
+                        <div><h3>Fotos históricas</h3><p>Fotos e desenhos antigos de pontos turísticos dos EUA, da Biblioteca do Congresso.</p></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final call to action -->
+        <section class="cta" aria-labelledby="cta-title">
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BOA VIAGEM</textPath></text><text class="stamp-big" x="60" y="64">PARTIDA</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <svg class="stamp stamp--band" viewBox="0 0 120 120" aria-hidden="true"><use href="#stamp-frame" /><text class="stamp-arc"><textPath href="#stamp-arc-path" startOffset="50%">BEM-VINDO</textPath></text><text class="stamp-big" x="60" y="64">CHEGADA</text><text class="stamp-small" x="60" y="77">2026</text></svg>
+            <div class="container reveal">
+                <img class="cta-icon" src="assets/images/stamped/app/icon.webp" alt="" width="84" height="84" loading="lazy" />
+                <h2 id="cta-title">Seu passaporte está esperando.</h2>
+                <p>Mais de 2.100 pontos turísticos. Um carimbo em cada. Grátis para iPhone, iPad, Mac e Apple Vision Pro.</p>
+                <div class="cta-row">
+                    <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=website&amp;mt=8">
+                        <img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="162" height="54" alt="Download on the App Store" />
+                    </a>
+                    <a class="app-store-badge" href="https://apps.apple.com/br/app/stamped-a-city-passport/id6759680336?platform=mac&amp;pt=128288066&amp;ct=website&amp;mt=8">
+                        <img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="211" height="54" alt="Download on the Mac App Store" />
+                    </a>
+                    <div class="qr-card">
+                        <img src="assets/images/stamped/app/qr-app-store.svg" width="64" height="64" alt="Código QR que abre o Stamped! na App Store" />
+                        <span><strong>No computador?</strong>Escaneie com a câmera do seu iPhone.</span>
+                    </div>
+                </div>
+                <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/stamped" method="post" target="_blank">
+                    <label for="signup-email">Receba um e-mail quando chegarem novas cidades e campi.</label>
+                    <div class="signup-row">
+                        <input id="signup-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+                        <input type="hidden" name="embed" value="1" />
+                        <input type="hidden" name="tag" value="website" />
+                        <button type="submit">Avise-me</button>
+                    </div>
+                    <p class="signup-note">Poucos e-mails por ano. Cancele quando quiser.</p>
+                </form>
+                <p class="cta-tip">Curtindo o Stamped!? <a href="https://buy.stripe.com/aFabIVa0y4D4dQ4f7248000" rel="noopener">Deixe uma gorjeta</a> para ajudar a trazer novas cidades.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav aria-label="Links do app">
+                <a href="contact.html">Suporte</a>
+                <a href="stamped-privacy.html">Privacidade</a>
+                <a href="stamped-cities/index.html">Guias de cidades</a>
+                <a href="stamped.html">Como foi feito</a>
+                <a href="https://buy.stripe.com/aFabIVa0y4D4dQ4f7248000" rel="noopener">Gorjetas</a>
+            </nav>
+            <nav aria-label="Idiomas">
+                <a href="stamped-app.html" hreflang="en" lang="en">English</a>
+                <a href="stamped-app-es.html" hreflang="es" lang="es">Español</a>
+                <a href="stamped-app-de.html" hreflang="de" lang="de">Deutsch</a>
+                <a href="stamped-app-ja.html" hreflang="ja" lang="ja">日本語</a>
+                <a href="stamped-app-fr.html" hreflang="fr" lang="fr">Français</a>
+                <a href="stamped-app-it.html" hreflang="it" lang="it">Italiano</a>
+                <a href="stamped-app-ko.html" hreflang="ko" lang="ko">한국어</a>
+                <a href="stamped-app-pt.html" hreflang="pt" lang="pt">Português</a>
+                <a href="stamped-app-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+            </nav>
+            <p>O Stamped! não é afiliado nem endossado por nenhuma universidade. Os nomes e as cores das escolas são usados apenas para identificá-las.</p>
+            <p>Apple, o logotipo da Apple, iPhone, iPad, Mac e Apple Vision Pro são marcas comerciais da Apple Inc. App Store e Mac App Store são marcas de serviço da Apple Inc.</p>
+            <p>© 2026 George Clinkscales Jr.</p>
+        </div>
+    </footer>
+
+    <script>
+            // Every piece of text assets/js/stamped-app.js puts on the page.
+            // build_translations.py swaps this block for each language.
+            window.stampedCopy = {
+                pause: 'Pausar vídeo',
+                play: 'Reproduzir vídeo',
+                question: 'Pergunta {n} de {total}',
+                correct: 'Correto! ',
+                wrong: 'Quase. ',
+                next: 'Próxima',
+                seeStamp: 'Ver seu carimbo',
+                done: 'Concluir',
+                perfect: 'Pontuação perfeita!',
+                yourScore: 'Você acertou {score} de {total}.',
+                more: 'O app tem 273 quizzes e 2.730 perguntas.',
+                playAgain: 'Jogar de novo',
+                intro: 'Experimente. Três perguntas.',
+                ranks: ['TURISTA', 'VIAJANTE', 'LOCAL', 'ESPECIALISTA'],
+                questions: [
+                    { q: 'Quantos andares tem o Flatiron Building?', options: ['16', '22', '31'], answer: 1,
+                      note: '22 andares, concluído em 1902.' },
+                    { q: 'Quem projetou a Casa da Cascata (Fallingwater)?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,
+                      note: 'Frank Lloyd Wright, sobre uma cachoeira na Pensilvânia.' },
+                    { q: 'Quem projetou a Ópera de Sydney?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,
+                      note: 'Jørn Utzon, arquiteto dinamarquês, venceu o concurso de projeto em 1957.' }
+                ]
+            };
+    </script>
+    <script src="assets/js/stamped-app.js?v=4c949fd0" defer></script>
+    <script src="stamped-cities/map-token.js"></script>
+    <script src="assets/js/stamped-try.js?v=2" defer></script>
+    <!-- GoatCounter: cookie-free page counts, no banner needed -->
+    <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

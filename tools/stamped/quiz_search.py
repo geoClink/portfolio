@@ -62,4 +62,8 @@ def decorate(page: str, folder: Path, prefix: str = "") -> str:
         page = page.replace('\n    <section class="suggest"', section + '\n    <section class="suggest"', 1)
         scripts += f'    <script src="{asset("quiz.js", prefix)}" defer></script>\n'
 
+    # Before the GoatCounter snippet when the page has one, so the analytics tag stays last
+    marker = "    <!-- GoatCounter:"
+    if marker in page:
+        return page.replace(marker, scripts + marker, 1)
     return page.replace("</body>", scripts + "</body>", 1)
