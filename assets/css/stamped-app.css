@@ -226,7 +226,14 @@ a { color: inherit; }
 .qr-card strong { display: block; color: var(--color-ink); font-size: 14px; }
 /* Only on big screens with a mouse, where you can't install an iPhone app directly */
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-    .qr-card { display: flex; }
+    /* Two columns, one per store badge; the QR card spans both, so it is exactly as wide as the badges */
+    .cta-row {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: fit-content;
+    }
+    .cta .cta-row { margin-inline: auto; }   /* the final call to action is centered */
+    .qr-card { display: flex; grid-column: 1 / -1; }
     .cta-row .cta-note { display: none; }
 }
 .cta .qr-card { background: rgba(245, 239, 228, 0.06); border-color: rgba(245, 239, 228, 0.18); }
