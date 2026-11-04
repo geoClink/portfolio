@@ -259,6 +259,22 @@ def jsonld(items):
     return "\n".join("    " + line for line in json.dumps(items, ensure_ascii=False, indent=4).splitlines())
 
 
+def local_photos(photos, prefix=""):
+    """`photos` with each image pointed at its small local WebP copy (localize_photos.py writes them
+    to stamped-cities/photos/), so pages don't hotlink Wikimedia. The credit fields stay exactly as
+    they are; `remote` keeps the original address. A photo with no local copy keeps its old one."""
+    manifest_file = OUT / "photos" / "manifest.json"
+    manifest = json.loads(manifest_file.read_text(encoding="utf-8")) if manifest_file.exists() else {}
+    result = {}
+    for landmark_id, photo in photos.items():
+        copy = manifest.get(photo["src"])
+        if copy:
+            photo = {**photo, "src": f'{prefix}photos/{copy["file"]}', "width": copy["width"],
+                     "height": copy["height"], "remote": photo["src"]}
+        result[landmark_id] = photo
+    return result
+
+
 def photo_figure(photo, name, eager=False):
     """A landmark photo with its required credit line (author, license, link to the file page)."""
     if not photo:
@@ -545,7 +561,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
                 <p class="tour-text">Press play on the guided tour and Stamped! flies you over {e(city)} in photoreal 3D, past {e(stops)}, with a card and a Look Around preview at every stop.</p>
             </div>
             <div class="phone">
-                <video src="../assets/videos/stamped/{name}.mp4" poster="../assets/videos/stamped/{name}-poster.jpg" width="492" height="{height}"
+                <video src="../assets/videos/stamped/{name}.mp4" poster="../assets/videos/stamped/{name}-poster.webp" width="492" height="{height}"
                        controls muted playsinline preload="none" aria-label="Stamped! guided tour of {e(city)} on iPhone"></video>
             </div>
         </div>
@@ -1026,6 +1042,7 @@ def main():
     details = json.loads((resources / "CityDetails.json").read_text(encoding="utf-8"))
     photos_file = OUT / "photos.json"   # written by fetch_photos.py
     photos = json.loads(photos_file.read_text(encoding="utf-8")) if photos_file.exists() else {}
+    photos = local_photos(photos)
 
     cities = [c for c in registry if c in PLACES]
     skipped = [c for c in registry if c not in PLACES
@@ -1047,7 +1064,8 @@ def main():
 
     # Architect pages show campus buildings too, with the school pages' photos
     campus_photos_file = COLLEGES / "photos.json"
-    all_photos = {**(json.loads(campus_photos_file.read_text(encoding="utf-8")) if campus_photos_file.exists() else {}), **photos}
+    campus_photos = json.loads(campus_photos_file.read_text(encoding="utf-8")) if campus_photos_file.exists() else {}
+    all_photos = {**local_photos(campus_photos), **photos}
     for name, (intro, works) in links.pages.items():
         page = architect_page(name, intro, works, all_photos, featured=list(ARCHITECTS))
         (OUT / f"{architect_slug(name)}.html").write_text(versioned(page), encoding="utf-8")

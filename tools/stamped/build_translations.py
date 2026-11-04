@@ -8,6 +8,8 @@ stamped-app-ja.html. Edit the English page, then re-run this. If an English stri
 below no longer exists on the page the script stops and names it, so a changed
 sentence never silently stays in English.
 
+It also sets the ?v= hash on the shared CSS and JS links (SHARED) in all four pages.
+
 Wording follows the app's own Localizable.strings (sello / Stempel / スタンプ).
 
 Each entry is (english, spanish, german, japanese). The english string is matched as:
@@ -15,6 +17,8 @@ Each entry is (english, spanish, german, japanese). The english string is matche
   "@" prefix   -> an attribute value:  ="text"
   "!" prefix   -> anywhere, exactly as written (CSS, JSON, URLs)
 """
+import hashlib
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,6 +27,8 @@ LANGS = ["es", "de", "ja"]
 STORE = {"es": "es", "de": "de", "ja": "jp"}          # App Store country codes
 LOCALE = {"es": "es_ES", "de": "de_DE", "ja": "ja_JP"}
 NAME = {"es": "español", "de": "Deutsch", "ja": "日本語"}
+# Shared files all four pages link to; each link gets ?v=<hash of the file> (versioned())
+SHARED = ["assets/css/stamped-app.css", "assets/js/stamped-app.js"]
 
 T = [
     # ----- <head> -----
@@ -229,7 +235,7 @@ T = [
     ("2560 BC", "2560 a. C.", "2560 v. Chr.", "紀元前2560年"),
     ("Great Pyramid of Giza", "Gran Pirámide de Guiza", "Cheops-Pyramide von Gizeh", "ギザの大ピラミッド"),
     ("Waterline, Austin", "Waterline, Austin", "Waterline, Austin", "ウォーターライン（オースティン）"),
-    ("!content: \"4,500+ years\";", "content: \"más de 4.500 años\";", "content: \"über 4.500 Jahre\";", "content: \"4,500年以上\";"),
+    ("@4,500+ years", "más de 4.500 años", "über 4.500 Jahre", "4,500年以上"),
     ("@My Journey screen with 171 stamps, cities visited and mastered, and a favorite architect card for Albert Kahn",
      "Pantalla Mi viaje con 171 sellos, ciudades visitadas y dominadas, y Albert Kahn como arquitecto favorito",
      "Bildschirm Meine Reise mit 171 Stempeln, besuchten und gemeisterten Städten und Albert Kahn als Lieblingsarchitekt",
@@ -494,7 +500,8 @@ T = [
      "Apple、Appleのロゴ、iPhone、iPad、Mac、Apple Vision Proは、Apple Inc.の商標です。App StoreおよびMac App Storeは、Apple Inc.のサービスマークです。"),
 ]
 
-# Text the quiz and video script write at runtime (replaces the whole `var copy = {...};` block)
+# Text the quiz and video script (assets/js/stamped-app.js) write at runtime
+# (replaces the whole `window.stampedCopy = {...};` block)
 COPY = {
     "es": """{
                 pause: 'Pausar vídeo',
@@ -593,9 +600,9 @@ def build(lang, source):
         raise SystemExit("These English strings are no longer on the page; update the table:\n  " + "\n  ".join(missing))
 
     # The runtime text block
-    start = html.index("            var copy = {")
+    start = html.index("            window.stampedCopy = {")
     end = html.index("};", start) + 2
-    html = html[:start] + "            var copy = " + COPY[lang] + ";" + html[end:]
+    html = html[:start] + "            window.stampedCopy = " + COPY[lang] + ";" + html[end:]
 
     page = f"stamped-app-{lang}.html"
     swaps = [
@@ -624,8 +631,18 @@ def build(lang, source):
     return html
 
 
+def versioned(html):
+    """`html` with each shared file's ?v= set to a hash of the file, so browsers fetch the new copy
+    after a change instead of a cached old one (like the city pages' versioned())."""
+    for name in SHARED:
+        stamp = hashlib.sha1((ROOT / name).read_bytes()).hexdigest()[:8]
+        html = re.sub(rf'"{re.escape(name)}(\?v=[0-9a-f]+)?"', f'"{name}?v={stamp}"', html)
+    return html
+
+
 def main():
-    source = SOURCE.read_text(encoding="utf-8")
+    source = versioned(SOURCE.read_text(encoding="utf-8"))
+    SOURCE.write_text(source, encoding="utf-8")
     for lang in LANGS:
         out = ROOT / f"stamped-app-{lang}.html"
         out.write_text(build(lang, source), encoding="utf-8")

@@ -73,7 +73,7 @@
 /* Stadium and arena photos scroll sideways, like the app */
 .venue-photos { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
 .venue-photos figure { flex: 0 0 min(280px, 80vw); margin: 0; scroll-snap-align: start; }
-.venue-photos img { width: 100%; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 12px; display: block; }
+.venue-photos img { width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 12px; display: block; }
 .venue-photos figcaption { display: flex; flex-direction: column; gap: 2px; margin-top: 6px; font-size: 14px; }
 .venue-photos figcaption a { color: var(--color-muted); font-size: 12px; }
 
