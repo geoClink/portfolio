@@ -1,7 +1,27 @@
 {
+ "https://live.staticflickr.com/65535/51741893407_18e34a1729_b.jpg": {
+  "file": "51741893407-18e34a1729-b-32ffa9.webp",
+  "height": 499,
+  "width": 640
+ },
+ "https://live.staticflickr.com/65535/54465066821_32ab690110_b.jpg": {
+  "file": "54465066821-32ab690110-b-d577ef.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://live.staticflickr.com/65535/54466065317_b9c3010b72_b.jpg": {
+  "file": "54466065317-b9c3010b72-b-cbb861.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg/960px-%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "venice-doge-s-palace-and-campanile-of-st-mark-s-f0678e.webp",
   "height": 442,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Barbican%2C_Florian_Gate_and_Planty_Park%2C_Basztowa_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Barbican%2C_Florian_Gate_and_Planty_Park%2C_Basztowa_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "barbican-florian-gate-and-planty-park-basztowa-s-adc571.webp",
+  "height": 381,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/FortSumter2009.jpg/960px-FortSumter2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -114,6 +134,16 @@
   "height": 453,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/House_of_Blackheads_at_Dusk_3%2C_Riga%2C_Latvia_-_Diliff.jpg/960px-House_of_Blackheads_at_Dusk_3%2C_Riga%2C_Latvia_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "house-of-blackheads-at-dusk-3-riga-latvia-diliff-9a3e8e.webp",
+  "height": 483,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Kbc-building-antwerpen.jpg/960px-Kbc-building-antwerpen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "kbc-building-antwerpen-7b85b0.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/La_Torre_del_Oro%2C_Sevilla.jpg/960px-La_Torre_del_Oro%2C_Sevilla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "la-torre-del-oro-sevilla-0a7f8d.webp",
   "height": 640,
@@ -138,6 +168,11 @@
   "file": "bog-la-candelaria-alta-e7b340.webp",
   "height": 463,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Daralhorra_DSCF2354.jpg/960px-Daralhorra_DSCF2354.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "daralhorra-dscf2354-5aab13.webp",
+  "height": 800,
+  "width": 600
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Pioneer_Courthouse_Portland.JPG/960px-Pioneer_Courthouse_Portland.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "pioneer-courthouse-portland-2aad22.webp",
@@ -189,6 +224,11 @@
   "height": 437,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Lello_Bookshop_9_April_2026.jpg/960px-Lello_Bookshop_9_April_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "lello-bookshop-9-april-2026-efc5ca.webp",
+  "height": 800,
+  "width": 602
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Muzeum_Historii_%C5%BByd%C3%B3w_Polskich.png/960px-Muzeum_Historii_%C5%BByd%C3%B3w_Polskich.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "muzeum-historii-zydow-polskich-105c8f.webp",
   "height": 334,
@@ -234,6 +274,11 @@
   "height": 460,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Huizen_in_Zurenborg.jpg/960px-Huizen_in_Zurenborg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "huizen-in-zurenborg-71b5c5.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/McDowellAdultEducation.jpg/960px-McDowellAdultEducation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "mcdowelladulteducation-03276a.webp",
   "height": 345,
@@ -267,6 +312,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Farnsworth_House_by_Mies_Van_Der_Rohe_-_exterior-8.jpg/960px-Farnsworth_House_by_Mies_Van_Der_Rohe_-_exterior-8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "farnsworth-house-by-mies-van-der-rohe-exterior-8-4ce6b2.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Galbraith_Hall_with_Revelle_Fountain_in_the_foreground.png/960px-Galbraith_Hall_with_Revelle_Fountain_in_the_foreground.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "galbraith-hall-with-revelle-fountain-in-the-fore-670ab7.webp",
+  "height": 434,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Image-Schloss_Nymphenburg_Munich_CC_edit3.jpg/960px-Image-Schloss_Nymphenburg_Munich_CC_edit3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -444,6 +494,11 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Lonely_Dancer_%284937475766%29.jpg/960px-Lonely_Dancer_%284937475766%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "lonely-dancer-4937475766-f4ef64.webp",
+  "height": 479,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/MK03214_University_of_Washington_Suzzallo_Library.jpg/960px-MK03214_University_of_Washington_Suzzallo_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "mk03214-university-of-washington-suzzallo-librar-27eee0.webp",
   "height": 360,
@@ -529,6 +584,16 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Palacio_da_Bolsa_in_Porto_%282%29.jpg/960px-Palacio_da_Bolsa_in_Porto_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "palacio-da-bolsa-in-porto-2-b5c869.webp",
+  "height": 461,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Palacio_de_Carlos_V_04.JPG/960px-Palacio_de_Carlos_V_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "palacio-de-carlos-v-04-ca4336.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/St._Patrick_Cathedral_-_Fort_Worth%2C_Texas_01.jpg/960px-St._Patrick_Cathedral_-_Fort_Worth%2C_Texas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "st-patrick-cathedral-fort-worth-texas-01-d3f6f8.webp",
   "height": 480,
@@ -537,6 +602,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/C%E1%BB%A7_Chi_tunnels_entrance.JPG/960px-C%E1%BB%A7_Chi_tunnels_entrance.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "cu-chi-tunnels-entrance-b54cdf.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Coimbra_December_2011-14.jpg/960px-Coimbra_December_2011-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "coimbra-december-2011-14-d2d0f3.webp",
+  "height": 729,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Hirshhorn_Museum_DC_2007.jpg/960px-Hirshhorn_Museum_DC_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -724,6 +794,11 @@
   "height": 460,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Spain_Andalusia_Granada_BW_2015-10-25_13-14-26_7_7_1.jpg/960px-Spain_Andalusia_Granada_BW_2015-10-25_13-14-26_7_7_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "spain-andalusia-granada-bw-2015-10-25-13-14-26-7-85c72e.webp",
+  "height": 453,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg/960px-Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "wat-phra-that-doi-suthep-chiang-mai-470b62.webp",
   "height": 512,
@@ -794,14 +869,29 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Wawel_katedra2.jpg/960px-Wawel_katedra2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "wawel-katedra2-9da9bb.webp",
+  "height": 640,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/William_Scarbourgh_house%2C_Savannah%2C_GA%2C_US.jpg/960px-William_Scarbourgh_house%2C_Savannah%2C_GA%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "william-scarbourgh-house-savannah-ga-us-5420e2.webp",
+  "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/0_Het_Steen_-_Antwerpen_%281%29.JPG/960px-0_Het_Steen_-_Antwerpen_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "0-het-steen-antwerpen-1-1089e1.webp",
   "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Indiana_Memorial_Union_10152005.JPG/960px-Indiana_Memorial_Union_10152005.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "indiana-memorial-union-10152005-2fd228.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Mitchell_Park_Horticultural_Conservatory.jpg/960px-Mitchell_Park_Horticultural_Conservatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "mitchell-park-horticultural-conservatory-54c465.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Riverside_Plaza_and_Mixed_Blood_Theatre_at_sunset_2014-08-09.jpg/960px-Riverside_Plaza_and_Mixed_Blood_Theatre_at_sunset_2014-08-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -894,6 +984,11 @@
   "height": 800,
   "width": 533
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/RIMAC_Annex_seen_facing_southeast.jpg/960px-RIMAC_Annex_seen_facing_southeast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "rimac-annex-seen-facing-southeast-664c16.webp",
+  "height": 379,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Richmond_Center_for_Visual_Arts%2C_Western_Michigan_University%2C_Kalamazoo%2C_Michigan%2C_front_of_building_from_fountain%2C_fall_2012.jpg/960px-Richmond_Center_for_Visual_Arts%2C_Western_Michigan_University%2C_Kalamazoo%2C_Michigan%2C_front_of_building_from_fountain%2C_fall_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "richmond-center-for-visual-arts-western-michigan-6aa28c.webp",
   "height": 360,
@@ -902,6 +997,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/2025-07-23_-_McGregor_Memorial_Conference_Center_in_Detroit_MI_US_1.jpg/960px-2025-07-23_-_McGregor_Memorial_Conference_Center_in_Detroit_MI_US_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "2025-07-23-mcgregor-memorial-conference-center-i-c86893.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Castillo_de_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG/960px-Castillo_de_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "castillo-de-riga-letonia-2012-08-07-dd-04-40d157.webp",
+  "height": 453,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Humboldt_Forum_Foyer-002.jpg/960px-Humboldt_Forum_Foyer-002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1024,6 +1124,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Granada_-_Cathedral_Front.jpg/960px-Granada_-_Cathedral_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "granada-cathedral-front-52854c.webp",
+  "height": 550,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/View_from_Shotover-Rees_St%2C_Queenstown_-_panoramio_%282%29.jpg/960px-View_from_Shotover-Rees_St%2C_Queenstown_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "view-from-shotover-rees-st-queenstown-panoramio-a44442.webp",
   "height": 359,
@@ -1042,6 +1147,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Kelly_Shorts_Stadium.jpg/960px-Kelly_Shorts_Stadium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "kelly-shorts-stadium-07ffdb.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/MAZDA_Zoom-Zoom_Stadium_Hiroshima_facade%EF%BC%882014%EF%BC%89.jpg/960px-MAZDA_Zoom-Zoom_Stadium_Hiroshima_facade%EF%BC%882014%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "mazda-zoom-zoom-stadium-hiroshima-facade-2014-538fc5.webp",
+  "height": 304,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Mercado_Central_de_Fortaleza_-_panoramio_%281%29.jpg/960px-Mercado_Central_de_Fortaleza_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1117,6 +1227,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Hyatt_Regency_San_Francisco_%28110103874%29.jpg/960px-Hyatt_Regency_San_Francisco_%28110103874%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "hyatt-regency-san-francisco-110103874-a03e7a.webp",
   "height": 613,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Marseille-Saint-Victor-bjs180810-01.jpg/960px-Marseille-Saint-Victor-bjs180810-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "marseille-saint-victor-bjs180810-01-714c55.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Pavilh%C3%A3o_de_Portugal_4.JPG/960px-Pavilh%C3%A3o_de_Portugal_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1209,6 +1324,16 @@
   "height": 515,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Keep_tower%2C_Hiroshima_Castle%2C_Southwest_remote_view_20190417_1.jpg/960px-Keep_tower%2C_Hiroshima_Castle%2C_Southwest_remote_view_20190417_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "keep-tower-hiroshima-castle-southwest-remote-vie-745d66.webp",
+  "height": 800,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Milwaukee_July_2022_076_%28Milwaukee_County_War_Memorial%29.jpg/960px-Milwaukee_July_2022_076_%28Milwaukee_County_War_Memorial%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-july-2022-076-milwaukee-county-war-mem-415ed0.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Schwartz%27s_Deli_2026.jpg/960px-Schwartz%27s_Deli_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "schwartz-s-deli-2026-579c58.webp",
   "height": 800,
@@ -1237,6 +1362,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/960px-Delhi_fort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "delhi-fort-367134.webp",
   "height": 294,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "estacao-ferroviaria-de-porto-sao-bento-cb3154.webp",
+  "height": 477,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Kauppatori_Helsinki1.jpg/960px-Kauppatori_Helsinki1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1269,6 +1399,11 @@
   "height": 800,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Teach_the_children_well_%2855087981551%29.jpg/960px-Teach_the_children_well_%2855087981551%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "teach-the-children-well-55087981551-086e0b.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/The_Pentagon%2C_Headquarters_of_the_US_Department_of_Defense_%28cropped2%29.jpg/960px-The_Pentagon%2C_Headquarters_of_the_US_Department_of_Defense_%28cropped2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "the-pentagon-headquarters-of-the-us-department-o-94d08a.webp",
   "height": 363,
@@ -1279,9 +1414,19 @@
   "height": 712,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Chapel_in_the_Gate%2C_St._Florian%27s_Gate%2C_Pijarska_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Chapel_in_the_Gate%2C_St._Florian%27s_Gate%2C_Pijarska_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "chapel-in-the-gate-st-florian-s-gate-pijarska-st-f94477.webp",
+  "height": 509,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/MADRID_051116_MXALX_041.jpg/960px-MADRID_051116_MXALX_041.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "madrid-051116-mxalx-041-83a845.webp",
   "height": 425,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Porta_F%C3%A9rrea_em_2025.jpg/960px-Porta_F%C3%A9rrea_em_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "porta-ferrea-em-2025-085cb0.webp",
+  "height": 640,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Radcliffe_Camera%2C_Oxford_-_Oct_2006.jpg/960px-Radcliffe_Camera%2C_Oxford_-_Oct_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1292,6 +1437,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Sevilla_Cathedral_-_Southeast.jpg/960px-Sevilla_Cathedral_-_Southeast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "sevilla-cathedral-southeast-733dfc.webp",
   "height": 477,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%22Beeindruckende_Architektur%22._5.jpg/960px-%22Beeindruckende_Architektur%22._5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "beeindruckende-architektur-5-3587f4.webp",
+  "height": 308,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%B1%CF%85%CE%BB%CE%AE_%CE%95%CE%BB_%CE%9C%CF%80%CE%B1%CE%BD%CF%84%CE%AF_1127.jpg/960px-%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%B1%CF%85%CE%BB%CE%AE_%CE%95%CE%BB_%CE%9C%CF%80%CE%B1%CE%BD%CF%84%CE%AF_1127.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1339,6 +1489,11 @@
   "height": 800,
   "width": 302
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Torre_de_los_Cl%C3%A9rigos%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG/960px-Torre_de_los_Cl%C3%A9rigos%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "torre-de-los-clerigos-oporto-portugal-2012-05-09-b57afc.webp",
+  "height": 800,
+  "width": 408
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/U.S._Marine_Hospital_Former_Wyman_Park_Health_System_%281934%29%2C_3100_Wyman_Park_Drive%2C_Baltimore%2C_MD_21211_%2848865004811%29.jpg/960px-U.S._Marine_Hospital_Former_Wyman_Park_Health_System_%281934%29%2C_3100_Wyman_Park_Drive%2C_Baltimore%2C_MD_21211_%2848865004811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "u-s-marine-hospital-former-wyman-park-health-sys-ec4285.webp",
   "height": 480,
@@ -1353,6 +1508,11 @@
   "file": "columbus-tower-916-kearny-st-san-francisco-1003e9.webp",
   "height": 800,
   "width": 555
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Prayer_Tower_on_the_campus_of_Oral_Roberts_University.jpg/960px-Prayer_Tower_on_the_campus_of_Oral_Roberts_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "prayer-tower-on-the-campus-of-oral-roberts-unive-bb83bc.webp",
+  "height": 800,
+  "width": 531
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Victoria_Art_Gallery%2C_Bath.JPG/960px-Victoria_Art_Gallery%2C_Bath.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "victoria-art-gallery-bath-b77993.webp",
@@ -1474,6 +1634,11 @@
   "height": 800,
   "width": 600
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Riga_Petrikirche_Blick_vom_Turm_zum_Dom_3.JPG/960px-Riga_Petrikirche_Blick_vom_Turm_zum_Dom_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "riga-petrikirche-blick-vom-turm-zum-dom-3-43ba17.webp",
+  "height": 800,
+  "width": 626
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/West_Side_Market_2023.jpg/960px-West_Side_Market_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "west-side-market-2023-abc730.webp",
   "height": 480,
@@ -1539,6 +1704,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Mid-Continet_Tower_Tulsa_OK_2026-05-26_10-01-15.jpg/960px-Mid-Continet_Tower_Tulsa_OK_2026-05-26_10-01-15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "mid-continet-tower-tulsa-ok-2026-05-26-10-01-15-73f473.webp",
+  "height": 800,
+  "width": 501
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/One_Thousand_Museum_March_2019.jpg/960px-One_Thousand_Museum_March_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "one-thousand-museum-march-2019-cf5d2e.webp",
   "height": 800,
@@ -1562,6 +1732,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Biosphere%2C_Parc_Jean_Drapeau%2C_Montreal_%2830423725231%29.jpg/960px-Biosphere%2C_Parc_Jean_Drapeau%2C_Montreal_%2830423725231%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "biosphere-parc-jean-drapeau-montreal-30423725231-55cdef.webp",
   "height": 360,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Church_of_St._James_%28Sint-Jacob%29%2C_Antwerp%2C_Belgium%2C_aerial_view_%28cropped%29.jpg/960px-Church_of_St._James_%28Sint-Jacob%29%2C_Antwerp%2C_Belgium%2C_aerial_view_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "church-of-st-james-sint-jacob-antwerp-belgium-ae-b4c681.webp",
+  "height": 455,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Emirates_Palace.jpg/960px-Emirates_Palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1609,9 +1784,19 @@
   "height": 800,
   "width": 594
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Golden_Driller.jpg/960px-Golden_Driller.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "golden-driller-e0cfaf.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Oak_Park_Il_Heurtley_House4.jpg/960px-Oak_Park_Il_Heurtley_House4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "oak-park-il-heurtley-house4-f00c10.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/%C3%89glise_San_Miguel_Bajo_-_Grenade_%28ES61%29_-_2023-04-26_-_4.jpg/960px-%C3%89glise_San_Miguel_Bajo_-_Grenade_%28ES61%29_-_2023-04-26_-_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "eglise-san-miguel-bajo-grenade-es61-2023-04-26-4-7065a7.webp",
+  "height": 603,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Blox_08.jpg/960px-Blox_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1637,6 +1822,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg/960px-S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "suleymaniyemosqueistanbul-cropped-57d9cc.webp",
   "height": 479,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Hanoi_Temple_of_Literature_%28cropped%29.jpg/960px-Hanoi_Temple_of_Literature_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hanoi-temple-of-literature-cropped-dd04f2.webp",
+  "height": 299,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Independence_Hall.jpg/960px-Independence_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1762,6 +1952,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Lion_and_Unicorn_Staircase_%282022-07-06%29.jpg/960px-Lion_and_Unicorn_Staircase_%282022-07-06%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "lion-and-unicorn-staircase-2022-07-06-301507.webp",
   "height": 360,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Milwaukee_August_2022_068_%28Pfister_Hotel%29.jpg/960px-Milwaukee_August_2022_068_%28Pfister_Hotel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-august-2022-068-pfister-hotel-17e262.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Mus%C3%A9e_Matisse_Nice.JPG/960px-Mus%C3%A9e_Matisse_Nice.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -1969,6 +2164,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/LANDMARK72.jpg/960px-LANDMARK72.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "landmark72-327ce9.webp",
+  "height": 677,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Royal_exhibition_building_tulips_straight.jpg/960px-Royal_exhibition_building_tulips_straight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "royal-exhibition-building-tulips-straight-23f559.webp",
   "height": 441,
@@ -1992,6 +2192,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/1111_Lincoln_Road_at_night.jpg/960px-1111_Lincoln_Road_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "1111-lincoln-road-at-night-8b6cdd.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Church_of_Our_Lady_Assumed_into_Heaven%2C_5_Mariacki_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Church_of_Our_Lady_Assumed_into_Heaven%2C_5_Mariacki_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "church-of-our-lady-assumed-into-heaven-5-mariack-5ddaea.webp",
+  "height": 446,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Geisel_Library%2C_UCSD.jpg/960px-Geisel_Library%2C_UCSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -2027,6 +2232,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/2009-0617-MTU-MemorialUnion.jpg/960px-2009-0617-MTU-MemorialUnion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "2009-0617-mtu-memorialunion-c4a6e8.webp",
   "height": 409,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Milwaukee_City_Hall_742.jpg/960px-Milwaukee_City_Hall_742.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-city-hall-742-857b1b.webp",
+  "height": 707,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Oak_Park_Il_Thomas_Gale_House2.jpg/960px-Oak_Park_Il_Thomas_Gale_House2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -2114,6 +2324,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Jagiellonian_University_Collegium_Novum%2C_1882_designed_by_Feliks_Ksi%C4%99%C5%BCarski%2C_24_Go%C5%82%C4%99bia_street%2C_Old_Town%2C_Krakow%2C_Poland.jpg/960px-Jagiellonian_University_Collegium_Novum%2C_1882_designed_by_Feliks_Ksi%C4%99%C5%BCarski%2C_24_Go%C5%82%C4%99bia_street%2C_Old_Town%2C_Krakow%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "jagiellonian-university-collegium-novum-1882-des-d94e3e.webp",
+  "height": 408,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/RoseSeidlerHouse.jpg/960px-RoseSeidlerHouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "roseseidlerhouse-ab9d65.webp",
   "height": 427,
@@ -2139,6 +2354,11 @@
   "height": 800,
   "width": 596
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Ponte_Maria_Pia_-_Porto.JPG/960px-Ponte_Maria_Pia_-_Porto.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "ponte-maria-pia-porto-7b7ace.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/USA-Boston-Public_Library5.jpg/960px-USA-Boston-Public_Library5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "usa-boston-public-library5-e1e722.webp",
   "height": 427,
@@ -2154,6 +2374,11 @@
   "height": 387,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/ParqueCiencias_Macroscopio.jpg/960px-ParqueCiencias_Macroscopio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "parqueciencias-macroscopio-06262d.webp",
+  "height": 336,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/48_California_Willshire_Grand.jpg/960px-48_California_Willshire_Grand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "48-california-willshire-grand-75d870.webp",
   "height": 800,
@@ -2162,6 +2387,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Griffith_observatory_2006.jpg/960px-Griffith_observatory_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "griffith-observatory-2006-ebb73d.webp",
   "height": 311,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hiroshima_Prefectural_Art_Museum_20170311.jpg/960px-Hiroshima_Prefectural_Art_Museum_20170311.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hiroshima-prefectural-art-museum-20170311-195af2.webp",
+  "height": 480,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Kushidajinjafukuoka01.jpg/960px-Kushidajinjafukuoka01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -2238,6 +2468,11 @@
   "file": "northrop-memorial-auditorium-front-lobby-2017-04-db9f5c.webp",
   "height": 800,
   "width": 528
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Price_Center%2C_UCSD.jpg/960px-Price_Center%2C_UCSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "price-center-ucsd-6d1d24.webp",
+  "height": 480,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg/960px-Bas%C3%ADlica_de_la_Santa_Cruz%2C_Florencia%2C_Italia%2C_2022-09-18%2C_DD_95.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "basilica-de-la-santa-cruz-florencia-italia-2022-6c04ca.webp",
@@ -2364,6 +2599,11 @@
   "height": 360,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Coimbra_November_2012-7.jpg/960px-Coimbra_November_2012-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "coimbra-november-2012-7-1664bd.webp",
+  "height": 345,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/SonyCenterAtNight.jpg/960px-SonyCenterAtNight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "sonycenteratnight-7ceb99.webp",
   "height": 800,
@@ -2377,6 +2617,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/A13-EDU-Jly-23-1147.jpg/960px-A13-EDU-Jly-23-1147.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "a13-edu-jly-23-1147-d9e75e.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Antwerpen%2C_St._Karl-Borrom%C3%A4uskirche.jpg/960px-Antwerpen%2C_St._Karl-Borrom%C3%A4uskirche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-st-karl-borromauskirche-ccff0d.webp",
+  "height": 505,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Ayres_Hall_abree.jpg/960px-Ayres_Hall_abree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -2429,6 +2674,11 @@
   "height": 426,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Hanoi_Opera_House%2C_24_December_2016.jpg/960px-Hanoi_Opera_House%2C_24_December_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hanoi-opera-house-24-december-2016-ee425e.webp",
+  "height": 428,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Renaissance_Center%2C_Detroit%2C_Michigan_from_S_2014-12-07.jpg/960px-Renaissance_Center%2C_Detroit%2C_Michigan_from_S_2014-12-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "renaissance-center-detroit-michigan-from-s-2014-e5d3e6.webp",
   "height": 445,
@@ -2479,6 +2729,11 @@
   "height": 311,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Azulejo_facade_of_the_Capela_das_Almas_in_Porto_%284%29.jpg/960px-Azulejo_facade_of_the_Capela_das_Almas_in_Porto_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "azulejo-facade-of-the-capela-das-almas-in-porto-1e665e.webp",
+  "height": 640,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Colorado_State_Capitol_building.jpg/960px-Colorado_State_Capitol_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "colorado-state-capitol-building-81fd85.webp",
   "height": 427,
@@ -2492,6 +2747,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hotel_Copacabana_Palace%2C_R%C3%ADo_de_Janeiro_A74224720241122.jpg/960px-Hotel_Copacabana_Palace%2C_R%C3%ADo_de_Janeiro_A74224720241122.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "hotel-copacabana-palace-rio-de-janeiro-a74224720-8189ec.webp",
   "height": 383,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/MAS_Antwerpen_2016-05_--1.jpg/960px-MAS_Antwerpen_2016-05_--1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "mas-antwerpen-2016-05-1-de1739.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Burnett_Plaza_building%2C_west_side.jpg/960px-Burnett_Plaza_building%2C_west_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -2553,6 +2813,16 @@
   "file": "catedral-da-se-em-sao-paulo-d1d365.webp",
   "height": 800,
   "width": 592
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Granada_%2825987961022%29.jpg/960px-Granada_%2825987961022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "granada-25987961022-3153be.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Hiroshima_Station_South_04.jpg/960px-Hiroshima_Station_South_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hiroshima-station-south-04-709ad1.webp",
+  "height": 480,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/John_Hancock_Tower.jpg/960px-John_Hancock_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "john-hancock-tower-041e69.webp",
@@ -2679,6 +2949,11 @@
   "height": 574,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/20200516_Wie%C5%BCa_Ratuszowa_i_Sukiennice_w_Krakowie_0943_9990.jpg/960px-20200516_Wie%C5%BCa_Ratuszowa_i_Sukiennice_w_Krakowie_0943_9990.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "20200516-wieza-ratuszowa-i-sukiennice-w-krakowie-c98fa0.webp",
+  "height": 800,
+  "width": 635
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Aerial_view_of_Apple_Park_dllu.jpg/960px-Aerial_view_of_Apple_Park_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "aerial-view-of-apple-park-dllu-97f7d6.webp",
   "height": 427,
@@ -2708,6 +2983,11 @@
   "file": "pacific-science-center-01-f0e6ac.webp",
   "height": 407,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/San_Salvador_Collegiate_Church_Granada_%289%29.JPG/960px-San_Salvador_Collegiate_Church_Granada_%289%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "san-salvador-collegiate-church-granada-9-f5d62e.webp",
+  "height": 800,
+  "width": 600
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Reichstag_dome_%2811851173483%29.jpg/960px-The_Reichstag_dome_%2811851173483%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "the-reichstag-dome-11851173483-956615.webp",
@@ -2774,6 +3054,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Hanoi%2C_Vietnam_%2812041825854%29.jpg/960px-Hanoi%2C_Vietnam_%2812041825854%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hanoi-vietnam-12041825854-0bdccd.webp",
+  "height": 360,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/MTCCfront.jpg/960px-MTCCfront.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "mtccfront-f804b1.webp",
   "height": 424,
@@ -2788,6 +3073,11 @@
   "file": "the-renovated-robot-building-of-bangkok-no-more-d57f90.webp",
   "height": 800,
   "width": 600
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/3_Brueder.jpg/960px-3_Brueder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "3-brueder-92c805.webp",
+  "height": 609,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Bacardi_building_Miami.jpg/960px-Bacardi_building_Miami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "bacardi-building-miami-0284ed.webp",
@@ -2924,6 +3214,16 @@
   "height": 800,
   "width": 490
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Fa%C3%A7ade_de_la_gare_de_Marseille-Saint-Charles-7689.jpg/960px-Fa%C3%A7ade_de_la_gare_de_Marseille-Saint-Charles-7689.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "facade-de-la-gare-de-marseille-saint-charles-768-0c9507.webp",
+  "height": 360,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Juliusz_S%C5%82owacki_Theatre%2C_view_in_winter%2C_1_%C5%9Awi%C4%99tego_Ducha_Square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Juliusz_S%C5%82owacki_Theatre%2C_view_in_winter%2C_1_%C5%9Awi%C4%99tego_Ducha_Square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "juliusz-sowacki-theatre-view-in-winter-1-swieteg-4fdf7b.webp",
+  "height": 311,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Rotterdam_van_nelle_fabriek.jpg/960px-Rotterdam_van_nelle_fabriek.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "rotterdam-van-nelle-fabriek-36ae75.webp",
   "height": 410,
@@ -3009,6 +3309,11 @@
   "height": 307,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/The_BOK_Building.jpg/960px-The_BOK_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "the-bok-building-e96658.webp",
+  "height": 775,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ehemaliges_TWA-Terminal_am_John_F._Kennedy_International_Airport_in_New_York.JPG/960px-Ehemaliges_TWA-Terminal_am_John_F._Kennedy_International_Airport_in_New_York.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "ehemaliges-twa-terminal-am-john-f-kennedy-intern-cf1806.webp",
   "height": 241,
@@ -3079,6 +3384,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Koninklijk_Museum_voor_Schone_Kunsten_%28Antwerpen%29.jpg/960px-Koninklijk_Museum_voor_Schone_Kunsten_%28Antwerpen%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "koninklijk-museum-voor-schone-kunsten-antwerpen-1b91e0.webp",
+  "height": 469,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/960px-Louvre_Museum_Wikimedia_Commons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "louvre-museum-wikimedia-commons-67eeba.webp",
   "height": 269,
@@ -3101,6 +3411,11 @@
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/WalshHallArchitecture1.jpg/960px-WalshHallArchitecture1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "walshhallarchitecture1-28648e.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Antwerpen_Havenhuis_5.jpg/960px-Antwerpen_Havenhuis_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-havenhuis-5-4d622a.webp",
   "height": 480,
   "width": 640
  },
@@ -3274,15 +3589,30 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Philtower-Building-Tulsa-Oklahoma.jpg/960px-Philtower-Building-Tulsa-Oklahoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "philtower-building-tulsa-oklahoma-9d172c.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Pike_Place_Market_Seattle.jpg/960px-Pike_Place_Market_Seattle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "pike-place-market-seattle-b95f9d.webp",
   "height": 441,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Salamanca_-_Casa_de_las_Conchas_04.jpg/960px-Salamanca_-_Casa_de_las_Conchas_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "salamanca-casa-de-las-conchas-04-9003fa.webp",
+  "height": 480,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Salzburg%2C_Getreidegasse_9%2C_Mozarts_Geburtshaus.jpg/960px-Salzburg%2C_Getreidegasse_9%2C_Mozarts_Geburtshaus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "salzburg-getreidegasse-9-mozarts-geburtshaus-da05c4.webp",
   "height": 800,
   "width": 428
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Vietnam_National_Museum_of_History%2C_Hanoi%2C_Vietnam.jpg/960px-Vietnam_National_Museum_of_History%2C_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "vietnam-national-museum-of-history-hanoi-vietnam-bcb246.webp",
+  "height": 427,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Aerial_photograph_of_Johnson_Space_Center_facilities_%281%29.jpg/960px-Aerial_photograph_of_Johnson_Space_Center_facilities_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "aerial-photograph-of-johnson-space-center-facili-accfc1.webp",
@@ -3378,6 +3708,11 @@
   "file": "2019-ucla-charles-e-young-research-library-8fe526.webp",
   "height": 371,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Colegio_del_Arzobispo_Fonseca_Fonseca_%28Salamanca%29._Retablo.jpg/960px-Colegio_del_Arzobispo_Fonseca_Fonseca_%28Salamanca%29._Retablo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "colegio-del-arzobispo-fonseca-fonseca-salamanca-3f96fc.webp",
+  "height": 800,
+  "width": 600
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/DHS_Agencies_Support_Super_Bowl_LIX_Security_February_2025_-_21.jpg/960px-DHS_Agencies_Support_Super_Bowl_LIX_Security_February_2025_-_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "dhs-agencies-support-super-bowl-lix-security-feb-260e4a.webp",
@@ -3524,6 +3859,11 @@
   "height": 800,
   "width": 450
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/BOK_Center_faccade.JPG/960px-BOK_Center_faccade.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "bok-center-faccade-af1d88.webp",
+  "height": 452,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Deering_front.jpg/960px-Deering_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "deering-front-bc8553.webp",
   "height": 239,
@@ -3532,6 +3872,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/George_W._Bush_Presidential_Center_121_-_jpfagerback_-_2013-04-28.JPG/960px-George_W._Bush_Presidential_Center_121_-_jpfagerback_-_2013-04-28.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "george-w-bush-presidential-center-121-jpfagerbac-2542fd.webp",
   "height": 425,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Jagiellonian_University%2C_Collegium_Maius_facade%2C_15_Jagiello%C5%84ska_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Jagiellonian_University%2C_Collegium_Maius_facade%2C_15_Jagiello%C5%84ska_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "jagiellonian-university-collegium-maius-facade-1-d93d6e.webp",
+  "height": 437,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Magdalen_Tower.jpg/960px-Magdalen_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -3614,6 +3959,16 @@
   "height": 441,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Marseille_Old_Port.jpg/960px-Marseille_Old_Port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "marseille-old-port-713497.webp",
+  "height": 247,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Milwaukee%2C_pabst_mansion_01.jpg/960px-Milwaukee%2C_pabst_mansion_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-pabst-mansion-01-e91926.webp",
+  "height": 468,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/RUS-2016-Aerial-SPB-Winter_Palace_%28crop%29.jpg/960px-RUS-2016-Aerial-SPB-Winter_Palace_%28crop%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "rus-2016-aerial-spb-winter-palace-crop-38494f.webp",
   "height": 380,
@@ -3653,6 +4008,11 @@
   "file": "washnatcathedralx1-2d25f7.webp",
   "height": 448,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/0873_LVA_Riga_freedom_monument_SE.jpg/960px-0873_LVA_Riga_freedom_monument_SE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "0873-lva-riga-freedom-monument-se-448c36.webp",
+  "height": 800,
+  "width": 403
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Chrysler_Building_by_David_Shankbone_Retouched.jpg/960px-Chrysler_Building_by_David_Shankbone_Retouched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "chrysler-building-by-david-shankbone-retouched-f11df1.webp",
@@ -3694,6 +4054,11 @@
   "height": 800,
   "width": 533
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Genbaku_Dome04-r.JPG/960px-Genbaku_Dome04-r.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "genbaku-dome04-r-0e5667.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Milan_CentralStation_016_4294.jpg/960px-Milan_CentralStation_016_4294.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "milan-centralstation-016-4294-d06073.webp",
   "height": 427,
@@ -3726,6 +4091,11 @@
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Lullwater_House_Front.jpg/960px-Lullwater_House_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "lullwater-house-front-ca1684.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Tulsa_union_Depot_Modern_pict_2009.jpg/960px-Tulsa_union_Depot_Modern_pict_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "tulsa-union-depot-modern-pict-2009-df225e.webp",
   "height": 480,
   "width": 640
  },
@@ -3784,6 +4154,16 @@
   "height": 515,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Riga_-_36242016865.jpg/960px-Riga_-_36242016865.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "riga-36242016865-9046e4.webp",
+  "height": 800,
+  "width": 600
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Swimmingpool_on_the_Beach_at_Le%C3%A7a_da_Palmeira_by_Christian_G%C3%A4nshirt.JPG/960px-Swimmingpool_on_the_Beach_at_Le%C3%A7a_da_Palmeira_by_Christian_G%C3%A4nshirt.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "swimmingpool-on-the-beach-at-leca-da-palmeira-by-53ca7b.webp",
+  "height": 432,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/UW_Administration_Building_from_Odegaard_Library_in_1984.jpg/960px-UW_Administration_Building_from_Odegaard_Library_in_1984.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "uw-administration-building-from-odegaard-library-d85133.webp",
   "height": 450,
@@ -3824,8 +4204,18 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Riga_Central_Market_Hall.jpg/960px-Riga_Central_Market_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "riga-central-market-hall-8f8a22.webp",
+  "height": 323,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/20190923_Independence_Palace-10.jpg/960px-20190923_Independence_Palace-10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "20190923-independence-palace-10-463004.webp",
+  "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Antwerpen_gerechtsgebouw_%28cropped%29.jpg/960px-Antwerpen_gerechtsgebouw_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-gerechtsgebouw-cropped-dab245.webp",
   "height": 427,
   "width": 640
  },
@@ -3949,6 +4339,11 @@
   "height": 303,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Palacio_de_Anaya_%28Salamanca%29._Patio.jpg/960px-Palacio_de_Anaya_%28Salamanca%29._Patio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "palacio-de-anaya-salamanca-patio-a80a5c.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Pantheon_of_Paris_007.JPG/960px-Pantheon_of_Paris_007.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "pantheon-of-paris-007-0ce8c5.webp",
   "height": 481,
@@ -4048,6 +4443,11 @@
   "file": "fachada-del-teatro-colon-en-buenos-aires-argenti-7cfead.webp",
   "height": 457,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/AtlasLifeBuildingTulsa.jpg/960px-AtlasLifeBuildingTulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "atlaslifebuildingtulsa-fd6158.webp",
+  "height": 800,
+  "width": 460
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Cairo_Tower_%2814795997855%29.jpg/960px-Cairo_Tower_%2814795997855%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "cairo-tower-14795997855-d20a76.webp",
@@ -4204,6 +4604,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Wawel_%284%29.jpg/960px-Wawel_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "wawel-4-b25c5a.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/960px-51714-Terracota-Army.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "51714-terracota-army-703aff.webp",
   "height": 424,
@@ -4314,6 +4719,11 @@
   "height": 360,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Milwaukee_Cathedral_3.jpg/960px-Milwaukee_Cathedral_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-cathedral-3-6b9121.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Reynolda_Hall_2023.jpg/960px-Reynolda_Hall_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "reynolda-hall-2023-69efe4.webp",
   "height": 800,
@@ -4323,6 +4733,11 @@
   "file": "tafawa-balewa-square-67c778.webp",
   "height": 800,
   "width": 600
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam.jpg/960px-Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "tran-quoc-pagoda-hanoi-vietnam-84b5ae.webp",
+  "height": 423,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Van_Wormer_Hall_UofC_2017.jpg/960px-Van_Wormer_Hall_UofC_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "van-wormer-hall-uofc-2017-0352bc.webp",
@@ -4378,6 +4793,11 @@
   "file": "old-capitol-iowa-city-007b19.webp",
   "height": 450,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/St._Joseph%27s_Cathedral_-_Hanoi%2C_Vietnam.jpg/960px-St._Joseph%27s_Cathedral_-_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "st-joseph-s-cathedral-hanoi-vietnam-1cea15.webp",
+  "height": 800,
+  "width": 531
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/960px-TanahLot_2014.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "tanahlot-2014-56e5e7.webp",
@@ -4489,10 +4909,25 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Porto%2C_S%C3%A9_do_Porto_%289%29.jpg/960px-Porto%2C_S%C3%A9_do_Porto_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "porto-se-do-porto-9-fba055.webp",
+  "height": 376,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Altino_Arantes_Building.jpg/960px-Altino_Arantes_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "altino-arantes-building-4eccf1.webp",
   "height": 800,
   "width": 535
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Cath%C3%A9drale_Sainte-Marie-Majeure_de_Marseille_le_11_f%C3%A9vrier_2023-1_%28cropped%29.jpg/960px-Cath%C3%A9drale_Sainte-Marie-Majeure_de_Marseille_le_11_f%C3%A9vrier_2023-1_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "cathedrale-sainte-marie-majeure-de-marseille-le-d6177a.webp",
+  "height": 634,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg/960px-%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "photo-ea006d.webp",
+  "height": 427,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Addition_Financial_Arena_%2848655783447%29_%28cropped%29.jpg/960px-Addition_Financial_Arena_%2848655783447%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "addition-financial-arena-48655783447-cropped-c2da30.webp",
@@ -4507,6 +4942,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Dallas_Meyerson_Center_02.jpg/960px-Dallas_Meyerson_Center_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "dallas-meyerson-center-02-e2c7f3.webp",
   "height": 494,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Long_Bi%C3%AAn_Bridge_-_panoramio.jpg/960px-Long_Bi%C3%AAn_Bridge_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "long-bien-bridge-panoramio-f29198.webp",
+  "height": 406,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/MSU_Museum_front_facade.jpg/960px-MSU_Museum_front_facade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -4574,6 +5014,11 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/HanoiHilton.jpg/960px-HanoiHilton.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hanoihilton-46d9f7.webp",
+  "height": 507,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/LuptonStadiumOutside.jpg/960px-LuptonStadiumOutside.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "luptonstadiumoutside-d96546.webp",
   "height": 480,
@@ -4629,6 +5074,11 @@
   "height": 271,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Conrad_Prebys_Music_Center%2C_UCSD.JPG/960px-Conrad_Prebys_Music_Center%2C_UCSD.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "conrad-prebys-music-center-ucsd-775b8c.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/DetroitOneKennedySquare.jpg/960px-DetroitOneKennedySquare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "detroitonekennedysquare-ceb446.webp",
   "height": 800,
@@ -4648,6 +5098,11 @@
   "file": "mackintosh-at-the-willow-a28ebb.webp",
   "height": 800,
   "width": 551
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Milwaukee_July_2022_007_%28Villa_Terrace_Decorative_Arts_Museum%29.jpg/960px-Milwaukee_July_2022_007_%28Villa_Terrace_Decorative_Arts_Museum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-july-2022-007-villa-terrace-decorative-8fbfae.webp",
+  "height": 427,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Nathaniel_Russell_House_%28Front_Fa%C3%A7ade%29.JPG/960px-Nathaniel_Russell_House_%28Front_Fa%C3%A7ade%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "nathaniel-russell-house-front-facade-dbb644.webp",
@@ -4754,6 +5209,11 @@
   "height": 390,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Catedral_de_la_Natividad_de_Cristo%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_03.JPG/960px-Catedral_de_la_Natividad_de_Cristo%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "catedral-de-la-natividad-de-cristo-riga-letonia-d87672.webp",
+  "height": 800,
+  "width": 579
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/DavidStottBuilding.jpg/960px-DavidStottBuilding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "davidstottbuilding-014c47.webp",
   "height": 800,
@@ -4783,6 +5243,11 @@
   "file": "israel-ind-mus-557f26.webp",
   "height": 800,
   "width": 600
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Joan_of_Arc_chapel-2290483.jpg/960px-Joan_of_Arc_chapel-2290483.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "joan-of-arc-chapel-2290483-9cdef7.webp",
+  "height": 512,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Science_Hall.jpg/960px-Science_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "science-hall-cd0e3e.webp",
@@ -4823,6 +5288,11 @@
   "file": "lancienne-usine-de-tapis-templeton-glasgow-38342-5fe12a.webp",
   "height": 429,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Milwaukee_July_2023_050_%28Germania_Building%29.jpg/960px-Milwaukee_July_2023_050_%28Germania_Building%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-july-2023-050-germania-building-27105a.webp",
+  "height": 800,
+  "width": 533
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Richards_Labs_Penn.JPG/960px-Richards_Labs_Penn.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "richards-labs-penn-33eaa6.webp",
@@ -4964,6 +5434,11 @@
   "height": 360,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Sintpaulus_groen.jpg/960px-Sintpaulus_groen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "sintpaulus-groen-dc39fe.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/US_Capitol_east_side.JPG/960px-US_Capitol_east_side.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "us-capitol-east-side-75213b.webp",
   "height": 340,
@@ -4994,9 +5469,24 @@
   "height": 341,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sofitel_Metropole%2C_Ng%C3%B4_Quy%E1%BB%81n_-_2022-09-02_01.jpg/960px-Sofitel_Metropole%2C_Ng%C3%B4_Quy%E1%BB%81n_-_2022-09-02_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "sofitel-metropole-ngo-quyen-2022-09-02-01-d30baa.webp",
+  "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/St._Peter%27s_Church_facade%2C_Riga%2C_Latvia_-_Diliff.jpg/960px-St._Peter%27s_Church_facade%2C_Riga%2C_Latvia_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "st-peter-s-church-facade-riga-latvia-diliff-e2c9a0.webp",
+  "height": 800,
+  "width": 550
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sydney_Australia._%2821339175489%29.jpg/960px-Sydney_Australia._%2821339175489%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "sydney-australia-21339175489-ad7159.webp",
   "height": 393,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Widok_na_Fort_Saint_Jean_-_panoramio.jpg/960px-Widok_na_Fort_Saint_Jean_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "widok-na-fort-saint-jean-panoramio-e717d1.webp",
+  "height": 480,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Hyatt-regency-atlanta-side.jpg/960px-Hyatt-regency-atlanta-side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5007,6 +5497,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Kemper_Art_Museum_at_Wash_U.jpg/960px-Kemper_Art_Museum_at_Wash_U.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "kemper-art-museum-at-wash-u-bbc5a5.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Notre-Dame_de_la_Garde_aerial_view_2020.jpeg/960px-Notre-Dame_de_la_Garde_aerial_view_2020.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "notre-dame-de-la-garde-aerial-view-2020-5799bf.webp",
+  "height": 615,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Old_Lighthouse_at_Point_Loma.JPG/960px-Old_Lighthouse_at_Point_Loma.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5164,6 +5659,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Royal_Chapel_of_Granada_%28Spain%29.jpg/960px-Royal_Chapel_of_Granada_%28Spain%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "royal-chapel-of-granada-spain-476da9.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/First_Hawaiian_Center_02.jpg/960px-First_Hawaiian_Center_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "first-hawaiian-center-02-c8796b.webp",
   "height": 800,
@@ -5259,6 +5759,11 @@
   "height": 800,
   "width": 602
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Krakow_Philharmonic_Hall%2C_1_Zwierzyniecka_street%2C_Krakow%2C_Poland.jpg/960px-Krakow_Philharmonic_Hall%2C_1_Zwierzyniecka_street%2C_Krakow%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "krakow-philharmonic-hall-1-zwierzyniecka-street-be4156.webp",
+  "height": 371,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Meadowbrook_Hall.JPG/960px-Meadowbrook_Hall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "meadowbrook-hall-aab4fd.webp",
   "height": 480,
@@ -5267,6 +5772,21 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/National_Museum_Riyadh_%286781666263%29.jpg/960px-National_Museum_Riyadh_%286781666263%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "national-museum-riyadh-6781666263-18b84b.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Ponte_de_Arr%C3%A1bida_%288147350847%29.jpg/960px-Ponte_de_Arr%C3%A1bida_%288147350847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "ponte-de-arrabida-8147350847-330122.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Skyline_Marseille_Fort_Saint-Jean.jpg/960px-Skyline_Marseille_Fort_Saint-Jean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "skyline-marseille-fort-saint-jean-7fef9b.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Antwerpen_-_Station_Antwerpen-Centraal_%2811%29.jpg/960px-Antwerpen_-_Station_Antwerpen-Centraal_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-station-antwerpen-centraal-11-eedc43.webp",
+  "height": 462,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/GallierHallNO.JPG/960px-GallierHallNO.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5349,6 +5869,11 @@
   "height": 338,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Coimbra_S%C3%A9_Velha_Hauptportal_979-166.jpg/960px-Coimbra_S%C3%A9_Velha_Hauptportal_979-166.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "coimbra-se-velha-hauptportal-979-166-da6a84.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Constitution_Square_at_Constitution_Hill.jpg/960px-Constitution_Square_at_Constitution_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "constitution-square-at-constitution-hill-957213.webp",
   "height": 427,
@@ -5372,6 +5897,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Peter_B._Lewis_Building_-_entry.jpg/960px-Peter_B._Lewis_Building_-_entry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "peter-b-lewis-building-entry-b02964.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Antwerpen_Stadhuis_crop1_2006-05-28.jpg/960px-Antwerpen_Stadhuis_crop1_2006-05-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-stadhuis-crop1-2006-05-28-042827.webp",
+  "height": 370,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Carbide_%26_Carbon_Building%2C_Chicago_in_May_2016.jpg/960px-Carbide_%26_Carbon_Building%2C_Chicago_in_May_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5527,6 +6057,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Patio_Museo_Botero_Bogota.JPG/960px-Patio_Museo_Botero_Bogota.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "patio-museo-botero-bogota-e5d6a6.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/20181111_Hiroshima_Memorial_Cenotaph-1.jpg/960px-20181111_Hiroshima_Memorial_Cenotaph-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "20181111-hiroshima-memorial-cenotaph-1-3bb89c.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Alter_Peter_%26_Christkindlmarkt.jpg/960px-Alter_Peter_%26_Christkindlmarkt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5714,6 +6249,11 @@
   "height": 395,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Milwaukee_August_2022_070_%28Iron_Block_Building%29.jpg/960px-Milwaukee_August_2022_070_%28Iron_Block_Building%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-august-2022-070-iron-block-building-ec6e77.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Parque_Lage_por_Mariana_Cristina_Ad%C3%A3o_12.jpg/960px-Parque_Lage_por_Mariana_Cristina_Ad%C3%A3o_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "parque-lage-por-mariana-cristina-adao-12-9a0b39.webp",
   "height": 427,
@@ -5729,9 +6269,19 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Akamon_lit_up_-_panoramio.jpg/960px-Akamon_lit_up_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "akamon-lit-up-panoramio-68e38d.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Camping_World_Stadium.jpg/960px-Camping_World_Stadium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "camping-world-stadium-7890c0.webp",
   "height": 457,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Casa_Da_Musica_%283190746009%29.jpg/960px-Casa_Da_Musica_%283190746009%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "casa-da-musica-3190746009-5b018d.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Katsura_Rikyu_%283264799678%29.jpg/960px-Katsura_Rikyu_%283264799678%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5789,6 +6339,11 @@
   "height": 737,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/L%27hospice_de_La_Vieille_Charit%C3%A9_qui_abrite_le_Mus%C3%A9e_de_la_Vieille_Charit%C3%A9.jpg/960px-L%27hospice_de_La_Vieille_Charit%C3%A9_qui_abrite_le_Mus%C3%A9e_de_la_Vieille_Charit%C3%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "l-hospice-de-la-vieille-charite-qui-abrite-le-mu-3e5b4b.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Royal_Castle_in_Warsaw%2C_Poland%2C_2022%2C_03.jpg/960px-Royal_Castle_in_Warsaw%2C_Poland%2C_2022%2C_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "royal-castle-in-warsaw-poland-2022-03-6006ac.webp",
   "height": 480,
@@ -5839,9 +6394,24 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/The_main_entrance_of_the_Latvian_National_Museum_of_Art.jpg/960px-The_main_entrance_of_the_Latvian_National_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "the-main-entrance-of-the-latvian-national-museum-658d7b.webp",
+  "height": 604,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/View_of_Soribashi_Bridge_near_Daikoku_Shrine_in_Itsukushima_Shrine.jpg/960px-View_of_Soribashi_Bridge_near_Daikoku_Shrine_in_Itsukushima_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "view-of-soribashi-bridge-near-daikoku-shrine-in-4bf635.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%C3%81gora%2C_Ciudad_de_las_Artes_y_las_Ciencias%2C_Valencia%2C_Espa%C3%B1a%2C_2014-06-29%2C_DD_58.jpg/960px-%C3%81gora%2C_Ciudad_de_las_Artes_y_las_Ciencias%2C_Valencia%2C_Espa%C3%B1a%2C_2014-06-29%2C_DD_58.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "agora-ciudad-de-las-artes-y-las-ciencias-valenci-3227c2.webp",
   "height": 433,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Annunciation_Greek_Orthodox_Church%3B_Wauwatosa%2C_Wisconsin%3B_June_6%2C_2012.JPG/960px-Annunciation_Greek_Orthodox_Church%3B_Wauwatosa%2C_Wisconsin%3B_June_6%2C_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "annunciation-greek-orthodox-church-wauwatosa-wis-70ee3c.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Capitol_High_Court.jpg/960px-Capitol_High_Court.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -5908,6 +6478,11 @@
   "file": "iberdrola-tower-2019-732a1e.webp",
   "height": 800,
   "width": 533
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Una_de_las_torres_de_la_Clerec%C3%ADa%2C_en_Salamanca._%2833675917324%29.jpg/960px-Una_de_las_torres_de_la_Clerec%C3%ADa%2C_en_Salamanca._%2833675917324%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "una-de-las-torres-de-la-clerecia-en-salamanca-33-45c250.webp",
+  "height": 800,
+  "width": 520
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Valencia_cathedral_2022_-_north_fa%C3%A7ade_dawn.jpg/960px-Valencia_cathedral_2022_-_north_fa%C3%A7ade_dawn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "valencia-cathedral-2022-north-facade-dawn-be9524.webp",
@@ -6004,10 +6579,20 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Honeymoon-433_%2814586751896%29.jpg/960px-Honeymoon-433_%2814586751896%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "honeymoon-433-14586751896-dd8ead.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Puente_de_la_Mujer%2C_Puerto_Madero%2C_Buenos_Aires%2C_Argentina%2C_29th._Dec._2010_-_Flickr_-_PhillipC_%281%29.jpg/960px-Puente_de_la_Mujer%2C_Puerto_Madero%2C_Buenos_Aires%2C_Argentina%2C_29th._Dec._2010_-_Flickr_-_PhillipC_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "puente-de-la-mujer-puerto-madero-buenos-aires-ar-60429a.webp",
   "height": 425,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Torso_of_a_Male_Athlete_%28The_Oil_Pourer%29%2C_Art_Museum%2C_Milwaukee%2C_Wisconsin%2C_US_julesvernex2.jpg/960px-Torso_of_a_Male_Athlete_%28The_Oil_Pourer%29%2C_Art_Museum%2C_Milwaukee%2C_Wisconsin%2C_US_julesvernex2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "torso-of-a-male-athlete-the-oil-pourer-art-museu-8e970b.webp",
+  "height": 800,
+  "width": 514
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/University_of_Chicago_July_2013_25_%28Joe_and_Rika_Mansueto_Library%29.jpg/960px-University_of_Chicago_July_2013_25_%28Joe_and_Rika_Mansueto_Library%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "university-of-chicago-july-2013-25-joe-and-rika-220e87.webp",
@@ -6028,6 +6613,11 @@
   "file": "edificio-fuller-flatiron-en-2010-desde-el-empire-1c3495.webp",
   "height": 800,
   "width": 423
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Exterior_of_Onze-Lieve-Vrouwekathedraal_%28Antwerp%29-.jpg/960px-Exterior_of_Onze-Lieve-Vrouwekathedraal_%28Antwerp%29-.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "exterior-of-onze-lieve-vrouwekathedraal-antwerp-6ac35c.webp",
+  "height": 516,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Fox_Theatre%2C_Atlanta_%282024%29-104A8449.jpg/960px-Fox_Theatre%2C_Atlanta_%282024%29-104A8449.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "fox-theatre-atlanta-2024-104a8449-523d59.webp",
@@ -6089,6 +6679,11 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Th%C3%A1p_R%C3%B9a_5.jpg/960px-Th%C3%A1p_R%C3%B9a_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "thap-rua-5-ac79a4.webp",
+  "height": 800,
+  "width": 531
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/College_Club_House_and_Gymnasium_Houghton_MI.jpg/960px-College_Club_House_and_Gymnasium_Houghton_MI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "college-club-house-and-gymnasium-houghton-mi-f9aed4.webp",
   "height": 365,
@@ -6107,6 +6702,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/0005574_-_Wat_Phra_Kaew_006.jpg/960px-0005574_-_Wat_Phra_Kaew_006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "0005574-wat-phra-kaew-006-922bee.webp",
   "height": 426,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Antwerpen_V7_%28228128289%29.jpeg/960px-Antwerpen_V7_%28228128289%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "antwerpen-v7-228128289-5936a9.webp",
+  "height": 360,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg/960px-Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -6264,6 +6864,16 @@
   "height": 800,
   "width": 533
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Puerta_de_Las_Granadas._Granada..JPG/960px-Puerta_de_Las_Granadas._Granada..JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "puerta-de-las-granadas-granada-1ea2cf.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Schindler%E2%80%99s_factory%2C_Krak%C3%B3w%2C_2011.jpg/960px-Schindler%E2%80%99s_factory%2C_Krak%C3%B3w%2C_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "schindlers-factory-krakow-2011-6a9dc5.webp",
+  "height": 425,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Vancouver_Art_Gallery_%2829787380987%29.jpg/960px-Vancouver_Art_Gallery_%2829787380987%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "vancouver-art-gallery-29787380987-2e8179.webp",
   "height": 427,
@@ -6344,6 +6954,16 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims_2008_01.JPG/960px-Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims_2008_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hiroshima-national-peace-memorial-hall-for-the-a-670c2a.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hiroshima_Peace_Memorial_Museum_2009.jpg/960px-Hiroshima_Peace_Memorial_Museum_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "hiroshima-peace-memorial-museum-2009-7f636b.webp",
+  "height": 291,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Louisiana_State_University%27s_Memorial_Tower-2007.jpg/960px-Louisiana_State_University%27s_Memorial_Tower-2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "louisiana-state-university-s-memorial-tower-2007-9cdc82.webp",
   "height": 800,
@@ -6361,6 +6981,11 @@
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Tunjungan_plaza_Surabaya_mall.jpg/960px-Tunjungan_plaza_Surabaya_mall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "tunjungan-plaza-surabaya-mall-1e9f1a.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Wright_Model_F_Duplex.jpg/960px-Wright_Model_F_Duplex.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "wright-model-f-duplex-d5c9a4.webp",
   "height": 480,
   "width": 640
  },
@@ -6469,6 +7094,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Lotte_Tower_Hanoi_-_NKS_%289_to_16%29.jpg/960px-Lotte_Tower_Hanoi_-_NKS_%289_to_16%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "lotte-tower-hanoi-nks-9-to-16-5136f8.webp",
+  "height": 800,
+  "width": 450
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/St._Louis%2C_Missouri_-_Soldiers%27_Memorial_Military_Museum_-_panoramio.jpg/960px-St._Louis%2C_Missouri_-_Soldiers%27_Memorial_Military_Museum_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "st-louis-missouri-soldiers-memorial-military-mus-ef2df7.webp",
   "height": 449,
@@ -6507,6 +7137,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Community_Christian_Church_KCMO.jpg/960px-Community_Christian_Church_KCMO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "community-christian-church-kcmo-f32948.webp",
   "height": 261,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Cranbrook_Art_Museum_-_Bloomfield_Hills_%2851362574052%29.jpg/960px-Cranbrook_Art_Museum_-_Bloomfield_Hills_%2851362574052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "cranbrook-art-museum-bloomfield-hills-5136257405-fbb6d5.webp",
+  "height": 400,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Madrid_Plaza_Mayor_%2848733706273%29.jpg/960px-Madrid_Plaza_Mayor_%2848733706273%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -6674,6 +7309,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Santo_Ildefonso-Coliseu_do_Porto.jpg/960px-Santo_Ildefonso-Coliseu_do_Porto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "santo-ildefonso-coliseu-do-porto-9520e7.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Southern_Methodist_University_July_2016_106_%28McFarlin_Auditorium%29.jpg/960px-Southern_Methodist_University_July_2016_106_%28McFarlin_Auditorium%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "southern-methodist-university-july-2016-106-mcfa-89fd35.webp",
   "height": 427,
@@ -6724,6 +7364,11 @@
   "height": 273,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Philbrook_Museum_of_Art_Public_Entrance.jpg/960px-Philbrook_Museum_of_Art_Public_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "philbrook-museum-of-art-public-entrance-fd445f.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Playmakers_Theatre.jpg/960px-Playmakers_Theatre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "playmakers-theatre-79204a.webp",
   "height": 427,
@@ -6769,6 +7414,11 @@
   "height": 800,
   "width": 534
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Krak%C3%B3w_Cloth_Hall%2C_W_avant-corps%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Krak%C3%B3w_Cloth_Hall%2C_W_avant-corps%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "krakow-cloth-hall-w-avant-corps-3-main-market-sq-e70263.webp",
+  "height": 679,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/National_Museum_of_African_American_History_and_Culture_in_February_2020.jpg/960px-National_Museum_of_African_American_History_and_Culture_in_February_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "national-museum-of-african-american-history-and-cac802.webp",
   "height": 427,
@@ -6793,6 +7443,11 @@
   "file": "hawaii-theatre-daytime-7c719e.webp",
   "height": 480,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Milwaukee_August_2022_056_%28Northwestern_Mutual_Tower_and_Commons%29.jpg/960px-Milwaukee_August_2022_056_%28Northwestern_Mutual_Tower_and_Commons%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-august-2022-056-northwestern-mutual-to-363da3.webp",
+  "height": 800,
+  "width": 533
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Paris_Opera_full_frontal_architecture%2C_May_2009.jpg/960px-Paris_Opera_full_frontal_architecture%2C_May_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "paris-opera-full-frontal-architecture-may-2009-aa634a.webp",
@@ -6874,6 +7529,11 @@
   "height": 449,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/960px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "dawn-charles-v-palace-alhambra-granada-andalusia-d6d74c.webp",
+  "height": 426,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Arts_Building%2C_McGill_University%2C_Aug_31_2022.jpg/960px-Arts_Building%2C_McGill_University%2C_Aug_31_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "arts-building-mcgill-university-aug-31-2022-f94608.webp",
   "height": 427,
@@ -6897,6 +7557,16 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/TexasStateCapitol-2010-01.JPG/960px-TexasStateCapitol-2010-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "texasstatecapitol-2010-01-314d37.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/CMA-CGM_Tour_13_22_26_780000.jpeg/960px-CMA-CGM_Tour_13_22_26_780000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "cma-cgm-tour-13-22-26-780000-985e50.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Chateau_d%27If_view.jpg/960px-Chateau_d%27If_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "chateau-d-if-view-fb1b94.webp",
+  "height": 420,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Chora_Church_2024.jpg/960px-Chora_Church_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -6974,6 +7644,16 @@
   "height": 427,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%E2%80%9DManggha%E2%80%9D_Museum_of_Japanese_Art_and_Technology%2C_26_Konopnickiej_Street%2C_Krak%C3%B3w%2C_Poland.jpg/960px-%E2%80%9DManggha%E2%80%9D_Museum_of_Japanese_Art_and_Technology%2C_26_Konopnickiej_Street%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "manggha-museum-of-japanese-art-and-technology-26-ca93d4.webp",
+  "height": 399,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Building_in_Riga_4.JPG/960px-Building_in_Riga_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "building-in-riga-4-55d5c2.webp",
+  "height": 800,
+  "width": 600
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Juliette_Gordon_Low_Birthplace_2019.jpg/960px-Juliette_Gordon_Low_Birthplace_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "juliette-gordon-low-birthplace-2019-fc6fd0.webp",
   "height": 427,
@@ -6993,6 +7673,11 @@
   "file": "valencia-palazzo-de-marchese-di-dos-aigues-ester-e651b5.webp",
   "height": 543,
   "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Het_Vleeshuis.jpg/960px-Het_Vleeshuis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "het-vleeshuis-aee796.webp",
+  "height": 800,
+  "width": 630
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Metropolparasolnov2011001.jpg/960px-Metropolparasolnov2011001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "metropolparasolnov2011001-5100fd.webp",
@@ -7189,6 +7874,11 @@
   "height": 469,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Cains_Ballroom_Sign_Tulsa_Oklahoma.jpg/960px-Cains_Ballroom_Sign_Tulsa_Oklahoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "cains-ballroom-sign-tulsa-oklahoma-0437c8.webp",
+  "height": 800,
+  "width": 534
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Central_Wing%2C_Old_Buffalo_State_Hospital%2C_Richardson_Olmsted_Complex%2C_Elmwood_Village%2C_Buffalo%2C_NY_-_52596088993.jpg/960px-Central_Wing%2C_Old_Buffalo_State_Hospital%2C_Richardson_Olmsted_Complex%2C_Elmwood_Village%2C_Buffalo%2C_NY_-_52596088993.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "central-wing-old-buffalo-state-hospital-richards-74cd4d.webp",
   "height": 512,
@@ -7223,6 +7913,11 @@
   "file": "key-tower-2022-f96e4d.webp",
   "height": 800,
   "width": 600
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Patio_de_la_Acequia_%28Generalife%29_-_DSC07863_%28slightly_cropped_and_sharpened%29.jpg/960px-Patio_de_la_Acequia_%28Generalife%29_-_DSC07863_%28slightly_cropped_and_sharpened%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "patio-de-la-acequia-generalife-dsc07863-slightly-0b7378.webp",
+  "height": 408,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ray_and_Maria_Stata_Center_%28MIT%29.JPG/960px-Ray_and_Maria_Stata_Center_%28MIT%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "ray-and-maria-stata-center-mit-07d130.webp",
@@ -7278,6 +7973,11 @@
   "file": "jpmorganchasetower-b49c6b.webp",
   "height": 800,
   "width": 596
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Marseille-H%C3%B4tel_de_ville-bjs180810-02.jpg/960px-Marseille-H%C3%B4tel_de_ville-bjs180810-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "marseille-hotel-de-ville-bjs180810-02-ae4894.webp",
+  "height": 427,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/National_Museum_of_Fine_Arts_2026.jpg/960px-National_Museum_of_Fine_Arts_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "national-museum-of-fine-arts-2026-cc36bb.webp",
@@ -7382,6 +8082,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Homewood_Museum%2C_Johns_Hopkins_University%2C_Baltimore%2C_MD.jpg/960px-Homewood_Museum%2C_Johns_Hopkins_University%2C_Baltimore%2C_MD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "homewood-museum-johns-hopkins-university-baltimo-27886e.webp",
   "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Opera_Nacional%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG/960px-Opera_Nacional%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "opera-nacional-riga-letonia-2012-08-07-dd-04-e7c9a9.webp",
+  "height": 346,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Texas_Tech_University_April_2022_10_%28Dairy_Barn%29.jpg/960px-Texas_Tech_University_April_2022_10_%28Dairy_Barn%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -7499,9 +8204,19 @@
   "height": 293,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Boston_Avenue_Church%2C_May_2022.jpg/960px-Boston_Avenue_Church%2C_May_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "boston-avenue-church-may-2022-e46952.webp",
+  "height": 701,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/DJI_0040-HDR_cropped.jpg/960px-DJI_0040-HDR_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "dji-0040-hdr-cropped-f52907.webp",
   "height": 426,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Granada_Charterhouse_patio._Granada%2C_Spain.jpg/960px-Granada_Charterhouse_patio._Granada%2C_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "granada-charterhouse-patio-granada-spain-5f4e07.webp",
+  "height": 617,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/UFHistoricBuildingBuckmanHall.JPG/960px-UFHistoricBuildingBuckmanHall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -7568,6 +8283,11 @@
   "file": "pinnacle-duxton-singapore-20100101-a2af3f.webp",
   "height": 800,
   "width": 528
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Rainbow_bridge_in_Shukkei-en_Hiroshima.jpg/960px-Rainbow_bridge_in_Shukkei-en_Hiroshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "rainbow-bridge-in-shukkei-en-hiroshima-13edf3.webp",
+  "height": 427,
+  "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Skyline_of_Brisbane_CBD_seen_from_Mount_Coot-tha_Lookout_03.jpg/960px-Skyline_of_Brisbane_CBD_seen_from_Mount_Coot-tha_Lookout_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "skyline-of-brisbane-cbd-seen-from-mount-coot-tha-482fc1.webp",
@@ -7669,6 +8389,11 @@
   "height": 360,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Alberta_iel%C4%81_8_to_2_20120728-1.JPG/960px-Alberta_iel%C4%81_8_to_2_20120728-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "alberta-iela-8-to-2-20120728-1-deab75.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Booktower.JPG/960px-Booktower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "booktower-650632.webp",
   "height": 800,
@@ -7724,6 +8449,11 @@
   "height": 800,
   "width": 449
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Presidential_Palace_of_Vietnam.jpg/960px-Presidential_Palace_of_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "presidential-palace-of-vietnam-bf1b98.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/San_Diego-Coronado_Bridge_by_Frank_Mckenna.jpg/960px-San_Diego-Coronado_Bridge_by_Frank_Mckenna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "san-diego-coronado-bridge-by-frank-mckenna-073778.webp",
   "height": 389,
@@ -7737,6 +8467,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Star_Mosque_2023.jpg/960px-Star_Mosque_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "star-mosque-2023-2b7c50.webp",
   "height": 360,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Dom_Lu%C3%ADs_I_Bridge_%2836961760686%29.jpg/960px-Dom_Lu%C3%ADs_I_Bridge_%2836961760686%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "dom-luis-i-bridge-36961760686-b15f17.webp",
+  "height": 487,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/ESC_Eyring_Science_Center.jpg/960px-ESC_Eyring_Science_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -7799,6 +8534,11 @@
   "height": 480,
   "width": 640
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/2024_Yasuda_Auditorium_-_Tokyo_University.jpg/960px-2024_Yasuda_Auditorium_-_Tokyo_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "2024-yasuda-auditorium-tokyo-university-9e4872.webp",
+  "height": 433,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Budapest_Sz%C3%A9chenyi_Baths_R02.jpg/960px-Budapest_Sz%C3%A9chenyi_Baths_R02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "budapest-szechenyi-baths-r02-a0a0bb.webp",
   "height": 425,
@@ -7834,9 +8574,19 @@
   "height": 800,
   "width": 600
  },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Milwaukee_August_2024_047_%28Rockwell_Automation_Headquarters%29.jpg/960px-Milwaukee_August_2024_047_%28Rockwell_Automation_Headquarters%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "milwaukee-august-2024-047-rockwell-automation-he-c4fe39.webp",
+  "height": 427,
+  "width": 640
+ },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Bahia_Palace_large_court.jpg/960px-Bahia_Palace_large_court.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "bahia-palace-large-court-5e9d2b.webp",
   "height": 427,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Church_of_Saints_Apostles_Peter_and_Paul%2C_52a_Grodzka_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Church_of_Saints_Apostles_Peter_and_Paul%2C_52a_Grodzka_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "church-of-saints-apostles-peter-and-paul-52a-gro-1edb72.webp",
+  "height": 521,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Coit_Tower_1.jpg/960px-Coit_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -7877,6 +8627,11 @@
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/KingsCollegeChapel.jpg/960px-KingsCollegeChapel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "kingscollegechapel-e93b82.webp",
   "height": 462,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/L%C4%83ng_B%C3%A1c_-_NKS.jpg/960px-L%C4%83ng_B%C3%A1c_-_NKS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "lang-bac-nks-021808.webp",
+  "height": 427,
   "width": 640
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Mercado_Municipal_de_Campinas_-_panoramio.jpg/960px-Mercado_Municipal_de_Campinas_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
@@ -7926,6 +8681,11 @@
  },
  "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Masjid_Nasional_Al-Akbar_Surabaya-13.jpg/960px-Masjid_Nasional_Al-Akbar_Surabaya-13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
   "file": "masjid-nasional-al-akbar-surabaya-13-564224.webp",
+  "height": 480,
+  "width": 640
+ },
+ "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Stade_V%C3%A9lodrome_en_novembre_2021_%281%29.jpg/960px-Stade_V%C3%A9lodrome_en_novembre_2021_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail": {
+  "file": "stade-velodrome-en-novembre-2021-1-050342.webp",
   "height": 480,
   "width": 640
  },
@@ -7998,6 +8758,11 @@
   "file": "alumni-hall-at-vanderbilt-university-3b952f.webp",
   "height": 490,
   "width": 640
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/1/14/Corral_del_Carb%C3%B3n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "corral-del-carbon-3a360c.webp",
+  "height": 800,
+  "width": 535
  },
  "https://upload.wikimedia.org/wikipedia/commons/1/16/Wfm_mackintosh_lighthouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "wfm-mackintosh-lighthouse-657fec.webp",
@@ -8104,6 +8869,11 @@
   "height": 800,
   "width": 447
  },
+ "https://upload.wikimedia.org/wikipedia/commons/2/2e/Westhope_in_sunlight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "westhope-in-sunlight-4d8c4d.webp",
+  "height": 383,
+  "width": 640
+ },
  "https://upload.wikimedia.org/wikipedia/commons/3/32/Bego%C3%B1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "begona-99f93c.webp",
   "height": 800,
@@ -8139,6 +8909,11 @@
   "height": 394,
   "width": 595
  },
+ "https://upload.wikimedia.org/wikipedia/commons/3/3c/National_Library_of_Latvia.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "national-library-of-latvia-489acd.webp",
+  "height": 712,
+  "width": 640
+ },
  "https://upload.wikimedia.org/wikipedia/commons/3/3c/Vancouver_Sun_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "vancouver-sun-tower-58f506.webp",
   "height": 800,
@@ -8158,6 +8933,11 @@
   "file": "margaret-hunt-hill-bridge-7-23-26-e692f8.webp",
   "height": 800,
   "width": 536
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/3/3e/Philcade_in_downtown_Tulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "philcade-in-downtown-tulsa-62b9e3.webp",
+  "height": 800,
+  "width": 600
  },
  "https://upload.wikimedia.org/wikipedia/commons/3/3e/University_buildings_-_geograph.org.uk_-_586036.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "university-buildings-geograph-org-uk-586036-43831b.webp",
@@ -8193,6 +8973,11 @@
   "file": "u-s-custom-house-portland-or-jun-03-e53c48.webp",
   "height": 360,
   "width": 360
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/4/49/Hiroshima_World_peace_Memorial_Cathedral_01.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "hiroshima-world-peace-memorial-cathedral-01-0e427a.webp",
+  "height": 480,
+  "width": 640
  },
  "https://upload.wikimedia.org/wikipedia/commons/4/4b/Adolphus01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "adolphus01-aa2d75.webp",
@@ -8233,6 +9018,11 @@
   "file": "widenerlibrary-harvarduniversity-springtime-7eeb97.webp",
   "height": 460,
   "width": 640
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/5/51/San_Juan_de_Dios_Hospital_%28Granada%29_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "san-juan-de-dios-hospital-granada-3-146476.webp",
+  "height": 702,
+  "width": 554
  },
  "https://upload.wikimedia.org/wikipedia/commons/5/52/Bapst_Library_4_Seat_of_Wisdom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "bapst-library-4-seat-of-wisdom-c5cd8b.webp",
@@ -8359,6 +9149,11 @@
   "height": 800,
   "width": 600
  },
+ "https://upload.wikimedia.org/wikipedia/commons/7/7c/TulsaFireAlarmBuilding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "tulsafirealarmbuilding-a949dd.webp",
+  "height": 421,
+  "width": 640
+ },
  "https://upload.wikimedia.org/wikipedia/commons/8/84/BC_Fulton_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "bc-fulton-hall-c7b02e.webp",
   "height": 480,
@@ -8399,6 +9194,11 @@
   "height": 423,
   "width": 500
  },
+ "https://upload.wikimedia.org/wikipedia/commons/8/8d/Oporto-S-Francisco-IPPAR1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "oporto-s-francisco-ippar1-0abe29.webp",
+  "height": 600,
+  "width": 450
+ },
  "https://upload.wikimedia.org/wikipedia/commons/9/91/Natmuseumnaples.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "natmuseumnaples-0dd1e7.webp",
   "height": 398,
@@ -8418,6 +9218,11 @@
   "file": "independent-presbyterian-church-savannah-ga-ad481b.webp",
   "height": 484,
   "width": 277
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/9/94/Hiroshima-gokoku-zinzya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "hiroshima-gokoku-zinzya-9ee097.webp",
+  "height": 480,
+  "width": 640
  },
  "https://upload.wikimedia.org/wikipedia/commons/9/95/P3040007McClellanRanch_crwb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "p3040007mcclellanranch-crwb-4be987.webp",
@@ -8559,6 +9364,11 @@
   "height": 480,
   "width": 640
  },
+ "https://upload.wikimedia.org/wikipedia/commons/c/c3/Mayo_Hotel_Tulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "mayo-hotel-tulsa-57f954.webp",
+  "height": 800,
+  "width": 528
+ },
  "https://upload.wikimedia.org/wikipedia/commons/c/c3/USCLeavey2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "uscleavey2007-f57608.webp",
   "height": 180,
@@ -8609,6 +9419,11 @@
   "height": 480,
   "width": 640
  },
+ "https://upload.wikimedia.org/wikipedia/commons/d/df/Hiroshima_City_Museum_of_Contemporary_Art_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "hiroshima-city-museum-of-contemporary-art-01-9dd3af.webp",
+  "height": 480,
+  "width": 640
+ },
  "https://upload.wikimedia.org/wikipedia/commons/d/df/Orientalinstitutedoors.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "orientalinstitutedoors-18fbf6.webp",
   "height": 500,
@@ -8647,6 +9462,11 @@
  "https://upload.wikimedia.org/wikipedia/commons/f/fb/Papa_John%27s_Cardinal_Stadium_after_expansion_in_2010.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
   "file": "papa-john-s-cardinal-stadium-after-expansion-in-1b072f.webp",
   "height": 479,
+  "width": 640
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/f/ff/Hiroshima_Museum_of_Art_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled": {
+  "file": "hiroshima-museum-of-art-01-a5c6b8.webp",
+  "height": 480,
   "width": 640
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/MSU_Spartan_Stadium_Facade.jpg/1280px-MSU_Spartan_Stadium_Facade.jpg": {

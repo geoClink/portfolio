@@ -46,7 +46,7 @@ PLACES = {
         "Philadelphia", "Cleveland", "Cupertino", "Buffalo", "Houston", "New York", "San Francisco",
         "Dallas", "Nashville", "Phoenix", "Austin", "St. Louis", "Minnesota", "Asheville",
         "Columbus, Indiana", "Oak Park", "Palm Springs", "Fort Worth", "Kansas City", "Savannah",
-        "Charleston", "Baltimore", "San Diego"]},
+        "Charleston", "Baltimore", "San Diego", "Milwaukee", "Tulsa"]},
     **{c: ("Canada", "North America") for c in ["Vancouver", "Victoria", "Montreal", "Toronto", "Quebec City"]},
     "Mexico City": ("Mexico", "North America"), "Guadalajara": ("Mexico", "North America"),
     "Havana": ("Cuba", "North America"),
@@ -64,14 +64,14 @@ PLACES = {
     "Amsterdam": ("Netherlands", "Europe"), "Rotterdam": ("Netherlands", "Europe"),
     **{c: ("Italy", "Europe") for c in ["Milan", "Rome", "Naples", "Florence", "Venice"]},
     "Copenhagen": ("Denmark", "Europe"),
-    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville", "Bilbao", "Valencia"]},
+    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville", "Bilbao", "Valencia", "Granada"]},
     "Cork": ("Ireland", "Europe"), "Dublin": ("Ireland", "Europe"),
-    "Paris": ("France", "Europe"), "Nice": ("France", "Europe"),
+    "Paris": ("France", "Europe"), "Nice": ("France", "Europe"), "Marseille": ("France", "Europe"),
     "Istanbul": ("Türkiye", "Europe"), "Vienna": ("Austria", "Europe"), "Salzburg": ("Austria", "Europe"),
-    "Lisbon": ("Portugal", "Europe"), "Prague": ("Czech Republic", "Europe"), "Athens": ("Greece", "Europe"),
+    "Lisbon": ("Portugal", "Europe"), "Porto": ("Portugal", "Europe"), "Prague": ("Czech Republic", "Europe"), "Athens": ("Greece", "Europe"),
     "Budapest": ("Hungary", "Europe"), "Zurich": ("Switzerland", "Europe"), "Stockholm": ("Sweden", "Europe"),
-    "Oslo": ("Norway", "Europe"), "Helsinki": ("Finland", "Europe"), "Brussels": ("Belgium", "Europe"),
-    "Warsaw": ("Poland", "Europe"), "Reykjavik": ("Iceland", "Europe"), "St. Petersburg": ("Russia", "Europe"),
+    "Oslo": ("Norway", "Europe"), "Helsinki": ("Finland", "Europe"), "Brussels": ("Belgium", "Europe"), "Antwerp": ("Belgium", "Europe"),
+    "Warsaw": ("Poland", "Europe"), "Kraków": ("Poland", "Europe"), "Riga": ("Latvia", "Europe"), "Reykjavik": ("Iceland", "Europe"), "St. Petersburg": ("Russia", "Europe"),
     "Tbilisi": ("Georgia", "Europe"),
     # Asia
     "Dubai": ("United Arab Emirates", "Asia"), "Abu Dhabi": ("United Arab Emirates", "Asia"),
@@ -83,9 +83,9 @@ PLACES = {
     "Dhaka": ("Bangladesh", "Asia"), "Riyadh": ("Saudi Arabia", "Asia"),
     **{c: ("Indonesia", "Asia") for c in ["Bali", "Batam", "Central Jakarta", "Surabaya", "Tangerang"]},
     "Pohang": ("South Korea", "Asia"), "Seoul": ("South Korea", "Asia"),
-    **{c: ("Japan", "Asia") for c in ["Kyoto", "Tokyo", "Osaka", "Fukuoka"]},
+    **{c: ("Japan", "Asia") for c in ["Kyoto", "Tokyo", "Osaka", "Fukuoka", "Hiroshima"]},
     "Taipei": ("Taiwan", "Asia"), "Kuala Lumpur": ("Malaysia", "Asia"),
-    "Ho Chi Minh City": ("Vietnam", "Asia"), "Doha": ("Qatar", "Asia"), "Amman": ("Jordan", "Asia"),
+    "Ho Chi Minh City": ("Vietnam", "Asia"), "Hanoi": ("Vietnam", "Asia"), "Doha": ("Qatar", "Asia"), "Amman": ("Jordan", "Asia"),
     "Muscat": ("Oman", "Asia"), "Manila": ("Philippines", "Asia"), "Sana'a": ("Yemen", "Asia"),
     "Kathmandu": ("Nepal", "Asia"), "Colombo": ("Sri Lanka", "Asia"),
     # Africa
@@ -1046,7 +1046,7 @@ def main():
 
     cities = [c for c in registry if c in PLACES]
     skipped = [c for c in registry if c not in PLACES
-               and not re.search(r"Universit|College|Institute|Leuven|Sorbonne|Virginia Tech", c)]
+               and not re.search(r"Universit|College|Institute|Academy|Leuven|Sorbonne|Virginia Tech", c)]
     if skipped:
         raise SystemExit(f"Add these cities to PLACES: {skipped}")
 
