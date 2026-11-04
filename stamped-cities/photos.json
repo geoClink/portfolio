@@ -201,6 +201,143 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Amsterdam_%28NL%29%2C_Westerkerk_--_2015_--_7186.jpg/960px-Amsterdam_%28NL%29%2C_Westerkerk_--_2015_--_7186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "antwerp_boerentoren": {
+  "author": "User:Manfreeed",
+  "height": 1067,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Kbc-building-antwerpen.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Kbc-building-antwerpen.jpg/960px-Kbc-building-antwerpen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_bourla_theatre": {
+  "author": "Wichien W",
+  "height": 450,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen_V7_(228128289).jpeg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Antwerpen_V7_%28228128289%29.jpeg/960px-Antwerpen_V7_%28228128289%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_cathedral_of_our_lady": {
+  "author": "Yair Haklai",
+  "height": 645,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Exterior_of_Onze-Lieve-Vrouwekathedraal_(Antwerp)-.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Exterior_of_Onze-Lieve-Vrouwekathedraal_%28Antwerp%29-.jpg/960px-Exterior_of_Onze-Lieve-Vrouwekathedraal_%28Antwerp%29-.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_central_station": {
+  "author": "Fred Romero from Paris, France",
+  "height": 577,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen_-_Station_Antwerpen-Centraal_(11).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Antwerpen_-_Station_Antwerpen-Centraal_%2811%29.jpg/960px-Antwerpen_-_Station_Antwerpen-Centraal_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_city_hall": {
+  "author": "No machine-readable author provided. Klaus with K assumed (based on copyright claims).",
+  "height": 462,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen_Stadhuis_crop1_2006-05-28.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Antwerpen_Stadhuis_crop1_2006-05-28.jpg/960px-Antwerpen_Stadhuis_crop1_2006-05-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_het_steen": {
+  "author": "Jean-Pol GRANDMONT",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:0_Het_Steen_-_Antwerpen_(1).JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/0_Het_Steen_-_Antwerpen_%281%29.JPG/960px-0_Het_Steen_-_Antwerpen_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_law_courts": {
+  "author": "Lieven Smits",
+  "height": 534,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen_gerechtsgebouw_(cropped).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Antwerpen_gerechtsgebouw_%28cropped%29.jpg/960px-Antwerpen_gerechtsgebouw_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_mas": {
+  "author": "Zinneke",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MAS_Antwerpen_2016-05_--1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/MAS_Antwerpen_2016-05_--1.jpg/960px-MAS_Antwerpen_2016-05_--1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_port_house": {
+  "author": "Torsade de Pointes",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen_Havenhuis_5.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Antwerpen_Havenhuis_5.jpg/960px-Antwerpen_Havenhuis_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_royal_museum_of_fine_arts": {
+  "author": "Ad Meskens",
+  "height": 586,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Koninklijk_Museum_voor_Schone_Kunsten_(Antwerpen).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Koninklijk_Museum_voor_Schone_Kunsten_%28Antwerpen%29.jpg/960px-Koninklijk_Museum_voor_Schone_Kunsten_%28Antwerpen%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_st_charles_borromeo_church": {
+  "author": "Rolf Kranz",
+  "height": 631,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Antwerpen,_St._Karl-Borrom%C3%A4uskirche.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Antwerpen%2C_St._Karl-Borrom%C3%A4uskirche.jpg/960px-Antwerpen%2C_St._Karl-Borrom%C3%A4uskirche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_st_james_church": {
+  "author": "Lieven Smits",
+  "height": 568,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Church_of_St._James_(Sint-Jacob),_Antwerp,_Belgium,_aerial_view_(cropped).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Church_of_St._James_%28Sint-Jacob%29%2C_Antwerp%2C_Belgium%2C_aerial_view_%28cropped%29.jpg/960px-Church_of_St._James_%28Sint-Jacob%29%2C_Antwerp%2C_Belgium%2C_aerial_view_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_st_pauls_church": {
+  "author": "bert76 16:33, 20 August 2006 (UTC)",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Sintpaulus_groen.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Sintpaulus_groen.jpg/960px-Sintpaulus_groen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_vleeshuis": {
+  "author": "Jozef Linnig",
+  "height": 1016,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Het_Vleeshuis.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Het_Vleeshuis.jpg/960px-Het_Vleeshuis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "antwerp_zurenborg": {
+  "author": "Karmakolle",
+  "height": 1067,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Huizen_in_Zurenborg.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Huizen_in_Zurenborg.jpg/960px-Huizen_in_Zurenborg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 30 m",
+  "width": 800
+ },
  "apple-regent-street": {
   "author": "Randomly London",
   "height": 600,
@@ -4482,6 +4619,143 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Costanera_Center_at_evening_%28cropped%29.jpg/960px-Costanera_Center_at_evening_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "granada_alhambra": {
+  "author": "Jebulon",
+  "height": 532,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/960px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_church_of_san_miguel_bajo": {
+  "author": "Chabe01",
+  "height": 754,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_San_Miguel_Bajo_-_Grenade_(ES61)_-_2023-04-26_-_4.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/%C3%89glise_San_Miguel_Bajo_-_Grenade_%28ES61%29_-_2023-04-26_-_4.jpg/960px-%C3%89glise_San_Miguel_Bajo_-_Grenade_%28ES61%29_-_2023-04-26_-_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_church_of_san_salvador": {
+  "author": "Giorgiomonteforti",
+  "height": 1067,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:San_Salvador_Collegiate_Church_Granada_(9).JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/San_Salvador_Collegiate_Church_Granada_%289%29.JPG/960px-San_Salvador_Collegiate_Church_Granada_%289%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_corral_del_carbon": {
+  "author": "José Sabater Montes",
+  "height": 1196,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Corral_del_Carb%C3%B3n.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/1/14/Corral_del_Carb%C3%B3n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "granada_dar_al_horra": {
+  "author": "R Prazeres",
+  "height": 1067,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Daralhorra_DSCF2354.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Daralhorra_DSCF2354.jpg/960px-Daralhorra_DSCF2354.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_gate_of_the_pomegranates": {
+  "author": "Roberto Chamoso G",
+  "height": 600,
+  "license": "CC BY-SA 3.0 es",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Puerta_de_Las_Granadas._Granada..JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Puerta_de_Las_Granadas._Granada..JPG/960px-Puerta_de_Las_Granadas._Granada..JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_generalife": {
+  "author": "Daderot",
+  "height": 510,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Patio_de_la_Acequia_(Generalife)_-_DSC07863_(slightly_cropped_and_sharpened).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Patio_de_la_Acequia_%28Generalife%29_-_DSC07863_%28slightly_cropped_and_sharpened%29.jpg/960px-Patio_de_la_Acequia_%28Generalife%29_-_DSC07863_%28slightly_cropped_and_sharpened%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_granada_cathedral": {
+  "author": "Ingo Mehling",
+  "height": 687,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Granada_-_Cathedral_Front.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Granada_-_Cathedral_Front.jpg/960px-Granada_-_Cathedral_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_granada_charterhouse": {
+  "author": "Ввласенко",
+  "height": 772,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Granada_Charterhouse_patio._Granada,_Spain.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Granada_Charterhouse_patio._Granada%2C_Spain.jpg/960px-Granada_Charterhouse_patio._Granada%2C_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 30 m",
+  "width": 800
+ },
+ "granada_madrasa_of_granada": {
+  "author": "Berthold Werner",
+  "height": 567,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Spain_Andalusia_Granada_BW_2015-10-25_13-14-26_7_7_1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Spain_Andalusia_Granada_BW_2015-10-25_13-14-26_7_7_1.jpg/960px-Spain_Andalusia_Granada_BW_2015-10-25_13-14-26_7_7_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_monastery_of_san_jeronimo": {
+  "author": "Brett Hodnett",
+  "height": 600,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Granada_(25987961022).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Granada_%2825987961022%29.jpg/960px-Granada_%2825987961022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_palace_of_charles_v": {
+  "author": "Superchilum",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Palacio_de_Carlos_V_04.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Palacio_de_Carlos_V_04.JPG/960px-Palacio_de_Carlos_V_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_parque_de_las_ciencias": {
+  "author": "Jars",
+  "height": 420,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:ParqueCiencias_Macroscopio.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/ParqueCiencias_Macroscopio.jpg/960px-ParqueCiencias_Macroscopio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_royal_chapel": {
+  "author": "Heparina1985",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Royal_Chapel_of_Granada_(Spain).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Royal_Chapel_of_Granada_%28Spain%29.jpg/960px-Royal_Chapel_of_Granada_%28Spain%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "granada_san_juan_de_dios_hospital": {
+  "author": "Carolus",
+  "height": 1014,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:San_Juan_de_Dios_Hospital_(Granada)_3.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/5/51/San_Juan_de_Dios_Hospital_%28Granada%29_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
  "groot-constantia-manor": {
   "author": "Tjeerd Wiersma from Amsterdam, The Netherlands",
   "height": 600,
@@ -4644,6 +4918,132 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/St._Petri_Hamburg_stitched_2009_1.jpg/960px-St._Petri_Hamburg_stitched_2009_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "hanoi_ho_chi_minh_mausoleum": {
+  "author": "NKSTTSSHNVN",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:L%C4%83ng_B%C3%A1c_-_NKS.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/L%C4%83ng_B%C3%A1c_-_NKS.jpg/960px-L%C4%83ng_B%C3%A1c_-_NKS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_hoa_lo_prison": {
+  "author": "Unknown author",
+  "height": 634,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:HanoiHilton.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/HanoiHilton.jpg/960px-HanoiHilton.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_keangnam_landmark_tower": {
+  "author": "Soyoungah",
+  "height": 846,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:LANDMARK72.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/LANDMARK72.jpg/960px-LANDMARK72.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_long_bien_bridge": {
+  "author": "Phunghung",
+  "height": 508,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Long_Bi%C3%AAn_Bridge_-_panoramio.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Long_Bi%C3%AAn_Bridge_-_panoramio.jpg/960px-Long_Bi%C3%AAn_Bridge_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_lotte_center": {
+  "author": "NKSTTSSHNVN",
+  "height": 1422,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lotte_Tower_Hanoi_-_NKS_(9_to_16).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Lotte_Tower_Hanoi_-_NKS_%289_to_16%29.jpg/960px-Lotte_Tower_Hanoi_-_NKS_%289_to_16%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_national_museum_of_history": {
+  "author": "Alistair Morrenger",
+  "height": 533,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Vietnam_National_Museum_of_History,_Hanoi,_Vietnam.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Vietnam_National_Museum_of_History%2C_Hanoi%2C_Vietnam.jpg/960px-Vietnam_National_Museum_of_History%2C_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_one_pillar_pagoda": {
+  "author": "Clay Gilliland",
+  "height": 450,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hanoi,_Vietnam_(12041825854).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Hanoi%2C_Vietnam_%2812041825854%29.jpg/960px-Hanoi%2C_Vietnam_%2812041825854%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_opera_house": {
+  "author": "xiquinhosilva",
+  "height": 535,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hanoi_Opera_House,_24_December_2016.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Hanoi_Opera_House%2C_24_December_2016.jpg/960px-Hanoi_Opera_House%2C_24_December_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_presidential_palace": {
+  "author": "Jorge Láscar",
+  "height": 600,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Presidential_Palace_of_Vietnam.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Presidential_Palace_of_Vietnam.jpg/960px-Presidential_Palace_of_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_sofitel_legend_metropole": {
+  "author": "The Hanoian",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Sofitel_Metropole,_Ng%C3%B4_Quy%E1%BB%81n_-_2022-09-02_01.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sofitel_Metropole%2C_Ng%C3%B4_Quy%E1%BB%81n_-_2022-09-02_01.jpg/960px-Sofitel_Metropole%2C_Ng%C3%B4_Quy%E1%BB%81n_-_2022-09-02_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_st_josephs_cathedral": {
+  "author": "Arno Kohlem",
+  "height": 1205,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:St._Joseph%27s_Cathedral_-_Hanoi,_Vietnam.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/St._Joseph%27s_Cathedral_-_Hanoi%2C_Vietnam.jpg/960px-St._Joseph%27s_Cathedral_-_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_temple_of_literature": {
+  "author": "The original uploader was Chuoibk at English Wikipedia.",
+  "height": 373,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hanoi_Temple_of_Literature_(cropped).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Hanoi_Temple_of_Literature_%28cropped%29.jpg/960px-Hanoi_Temple_of_Literature_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_tran_quoc_pagoda": {
+  "author": "RB Photo",
+  "height": 529,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tran_Quoc_Pagoda,_Hanoi,_Vietnam.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam.jpg/960px-Tran_Quoc_Pagoda%2C_Hanoi%2C_Vietnam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hanoi_turtle_tower": {
+  "author": "Jon Rawlinson",
+  "height": 1204,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Th%C3%A1p_R%C3%B9a_5.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Th%C3%A1p_R%C3%B9a_5.jpg/960px-Th%C3%A1p_R%C3%B9a_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "havana-el-capitolio": {
   "author": "Nigel Pacquette",
   "height": 533,
@@ -4777,6 +5177,147 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Temppeliaukio_Church_Helsinki.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Temppeliaukio_Church_Helsinki.jpg/960px-Temppeliaukio_Church_Helsinki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_atomic_bomb_dome": {
+  "author": "Oilstreet",
+  "height": 533,
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Genbaku_Dome04-r.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Genbaku_Dome04-r.JPG/960px-Genbaku_Dome04-r.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_castle": {
+  "author": "DXR",
+  "height": 1000,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Keep_tower,_Hiroshima_Castle,_Southwest_remote_view_20190417_1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Keep_tower%2C_Hiroshima_Castle%2C_Southwest_remote_view_20190417_1.jpg/960px-Keep_tower%2C_Hiroshima_Castle%2C_Southwest_remote_view_20190417_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_childrens_peace_monument": {
+  "author": "sarahstierch",
+  "height": 799,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://www.flickr.com/photos/7633518@N08/51741893407",
+  "site": "Flickr",
+  "src": "https://live.staticflickr.com/65535/51741893407_18e34a1729_b.jpg",
+  "via": "openverse",
+  "width": 1024
+ },
+ "hiroshima_city_museum_of_contemporary_art": {
+  "author": "Taisyo at Japanese Wikipedia",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_City_Museum_of_Contemporary_Art_01.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/d/df/Hiroshima_City_Museum_of_Contemporary_Art_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "hiroshima_gokoku_shrine": {
+  "author": "Taisyo at Japanese Wikipedia",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima-gokoku-zinzya.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/94/Hiroshima-gokoku-zinzya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "hiroshima_itsukushima_shrine": {
+  "author": "そらみみ",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:View_of_Soribashi_Bridge_near_Daikoku_Shrine_in_Itsukushima_Shrine.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/View_of_Soribashi_Bridge_near_Daikoku_Shrine_in_Itsukushima_Shrine.jpg/960px-View_of_Soribashi_Bridge_near_Daikoku_Shrine_in_Itsukushima_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 1 m",
+  "width": 800
+ },
+ "hiroshima_mazda_stadium": {
+  "author": "HKT3012",
+  "height": 380,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MAZDA_Zoom-Zoom_Stadium_Hiroshima_facade%EF%BC%882014%EF%BC%89.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/MAZDA_Zoom-Zoom_Stadium_Hiroshima_facade%EF%BC%882014%EF%BC%89.jpg/960px-MAZDA_Zoom-Zoom_Stadium_Hiroshima_facade%EF%BC%882014%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_memorial_cenotaph": {
+  "author": "Balon Greyjoy",
+  "height": 533,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:20181111_Hiroshima_Memorial_Cenotaph-1.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/20181111_Hiroshima_Memorial_Cenotaph-1.jpg/960px-20181111_Hiroshima_Memorial_Cenotaph-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_museum_of_art": {
+  "author": "The original uploader was Kiyokun at English Wikipedia.",
+  "height": 600,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_Museum_of_Art_01.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Hiroshima_Museum_of_Art_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "hiroshima_national_peace_memorial_hall": {
+  "author": "Taisyo",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims_2008_01.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims_2008_01.JPG/960px-Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims_2008_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_peace_memorial_museum": {
+  "author": "Wiiii",
+  "height": 364,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Museum_2009.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hiroshima_Peace_Memorial_Museum_2009.jpg/960px-Hiroshima_Peace_Memorial_Museum_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_prefectural_art_museum": {
+  "author": "そらみみ",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_Prefectural_Art_Museum_20170311.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hiroshima_Prefectural_Art_Museum_20170311.jpg/960px-Hiroshima_Prefectural_Art_Museum_20170311.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 79 m",
+  "width": 800
+ },
+ "hiroshima_shukkei_en": {
+  "author": "No machine-readable author provided. Fg2 assumed (based on copyright claims).",
+  "height": 533,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Rainbow_bridge_in_Shukkei-en_Hiroshima.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Rainbow_bridge_in_Shukkei-en_Hiroshima.jpg/960px-Rainbow_bridge_in_Shukkei-en_Hiroshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_station": {
+  "author": "ノボホショコロトソ",
+  "height": 600,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_Station_South_04.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Hiroshima_Station_South_04.jpg/960px-Hiroshima_Station_South_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "hiroshima_world_peace_memorial_cathedral": {
+  "author": "Original uploader was Taisyo at jp.wikipedia",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Hiroshima_World_peace_Memorial_Cathedral_01.jpeg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/4/49/Hiroshima_World_peace_Memorial_Cathedral_01.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "width": 800
  },
  "hk_bank_of_china": {
@@ -5620,6 +6161,140 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Marokko0112_%28retouched%29.jpg/960px-Marokko0112_%28retouched%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "krakow_barbican": {
+  "author": "Jeremiah Z. Cockroach",
+  "height": 476,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Barbican,_Florian_Gate_and_Planty_Park,_Basztowa_Street,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Barbican%2C_Florian_Gate_and_Planty_Park%2C_Basztowa_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Barbican%2C_Florian_Gate_and_Planty_Park%2C_Basztowa_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 0 m",
+  "width": 800
+ },
+ "krakow_church_of_saints_peter_and_paul": {
+  "author": "Jeremiah Z. Cockroach",
+  "height": 651,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Church_of_Saints_Apostles_Peter_and_Paul,_52a_Grodzka_Street,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Church_of_Saints_Apostles_Peter_and_Paul%2C_52a_Grodzka_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Church_of_Saints_Apostles_Peter_and_Paul%2C_52a_Grodzka_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_cloth_hall": {
+  "author": "Zygmunt Put",
+  "height": 848,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Krak%C3%B3w_Cloth_Hall,_W_avant-corps,_3_Main_Market_square,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Krak%C3%B3w_Cloth_Hall%2C_W_avant-corps%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Krak%C3%B3w_Cloth_Hall%2C_W_avant-corps%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 2 m",
+  "width": 800
+ },
+ "krakow_collegium_maius": {
+  "author": "Zygmunt Put",
+  "height": 546,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jagiellonian_University,_Collegium_Maius_facade,_15_Jagiello%C5%84ska_street,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Jagiellonian_University%2C_Collegium_Maius_facade%2C_15_Jagiello%C5%84ska_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Jagiellonian_University%2C_Collegium_Maius_facade%2C_15_Jagiello%C5%84ska_street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_collegium_novum": {
+  "author": "Zygmunt Put Zetpe0202",
+  "height": 510,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jagiellonian_University_Collegium_Novum,_1882_designed_by_Feliks_Ksi%C4%99%C5%BCarski,_24_Go%C5%82%C4%99bia_street,_Old_Town,_Krakow,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Jagiellonian_University_Collegium_Novum%2C_1882_designed_by_Feliks_Ksi%C4%99%C5%BCarski%2C_24_Go%C5%82%C4%99bia_street%2C_Old_Town%2C_Krakow%2C_Poland.jpg/960px-Jagiellonian_University_Collegium_Novum%2C_1882_designed_by_Feliks_Ksi%C4%99%C5%BCarski%2C_24_Go%C5%82%C4%99bia_street%2C_Old_Town%2C_Krakow%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_juliusz_slowacki_theatre": {
+  "author": "Jeremiah Z. Cockroach",
+  "height": 389,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Juliusz_S%C5%82owacki_Theatre,_view_in_winter,_1_%C5%9Awi%C4%99tego_Ducha_Square,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Juliusz_S%C5%82owacki_Theatre%2C_view_in_winter%2C_1_%C5%9Awi%C4%99tego_Ducha_Square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Juliusz_S%C5%82owacki_Theatre%2C_view_in_winter%2C_1_%C5%9Awi%C4%99tego_Ducha_Square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_manggha_museum": {
+  "author": "Zygmunt Put Zetpe0202",
+  "height": 499,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E2%80%9DManggha%E2%80%9D_Museum_of_Japanese_Art_and_Technology,_26_Konopnickiej_Street,_Krak%C3%B3w,_Poland.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%E2%80%9DManggha%E2%80%9D_Museum_of_Japanese_Art_and_Technology%2C_26_Konopnickiej_Street%2C_Krak%C3%B3w%2C_Poland.jpg/960px-%E2%80%9DManggha%E2%80%9D_Museum_of_Japanese_Art_and_Technology%2C_26_Konopnickiej_Street%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 0 m",
+  "width": 800
+ },
+ "krakow_oskar_schindlers_enamel_factory": {
+  "author": "Jennifer Boyer",
+  "height": 531,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Schindler%E2%80%99s_factory,_Krak%C3%B3w,_2011.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Schindler%E2%80%99s_factory%2C_Krak%C3%B3w%2C_2011.jpg/960px-Schindler%E2%80%99s_factory%2C_Krak%C3%B3w%2C_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_philharmonic_hall": {
+  "author": "Zygmunt Put Zetpe0202",
+  "height": 464,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Krakow_Philharmonic_Hall,_1_Zwierzyniecka_street,_Krakow,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Krakow_Philharmonic_Hall%2C_1_Zwierzyniecka_street%2C_Krakow%2C_Poland.jpg/960px-Krakow_Philharmonic_Hall%2C_1_Zwierzyniecka_street%2C_Krakow%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_st_florians_gate": {
+  "author": "Zygmunt Put",
+  "height": 636,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chapel_in_the_Gate,_St._Florian%27s_Gate,_Pijarska_Street,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Chapel_in_the_Gate%2C_St._Florian%27s_Gate%2C_Pijarska_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Chapel_in_the_Gate%2C_St._Florian%27s_Gate%2C_Pijarska_Street%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 4 m",
+  "width": 800
+ },
+ "krakow_st_marys_basilica": {
+  "author": "Zygmunt Put",
+  "height": 558,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_Assumed_into_Heaven,_5_Mariacki_square,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Church_of_Our_Lady_Assumed_into_Heaven%2C_5_Mariacki_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg/960px-Church_of_Our_Lady_Assumed_into_Heaven%2C_5_Mariacki_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_town_hall_tower": {
+  "author": "Jakub Hałun",
+  "height": 1008,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:20200516_Wie%C5%BCa_Ratuszowa_i_Sukiennice_w_Krakowie_0943_9990.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/20200516_Wie%C5%BCa_Ratuszowa_i_Sukiennice_w_Krakowie_0943_9990.jpg/960px-20200516_Wie%C5%BCa_Ratuszowa_i_Sukiennice_w_Krakowie_0943_9990.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_wawel_castle": {
+  "author": "Monika Towiańska",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wawel_(4).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Wawel_%284%29.jpg/960px-Wawel_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "krakow_wawel_cathedral": {
+  "author": "Jar.ciurus",
+  "height": 800,
+  "license": "CC BY-SA 3.0 pl",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Wawel_katedra2.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Wawel_katedra2.jpg/960px-Wawel_katedra2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "kyo_fushimi_inari": {
   "author": "Basile Morin",
   "height": 533,
@@ -6162,6 +6837,136 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/March%C3%A9_Bonsecours_in_Old_Montreal.jpg/960px-March%C3%A9_Bonsecours_in_Old_Montreal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "marseille_abbey_of_saint_victor": {
+  "author": "Bjs",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Marseille-Saint-Victor-bjs180810-01.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Marseille-Saint-Victor-bjs180810-01.jpg/960px-Marseille-Saint-Victor-bjs180810-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_cathedral": {
+  "author": "Bertrand SOUBEYRAND",
+  "height": 792,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Sainte-Marie-Majeure_de_Marseille_le_11_f%C3%A9vrier_2023-1_(cropped).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Cath%C3%A9drale_Sainte-Marie-Majeure_de_Marseille_le_11_f%C3%A9vrier_2023-1_%28cropped%29.jpg/960px-Cath%C3%A9drale_Sainte-Marie-Majeure_de_Marseille_le_11_f%C3%A9vrier_2023-1_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_chateau_d_if": {
+  "author": "Marian78ro",
+  "height": 525,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chateau_d%27If_view.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Chateau_d%27If_view.jpg/960px-Chateau_d%27If_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_city_hall": {
+  "author": "Bjs",
+  "height": 534,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Marseille-H%C3%B4tel_de_ville-bjs180810-02.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Marseille-H%C3%B4tel_de_ville-bjs180810-02.jpg/960px-Marseille-H%C3%B4tel_de_ville-bjs180810-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_cma_cgm_tower": {
+  "author": "Rberchie",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:CMA-CGM_Tour_13_22_26_780000.jpeg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/CMA-CGM_Tour_13_22_26_780000.jpeg/960px-CMA-CGM_Tour_13_22_26_780000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 61 m",
+  "width": 800
+ },
+ "marseille_fort_saint_jean": {
+  "author": "bogdan1971",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Widok_na_Fort_Saint_Jean_-_panoramio.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Widok_na_Fort_Saint_Jean_-_panoramio.jpg/960px-Widok_na_Fort_Saint_Jean_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 11 m",
+  "width": 800
+ },
+ "marseille_mucem": {
+  "author": "Holger Uwe Schmitt",
+  "height": 385,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%22Beeindruckende_Architektur%22._5.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%22Beeindruckende_Architektur%22._5.jpg/960px-%22Beeindruckende_Architektur%22._5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_notre_dame_de_la_garde": {
+  "author": "Earth777",
+  "height": 769,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_la_Garde_aerial_view_2020.jpeg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Notre-Dame_de_la_Garde_aerial_view_2020.jpeg/960px-Notre-Dame_de_la_Garde_aerial_view_2020.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_palais_longchamp": {
+  "author": "Ajay Suresh from New York, NY, USA",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Honeymoon-433_(14586751896).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Honeymoon-433_%2814586751896%29.jpg/960px-Honeymoon-433_%2814586751896%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_saint_charles_station": {
+  "author": "Raimond Spekking",
+  "height": 450,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fa%C3%A7ade_de_la_gare_de_Marseille-Saint-Charles-7689.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Fa%C3%A7ade_de_la_gare_de_Marseille-Saint-Charles-7689.jpg/960px-Fa%C3%A7ade_de_la_gare_de_Marseille-Saint-Charles-7689.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_stade_velodrome": {
+  "author": "Sophie P.",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stade_V%C3%A9lodrome_en_novembre_2021_(1).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Stade_V%C3%A9lodrome_en_novembre_2021_%281%29.jpg/960px-Stade_V%C3%A9lodrome_en_novembre_2021_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_vieille_charite": {
+  "author": "Unknown author",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:L%27hospice_de_La_Vieille_Charit%C3%A9_qui_abrite_le_Mus%C3%A9e_de_la_Vieille_Charit%C3%A9.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/L%27hospice_de_La_Vieille_Charit%C3%A9_qui_abrite_le_Mus%C3%A9e_de_la_Vieille_Charit%C3%A9.jpg/960px-L%27hospice_de_La_Vieille_Charit%C3%A9_qui_abrite_le_Mus%C3%A9e_de_la_Vieille_Charit%C3%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_vieux_port_pavilion": {
+  "author": "Ingo Mehling",
+  "height": 309,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Marseille_Old_Port.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Marseille_Old_Port.jpg/960px-Marseille_Old_Port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "marseille_villa_mediterranee": {
+  "author": "Rémih",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Skyline_Marseille_Fort_Saint-Jean.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Skyline_Marseille_Fort_Saint-Jean.jpg/960px-Skyline_Marseille_Fort_Saint-Jean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "meiji-jingu": {
   "author": "Akonnchiroll",
   "height": 450,
@@ -6414,6 +7219,145 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Villa_Necchi_Campiglio_20220818-174847.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Villa_Necchi_Campiglio_20220818-174847.jpg/960px-Villa_Necchi_Campiglio_20220818-174847.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_allen_bradley_clock_tower": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2024_047_(Rockwell_Automation_Headquarters).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Milwaukee_August_2024_047_%28Rockwell_Automation_Headquarters%29.jpg/960px-Milwaukee_August_2024_047_%28Rockwell_Automation_Headquarters%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_american_system_built_homes": {
+  "author": "James Steakley",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wright_Model_F_Duplex.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Wright_Model_F_Duplex.jpg/960px-Wright_Model_F_Duplex.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_annunciation_greek_orthodox_church": {
+  "author": "Stephen Matthew Milligan",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Annunciation_Greek_Orthodox_Church;_Wauwatosa,_Wisconsin;_June_6,_2012.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Annunciation_Greek_Orthodox_Church%3B_Wauwatosa%2C_Wisconsin%3B_June_6%2C_2012.JPG/960px-Annunciation_Greek_Orthodox_Church%3B_Wauwatosa%2C_Wisconsin%3B_June_6%2C_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_art_museum": {
+  "author": "Jules Verne Times Two",
+  "height": 1245,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Torso_of_a_Male_Athlete_(The_Oil_Pourer),_Art_Museum,_Milwaukee,_Wisconsin,_US_julesvernex2.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Torso_of_a_Male_Athlete_%28The_Oil_Pourer%29%2C_Art_Museum%2C_Milwaukee%2C_Wisconsin%2C_US_julesvernex2.jpg/960px-Torso_of_a_Male_Athlete_%28The_Oil_Pourer%29%2C_Art_Museum%2C_Milwaukee%2C_Wisconsin%2C_US_julesvernex2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 11 m",
+  "width": 800
+ },
+ "milwaukee_basilica_of_st_josaphat": {
+  "author": "Paul Sableman",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_Cathedral_3.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Milwaukee_Cathedral_3.jpg/960px-Milwaukee_Cathedral_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_city_hall": {
+  "author": "Gillfoto",
+  "height": 884,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_City_Hall_742.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Milwaukee_City_Hall_742.jpg/960px-Milwaukee_City_Hall_742.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_germania_building": {
+  "author": "Michael Barera",
+  "height": 1200,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2023_050_(Germania_Building).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Milwaukee_July_2023_050_%28Germania_Building%29.jpg/960px-Milwaukee_July_2023_050_%28Germania_Building%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 80 m",
+  "width": 800
+ },
+ "milwaukee_iron_block_building": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_070_(Iron_Block_Building).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Milwaukee_August_2022_070_%28Iron_Block_Building%29.jpg/960px-Milwaukee_August_2022_070_%28Iron_Block_Building%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_mitchell_park_domes": {
+  "author": "Sulfur (Talk / contribs)",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mitchell_Park_Horticultural_Conservatory.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Mitchell_Park_Horticultural_Conservatory.jpg/960px-Mitchell_Park_Horticultural_Conservatory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_northwestern_mutual_tower": {
+  "author": "Michael Barera",
+  "height": 1200,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_056_(Northwestern_Mutual_Tower_and_Commons).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Milwaukee_August_2022_056_%28Northwestern_Mutual_Tower_and_Commons%29.jpg/960px-Milwaukee_August_2022_056_%28Northwestern_Mutual_Tower_and_Commons%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_pabst_mansion": {
+  "author": "Sailko",
+  "height": 585,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee,_pabst_mansion_01.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Milwaukee%2C_pabst_mansion_01.jpg/960px-Milwaukee%2C_pabst_mansion_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_pfister_hotel": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_August_2022_068_(Pfister_Hotel).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Milwaukee_August_2022_068_%28Pfister_Hotel%29.jpg/960px-Milwaukee_August_2022_068_%28Pfister_Hotel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_st_joan_of_arc_chapel": {
+  "author": "Leroy Skalstad",
+  "height": 640,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_chapel-2290483.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Joan_of_Arc_chapel-2290483.jpg/960px-Joan_of_Arc_chapel-2290483.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_villa_terrace": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_007_(Villa_Terrace_Decorative_Arts_Museum).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Milwaukee_July_2022_007_%28Villa_Terrace_Decorative_Arts_Museum%29.jpg/960px-Milwaukee_July_2022_007_%28Villa_Terrace_Decorative_Arts_Museum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "milwaukee_war_memorial_center": {
+  "author": "Michael Barera",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Milwaukee_July_2022_076_(Milwaukee_County_War_Memorial).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Milwaukee_July_2022_076_%28Milwaukee_County_War_Memorial%29.jpg/960px-Milwaukee_July_2022_076_%28Milwaukee_County_War_Memorial%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "montreal-city-hall": {
@@ -8336,6 +9280,145 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Viaduto-otavio-rocha.jpg/960px-Viaduto-otavio-rocha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "porto_arrabida_bridge": {
+  "author": "NH53",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ponte_de_Arr%C3%A1bida_(8147350847).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Ponte_de_Arr%C3%A1bida_%288147350847%29.jpg/960px-Ponte_de_Arr%C3%A1bida_%288147350847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 13 m",
+  "width": 800
+ },
+ "porto_capela_das_almas": {
+  "author": "Krzysztof Golik",
+  "height": 800,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Azulejo_facade_of_the_Capela_das_Almas_in_Porto_(4).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Azulejo_facade_of_the_Capela_das_Almas_in_Porto_%284%29.jpg/960px-Azulejo_facade_of_the_Capela_das_Almas_in_Porto_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 8 m",
+  "width": 800
+ },
+ "porto_casa_da_musica": {
+  "author": "Filipe Fortes from United States",
+  "height": 533,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Casa_Da_Musica_(3190746009).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Casa_Da_Musica_%283190746009%29.jpg/960px-Casa_Da_Musica_%283190746009%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_church_of_sao_francisco": {
+  "author": "Unknown author",
+  "height": 1067,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Oporto-S-Francisco-IPPAR1.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Oporto-S-Francisco-IPPAR1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "porto_clerigos_tower": {
+  "author": "Diego Delso",
+  "height": 1568,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Torre_de_los_Cl%C3%A9rigos,_Oporto,_Portugal,_2012-05-09,_DD_01.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Torre_de_los_Cl%C3%A9rigos%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG/960px-Torre_de_los_Cl%C3%A9rigos%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_coliseu_do_porto": {
+  "author": "António Amen",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Santo_Ildefonso-Coliseu_do_Porto.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Santo_Ildefonso-Coliseu_do_Porto.jpg/960px-Santo_Ildefonso-Coliseu_do_Porto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_dom_luis_i_bridge": {
+  "author": "Deensel",
+  "height": 610,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Dom_Lu%C3%ADs_I_Bridge_(36961760686).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Dom_Lu%C3%ADs_I_Bridge_%2836961760686%29.jpg/960px-Dom_Lu%C3%ADs_I_Bridge_%2836961760686%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_faculty_of_architecture": {
+  "author": "Rob Oo from NL",
+  "height": 533,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Teach_the_children_well_(55087981551).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Teach_the_children_well_%2855087981551%29.jpg/960px-Teach_the_children_well_%2855087981551%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_leca_swimming_pools": {
+  "author": "Christian Gänshirt",
+  "height": 540,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Swimmingpool_on_the_Beach_at_Le%C3%A7a_da_Palmeira_by_Christian_G%C3%A4nshirt.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Swimmingpool_on_the_Beach_at_Le%C3%A7a_da_Palmeira_by_Christian_G%C3%A4nshirt.JPG/960px-Swimmingpool_on_the_Beach_at_Le%C3%A7a_da_Palmeira_by_Christian_G%C3%A4nshirt.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_livraria_lello": {
+  "author": "Guinness323",
+  "height": 1062,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Lello_Bookshop_9_April_2026.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Lello_Bookshop_9_April_2026.jpg/960px-Lello_Bookshop_9_April_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_maria_pia_bridge": {
+  "author": "Joseolgon",
+  "height": 600,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Ponte_Maria_Pia_-_Porto.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Ponte_Maria_Pia_-_Porto.JPG/960px-Ponte_Maria_Pia_-_Porto.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_palacio_da_bolsa": {
+  "author": "Krzysztof Golik",
+  "height": 576,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Palacio_da_Bolsa_in_Porto_(2).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Palacio_da_Bolsa_in_Porto_%282%29.jpg/960px-Palacio_da_Bolsa_in_Porto_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_porto_cathedral": {
+  "author": "Laszlo Daroczy from Miskolc, Hungary",
+  "height": 470,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Porto,_S%C3%A9_do_Porto_(9).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Porto%2C_S%C3%A9_do_Porto_%289%29.jpg/960px-Porto%2C_S%C3%A9_do_Porto_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_sao_bento_station": {
+  "author": "HombreDHojalata",
+  "height": 596,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "porto_serralves_museum": {
+  "author": "Geerd-Olaf Freyer from Aachen, Deutschland",
+  "height": 599,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lonely_Dancer_(4937475766).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Lonely_Dancer_%284937475766%29.jpg/960px-Lonely_Dancer_%284937475766%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
  "portugal-pavilion": {
   "author": "Paulo Juntas",
   "height": 600,
@@ -8397,6 +9480,132 @@
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
   "page": "https://commons.wikimedia.org/wiki/File:Teatro_de_Santa_Isabel,_Recife,_Pernambuco,_Brasil.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Teatro_de_Santa_Isabel%2C_Recife%2C_Pernambuco%2C_Brasil.jpg/960px-Teatro_de_Santa_Isabel%2C_Recife%2C_Pernambuco%2C_Brasil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_albert_street": {
+  "author": "Hans A. Rosbach",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Alberta_iel%C4%81_8_to_2_20120728-1.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Alberta_iel%C4%81_8_to_2_20120728-1.JPG/960px-Alberta_iel%C4%81_8_to_2_20120728-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_castle": {
+  "author": "Diego Delso",
+  "height": 566,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Castillo_de_Riga,_Letonia,_2012-08-07,_DD_04.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Castillo_de_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG/960px-Castillo_de_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_cat_house": {
+  "author": "Horvat",
+  "height": 1067,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:Building_in_Riga_4.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Building_in_Riga_4.JPG/960px-Building_in_Riga_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_cathedral": {
+  "author": "Zairon",
+  "height": 1023,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Riga_Petrikirche_Blick_vom_Turm_zum_Dom_3.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Riga_Petrikirche_Blick_vom_Turm_zum_Dom_3.JPG/960px-Riga_Petrikirche_Blick_vom_Turm_zum_Dom_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_central_market": {
+  "author": "David Holt uploaded and derivative work: MrPanyGoff",
+  "height": 403,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Riga_Central_Market_Hall.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Riga_Central_Market_Hall.jpg/960px-Riga_Central_Market_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_freedom_monument": {
+  "author": "Virtual-Pano",
+  "height": 1587,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:0873_LVA_Riga_freedom_monument_SE.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/0873_LVA_Riga_freedom_monument_SE.jpg/960px-0873_LVA_Riga_freedom_monument_SE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_house_of_the_blackheads": {
+  "author": "Diliff",
+  "height": 604,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:House_of_Blackheads_at_Dusk_3,_Riga,_Latvia_-_Diliff.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/House_of_Blackheads_at_Dusk_3%2C_Riga%2C_Latvia_-_Diliff.jpg/960px-House_of_Blackheads_at_Dusk_3%2C_Riga%2C_Latvia_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_latvian_academy_of_sciences": {
+  "author": "Sergei Gussev",
+  "height": 1067,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Riga_-_36242016865.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Riga_-_36242016865.jpg/960px-Riga_-_36242016865.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_latvian_national_museum_of_art": {
+  "author": "AS LNMM",
+  "height": 755,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_main_entrance_of_the_Latvian_National_Museum_of_Art.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/The_main_entrance_of_the_Latvian_National_Museum_of_Art.jpg/960px-The_main_entrance_of_the_Latvian_National_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_latvian_national_opera": {
+  "author": "Diego Delso",
+  "height": 433,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Opera_Nacional,_Riga,_Letonia,_2012-08-07,_DD_04.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Opera_Nacional%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG/960px-Opera_Nacional%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_national_library_of_latvia": {
+  "author": "National Library of Latvia",
+  "height": 890,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:National_Library_of_Latvia.png",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/National_Library_of_Latvia.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "riga_nativity_cathedral": {
+  "author": "Diego Delso",
+  "height": 1105,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Catedral_de_la_Natividad_de_Cristo,_Riga,_Letonia,_2012-08-07,_DD_03.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Catedral_de_la_Natividad_de_Cristo%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_03.JPG/960px-Catedral_de_la_Natividad_de_Cristo%2C_Riga%2C_Letonia%2C_2012-08-07%2C_DD_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_st_peters_church": {
+  "author": "Diliff",
+  "height": 1164,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:St._Peter%27s_Church_facade,_Riga,_Latvia_-_Diliff.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/St._Peter%27s_Church_facade%2C_Riga%2C_Latvia_-_Diliff.jpg/960px-St._Peter%27s_Church_facade%2C_Riga%2C_Latvia_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "riga_three_brothers": {
+  "author": "Martin Thirolf",
+  "height": 762,
+  "license": "CC BY-SA 2.0 de",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:3_Brueder.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/3_Brueder.jpg/960px-3_Brueder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "rio-capanema": {
@@ -10417,6 +11626,141 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Tower_of_London_from_the_Shard_(8515883950).jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Tower_of_London_from_the_Shard_%288515883950%29.jpg/960px-Tower_of_London_from_the_Shard_%288515883950%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_atlas_life_building": {
+  "author": "David Stapleton (Dsmdgold)",
+  "height": 1392,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:AtlasLifeBuildingTulsa.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/AtlasLifeBuildingTulsa.jpg/960px-AtlasLifeBuildingTulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_bok_center": {
+  "author": "Okiefromokla",
+  "height": 565,
+  "license": "Public domain",
+  "licenseUrl": null,
+  "page": "https://commons.wikimedia.org/wiki/File:BOK_Center_faccade.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/BOK_Center_faccade.JPG/960px-BOK_Center_faccade.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_bok_tower": {
+  "author": "Caleb Long",
+  "height": 968,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:The_BOK_Building.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/The_BOK_Building.jpg/960px-The_BOK_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_boston_avenue_methodist_church": {
+  "author": "David Brossard",
+  "height": 875,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Boston_Avenue_Church,_May_2022.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Boston_Avenue_Church%2C_May_2022.jpg/960px-Boston_Avenue_Church%2C_May_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_cains_ballroom": {
+  "author": "Jordan Michael Winn",
+  "height": 1199,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Cains_Ballroom_Sign_Tulsa_Oklahoma.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Cains_Ballroom_Sign_Tulsa_Oklahoma.jpg/960px-Cains_Ballroom_Sign_Tulsa_Oklahoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_fire_alarm_building": {
+  "author": "David Stapleton (Dsmdgold)",
+  "height": 526,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:TulsaFireAlarmBuilding.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/7/7c/TulsaFireAlarmBuilding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "tulsa_golden_driller": {
+  "author": "Timdayf5",
+  "height": 1067,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Golden_Driller.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Golden_Driller.jpg/960px-Golden_Driller.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_mayo_hotel": {
+  "author": "Camerafiend at English Wikipedia",
+  "height": 1213,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Mayo_Hotel_Tulsa.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Mayo_Hotel_Tulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "tulsa_mid_continent_tower": {
+  "author": "G. Edward Johnson",
+  "height": 1276,
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mid-Continet_Tower_Tulsa_OK_2026-05-26_10-01-15.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Mid-Continet_Tower_Tulsa_OK_2026-05-26_10-01-15.jpg/960px-Mid-Continet_Tower_Tulsa_OK_2026-05-26_10-01-15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_philbrook_museum_of_art": {
+  "author": "Landry76",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Philbrook_Museum_of_Art_Public_Entrance.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Philbrook_Museum_of_Art_Public_Entrance.jpg/960px-Philbrook_Museum_of_Art_Public_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_philcade_building": {
+  "author": "Jordan MacDonald from Broken Arrow, Oklahoma, U.S.A.",
+  "height": 1067,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Philcade_in_downtown_Tulsa.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Philcade_in_downtown_Tulsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "tulsa_philtower_building": {
+  "author": "Jordan Michael Winn",
+  "height": 534,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Philtower-Building-Tulsa-Oklahoma.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Philtower-Building-Tulsa-Oklahoma.jpg/960px-Philtower-Building-Tulsa-Oklahoma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_prayer_tower": {
+  "author": "Photo by and ©2004 Dustin M. Ramsey (Kralizec!)",
+  "height": 1205,
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Prayer_Tower_on_the_campus_of_Oral_Roberts_University.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Prayer_Tower_on_the_campus_of_Oral_Roberts_University.jpg/960px-Prayer_Tower_on_the_campus_of_Oral_Roberts_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_union_depot": {
+  "author": "Smschrag",
+  "height": 600,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tulsa_union_Depot_Modern_pict_2009.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Tulsa_union_Depot_Modern_pict_2009.jpg/960px-Tulsa_union_Depot_Modern_pict_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "tulsa_westhope": {
+  "author": "Binksternet",
+  "height": 479,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Westhope_in_sunlight.jpg",
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Westhope_in_sunlight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "width": 800
  },
  "tz_house_of_wonders": {

@@ -522,6 +522,44 @@
   "src": "https://upload.wikimedia.org/wikipedia/commons/6/63/Walking_to_the_sky_in_NY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "width": 800
  },
+ "campus_coimbra_chapel_sao_miguel": {
+  "author": "Alvesgaspar",
+  "height": 912,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coimbra_December_2011-14.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Coimbra_December_2011-14.jpg/960px-Coimbra_December_2011-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_coimbra_joanina_library": {
+  "author": "Alvesgaspar",
+  "height": 431,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coimbra_November_2012-7.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Coimbra_November_2012-7.jpg/960px-Coimbra_November_2012-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_coimbra_old_cathedral": {
+  "author": "GFreihalter, edited by MenkinAlRire",
+  "height": 1066,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Coimbra_S%C3%A9_Velha_Hauptportal_979-166.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Coimbra_S%C3%A9_Velha_Hauptportal_979-166.jpg/960px-Coimbra_S%C3%A9_Velha_Hauptportal_979-166.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_coimbra_porta_ferrea": {
+  "author": "Threeohsix",
+  "height": 800,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Porta_F%C3%A9rrea_em_2025.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Porta_F%C3%A9rrea_em_2025.jpg/960px-Porta_F%C3%A9rrea_em_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 9 m",
+  "width": 800
+ },
  "campus_colostate_canvas_stadium": {
   "author": "FarGah1",
   "height": 338,
@@ -631,6 +669,37 @@
   "page": "https://commons.wikimedia.org/wiki/File:Willard_Straight_Hall,_Cornell_University.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Willard_Straight_Hall%2C_Cornell_University.jpg/960px-Willard_Straight_Hall%2C_Cornell_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
+ },
+ "campus_cranbrook_art_museum": {
+  "author": "ajay_suresh",
+  "height": 500,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cranbrook_Art_Museum_-_Bloomfield_Hills_(51362574052).jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Cranbrook_Art_Museum_-_Bloomfield_Hills_%2851362574052%29.jpg/960px-Cranbrook_Art_Museum_-_Bloomfield_Hills_%2851362574052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_cranbrook_kingswood_school": {
+  "author": "w_lemay",
+  "height": 768,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "page": "https://www.flickr.com/photos/59081381@N03/54466065317",
+  "site": "Flickr",
+  "src": "https://live.staticflickr.com/65535/54466065317_b9c3010b72_b.jpg",
+  "via": "openverse",
+  "width": 1024
+ },
+ "campus_cranbrook_saarinen_house": {
+  "author": "w_lemay",
+  "height": 768,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "page": "https://www.flickr.com/photos/59081381@N03/54465066821",
+  "site": "Flickr",
+  "src": "https://live.staticflickr.com/65535/54465066821_32ab690110_b.jpg",
+  "via": "openverse",
+  "width": 1024
  },
  "campus_cuboulder_cheyenne_arapaho": {
   "author": "Kvng",
@@ -2574,6 +2643,48 @@
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Winants_Hall_-_Rutgers_University_%2855142886711%29.jpg/960px-Winants_Hall_-_Rutgers_University_%2855142886711%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
+ "campus_salamanca_anaya_palace": {
+  "author": "Jose Luis Filpo Cabana",
+  "height": 1067,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Palacio_de_Anaya_(Salamanca)._Patio.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Palacio_de_Anaya_%28Salamanca%29._Patio.jpg/960px-Palacio_de_Anaya_%28Salamanca%29._Patio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 7 m",
+  "width": 800
+ },
+ "campus_salamanca_casa_conchas": {
+  "author": "Zarateman",
+  "height": 600,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Salamanca_-_Casa_de_las_Conchas_04.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Salamanca_-_Casa_de_las_Conchas_04.jpg/960px-Salamanca_-_Casa_de_las_Conchas_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_salamanca_clerecia": {
+  "author": "Carlos Reusser Monsalvez from Santiago, Chile",
+  "height": 1232,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Una_de_las_torres_de_la_Clerec%C3%ADa,_en_Salamanca._(33675917324).jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Una_de_las_torres_de_la_Clerec%C3%ADa%2C_en_Salamanca._%2833675917324%29.jpg/960px-Una_de_las_torres_de_la_Clerec%C3%ADa%2C_en_Salamanca._%2833675917324%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 9 m",
+  "width": 800
+ },
+ "campus_salamanca_fonseca": {
+  "author": "José Luis Filpo Cabana",
+  "height": 1067,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Colegio_del_Arzobispo_Fonseca_Fonseca_(Salamanca)._Retablo.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Colegio_del_Arzobispo_Fonseca_Fonseca_%28Salamanca%29._Retablo.jpg/960px-Colegio_del_Arzobispo_Fonseca_Fonseca_%28Salamanca%29._Retablo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 3 m",
+  "width": 800
+ },
  "campus_smu_bush_center": {
   "author": "J. P. Fagerback",
   "height": 531,
@@ -3297,6 +3408,60 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:2019_UCLA_Charles_E._Young_Research_Library.jpg",
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/2019_UCLA_Charles_E._Young_Research_Library.jpg/960px-2019_UCLA_Charles_E._Young_Research_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_conrad_prebys_music_center": {
+  "author": "Tktktk",
+  "height": 600,
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Conrad_Prebys_Music_Center,_UCSD.JPG",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Conrad_Prebys_Music_Center%2C_UCSD.JPG/960px-Conrad_Prebys_Music_Center%2C_UCSD.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_galbraith_hall": {
+  "author": "@allthingsrevelle on Instagram",
+  "height": 543,
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Galbraith_Hall_with_Revelle_Fountain_in_the_foreground.png",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Galbraith_Hall_with_Revelle_Fountain_in_the_foreground.png/960px-Galbraith_Hall_with_Revelle_Fountain_in_the_foreground.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_geisel_library": {
+  "author": "https://www.flickr.com/photos/belisario/",
+  "height": 600,
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Geisel_Library,_UCSD.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Geisel_Library%2C_UCSD.jpg/960px-Geisel_Library%2C_UCSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_price_center": {
+  "author": "Alex Hansen",
+  "height": 600,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Price_Center,_UCSD.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Price_Center%2C_UCSD.jpg/960px-Price_Center%2C_UCSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_rimac": {
+  "author": "Dirk Hansen",
+  "height": 474,
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:RIMAC_Annex_seen_facing_southeast.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/RIMAC_Annex_seen_facing_southeast.jpg/960px-RIMAC_Annex_seen_facing_southeast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_ucsd_salk_institute": {
+  "author": "Codera23",
+  "height": 600,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salk_Institute_2.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Salk_Institute_2.jpg/960px-Salk_Institute_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_uf_anderson_hall": {
@@ -4075,6 +4240,35 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Neyland_aerial_view_of_checkerboard.jpg",
   "src": "https://upload.wikimedia.org/wikipedia/commons/d/da/Neyland_aerial_view_of_checkerboard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "width": 800
+ },
+ "campus_utokyo_akamon": {
+  "author": "Toshihiro Matsui",
+  "height": 533,
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Akamon_lit_up_-_panoramio.jpg",
+  "site": "Wikimedia Commons",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Akamon_lit_up_-_panoramio.jpg/960px-Akamon_lit_up_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "via": "commons-nearby 7 m",
+  "width": 800
+ },
+ "campus_utokyo_general_library": {
+  "author": "末広橋",
+  "height": 533,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg/960px-%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "width": 800
+ },
+ "campus_utokyo_yasuda_auditorium": {
+  "author": "Kakidai",
+  "height": 541,
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2024_Yasuda_Auditorium_-_Tokyo_University.jpg",
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/2024_Yasuda_Auditorium_-_Tokyo_University.jpg/960px-2024_Yasuda_Auditorium_-_Tokyo_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "width": 800
  },
  "campus_uutah_huntsman_center": {

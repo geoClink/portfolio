@@ -41,6 +41,7 @@ COUNTRIES = {
     "unitedStates": "United States", "canada": "Canada", "mexico": "Mexico",
     "england": "England", "scotland": "Scotland", "ireland": "Ireland", "belgium": "Belgium",
     "finland": "Finland", "france": "France", "italy": "Italy", "sweden": "Sweden",
+    "spain": "Spain", "portugal": "Portugal", "japan": "Japan",
     "newSouthWales": "Australia", "victoria": "Australia",
 }
 
