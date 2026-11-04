@@ -309,7 +309,11 @@
   "Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts": "下次更新推出：把地标拖入行程、悬停效果和键盘快捷键",
   "@Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped": "Mac 上的 Stamped!：城市侧边栏、带有已盖章地标的芝加哥 3D 地图，以及芝加哥城市页面（17 处地标已盖章 17 处）",
   "Planning a city trip?": "在计划城市旅行？",
-  "Visiting colleges?": "要去参观大学？"
+  "Visiting colleges?": "要去参观大学？",
+  "!Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg": "Download_on_the_Mac_App_Store_Badge_CNSC_RGB_blk_092917.svg",
+  "Try it": "试一试",
+  "@Download on the App Store": "在 App Store 下载",
+  "@Download on the Mac App Store": "在 Mac App Store 下载"
  },
  "copy": "{\n                pause: '暂停视频',\n                play: '播放视频',\n                question: '第 {n} 题（共 {total} 题）',\n                correct: '答对了！',\n                wrong: '差一点。',\n                next: '下一题',\n                seeStamp: '查看你的印章',\n                done: '完成',\n                perfect: '满分！',\n                yourScore: '你答对了 {score} 题，共 {total} 题。',\n                more: '应用内有 273 套测验、2,730 道题。',\n                playAgain: '再玩一次',\n                intro: '试一试，只有三道题。',\n                ranks: ['游客', '旅行者', '本地人', '专家'],\n                questions: [\n                    { q: '熨斗大厦有多少层？', options: ['16', '22', '31'], answer: 1,\n                      note: '22 层，1902 年建成。' },\n                    { q: '流水别墅是谁设计的？', options: ['勒·柯布西耶', '弗兰克·劳埃德·赖特', '弗兰克·盖里'], answer: 1,\n                      note: '弗兰克·劳埃德·赖特，建在宾夕法尼亚州的一处瀑布之上。' },\n                    { q: '悉尼歌剧院是谁设计的？', options: ['扎哈·哈迪德', '伦佐·皮亚诺', '约恩·乌松'], answer: 2,\n                      note: '丹麦建筑师约恩·乌松，1957 年赢得设计竞赛。' }\n                ]\n            }"
 }

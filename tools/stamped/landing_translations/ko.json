@@ -309,7 +309,11 @@
   "Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts": "다음 업데이트 예정: 랜드마크를 여행으로 드래그, 호버 효과, 키보드 단축키",
   "@Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped": "Mac의 Stamped!: 도시 사이드바, 스탬프를 찍은 랜드마크가 있는 시카고 3D 지도, 17곳 중 17곳 스탬프를 완료한 시카고 도시 페이지",
   "Planning a city trip?": "도시 여행을 계획 중인가요?",
-  "Visiting colleges?": "대학 탐방을 가시나요?"
+  "Visiting colleges?": "대학 탐방을 가시나요?",
+  "!Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg": "Download_on_the_Mac_App_Store_Badge_KR_RGB_blk_100317.svg",
+  "Try it": "체험하기",
+  "@Download on the App Store": "App Store에서 다운로드",
+  "@Download on the Mac App Store": "Mac App Store에서 다운로드"
  },
  "copy": "{\n                pause: '동영상 일시정지',\n                play: '동영상 재생',\n                question: '{total}문제 중 {n}번째',\n                correct: '정답이에요! ',\n                wrong: '아쉬워요. ',\n                next: '다음',\n                seeStamp: '스탬프 보기',\n                done: '완료',\n                perfect: '만점이에요!',\n                yourScore: '{total}문제 중 {score}문제를 맞혔어요.',\n                more: '앱에는 273개의 퀴즈와 2,730개의 문제가 있어요.',\n                playAgain: '다시 하기',\n                intro: '직접 해 보세요. 3문제예요.',\n                ranks: ['관광객', '여행자', '현지인', '전문가'],\n                questions: [\n                    { q: '플랫아이언 빌딩은 몇 층일까요?', options: ['16', '22', '31'], answer: 1,\n                      note: '22층, 1902년에 완공됐어요.' },\n                    { q: '낙수장(Fallingwater)은 누가 설계했을까요?', options: ['르 코르뷔지에', '프랭크 로이드 라이트', '프랭크 게리'], answer: 1,\n                      note: '프랭크 로이드 라이트가 펜실베이니아의 폭포 위에 지었어요.' },\n                    { q: '시드니 오페라 하우스는 누가 설계했을까요?', options: ['자하 하디드', '렌초 피아노', '예른 웃손'], answer: 2,\n                      note: '덴마크 건축가 예른 웃손이 1957년 설계 공모전에서 우승했어요.' }\n                ]\n            }"
 }

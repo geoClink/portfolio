@@ -309,7 +309,11 @@
   "Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts": "Dans la prochaine mise à jour : glissez des monuments dans un voyage, effets au survol et raccourcis clavier",
   "@Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped": "Stamped! sur un Mac : une barre latérale de villes, une carte 3D de Chicago avec des monuments tamponnés, et la page de Chicago avec 17 monuments sur 17 tamponnés",
   "Planning a city trip?": "Vous préparez un city trip ?",
-  "Visiting colleges?": "Vous visitez des universités ?"
+  "Visiting colleges?": "Vous visitez des universités ?",
+  "!Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg": "Download_on_the_Mac_App_Store_Badge_FR_RGB_blk_100217.svg",
+  "Try it": "Essayer",
+  "@Download on the App Store": "Télécharger dans l’App Store",
+  "@Download on the Mac App Store": "Télécharger dans le Mac App Store"
  },
  "copy": "{\n                pause: 'Mettre la vidéo en pause',\n                play: 'Lire la vidéo',\n                question: 'Question {n} sur {total}',\n                correct: 'Bonne réponse ! ',\n                wrong: 'Presque. ',\n                next: 'Suivant',\n                seeStamp: 'Voir votre tampon',\n                done: 'Terminé',\n                perfect: 'Sans faute !',\n                yourScore: 'Vous avez obtenu {score} sur {total}.',\n                more: 'L’app compte 273 quiz et 2 730 questions.',\n                playAgain: 'Rejouer',\n                intro: 'Essayez. Trois questions.',\n                ranks: ['TOURISTE', 'VOYAGEUR', 'LOCAL', 'EXPERT'],\n                questions: [\n                    { q: 'Combien d’étages compte le Flatiron Building ?', options: ['16', '22', '31'], answer: 1,\n                      note: '22 étages, achevé en 1902.' },\n                    { q: 'Qui a conçu Fallingwater ?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,\n                      note: 'Frank Lloyd Wright, au-dessus d’une cascade en Pennsylvanie.' },\n                    { q: 'Qui a conçu l’Opéra de Sydney ?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,\n                      note: 'Jørn Utzon, un architecte danois, a remporté le concours de design en 1957.' }\n                ]\n            }"
 }
