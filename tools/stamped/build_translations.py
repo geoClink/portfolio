@@ -853,8 +853,9 @@ def build(lang, source):
         ('content="en_US"', f'content="{LOCALE[lang]}"'),
         ('https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336',
          f'https://apps.apple.com/{STORE[lang]}/app/stamped-a-city-passport/id6759680336'),
-        ('<summary aria-label="Language: English"><i class="fas fa-globe" aria-hidden="true"></i>EN</summary>',
-         f'<summary aria-label="{NAME[lang]}"><i class="fas fa-globe" aria-hidden="true"></i>{lang.upper()}</summary>'),
+        # The label starts with the visible code, so voice control ("tap DE") and screen readers agree
+        ('<summary aria-label="EN · English"><i class="fas fa-globe" aria-hidden="true"></i>EN</summary>',
+         f'<summary aria-label="{lang.upper()} · {NAME[lang]}"><i class="fas fa-globe" aria-hidden="true"></i>{lang.upper()}</summary>'),
         ('hreflang="en" lang="en" aria-current="page">', 'hreflang="en" lang="en">'),
         (f'<li><a href="{page}" hreflang="{hl}" lang="{hl}">',
          f'<li><a href="{page}" hreflang="{hl}" lang="{hl}" aria-current="page">'),
