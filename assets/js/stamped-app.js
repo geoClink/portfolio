@@ -210,4 +210,25 @@
 
     // Swap the static first-question buttons for live ones
     render();
+
+    // Email sign-up: the form still posts to Buttondown in a new tab, because Buttondown sometimes
+    // needs to show a "prove you're human" check there (its docs say not to send the form with fetch).
+    // Meanwhile this page swaps the form for a stamped "check your inbox" note.
+    const signup = document.querySelector('.signup');
+    const signupDone = document.querySelector('.signup-done');
+    if (signup && signupDone) {
+        // 'submit' only fires once the email passes the browser's own check
+        signup.addEventListener('submit', () => {
+            // Wait one moment so the browser sends the form before it's hidden
+            setTimeout(() => {
+                signup.hidden = true;
+                signupDone.hidden = false;
+                signupDone.focus();
+                // Thud the stamp down one frame after it appears, so the animation runs
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => signupDone.querySelector('.stamp').classList.add('is-in'));
+                });
+            }, 0);
+        });
+    }
 })();

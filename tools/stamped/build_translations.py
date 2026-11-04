@@ -17,6 +17,12 @@ So when you change an English string: update its T row AND the same key in the f
 
 It also sets the ?v= hash on the shared CSS and JS links (SHARED) in all four pages.
 
+It also builds the two small sign-up pages Buttondown redirects to (THANKS_PAGES):
+  stamped-check-inbox.html   after someone signs up ("check your inbox")
+  stamped-subscribed.html    after they confirm ("you're on the list")
+into stamped-check-inbox-<lang>.html and stamped-subscribed-<lang>.html. Strings they share with
+the landing page come from T and the JSON files; the rest live in THANKS_T, all eight languages per row.
+
 Wording follows the app's own Localizable.strings (sello / Stempel / スタンプ).
 
 Each entry is (english, spanish, german, japanese). The english string is matched as:
@@ -76,6 +82,18 @@ T = [
     ("Get an email when new cities and campuses arrive.", "Recibe un correo cuando lleguen nuevas ciudades y campus.", "Erhalte eine E-Mail, wenn neue Städte und Campusse dazukommen.", "新しい都市やキャンパスが追加されたらメールでお知らせします。"),
     ("Notify me", "Avísame", "Benachrichtige mich", "通知を受け取る"),
     ("A few emails a year. Unsubscribe anytime.", "Unos pocos correos al año. Date de baja cuando quieras.", "Ein paar E-Mails im Jahr. Jederzeit abbestellbar.", "メールは年に数回。いつでも配信停止できます。"),
+    # The stamped note that replaces the sign-up form once it's sent
+    ("ALMOST THERE", "CASI LISTO", "FAST GESCHAFFT", "あと少し"),
+    ("INBOX", "CORREO", "E-MAIL", "メール"),
+    ("Check your inbox.", "Revisa tu correo.", "Schau in dein Postfach.", "メールを確認してください。"),
+    ("Tap the link in our email to confirm, and you're on the list.",
+     "Toca el enlace de nuestro correo para confirmar y ya estarás en la lista.",
+     "Tippe zur Bestätigung auf den Link in unserer E-Mail, dann bist du dabei.",
+     "メール内のリンクをタップして確認すれば、登録完了です。"),
+    ("If the new tab asks you to prove you're human, finish that first.",
+     "Si la nueva pestaña te pide demostrar que eres humano, hazlo primero.",
+     "Falls der neue Tab fragt, ob du ein Mensch bist, erledige das zuerst.",
+     "新しいタブで人間であることの確認を求められたら、先にそちらを済ませてください。"),
     (" to help keep new cities coming.", " para que sigan llegando nuevas ciudades.", ", damit weitere Städte dazukommen.", "で、新しい都市の追加を応援してください。"),
     ("Tip jar", "Propinas", "Trinkgeld", "チップ"),
 
@@ -803,6 +821,89 @@ COPY = {
 }
 
 
+# ----- Sign-up pages Buttondown redirects to -----
+# Every string on each page, in English. Each one is translated by T / the JSON files, or by THANKS_T.
+_FRAME = ["Skip to content", "BON VOYAGE", "DEPART", "WELCOME", "ARRIVE", "Back to Stamped!",
+          "Support", "Privacy", "City guides"]
+THANKS_PAGES = {
+    "stamped-check-inbox": _FRAME + [
+        "Check your inbox · Stamped! A City Passport", "ALMOST THERE", "INBOX", "Check your inbox.",
+        "Tap the link in our email to confirm, and you're on the list.",
+        "Can't find it? Look in your spam or promotions folder."],
+    "stamped-subscribed": _FRAME + [
+        "You're on the list · Stamped! A City Passport", "ON THE LIST", "NEWS", "You're on the list.",
+        "Thanks for confirming. We'll email you when new cities and campuses arrive.",
+        "A few emails a year. Unsubscribe anytime."],
+}
+# Strings only these pages have: english -> {language: translation}
+THANKS_T = {
+    "Check your inbox · Stamped! A City Passport": {
+        "es": "Revisa tu correo · Stamped! A City Passport",
+        "de": "Schau in dein Postfach · Stamped! A City Passport",
+        "ja": "メールを確認してください · Stamped! A City Passport",
+        "fr": "Vérifiez votre boîte mail · Stamped! A City Passport",
+        "it": "Controlla la posta · Stamped! A City Passport",
+        "ko": "받은편지함을 확인하세요 · Stamped! A City Passport",
+        "pt": "Confira seu e-mail · Stamped! A City Passport",
+        "zh": "请查看你的邮箱 · Stamped! A City Passport"},
+    "Can't find it? Look in your spam or promotions folder.": {
+        "es": "¿No lo encuentras? Mira en la carpeta de spam o de promociones.",
+        "de": "Nicht gefunden? Schau im Spam- oder Werbung-Ordner nach.",
+        "ja": "見つからない場合は、迷惑メールやプロモーションのフォルダを確認してください。",
+        "fr": "Vous ne le trouvez pas ? Regardez dans vos spams ou dans l'onglet Promotions.",
+        "it": "Non la trovi? Controlla nella cartella spam o promozioni.",
+        "ko": "메일이 보이지 않나요? 스팸함이나 프로모션함을 확인해 보세요.",
+        "pt": "Não encontrou? Veja na pasta de spam ou de promoções.",
+        "zh": "找不到？请查看垃圾邮件或推广邮件文件夹。"},
+    "You're on the list · Stamped! A City Passport": {
+        "es": "Ya estás en la lista · Stamped! A City Passport",
+        "de": "Du bist dabei · Stamped! A City Passport",
+        "ja": "登録が完了しました · Stamped! A City Passport",
+        "fr": "Vous êtes inscrit · Stamped! A City Passport",
+        "it": "Sei nella lista · Stamped! A City Passport",
+        "ko": "구독 완료 · Stamped! A City Passport",
+        "pt": "Você está na lista · Stamped! A City Passport",
+        "zh": "订阅成功 · Stamped! A City Passport"},
+    "ON THE LIST": {"es": "EN LA LISTA", "de": "DABEI", "ja": "登録完了", "fr": "INSCRIT",
+                    "it": "NELLA LISTA", "ko": "구독 완료", "pt": "NA LISTA", "zh": "订阅成功"},
+    "NEWS": {"es": "NOTICIAS", "de": "NEWS", "ja": "ニュース", "fr": "INFOS",
+             "it": "NOVITÀ", "ko": "소식", "pt": "NOVIDADES", "zh": "资讯"},
+    "You're on the list.": {
+        "es": "Ya estás en la lista.", "de": "Du bist dabei.", "ja": "登録が完了しました。",
+        "fr": "Vous êtes inscrit.", "it": "Sei nella lista.", "ko": "구독이 완료되었어요.",
+        "pt": "Você está na lista.", "zh": "订阅成功。"},
+    "Thanks for confirming. We'll email you when new cities and campuses arrive.": {
+        "es": "Gracias por confirmar. Te escribiremos cuando lleguen nuevas ciudades y campus.",
+        "de": "Danke für die Bestätigung. Wir schreiben dir, wenn neue Städte und Campusse dazukommen.",
+        "ja": "ご確認ありがとうございます。新しい都市やキャンパスが追加されたらメールでお知らせします。",
+        "fr": "Merci d'avoir confirmé. Nous vous écrirons quand de nouvelles villes et de nouveaux campus arriveront.",
+        "it": "Grazie per la conferma. Ti scriveremo quando arriveranno nuove città e nuovi campus.",
+        "ko": "확인해 주셔서 감사합니다. 새로운 도시와 캠퍼스가 추가되면 이메일로 알려 드릴게요.",
+        "pt": "Obrigado por confirmar. Vamos avisar você por e-mail quando chegarem novas cidades e campi.",
+        "zh": "感谢确认。新的城市和校园上线时，我们会发邮件通知你。"},
+    "Back to Stamped!": {
+        "es": "Volver a Stamped!", "de": "Zurück zu Stamped!", "ja": "Stamped!に戻る",
+        "fr": "Retour à Stamped!", "it": "Torna a Stamped!", "ko": "Stamped!로 돌아가기",
+        "pt": "Voltar ao Stamped!", "zh": "返回 Stamped!"},
+}
+
+
+def build_thanks(name, lang, source):
+    """One sign-up page (a THANKS_PAGES name) in one language. Stops if a string is missing, like build()."""
+    html = source
+    table = dict(translations(lang)[0])
+    table.update({english: by_lang[lang] for english, by_lang in THANKS_T.items()})
+    for english in THANKS_PAGES[name]:
+        find, wrap = pattern(english)
+        if find not in html:
+            raise SystemExit(f"{name}.html no longer has: {english}")
+        html = html.replace(find, wrap(table[english]))
+    # The page's language, and links back to the landing page in the same language
+    html = html.replace('<html lang="en">', f'<html lang="{HTML_LANG.get(lang, lang)}">')
+    html = html.replace('href="stamped-app.html"', f'href="stamped-app-{lang}.html"')
+    return html
+
+
 def pattern(english):
     if english.startswith("!"):
         return english[1:], lambda t: t
@@ -886,6 +987,14 @@ def main():
         out = ROOT / f"stamped-app-{lang}.html"
         out.write_text(build(lang, source), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
+    for name in THANKS_PAGES:
+        page = ROOT / f"{name}.html"
+        english = versioned(page.read_text(encoding="utf-8"))
+        page.write_text(english, encoding="utf-8")
+        for lang in LANGS:
+            out = ROOT / f"{name}-{lang}.html"
+            out.write_text(build_thanks(name, lang, english), encoding="utf-8")
+            print("wrote", out.relative_to(ROOT))
 
 
 if __name__ == "__main__":
