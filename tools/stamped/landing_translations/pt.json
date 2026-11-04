@@ -309,7 +309,11 @@
   "Coming in the next update: drag landmarks into a trip, hover effects and keyboard shortcuts": "Na próxima atualização: arraste pontos turísticos para uma viagem, efeitos ao passar o ponteiro e atalhos de teclado",
   "@Stamped! on a Mac: a sidebar of cities, a 3D map of Chicago with stamped landmarks, and the Chicago city page with 17 of 17 landmarks stamped": "Stamped! em um Mac: uma barra lateral de cidades, um mapa 3D de Chicago com pontos turísticos carimbados e a página de Chicago com 17 de 17 pontos turísticos carimbados",
   "Planning a city trip?": "Planejando uma viagem?",
-  "Visiting colleges?": "Visitando universidades?"
+  "Visiting colleges?": "Visitando universidades?",
+  "!Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg": "Download_on_the_Mac_App_Store_Badge_PTBR_RGB_blk_100317.svg",
+  "Try it": "Experimente",
+  "@Download on the App Store": "Baixar na App Store",
+  "@Download on the Mac App Store": "Baixar na Mac App Store"
  },
  "copy": "{\n                pause: 'Pausar vídeo',\n                play: 'Reproduzir vídeo',\n                question: 'Pergunta {n} de {total}',\n                correct: 'Correto! ',\n                wrong: 'Quase. ',\n                next: 'Próxima',\n                seeStamp: 'Ver seu carimbo',\n                done: 'Concluir',\n                perfect: 'Pontuação perfeita!',\n                yourScore: 'Você acertou {score} de {total}.',\n                more: 'O app tem 273 quizzes e 2.730 perguntas.',\n                playAgain: 'Jogar de novo',\n                intro: 'Experimente. Três perguntas.',\n                ranks: ['TURISTA', 'VIAJANTE', 'LOCAL', 'ESPECIALISTA'],\n                questions: [\n                    { q: 'Quantos andares tem o Flatiron Building?', options: ['16', '22', '31'], answer: 1,\n                      note: '22 andares, concluído em 1902.' },\n                    { q: 'Quem projetou a Casa da Cascata (Fallingwater)?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,\n                      note: 'Frank Lloyd Wright, sobre uma cachoeira na Pensilvânia.' },\n                    { q: 'Quem projetou a Ópera de Sydney?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,\n                      note: 'Jørn Utzon, arquiteto dinamarquês, venceu o concurso de projeto em 1957.' }\n                ]\n            }"
 }

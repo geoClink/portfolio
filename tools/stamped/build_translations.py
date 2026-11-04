@@ -718,6 +718,11 @@ T = [
     # Hero shortcuts for the two main audiences
     ("Planning a city trip?", "¿Planeas un viaje a una ciudad?", "Städtereise geplant?", "都市旅行の計画中？"),
     ("Visiting colleges?", "¿Visitas universidades?", "College-Besuche geplant?", "大学見学に行く？"),
+    # Header menu link, the Mac App Store badge file and both badges' alt text
+    ("!Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg", "Download_on_the_Mac_App_Store_Badge_ES_RGB_blk_100217.svg", "Download_on_the_Mac_App_Store_Badge_DE_RGB_blk_092917.svg", "Download_on_the_Mac_App_Store_Badge_JP_RGB_blk_100317.svg"),
+    ("Try it", "Pruébalo", "Ausprobieren", "試す"),
+    ("@Download on the App Store", "Descargar en el App Store", "Laden im App Store", "App Storeからダウンロード"),
+    ("@Download on the Mac App Store", "Descargar en el Mac App Store", "Laden im Mac App Store", "Mac App Storeからダウンロード"),
 ]
 
 # Text the quiz and video script (assets/js/stamped-app.js) write at runtime
