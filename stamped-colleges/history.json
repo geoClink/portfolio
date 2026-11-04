@@ -53,11 +53,23 @@
   "url": "https://en.wikipedia.org/wiki/Carnegie_Mellon_University",
   "website": "https://cmu.edu"
  },
+ "Central Michigan University": {
+  "foundedYear": 1892,
+  "summary": "CMU is one of the eight research universities in Michigan and is classified among \"R2: Doctoral Universities – High research activity\". It has more than 14,000 students on its Mount Pleasant campus. CMU offers 200 academic programs at the undergraduate, master's, specialist, and doctoral levels. The Central Michigan Chippewas compete in the NCAA Division I Mid-American Conference in six men's and ten women's sports.",
+  "url": "https://en.wikipedia.org/wiki/Central_Michigan_University",
+  "website": "https://www.cmich.edu/"
+ },
  "Clemson University": {
   "foundedYear": 1889,
   "summary": "Clemson University is a public land-grant research university near Clemson, South Carolina, United States. Founded in 1889, Clemson is the second-largest university by enrollment in South Carolina. For the fall 2025 semester, the university enrolled a total of 24,060 undergraduate students and 5,485 graduate students, and the student/faculty ratio was 16:1.",
   "url": "https://en.wikipedia.org/wiki/Clemson_University",
   "website": "https://www.clemson.edu/"
+ },
+ "Colorado State University": {
+  "foundedYear": 1870,
+  "summary": "It was founded in 1870 as Colorado Agricultural College and assumed its current name in 1957. In 2024, enrollment was approximately 34,000 students, including resident and non-resident instruction students. The university has approximately 1,500 faculty in 8 colleges and 55 academic departments.",
+  "url": "https://en.wikipedia.org/wiki/Colorado_State_University",
+  "website": "https://www.colostate.edu/"
  },
  "Columbia University": {
   "foundedYear": 1754,
@@ -70,6 +82,12 @@
   "summary": "Since its founding, Cornell University has been a co-educational and nonsectarian institution. As of fall 2024, the student body included 16,128 undergraduate and 10,665 postgraduate students from all 50 U.S. states and 130 countries.",
   "url": "https://en.wikipedia.org/wiki/Cornell_University",
   "website": "https://cornell.edu"
+ },
+ "Cranbrook Academy of Art": {
+  "foundedYear": 1904,
+  "summary": "It consists of Cranbrook Schools, Cranbrook Academy of Art, Cranbrook Art Museum, Cranbrook Institute of Science, Cranbrook House and Gardens, and the Cranbrook Center for Collections and Research. The founders also built Christ Church Cranbrook as a focal point for the educational complex, though it is a separate entity operated by the Episcopal Diocese of Michigan. The sprawling 319-acre (1,290,000 m2) campus began as a 174-acre (700,000 m2) farm, purchased in 1904. The organization takes its name from Cranbrook, England, the birthplace of the founder's father.",
+  "url": "https://en.wikipedia.org/wiki/Cranbrook_Educational_Community",
+  "website": "https://www.cranbrook.edu"
  },
  "Dartmouth College": {
   "foundedYear": 1769,
@@ -88,6 +106,12 @@
   "summary": "As a collegiate university, its main functions are divided between the academic departments of the university and its 17 colleges. In general, the departments perform research and provide teaching to students, while the colleges are responsible for their domestic arrangements and welfare.",
   "url": "https://en.wikipedia.org/wiki/Durham_University",
   "website": "https://durham.ac.uk"
+ },
+ "Eastern Michigan University": {
+  "foundedYear": 1849,
+  "summary": "Eastern Michigan University is a public research university in Ypsilanti, Michigan, United States. Founded in 1849 as the Michigan State Normal School, it was the fourth normal school established in the United States and the first outside New England. In 1899, the Michigan State Normal School became the first normal school in the nation to offer a four-year curriculum; the college became a university in 1959.",
+  "url": "https://en.wikipedia.org/wiki/Eastern_Michigan_University",
+  "website": "https://www.emich.edu"
  },
  "Emory University": {
   "foundedYear": 1836,
@@ -197,6 +221,12 @@
   "url": "https://en.wikipedia.org/wiki/Michigan_State_University",
   "website": "https://msu.edu/"
  },
+ "Michigan Technological University": {
+  "foundedYear": 1885,
+  "summary": "Michigan Technological University is a public research university in Houghton, Michigan, United States. It was founded in 1885 as the Michigan Mining School, the first post-secondary institution in the Upper Peninsula of Michigan.",
+  "url": "https://en.wikipedia.org/wiki/Michigan_Technological_University",
+  "website": "https://www.mtu.edu/"
+ },
  "Mississippi State University": {
   "foundedYear": 1878,
   "summary": "Mississippi State University for Agriculture and Applied Science, commonly known as Mississippi State University (MSU), is a public land-grant research university in Mississippi State, Mississippi, United States. It is classified among \"R1: Doctoral Universities – Very High Research Spending and Doctorate Production\".",
@@ -226,6 +256,12 @@
   "summary": "Northwestern was initially affiliated with the Methodist Episcopal Church but later became non-sectarian. Northwestern became a founding member of the Big Ten Conference in 1896 and joined the Association of American Universities in 1917.",
   "url": "https://en.wikipedia.org/wiki/Northwestern_University",
   "website": null
+ },
+ "Oakland University": {
+  "foundedYear": 1957,
+  "summary": "Oakland University is a public research university in Auburn Hills and Rochester Hills, Michigan, United States. Founded in 1957 through a donation of Matilda Dodge Wilson and husband Alfred G. Wilson, it was initially known as Michigan State University-Oakland, operating under the Michigan State University Board of Trustees, before gaining institutional independence from the board in 1970.",
+  "url": "https://en.wikipedia.org/wiki/Oakland_University",
+  "website": "https://www.oakland.edu"
  },
  "Ohio State University": {
   "foundedYear": 1870,
@@ -359,6 +395,12 @@
   "url": "https://en.wikipedia.org/wiki/University_of_California%2C_Los_Angeles",
   "website": "https://ucla.edu"
  },
+ "University of California, San Diego": {
+  "foundedYear": 1960,
+  "summary": "The University of California, San Diego is a public land-grant research university in the La Jolla neighborhood of San Diego, California, United States. Established in 1960, it is the southernmost of the ten campuses of the University of California. It occupies 2,178 acres (881 ha) near the Pacific coast.",
+  "url": "https://en.wikipedia.org/wiki/University_of_California%2C_San_Diego",
+  "website": "https://ucsd.edu"
+ },
  "University of Cambridge": {
   "foundedYear": 1209,
   "summary": "The university's founding followed the arrival of scholars who left the University of Oxford for Cambridge after a dispute with local townspeople. The two ancient English universities, although sometimes described as rivals, share many common features and are often jointly referred to as Oxbridge.",
@@ -382,6 +424,12 @@
   "summary": "It is part of the University System of Ohio. The university's primary uptown campus and medical campus are located in the Heights and Corryville neighborhoods, with branch campuses located in Batavia and Blue Ash, Ohio.",
   "url": "https://en.wikipedia.org/wiki/University_of_Cincinnati",
   "website": "https://www.uc.edu/"
+ },
+ "University of Coimbra": {
+  "foundedYear": 1290,
+  "summary": "It had an influential role in the development of higher education in the Portuguese-speaking countries, and in their history. Due to its historic influence, architecture, unique culture and traditions, it was declared in 2013 a World Heritage Site by UNESCO.",
+  "url": "https://en.wikipedia.org/wiki/University_of_Coimbra",
+  "website": "https://www.uc.pt/"
  },
  "University of Colorado Boulder": {
   "foundedYear": 1876,
@@ -551,6 +599,12 @@
   "url": "https://en.wikipedia.org/wiki/University_of_Pittsburgh",
   "website": "https://www.pitt.edu"
  },
+ "University of Salamanca": {
+  "foundedYear": 1218,
+  "summary": "The University of Salamanca is a public research university in Salamanca, Spain. Founded in 1218 by King Alfonso IX, it is the oldest university in the Hispanic world and the fourth oldest in the world in continuous operation. It has over 30,000 students from 50 nationalities.",
+  "url": "https://en.wikipedia.org/wiki/University_of_Salamanca",
+  "website": "https://www.usal.es/"
+ },
  "University of South Carolina": {
   "foundedYear": 1801,
   "summary": "Its main campus is on over 359 acres (145 ha) in downtown Columbia, close to the South Carolina State House. The university is classified among \"R1: Doctoral Universities with Highest Research Activity\". It houses the largest collection of Robert Burns and Scottish literature materials outside Scotland and the world's largest Ernest Hemingway collection.",
@@ -586,6 +640,12 @@
   "summary": "The University of Texas at Austin is a public research university in Austin, Texas, United States. Founded in 1883, it is the flagship institution of the University of Texas System. With 53,864 students as of fall 2024, it is also the largest institution in the system.",
   "url": "https://en.wikipedia.org/wiki/University_of_Texas_at_Austin",
   "website": "https://www.utexas.edu/"
+ },
+ "University of Tokyo": {
+  "foundedYear": 1877,
+  "summary": "The University of Tokyo is a public research university in Bunkyō, Tokyo, Japan. Founded in 1877 as the nation's first modern university by the merger of several pre-westernisation era institutions, its direct precursors include the Tenmongata, founded in 1684, and the Shōheizaka Institute.",
+  "url": "https://en.wikipedia.org/wiki/University_of_Tokyo",
+  "website": "https://www.u-tokyo.ac.jp/ja/index.html"
  },
  "University of Toronto": {
   "foundedYear": 1827,

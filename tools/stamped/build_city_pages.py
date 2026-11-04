@@ -46,7 +46,7 @@ PLACES = {
         "Philadelphia", "Cleveland", "Cupertino", "Buffalo", "Houston", "New York", "San Francisco",
         "Dallas", "Nashville", "Phoenix", "Austin", "St. Louis", "Minnesota", "Asheville",
         "Columbus, Indiana", "Oak Park", "Palm Springs", "Fort Worth", "Kansas City", "Savannah",
-        "Charleston", "Baltimore", "San Diego"]},
+        "Charleston", "Baltimore", "San Diego", "Milwaukee", "Tulsa"]},
     **{c: ("Canada", "North America") for c in ["Vancouver", "Victoria", "Montreal", "Toronto", "Quebec City"]},
     "Mexico City": ("Mexico", "North America"), "Guadalajara": ("Mexico", "North America"),
     "Havana": ("Cuba", "North America"),
@@ -64,14 +64,14 @@ PLACES = {
     "Amsterdam": ("Netherlands", "Europe"), "Rotterdam": ("Netherlands", "Europe"),
     **{c: ("Italy", "Europe") for c in ["Milan", "Rome", "Naples", "Florence", "Venice"]},
     "Copenhagen": ("Denmark", "Europe"),
-    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville", "Bilbao", "Valencia"]},
+    **{c: ("Spain", "Europe") for c in ["Barcelona", "Madrid", "Seville", "Bilbao", "Valencia", "Granada"]},
     "Cork": ("Ireland", "Europe"), "Dublin": ("Ireland", "Europe"),
-    "Paris": ("France", "Europe"), "Nice": ("France", "Europe"),
+    "Paris": ("France", "Europe"), "Nice": ("France", "Europe"), "Marseille": ("France", "Europe"),
     "Istanbul": ("Türkiye", "Europe"), "Vienna": ("Austria", "Europe"), "Salzburg": ("Austria", "Europe"),
-    "Lisbon": ("Portugal", "Europe"), "Prague": ("Czech Republic", "Europe"), "Athens": ("Greece", "Europe"),
+    "Lisbon": ("Portugal", "Europe"), "Porto": ("Portugal", "Europe"), "Prague": ("Czech Republic", "Europe"), "Athens": ("Greece", "Europe"),
     "Budapest": ("Hungary", "Europe"), "Zurich": ("Switzerland", "Europe"), "Stockholm": ("Sweden", "Europe"),
-    "Oslo": ("Norway", "Europe"), "Helsinki": ("Finland", "Europe"), "Brussels": ("Belgium", "Europe"),
-    "Warsaw": ("Poland", "Europe"), "Reykjavik": ("Iceland", "Europe"), "St. Petersburg": ("Russia", "Europe"),
+    "Oslo": ("Norway", "Europe"), "Helsinki": ("Finland", "Europe"), "Brussels": ("Belgium", "Europe"), "Antwerp": ("Belgium", "Europe"),
+    "Warsaw": ("Poland", "Europe"), "Kraków": ("Poland", "Europe"), "Riga": ("Latvia", "Europe"), "Reykjavik": ("Iceland", "Europe"), "St. Petersburg": ("Russia", "Europe"),
     "Tbilisi": ("Georgia", "Europe"),
     # Asia
     "Dubai": ("United Arab Emirates", "Asia"), "Abu Dhabi": ("United Arab Emirates", "Asia"),
@@ -83,9 +83,9 @@ PLACES = {
     "Dhaka": ("Bangladesh", "Asia"), "Riyadh": ("Saudi Arabia", "Asia"),
     **{c: ("Indonesia", "Asia") for c in ["Bali", "Batam", "Central Jakarta", "Surabaya", "Tangerang"]},
     "Pohang": ("South Korea", "Asia"), "Seoul": ("South Korea", "Asia"),
-    **{c: ("Japan", "Asia") for c in ["Kyoto", "Tokyo", "Osaka", "Fukuoka"]},
+    **{c: ("Japan", "Asia") for c in ["Kyoto", "Tokyo", "Osaka", "Fukuoka", "Hiroshima"]},
     "Taipei": ("Taiwan", "Asia"), "Kuala Lumpur": ("Malaysia", "Asia"),
-    "Ho Chi Minh City": ("Vietnam", "Asia"), "Doha": ("Qatar", "Asia"), "Amman": ("Jordan", "Asia"),
+    "Ho Chi Minh City": ("Vietnam", "Asia"), "Hanoi": ("Vietnam", "Asia"), "Doha": ("Qatar", "Asia"), "Amman": ("Jordan", "Asia"),
     "Muscat": ("Oman", "Asia"), "Manila": ("Philippines", "Asia"), "Sana'a": ("Yemen", "Asia"),
     "Kathmandu": ("Nepal", "Asia"), "Colombo": ("Sri Lanka", "Asia"),
     # Africa
@@ -242,7 +242,7 @@ FOOT = """
                 <a href="../privacy.html">Privacy</a>
                 <a href="{tip_jar}" rel="noopener">Tip jar</a>
             </nav>
-            <p>Landmark details come from the Stamped! app. Photos are openly licensed, mostly from Wikimedia Commons; each is credited with its author, license and source. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>Landmark details come from the Stamped! app. Photos are openly licensed, mostly from Wikimedia Commons; each is credited with its author, license and source. Apple, the Apple logo, iPhone, iPad, Mac and Apple Vision Pro are trademarks of Apple Inc. App Store and Mac App Store are service marks of Apple Inc.</p>
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
@@ -259,6 +259,22 @@ FOOT = FOOT.replace("{tip_jar}", TIP_JAR)
 
 def jsonld(items):
     return "\n".join("    " + line for line in json.dumps(items, ensure_ascii=False, indent=4).splitlines())
+
+
+def local_photos(photos, prefix=""):
+    """`photos` with each image pointed at its small local WebP copy (localize_photos.py writes them
+    to stamped-cities/photos/), so pages don't hotlink Wikimedia. The credit fields stay exactly as
+    they are; `remote` keeps the original address. A photo with no local copy keeps its old one."""
+    manifest_file = OUT / "photos" / "manifest.json"
+    manifest = json.loads(manifest_file.read_text(encoding="utf-8")) if manifest_file.exists() else {}
+    result = {}
+    for landmark_id, photo in photos.items():
+        copy = manifest.get(photo["src"])
+        if copy:
+            photo = {**photo, "src": f'{prefix}photos/{copy["file"]}', "width": copy["width"],
+                     "height": copy["height"], "remote": photo["src"]}
+        result[landmark_id] = photo
+    return result
 
 
 def photo_figure(photo, name, eager=False):
@@ -547,7 +563,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
                 <p class="tour-text">Press play on the guided tour and Stamped! flies you over {e(city)} in photoreal 3D, past {e(stops)}, with a card and a Look Around preview at every stop.</p>
             </div>
             <div class="phone">
-                <video src="../assets/videos/stamped/{name}.mp4" poster="../assets/videos/stamped/{name}-poster.jpg" width="492" height="{height}"
+                <video src="../assets/videos/stamped/{name}.mp4" poster="../assets/videos/stamped/{name}-poster.webp" width="492" height="{height}"
                        controls muted playsinline preload="none" aria-label="Stamped! guided tour of {e(city)} on iPhone"></video>
             </div>
         </div>
@@ -619,7 +635,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
                 + '    <script src="suggest.js" defer></script>\n',
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} in Stamped!" if n > 1 else "Stamp it in Stamped!",
-        cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone and iPad."))
+        cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -719,7 +735,7 @@ def continent_page(continent, cities, registry, details, photos):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Fly through {continent} in 3D.",
-                           cta_text=f"All {len(cities)} cities, {len(landmarks):,} landmarks and a passport stamp for every one you visit. Free on iPhone and iPad."))
+                           cta_text=f"All {len(cities)} cities, {len(landmarks):,} landmarks and a passport stamp for every one you visit. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -892,7 +908,7 @@ def architect_page(name, intro, works, photos, featured=()):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Collect every {name} building.",
-                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -937,7 +953,7 @@ def architects_index_page(pages):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Meet the architects.",
-                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -1015,7 +1031,7 @@ def index_page(by_continent, counts):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Your passport is waiting.",
-                           cta_text=f"Fly through all {cities} cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone and iPad."))
+                           cta_text=f"Fly through all {cities} cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -1028,10 +1044,11 @@ def main():
     details = json.loads((resources / "CityDetails.json").read_text(encoding="utf-8"))
     photos_file = OUT / "photos.json"   # written by fetch_photos.py
     photos = json.loads(photos_file.read_text(encoding="utf-8")) if photos_file.exists() else {}
+    photos = local_photos(photos)
 
     cities = [c for c in registry if c in PLACES]
     skipped = [c for c in registry if c not in PLACES
-               and not re.search(r"Universit|College|Institute|Leuven|Sorbonne|Virginia Tech", c)]
+               and not re.search(r"Universit|College|Institute|Academy|Leuven|Sorbonne|Virginia Tech", c)]
     if skipped:
         raise SystemExit(f"Add these cities to PLACES: {skipped}")
 
@@ -1049,7 +1066,8 @@ def main():
 
     # Architect pages show campus buildings too, with the school pages' photos
     campus_photos_file = COLLEGES / "photos.json"
-    all_photos = {**(json.loads(campus_photos_file.read_text(encoding="utf-8")) if campus_photos_file.exists() else {}), **photos}
+    campus_photos = json.loads(campus_photos_file.read_text(encoding="utf-8")) if campus_photos_file.exists() else {}
+    all_photos = {**local_photos(campus_photos), **photos}
     for name, (intro, works) in links.pages.items():
         page = architect_page(name, intro, works, all_photos, featured=list(ARCHITECTS))
         (OUT / f"{architect_slug(name)}.html").write_text(versioned(page), encoding="utf-8")

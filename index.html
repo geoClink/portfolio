@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="assets/css/main.css?v=2026-10-26b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/home.css?v=8" />
+    <link rel="stylesheet" href="assets/css/home.css?v=9" />
 <script src="assets/js/consent.js?v=1" defer></script>
     <meta name='impact-site-verification' value='50bace8a-3bde-46aa-9461-4bbeba216ce6'>
 </head>
@@ -99,17 +99,23 @@
             </div>
             <div class="hero-butter-col">
                 <div class="hero-butter-wrap">
-                    <img src="assets/images/squishy-butter/squishylogo.svg" alt="" aria-hidden="true" class="hero-butter-logo-fallback" />
-                    <iframe
-                        id="hero-butter-iframe"
-                        src="https://squishybutter.app/?embed=true&sound=clicker"
-                        class="hero-butter-iframe"
-                        title="Squishy Butter - squeeze me"
-                        loading="lazy"
-                        scrolling="no"
-                        frameborder="0"
-                        allow="autoplay"
-                    ></iframe>
+                    <img src="assets/images/squishy-butter/squish-hero-poster.jpg" alt="" aria-hidden="true" class="hero-butter-poster" width="1280" height="644" decoding="async" />
+                    <button type="button" class="hero-butter-play" id="hero-butter-play" aria-label="Play Squishy Butter (loads the game here)">
+                        <span class="hero-butter-play-icon" aria-hidden="true"></span>Play Squishy Butter
+                    </button>
+                    <!-- Click-to-load: the game (and its scripts) only loads when asked for -->
+                    <template id="hero-butter-template">
+                        <iframe
+                            id="hero-butter-iframe"
+                            src="https://squishybutter.app/?embed=true&sound=clicker"
+                            class="hero-butter-iframe"
+                            title="Squishy Butter - squeeze me"
+                            loading="lazy"
+                            scrolling="no"
+                            frameborder="0"
+                            allow="autoplay"
+                        ></iframe>
+                    </template>
                 </div>
                 <a href="squishy-butter.html" class="hero-butter-link">Squishy Butter ↗</a>
                 <span id="sb-live-stats" class="hero-butter-stats"></span>
@@ -282,7 +288,7 @@
                         <span class="screenshot-card-name">Stamped! A City Passport</span>
                         <span class="screenshot-card-tag real">Live</span>
                     </div>
-                    <p class="screenshot-card-desc">Passport stamps at 2,100+ landmarks in 156 cities, with photoreal 3D flyovers and iCloud sync.</p>
+                    <p class="screenshot-card-desc">Passport stamps at 2,100+ landmarks in 166 cities, with photoreal 3D flyovers and iCloud sync.</p>
                 </a>
             </div>
         </div>
@@ -500,29 +506,43 @@
     </script>
 
     <script>
-        // Hero iframe - fade in on load, fall back to logo after 8s
+        // Hero game - click-to-load facade. The iframe is only created when the
+        // visitor presses Play, then fades in over the poster once it has loaded.
         (function () {
-            const iframe = document.getElementById('hero-butter-iframe');
-            const fallback = document.querySelector('.hero-butter-logo-fallback');
-            if (!iframe || !fallback) return;
-            let revealed = false;
+            const wrap = document.querySelector('.hero-butter-wrap');
+            const btn = document.getElementById('hero-butter-play');
+            const tpl = document.getElementById('hero-butter-template');
+            if (!wrap || !btn || !tpl) return;
 
-            function reveal() {
-                if (revealed) return;
-                revealed = true;
-                iframe.style.opacity = '1';
-                fallback.style.opacity = '0';
-            }
+            btn.addEventListener('click', function () {
+                if (wrap.classList.contains('is-loading') || wrap.classList.contains('is-playing')) return;
+                const iframe = tpl.content.firstElementChild.cloneNode(true);
+                wrap.classList.add('is-loading');
+                btn.setAttribute('aria-busy', 'true');
+                btn.disabled = true;
+                let revealed = false;
 
-            iframe.addEventListener('load', reveal);
+                iframe.addEventListener('load', function () {
+                    if (revealed) return;
+                    revealed = true;
+                    wrap.classList.remove('is-loading');
+                    wrap.classList.add('is-playing');
+                    btn.hidden = true;
+                });
 
-            // If iframe hasn't loaded in 8s, keep showing the logo
-            setTimeout(function () {
-                if (!revealed) {
-                    iframe.style.display = 'none';
-                    fallback.style.opacity = '0.9';
-                }
-            }, 8000);
+                wrap.appendChild(iframe);
+                iframe.focus({ preventScroll: true });
+
+                // If the game hasn't loaded in 8s, put the poster and button back
+                setTimeout(function () {
+                    if (revealed) return;
+                    iframe.remove();
+                    wrap.classList.remove('is-loading');
+                    btn.removeAttribute('aria-busy');
+                    btn.disabled = false;
+                    btn.focus();
+                }, 8000);
+            });
         })();
     </script>
 
