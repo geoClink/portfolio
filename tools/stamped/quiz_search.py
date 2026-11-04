@@ -18,7 +18,7 @@ from pathlib import Path
 
 CITIES = Path(__file__).resolve().parents[2] / "stamped-cities"
 # The same App Store link as APP_STORE in build_city_pages.py
-APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336"
+APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&ct=website-guides&mt=8"
 
 
 def asset(name: str, prefix: str) -> str:

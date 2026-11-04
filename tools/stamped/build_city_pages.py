@@ -33,7 +33,9 @@ COLLEGES = ROOT / "stamped-colleges"
 LANDING = ROOT / "stamped-app.html"
 SITEMAP = ROOT / "sitemap.xml"
 SITE = "https://georgeclinkscalesdev.com"
-APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336"
+# App Store link with an App Store Connect campaign (pt = our provider token, ct = campaign name),
+# so App Analytics → Acquisition → Campaigns counts downloads that came from these pages.
+APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&ct=website-guides&mt=8"
 
 # City -> (country, continent). Continents match the groups on stamped-app.html.
 PLACES = {
@@ -307,16 +309,45 @@ def suggest_section(place, url, heading, intro, kinds):
 EXPEDIA_CAMREF = "1110lStp6"
 
 
+def stay_destination(city, country):
+    """The search-box text for hotels in a Stamped city, e.g. "Chicago, United States"."""
+    name = "Minneapolis" if city == "Minnesota" else city   # Stamped calls Minneapolis "Minnesota"
+    return name if name in country else f"{name}, {country}"
+
+
 def hotel_link(city, country, pins):
     """A tracked Expedia hotel search for the city, centred on its landmarks like the app's."""
-    name = "Minneapolis" if city == "Minnesota" else city   # Stamped calls Minneapolis "Minnesota"
-    query = [("destination", name if name in country else f"{name}, {country}")]
+    return expedia_link(stay_destination(city, country), pins)
+
+
+def expedia_link(destination, pins):
+    """A tracked Expedia hotel search for a place (a city or a campus name)."""
+    query = [("destination", destination)]
     if pins:
         lat = sorted(l["latitude"] for l in pins)[len(pins) // 2]
         lng = sorted(l["longitude"] for l in pins)[len(pins) // 2]
         query.append(("latLong", f"{lat:.5f},{lng:.5f}"))
     search = "https://www.expedia.com/Hotel-Search?" + "&".join(f"{k}={quote(v, safe='')}" for k, v in query)
     return f"https://prf.hn/click/camref:{EXPEDIA_CAMREF}/pubref:website/destination:{quote(search, safe='')}"
+
+
+# Booking.com through CJ: our publisher ID and the Booking.com North America ad that allows deep
+# links ("Accommodation Banners - V1"), the same as the app's Compare on Booking.com button.
+# sid labels these clicks "website" in CJ's reports. Checked 2 Nov 2026: lands on the same search
+# with Booking's CJ tracking (aid, utm_source=affnetcj).
+BOOKING_CJ_PID = "101916315"
+BOOKING_CJ_AD_ID = "17370148"
+
+
+def booking_link(destination, pins):
+    """A tracked Booking.com hotel search for a place, centred on its landmarks."""
+    query = [("ss", destination)]
+    if pins:
+        lat = sorted(l["latitude"] for l in pins)[len(pins) // 2]
+        lng = sorted(l["longitude"] for l in pins)[len(pins) // 2]
+        query += [("latitude", f"{lat:.5f}"), ("longitude", f"{lng:.5f}")]
+    search = "https://www.booking.com/searchresults.html?" + "&".join(f"{k}={quote(v, safe='')}" for k, v in query)
+    return f"https://www.tkqlhce.com/click-{BOOKING_CJ_PID}-{BOOKING_CJ_AD_ID}?sid=website&url={quote(search, safe='')}"
 
 
 # GetYourGuide partner ID. Search links (/s/?q=) with it are credited to Stamped!;
@@ -338,8 +369,11 @@ VRBO_CAMREF = "1100l6yuA7"
 
 def rentals_link(city, country):
     """A tracked Vrbo search for vacation rentals in the city."""
-    name = "Minneapolis" if city == "Minnesota" else city
-    destination = name if name in country else f"{name}, {country}"
+    return vrbo_link(stay_destination(city, country))
+
+
+def vrbo_link(destination):
+    """A tracked Vrbo search for vacation rentals at a place (a city or a campus name)."""
     search = f"https://www.vrbo.com/search?destination={quote(destination, safe='')}"
     return f"https://prf.hn/click/camref:{VRBO_CAMREF}/pubref:website/destination:{quote(search, safe='')}"
 
@@ -476,6 +510,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
     hotels = hotel_link(city, country, pins)
     facts.append(("Where to stay",
                   f'<a class="hotel-link" href="{e(hotels)}" rel="sponsored noopener" target="_blank">Find hotels in {e(city)} on Expedia</a>'
+                  f' <a class="hotel-link" href="{e(booking_link(stay_destination(city, country), pins))}" rel="sponsored noopener" target="_blank">Compare on Booking.com</a>'
                   f' <a class="hotel-link" href="{e(rentals_link(city, country))}" rel="sponsored noopener" target="_blank">Vacation rentals on Vrbo</a>',
                   "Stamped! may earn a commission when you book through these links."))
     facts.append(("Tours and tickets",
