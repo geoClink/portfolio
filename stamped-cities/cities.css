@@ -302,6 +302,14 @@ a { color: inherit; }
 /* A small tip line under the download button (Stripe Payment Link) */
 .cta .cta-tip { margin: 22px auto 0; font-size: 15px; opacity: 0.85; }
 .cta .cta-tip a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* Email sign-up (Buttondown): an email field and button on the dark closing section */
+.cta .signup { max-width: 26rem; margin: 30px auto 0; text-align: center; }
+.cta .signup label { display: block; margin-bottom: 10px; font-size: 15px; opacity: 0.85; }
+.cta .signup-row { display: flex; gap: 8px; }
+.cta .signup input[type="email"] { flex: 1; min-width: 0; padding: 11px 14px; border: 0; border-radius: 999px; font: inherit; font-size: 15px; }
+.cta .signup button { padding: 11px 18px; border: 0; border-radius: 999px; background: #F2743F; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.cta .signup button:focus-visible, .cta .signup input:focus-visible { outline: 2px solid #F2743F; outline-offset: 2px; }
+.cta .signup-note { margin: 8px 0 0; font-size: 13px; opacity: 0.6; }
 .app-store-button {
     display: inline-flex;
     align-items: center;

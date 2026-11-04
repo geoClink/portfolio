@@ -1185,6 +1185,14 @@
         /* A small tip line under the download buttons (Stripe Payment Link) */
         .cta .cta-tip { margin: 26px 0 0; font-size: 15px; opacity: 0.85; }
         .cta .cta-tip a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+        /* Email sign-up (Buttondown): an email field and button on the dark closing section */
+        .cta .signup { max-width: 26rem; margin: 30px auto 0; text-align: center; }
+        .cta .signup label { display: block; margin-bottom: 10px; font-size: 15px; opacity: 0.85; }
+        .cta .signup-row { display: flex; gap: 8px; }
+        .cta .signup input[type="email"] { flex: 1; min-width: 0; padding: 11px 14px; border: 0; border-radius: 999px; font: inherit; font-size: 15px; }
+        .cta .signup button { padding: 11px 18px; border: 0; border-radius: 999px; background: #F2743F; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+        .cta .signup button:focus-visible, .cta .signup input:focus-visible { outline: 2px solid #F2743F; outline-offset: 2px; }
+        .cta .signup-note { margin: 8px 0 0; font-size: 13px; opacity: 0.6; }
         .cta .stamp { width: 170px; height: 170px; }
         .cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
         .cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }
@@ -1956,6 +1964,16 @@
                         <span><strong>¿Estás en el ordenador?</strong>Escanéalo con la cámara de tu iPhone.</span>
                     </div>
                 </div>
+                <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/stamped" method="post" target="_blank">
+                    <label for="signup-email">Recibe un correo cuando lleguen nuevas ciudades y campus.</label>
+                    <div class="signup-row">
+                        <input id="signup-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+                        <input type="hidden" name="embed" value="1" />
+                        <input type="hidden" name="tag" value="website" />
+                        <button type="submit">Avísame</button>
+                    </div>
+                    <p class="signup-note">Unos pocos correos al año. Date de baja cuando quieras.</p>
+                </form>
                 <p class="cta-tip">¿Te gusta Stamped!? <a href="https://buy.stripe.com/aFabIVa0y4D4dQ4f7248000" rel="noopener">Deja una propina</a> para que sigan llegando nuevas ciudades.</p>
             </div>
         </section>
