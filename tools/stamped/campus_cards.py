@@ -14,7 +14,7 @@ import json
 import re
 from pathlib import Path
 
-from build_city_pages import e
+from build_city_pages import OUT as CITIES, e
 
 # The app's Student Life headings (CampusStudentLife.swift), in the app's order
 LIFE_HEADINGS = [("housing", "Where Students Live"), ("union", "Student Union"), ("study", "Study Spots"),
@@ -29,6 +29,7 @@ class CampusData:
         self.history = _load(out / "history.json")
         self.student_life = _load(resources / "CampusStudentLife.json")
         self.athletics = _load(resources / "CampusAthletics.json").get("campuses", {})
+        self.local_photos = _load(CITIES / "photos" / "manifest.json")   # localize_photos.py
         self.feeds = _event_feeds(app / "Stamped! A City Passport" / "Models" / "CampusEventFeeds.swift")
 
 
@@ -99,6 +100,16 @@ def student_life_card(name: str, data: CampusData) -> str:
     return _section("student-life", "Student life", "".join(groups))
 
 
+def venue_img(venue: dict, data: CampusData) -> str:
+    """A stadium photo: its small local WebP copy with its real size when there is one, else the original."""
+    src = venue["photo"]["imageURL"]
+    local = data.local_photos.get(src)
+    if not local:
+        return f'<img src="{e(src)}" alt="{e(venue["name"])}" loading="lazy" decoding="async" />'
+    return (f'<img src="../stamped-cities/photos/{e(local["file"])}" width="{local["width"]}" height="{local["height"]}" '
+            f'alt="{e(venue["name"])}" loading="lazy" decoding="async" />')
+
+
 def game_day_card(name: str, data: CampusData) -> str:
     athletics = data.athletics.get(name)
     if not athletics:
@@ -108,7 +119,7 @@ def game_day_card(name: str, data: CampusData) -> str:
     if photos:
         figures = "".join(f"""
                 <figure>
-                    <img src="{e(v['photo']['imageURL'])}" alt="{e(v['name'])}" loading="lazy" />
+                    {venue_img(v, data)}
                     <figcaption><strong>{e(v['name'])}</strong>
                         <a href="{e(v['photo']['filePageURL'])}" rel="noopener">Photo: {e(v['photo']['author'])}, {e(v['photo']['license'])}</a></figcaption>
                 </figure>""" for v in photos)

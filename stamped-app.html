@@ -46,1231 +46,15 @@
     }
     </script>
 
-    <link rel="preload" href="assets/images/stamped/app/city-3d.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="assets/images/stamped/app/city-3d.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
 
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <style>
-        /* ===== Tokens (colors and fonts from the app's style guide) ===== */
-        :root {
-            --color-paper: #F5EFE4;
-            --color-paper-deep: #EDE4D3;   /* slightly darker paper for alternating sections */
-            --color-card: #FFFDF8;
-            --color-ink: #1F1B16;
-            --color-muted: #6B6358;
-            --color-line: #E2D8C7;
-            --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
-            --color-accent-ink: #A8441A;   /* darker orange for small text on paper (4.7:1 on both paper tones) */
-            --color-accent-text: #D4592A;  /* orange for large boxed headline words (3:1 on both paper tones) */
-            --color-button: #C4521F;       /* orange that keeps white button text readable (4.6:1) */
-            --color-gold: #D9A621;         /* Reward Gold: mastery only */
-            --color-stamp-green: #2F5D4A;
-            --color-stamp-navy: #24375E;
-            --color-stamp-red: #B2333B;
-            --color-phone: #1A1A1A;
-            --color-band: #1F1B16;         /* dark full-width band */
-            --color-band-ink: #F5EFE4;
-            --color-right: #2F5D4A;
-            --color-wrong: #B2333B;
-
-            --font-serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
-            --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-            --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-
-            --gutter: 16px;
-            --max-width: 1120px;
-            --shadow-phone: 0 30px 60px -20px rgba(31, 27, 22, 0.35), 0 12px 24px -12px rgba(31, 27, 22, 0.2);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color-paper: #191612;
-                --color-paper-deep: #14110E;
-                --color-card: #231F1A;
-                --color-ink: #F3ECE0;
-                --color-muted: #A79E90;
-                --color-line: #3A332A;
-                --color-accent-ink: #F2743F;
-                --color-accent-text: #F2743F;
-                --color-stamp-green: #7FB59C;
-                --color-stamp-navy: #8EA5D6;
-                --color-stamp-red: #E07A80;
-                --color-phone: #000000;
-                --color-band: #0F0D0A;
-                --color-band-ink: #F3ECE0;
-                --color-right: #7FB59C;
-                --color-wrong: #E07A80;
-                --shadow-phone: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
-            }
-        }
-
-        /* ===== Base ===== */
-        *, *::before, *::after { box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-        body {
-            margin: 0;
-            background: var(--color-paper);
-            color: var(--color-ink);
-            font-family: var(--font-sans);
-            font-size: 17px;
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Tilted stamps hang off the edges; never let them make the page scroll sideways */
-        main { overflow-x: clip; }
-
-        img, video { max-width: 100%; height: auto; display: block; }
-        a { color: inherit; }
-
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-        }
-
-        .skip-link { position: absolute; left: -9999px; }
-        .skip-link:focus {
-            left: var(--gutter);
-            top: var(--gutter);
-            background: var(--color-card);
-            padding: 8px 12px;
-            z-index: 30;
-        }
-
-        :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
-
-        /* ===== Shared pieces ===== */
-
-        /* Small monospaced label, like a customs form */
-        .kicker {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--color-accent-ink);
-            margin: 0 0 12px;
-        }
-
-        /* Boxed orange word, same as the App Store screenshots */
-        .highlight {
-            color: var(--color-accent-text);
-            border: 2px solid var(--color-accent-text);
-            padding: 0 0.15em;
-            white-space: nowrap;
-        }
-        /* On very narrow phones a long boxed phrase may wrap, with the box drawn on each line */
-        @media (max-width: 400px) {
-            .highlight {
-                white-space: normal;
-                -webkit-box-decoration-break: clone;
-                box-decoration-break: clone;
-            }
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: 34px;
-            line-height: 1.12;
-            letter-spacing: -0.01em;
-            margin: 0 0 14px;
-            text-wrap: balance;
-        }
-
-        .section-lead {
-            color: var(--color-muted);
-            font-size: 18px;
-            margin: 0 0 28px;
-            max-width: 38em;
-            text-wrap: pretty;
-        }
-
-        .section { padding: 72px 0; }
-        .section--deep { background: var(--color-paper-deep); }
-        .section-head { margin-bottom: 36px; }
-        .section-head--center { text-align: center; }
-        .section-head--center .section-lead { margin-left: auto; margin-right: auto; }
-
-        /* Apple's official "Download on the App Store" and "Mac App Store" badges, used as is */
-        .app-store-badge {
-            display: inline-block;
-            border-radius: 10px;
-            line-height: 0;
-        }
-        .app-store-badge img { width: auto; height: 54px; }
-        .app-store-badge:hover,
-        .app-store-badge:focus-visible { transform: translateY(-1px); }
-
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 12px 18px;
-        }
-        .cta-note {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-muted);
-        }
-
-        /* Two quick paths for the two main audiences */
-        .hero-paths {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0 0;
-            padding: 0;
-            list-style: none;
-        }
-        .hero-paths a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            min-height: 40px;
-            padding: 8px 14px;
-            border: 1px solid var(--color-line);
-            border-radius: 999px;
-            background: var(--color-card);
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: border-color 0.2s;
-        }
-        .hero-paths a:hover { border-color: var(--color-accent); }
-        .hero-paths i { color: var(--color-accent-ink); font-size: 14px; }
-        @media (max-width: 400px) {
-            .hero-paths a { gap: 6px; padding: 8px 11px; font-size: 14px; }
-        }
-
-        /* QR code for desktop visitors: scan it with the iPhone camera to open the App Store */
-        .qr-card {
-            display: none;
-            align-items: center;
-            gap: 12px;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 14px;
-            padding: 8px 14px 8px 8px;
-            text-align: left;
-        }
-        .qr-card img {
-            width: 64px;
-            height: 64px;
-            padding: 5px;
-            background: #FFFFFF;   /* QR codes need a light background, even in dark mode */
-            border-radius: 8px;
-            image-rendering: pixelated;
-        }
-        .qr-card span {
-            font-size: 13px;
-            line-height: 1.3;
-            color: var(--color-muted);
-        }
-        .qr-card strong { display: block; color: var(--color-ink); font-size: 14px; }
-        /* Only on big screens with a mouse, where you can't install an iPhone app directly */
-        @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-            .qr-card { display: flex; }
-            .cta-row .cta-note { display: none; }
-        }
-        .cta .qr-card { background: rgba(245, 239, 228, 0.06); border-color: rgba(245, 239, 228, 0.18); }
-        .cta .qr-card strong { color: var(--color-band-ink); }
-        .cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
-
-        /* A phone drawn with CSS around a plain screenshot: a brushed metal rim, a thin black bezel and side buttons */
-        .phone {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            margin: 0 auto;
-            /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
-               so small phones on a narrow screen keep the same shape instead of turning blobby */
-            padding: 2.5%;
-            border: 3px solid transparent;
-            border-radius: 18% / 8.5%;
-            background:
-                linear-gradient(#050505, #050505) padding-box,
-                linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
-            box-shadow: var(--shadow-phone), 0 0 0 1px rgba(0, 0, 0, 0.35);
-        }
-        /* Action and volume buttons on the left, side button on the right */
-        .phone::before,
-        .phone::after {
-            content: "";
-            position: absolute;
-            width: 3px;
-            border-radius: 2px;
-            background: linear-gradient(90deg, #2a2a2d, #6e6e73);
-        }
-        /* One strip painted as three buttons: action, volume up, volume down */
-        .phone::before {
-            left: -6px;
-            top: 17%;
-            height: 25%;
-            background: linear-gradient(180deg,
-                #55555a 0 16%, transparent 16% 30%,
-                #55555a 30% 62%, transparent 62% 70%,
-                #55555a 70% 100%);
-        }
-        .phone::after {
-            right: -6px;
-            top: 25%;
-            height: 11%;
-            background: linear-gradient(270deg, #2a2a2d, #6e6e73);
-        }
-        .phone img,
-        .phone video {
-            display: block;
-            width: 100%;
-            aspect-ratio: 600 / 1304;
-            object-fit: cover;
-            border-radius: 15.4% / 7.1%;
-        }
-        .phone--hero { max-width: 300px; }
-
-        /* The hero screen gets a Dynamic Island and status bar drawn over the screenshot */
-        .phone-screen {
-            position: relative;
-            container-type: inline-size;
-            border-radius: 15.4% / 7.1%;
-            overflow: hidden;
-        }
-        .phone-island {
-            position: absolute;
-            top: 2.8cqw;
-            left: 50%;
-            width: 31cqw;
-            height: 9.2cqw;
-            transform: translateX(-50%);
-            border-radius: 99px;
-            background: #000;
-        }
-        .phone-status {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 12.6cqw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8cqw 0 11cqw;
-            color: #000;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
-            font-size: 4.1cqw;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        .phone-status svg { display: block; height: 3cqw; width: auto; fill: currentColor; }
-        .phone-status-icons { display: flex; align-items: center; gap: 1.4cqw; }
-        .phone-status--light { color: #fff; }
-        /* Stamps beside a phone sit behind it and peek out, so none ever covers the screen */
-        .phone { z-index: 1; }
-        .phone ~ .stamp { z-index: 0; }
-
-        /* Passport stamp: an SVG that uses the shared frame and ring frame defined at the top of <body> */
-        .stamp {
-            position: absolute;
-            width: 118px;
-            height: 118px;
-            transform: rotate(var(--tilt, -12deg));
-            opacity: 0.92;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .stamp text {
-            fill: currentColor;
-            font-family: var(--font-mono);
-            font-weight: 700;
-            text-anchor: middle;
-            letter-spacing: 0.08em;
-        }
-        .stamp .stamp-arc { font-size: 9px; letter-spacing: 0.16em; }
-        .stamp .stamp-big { font-size: 15px; letter-spacing: 0.04em; }
-        .stamp .stamp-small { font-size: 8px; }
-        .stamp--green { color: var(--color-stamp-green); }
-        .stamp--navy { color: var(--color-stamp-navy); }
-        .stamp--red { color: var(--color-stamp-red); }
-        .stamp--orange { color: var(--color-accent); }
-        .stamp--gold { color: var(--color-gold); }
-        .stamp--band { color: var(--color-band-ink); opacity: 0.35; }
-
-        /* Stamps thud onto the page the first time they scroll into view */
-        .motion .stamp {
-            opacity: 0;
-            transform: rotate(var(--tilt, -12deg)) scale(1.6);
-            transition:
-                opacity 0.25s ease var(--delay, 0s),
-                transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.25) var(--delay, 0s);
-        }
-        .motion .stamp.is-in { opacity: 0.92; transform: rotate(var(--tilt, -12deg)) scale(1); }
-        .motion .stamp--band.is-in { opacity: 0.35; }
-
-        /* Sections fade up as they come into view */
-        .motion .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .motion .reveal.is-in { opacity: 1; transform: none; }
-
-        /* ===== Header ===== */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: color-mix(in srgb, var(--color-paper) 82%, transparent);
-            -webkit-backdrop-filter: saturate(1.4) blur(14px);
-            backdrop-filter: saturate(1.4) blur(14px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-        .site-header.is-scrolled { border-bottom-color: var(--color-line); }
-        .site-header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-family: var(--font-serif);
-            font-size: 20px;
-            font-weight: 700;
-        }
-        .brand img { width: 34px; height: 34px; border-radius: 8px; }
-        .header-nav { display: flex; align-items: center; gap: 14px; }
-        .header-nav > a:not(.header-button) {
-            display: none;
-            font-size: 15px;
-            color: var(--color-muted);
-            text-decoration: none;
-        }
-        .header-nav > a:not(.header-button):hover { color: var(--color-ink); }
-        .header-button {
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            background: var(--color-button);
-            text-decoration: none;
-            border-radius: 999px;
-            padding: 7px 16px;
-        }
-        .header-button:hover { filter: brightness(1.05); }
-
-        /* Language switcher: a small menu in the header */
-        .lang-switch { position: relative; }
-        .lang-switch summary {
-            list-style: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-family: var(--font-mono);
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            color: var(--color-muted);
-            padding: 6px 4px;
-        }
-        .lang-switch summary::-webkit-details-marker { display: none; }
-        .lang-switch summary:hover { color: var(--color-ink); }
-        .lang-switch ul {
-            position: absolute;
-            right: 0;
-            top: calc(100% + 6px);
-            min-width: 150px;
-            margin: 0;
-            padding: 6px;
-            list-style: none;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 12px;
-            box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
-        }
-        .lang-switch li a {
-            display: block;
-            padding: 8px 10px;
-            border-radius: 8px;
-            font-size: 15px;
-            text-decoration: none;
-        }
-        .lang-switch li a:hover { background: var(--color-paper); }
-        .lang-switch li a[aria-current="page"] { color: var(--color-accent-ink); font-weight: 600; }
-
-        /* Japanese pages: system Japanese fonts, and no breaking words mid-phrase in headings */
-        :lang(ja) {
-            --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-            --font-sans: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
-        }
-        :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
-        :lang(ja) .highlight { white-space: normal; }
-
-        /* ===== Hero ===== */
-        .hero {
-            position: relative;
-            isolation: isolate;
-            padding: 40px 0 64px;
-        }
-        /* Faint map grid that fades out toward the bottom, plus a warm glow behind the phone */
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .hero::before {
-            background-image:
-                linear-gradient(var(--color-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
-            background-size: 48px 48px;
-            background-position: center top;
-            opacity: 0.6;
-            -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
-            mask-image: linear-gradient(to bottom, #000 40%, transparent);
-        }
-        .hero::after {
-            background: radial-gradient(ellipse 55% 50% at 78% 50%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%);
-        }
-        .hero .container { display: grid; gap: 44px; }
-        /* Grid children may shrink below their content, so the long passport line can't widen the page */
-        .hero .container > *,
-        .feature .container > * { min-width: 0; }
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 44px;
-            line-height: 1.06;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-            margin: 0 0 18px;
-            text-wrap: balance;
-        }
-        .hero-lead {
-            font-size: 19px;
-            color: var(--color-muted);
-            margin: 0 0 28px;
-            max-width: 32em;
-            text-wrap: pretty;
-        }
-
-        /* Stats as the data page of a passport */
-        .passport-strip {
-            margin: 36px 0 0;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 16px;
-            overflow: hidden;
-            max-width: 560px;
-        }
-        .passport-strip-head {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 8px 14px;
-            background: var(--color-stamp-navy);
-            color: #F5EFE4;
-            font-family: var(--font-mono);
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-        @media (prefers-color-scheme: dark) {
-            .passport-strip-head { background: #24375E; }
-        }
-        .stats {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-        .stats li {
-            min-width: 0;
-            padding: 12px 14px;
-            border-right: 1px dashed var(--color-line);
-            border-bottom: 1px dashed var(--color-line);
-        }
-        .stats li:nth-child(3n) { border-right: 0; }
-        .stats li:nth-last-child(-n+3) { border-bottom: 0; }
-        .stats strong {
-            display: block;
-            font-family: var(--font-serif);
-            font-size: 24px;
-            line-height: 1.2;
-        }
-        .stats span {
-            display: block;
-            overflow-wrap: break-word;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-muted);
-        }
-        /* Machine-readable line at the bottom of a passport */
-        .passport-mrz {
-            margin: 0;
-            padding: 8px 14px;
-            border-top: 1px solid var(--color-line);
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            color: var(--color-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: clip;
-        }
-
-        .hero-visual {
-            position: relative;
-            padding: 0 28px;
-            overflow-x: clip;   /* keeps the tilted stamps from making small phones scroll sideways */
-            overflow-y: visible;
-        }
-        .hero-visual .stamp { width: 108px; height: 108px; }
-        .hero-visual .stamp--navy { left: 0; top: 40px; --tilt: 12deg; }
-        .hero-visual .stamp--red { right: 0; bottom: 110px; --tilt: -14deg; --delay: 0.25s; }
-        .hero-visual .stamp--green { left: 14px; bottom: 30px; width: 88px; height: 88px; --tilt: -6deg; --delay: 0.5s; }
-        .video-toggle {
-            position: absolute;
-            right: 14px;
-            bottom: 14px;
-            z-index: 3;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 0;
-            background: rgba(0, 0, 0, 0.55);
-            color: #fff;
-            cursor: pointer;
-            display: none;
-            place-items: center;
-            font-size: 13px;
-        }
-        .video-toggle.is-ready { display: grid; }
-
-        /* ===== How it works ===== */
-        .steps {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 14px;
-            counter-reset: step;
-        }
-        .steps li {
-            position: relative;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 18px;
-            padding: 22px 22px 22px 22px;
-        }
-        .steps li::before {
-            counter-increment: step;
-            content: "0" counter(step);
-            position: absolute;
-            top: 18px;
-            right: 20px;
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.12em;
-            color: var(--color-muted);
-        }
-        .step-icon {
-            display: grid;
-            place-items: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-            color: var(--color-accent);
-            font-size: 18px;
-            margin-bottom: 14px;
-        }
-        .steps h3 { font-family: var(--font-serif); font-size: 22px; margin: 0 0 6px; }
-        .steps p { margin: 0; color: var(--color-muted); font-size: 15px; }
-
-        /* ===== Continents band ===== */
-        .continents {
-            position: relative;
-            background: var(--color-band);
-            color: var(--color-band-ink);
-            padding: 72px 0;
-            overflow: hidden;
-        }
-        .continents .kicker { color: var(--color-accent); }
-        .continents .section-lead { color: var(--color-band-ink); opacity: 0.75; }
-        .continents .stamp { width: 160px; height: 160px; right: -56px; top: -44px; --tilt: 16deg; }
-        .continent-grid {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 12px;
-        }
-        .continent-grid li {
-            border: 1px dashed rgba(245, 239, 228, 0.25);
-            border-radius: 14px;
-            padding: 18px 20px;
-            transition: border-color 0.2s, background 0.2s;
-        }
-        .continent-grid li:hover {
-            border-color: var(--color-accent);
-            background: rgba(242, 116, 63, 0.06);
-        }
-        .continent-grid h3 {
-            font-family: var(--font-serif);
-            font-size: 22px;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .continent-grid h3 span {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            color: var(--color-accent);
-        }
-        .continent-grid p {
-            margin: 6px 0 0;
-            font-size: 14px;
-            opacity: 0.75;
-        }
-        .continent-grid li > a { display: block; color: inherit; text-decoration: none; }
-        .continent-grid li:has(a):hover h3 { color: var(--color-accent); }
-        .architects a { color: inherit; text-decoration: none; }
-        .architects li:has(a):hover { border-color: var(--color-accent); }
-        .band-link { margin: 28px 0 0; }
-        .band-link a {
-            color: var(--color-accent);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .band-link a:hover { text-decoration: underline; }
-        .campus-link a { color: var(--color-accent-ink); }
-
-        /* ===== Landmark photo strip ===== */
-        .photo-strip {
-            list-style: none;
-            margin: 0;
-            padding: 0 var(--gutter) 8px;
-            display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: minmax(220px, 260px);
-            gap: 14px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 0 var(--gutter);
-            scrollbar-width: thin;
-        }
-        .photo-strip li { scroll-snap-align: start; min-width: 0; }
-        .strip-photo {
-            position: relative;
-            display: block;
-            border-radius: 18px;
-            overflow: hidden;
-            text-decoration: none;
-            background: var(--color-paper-deep);
-            box-shadow: 0 16px 32px -18px rgba(31, 27, 22, 0.45);
-        }
-        .strip-photo img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .strip-photo:hover img { transform: scale(1.04); }
-        .strip-photo span {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 40px 16px 14px;
-            color: #fff;
-            font-size: 13px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        }
-        .strip-photo strong { display: block; font-family: var(--font-serif); font-size: 19px; line-height: 1.2; }
-        .photo-strip small {
-            display: block;
-            margin-top: 8px;
-            font-size: 11px;
-            line-height: 1.4;
-            color: var(--color-muted);
-        }
-        .photo-strip small a { color: inherit; }
-
-        /* ===== Guided tour clips ===== */
-        .tour-row {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-            max-width: 640px;
-            margin: 0 auto;
-        }
-        .tour-row figure { margin: 0; }
-        .tour-row figure:nth-child(even) { margin-top: 48px; }
-        .tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
-        .tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
-
-        /* ===== Feature rows ===== */
-        .feature .container {
-            display: grid;
-            gap: 40px;
-            align-items: center;
-        }
-        .feature p { color: var(--color-muted); margin: 0 0 16px; }
-        .feature-list { list-style: none; margin: 20px 0 0; padding: 0; }
-        .feature-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 10px;
-        }
-        .feature-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.35em;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            border: 2px solid var(--color-accent);
-            background:
-                radial-gradient(circle, var(--color-accent) 0 3px, transparent 3.5px);
-        }
-        .feature-visual { position: relative; }
-        .feature-visual .stamp { right: 2%; bottom: 8%; }
-
-        /* Two phones side by side: sky view and street view */
-        .phone-pair {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            align-items: start;
-        }
-        .phone-pair figure { margin: 0; }
-        .phone-pair figure:last-child { margin-top: 48px; }
-        .phone-pair figcaption,
-        .phone-row figcaption {
-            text-align: center;
-            margin-top: 14px;
-            font-size: 14px;
-            color: var(--color-muted);
-        }
-        .phone-pair figcaption strong,
-        .phone-row figcaption strong {
-            display: block;
-            color: var(--color-ink);
-            font-size: 16px;
-        }
-
-        /* Architect name tags */
-        .architects {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .architects li {
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-        .architects strong {
-            font-family: var(--font-mono);
-            color: var(--color-accent-ink);
-            margin-left: 6px;
-        }
-
-        /* Timeline from oldest to newest landmark */
-        .timeline {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            margin-top: 28px;
-            padding-top: 16px;
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--color-muted);
-        }
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            border-top: 2px dashed var(--color-accent);
-        }
-        .timeline::after {
-            content: "4,500+ years";
-            position: absolute;
-            left: 50%;
-            top: -9px;
-            transform: translateX(-50%);
-            background: var(--color-paper-deep);
-            padding: 0 8px;
-            color: var(--color-accent-ink);
-            font-size: 11px;
-        }
-        .timeline strong {
-            display: block;
-            font-family: var(--font-serif);
-            font-size: 22px;
-            letter-spacing: 0;
-            text-transform: none;
-            color: var(--color-ink);
-        }
-        .timeline div:last-child { text-align: right; }
-
-        /* ===== Quiz ===== */
-        .quiz-card {
-            position: relative;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 20px;
-            padding: 22px;
-            margin-top: 24px;
-            max-width: 460px;
-        }
-        .quiz-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-muted);
-        }
-        .quiz-dots { display: flex; gap: 6px; }
-        .quiz-dots span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--color-line);
-        }
-        .quiz-dots span.is-right { background: var(--color-right); }
-        .quiz-dots span.is-wrong { background: var(--color-wrong); }
-        .quiz-question {
-            font-family: var(--font-serif);
-            font-size: 21px;
-            line-height: 1.25;
-            margin: 0 0 16px;
-            color: var(--color-ink);
-        }
-        .quiz-options { display: grid; gap: 8px; }
-        .quiz-options button {
-            font: inherit;
-            font-size: 16px;
-            text-align: left;
-            color: var(--color-ink);
-            background: var(--color-paper);
-            border: 1.5px solid var(--color-line);
-            border-radius: 12px;
-            padding: 12px 14px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: border-color 0.15s, background 0.15s;
-        }
-        .quiz-options button:hover:not(:disabled) { border-color: var(--color-accent); }
-        .quiz-options button:disabled { cursor: default; }
-        .quiz-options button.is-right {
-            border-color: var(--color-right);
-            background: color-mix(in srgb, var(--color-right) 12%, var(--color-paper));
-        }
-        .quiz-options button.is-wrong {
-            border-color: var(--color-wrong);
-            background: color-mix(in srgb, var(--color-wrong) 10%, var(--color-paper));
-        }
-        .quiz-options button i { font-size: 14px; }
-        .quiz-foot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            min-height: 40px;
-            margin-top: 14px;
-        }
-        .quiz-feedback { margin: 0; font-size: 14px; color: var(--color-muted); }
-        .quiz-next {
-            font: inherit;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            background: var(--color-button);
-            border: 0;
-            border-radius: 999px;
-            padding: 8px 16px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .quiz-next[hidden] { display: none; }
-        .quiz-card .stamp {
-            right: -14px;
-            top: -28px;
-            width: 104px;
-            height: 104px;
-            --tilt: 14deg;
-        }
-        .quiz-card .stamp[hidden] { display: none; }
-
-        /* ===== Tool grid ("Once you land") ===== */
-        .tool-grid {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-        }
-        .tool-grid li {
-            min-width: 0;
-            hyphens: auto;      /* long German words break cleanly in the narrow two-column grid */
-            overflow-wrap: break-word;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            border-radius: 16px;
-            padding: 18px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .tool-grid li:hover { transform: translateY(-2px); border-color: var(--color-accent); }
-        .tool-grid i {
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-            color: var(--color-accent);
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-        .tool-grid h3 { font-size: 16px; margin: 0 0 4px; }
-        .tool-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
-
-        /* ===== Campus section with three phones ===== */
-        .phone-row {
-            display: grid;
-            gap: 32px;
-            margin-top: 8px;
-        }
-        .phone-row figure { margin: 0; }
-        @media (max-width: 767px) {
-            .phone-row {
-                grid-auto-flow: column;
-                grid-auto-columns: 68%;
-                gap: 16px;
-                margin: 8px calc(var(--gutter) * -1) 0;
-                padding: 0 var(--gutter) 40px;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-padding: 0 var(--gutter);
-                scrollbar-width: thin;
-            }
-            .phone-row figure { scroll-snap-align: start; }
-        }
-        .campus-list { margin: -8px 0 24px; max-width: 40em; }
-        .conferences {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 36px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .conferences li {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border: 1.5px solid var(--color-ink);
-            border-radius: 6px;
-            padding: 5px 10px;
-        }
-
-        /* ===== Collect: a passport page full of stamps ===== */
-        .passport-page {
-            position: relative;
-            min-height: 520px;
-        }
-        .passport-page .phone { position: relative; z-index: 1; }
-        .passport-page .stamp:nth-of-type(1) { left: 0; top: 4%; --tilt: -16deg; }
-        .passport-page .stamp:nth-of-type(2) { right: 0; top: 16%; --tilt: 10deg; --delay: 0.15s; }
-        .passport-page .stamp:nth-of-type(3) { left: 2%; bottom: 18%; --tilt: 8deg; --delay: 0.3s; }
-        .passport-page .stamp:nth-of-type(4) { right: 3%; bottom: 4%; --tilt: -8deg; --delay: 0.45s; }
-        @media (max-width: 767px) {
-            .passport-page { min-height: 0; padding: 24px 0; }
-            .passport-page .stamp { width: 84px; height: 84px; }
-            .passport-page .stamp:nth-of-type(1) { left: -6px; top: -6px; }
-            .passport-page .stamp:nth-of-type(4) { right: -6px; bottom: 0; }
-            .passport-page .stamp:nth-of-type(2),
-            .passport-page .stamp:nth-of-type(3) { display: none; }
-        }
-
-        /* ===== Small extras grid ===== */
-        .more-grid {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 20px;
-        }
-        .more-grid li {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-        }
-        .more-grid i {
-            flex: none;
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: var(--color-card);
-            border: 1px solid var(--color-line);
-            color: var(--color-accent);
-        }
-        .more-grid h3 { font-size: 16px; margin: 0 0 2px; }
-        .more-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
-
-        /* ===== Final call to action ===== */
-        .cta {
-            position: relative;
-            overflow: hidden;
-            padding: 88px 0;
-            text-align: center;
-            background: var(--color-band);
-            color: var(--color-band-ink);
-        }
-        .cta .container { position: relative; z-index: 1; }
-        .cta img.cta-icon {
-            width: 84px;
-            height: 84px;
-            border-radius: 20px;
-            margin: 0 auto 22px;
-            box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
-        }
-        .cta h2 {
-            font-family: var(--font-serif);
-            font-size: 40px;
-            line-height: 1.1;
-            margin: 0 0 12px;
-        }
-        .cta p { opacity: 0.75; margin: 0 0 28px; }
-        .cta .cta-row { justify-content: center; }
-        /* A small tip line under the download buttons (Stripe Payment Link) */
-        .cta .cta-tip { margin: 26px 0 0; font-size: 15px; opacity: 0.85; }
-        .cta .cta-tip a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-        /* Email sign-up (Buttondown): an email field and button on the dark closing section */
-        .cta .signup { max-width: 26rem; margin: 30px auto 0; text-align: center; }
-        .cta .signup label { display: block; margin-bottom: 10px; font-size: 15px; opacity: 0.85; }
-        .cta .signup-row { display: flex; gap: 8px; }
-        .cta .signup input[type="email"] { flex: 1; min-width: 0; padding: 11px 14px; border: 0; border-radius: 999px; font: inherit; font-size: 15px; }
-        .cta .signup button { padding: 11px 18px; border: 0; border-radius: 999px; background: #F2743F; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
-        .cta .signup button:focus-visible, .cta .signup input:focus-visible { outline: 2px solid #F2743F; outline-offset: 2px; }
-        .cta .signup-note { margin: 8px 0 0; font-size: 13px; opacity: 0.6; }
-        .cta .stamp { width: 170px; height: 170px; }
-        .cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
-        .cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }
-
-        /* ===== Footer ===== */
-        .site-footer {
-            padding: 32px 0 40px;
-            font-size: 14px;
-            color: var(--color-muted);
-        }
-        .site-footer nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 20px;
-            margin-bottom: 16px;
-        }
-        .site-footer nav a { color: var(--color-ink); font-weight: 600; }
-        .site-footer p { margin: 0 0 8px; }
-
-        /* ===== Larger screens ===== */
-        @media (min-width: 768px) {
-            .section { padding: 104px 0; }
-            .section-title { font-size: 46px; }
-
-            .header-nav { gap: 22px; }
-            .header-nav > a:not(.header-button) { display: inline; }
-
-            .hero { padding: 64px 0 96px; }
-            .hero-visual .stamp { width: 132px; height: 132px; }
-            .hero-visual .stamp--green { width: 104px; height: 104px; }
-            .hero .container {
-                grid-template-columns: 1.25fr 1fr;
-                align-items: center;
-            }
-            .hero h1 { font-size: 66px; }
-
-            .steps { grid-template-columns: repeat(3, 1fr); }
-
-            .continents { padding: 104px 0; }
-            .continents .stamp { width: 300px; height: 300px; right: 4%; top: 40px; }
-            .continent-grid { grid-template-columns: repeat(3, 1fr); }
-
-            .feature .container { grid-template-columns: 1fr 1fr; gap: 64px; }
-            /* Every other row puts the visual on the left */
-            .feature.flip .feature-visual { order: -1; }
-
-            .phone-pair { gap: 24px; }
-            .photo-strip {
-                grid-auto-columns: minmax(240px, 280px);
-                padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
-                scroll-padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
-            }
-            .tour-row { gap: 40px; }
-
-            .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-            .phone-row { grid-template-columns: repeat(3, 1fr); }
-            .phone-row figure:nth-child(2) { margin-top: 40px; }
-
-            .more-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-
-            .cta { padding: 120px 0; }
-            .cta h2 { font-size: 56px; }
-            .cta .stamp { width: 220px; height: 220px; }
-            .cta .stamp:nth-of-type(1) { left: 6%; top: 50px; }
-            .cta .stamp:nth-of-type(2) { right: 6%; bottom: 40px; }
-        }
-
-        @media (min-width: 1024px) {
-            .hero h1 { font-size: 64px; }
-            .phone--hero { max-width: 320px; }
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            .app-store-badge { transition: transform 0.15s; }
-        }
-    </style>
-    <link rel="stylesheet" href="assets/css/stamped-try.css?v=3" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=ff97002e" />
+    <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
+    <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -1487,7 +271,7 @@
                     <figure>
                         <div class="phone">
                             <div class="phone-screen">
-                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" poster="assets/videos/stamped/stamped-tour-paris-poster.jpg"
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" data-poster="assets/videos/stamped/stamped-tour-paris-poster.webp"
                                        width="492" height="1070" muted loop playsinline preload="none"
                                        aria-label="Guided tour of Paris in the Stamped! app: the camera flies over 3D Paris from the Palais Garnier to the Louvre, Sainte-Chapelle, the Centre Pompidou, the Panthéon and the Eiffel Tower"></video>
                             </div>
@@ -1497,7 +281,7 @@
                     <figure>
                         <div class="phone">
                             <div class="phone-screen">
-                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" poster="assets/videos/stamped/stamped-tour-chicago-poster.jpg"
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-chicago.mp4" data-poster="assets/videos/stamped/stamped-tour-chicago-poster.webp"
                                        width="492" height="1070" muted loop playsinline preload="none"
                                        aria-label="Guided tour of Chicago in the Stamped! app: the camera flies over 3D downtown Chicago past the Carbide and Carbon Building, the Wrigley Building, Tribune Tower and the St. Regis"></video>
                             </div>
@@ -1507,7 +291,7 @@
                     <figure>
                         <div class="phone">
                             <div class="phone-screen">
-                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" poster="assets/videos/stamped/stamped-tour-london-poster.jpg"
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-london.mp4" data-poster="assets/videos/stamped/stamped-tour-london-poster.webp"
                                        width="492" height="1070" muted loop playsinline preload="none"
                                        aria-label="Guided tour of London in the Stamped! app: the camera flies over 3D London from Tate Modern to St Paul's Cathedral, the Barbican, the Gherkin and the Lloyd's Building"></video>
                             </div>
@@ -1517,7 +301,7 @@
                     <figure>
                         <div class="phone">
                             <div class="phone-screen">
-                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" poster="assets/videos/stamped/stamped-tour-rome-poster.jpg"
+                                <video class="tour-video" data-src="assets/videos/stamped/stamped-tour-rome.mp4" data-poster="assets/videos/stamped/stamped-tour-rome-poster.webp"
                                        width="492" height="1070" muted loop playsinline preload="none"
                                        aria-label="Guided tour of Rome in the Stamped! app: the camera flies over 3D Rome from the Pantheon to Palazzo Doria Pamphilj, the Altare della Patria and San Carlo alle Quattro Fontane"></video>
                             </div>
@@ -1591,84 +375,84 @@
             <ul class="photo-strip reveal" aria-label="Landmarks in Stamped!">
                     <li>
                         <a class="strip-photo" href="stamped-cities/paris.html#paris-eiffel-tower">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/960px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1332" alt="Eiffel Tower" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/tour-eiffel-wikimedia-commons-cropped-ea381d.webp" width="480" height="800" alt="Eiffel Tower" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Eiffel Tower</strong>Paris</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons_(cropped).jpg" rel="noopener">Benh LIEU SONG</a>, Public domain</small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/rome.html#rom_colosseum">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/960px-Colosseo_2020.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="560" alt="The Colosseum" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/colosseo-2020-6e12f3.webp" width="640" height="449" alt="The Colosseum" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>The Colosseum</strong>Rome</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg" rel="noopener">FeaturedPics</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/barcelona.html#bcn_sagrada_familia">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/SF_maig_2_cropped.jpg/960px-SF_maig_2_cropped.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1164" alt="Sagrada Família" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/sf-maig-2-cropped-6000c0.webp" width="550" height="800" alt="Sagrada Família" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Sagrada Família</strong>Barcelona</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg" rel="noopener">Canaan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/cairo.html#cai_great_pyramid">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg/960px-Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="450" alt="Great Pyramid of Giza" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/great-pyramid-of-giza-pyramid-of-khufu-2ce6cb.webp" width="640" height="360" alt="Great Pyramid of Giza" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Great Pyramid of Giza</strong>Cairo</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg" rel="noopener">Douwe C. van der Zee</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/sydney.html#syd_opera_house">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sydney_Australia._%2821339175489%29.jpg/960px-Sydney_Australia._%2821339175489%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="491" alt="Sydney Opera House" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/sydney-australia-21339175489-ad7159.webp" width="640" height="393" alt="Sydney Opera House" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Sydney Opera House</strong>Sydney</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Sydney_Australia._(21339175489).jpg" rel="noopener">Bernard Spragg. NZ from Christchurch, New Zealand</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/rio-de-janeiro.html#rio-christ-redeemer">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Christ_the_Redeemer_-_Cristo_Redentor.jpg/960px-Christ_the_Redeemer_-_Cristo_Redentor.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1200" alt="Christ the Redeemer" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/christ-the-redeemer-cristo-redentor-423e5d.webp" width="534" height="800" alt="Christ the Redeemer" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Christ the Redeemer</strong>Rio de Janeiro</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg" rel="noopener">Arne Müseler</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" rel="license noopener">CC BY-SA 3.0 de</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/new-york.html#nyc-01">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail_unscaled" width="800" height="1201" alt="Empire State Building" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/empire-state-building-aerial-view-beb4e8.webp" width="533" height="800" alt="Empire State Building" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Empire State Building</strong>New York</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Empire_State_Building_(aerial_view).jpg" rel="noopener">Sam Valadi</a>, Public domain</small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/kyoto.html#kyo_kinkaku_ji">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1200" alt="Kinkaku-ji" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/golden-pavilion-kinkaku-ji-water-mirror-2024-fc2a24.webp" width="533" height="800" alt="Kinkaku-ji" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Kinkaku-ji</strong>Kyoto</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg" rel="noopener">Nacaru</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener">CC BY-SA 4.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/istanbul.html#ist_hagia_sophia">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Hagia_Sophia_%28228968325%29.jpeg/960px-Hagia_Sophia_%28228968325%29.jpeg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="484" alt="Hagia Sophia" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/hagia-sophia-228968325-5a4f70.webp" width="640" height="387" alt="Hagia Sophia" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Hagia Sophia</strong>Istanbul</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg" rel="noopener">Adli Wahid</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener">CC BY-SA 3.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/kuala-lumpur.html#kl-petronas">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/The_Twins_SE_Asia_2019_%2849171985716%29_%28cropped%29_2.jpg/960px-The_Twins_SE_Asia_2019_%2849171985716%29_%28cropped%29_2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="1424" alt="Petronas Towers" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/the-twins-se-asia-2019-49171985716-cropped-2-a0b4e4.webp" width="449" height="800" alt="Petronas Towers" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Petronas Towers</strong>Kuala Lumpur</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:The_Twins_SE_Asia_2019_(49171985716)_(cropped)_2.jpg" rel="noopener">James Kerwin from Tbilisi</a>, <a href="https://creativecommons.org/licenses/by/2.0" rel="license noopener">CC BY 2.0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/pittsburgh.html#pit-04">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Fallingwater3.jpg/960px-Fallingwater3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="525" alt="Fallingwater" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/fallingwater3-d48398.webp" width="640" height="420" alt="Fallingwater" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Fallingwater</strong>Pittsburgh</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Fallingwater3.jpg" rel="noopener">lachrimae72</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="license noopener">CC0</a></small>
                     </li>
                     <li>
                         <a class="strip-photo" href="stamped-cities/reykjavik.html#is_hallgrimskirkja">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Hallgrimskirkja_mai_2026.jpg/960px-Hallgrimskirkja_mai_2026.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" width="800" height="702" alt="Hallgrímskirkja" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            <img src="stamped-cities/photos/hallgrimskirkja-mai-2026-e7bf06.webp" width="640" height="562" alt="Hallgrímskirkja" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
                             <span><strong>Hallgrímskirkja</strong>Reykjavik</span>
                         </a>
                         <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Hallgrimskirkja_mai_2026.jpg" rel="noopener">Steinninn</a>, <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener">CC BY 4.0</a></small>
@@ -1698,7 +482,7 @@
                         <li><a href="stamped-cities/architect-antoni-gaudi.html">Antoni Gaudí<strong>3</strong></a></li>
                         <li><a href="stamped-cities/architect-adrian-smith.html">Adrian Smith<strong>3</strong></a></li>
                     </ul>
-                    <div class="timeline" aria-label="Landmarks span from 2560 BC to 2026">
+                    <div class="timeline" data-span="4,500+ years" aria-label="Landmarks span from 2560 BC to 2026">
                         <div><strong>2560 BC</strong>Great Pyramid of Giza</div>
                         <div><strong>2026</strong>Waterline, Austin</div>
                     </div>
@@ -2008,9 +792,9 @@
     </footer>
 
     <script>
-        (function () {
-            // Every piece of text the script puts on the page
-            var copy = {
+            // Every piece of text assets/js/stamped-app.js puts on the page.
+            // build_translations.py swaps this block for each language.
+            window.stampedCopy = {
                 pause: 'Pause video',
                 play: 'Play video',
                 question: 'Question {n} of {total}',
@@ -2034,173 +818,8 @@
                       note: 'Jørn Utzon, a Danish architect, won the design contest in 1957.' }
                 ]
             };
-
-            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (!reduceMotion && 'IntersectionObserver' in window) {
-                document.documentElement.classList.add('motion');
-            }
-
-            // Header gets a bottom line once the page scrolls
-            var header = document.querySelector('.site-header');
-            function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
-
-            // Close the language menu on an outside click
-            var langSwitch = document.querySelector('.lang-switch');
-            document.addEventListener('click', function (event) {
-                if (langSwitch.open && !langSwitch.contains(event.target)) langSwitch.open = false;
-            });
-
-            // Fade sections in and thud stamps down as they scroll into view
-            if (document.documentElement.classList.contains('motion')) {
-                var observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-in');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.2 });
-                document.querySelectorAll('.reveal, .stamp:not([hidden])').forEach(function (el) { observer.observe(el); });
-            }
-
-            // Hero video: only load it when motion is OK and the visitor isn't saving data
-            var video = document.querySelector('.hero-video');
-            var toggle = document.querySelector('.video-toggle');
-            var saveData = navigator.connection && navigator.connection.saveData;
-            function startHeroVideo() {
-                video.src = video.dataset.src;
-                video.play().then(function () {
-                    toggle.classList.add('is-ready');
-                }).catch(function () { /* autoplay blocked: the poster stays */ });
-            }
-            if (video && !reduceMotion && !saveData) {
-                if (document.readyState === 'complete') startHeroVideo();
-                else window.addEventListener('load', startHeroVideo);
-                toggle.addEventListener('click', function () {
-                    var icon = toggle.querySelector('i');
-                    if (video.paused) {
-                        video.play();
-                        icon.className = 'fas fa-pause';
-                        toggle.setAttribute('aria-label', copy.pause);
-                    } else {
-                        video.pause();
-                        icon.className = 'fas fa-play';
-                        toggle.setAttribute('aria-label', copy.play);
-                    }
-                });
-            }
-
-            // Tour clips load when they scroll near, play only while visible, and stay as posters for reduced motion
-            var tourVideos = document.querySelectorAll('.tour-video');
-            if (!reduceMotion && !saveData && 'IntersectionObserver' in window) {
-                var tourObserver = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        var clip = entry.target;
-                        if (entry.isIntersecting) {
-                            if (!clip.src) clip.src = clip.dataset.src;
-                            clip.play().catch(function () {});
-                        } else if (!clip.paused) {
-                            clip.pause();
-                        }
-                    });
-                }, { threshold: 0.35 });
-                tourVideos.forEach(function (clip) { tourObserver.observe(clip); });
-            } else {
-                tourVideos.forEach(function (clip) { clip.src = clip.dataset.src; clip.setAttribute('controls', ''); });
-            }
-
-            // Sample quiz
-            var quiz = document.querySelector('[data-quiz]');
-            if (!quiz) return;
-            var questions = copy.questions;
-            var index = 0;
-            var score = 0;
-            var countEl = quiz.querySelector('[data-quiz-count]');
-            var questionEl = quiz.querySelector('[data-quiz-question]');
-            var optionsEl = quiz.querySelector('[data-quiz-options]');
-            var feedbackEl = quiz.querySelector('[data-quiz-feedback]');
-            var nextEl = quiz.querySelector('[data-quiz-next]');
-            var dots = quiz.querySelectorAll('.quiz-dots span');
-            var stampEl = quiz.querySelector('[data-quiz-stamp]');
-
-            function render() {
-                var item = questions[index];
-                countEl.textContent = copy.question.replace('{n}', index + 1).replace('{total}', questions.length);
-                questionEl.textContent = item.q;
-                optionsEl.innerHTML = '';
-                item.options.forEach(function (label, i) {
-                    var button = document.createElement('button');
-                    button.type = 'button';
-                    button.textContent = label;
-                    button.addEventListener('click', function () { choose(i); });
-                    optionsEl.appendChild(button);
-                });
-                nextEl.hidden = true;
-            }
-
-            function choose(i) {
-                var item = questions[index];
-                var buttons = optionsEl.querySelectorAll('button');
-                var right = i === item.answer;
-                if (right) score++;
-                buttons.forEach(function (button, j) {
-                    button.disabled = true;
-                    if (j === item.answer) {
-                        button.classList.add('is-right');
-                        button.insertAdjacentHTML('beforeend', '<i class="fas fa-check" aria-hidden="true"></i>');
-                    } else if (j === i) {
-                        button.classList.add('is-wrong');
-                        button.insertAdjacentHTML('beforeend', '<i class="fas fa-times" aria-hidden="true"></i>');
-                    }
-                });
-                dots[index].classList.add(right ? 'is-right' : 'is-wrong');
-                feedbackEl.textContent = (right ? copy.correct : copy.wrong) + item.note;
-                nextEl.textContent = index < questions.length - 1 ? copy.next : copy.seeStamp;
-                nextEl.hidden = false;
-                nextEl.focus();
-            }
-
-            function finish() {
-                quiz.querySelector('[data-quiz-score]').textContent = score + ' / ' + questions.length;
-                quiz.querySelector('[data-quiz-rank]').textContent = copy.ranks[score];
-                stampEl.hidden = false;
-                requestAnimationFrame(function () {
-                    requestAnimationFrame(function () { stampEl.classList.add('is-in'); });
-                });
-                countEl.textContent = copy.done;
-                questionEl.textContent = score === questions.length ? copy.perfect : copy.yourScore.replace('{score}', score).replace('{total}', questions.length);
-                optionsEl.innerHTML = '';
-                feedbackEl.textContent = copy.more;
-                nextEl.textContent = copy.playAgain;
-                nextEl.hidden = false;
-                index = questions.length;
-            }
-
-            nextEl.addEventListener('click', function () {
-                if (index >= questions.length) {
-                    index = 0;
-                    score = 0;
-                    stampEl.hidden = true;
-                    stampEl.classList.remove('is-in');
-                    dots.forEach(function (dot) { dot.className = ''; });
-                    feedbackEl.textContent = copy.intro;
-                    render();
-                    optionsEl.querySelector('button').focus();
-                } else if (index === questions.length - 1) {
-                    finish();
-                } else {
-                    index++;
-                    render();
-                    optionsEl.querySelector('button').focus();
-                }
-            });
-
-            // Swap the static first-question buttons for live ones
-            render();
-        })();
     </script>
+    <script src="assets/js/stamped-app.js?v=4c949fd0" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
 </body>

@@ -1,0 +1,1219 @@
+/* Stamped! landing page (stamped-app.html and its es/de/ja copies). One shared, cached file
+   instead of the same 44 KB pasted into four pages. */
+/* ===== Tokens (colors and fonts from the app's style guide) ===== */
+:root {
+    --color-paper: #F5EFE4;
+    --color-paper-deep: #EDE4D3;   /* slightly darker paper for alternating sections */
+    --color-card: #FFFDF8;
+    --color-ink: #1F1B16;
+    --color-muted: #6B6358;
+    --color-line: #E2D8C7;
+    --color-accent: #F2743F;       /* Adventure Orange: actions and stamps */
+    --color-accent-ink: #A8441A;   /* darker orange for small text on paper (4.7:1 on both paper tones) */
+    --color-accent-text: #D4592A;  /* orange for large boxed headline words (3:1 on both paper tones) */
+    --color-button: #C4521F;       /* orange that keeps white button text readable (4.6:1) */
+    --color-gold: #D9A621;         /* Reward Gold: mastery only */
+    --color-stamp-green: #2F5D4A;
+    --color-stamp-navy: #24375E;
+    --color-stamp-red: #B2333B;
+    --color-phone: #1A1A1A;
+    --color-band: #1F1B16;         /* dark full-width band */
+    --color-band-ink: #F5EFE4;
+    --color-right: #2F5D4A;
+    --color-wrong: #B2333B;
+
+    --font-serif: "New York", ui-serif, Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+
+    --gutter: 16px;
+    --max-width: 1120px;
+    --shadow-phone: 0 30px 60px -20px rgba(31, 27, 22, 0.35), 0 12px 24px -12px rgba(31, 27, 22, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-paper: #191612;
+        --color-paper-deep: #14110E;
+        --color-card: #231F1A;
+        --color-ink: #F3ECE0;
+        --color-muted: #A79E90;
+        --color-line: #3A332A;
+        --color-accent-ink: #F2743F;
+        --color-accent-text: #F2743F;
+        --color-stamp-green: #7FB59C;
+        --color-stamp-navy: #8EA5D6;
+        --color-stamp-red: #E07A80;
+        --color-phone: #000000;
+        --color-band: #0F0D0A;
+        --color-band-ink: #F3ECE0;
+        --color-right: #7FB59C;
+        --color-wrong: #E07A80;
+        --shadow-phone: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tilted stamps hang off the edges; never let them make the page scroll sideways */
+main { overflow-x: clip; }
+
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus {
+    left: var(--gutter);
+    top: var(--gutter);
+    background: var(--color-card);
+    padding: 8px 12px;
+    z-index: 30;
+}
+
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* ===== Shared pieces ===== */
+
+/* Small monospaced label, like a customs form */
+.kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent-ink);
+    margin: 0 0 12px;
+}
+
+/* Boxed orange word, same as the App Store screenshots */
+.highlight {
+    color: var(--color-accent-text);
+    border: 2px solid var(--color-accent-text);
+    padding: 0 0.15em;
+    white-space: nowrap;
+}
+/* On very narrow phones a long boxed phrase may wrap, with the box drawn on each line */
+@media (max-width: 400px) {
+    .highlight {
+        white-space: normal;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+}
+
+.section-lead {
+    color: var(--color-muted);
+    font-size: 18px;
+    margin: 0 0 28px;
+    max-width: 38em;
+    text-wrap: pretty;
+}
+
+.section { padding: 72px 0; }
+.section--deep { background: var(--color-paper-deep); }
+.section-head { margin-bottom: 36px; }
+.section-head--center { text-align: center; }
+.section-head--center .section-lead { margin-left: auto; margin-right: auto; }
+
+/* Apple's official "Download on the App Store" and "Mac App Store" badges, used as is */
+.app-store-badge {
+    display: inline-block;
+    border-radius: 10px;
+    line-height: 0;
+}
+.app-store-badge img { width: auto; height: 54px; }
+.app-store-badge:hover,
+.app-store-badge:focus-visible { transform: translateY(-1px); }
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+}
+.cta-note {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+
+/* Two quick paths for the two main audiences */
+.hero-paths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.hero-paths a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-card);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+.hero-paths a:hover { border-color: var(--color-accent); }
+.hero-paths i { color: var(--color-accent-ink); font-size: 14px; }
+@media (max-width: 400px) {
+    .hero-paths a { gap: 6px; padding: 8px 11px; font-size: 14px; }
+}
+
+/* QR code for desktop visitors: scan it with the iPhone camera to open the App Store */
+.qr-card {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    padding: 8px 14px 8px 8px;
+    text-align: left;
+}
+.qr-card img {
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    background: #FFFFFF;   /* QR codes need a light background, even in dark mode */
+    border-radius: 8px;
+    image-rendering: pixelated;
+}
+.qr-card span {
+    font-size: 13px;
+    line-height: 1.3;
+    color: var(--color-muted);
+}
+.qr-card strong { display: block; color: var(--color-ink); font-size: 14px; }
+/* Only on big screens with a mouse, where you can't install an iPhone app directly */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+    .qr-card { display: flex; }
+    .cta-row .cta-note { display: none; }
+}
+.cta .qr-card { background: rgba(245, 239, 228, 0.06); border-color: rgba(245, 239, 228, 0.18); }
+.cta .qr-card strong { color: var(--color-band-ink); }
+.cta .qr-card span { color: var(--color-band-ink); opacity: 0.8; }
+
+/* A phone drawn with CSS around a plain screenshot: a brushed metal rim, a thin black bezel and side buttons */
+.phone {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    /* Bezel and corners are a share of the phone's size (7px and 50px on a 280px phone),
+       so small phones on a narrow screen keep the same shape instead of turning blobby */
+    padding: 2.5%;
+    border: 3px solid transparent;
+    border-radius: 18% / 8.5%;
+    background:
+        linear-gradient(#050505, #050505) padding-box,
+        linear-gradient(140deg, #9a9aa0 0%, #3a3a3e 22%, #1c1c1f 50%, #3a3a3e 78%, #8a8a90 100%) border-box;
+    box-shadow: var(--shadow-phone), 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+/* Action and volume buttons on the left, side button on the right */
+.phone::before,
+.phone::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #2a2a2d, #6e6e73);
+}
+/* One strip painted as three buttons: action, volume up, volume down */
+.phone::before {
+    left: -6px;
+    top: 17%;
+    height: 25%;
+    background: linear-gradient(180deg,
+        #55555a 0 16%, transparent 16% 30%,
+        #55555a 30% 62%, transparent 62% 70%,
+        #55555a 70% 100%);
+}
+.phone::after {
+    right: -6px;
+    top: 25%;
+    height: 11%;
+    background: linear-gradient(270deg, #2a2a2d, #6e6e73);
+}
+.phone img,
+.phone video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 600 / 1304;
+    object-fit: cover;
+    border-radius: 15.4% / 7.1%;
+}
+.phone--hero { max-width: 300px; }
+
+/* The hero screen gets a Dynamic Island and status bar drawn over the screenshot */
+.phone-screen {
+    position: relative;
+    container-type: inline-size;
+    border-radius: 15.4% / 7.1%;
+    overflow: hidden;
+}
+.phone-island {
+    position: absolute;
+    top: 2.8cqw;
+    left: 50%;
+    width: 31cqw;
+    height: 9.2cqw;
+    transform: translateX(-50%);
+    border-radius: 99px;
+    background: #000;
+}
+.phone-status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12.6cqw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8cqw 0 11cqw;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-size: 4.1cqw;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+.phone-status svg { display: block; height: 3cqw; width: auto; fill: currentColor; }
+.phone-status-icons { display: flex; align-items: center; gap: 1.4cqw; }
+.phone-status--light { color: #fff; }
+/* Stamps beside a phone sit behind it and peek out, so none ever covers the screen */
+.phone { z-index: 1; }
+.phone ~ .stamp { z-index: 0; }
+
+/* Passport stamp: an SVG that uses the shared frame and ring frame defined at the top of <body> */
+.stamp {
+    position: absolute;
+    width: 118px;
+    height: 118px;
+    transform: rotate(var(--tilt, -12deg));
+    opacity: 0.92;
+    pointer-events: none;
+    z-index: 2;
+}
+.stamp text {
+    fill: currentColor;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-anchor: middle;
+    letter-spacing: 0.08em;
+}
+.stamp .stamp-arc { font-size: 9px; letter-spacing: 0.16em; }
+.stamp .stamp-big { font-size: 15px; letter-spacing: 0.04em; }
+.stamp .stamp-small { font-size: 8px; }
+.stamp--green { color: var(--color-stamp-green); }
+.stamp--navy { color: var(--color-stamp-navy); }
+.stamp--red { color: var(--color-stamp-red); }
+.stamp--orange { color: var(--color-accent); }
+.stamp--gold { color: var(--color-gold); }
+.stamp--band { color: var(--color-band-ink); opacity: 0.35; }
+
+/* Stamps thud onto the page the first time they scroll into view */
+.motion .stamp {
+    opacity: 0;
+    transform: rotate(var(--tilt, -12deg)) scale(1.6);
+    transition:
+        opacity 0.25s ease var(--delay, 0s),
+        transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.25) var(--delay, 0s);
+}
+.motion .stamp.is-in { opacity: 0.92; transform: rotate(var(--tilt, -12deg)) scale(1); }
+.motion .stamp--band.is-in { opacity: 0.35; }
+
+/* Sections fade up as they come into view */
+.motion .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.motion .reveal.is-in { opacity: 1; transform: none; }
+
+/* ===== Header ===== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.site-header.is-scrolled { border-bottom-color: var(--color-line); }
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+}
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+.header-nav { display: flex; align-items: center; gap: 14px; }
+.header-nav > a:not(.header-button) {
+    display: none;
+    font-size: 15px;
+    color: var(--color-muted);
+    text-decoration: none;
+}
+.header-nav > a:not(.header-button):hover { color: var(--color-ink); }
+.header-button {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-button);
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 7px 16px;
+}
+.header-button:hover { filter: brightness(1.05); }
+
+/* Language switcher: a small menu in the header */
+.lang-switch { position: relative; }
+.lang-switch summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    padding: 6px 4px;
+}
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary:hover { color: var(--color-ink); }
+.lang-switch ul {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    min-width: 150px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px -12px rgba(31, 27, 22, 0.35);
+}
+.lang-switch li a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-decoration: none;
+}
+.lang-switch li a:hover { background: var(--color-paper); }
+.lang-switch li a[aria-current="page"] { color: var(--color-accent-ink); font-weight: 600; }
+
+/* Japanese pages: system Japanese fonts, and no breaking words mid-phrase in headings */
+:lang(ja) {
+    --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    --font-sans: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+:lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { word-break: auto-phrase; letter-spacing: 0; }
+:lang(ja) .highlight { white-space: normal; }
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    isolation: isolate;
+    padding: 40px 0 64px;
+}
+/* Faint map grid that fades out toward the bottom, plus a warm glow behind the phone */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.hero::before {
+    background-image:
+        linear-gradient(var(--color-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center top;
+    opacity: 0.6;
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+    mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+.hero::after {
+    background: radial-gradient(ellipse 55% 50% at 78% 50%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%);
+}
+.hero .container { display: grid; gap: 44px; }
+/* Grid children may shrink below their content, so the long passport line can't widen the page */
+.hero .container > *,
+.feature .container > * { min-width: 0; }
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 44px;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 18px;
+    text-wrap: balance;
+}
+.hero-lead {
+    font-size: 19px;
+    color: var(--color-muted);
+    margin: 0 0 28px;
+    max-width: 32em;
+    text-wrap: pretty;
+}
+
+/* Stats as the data page of a passport */
+.passport-strip {
+    margin: 36px 0 0;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 560px;
+}
+.passport-strip-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 14px;
+    background: var(--color-stamp-navy);
+    color: #F5EFE4;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+@media (prefers-color-scheme: dark) {
+    .passport-strip-head { background: #24375E; }
+}
+.stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.stats li {
+    min-width: 0;
+    padding: 12px 14px;
+    border-right: 1px dashed var(--color-line);
+    border-bottom: 1px dashed var(--color-line);
+}
+.stats li:nth-child(3n) { border-right: 0; }
+.stats li:nth-last-child(-n+3) { border-bottom: 0; }
+.stats strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 24px;
+    line-height: 1.2;
+}
+.stats span {
+    display: block;
+    overflow-wrap: break-word;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+/* Machine-readable line at the bottom of a passport */
+.passport-mrz {
+    margin: 0;
+    padding: 8px 14px;
+    border-top: 1px solid var(--color-line);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--color-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.hero-visual {
+    position: relative;
+    padding: 0 28px;
+    overflow-x: clip;   /* keeps the tilted stamps from making small phones scroll sideways */
+    overflow-y: visible;
+}
+.hero-visual .stamp { width: 108px; height: 108px; }
+.hero-visual .stamp--navy { left: 0; top: 40px; --tilt: 12deg; }
+.hero-visual .stamp--red { right: 0; bottom: 110px; --tilt: -14deg; --delay: 0.25s; }
+.hero-visual .stamp--green { left: 14px; bottom: 30px; width: 88px; height: 88px; --tilt: -6deg; --delay: 0.5s; }
+.video-toggle {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    place-items: center;
+    font-size: 13px;
+}
+.video-toggle.is-ready { display: grid; }
+
+/* ===== How it works ===== */
+.steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+    counter-reset: step;
+}
+.steps li {
+    position: relative;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 18px;
+    padding: 22px 22px 22px 22px;
+}
+.steps li::before {
+    counter-increment: step;
+    content: "0" counter(step);
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+}
+.step-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    color: var(--color-accent);
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.steps h3 { font-family: var(--font-serif); font-size: 22px; margin: 0 0 6px; }
+.steps p { margin: 0; color: var(--color-muted); font-size: 15px; }
+
+/* ===== Continents band ===== */
+.continents {
+    position: relative;
+    background: var(--color-band);
+    color: var(--color-band-ink);
+    padding: 72px 0;
+    overflow: hidden;
+}
+.continents .kicker { color: var(--color-accent); }
+.continents .section-lead { color: var(--color-band-ink); opacity: 0.75; }
+.continents .stamp { width: 160px; height: 160px; right: -56px; top: -44px; --tilt: 16deg; }
+.continent-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+.continent-grid li {
+    border: 1px dashed rgba(245, 239, 228, 0.25);
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.continent-grid li:hover {
+    border-color: var(--color-accent);
+    background: rgba(242, 116, 63, 0.06);
+}
+.continent-grid h3 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.continent-grid h3 span {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+}
+.continent-grid p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    opacity: 0.75;
+}
+.continent-grid li > a { display: block; color: inherit; text-decoration: none; }
+.continent-grid li:has(a):hover h3 { color: var(--color-accent); }
+.architects a { color: inherit; text-decoration: none; }
+.architects li:has(a):hover { border-color: var(--color-accent); }
+.band-link { margin: 28px 0 0; }
+.band-link a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+.band-link a:hover { text-decoration: underline; }
+.campus-link a { color: var(--color-accent-ink); }
+
+/* ===== Landmark photo strip ===== */
+.photo-strip {
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--gutter) 8px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 260px);
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: thin;
+}
+.photo-strip li { scroll-snap-align: start; min-width: 0; }
+.strip-photo {
+    position: relative;
+    display: block;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--color-paper-deep);
+    box-shadow: 0 16px 32px -18px rgba(31, 27, 22, 0.45);
+}
+.strip-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.strip-photo:hover img { transform: scale(1.04); }
+.strip-photo span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px 16px 14px;
+    color: #fff;
+    font-size: 13px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+.strip-photo strong { display: block; font-family: var(--font-serif); font-size: 19px; line-height: 1.2; }
+.photo-strip small {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--color-muted);
+}
+.photo-strip small a { color: inherit; }
+
+/* ===== Guided tour clips ===== */
+.tour-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.tour-row figure { margin: 0; }
+.tour-row figure:nth-child(even) { margin-top: 48px; }
+.tour-row figcaption { text-align: center; margin-top: 14px; font-size: 14px; color: var(--color-muted); }
+.tour-row figcaption strong { display: block; color: var(--color-ink); font-size: 17px; }
+
+/* ===== Feature rows ===== */
+.feature .container {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+.feature p { color: var(--color-muted); margin: 0 0 16px; }
+.feature-list { list-style: none; margin: 20px 0 0; padding: 0; }
+.feature-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+}
+.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    background:
+        radial-gradient(circle, var(--color-accent) 0 3px, transparent 3.5px);
+}
+.feature-visual { position: relative; }
+.feature-visual .stamp { right: 2%; bottom: 8%; }
+
+/* Two phones side by side: sky view and street view */
+.phone-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+.phone-pair figure { margin: 0; }
+.phone-pair figure:last-child { margin-top: 48px; }
+.phone-pair figcaption,
+.phone-row figcaption {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+.phone-pair figcaption strong,
+.phone-row figcaption strong {
+    display: block;
+    color: var(--color-ink);
+    font-size: 16px;
+}
+
+/* Architect name tags */
+.architects {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.architects li {
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.architects strong {
+    font-family: var(--font-mono);
+    color: var(--color-accent-ink);
+    margin-left: 6px;
+}
+
+/* Timeline from oldest to newest landmark */
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top: 2px dashed var(--color-accent);
+}
+.timeline::after {
+    content: attr(data-span);   /* the label is on the element, so each language page sets its own */
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    transform: translateX(-50%);
+    background: var(--color-paper-deep);
+    padding: 0 8px;
+    color: var(--color-accent-ink);
+    font-size: 11px;
+}
+.timeline strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-ink);
+}
+.timeline div:last-child { text-align: right; }
+
+/* ===== Quiz ===== */
+.quiz-card {
+    position: relative;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 20px;
+    padding: 22px;
+    margin-top: 24px;
+    max-width: 460px;
+}
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+.quiz-dots { display: flex; gap: 6px; }
+.quiz-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-line);
+}
+.quiz-dots span.is-right { background: var(--color-right); }
+.quiz-dots span.is-wrong { background: var(--color-wrong); }
+.quiz-question {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    color: var(--color-ink);
+}
+.quiz-options { display: grid; gap: 8px; }
+.quiz-options button {
+    font: inherit;
+    font-size: 16px;
+    text-align: left;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: 1.5px solid var(--color-line);
+    border-radius: 12px;
+    padding: 12px 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.15s, background 0.15s;
+}
+.quiz-options button:hover:not(:disabled) { border-color: var(--color-accent); }
+.quiz-options button:disabled { cursor: default; }
+.quiz-options button.is-right {
+    border-color: var(--color-right);
+    background: color-mix(in srgb, var(--color-right) 12%, var(--color-paper));
+}
+.quiz-options button.is-wrong {
+    border-color: var(--color-wrong);
+    background: color-mix(in srgb, var(--color-wrong) 10%, var(--color-paper));
+}
+.quiz-options button i { font-size: 14px; }
+.quiz-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+    margin-top: 14px;
+}
+.quiz-feedback { margin: 0; font-size: 14px; color: var(--color-muted); }
+.quiz-next {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-button);
+    border: 0;
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.quiz-next[hidden] { display: none; }
+.quiz-card .stamp {
+    right: -14px;
+    top: -28px;
+    width: 104px;
+    height: 104px;
+    --tilt: 14deg;
+}
+.quiz-card .stamp[hidden] { display: none; }
+
+/* ===== Tool grid ("Once you land") ===== */
+.tool-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+.tool-grid li {
+    min-width: 0;
+    hyphens: auto;      /* long German words break cleanly in the narrow two-column grid */
+    overflow-wrap: break-word;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    padding: 18px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.tool-grid li:hover { transform: translateY(-2px); border-color: var(--color-accent); }
+.tool-grid i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    color: var(--color-accent);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.tool-grid h3 { font-size: 16px; margin: 0 0 4px; }
+.tool-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+/* ===== Campus section with three phones ===== */
+.phone-row {
+    display: grid;
+    gap: 32px;
+    margin-top: 8px;
+}
+.phone-row figure { margin: 0; }
+@media (max-width: 767px) {
+    .phone-row {
+        grid-auto-flow: column;
+        grid-auto-columns: 68%;
+        gap: 16px;
+        margin: 8px calc(var(--gutter) * -1) 0;
+        padding: 0 var(--gutter) 40px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 var(--gutter);
+        scrollbar-width: thin;
+    }
+    .phone-row figure { scroll-snap-align: start; }
+}
+.campus-list { margin: -8px 0 24px; max-width: 40em; }
+.conferences {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.conferences li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--color-ink);
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+/* ===== Collect: a passport page full of stamps ===== */
+.passport-page {
+    position: relative;
+    min-height: 520px;
+}
+.passport-page .phone { position: relative; z-index: 1; }
+.passport-page .stamp:nth-of-type(1) { left: 0; top: 4%; --tilt: -16deg; }
+.passport-page .stamp:nth-of-type(2) { right: 0; top: 16%; --tilt: 10deg; --delay: 0.15s; }
+.passport-page .stamp:nth-of-type(3) { left: 2%; bottom: 18%; --tilt: 8deg; --delay: 0.3s; }
+.passport-page .stamp:nth-of-type(4) { right: 3%; bottom: 4%; --tilt: -8deg; --delay: 0.45s; }
+@media (max-width: 767px) {
+    .passport-page { min-height: 0; padding: 24px 0; }
+    .passport-page .stamp { width: 84px; height: 84px; }
+    .passport-page .stamp:nth-of-type(1) { left: -6px; top: -6px; }
+    .passport-page .stamp:nth-of-type(4) { right: -6px; bottom: 0; }
+    .passport-page .stamp:nth-of-type(2),
+    .passport-page .stamp:nth-of-type(3) { display: none; }
+}
+
+/* ===== Small extras grid ===== */
+.more-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+}
+.more-grid li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.more-grid i {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    color: var(--color-accent);
+}
+.more-grid h3 { font-size: 16px; margin: 0 0 2px; }
+.more-grid p { margin: 0; color: var(--color-muted); font-size: 14px; }
+
+/* ===== Final call to action ===== */
+.cta {
+    position: relative;
+    overflow: hidden;
+    padding: 88px 0;
+    text-align: center;
+    background: var(--color-band);
+    color: var(--color-band-ink);
+}
+.cta .container { position: relative; z-index: 1; }
+.cta img.cta-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 20px;
+    margin: 0 auto 22px;
+    box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+}
+.cta h2 {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    line-height: 1.1;
+    margin: 0 0 12px;
+}
+.cta p { opacity: 0.75; margin: 0 0 28px; }
+.cta .cta-row { justify-content: center; }
+/* A small tip line under the download buttons (Stripe Payment Link) */
+.cta .cta-tip { margin: 26px 0 0; font-size: 15px; opacity: 0.85; }
+.cta .cta-tip a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* Email sign-up (Buttondown): an email field and button on the dark closing section */
+.cta .signup { max-width: 26rem; margin: 30px auto 0; text-align: center; }
+.cta .signup label { display: block; margin-bottom: 10px; font-size: 15px; opacity: 0.85; }
+.cta .signup-row { display: flex; gap: 8px; }
+.cta .signup input[type="email"] { flex: 1; min-width: 0; padding: 11px 14px; border: 0; border-radius: 999px; font: inherit; font-size: 15px; }
+.cta .signup button { padding: 11px 18px; border: 0; border-radius: 999px; background: #F2743F; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.cta .signup button:focus-visible, .cta .signup input:focus-visible { outline: 2px solid #F2743F; outline-offset: 2px; }
+.cta .signup-note { margin: 8px 0 0; font-size: 13px; opacity: 0.6; }
+.cta .stamp { width: 170px; height: 170px; }
+.cta .stamp:nth-of-type(1) { left: -30px; top: 20px; --tilt: -18deg; }
+.cta .stamp:nth-of-type(2) { right: -24px; bottom: 10px; --tilt: 12deg; --delay: 0.2s; }
+
+/* ===== Footer ===== */
+.site-footer {
+    padding: 32px 0 40px;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 16px;
+}
+.site-footer nav a { color: var(--color-ink); font-weight: 600; }
+.site-footer p { margin: 0 0 8px; }
+
+/* ===== Larger screens ===== */
+@media (min-width: 768px) {
+    .section { padding: 104px 0; }
+    .section-title { font-size: 46px; }
+
+    .header-nav { gap: 22px; }
+    .header-nav > a:not(.header-button) { display: inline; }
+
+    .hero { padding: 64px 0 96px; }
+    .hero-visual .stamp { width: 132px; height: 132px; }
+    .hero-visual .stamp--green { width: 104px; height: 104px; }
+    .hero .container {
+        grid-template-columns: 1.25fr 1fr;
+        align-items: center;
+    }
+    .hero h1 { font-size: 66px; }
+
+    .steps { grid-template-columns: repeat(3, 1fr); }
+
+    .continents { padding: 104px 0; }
+    .continents .stamp { width: 300px; height: 300px; right: 4%; top: 40px; }
+    .continent-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .feature .container { grid-template-columns: 1fr 1fr; gap: 64px; }
+    /* Every other row puts the visual on the left */
+    .feature.flip .feature-visual { order: -1; }
+
+    .phone-pair { gap: 24px; }
+    .photo-strip {
+        grid-auto-columns: minmax(240px, 280px);
+        padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+        scroll-padding-left: max(var(--gutter), calc((100vw - var(--max-width)) / 2 + var(--gutter)));
+    }
+    .tour-row { gap: 40px; }
+
+    .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .phone-row { grid-template-columns: repeat(3, 1fr); }
+    .phone-row figure:nth-child(2) { margin-top: 40px; }
+
+    .more-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+    .cta { padding: 120px 0; }
+    .cta h2 { font-size: 56px; }
+    .cta .stamp { width: 220px; height: 220px; }
+    .cta .stamp:nth-of-type(1) { left: 6%; top: 50px; }
+    .cta .stamp:nth-of-type(2) { right: 6%; bottom: 40px; }
+}
+
+@media (min-width: 1024px) {
+    .hero h1 { font-size: 64px; }
+    .phone--hero { max-width: 320px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .app-store-badge { transition: transform 0.15s; }
+}

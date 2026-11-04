@@ -22,8 +22,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_city_pages import (APP_STORE, FOOT, HEAD, SITE, ArchitectLinks, architect_html, booking_link, e,
-                              expedia_link, height_label, jsonld, known, photo_figure, slug, suggest_section,
-                              versioned, vrbo_link, year_label, year_sort)
+                              expedia_link, height_label, jsonld, known, local_photos, photo_figure, slug,
+                              suggest_section, versioned, vrbo_link, year_label, year_sort)
 from campus_cards import CampusData, campus_cards
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -101,10 +101,12 @@ def campus_page(campus, buildings, traditions, siblings, photos, data, architect
     colors = "".join(f'<span style="background:{e(c)}"></span>' for c in campus.get("colors", []))
     head = CAMPUS_HEAD.format(title=e(title), description=e(description), url=url, site=SITE,
                               jsonld=jsonld(ld), app_store=APP_STORE)
-    # Shared links preview the school's own photo instead of the app's
+    # Shared links preview the school's own photo instead of the app's. This keeps the original
+    # full-size JPEG: link previews need an absolute address, and not every app shows WebP.
     share = next((photos[b["id"]] for b in buildings if b["id"] in photos), None)
     if share:
-        head = head.replace(f'content="{SITE}/assets/images/stamped/app/og-image.png"', f'content="{e(share["src"])}"')
+        head = head.replace(f'content="{SITE}/assets/images/stamped/app/og-image.png"',
+                            f'content="{e(share.get("remote", share["src"]))}"')
     out = [head]
     out.append(f"""
     <main id="main">
@@ -336,6 +338,7 @@ def main():
                 for c in json.loads(f.read_text(encoding="utf-8"))]
     photos_file = OUT / "photos.json"   # written by fetch_photos.py --campuses
     photos = json.loads(photos_file.read_text(encoding="utf-8")) if photos_file.exists() else {}
+    photos = local_photos(photos, "../stamped-cities/")
     data = CampusData(app, OUT)   # History, Student life, Game day and event feeds for the cards
 
     missing = [c["name"] for c in campuses if c["name"] not in registry]
