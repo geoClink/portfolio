@@ -281,7 +281,7 @@ def campus_page(campus, buildings, traditions, siblings, photos, data, architect
                 + ('    <script src="campus-events.js" defer></script>\n' if live_events else ""),
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} on your visit.",
-        cta_text=f"Tour {e(name)} in 3D before you go, add it to a college road trip and earn a passport stamp at every building. Free on iPhone and iPad."))
+        cta_text=f"Tour {e(name)} in 3D before you go, add it to a college road trip and earn a passport stamp at every building. Free on iPhone, iPad and Mac."))
     return "".join(out)
 
 

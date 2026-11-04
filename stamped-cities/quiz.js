@@ -388,7 +388,7 @@
         app.href = section.dataset.appStore;
         actions.append(button("quiz-button quiz-again", "Play again", startRound), app);
         card.append(actions, el("p", "quiz-note",
-            `In Stamped! you can answer out loud, take the quiz for every city and campus, and earn a passport stamp at each landmark in ${place}. Free on iPhone and iPad.`));
+            `In Stamped! you can answer out loud, take the quiz for every city and campus, and earn a passport stamp at each landmark in ${place}. Free on iPhone, iPad and Mac.`));
         heading.focus();
     }
 

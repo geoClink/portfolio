@@ -242,7 +242,7 @@ FOOT = """
                 <a href="../privacy.html">Privacy</a>
                 <a href="{tip_jar}" rel="noopener">Tip jar</a>
             </nav>
-            <p>Landmark details come from the Stamped! app. Photos are openly licensed, mostly from Wikimedia Commons; each is credited with its author, license and source. Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+            <p>Landmark details come from the Stamped! app. Photos are openly licensed, mostly from Wikimedia Commons; each is credited with its author, license and source. Apple, the Apple logo, iPhone, iPad, Mac and Apple Vision Pro are trademarks of Apple Inc. App Store and Mac App Store are service marks of Apple Inc.</p>
             <p>© 2026 George Clinkscales Jr.</p>
         </div>
     </footer>
@@ -617,7 +617,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
                 + '    <script src="suggest.js" defer></script>\n',
         app_store=APP_STORE,
         cta_title=f"Stamp all {n} in Stamped!" if n > 1 else "Stamp it in Stamped!",
-        cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone and iPad."))
+        cta_text=f"Fly through {e(city)} in photoreal 3D, take its 10-question quiz, plan your days and earn a passport stamp at every landmark. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -717,7 +717,7 @@ def continent_page(continent, cities, registry, details, photos):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Fly through {continent} in 3D.",
-                           cta_text=f"All {len(cities)} cities, {len(landmarks):,} landmarks and a passport stamp for every one you visit. Free on iPhone and iPad."))
+                           cta_text=f"All {len(cities)} cities, {len(landmarks):,} landmarks and a passport stamp for every one you visit. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -890,7 +890,7 @@ def architect_page(name, intro, works, photos, featured=()):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title=f"Collect every {name} building.",
-                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -935,7 +935,7 @@ def architects_index_page(pages):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Meet the architects.",
-                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone and iPad."))
+                           cta_text="Stamped! keeps track of whose buildings you've seen and shows your favorite architect. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
@@ -1013,7 +1013,7 @@ def index_page(by_continent, counts):
     </section>
 """)
     out.append(FOOT.format(scripts="", app_store=APP_STORE, cta_title="Your passport is waiting.",
-                           cta_text=f"Fly through all {cities} cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone and iPad."))
+                           cta_text=f"Fly through all {cities} cities in photoreal 3D and earn a stamp at every landmark you visit. Free on iPhone, iPad, Mac and Apple Vision Pro."))
     return "".join(out)
 
 
