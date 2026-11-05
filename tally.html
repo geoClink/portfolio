@@ -65,6 +65,12 @@
         @media (max-width: 600px) { .tally-ipad-grid { grid-template-columns: 1fr; gap: 24px; } }
 
         /* Demo clips: one player, a list of clips beside it */
+        .tally-tour { position: relative; aspect-ratio: 16 / 9; margin-top: 1em; border-radius: 12px; overflow: hidden; background: #071447; }
+        .tally-tour iframe, .tally-tour button { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .tally-tour button { all: unset; position: absolute; inset: 0; cursor: pointer; }
+        .tally-tour button:focus-visible { outline: 3px solid var(--case-accent, #4361EE); outline-offset: -3px; }
+        .tally-tour img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .tally-tour-icon { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; background: var(--case-accent, #4361EE); color: #fff; display: grid; place-items: center; }
         .tally-demo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5em; align-items: center; margin-top: 1.25em;
             padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
             background: radial-gradient(70% 70% at 80% 30%, rgba(67, 97, 238, 0.12), transparent 70%), var(--color-surface); }
@@ -233,6 +239,7 @@
             <div class="case-toc-label">On this page</div>
             <ul>
                 <li><a href="#problem">The problem</a></li>
+                <li><a href="#tour">One-minute tour</a></li>
                 <li><a href="#see-it-work">See it work</a></li>
                 <li><a href="#how-it-works">How it works</a></li>
                 <li><a href="#phone">On your phone</a></li>
@@ -250,6 +257,17 @@
             <p>Freelancers and small teams lose billable hours when tracking lives in a spreadsheet or someone's memory, and the hours that do get logged rarely make it back to the ticket the client is looking at.</p>
             <p>Every tool we tried was either built for solo freelancers with no team layer, or enterprise software that cost more than the project was worth. Tally works for one person or a whole team, runs on the devices people already use, and meets them in the tools they already work in: a timer starts from the ticket you're on, and the time lands back where your team will see it.</p>
             <p>The other half of the problem is trust. A client paying by the hour sees a number and has to take it on faith. Tally gives every hour a receipt: the pull requests, commits, meetings and design saves behind it, on a report link the client can open without an account.</p>
+        </div>
+
+        <div class="case-section" id="tour">
+            <h3>A One-Minute Tour</h3>
+            <p>The web app, start to finish: tracking, sessions, reports, invoices, client budgets and teams. It loads from YouTube when you press play.</p>
+            <div class="tally-tour" id="tally-tour">
+                <button type="button" aria-label="Play the one-minute tour of Tally">
+                    <img src="assets/videos/tally/tally-tour.jpg" alt="" width="1280" height="720" loading="lazy" />
+                    <span class="tally-tour-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                </button>
+            </div>
         </div>
 
         <div class="case-section" id="see-it-work">
@@ -781,5 +799,21 @@
 </script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <script>
+        // One-minute tour - click-to-load facade. Nothing loads from YouTube until the visitor presses play.
+        (function () {
+            const tour = document.getElementById('tally-tour');
+            if (!tour) return;
+            tour.querySelector('button').addEventListener('click', function () {
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/nKWPL2KU7go?autoplay=1&rel=0';
+                iframe.title = 'A one-minute tour of Tally on the web';
+                iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+                iframe.allowFullscreen = true;
+                tour.replaceChildren(iframe);
+                iframe.focus({ preventScroll: true });
+            });
+        })();
+    </script>
 </body>
 </html>
