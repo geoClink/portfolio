@@ -1689,3 +1689,35 @@ body::before {
     .tally-btn-primary, .tally-btn-secondary { justify-content: center; }
     .tally-feature-badges { justify-content: center; }
 }
+
+/* Stamped feature: Tally's layout, mirrored, in Stamped orange */
+.stamped-feature { --tally-accent: #E8590C; --tally-ink: #2A1608; padding-top: 0; }
+.stamped-feature .tally-feature-card {
+    border-color: rgba(232, 89, 12, 0.16);
+    background:
+        radial-gradient(60% 80% at 15% 20%, rgba(255, 140, 66, 0.26), transparent 70%),
+        radial-gradient(50% 60% at 90% 100%, rgba(255, 196, 120, 0.22), transparent 70%),
+        linear-gradient(160deg, #FFF8F2 0%, #FFEFE3 55%, #FFF7EC 100%);
+    box-shadow: 0 30px 60px -30px rgba(140, 60, 15, 0.28);
+}
+.stamped-feature .tally-feature-inner { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
+.stamped-feature .tally-feature-device { order: -1; min-height: 430px; }
+.stamped-feature .tally-feature-glow { background: radial-gradient(circle, rgba(232, 89, 12, 0.3), transparent 65%); }
+.stamped-feature .tally-phone { width: 300px; align-self: flex-end; margin-bottom: -40px; }
+.stamped-feature .tally-phone::after { display: none; } /* this capture starts below the status bar */
+.stamped-feature .tally-moment { box-shadow: 0 16px 34px -14px rgba(70, 30, 8, 0.35); color: #4A3324; }
+.stamped-feature .tally-moment-icon { background: #E8590C; }
+.stamped-moment-stamp { top: 130px; left: -14px; }
+.stamped-moment-trip { top: 290px; right: -14px; animation-delay: -3s; }
+@media (max-width: 900px) {
+    .stamped-moment-stamp { left: -30px; }
+    .stamped-moment-trip { right: -24px; }
+}
+@media (max-width: 736px) {
+    .stamped-feature { padding-top: 0; }
+    .stamped-feature .tally-feature-inner { grid-template-columns: 1fr; }
+    .stamped-feature .tally-feature-device { order: 0; min-height: 340px; }
+    .stamped-feature .tally-phone { width: 240px; margin-bottom: -30px; }
+    .stamped-moment-stamp { top: 70px; left: 0; }
+    .stamped-moment-trip { top: 220px; right: 0; }
+}
