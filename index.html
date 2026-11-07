@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="assets/css/main.css?v=2026-10-26b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/home.css?v=10" />
+    <link rel="stylesheet" href="assets/css/home.css?v=12" />
 <script src="assets/js/consent.js?v=1" defer></script>
     <meta name='impact-site-verification' value='50bace8a-3bde-46aa-9461-4bbeba216ce6'>
 </head>
@@ -87,11 +87,11 @@
         <div class="hero-inner">
             <div class="hero-text">
                 <p class="hero-location">
-                    <img loading="lazy" src="assets/images/site/pin.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:invert(1);opacity:0.45;" />Detroit, MI
+                    <img loading="lazy" src="assets/images/site/pin.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:invert(1);opacity:0.45;" />Detroit, MI<span class="hero-open">Open to full-time roles, local or remote</span>
                 </p>
                 <h1 class="hero-name">George <span style="white-space:nowrap">Clinkscales Jr.</span></h1>
                 <p class="hero-role">iOS, visionOS &amp; full-stack engineer.</p>
-                <p class="hero-bio">I build and ship apps for Apple platforms, plus the backends and websites around them. I went full-time on code in September 2025 and haven't stopped shipping since. Right now I'm building a visionOS app for a surgeon at Henry Ford Health, through the Apple Developer Academy's Year 2 cohort. I'm also a <a href="about.html#claris-certifications">Claris-certified</a> FileMaker Pro developer (Expert, plus AI Fundamentals I &amp; II).</p>
+                <p class="hero-bio">I build and ship apps for Apple platforms, plus the backends and websites around them. Right now I'm building a visionOS app for a surgeon at Henry Ford Health through the Apple Developer Academy. I'm also a <a href="about.html#claris-certifications">Claris-certified</a> FileMaker Pro developer.</p>
                 <div class="hero-ctas">
                     <a href="case-studies.html" class="hero-btn-primary">View My Work</a>
                     <a href="assets/docs/Resume_George_Clinkscales.pdf?v=2026-11-06" class="hero-btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
@@ -225,7 +225,7 @@
                 <div class="tally-feature-device" aria-hidden="true">
                     <div class="tally-feature-glow"></div>
                     <div class="tally-phone">
-                        <img src="assets/images/stamped/v24-map-card.webp" width="800" height="1104" loading="lazy" decoding="async" alt="" />
+                        <video id="stamped-feature-video" data-src="assets/videos/stamped/stamped-tour-paris.mp4" poster="assets/videos/stamped/stamped-tour-paris-poster.webp" width="492" height="1070" muted loop playsinline preload="none"></video>
                     </div>
                     <div class="tally-moment stamped-moment-stamp">
                         <span class="tally-moment-icon">&#10003;</span>
@@ -248,18 +248,6 @@
                 <a href="case-studies.html" class="screenshot-strip-all">View all case studies →</a>
             </div>
             <div class="screenshot-strip-track">
-                <a href="stamped.html" class="screenshot-card">
-                    <div class="screenshot-browser-chrome">
-                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
-                        <span class="browser-url-sm">georgeclinkscalesdev.com/stamped-app</span>
-                    </div>
-                    <div class="screenshot-img-wrap"><img src="assets/images/stamped/screenshot-home.webp" alt="Stamped! A City Passport" loading="lazy" /></div>
-                    <div class="screenshot-card-footer">
-                        <span class="screenshot-card-name">Stamped! A City Passport</span>
-                        <span class="screenshot-card-tag real">Live</span>
-                    </div>
-                    <p class="screenshot-card-desc">Passport stamps at 2,100+ landmarks in 166 cities, with photoreal 3D flyovers and iCloud sync.</p>
-                </a>
                 <a href="sort-tek.html" class="screenshot-card">
                     <div class="screenshot-browser-chrome">
                         <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
@@ -331,6 +319,18 @@
                         <span class="screenshot-card-tag real">Live</span>
                     </div>
                     <p class="screenshot-card-desc">Playable in the browser, with apps on iPhone, Android, Mac and Apple Watch, and VR in the headset browser.</p>
+                </a>
+                <a href="stamped.html" class="screenshot-card">
+                    <div class="screenshot-browser-chrome">
+                        <div class="browser-dots-sm"><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div><div class="browser-dot-sm"></div></div>
+                        <span class="browser-url-sm">georgeclinkscalesdev.com/stamped-app</span>
+                    </div>
+                    <div class="screenshot-img-wrap"><img src="assets/images/stamped/screenshot-home.webp" alt="Stamped! A City Passport" loading="lazy" /></div>
+                    <div class="screenshot-card-footer">
+                        <span class="screenshot-card-name">Stamped! A City Passport</span>
+                        <span class="screenshot-card-tag real">Live</span>
+                    </div>
+                    <p class="screenshot-card-desc">Passport stamps at 2,100+ landmarks in 166 cities, with photoreal 3D flyovers and iCloud sync.</p>
                 </a>
             </div>
         </div>
@@ -514,6 +514,22 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Stamped clip: loads when scrolled to, pauses off screen, stays a still for reduced motion
+        (function () {
+            const video = document.getElementById('stamped-feature-video');
+            if (!video || !('IntersectionObserver' in window)) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    if (!video.src) video.src = video.dataset.src;
+                    video.play().catch(function () {});
+                } else {
+                    video.pause();
+                }
+            }, { threshold: 0.25 }).observe(video);
+        })();
+    </script>
 
     <script>
         // Squishy Butter live stats

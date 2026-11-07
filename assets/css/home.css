@@ -201,6 +201,12 @@ body::before {
     margin: 0 0 1.25em;
 }
 
+.hero-open { margin-left: 0.6em; padding-left: 0.75em; border-left: 1px solid rgba(255,255,255,0.25); color: var(--color-on-dark); font-weight: 600; }
+@media (max-width: 480px) {
+    .hero-location { flex-wrap: wrap; }
+    .hero-open { flex-basis: 100%; margin-left: 0; padding-left: 0; border-left: 0; }
+}
+
 .hero-bio {
     font-size: 0.95em;
     color: var(--color-on-dark-subtle);
@@ -1701,10 +1707,11 @@ body::before {
     box-shadow: 0 30px 60px -30px rgba(140, 60, 15, 0.28);
 }
 .stamped-feature .tally-feature-inner { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
-.stamped-feature .tally-feature-device { order: -1; min-height: 430px; }
+.stamped-feature .tally-feature-device { order: -1; min-height: 520px; }
 .stamped-feature .tally-feature-glow { background: radial-gradient(circle, rgba(232, 89, 12, 0.3), transparent 65%); }
-.stamped-feature .tally-phone { width: 300px; align-self: flex-end; margin-bottom: -40px; }
-.stamped-feature .tally-phone::after { display: none; } /* this capture starts below the status bar */
+.stamped-feature .tally-phone { width: 280px; align-self: flex-end; margin-bottom: -90px; }
+.stamped-feature .tally-phone::after { display: none; } /* the clip has its own status bar */
+.stamped-feature .tally-phone video { display: block; width: 100%; height: auto; border-radius: 39px; }
 .stamped-feature .tally-moment { box-shadow: 0 16px 34px -14px rgba(70, 30, 8, 0.35); color: #4A3324; }
 .stamped-feature .tally-moment-icon { background: #E8590C; }
 .stamped-moment-stamp { top: 130px; left: -14px; }
@@ -1716,8 +1723,9 @@ body::before {
 @media (max-width: 736px) {
     .stamped-feature { padding-top: 0; }
     .stamped-feature .tally-feature-inner { grid-template-columns: 1fr; }
-    .stamped-feature .tally-feature-device { order: 0; min-height: 340px; }
-    .stamped-feature .tally-phone { width: 240px; margin-bottom: -30px; }
+    .stamped-feature .tally-feature-device { order: 0; min-height: 400px; }
+    .stamped-feature .tally-phone { width: 230px; margin-bottom: -130px; }
+    .stamped-feature .tally-phone video { border-radius: 33px; }
     .stamped-moment-stamp { top: 70px; left: 0; }
     .stamped-moment-trip { top: 220px; right: 0; }
 }
