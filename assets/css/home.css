@@ -229,7 +229,7 @@ body::before {
 .hero-ctas {
     display: flex;
     align-items: center;
-    gap: 1.75em;
+    gap: 0.9em 1.1em;
     flex-wrap: wrap;
 }
 
@@ -268,6 +268,17 @@ body::before {
     text-decoration: none;
     border: 1.5px solid var(--color-on-dark-dim) !important;
     transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hero-btn-link,
+.hero-btn-link:link,
+.hero-btn-link:visited {
+    color: var(--color-on-dark) !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-bottom: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .hero-btn-secondary:hover {
@@ -814,7 +825,7 @@ body::before {
 
 .strengths-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
 }
 
@@ -825,11 +836,12 @@ body::before {
 }
 
 .strength-card-num {
-    font-size: 0.62em;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: var(--color-text-muted);
-    margin-bottom: 0.65em;
+    font-size: 1.7em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-heading);
+    margin-bottom: 0.4em;
     display: block;
 }
 
@@ -849,6 +861,7 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    .strengths-grid { grid-template-columns: 1fr; }
     .strength-card { padding: 1em 1em 1em 1.2em; }
 }
 

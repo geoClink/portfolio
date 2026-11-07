@@ -89,6 +89,30 @@
             position: relative;
         }
 
+        .cs-card-shot {
+            flex: none;
+            width: 190px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .cs-card-icon-vision {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #1E3A8A, #0E7490);
+            color: #fff;
+        }
+
+        @media (max-width: 640px) {
+            .cs-card-shot { order: -1; width: 100%; }
+            .cs-card .cs-card-body { flex-basis: 100%; }
+            .cs-card .cs-card-badges { flex-wrap: wrap; }
+        }
+
         .cs-card-featured-chip {
             position: absolute;
             top: 1em;
@@ -379,7 +403,7 @@
         }
     }
     </script>
-<script src="assets/js/consent.js?v=1" defer></script>
+<script src="assets/js/consent.js?v=2" defer></script>
 </head>
 <body class="is-preload">
 
@@ -428,7 +452,7 @@
                     <img src="assets/images/tallyios/appicon.webp" alt="Tally app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Tally - Time Tracker</div>
-                        <p class="cs-card-desc">Time tracker for freelancers and small teams, built solo: native iPhone, iPad, Apple Watch, Mac, and Vision Pro apps, a React web app, an Android beta, and a Chrome extension on one Supabase backend. 15 integrations including Jira, Linear, Asana, and GitHub, plus contracts, client budgets, timesheet approvals, Stripe invoicing with expenses and mileage, and a WCAG 2.2 AA accessibility pass. In daily use on my own freelance contract, where my collaborator and I track our hours for the client. ~300 downloads and 63K+ App Store impressions as of Oct 2026.</p>
+                        <p class="cs-card-desc">Time tracker for freelancers and small teams, built solo: native iPhone, iPad, Apple Watch, Mac and Vision Pro apps, a React web app and an Android beta on one Supabase backend, with 15 integrations including Jira, Linear and GitHub. ~300 downloads as of Oct 2026.</p>
                         <div class="cs-card-btns">
                             <a href="tally.html" class="cs-cta">Case Study →</a>
                             <a href="https://www.tallytimetracker.com/login?utm_source=portfolio&amp;utm_campaign=portfolio_case_studies" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Web App ↗</a>
@@ -439,23 +463,25 @@
                             </div>
                         </div>
                     </div>
+                    <img src="assets/images/tallyios/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/stamped/stamped-city-passport-light.webp" alt="Stamped! A City Passport app icon" class="cs-card-icon" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Stamped! — A City Passport</div>
-                        <p class="cs-card-desc">SwiftUI app for iPhone, iPad, Mac and Apple Vision Pro for collecting passport stamps at 2,100+ architectural landmarks in 166 cities and 122 campuses. Fly through photoreal 3D cities, plan trips day by day, plan college road trips, and sync your passport through iCloud. No server of its own.</p>
+                        <p class="cs-card-desc">Passport stamps at 2,100+ landmarks in 166 cities and 122 campuses, on iPhone, iPad, Mac and Vision Pro. Fly through photoreal 3D cities, plan trips day by day and sync through iCloud.</p>
                         <div class="cs-card-btns">
                             <a href="stamped.html" class="cs-cta">Case Study →</a>
                             <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
+                    <img src="assets/images/stamped/screenshot-home.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
                     <div class="cs-card-body">
                         <div class="cs-card-name">Squishy Butter</div>
-                        <p class="cs-card-desc">Real-time soft-body deformation in a custom GLSL vertex shader, with 484 collectible butters, snacks and mechanical clickers, each with its own physics and sound, on iOS, Android, web, Mac, Apple Watch and VR. 2,900+ downloads.</p>
+                        <p class="cs-card-desc">Soft-body butter in a custom GLSL vertex shader, with 484 collectibles, each with its own physics and sound, on iOS, Android, web, Mac, Apple Watch and VR. 2,900+ downloads.</p>
                         <div class="cs-card-btns">
                             <a href="squishy-butter.html" class="cs-cta">Case Study →</a>
                             <a href="https://squishybutter.app/" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Try It ↗</a>
@@ -466,6 +492,7 @@
                             </div>
                         </div>
                     </div>
+                    <img src="assets/images/squishy-butter/landing-page.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -484,6 +511,7 @@
                             <a href="https://www.tripsetta.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Visit Tripsetta ↗</a>
                         </div>
                     </div>
+                    <img src="assets/images/tripsetta/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek Inspection Systems" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
@@ -495,6 +523,7 @@
                             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
                         </div>
                     </div>
+                    <img src="assets/images/sort-tek/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -505,10 +534,12 @@
             <p class="cs-group-intro">Projects from the MSU Apple Developer Academy, 2026.</p>
             <div class="cs-cards">
                 <div class="cs-card">
+                    <span class="cs-card-icon cs-card-icon-vision" aria-hidden="true"><svg viewBox="0 0 48 48" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M14 15h20c6 0 10 4 10 9.5S40 34 35 34c-4 0-6-2-8-4.5-1.5-1.8-4.5-1.8-6 0C19 32 17 34 13 34c-5 0-9-4-9-9.5S8 15 14 15z"/></svg></span>
                     <div class="cs-card-body">
                         <div class="cs-card-name">Vision Pro Healthcare App · Henry Ford Health</div>
-                        <p class="cs-card-desc">In progress: a visionOS app for a surgeon at Henry Ford Health, built in the Academy's Year 2 cohort. One of 25 students picked from 240. Project details are confidential.</p>
+                        <p class="cs-card-desc">In progress: a visionOS app for a surgeon at Henry Ford Health, built in the Academy's Year 2 cohort. One of 25 students picked from 240. Shown with a simulated patient. Project details are confidential.</p>
                     </div>
+                    <img src="assets/images/site/vision-pro-card.jpg" alt="Simulated patient in the Vision Pro app" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="cs-card-icon" />
@@ -520,6 +551,7 @@
                             <a href="https://apps.apple.com/us/app/coastcast/id6760917476?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
+                    <img src="assets/images/coastcast/coastcast-card.jpg" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/takeflight/TakeFlight-128.webp" alt="TakeFlight app icon" class="cs-card-icon" />
@@ -531,6 +563,7 @@
                             <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
+                    <img src="assets/images/takeflight/StartARun.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -548,6 +581,7 @@
                             <a href="knot.html" class="cs-cta">Platform Overview →</a>
                         </div>
                     </div>
+                    <img src="assets/images/site/og-knot.jpg" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                     <div class="knot-deploy-group">
                         <div class="knot-deploy-label">Using Small Business Suite</div>
                         <div class="knot-chips">
@@ -584,6 +618,7 @@
                             <a href="https://beverage-webpage.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
                         </div>
                     </div>
+                    <img src="assets/images/beverageco/dual-form.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>

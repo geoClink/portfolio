@@ -53,9 +53,9 @@
     wrap.setAttribute('aria-label', 'Analytics preferences')
     wrap.innerHTML =
       '<style>' +
-      '#gc-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;' +
+      '#gc-consent{position:fixed;left:auto;right:16px;bottom:16px;z-index:2147483000;width:min(340px,calc(100vw - 32px));box-sizing:border-box;margin:0;' +
       'background:#ffffff;color:#111827;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.15);' +
-      'padding:16px;font:14px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;text-align:left}' +
+      'padding:14px;font:13px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;text-align:left}' +
       '#gc-consent p{margin:0 0 12px;color:inherit}' +
       '#gc-consent a{color:#1d4ed8}' +
       '#gc-consent .gc-row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}' +
