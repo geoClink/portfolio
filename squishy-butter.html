@@ -905,19 +905,21 @@ return Math.max(6, Math.min(cap, affordable));</div>
             function fmt(n) { return Number(n).toLocaleString(); }
             function fmtTime(ms) {
                 if (!ms) return null;
-                const hrs = ms / 3600000;
-                if (hrs >= 1) return hrs.toFixed(1) + ' hrs squished';
-                return Math.round(ms / 60000) + ' min squished';
+                const days = Math.floor(ms / 86400000);
+                const hrs = Math.floor(ms / 3600000) % 24;
+                if (days >= 1) return days + 'd ' + hrs + 'h played';
+                if (hrs >= 1) return hrs + 'h played';
+                return Math.round(ms / 60000) + ' min played';
             }
 
             Promise.all([
                 fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squishes', { headers: h }).then(r => r.json()),
-                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_squish_ms', { headers: h }).then(r => r.json()),
+                fetch(URL + '/rest/v1/global_stats?id=eq.main&select=total_play_ms', { headers: h }).then(r => r.json()),
                 fetch(URL + '/rest/v1/rpc/count_collectors', { method: 'POST', headers: { ...h, 'Content-Type': 'application/json' }, body: '{}' }).then(r => r.json())
             ]).then(function ([sq, tm, col]) {
                 const parts = [];
                 if (sq[0]?.total_squishes != null) parts.push(fmt(sq[0].total_squishes) + ' squishes');
-                const t = fmtTime(tm[0]?.total_squish_ms);
+                const t = fmtTime(tm[0]?.total_play_ms);
                 if (t) parts.push(t);
                 const c = typeof col === 'number' ? col : col?.count;
                 if (c != null) parts.push(fmt(c) + ' collectors');
