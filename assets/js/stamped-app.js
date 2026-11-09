@@ -231,4 +231,17 @@
             }, 0);
         });
     }
+
+    // YouTube loads only after someone presses play
+    document.querySelectorAll('[data-youtube]').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var frame = document.createElement('iframe');
+            frame.className = 'short-frame';
+            frame.src = 'https://www.youtube-nocookie.com/embed/' + button.dataset.youtube + '?autoplay=1&rel=0';
+            frame.title = button.getAttribute('aria-label');
+            frame.allow = 'autoplay; encrypted-media; picture-in-picture';
+            frame.allowFullscreen = true;
+            button.replaceWith(frame);
+        });
+    });
 })();

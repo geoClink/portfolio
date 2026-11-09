@@ -332,7 +332,12 @@
     "Every one credited.": "Todas com crédito.",
     "@London's 1900 street map faded over today's satellite view, with landmark pins": "Mapa de ruas de Londres de 1900 sobre a vista de satélite atual, com marcadores dos marcos",
     "@A row of old drawings of St Paul's Cathedral, each with its credit underneath": "Uma fileira de desenhos antigos da Catedral de São Paulo, cada um com seu crédito",
-    "Then &amp; Now": "Antes e agora"
+    "Then &amp; Now": "Antes e agora",
+    "Open each school's official tour page right from its campus page": "Abra a página oficial de visitas de cada universidade",
+    "See top programs and average net price for US schools": "Nas universidades dos EUA, veja os principais cursos e o preço líquido médio",
+    "Fly over Detroit": "Sobrevoe Detroit",
+    "Recorded on Apple Vision Pro. Plays from YouTube when you press play.": "Gravado no Apple Vision Pro. É reproduzido pelo YouTube quando você aperta o play.",
+    "@Play the video of flying over Detroit on Apple Vision Pro": "Reproduzir o vídeo do voo sobre Detroit no Apple Vision Pro"
   },
   "copy": "{\n                pause: 'Pausar vídeo',\n                play: 'Reproduzir vídeo',\n                question: 'Pergunta {n} de {total}',\n                correct: 'Correto! ',\n                wrong: 'Quase. ',\n                next: 'Próxima',\n                seeStamp: 'Ver seu carimbo',\n                done: 'Concluir',\n                perfect: 'Pontuação perfeita!',\n                yourScore: 'Você acertou {score} de {total}.',\n                more: 'O app tem 273 quizzes e 2.730 perguntas.',\n                playAgain: 'Jogar de novo',\n                intro: 'Experimente. Três perguntas.',\n                ranks: ['TURISTA', 'VIAJANTE', 'LOCAL', 'ESPECIALISTA'],\n                questions: [\n                    { q: 'Quantos andares tem o Flatiron Building?', options: ['16', '22', '31'], answer: 1,\n                      note: '22 andares, concluído em 1902.' },\n                    { q: 'Quem projetou a Casa da Cascata (Fallingwater)?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,\n                      note: 'Frank Lloyd Wright, sobre uma cachoeira na Pensilvânia.' },\n                    { q: 'Quem projetou a Ópera de Sydney?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,\n                      note: 'Jørn Utzon, arquiteto dinamarquês, venceu o concurso de projeto em 1957.' }\n                ]\n            }"
 }

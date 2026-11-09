@@ -60,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=a1539e3b" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -701,6 +701,13 @@
                              alt="Stamped! sur Apple Vision Pro : la fenêtre de la carte de Mumbai flottant dans un panorama à 360° de l’escalier du Taj Mahal Palace Hotel" />
                         <figcaption><strong>Panoramas à 360°</strong>Entrez dans le monument.</figcaption>
                     </figure>
+                    <figure class="device-shot device-shot--short">
+                        <button type="button" class="short-play" data-youtube="Q-iOjIyUStw" aria-label="Lire la vidéo du survol de Detroit sur Apple Vision Pro">
+                            <img src="assets/images/stamped/app/vision-detroit-short.jpg" alt="" loading="lazy" />
+                            <span class="short-play-icon" aria-hidden="true"></span>
+                        </button>
+                        <figcaption><strong>Survolez Detroit</strong>Filmé sur Apple Vision Pro. La vidéo se lance depuis YouTube quand vous appuyez sur lecture.</figcaption>
+                    </figure>
                     <figure class="device-shot">
                         <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
                              alt="Un globe 3D avec des épingles de tampons flottant dans un salon devant la carte de New York de Stamped!" />
@@ -745,6 +752,8 @@
                     <p class="section-lead">Enregistrez les établissements que votre famille envisage, et Stamped! les aligne en road trip : un campus par jour, dans l’ordre de route le plus court. Toutes les universités de la Big Ten, de la SEC, de l’ACC et de la Big 12, l’Ivy League, et de superbes campus d’Oxford à Melbourne.</p>
                     <ul class="feature-list campus-list">
                         <li>Parcourez chaque campus en 3D avant d’y aller en voiture</li>
+                        <li>Ouvrez la page de visite officielle de chaque établissement</li>
+                        <li>Aux États-Unis, consultez les principaux programmes et le prix net moyen</li>
                         <li>Découvrez les bâtiments emblématiques et les histoires qui les entourent</li>
                         <li>Cochez les traditions que les étudiants pratiquent vraiment, comme frotter la statue porte-bonheur</li>
                         <li>Lisez l’histoire de chaque établissement, consultez les prochains matchs à domicile et parcourez les événements du campus</li>
@@ -974,7 +983,7 @@
                 ]
             };
     </script>
-    <script src="assets/js/stamped-app.js?v=43cd62dc" defer></script>
+    <script src="assets/js/stamped-app.js?v=1a54010c" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->

@@ -332,7 +332,12 @@
     "Every one credited.": "Tutte con il credito.",
     "@London's 1900 street map faded over today's satellite view, with landmark pins": "Mappa di Londra del 1900 sfumata sulla vista satellitare attuale, con i segnaposto dei monumenti",
     "@A row of old drawings of St Paul's Cathedral, each with its credit underneath": "Una fila di disegni antichi della cattedrale di San Paolo, ognuno con il suo credito",
-    "Then &amp; Now": "Ieri e oggi"
+    "Then &amp; Now": "Ieri e oggi",
+    "Open each school's official tour page right from its campus page": "Apri la pagina ufficiale delle visite di ogni università",
+    "See top programs and average net price for US schools": "Per le università statunitensi, scopri i corsi principali e il prezzo netto medio",
+    "Fly over Detroit": "Sorvola Detroit",
+    "Recorded on Apple Vision Pro. Plays from YouTube when you press play.": "Registrato su Apple Vision Pro. Viene riprodotto da YouTube quando premi play.",
+    "@Play the video of flying over Detroit on Apple Vision Pro": "Riproduci il video del volo su Detroit con Apple Vision Pro"
   },
   "copy": "{\n                pause: 'Metti in pausa il video',\n                play: 'Riproduci il video',\n                question: 'Domanda {n} di {total}',\n                correct: 'Giusto! ',\n                wrong: 'Quasi. ',\n                next: 'Avanti',\n                seeStamp: 'Vedi il tuo timbro',\n                done: 'Fatto',\n                perfect: 'Punteggio perfetto!',\n                yourScore: 'Hai indovinato {score} su {total}.',\n                more: 'L’app ha 273 quiz e 2.730 domande.',\n                playAgain: 'Gioca ancora',\n                intro: 'Provalo. Tre domande.',\n                ranks: ['TURISTA', 'VIAGGIATORE', 'LOCALE', 'ESPERTO'],\n                questions: [\n                    { q: 'Quanti piani è alto il Flatiron Building?', options: ['16', '22', '31'], answer: 1,\n                      note: '22 piani, completato nel 1902.' },\n                    { q: 'Chi ha progettato Fallingwater?', options: ['Le Corbusier', 'Frank Lloyd Wright', 'Frank Gehry'], answer: 1,\n                      note: 'Frank Lloyd Wright, sopra una cascata in Pennsylvania.' },\n                    { q: 'Chi ha progettato il Teatro dell’Opera di Sydney?', options: ['Zaha Hadid', 'Renzo Piano', 'Jørn Utzon'], answer: 2,\n                      note: 'Jørn Utzon, architetto danese, vinse il concorso di progettazione nel 1957.' }\n                ]\n            }"
 }

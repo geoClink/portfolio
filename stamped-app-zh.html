@@ -60,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=a1539e3b" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -701,6 +701,13 @@
                              alt="Apple Vision Pro 上的 Stamped!：孟买地图窗口悬浮在泰姬陵宫殿酒店楼梯的 360° 全景之中" />
                         <figcaption><strong>360° 全景</strong>置身地标之中。</figcaption>
                     </figure>
+                    <figure class="device-shot device-shot--short">
+                        <button type="button" class="short-play" data-youtube="Q-iOjIyUStw" aria-label="播放在 Apple Vision Pro 上飞越底特律的视频">
+                            <img src="assets/images/stamped/app/vision-detroit-short.jpg" alt="" loading="lazy" />
+                            <span class="short-play-icon" aria-hidden="true"></span>
+                        </button>
+                        <figcaption><strong>飞越底特律</strong>在 Apple Vision Pro 上录制。按下播放后从 YouTube 播放。</figcaption>
+                    </figure>
                     <figure class="device-shot">
                         <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
                              alt="一个带有印章图钉的 3D 地球仪悬浮在客厅里，前方是 Stamped! 的纽约地图" />
@@ -745,6 +752,8 @@
                     <p class="section-lead">保存你家人正在看的学校，Stamped! 会把它们排成一次公路旅行：每天一个校园，按较短的驾车顺序。涵盖十大联盟、东南联盟、大西洋沿岸联盟和十二大联盟的全部学校、常春藤盟校，以及从牛津到墨尔本的杰出校园。</p>
                     <ul class="feature-list campus-list">
                         <li>开车前先用 3D 游览每个校园</li>
+                        <li>直接打开各校官方参观页面</li>
+                        <li>查看美国院校的热门专业和平均净价</li>
                         <li>了解标志性建筑及其背后的故事</li>
                         <li>勾选学生真正会做的传统，比如摸摸幸运雕像</li>
                         <li>了解每所学校的历史，查看即将举行的主场比赛，浏览校园活动</li>
@@ -974,7 +983,7 @@
                 ]
             };
     </script>
-    <script src="assets/js/stamped-app.js?v=43cd62dc" defer></script>
+    <script src="assets/js/stamped-app.js?v=1a54010c" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->

@@ -60,7 +60,7 @@
     <!-- Icons load without blocking the first paint; the page reads fine before they arrive -->
     <link rel="preload" href="assets/css/fontawesome-all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/stamped-app.css?v=e00c79c7" />
+    <link rel="stylesheet" href="assets/css/stamped-app.css?v=a1539e3b" />
     <!-- Styles for the "Try it" demo further down: loaded without holding up the first paint -->
     <link rel="preload" href="assets/css/stamped-try.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="assets/css/stamped-try.css?v=3" /></noscript>
@@ -701,6 +701,13 @@
                              alt="Stamped! en Apple Vision Pro: la ventana del mapa de Bombay flotando dentro de una panorámica de 360° de la escalera del hotel Taj Mahal Palace" />
                         <figcaption><strong>Panorámicas de 360°</strong>Entra en el monumento.</figcaption>
                     </figure>
+                    <figure class="device-shot device-shot--short">
+                        <button type="button" class="short-play" data-youtube="Q-iOjIyUStw" aria-label="Reproducir el vídeo del vuelo sobre Detroit en Apple Vision Pro">
+                            <img src="assets/images/stamped/app/vision-detroit-short.jpg" alt="" loading="lazy" />
+                            <span class="short-play-icon" aria-hidden="true"></span>
+                        </button>
+                        <figcaption><strong>Sobrevuela Detroit</strong>Grabado en Apple Vision Pro. Se reproduce desde YouTube al pulsar el botón.</figcaption>
+                    </figure>
                     <figure class="device-shot">
                         <img src="assets/images/stamped/app/vision-globe.webp" width="1600" height="900" loading="lazy"
                              alt="Un globo 3D con marcadores de sellos flotando en un salón delante del mapa de Nueva York de Stamped!" />
@@ -745,6 +752,8 @@
                     <p class="section-lead">Guarda las universidades que te interesan y Stamped! las ordena en un viaje por carretera: un campus al día, en el orden de ruta más corto. Todas las universidades del Big Ten, la SEC, la ACC y el Big 12, la Ivy League y grandes campus de Oxford a Melbourne.</p>
                     <ul class="feature-list campus-list">
                         <li>Recorre cada campus en 3D antes de ir en coche</li>
+                        <li>Abre la página oficial de visitas de cada universidad</li>
+                        <li>En las universidades de EE. UU., consulta los programas principales y el precio neto promedio</li>
                         <li>Descubre sus edificios emblemáticos y su historia</li>
                         <li>Marca las tradiciones que de verdad hacen los estudiantes, como frotar la estatua de la suerte</li>
                         <li>Lee la historia de cada universidad, consulta los próximos partidos en casa y explora los eventos del campus</li>
@@ -974,7 +983,7 @@
                 ]
             };
     </script>
-    <script src="assets/js/stamped-app.js?v=43cd62dc" defer></script>
+    <script src="assets/js/stamped-app.js?v=1a54010c" defer></script>
     <script src="stamped-cities/map-token.js"></script>
     <script src="assets/js/stamped-try.js?v=2" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->

@@ -1302,3 +1302,39 @@ a { color: inherit; }
 @media (prefers-reduced-motion: no-preference) {
     .app-store-badge { transition: transform 0.15s; }
 }
+
+/* Vision Pro Short: a tall click-to-load player */
+.short-play, .short-frame {
+    display: block;
+    width: min(260px, 100%);
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #111;
+}
+.short-play { position: relative; cursor: pointer; }
+.short-play:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.device-shot .short-play img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.short-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+}
+.short-play-icon::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent #fff;
+}
+.device-shot--short figcaption { text-align: center; }

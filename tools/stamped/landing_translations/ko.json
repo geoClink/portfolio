@@ -332,7 +332,12 @@
     "Every one credited.": "모두 출처 표기.",
     "@London's 1900 street map faded over today's satellite view, with landmark pins": "오늘날의 위성 사진 위에 겹친 1900년 런던 거리 지도와 랜드마크 핀",
     "@A row of old drawings of St Paul's Cathedral, each with its credit underneath": "세인트 폴 대성당의 옛 그림들과 각 그림 아래의 출처 표기",
-    "Then &amp; Now": "그때와 지금"
+    "Then &amp; Now": "그때와 지금",
+    "Open each school's official tour page right from its campus page": "각 학교의 공식 방문 페이지로 바로 이동하세요",
+    "See top programs and average net price for US schools": "미국 대학의 주요 전공과 평균 순비용을 확인하세요",
+    "Fly over Detroit": "디트로이트 상공 비행",
+    "Recorded on Apple Vision Pro. Plays from YouTube when you press play.": "Apple Vision Pro에서 녹화했습니다. 재생을 누르면 YouTube에서 재생됩니다.",
+    "@Play the video of flying over Detroit on Apple Vision Pro": "Apple Vision Pro로 디트로이트 상공을 나는 영상 재생"
   },
   "copy": "{\n                pause: '동영상 일시정지',\n                play: '동영상 재생',\n                question: '{total}문제 중 {n}번째',\n                correct: '정답이에요! ',\n                wrong: '아쉬워요. ',\n                next: '다음',\n                seeStamp: '스탬프 보기',\n                done: '완료',\n                perfect: '만점이에요!',\n                yourScore: '{total}문제 중 {score}문제를 맞혔어요.',\n                more: '앱에는 273개의 퀴즈와 2,730개의 문제가 있어요.',\n                playAgain: '다시 하기',\n                intro: '직접 해 보세요. 3문제예요.',\n                ranks: ['관광객', '여행자', '현지인', '전문가'],\n                questions: [\n                    { q: '플랫아이언 빌딩은 몇 층일까요?', options: ['16', '22', '31'], answer: 1,\n                      note: '22층, 1902년에 완공됐어요.' },\n                    { q: '낙수장(Fallingwater)은 누가 설계했을까요?', options: ['르 코르뷔지에', '프랭크 로이드 라이트', '프랭크 게리'], answer: 1,\n                      note: '프랭크 로이드 라이트가 펜실베이니아의 폭포 위에 지었어요.' },\n                    { q: '시드니 오페라 하우스는 누가 설계했을까요?', options: ['자하 하디드', '렌초 피아노', '예른 웃손'], answer: 2,\n                      note: '덴마크 건축가 예른 웃손이 1957년 설계 공모전에서 우승했어요.' }\n                ]\n            }"
 }
