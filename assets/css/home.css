@@ -330,6 +330,15 @@ body::before {
     color: #fff;
     letter-spacing: -0.02em;
 }
+/* Text value (Henry Ford Health): one line, shrinks to fit its column */
+.hero-proof li.hero-proof-fit { container-type: inline-size; }
+.hero-proof li.hero-proof-fit .hero-proof-value {
+    white-space: nowrap;
+    font-size: min(1.9em, 11.4cqi);
+}
+@media (max-width: 736px) {
+    .hero-proof li.hero-proof-fit .hero-proof-value { font-size: min(1.6em, 11.4cqi); }
+}
 .hero-proof-label {
     font-size: 0.78em;
     line-height: 1.4;
