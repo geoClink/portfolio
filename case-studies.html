@@ -115,8 +115,10 @@
 
         .cs-card-featured-chip {
             position: absolute;
-            top: 1em;
-            right: 1em;
+            top: calc(1.25rem + 8px);
+            right: calc(1.25rem + 8px);
+            z-index: 1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
             font-size: 0.6em;
             font-weight: 700;
             letter-spacing: 0.12em;
@@ -315,7 +317,6 @@
             .cs-title { font-size: 1.8em; }
             .cs-card { flex-direction: column; }
             .cs-card-btns { padding-top: 0.6em; flex-wrap: wrap; }
-            .knot-chip-tag { display: none; }
         }
 
         .knot-deploy-group {
@@ -344,13 +345,16 @@
         .knot-spec-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
         .knot-spec-note a:hover { color: var(--color-heading); }
         .knot-chips {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4em;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75em;
+        }
+        @media (max-width: 600px) {
+            .knot-chips { grid-template-columns: 1fr; }
         }
         .knot-chip {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 0.6em;
             text-decoration: none;
             color: var(--color-heading);
@@ -359,8 +363,28 @@
             background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 7px;
-            padding: 0.5em 0.75em;
+            padding: 0.5em 0.5em 0.6em;
             transition: border-color 0.15s, background 0.15s;
+        }
+        .knot-chip-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+            padding: 0 0.25em;
+        }
+        .knot-chip-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+        .knot-chip img.knot-chip-shot {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 5px;
+            border: 1px solid var(--color-border);
         }
         .knot-chip:hover {
             border-color: var(--color-accent);
@@ -386,7 +410,7 @@
             color: var(--color-text-muted);
         }
         .knot-chip-tag.real-client {
-            color: #16a34a;
+            color: #15803d;
         }
     </style>
     <script type="application/ld+json">
@@ -463,7 +487,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="assets/images/tallyios/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/tallyios/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/stamped/stamped-city-passport-light.webp" alt="Stamped! A City Passport app icon" class="cs-card-icon" />
@@ -475,7 +499,7 @@
                             <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
-                    <img src="assets/images/stamped/screenshot-home.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/stamped/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
@@ -492,7 +516,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="assets/images/squishy-butter/landing-page.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/squishy-butter/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -511,7 +535,7 @@
                             <a href="https://www.tripsetta.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">Visit Tripsetta ↗</a>
                         </div>
                     </div>
-                    <img src="assets/images/tripsetta/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/tripsetta/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/sort-tek/sort-tek-logo.webp" alt="Sort-Tek Inspection Systems" class="cs-card-icon" style="border-radius:6px;object-fit:contain;background:var(--color-surface);" />
@@ -523,7 +547,7 @@
                             <a href="https://www.sort-tek.com" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
                         </div>
                     </div>
-                    <img src="assets/images/sort-tek/screenshot-home-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/sort-tek/card-hero-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -551,7 +575,7 @@
                             <a href="https://apps.apple.com/us/app/coastcast/id6760917476?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
-                    <img src="assets/images/coastcast/coastcast-card.jpg" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/coastcast/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
                 <div class="cs-card">
                     <img src="assets/images/takeflight/TakeFlight-128.webp" alt="TakeFlight app icon" class="cs-card-icon" />
@@ -563,7 +587,7 @@
                             <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964?pt=128288066&amp;ct=portfolio&amp;mt=8" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="96" height="32" style="display:block;"></a>
                         </div>
                     </div>
-                    <img src="assets/images/takeflight/StartARun.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/takeflight/card-screens-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>
@@ -581,21 +605,24 @@
                             <a href="knot.html" class="cs-cta">Platform Overview →</a>
                         </div>
                     </div>
-                    <img src="assets/images/site/og-knot.jpg" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                     <div class="knot-deploy-group">
                         <div class="knot-deploy-label">Using Small Business Suite</div>
                         <div class="knot-chips">
                             <a href="wellness-co.html" class="knot-chip">
-                                <img src="assets/images/thewellnessco/whitebear-logo-128.webp" alt="" />
-                                White Bear Harmonics
-                                <span class="knot-chip-tag real-client">Real client</span>
-                                <span class="knot-chip-arrow">→</span>
+                                <img src="assets/images/thewellnessco/card-hero-640w.webp" alt="" class="knot-chip-shot" width="640" height="400" loading="lazy" decoding="async" />
+                                <span class="knot-chip-row">
+                                    <img src="assets/images/thewellnessco/whitebear-logo-128.webp" alt="" />
+                                    <span class="knot-chip-text">White Bear Harmonics<span class="knot-chip-tag real-client">Real client</span></span>
+                                    <span class="knot-chip-arrow">→</span>
+                                </span>
                             </a>
                             <a href="inn-co.html" class="knot-chip">
-                                <img src="assets/images/crystal-lake/favicon.svg" alt="" />
-                                Crystal Lake Resort
-                                <span class="knot-chip-tag real-client">Real client</span>
-                                <span class="knot-chip-arrow">→</span>
+                                <img src="assets/images/crystal-lake/card-hero-640w.webp" alt="" class="knot-chip-shot" width="640" height="400" loading="lazy" decoding="async" />
+                                <span class="knot-chip-row">
+                                    <img src="assets/images/crystal-lake/favicon.svg" alt="" />
+                                    <span class="knot-chip-text">Crystal Lake Resort<span class="knot-chip-tag real-client">Real client</span></span>
+                                    <span class="knot-chip-arrow">→</span>
+                                </span>
                             </a>
                         </div>
                         <p class="knot-spec-note">Also deployed as spec demos for a <a href="landscape-co.html">landscaper</a>, a <a href="bakery-spec.html">bakery</a>, a <a href="salon-co.html">salon</a> and a <a href="sports-bar-co.html">sports bar</a>.</p>
@@ -618,7 +645,7 @@
                             <a href="https://beverage-webpage.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-secondary">View Site ↗</a>
                         </div>
                     </div>
-                    <img src="assets/images/beverageco/dual-form.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
+                    <img src="assets/images/beverageco/card-panel-800w.webp" alt="" class="cs-card-shot" loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>

@@ -1725,6 +1725,10 @@ body::before {
 .stamped-feature .tally-phone { width: 280px; align-self: flex-end; margin-bottom: -90px; }
 .stamped-feature .tally-phone::after { display: none; } /* the clip has its own status bar */
 .stamped-feature .tally-phone video { display: block; width: 100%; height: auto; border-radius: 39px; }
+.tally-phone--video { align-self: flex-start; }
+.tally-phone--video::after { display: none; } /* the clip has its own status bar and island */
+.tally-phone--video video { display: block; width: 100%; height: auto; border-radius: 39px; clip-path: inset(3px round 36px); } /* trims the light edge baked into the clip */
+@media (max-width: 600px) { .tally-phone--video video { border-radius: 33px; clip-path: inset(3px round 30px); } }
 .stamped-feature .tally-moment { box-shadow: 0 16px 34px -14px rgba(70, 30, 8, 0.35); color: #4A3324; }
 .stamped-feature .tally-moment-icon { background: #E8590C; }
 .stamped-moment-stamp { top: 130px; left: -14px; }

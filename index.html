@@ -44,9 +44,162 @@
     <link rel="stylesheet" href="assets/css/main.css?v=2026-10-26b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
-    <link rel="stylesheet" href="assets/css/home.css?v=14" />
+    <link rel="stylesheet" href="assets/css/home.css?v=17" />
 <script src="assets/js/consent.js?v=2" defer></script>
     <meta name='impact-site-verification' value='50bace8a-3bde-46aa-9461-4bbeba216ce6'>
+    <style>
+        .collage-section { padding: 4em 0 4.5em; overflow: hidden; background: #0E1014; color: #E8EAED; }
+        .collage-header { max-width: 1100px; margin: 0 auto 2em; padding: 0 1.5em; display: flex; align-items: baseline; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+        .collage-title { margin: 0; font-size: 1.6em; color: #fff; }
+        .collage-section .collage-all { font-size: 0.9em; font-weight: 600; color: #9DB4FF; text-decoration: none; }
+        .collage-section .collage-all:hover { color: #fff; text-decoration: underline; }
+        .collage-wall { transform: rotate(-2deg) scale(1.05); }
+        .collage-row { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; scroll-behavior: auto; cursor: grab; padding: 6px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+        .collage-row + .collage-row { margin-top: 10px; }
+        .collage-track, .collage-dupe { display: flex; align-items: center; gap: 16px; width: max-content; }
+        .collage-row::-webkit-scrollbar { display: none; }
+        .collage-row:active { cursor: grabbing; }
+        .collage-tile img { -webkit-user-drag: none; user-select: none; }
+        .collage-tile { position: relative; display: block; flex: none; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45); transition: transform 0.2s ease; }
+        .collage-tile:hover, .collage-tile:focus-visible { transform: translateY(-4px); z-index: 2; }
+        .collage-tile:focus-visible { outline: 2px solid #9DB4FF; outline-offset: 3px; }
+        .collage-tile img { display: block; height: 220px; width: auto; }
+        /* Phones: titanium rim, thin black bezel, screen corners, Dynamic Island, side buttons */
+        .collage-phone {
+            --rim: #4A4845;
+            overflow: visible;
+            padding: 3px;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            background:
+                linear-gradient(#050505, #050505) padding-box,
+                linear-gradient(135deg, #8E8B86 0%, #3B3A38 16%, #252423 34%, #5E5C58 52%, #2A2928 70%, #464442 86%, #7C7975 100%) border-box;
+            box-shadow: 0 0 0 0.5px #2B2A28, 0 12px 26px rgba(0, 0, 0, 0.5);
+        }
+        .collage-phone img { border-radius: 11px; }
+        .collage-island {
+            position: absolute;
+            top: 5.5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 31%;
+            height: 9px;
+            border-radius: 999px;
+            background: #000;
+            pointer-events: none;
+        }
+        /* Left: action button + volume up/down. Right: side button. */
+        .collage-phone::before,
+        .collage-phone::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            border-radius: 1.5px;
+            background: linear-gradient(90deg, #2A2928, var(--rim));
+        }
+        .collage-phone::before { left: -4.5px; top: 19%; height: 5%; box-shadow: 0 22px 0 0 var(--rim), 0 46px 0 0 var(--rim); }
+        .collage-phone::after { right: -4.5px; background: linear-gradient(90deg, var(--rim), #2A2928); top: 28%; height: 13%; }
+        /* Android (Pixel-style): matte dark rim, even bezel, squarer corners, punch-hole camera, buttons on the right */
+        .collage-android {
+            overflow: visible;
+            padding: 3px;
+            border: 2px solid transparent;
+            border-radius: 13px;
+            background:
+                linear-gradient(#050505, #050505) padding-box,
+                linear-gradient(160deg, #6A6D72 0%, #2E3034 35%, #4C4F54 65%, #26282B 100%) border-box;
+            box-shadow: 0 0 0 0.5px #151618, 0 12px 26px rgba(0, 0, 0, 0.5);
+        }
+        .collage-android img { border-radius: 9px; }
+        .collage-camera {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 40%, #2A2D33 0 35%, #000 40%);
+            pointer-events: none;
+        }
+        .collage-android::before,
+        .collage-android::after {
+            content: '';
+            position: absolute;
+            right: -4.5px;
+            width: 3px;
+            border-radius: 1.5px;
+            background: linear-gradient(90deg, #4C4F54, #2A2C2F);
+        }
+        .collage-android::before { top: 20%; height: 6%; }
+        .collage-android::after { top: 30%; height: 13%; }
+        /* Apple Watch: rounded case, crown and side button */
+        .collage-watch {
+            overflow: visible;
+            padding: 7px;
+            border: 2px solid transparent;
+            border-radius: 34px;
+            background:
+                linear-gradient(#050505, #050505) padding-box,
+                linear-gradient(135deg, #8E8B86 0%, #3B3A38 18%, #252423 40%, #5E5C58 60%, #2A2928 80%, #7C7975 100%) border-box;
+            box-shadow: 0 0 0 0.5px #1A1A19, 0 12px 26px rgba(0, 0, 0, 0.5);
+        }
+        .collage-watch img { height: 180px; border-radius: 24px; }
+        .collage-watch::before, .collage-watch::after { content: ''; position: absolute; right: -6px; background: linear-gradient(90deg, #4A4845, #2A2928); }
+        .collage-watch::before { top: 24%; width: 5px; height: 16%; border-radius: 2px; }
+        .collage-watch::after { top: 52%; width: 3px; height: 20%; border-radius: 1.5px; right: -4.5px; }
+        /* Status bar for screens captured without one */
+        .collage-status {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8% 0 12%;
+            font: 600 6.5px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+            letter-spacing: 0.01em;
+            color: #000;
+            pointer-events: none;
+        }
+        .collage-status.is-light { color: #fff; }
+        .collage-status svg { width: 19px; height: 6px; fill: currentColor; }
+        .collage-android .collage-status { padding: 0 7%; font-weight: 500; }
+        /* Macs: thin bezel, small radius */
+        .collage-mac { border-radius: 12px; border: 6px solid #23262C; background: #23262C; }
+        .collage-mac img { border-radius: 6px; }
+        /* Websites: slim browser bar with three dots */
+        .collage-web { background: #23262C; padding-top: 20px; border-radius: 10px; }
+        .collage-web::before { content: ''; position: absolute; top: 7px; left: 10px; width: 6px; height: 6px; border-radius: 50%; background: #5B5F67; box-shadow: 10px 0 0 #5B5F67, 20px 0 0 #5B5F67; }
+        .collage-web img { height: 200px; }
+        .collage-promo { border-radius: 10px; overflow: visible; }
+        .collage-promo img { border-radius: 10px; }
+        .collage-label { position: absolute; left: 50%; bottom: 10px; transform: translate(-50%, 6px); white-space: nowrap; font-size: 0.72em; font-weight: 600; color: #fff; background: rgba(14, 16, 20, 0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: 0.35em 0.75em; border-radius: 999px; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; pointer-events: none; }
+        .collage-tile:hover .collage-label, .collage-tile:focus-visible .collage-label { opacity: 1; transform: translate(-50%, 0); }
+        @media (max-width: 600px) {
+            .collage-tile img { height: 160px; }
+            .collage-web img { height: 146px; }
+            .collage-phone { padding: 2px; border-width: 1.5px; border-radius: 11px; }
+            .collage-phone img { border-radius: 8px; }
+            .collage-island { top: 3.5px; height: 6px; }
+            .collage-camera { top: 3.5px; width: 5px; height: 5px; }
+            .collage-android { padding: 2px; border-width: 1.5px; border-radius: 9px; }
+            .collage-android img { border-radius: 6px; }
+            .collage-phone::before { box-shadow: 0 16px 0 0 var(--rim), 0 33px 0 0 var(--rim); }
+            .collage-title { font-size: 1.35em; }
+            .collage-watch img { height: 130px; border-radius: 18px; }
+            .collage-status { top: 2px; left: 2px; right: 2px; height: 10px; font-size: 4.8px; }
+            .collage-status svg { width: 14px; height: 4.5px; }
+            .collage-watch { padding: 5px; border-radius: 26px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .collage-dupe { display: none; }
+            .collage-wall { transform: none; }
+            .collage-row { -webkit-mask-image: none; mask-image: none; padding: 6px 1.5em 10px; }
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -179,8 +332,8 @@
                 </div>
                 <div class="tally-feature-device" aria-hidden="true">
                     <div class="tally-feature-glow"></div>
-                    <div class="tally-phone">
-                        <img src="assets/images/tallyios/iphone-home.webp" width="660" height="1435" loading="lazy" decoding="async" alt="" />
+                    <div class="tally-phone tally-phone--video">
+                        <video src="assets/videos/tally/native-iphone-demo.mp4" poster="assets/videos/tally/native-iphone-demo.jpg" width="450" height="978" autoplay muted loop playsinline preload="metadata"></video>
                     </div>
                     <div class="tally-moment tally-moment-jira">
                         <span class="tally-moment-icon">&#10003;</span>
@@ -240,6 +393,137 @@
             </div>
         </div>
     </section>
+
+    <!-- Screenshot collage -->
+    <section class="collage-section" aria-labelledby="collage-title">
+        <div class="collage-header">
+            <h2 id="collage-title" class="collage-title">Things I've shipped</h2>
+            <a href="case-studies.html" class="collage-all">All case studies →</a>
+        </div>
+        <div class="collage-wall">
+        <div class="collage-row" data-dir="1">
+            <div class="collage-track">
+                <a href="tally.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/01-iphone-home.webp" alt="Tally · iPhone" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone has-island"><img src="assets/images/site/collage/29-stamped-city-3d.webp" alt="Stamped! · 3D city" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · 3D city</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island"><img src="assets/images/site/collage/08-coastcastscreenshots8.webp" alt="CoastCast · Beach detail" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Beach detail</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/16-iphone-03-reveal.webp" alt="Squishy Butter · iPhone" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-web"><img src="assets/images/site/collage/23-stamped-web.webp" alt="Stamped! · Website" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Website</span></a>
+                <a href="tripsetta.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/21-tripsetta-marketing-04.webp" alt="Tripsetta · Android" width="248" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tripsetta · Android</span></a>
+                <a href="tally.html" class="collage-tile collage-watch"><img src="assets/images/site/collage/24-tally-watch.webp" alt="Tally · Apple Watch" width="296" height="360" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Apple Watch</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/06-05-map3d.webp" alt="Stamped! · 3D campus" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · 3D campus</span></a>
+                <a href="sort-tek.html" class="collage-tile collage-web"><img src="assets/images/site/collage/10-card-hero-800w.webp" alt="Sort-Tek · Website" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Sort-Tek · Website</span></a>
+                <a href="takeflight.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/07-takeflight-run.webp" alt="TakeFlight · iPhone" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">TakeFlight · iPhone</span></a>
+                <a href="tally.html" class="collage-tile collage-mac"><img src="assets/images/site/collage/04-mac-running.webp" alt="Tally · Mac" width="720" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Mac</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island"><img src="assets/images/site/collage/03-coastcastscreenshots6.webp" alt="CoastCast · Explore" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Explore</span></a>
+                <a href="wellness-co.html" class="collage-tile collage-web"><img src="assets/images/site/collage/13-whitebear.webp" alt="White Bear Harmonics · Website" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">White Bear Harmonics · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/25-stamped-vision.webp" alt="Stamped! · Vision Pro" width="678" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Vision Pro</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/31-squishy-watch.webp" alt="Squishy Butter · Apple Watch" width="268" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · Apple Watch</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/19-city-journey.webp" alt="Stamped! · Journey" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Journey</span></a>
+                <span class="collage-dupe" aria-hidden="true">
+                <a href="tally.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/01-iphone-home.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone has-island" tabindex="-1"><img src="assets/images/site/collage/29-stamped-city-3d.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · 3D city</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island" tabindex="-1"><img src="assets/images/site/collage/08-coastcastscreenshots8.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Beach detail</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/16-iphone-03-reveal.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/23-stamped-web.webp" alt="" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Website</span></a>
+                <a href="tripsetta.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/21-tripsetta-marketing-04.webp" alt="" width="248" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tripsetta · Android</span></a>
+                <a href="tally.html" class="collage-tile collage-watch" tabindex="-1"><img src="assets/images/site/collage/24-tally-watch.webp" alt="" width="296" height="360" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Apple Watch</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/06-05-map3d.webp" alt="" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · 3D campus</span></a>
+                <a href="sort-tek.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/10-card-hero-800w.webp" alt="" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Sort-Tek · Website</span></a>
+                <a href="takeflight.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/07-takeflight-run.webp" alt="" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">TakeFlight · iPhone</span></a>
+                <a href="tally.html" class="collage-tile collage-mac" tabindex="-1"><img src="assets/images/site/collage/04-mac-running.webp" alt="" width="720" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Mac</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island" tabindex="-1"><img src="assets/images/site/collage/03-coastcastscreenshots6.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Explore</span></a>
+                <a href="wellness-co.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/13-whitebear.webp" alt="" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">White Bear Harmonics · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/25-stamped-vision.webp" alt="" width="678" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Vision Pro</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/31-squishy-watch.webp" alt="" width="268" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · Apple Watch</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/19-city-journey.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Journey</span></a>
+                </span>
+            </div>
+        </div>
+        <div class="collage-row" data-dir="-1">
+            <div class="collage-track">
+                <a href="tally.html" class="collage-tile collage-android"><img src="assets/images/site/collage/12-tally-android-dashboard.webp" alt="Tally · Android" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-camera" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · Android</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/11-09-celebration.webp" alt="Stamped! · Stamp" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Stamp</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island"><img src="assets/images/site/collage/14-coastcastscreenshots3.webp" alt="CoastCast · Forecast" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Forecast</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-web"><img src="assets/images/site/collage/26-squishy-web.webp" alt="Squishy Butter · Website" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/02-03-campus.webp" alt="Stamped! · Campus" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Campus</span></a>
+                <a href="tripsetta.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/09-tripsetta-marketing-02.webp" alt="Tripsetta · Android" width="248" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tripsetta · Android</span></a>
+                <a href="tally.html" class="collage-tile collage-web"><img src="assets/images/site/collage/27-tally-web.webp" alt="Tally · Web app" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Web app</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/05-profile-view.webp" alt="Squishy Butter · iPhone" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Squishy Butter · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-mac"><img src="assets/images/site/collage/15-stamped-mac-city.webp" alt="Stamped! · Mac" width="708" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Mac</span></a>
+                <a href="takeflight.html" class="collage-tile collage-phone"><img src="assets/images/site/collage/18-takeflight-achievements.webp" alt="TakeFlight · Achievements" width="194" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">TakeFlight · Achievements</span></a>
+                <a href="tally.html" class="collage-tile collage-android"><img src="assets/images/site/collage/17-tally-android-reports.webp" alt="Tally · Android" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-camera" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · Android</span></a>
+                <a href="beverage-co.html" class="collage-tile collage-web"><img src="assets/images/site/collage/20-card-panel-800w.webp" alt="Botanical Archive · Website" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Botanical Archive · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone has-island"><img src="assets/images/site/collage/30-stamped-look-around.webp" alt="Stamped! · Look Around" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Look Around</span></a>
+                <a href="tally.html" class="collage-tile collage-promo"><img src="assets/images/site/collage/28-tally-vision.webp" alt="Tally · Vision Pro" width="782" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Vision Pro</span></a>
+                <a href="inn-co.html" class="collage-tile collage-web"><img src="assets/images/site/collage/22-crystal-lake.webp" alt="Crystal Lake Resort · Website" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Crystal Lake Resort · Website</span></a>
+                <span class="collage-dupe" aria-hidden="true">
+                <a href="tally.html" class="collage-tile collage-android" tabindex="-1"><img src="assets/images/site/collage/12-tally-android-dashboard.webp" alt="" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-camera" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · Android</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/11-09-celebration.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Stamp</span></a>
+                <a href="coastcast.html" class="collage-tile collage-phone has-island" tabindex="-1"><img src="assets/images/site/collage/14-coastcastscreenshots3.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">CoastCast · Forecast</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/26-squishy-web.webp" alt="" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Squishy Butter · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/02-03-campus.webp" alt="" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Stamped! · Campus</span></a>
+                <a href="tripsetta.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/09-tripsetta-marketing-02.webp" alt="" width="248" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tripsetta · Android</span></a>
+                <a href="tally.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/27-tally-web.webp" alt="" width="640" height="400" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Web app</span></a>
+                <a href="squishy-butter.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/05-profile-view.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Squishy Butter · iPhone</span></a>
+                <a href="stamped.html" class="collage-tile collage-mac" tabindex="-1"><img src="assets/images/site/collage/15-stamped-mac-city.webp" alt="" width="708" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Mac</span></a>
+                <a href="takeflight.html" class="collage-tile collage-phone" tabindex="-1"><img src="assets/images/site/collage/18-takeflight-achievements.webp" alt="" width="194" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status is-light" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-island" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">TakeFlight · Achievements</span></a>
+                <a href="tally.html" class="collage-tile collage-android" tabindex="-1"><img src="assets/images/site/collage/17-tally-android-reports.webp" alt="" width="190" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" aria-hidden="true"><rect x="0" y="6.5" width="2" height="3" rx=".5"/><rect x="3" y="5" width="2" height="4.5" rx=".5"/><rect x="6" y="3" width="2" height="6.5" rx=".5"/><rect x="9" y="1" width="2" height="8.5" rx=".5"/><path d="M18.5 9.3l-1.6-1.9a2.5 2.5 0 013.2 0zM15.7 6l-1.1-1.3a5.8 5.8 0 017.8 0L21.3 6a4.1 4.1 0 00-5.6 0zM13.4 3.3L12.3 2a9.2 9.2 0 0112.4 0l-1.1 1.3a7.5 7.5 0 00-10.2 0z"/><rect x="26.5" y="1.5" width="6" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/><rect x="27.6" y="2.6" width="3.8" height="4.8" rx=".9"/><rect x="33" y="3.8" width=".9" height="2.4" rx=".4" opacity=".45"/></svg></span><span class="collage-camera" aria-hidden="true"></span><span class="collage-label" aria-hidden="true">Tally · Android</span></a>
+                <a href="beverage-co.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/20-card-panel-800w.webp" alt="" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Botanical Archive · Website</span></a>
+                <a href="stamped.html" class="collage-tile collage-phone has-island" tabindex="-1"><img src="assets/images/site/collage/30-stamped-look-around.webp" alt="" width="202" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Stamped! · Look Around</span></a>
+                <a href="tally.html" class="collage-tile collage-promo" tabindex="-1"><img src="assets/images/site/collage/28-tally-vision.webp" alt="" width="782" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Tally · Vision Pro</span></a>
+                <a href="inn-co.html" class="collage-tile collage-web" tabindex="-1"><img src="assets/images/site/collage/22-crystal-lake.webp" alt="" width="704" height="440" loading="lazy" decoding="async" draggable="false" /><span class="collage-label" aria-hidden="true">Crystal Lake Resort · Website</span></a>
+                </span>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+    // Collage rows drift on their own, loop seamlessly, and can be swiped, dragged or trackpad-scrolled.
+    (() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelectorAll('.collage-row').forEach((row) => {
+            const dir = Number(row.dataset.dir) || 1;
+            const speed = 0.35;
+            const dupe = row.querySelector('.collage-dupe');
+            const loopWidth = () => dupe.offsetLeft;
+            let pausedUntil = 0, hovering = false, visible = false, pos = 0;
+            const pause = () => { pausedUntil = performance.now() + 2500; };
+            const wrap = (x) => { const w = loopWidth(); if (w <= 0) return x; if (x >= w) return x - w; if (x < 0) return x + w; return x; };
+
+            // Drag with a mouse; suppress the click that ends a drag
+            let startX = null, startScroll = 0, dragged = false;
+            row.addEventListener('pointerdown', (e) => { pause(); if (e.pointerType !== 'mouse') return; startX = e.clientX; startScroll = row.scrollLeft; dragged = false; });
+            window.addEventListener('pointermove', (e) => { if (startX === null) return; const dx = e.clientX - startX; if (Math.abs(dx) > 4) dragged = true; row.scrollLeft = startScroll - dx; pause(); });
+            window.addEventListener('pointerup', () => { startX = null; });
+            row.addEventListener('click', (e) => { if (dragged) { e.preventDefault(); dragged = false; } }, true);
+            ['wheel', 'touchstart', 'focusin'].forEach((ev) => row.addEventListener(ev, pause, { passive: true }));
+            row.addEventListener('mouseenter', () => { hovering = true; });
+            row.addEventListener('mouseleave', () => { hovering = false; });
+
+            if (reduce) return;
+            row.classList.add('is-looping');
+            row.addEventListener('scroll', () => {
+                if (performance.now() < pausedUntil || hovering) {
+                    const x = wrap(row.scrollLeft);
+                    if (x !== row.scrollLeft) { row.scrollLeft = x; if (startX !== null) startScroll += x - pos; }
+                    pos = row.scrollLeft;
+                }
+            }, { passive: true });
+            new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(row);
+            requestAnimationFrame(() => { pos = dir < 0 ? loopWidth() / 2 : 0; row.scrollLeft = pos; });
+            const tick = (now) => {
+                if (visible && !hovering && now > pausedUntil) {
+                    pos = wrap(pos + dir * speed);
+                    row.scrollLeft = pos;
+                } else {
+                    pos = row.scrollLeft;
+                }
+                requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        });
+    })();
+    </script>
 
     <!-- Web Project Screenshots -->
     <section class="screenshot-strip-section">
