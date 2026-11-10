@@ -84,7 +84,8 @@
         .tally-demo-tabs span { display: block; font-size: 0.78em; line-height: 1.45; color: var(--color-text-muted); margin-top: 0.2em; }
         .tally-demo-progress { position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--case-accent, #4361EE); }
         .tally-demo-tabs button[aria-selected="false"] .tally-demo-progress { display: none; }
-        .tally-demo-stage { order: -1; display: flex; justify-content: center; }
+        /* As tall as the tallest clip (a 330px-wide web clip), so switching clips never moves the page */
+        .tally-demo-stage { order: -1; display: flex; justify-content: center; align-items: center; min-height: 478px; }
         .tally-demo-media { width: 100%; max-width: 330px; height: auto; aspect-ratio: 600 / 866; display: block; border-radius: 18px;
             border: 1px solid var(--color-border); background: var(--color-bg); box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.35); }
         .tally-demo-media[hidden] { display: none; }
@@ -92,6 +93,7 @@
         .tally-demo-phone::after { display: none; }
         .tally-demo-phone[hidden] { display: none; }
         .tally-demo-phone .tally-demo-media--native { max-width: none; aspect-ratio: 450 / 978; border: 0; border-radius: 28px; box-shadow: none; background: #f8fafb; }
+        .tally-demo-media--watch { max-width: 208px; aspect-ratio: 416 / 496; border: 7px solid #2a2a2e; border-radius: 46px; background: #000; }
 
         /* Architecture diagram */
         .tally-arch { margin: 1.25em 0 1.75em; display: flex; flex-direction: column; align-items: stretch; }
@@ -117,8 +119,10 @@
             .tally-demo-tabs button { flex: 0 0 auto; width: auto; padding: 0.55em 0.9em; border-radius: 999px; }
             .tally-demo-tabs span { display: none; }
             .tally-demo-media { max-width: 280px; }
+            .tally-demo-stage { min-height: 406px; }
             .tally-demo-phone { width: 189px; border-radius: 28px; }
             .tally-demo-phone .tally-demo-media--native { border-radius: 24px; }
+            .tally-demo-media--watch { max-width: 180px; border-radius: 40px; }
         }
         @media (max-width: 600px) {
             .tally-arch-row { grid-template-columns: 1fr; }
@@ -204,7 +208,7 @@
             <div class="phone-mockup">
                 <div class="phone-btns-left"></div>
                 <div class="phone-screen-static">
-                    <img src="assets/images/tallyios/app/iphone-running.webp" alt="Tally on iPhone: the timer running for Blue Sky Studio" width="520" height="1130">
+                    <img src="assets/images/tallyios/app/iphone-running-119.webp" alt="Tally on iPhone: the timer running for Blue Sky Studio" width="520" height="1130">
                 </div>
             </div>
             <figcaption class="case-caption">The native Mac and iPhone apps</figcaption>
@@ -272,20 +276,22 @@
 
         <div class="case-section" id="see-it-work">
             <h3>See It Work</h3>
-            <p>Short clips from the native iPhone app and the web app. Pick one, or let them play in turn.</p>
+            <p>Short clips from the native iPhone and Apple Watch apps and the web app. Pick one, or let them play in turn.</p>
             <div class="tally-demo" data-demo>
                 <div class="tally-demo-tabs" role="tablist" aria-label="Demo clips">
                     <button type="button" role="tab" id="demo-tab-0" aria-controls="demo-panel" aria-selected="true" data-i="0"><strong>iPhone app</strong><span>Pick a client, run the timer, note what you did and see it in Reports.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel" aria-selected="false" data-i="1"><strong>Jira</strong><span>Start from a Jira ticket. The time is logged on it when you save.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel" aria-selected="false" data-i="2"><strong>GitHub</strong><span>Commits with no session logged, added in one tap.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-3" aria-controls="demo-panel" aria-selected="false" data-i="3"><strong>Calendar</strong><span>A client meeting with no session, added with the real hours.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
-                    <button type="button" role="tab" id="demo-tab-4" aria-controls="demo-panel" aria-selected="false" data-i="4"><strong>Client reports</strong><span>A report link for the client. They need no account.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel" aria-selected="false" data-i="1"><strong>Apple Watch</strong><span>Start a timer from the wrist, pause it, stop it. Native watchOS.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel" aria-selected="false" data-i="2"><strong>Jira</strong><span>Start from a Jira ticket. The time is logged on it when you save.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-3" aria-controls="demo-panel" aria-selected="false" data-i="3"><strong>GitHub</strong><span>Commits with no session logged, added in one tap.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-4" aria-controls="demo-panel" aria-selected="false" data-i="4"><strong>Calendar</strong><span>A client meeting with no session, added with the real hours.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
+                    <button type="button" role="tab" id="demo-tab-5" aria-controls="demo-panel" aria-selected="false" data-i="5"><strong>Client reports</strong><span>A report link for the client. They need no account.</span><i class="tally-demo-progress" aria-hidden="true"></i></button>
                 </div>
                 <div class="tally-demo-stage" id="demo-panel" role="tabpanel" aria-live="polite">
                     <div class="phone-mockup tally-demo-phone">
                         <div class="phone-btns-left"></div>
                         <video class="tally-demo-media tally-demo-media--native" data-src="assets/videos/tally/native-iphone-demo.mp4" poster="assets/videos/tally/native-iphone-demo.jpg" width="450" height="978" muted playsinline preload="none" aria-label="In the native iPhone app: choosing Blue Sky Studio and starting the timer, the timer running with Pause and Stop, typing what was worked on, marking it billable and saving, then the Reports screen with the weekly goal and hours by type of work"></video>
                     </div>
+                    <video class="tally-demo-media tally-demo-media--watch" data-src="assets/videos/tally/native-watch-demo.mp4" poster="assets/videos/tally/native-watch-demo.jpg" width="416" height="496" muted playsinline preload="none" aria-label="In the native Apple Watch app: swiping from Blue Sky Studio to Acme Corp, starting the timer, pausing and resuming it, then stopping it" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/jira-demo.mp4" poster="assets/videos/tally/jira-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Tapping Jira ticket ACME-42 starts the timer, then stopping and saving logs the time to ACME-42 in Jira" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/github-demo.mp4" poster="assets/videos/tally/github-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="The dashboard lists GitHub commits with no time logged, and tapping Add 2h turns one into a session for Acme Corp" hidden></video>
                     <video class="tally-demo-media" data-src="assets/videos/tally/calendar-demo.mp4" poster="assets/videos/tally/calendar-demo.jpg" width="600" height="866" muted playsinline preload="none" aria-label="Adding a calendar rule that matches guests from acme.com to Acme Corp, then on the dashboard changing a 1 hour Acme sprint review to 0.5 hours and adding it as a 30 minute session" hidden></video>
@@ -353,7 +359,7 @@
                     <div class="phone-mockup">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/iphone-running.webp" alt="The running timer for Blue Sky Studio with Pause and Stop" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
+                            <img src="assets/images/tallyios/app/iphone-running-119.webp" alt="The running timer for Blue Sky Studio with Pause and Stop" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
                         </div>
                     </div>
                     <p>Timer</p>
@@ -362,7 +368,7 @@
                     <div class="phone-mockup">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/iphone-picker.webp" alt="The client picker: recent clients Acme Corp, Blue Sky Studio, Freelance and River North Group, a new client field and Start Tally" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
+                            <img src="assets/images/tallyios/app/iphone-picker-119.webp" alt="The client picker: Acme Corp from the Design Team, and personal clients Beta Inc, Blue Sky Studio and River North Group, with Start Tally" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
                         </div>
                     </div>
                     <p>Client picker</p>
@@ -371,7 +377,7 @@
                     <div class="phone-mockup">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/iphone-note.webp" alt="After stopping: a title and note for the session, type of work and billable" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
+                            <img src="assets/images/tallyios/app/iphone-note-119.webp" alt="After stopping: the title Pricing page redesign and a note for the Blue Sky Studio session, type of work and billable" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
                         </div>
                     </div>
                     <p>Title and note</p>
@@ -380,7 +386,7 @@
                     <div class="phone-mockup">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/iphone-reports.webp" alt="Reports for this week: 27 hours 15 minutes against a 35 hour goal, split by client and by type of work" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
+                            <img src="assets/images/tallyios/app/iphone-reports-119.webp" alt="Reports for last week: Acme Corp 14 hours 30 minutes, Blue Sky Studio 6 hours and River North Group 4 hours, with each session listed" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
                         </div>
                     </div>
                     <p>Reports</p>
@@ -389,7 +395,7 @@
                     <div class="phone-mockup">
                         <div class="phone-btns-left"></div>
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/iphone-activity21.webp" alt="The Activity calendar with Thursday, October 29 selected: 6 hours across Acme Corp and River North Group" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
+                            <img src="assets/images/tallyios/app/iphone-activity-119.webp" alt="The Activity calendar with Thursday, November 5 selected: 4 hours 30 minutes across Acme Corp and Blue Sky Studio" loading="lazy" width="520" height="1130" style="width:100%;height:auto;display:block;border-radius:30px;">
                         </div>
                     </div>
                     <p>Activity</p>
@@ -401,7 +407,7 @@
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup is-android">
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/android-dashboard.webp" alt="The Android dashboard: 18 hours 40 minutes this week, a 4 day streak, estimated earnings and the Acme Corp contract" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
+                            <img src="assets/images/tallyios/app/android-dashboard-119.webp" alt="The Android dashboard on a Monday: 6 hours 32 minutes today across 2 clients, a prompt to invoice Acme Corp, and estimated earnings" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
                         </div>
                     </div>
                     <p>Dashboard</p>
@@ -409,10 +415,34 @@
                 <div class="screenshot-scroll-item">
                     <div class="phone-mockup is-android">
                         <div class="phone-screen-static">
-                            <img src="assets/images/tallyios/app/android-reports.webp" alt="Reports on Android: hours and earnings this week, by client" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
+                            <img src="assets/images/tallyios/app/android-timer-119.webp" alt="The Android timer running for Blue Sky Studio at 1 hour 23 minutes, with Pause, Stop and the task note" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
+                        </div>
+                    </div>
+                    <p>Timer</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="phone-mockup is-android">
+                        <div class="phone-screen-static">
+                            <img src="assets/images/tallyios/app/android-activity-119.webp" alt="The Android Activity calendar for November 2026, with hours on each day and a total for each week" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
+                        </div>
+                    </div>
+                    <p>Activity</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="phone-mockup is-android">
+                        <div class="phone-screen-static">
+                            <img src="assets/images/tallyios/app/android-reports-119.webp" alt="Android Reports for last week: 24 hours 30 minutes and $2,177.50, by client" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
                         </div>
                     </div>
                     <p>Reports</p>
+                </div>
+                <div class="screenshot-scroll-item">
+                    <div class="phone-mockup is-android">
+                        <div class="phone-screen-static">
+                            <img src="assets/images/tallyios/app/android-team-119.webp" alt="The Android team view for Design Team: timesheets, 11 hours 32 minutes this week across 3 members" loading="lazy" width="520" height="1126" style="width:100%;height:auto;display:block;">
+                        </div>
+                    </div>
+                    <p>Team</p>
                 </div>
             </div>
             <div class="case-links tally-gallery-cta">
