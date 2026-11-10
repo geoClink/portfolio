@@ -1267,6 +1267,8 @@ a { color: inherit; }
     .continent-grid { grid-template-columns: repeat(3, 1fr); }
 
     .feature .container { grid-template-columns: 1fr 1fr; gap: 64px; }
+    /* Vision Pro: two pictures stack beside the text, so the text starts at the top instead of centring far down. */
+    .feature .container:has(> .device-stack) { align-items: start; }
     /* Every other row puts the visual on the left */
     .feature.flip .feature-visual { order: -1; }
 
