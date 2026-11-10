@@ -295,7 +295,7 @@ body::before {
     padding: 1.75em 2em 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
@@ -354,7 +354,7 @@ body::before {
 .hero-proof-label a:hover { color: #fff; }
 @media (max-width: 736px) {
     .hero-proof {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         margin-top: 2em;
         padding: 1.5em 1.25em 0;
         gap: 1.25em 1em;
