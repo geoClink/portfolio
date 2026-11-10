@@ -302,13 +302,27 @@ body::before {
 .hero-proof li {
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
-    padding: 0;
+    gap: 0.35em;
+    padding: 0 0 0 1.5em;
     margin: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    min-width: 0;
 }
+.hero-proof li:first-child { padding-left: 0; border-left: 0; }
+/* First stat: app icons sit beside the "5", label below */
+.hero-proof li:has(.hero-proof-icons) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    align-content: start;
+    column-gap: 0.75em;
+    row-gap: 0.35em;
+}
+.hero-proof li:has(.hero-proof-icons) .hero-proof-label { grid-column: 1 / -1; grid-row: 2; }
 .hero-proof-icons {
     display: flex;
-    margin-top: 0.55em;
+    grid-column: 2;
+    grid-row: 1;
 }
 .hero-proof-icons img {
     width: 28px;
@@ -324,7 +338,7 @@ body::before {
 .hero-proof-icons img.hero-proof-icon-squishy { object-fit: contain; padding: 3px; box-sizing: border-box; }
 .hero-proof-icons:hover img { transform: translateY(-2px); }
 .hero-proof-value {
-    font-size: 1.9em;
+    font-size: 1.6em;
     font-weight: 700;
     line-height: 1.1;
     color: #fff;
@@ -334,15 +348,13 @@ body::before {
 .hero-proof li.hero-proof-fit { container-type: inline-size; }
 .hero-proof li.hero-proof-fit .hero-proof-value {
     white-space: nowrap;
-    font-size: min(1.9em, 11.4cqi);
-}
-@media (max-width: 736px) {
-    .hero-proof li.hero-proof-fit .hero-proof-value { font-size: min(1.6em, 11.4cqi); }
+    font-size: min(1.6em, 10.5cqi);
 }
 .hero-proof-label {
-    font-size: 0.78em;
-    line-height: 1.4;
+    font-size: 0.85em;
+    line-height: 1.45;
     color: rgba(255,255,255,0.7);
+    max-width: 24em;
 }
 .hero-proof-label a,
 .hero-proof-label a:link,
@@ -357,9 +369,16 @@ body::before {
         grid-template-columns: 1fr;
         margin-top: 2em;
         padding: 1.5em 1.25em 0;
-        gap: 1.25em 1em;
+        gap: 0;
     }
-    .hero-proof-value { font-size: 1.6em; }
+    .hero-proof li,
+    .hero-proof li:first-child {
+        padding: 1em 0;
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-proof li:first-child { border-top: 0; padding-top: 0; }
+    .hero-proof-value { font-size: 1.5em; }
 }
 
 @media (max-width: 1100px) {
