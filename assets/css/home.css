@@ -1502,6 +1502,9 @@ body::before {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.5em;
 }
+@media (min-width: 901px) {
+    .tally-feature-stats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .tally-feature-stats li {
     margin: 0;
     padding: 0.75em 0.7em;

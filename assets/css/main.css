@@ -3829,3 +3829,14 @@ footer#footer .footer-squishy a:hover {
         scroll-behavior: auto !important;
     }
 }
+
+/* Images with width/height attributes keep their aspect ratio when CSS sets the width. Zero specificity, so any other rule still wins. */
+:where(img[width][height]) { height: auto; }
+
+/* Larger tap area for small standalone links, without changing layout. */
+.hero-btn-link, .hero-butter-link, .collage-all, .screenshot-strip-all,
+footer#footer a.footer-email, footer#footer a.footer-legal { position: relative; }
+.hero-btn-link::after, .hero-butter-link::after, .collage-all::after, .screenshot-strip-all::after,
+footer#footer a.footer-email::after, footer#footer a.footer-legal::after {
+    content: ""; position: absolute; left: -4px; right: -4px; top: 50%; height: 44px; transform: translateY(-50%);
+}
