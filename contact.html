@@ -441,6 +441,11 @@
                 <p class="contact-intent-card-desc">I build web platforms and iOS apps for small businesses - ordering, booking, client management, and more. Fast, with real clients already live. Let's see if what I've built fits what you need.</p>
                 <span class="contact-intent-card-cta">I'm a potential client →</span>
             </div>
+            <div class="contact-intent-card" onclick="selectIntent('nonprofit', this)">
+                <div class="contact-intent-card-title">Run a nonprofit?</div>
+                <p class="contact-intent-card-desc">Your team can use <a href="tally.html" onclick="event.stopPropagation()">Tally</a>'s full team plan free for a year to track staff and volunteer hours. I also take on one pro bono project at a time when I have room. Tell me what you need.</p>
+                <span class="contact-intent-card-cta">I'm with a nonprofit →</span>
+            </div>
         </div>
 
         <div id="how-it-works" class="contact-hiw">
@@ -552,9 +557,9 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'intent_select', { label: type, page: 'contact' });
             }
-            document.getElementById('subject').value = type === 'hiring' ? 'Full-time role inquiry' : 'Build inquiry';
+            document.getElementById('subject').value = type === 'hiring' ? 'Full-time role inquiry' : type === 'nonprofit' ? 'Nonprofit inquiry' : 'Build inquiry';
             const label = document.getElementById('form-label');
-            label.textContent = type === 'hiring' ? 'Tell me about the role' : 'Tell me about your business';
+            label.textContent = type === 'hiring' ? 'Tell me about the role' : type === 'nonprofit' ? 'Tell me about your nonprofit' : 'Tell me about your business';
             const hiw = document.getElementById('how-it-works');
             if (hiw) hiw.classList.toggle('visible', type === 'client');
             const scrollTarget = (type === 'client' && hiw) ? hiw : document.getElementById('contactForm');
