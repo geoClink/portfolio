@@ -75,31 +75,47 @@ body::before {
     opacity: 0;
 }
 
+/* Soft fade at the bottom so the play button sits on a dark base, not on the butter */
+.hero-butter-wrap::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.hero-butter-wrap.is-playing::after {
+    opacity: 0;
+}
+
 .hero-butter-play {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 1.25em;
+    transform: translateX(-50%);
     z-index: 2;
     display: inline-flex;
     align-items: center;
-    gap: 0.6em;
+    gap: 0.65em;
     font: inherit;
-    font-size: 0.88em;
-    font-weight: 600;
-    letter-spacing: 0.03em;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.01em;
     text-transform: none;
     line-height: 1.2;
     height: auto;
     white-space: nowrap;
-    padding: 0.75em 1.6em;
+    padding: 0.5em 1.25em 0.5em 0.5em;
     border: none;
-    border-radius: 6px;
-    background: var(--color-on-dark);
-    color: var(--color-nav-mobile-bg);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+    border-radius: 999px;
+    background: #f6d873;
+    color: #2b1f08;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45), inset 0 -2px 0 rgba(0,0,0,0.12);
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-butter-play[hidden] {
@@ -107,25 +123,44 @@ body::before {
 }
 
 .hero-butter-play:hover {
-    opacity: 0.88;
+    background: #fbe18a;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.5), inset 0 -2px 0 rgba(0,0,0,0.12);
+}
+
+.hero-butter-play:active {
+    transform: translateX(-50%) translateY(0);
 }
 
 .hero-butter-play:focus-visible {
-    outline: 3px solid var(--color-on-dark);
+    outline: 3px solid #f6d873;
     outline-offset: 3px;
 }
 
 .hero-butter-play[aria-busy="true"] {
     cursor: progress;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
+/* Round dark badge holding the play triangle */
 .hero-butter-play-icon {
-    width: 0;
-    height: 0;
+    position: relative;
+    flex: 0 0 auto;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: #2b1f08;
+}
+
+.hero-butter-play-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
     border-style: solid;
-    border-width: 0.45em 0 0.45em 0.72em;
-    border-color: transparent transparent transparent currentColor;
+    border-width: 0.42em 0 0.42em 0.68em;
+    border-color: transparent transparent transparent #f6d873;
 }
 
 .hero-butter-iframe {
@@ -151,6 +186,7 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
     .hero-butter-poster,
     .hero-butter-iframe,
+    .hero-butter-wrap::after,
     .hero-butter-play { transition: none; }
 }
 
