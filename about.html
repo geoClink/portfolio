@@ -93,67 +93,39 @@
             margin: 0 0 2em 0;
         }
 
-        .story-photos {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1em;
-            margin: 1.5em 0 1em;
-        }
-        @media (max-width: 600px) {
-            .story-photos { gap: 0.5em; }
-            .story-photos figcaption { font-size: 0.75em !important; }
-        }
-        .gallery-open { margin: 0 0 1.75em; }
-        .photo-gallery {
-            width: min(1100px, 94vw);
-            max-height: 90vh;
-            padding: 0;
-            border: none;
-            border-radius: 16px;
-            background: var(--color-bg, #fff);
-            color: inherit;
-        }
-        .photo-gallery::backdrop { background: rgba(0,0,0,0.75); }
-        .photo-gallery-head {
-            position: sticky;
-            top: 0;
+        .photo-strip {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1em 1.25em;
-            background: inherit;
-            z-index: 1;
+            gap: 0.75em;
+            overflow-x: auto;
+            scroll-snap-type: x proximity;
+            margin: 1.5em 0 0.25em;
+            padding-bottom: 0.6em;
+            -webkit-overflow-scrolling: touch;
         }
-        .photo-gallery-head h4 { margin: 0; }
-        .photo-gallery-close {
-            border: none;
-            background: none;
-            font-size: 1.4em;
-            line-height: 1;
-            cursor: pointer;
-            color: inherit;
-            padding: 0.25em;
-            box-shadow: none;
+        .photo-strip figure {
+            flex: 0 0 auto;
+            margin: 0;
+            scroll-snap-align: start;
         }
-        .photo-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1em;
-            padding: 0 1.25em 1.25em;
-        }
-        .photo-gallery-grid figure { margin: 0; }
-        .photo-gallery-grid img {
+        .photo-strip img {
             display: block;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
+            height: 240px;
+            width: auto;
             border-radius: 12px;
         }
-        .photo-gallery-grid figcaption {
-            font-size: 0.85em;
+        .photo-strip figcaption {
+            font-size: 0.8em;
             color: var(--color-text-muted);
-            margin-top: 0.5em;
+            margin-top: 0.4em;
+            white-space: nowrap;
+        }
+        .photo-strip-hint {
+            font-size: 0.8em !important;
+            color: var(--color-text-muted) !important;
+            margin: 0 0 1.5em !important;
+        }
+        @media (max-width: 600px) {
+            .photo-strip img { height: 200px; }
         }
         .hf-video { margin: 1em 0 0; max-width: 240px; }
         .hf-video video {
@@ -164,20 +136,6 @@
             background: #000;
         }
         .hf-video figcaption {
-            font-size: 0.85em;
-            color: var(--color-text-muted);
-            margin-top: 0.5em;
-        }
-        .story-photos figure { margin: 0; }
-        .story-photos img {
-            display: block;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-        .story-photos figcaption {
             font-size: 0.85em;
             color: var(--color-text-muted);
             margin-top: 0.5em;
@@ -467,69 +425,61 @@
                     <p>I was born in Houston, went to college in Colorado, and worked in a wheat breeding lab at Colorado State extracting DNA to help farmers get the genetics they needed. After graduating I came to Michigan, and one weekend I went down to stay at Hostel Detroit. I stayed three weeks. The people I met there, from Germany, Afghanistan, Montreal, and Windsor, were so passionate about this city's history and architecture that it rubbed off on me. I moved here with no plan, working in restaurants and looking for a way forward.</p>
                     <p>That way turned out to be the <a href="https://developeracademy.msu.edu/" target="_blank" rel="noopener noreferrer">MSU Apple Developer Academy</a>. I'd tried a free Python course back in 2023 and didn't stick with it, but the interest never left, and in September 2025 I went all in. A year later I've shipped five apps to the App Store, built booking platforms for real businesses, and was selected for the Year 2 cohort to build a Vision Pro healthcare app. On the web side, I build production platforms with multi-tenant architecture, webhook-driven Stripe payments, admin dashboards, and AI integrations, taking products from idea to production and keeping them running.</p>
                     <p>What I've learned is that being a developer is more than typing code. It's talking to the people who'll actually use what you build, choosing the right tool for the job, and building for the problem, not for what looks flashy. My first-year mentor told us that if we worked hard, by the fifth challenge people would be asking to join our team. By the time we picked teams, I got to choose mine, and we built <a href="coastcast.html">CoastCast</a>.</p>
-                    <div class="story-photos">
-                            <figure>
-                                <img src="assets/images/about/george-vision-pro.webp" alt="George wearing Apple Vision Pro while coding on a MacBook, with an iPad on the desk" width="900" height="1167" loading="lazy" />
-                                <figcaption>Building for Vision Pro.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-herald-lab.webp" alt="George standing next to the Herald Lab sign, a logo with a VR headset, a flame and a circuit-board tree" width="900" height="1200" loading="lazy" />
-                                <figcaption>Visiting the Herald Lab.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-313.webp" alt="George in a 313 cap and leather jacket holding up a medal in front of a red wall with a Teamwork sign" width="900" height="1200" loading="lazy" />
-                                <figcaption>Repping the 313.</figcaption>
-                            </figure>
+                    <div class="photo-strip" tabindex="0" aria-label="Photos of George, scroll sideways for more">
+                        <figure>
+                            <img src="assets/images/about/george-vision-pro.webp" alt="George wearing Apple Vision Pro while coding on a MacBook, with an iPad on the desk" width="900" height="1167" loading="lazy" />
+                            <figcaption>Building for Vision Pro.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-herald-lab.webp" alt="George standing next to the Herald Lab sign, a logo with a VR headset, a flame and a circuit-board tree" width="900" height="1200" loading="lazy" />
+                            <figcaption>Visiting the Herald Lab.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-313.webp" alt="George in a 313 cap and leather jacket holding up a medal in front of a red wall with a Teamwork sign" width="900" height="1200" loading="lazy" />
+                            <figcaption>Repping the 313.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-blazer.webp" alt="George in a navy blazer and white shirt, smiling" width="900" height="1200" loading="lazy" />
+                            <figcaption>Ready for what's next.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-detroit.webp" alt="George in a Detroit cap holding a basketball under an indoor hoop" width="900" height="1200" loading="lazy" />
+                            <figcaption>Detroit is home base.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-michigan.webp" alt="George in a cap and white polo beside a vintage red fire truck decked with American flags" width="900" height="1200" loading="lazy" />
+                            <figcaption>Michigan summers.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-winter.webp" alt="George in a knit hat with a coffee, sitting on an ice-sculpture throne in the snow" width="900" height="1200" loading="lazy" />
+                            <figcaption>Michigan winters.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/george-bench.webp" alt="George sitting on an iron bench outdoors at sunset" width="900" height="1200" loading="lazy" />
+                            <figcaption>Off the clock.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/life-tigers-mascot.webp" alt="George and a friend with the Detroit Tigers mascot at Comerica Park" width="900" height="675" loading="lazy" />
+                            <figcaption>Peace signs at Comerica Park.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/life-tigers-upper-deck.webp" alt="George and a friend in the upper deck at a Tigers game, the field and downtown Detroit behind them" width="900" height="675" loading="lazy" />
+                            <figcaption>Tigers from the upper deck.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/life-lions-win.webp" alt="George and a friend in the stands after a Detroit Lions win" width="900" height="675" loading="lazy" />
+                            <figcaption>Lions win.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/life-sunset-bench.webp" alt="George and a friend on a garden bench overlooking northern Michigan hills at sunset" width="900" height="675" loading="lazy" />
+                            <figcaption>Northern Michigan sunsets.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/images/about/life-guinea-pigs.webp" alt="George and a young friend in a Detroit Lions shirt petting guinea pigs" width="900" height="675" loading="lazy" />
+                            <figcaption>Guinea pig duty.</figcaption>
+                        </figure>
                     </div>
-                    <button type="button" class="button about-btn gallery-open" onclick="document.getElementById('photoGallery').showModal()">More photos →</button>
-                    <dialog id="photoGallery" class="photo-gallery" aria-label="More photos of George" onclick="if(event.target===this)this.close()">
-                        <div class="photo-gallery-head">
-                            <h4>Life in Michigan</h4>
-                            <button type="button" class="photo-gallery-close" onclick="this.closest('dialog').close()" aria-label="Close gallery">✕</button>
-                        </div>
-                        <div class="photo-gallery-grid">
-                            <figure>
-                                <img src="assets/images/about/george-blazer.webp" alt="George in a navy blazer and white shirt, smiling" width="900" height="1200" loading="lazy" />
-                                <figcaption>Ready for what's next.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-detroit.webp" alt="George in a Detroit cap holding a basketball under an indoor hoop" width="900" height="1200" loading="lazy" />
-                                <figcaption>Detroit is home base.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-michigan.webp" alt="George in a cap and white polo beside a vintage red fire truck decked with American flags" width="900" height="1200" loading="lazy" />
-                                <figcaption>Michigan summers.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-winter.webp" alt="George in a knit hat with a coffee, sitting on an ice-sculpture throne in the snow" width="900" height="1200" loading="lazy" />
-                                <figcaption>Michigan winters.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/george-bench.webp" alt="George sitting on an iron bench outdoors at sunset" width="900" height="1200" loading="lazy" />
-                                <figcaption>Off the clock.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/life-tigers-mascot.webp" alt="George and a friend with the Detroit Tigers mascot at Comerica Park" width="900" height="675" loading="lazy" />
-                                <figcaption>Peace signs at Comerica Park.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/life-tigers-upper-deck.webp" alt="George and a friend in the upper deck at a Tigers game, the field and downtown Detroit behind them" width="900" height="675" loading="lazy" />
-                                <figcaption>Tigers from the upper deck.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/life-lions-win.webp" alt="George and a friend in the stands after a Detroit Lions win" width="900" height="675" loading="lazy" />
-                                <figcaption>Lions win.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/life-sunset-bench.webp" alt="George and a friend on a garden bench overlooking northern Michigan hills at sunset" width="900" height="675" loading="lazy" />
-                                <figcaption>Northern Michigan sunsets.</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="assets/images/about/life-guinea-pigs.webp" alt="George and a young friend in a Detroit Lions shirt petting guinea pigs" width="900" height="675" loading="lazy" />
-                                <figcaption>Guinea pig duty.</figcaption>
-                            </figure>
-                        </div>
-                    </dialog>
+                    <p class="photo-strip-hint" aria-hidden="true">Scroll for more →</p>
                     <p>You don't need to know everything. You need to know how to learn. Outside of work I'm usually on a bike, walking Detroit neighborhoods studying the architecture, or picking up whatever a project needs next.</p>
                     <a href="assets/docs/Resume_George_Clinkscales.pdf?v=2026-11-12c" class="button about-btn" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
                     <a href="case-studies.html" class="button about-btn">View My Work →</a>
