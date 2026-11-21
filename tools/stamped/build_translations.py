@@ -268,7 +268,7 @@ T = [
     ("See the city ", "Mira la ciudad ", "Sieh die Stadt, ", "あの頃の"),
     ("as it was.", "como era.", "wie sie war.", "街を見る。"),
     ("Fade a street map from 1850, 1900, 1925 or 1950 over today's satellite view. Press Time Walk and, as the tour moves on, the map turns to the year each landmark was built.", "Funde un mapa de calles de 1850, 1900, 1925 o 1950 con la vista por satélite de hoy. Pulsa Paseo en el tiempo y, a medida que avanza el recorrido, el mapa cambia al año en que se construyó cada monumento.", "Blende einen Stadtplan von 1850, 1900, 1925 oder 1950 über das heutige Satellitenbild. Tippe auf Zeitreise, und während der Tour springt die Karte in das Baujahr jedes Bauwerks.", "1850年、1900年、1925年、1950年の街路図を、現在の衛星写真に重ねてフェードできます。タイムウォークを押すと、ツアーの進行に合わせて地図が各ランドマークの建設年に変わります。"),
-    ("Old photos from public archives, each one credited", "Fotos antiguas de archivos públicos, todas con su crédito", "Alte Fotos aus öffentlichen Archiven, jedes mit Quellenangabe", "公共アーカイブの古い写真を、すべてクレジット付きで"),
+    ('Old photos from public archives, each one credited, including 17 from the Michigan State University Archives and 22 from the Detroit Public Library, shared with permission', 'Fotos antiguas de archivos públicos, todas con su crédito, entre ellas 17 de los Archivos de la Universidad Estatal de Michigan y 22 de la Biblioteca Pública de Detroit, compartidas con permiso', 'Alte Fotos aus öffentlichen Archiven, jedes mit Quellenangabe, darunter 17 aus den Archiven der Michigan State University und 22 aus der Detroit Public Library, mit Genehmigung geteilt', '公共アーカイブの古い写真を、すべてクレジット付きで。ミシガン州立大学アーカイブの17枚とデトロイト公共図書館の22枚は、許可を得て掲載しています'),
     ("Ask a landmark a question and hear it answer, with Apple Intelligence", "Hazle una pregunta a un monumento y escucha su respuesta, con Apple Intelligence", "Stelle einem Bauwerk eine Frage und höre die Antwort, mit Apple Intelligence", "ランドマークに質問して答えを聞けます（Apple Intelligence対応）"),
     ("Step into the Past: public-domain films and old photos of the city", "Entra en el pasado: películas de dominio público y fotos antiguas de la ciudad", "Tauche in die Vergangenheit ein: gemeinfreie Filme und alte Fotos der Stadt", "過去へ：パブリックドメインの映画と街の古い写真"),
     ("City street sounds under the tour", "Sonidos de la calle durante el recorrido", "Straßengeräusche der Stadt während der Tour", "ツアー中に流れる街の音"),
@@ -277,7 +277,7 @@ T = [
     ("Old photos", "Fotos antiguas", "Alte Fotos", "昔の写真"),
     ("Every one credited.", "Todas con su crédito.", "Alle mit Quellenangabe.", "すべてクレジット付き。"),
     ("@London's 1900 street map faded over today's satellite view, with landmark pins", "Mapa de calles de Londres de 1900 fundido con la vista por satélite actual, con marcadores de monumentos", "Londoner Stadtplan von 1900 über dem heutigen Satellitenbild, mit Stecknadeln für Bauwerke", "現在の衛星写真に重ねた1900年のロンドンの街路図とランドマークのピン"),
-    ("@A row of old drawings of St Paul's Cathedral, each with its credit underneath", "Una fila de dibujos antiguos de la catedral de San Pablo, cada uno con su crédito debajo", "Eine Reihe alter Zeichnungen der St Paul's Cathedral, jede mit Quellenangabe darunter", "セント・ポール大聖堂の古い図面の列、それぞれの下にクレジット"),
+    ('@Michigan Central Station in Detroit around 1913, a Burton Historical Collection photo from the Detroit Public Library, with its credit and a View Source link', 'La estación Michigan Central de Detroit hacia 1913, una foto de la Burton Historical Collection de la Biblioteca Pública de Detroit, con su crédito y un enlace Ver fuente', 'Michigan Central Station in Detroit um 1913, ein Foto der Burton Historical Collection der Detroit Public Library, mit Quellenangabe und einem Link zur Quelle', '1913年頃のデトロイトのミシガン・セントラル駅。デトロイト公共図書館バートン歴史コレクションの写真で、クレジットとソースへのリンク付き'),
     ("Then &amp; Now", "Antes y ahora", "Damals &amp; heute", "今と昔"),
     ("Every landmark comes with its architect, style, build date, height and history. Tap an architect to see all their buildings in the app. Stamped! keeps track of whose buildings you've seen and shows your favorite architect.",
      "Cada monumento incluye su arquitecto, estilo, fecha de construcción, altura e historia. Toca un arquitecto para ver todos sus edificios en la app. Stamped! recuerda de quién son los edificios que has visto y te muestra tu arquitecto favorito.",
@@ -996,20 +996,41 @@ def versioned(html):
     return html
 
 
+# The page's own stylesheet goes into the page itself, so the first paint doesn't wait for a second
+# request (Lighthouse: render-blocking, about 0.8 s on mobile). The marked block is refreshed from the
+# file on every build, so edit assets/css/stamped-app.css as usual. It has no url() paths, so moving it
+# into the page changes nothing else.
+INLINE_CSS = "assets/css/stamped-app.css"
+INLINE_START = f"<!-- inline: {INLINE_CSS}, refreshed by tools/stamped/build_translations.py -->"
+INLINE_END = "<!-- /inline -->"
+
+
+def inline_css(html):
+    css = (ROOT / INLINE_CSS).read_text(encoding="utf-8").strip()
+    block = f"{INLINE_START}\n    <style>\n{css}\n    </style>\n    {INLINE_END}"
+    marked = re.compile(re.escape(INLINE_START) + r".*?" + re.escape(INLINE_END), re.S)
+    if marked.search(html):
+        return marked.sub(lambda _: block, html, count=1)
+    link = re.compile(rf'<link rel="stylesheet" href="{re.escape(INLINE_CSS)}(\?v=[0-9a-f]+)?" />')
+    if link.search(html):
+        return link.sub(lambda _: block, html, count=1)
+    return html
+
+
 def main():
-    source = versioned(SOURCE.read_text(encoding="utf-8"))
+    source = inline_css(versioned(SOURCE.read_text(encoding="utf-8")))
     SOURCE.write_text(source, encoding="utf-8")
     for lang in LANGS:
         out = ROOT / f"stamped-app-{lang}.html"
-        out.write_text(build(lang, source), encoding="utf-8")
+        out.write_text(inline_css(build(lang, source)), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
     for name in THANKS_PAGES:
         page = ROOT / f"{name}.html"
-        english = versioned(page.read_text(encoding="utf-8"))
+        english = inline_css(versioned(page.read_text(encoding="utf-8")))
         page.write_text(english, encoding="utf-8")
         for lang in LANGS:
             out = ROOT / f"{name}-{lang}.html"
-            out.write_text(build_thanks(name, lang, english), encoding="utf-8")
+            out.write_text(inline_css(build_thanks(name, lang, english)), encoding="utf-8")
             print("wrote", out.relative_to(ROOT))
 
 
