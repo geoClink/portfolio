@@ -285,7 +285,7 @@
                 <li><strong>More than 1,600 automated tests</strong> on pulls, payments, permissions and the game itself: 1,053 Vitest, 219 Deno function tests and 400+ database checks. They caught four real money bugs, each fixed and deployed the same day.</li>
                 <li><strong>The catalogue grew from 214 to 531 collectibles since late October</strong> without new engine code per item: snacks, objects and mechanical clickers are data plus a procedurally built Blender model.</li>
                 <li><strong>Five languages</strong> for the 69% of players who don't use English. Shipped solo to web, iPhone, iPad, Android, Mac and Apple Watch, plus VR in the headset browser.</li>
-                <li><strong>Honest gap:</strong> only 3.6% of signed-in players come back the next day. Retention is the current focus, with cohort tracking in place to measure each change.</li>
+                <li><strong>Honest gap:</strong> about 4% of signed-in players come back the next day, and the first round of retention features hasn't moved it yet (3.8% before November 3, 4.2% since). Retention is the current focus, measured by cohort.</li>
             </ul>
         </div>
 
@@ -409,7 +409,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
 
         <div class="case-section" id="retention">
             <h3>Bringing Players Back</h3>
-            <p>Downloads grew, but most players squished for one day and left. I added a cohort query (signups by day, then whether each player came back on day 1 and day 7, split by platform) and measured a baseline before changing anything: <strong>3.6% day-1 return and 0.9% day-7</strong> for signed-in players who joined between October 6 and November 2. Those numbers are low, and they're useful: every feature below is now judged against them instead of against downloads.</p>
+            <p>Downloads grew, but most players squished for one day and left. I added a cohort query (signups by day, then whether each player came back on day 1 and day 7, split by platform) and measured a baseline before changing anything: <strong>3.8% day-1 return and 2.2% day-7</strong> for the 186 signed-in players who joined between October 6 and November 2 (recounted November 22 with the same query). Those numbers are low, and they're useful: every feature below is now judged against them instead of against downloads.</p>
             <ul>
                 <li><strong>Squisher Levels.</strong> An account level from 1 to 50 with coin rewards and a free case every five levels. XP is derived on the server from what players already do (squishes capped per day, days played, collection, spins, finished sets), so there is no stored XP to drift or tamper with. Levels show as badges on the leaderboard.</li>
                 <li><strong>Daily spin.</strong> One free spin a day with the odds printed under the wheel and a streak bonus. Spins can't be bought.</li>
@@ -452,7 +452,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
         <div class="case-section" id="results">
             <h3>Where It Stands</h3>
             <div class="sb-stats" role="list" aria-label="Google Play results">
-                <div class="sb-stat" role="listitem"><span class="sb-stat-num">1,860</span><span class="sb-stat-label">total Google Play installs since the September 16 launch (Play Console, Nov 2)</span></div>
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">5.00</span><span class="sb-stat-label">average Google Play rating over the last 28 days (Nov 21)</span></div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">1,490</span><span class="sb-stat-label">device acquisitions in the 28 days to Nov 20, up 41%, no paid promotion</span></div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">768</span><span class="sb-stat-label">monthly active Android devices (Nov 20)</span></div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">14.0%</span><span class="sb-stat-label">Play store listing conversion over the last 28 days (13.9% before the translations)</span></div>
@@ -461,10 +461,10 @@ return Math.max(6, Math.min(cap, affordable));</div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">1,020</span><span class="sb-stat-label">first-time App Store downloads in the 30 days to Nov 20, plus 102 redownloads</span></div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">66.6K</span><span class="sb-stat-label">App Store impressions in the 30 days to Nov 20, no paid promotion</span></div>
                 <div class="sb-stat" role="listitem"><span class="sb-stat-num">4.7</span><span class="sb-stat-label">stars on the App Store, from 7 ratings</span></div>
-                <div class="sb-stat" role="listitem"><span class="sb-stat-num">3.6%</span><span class="sb-stat-label">day-1 return for signed-in players, the number to move next</span></div>
+                <div class="sb-stat" role="listitem"><span class="sb-stat-num">4.2%</span><span class="sb-stat-label">day-1 return for signed-in players who joined since Nov 3 (3.8% before), the number to move next</span></div>
             </div>
-            <p>Android launched September 16 with no paid promotion, and Google Play's recommendation rows did most of the work. Almost all of that traffic came through browse surfaces rather than search: people install an interesting icon and only about a third open it. Acquisition is no longer the bottleneck; keeping players past day one is. The retention features above are now live on every platform, so their effect shows up against the baseline, and the first real in-app purchase came on November 16. The latest releases go after the two biggest leaks analytics found: new players leaving the free case screen, and Google sign-ins that never made it back from the browser.</p>
-            <p><strong>What I'd do differently.</strong> Set up a local database from day one; for months every change was tested against the live project. Treat the economy as adversarial from the first coin, because every hole I closed came from trusting the client somewhere. Check store state by API before every release: an audit of App Store Connect found the iOS coin packs had never been submitted for review, so they go in with the next iOS version. And measure retention before growth; I tracked downloads for weeks before building the cohort query that showed where players drop off.</p>
+            <p>Android launched September 16 with no paid promotion, and Google Play's recommendation rows did most of the work. Almost all of that traffic came through browse surfaces rather than search: people install an interesting icon and only about a third open it. Acquisition is no longer the bottleneck; keeping players past day one is. The first real in-app purchase came on November 16. The retention features above are live on every platform, and the honest result so far is no real change: re-running the same cohort query on November 22 gave 4.2% day-1 return (4 of 96) for players who joined since November 3, against 3.8% for the October group, and none of 71 back on day 7. The samples are small and some features only reached phones in the last week, but nothing yet beats the baseline. The latest releases go after the two biggest leaks analytics found: new players leaving the free case screen, and Google sign-ins that never made it back from the browser.</p>
+            <p><strong>What I'd do differently.</strong> Set up a local database from day one; for months every change was tested against the live project. Treat the economy as adversarial from the first coin, because every hole I closed came from trusting the client somewhere. Check store state by API before every release: an audit of App Store Connect found the iOS coin packs had never been submitted for review, weeks after launch. All eight in-app purchases are approved now. And measure retention before growth; I tracked downloads for weeks before building the cohort query that showed where players drop off.</p>
         </div>
 
         <div class="case-section" id="also-built">
@@ -477,7 +477,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                 <li><strong>VR on Vision Pro, Quest and Android XR.</strong> Open squishybutter.app in the headset browser and pinch to squish across five themed rooms. Small items are fitted to a reachable size on entry and both hands resize them. A VR room with your collection shelf, cases, the daily spin and the leaderboard is built for the next release. It's WebXR, so there's no native port, and an automated test drives the flow in an emulated Quest headset.</li>
                 <li><strong>On every screen.</strong> One Capacitor and Three.js codebase for web, iPhone, iPad, Android, Mac and Apple Watch, with store screenshots in five languages rendered from the running app by a headless-browser pipeline.</li>
                 <li><strong>The landing page.</strong> <a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">A full product page ↗</a> with the collection, rarity tiers, drop rates and coin packs, responsive down to a phone.</li>
-                <li><strong>Lighthouse.</strong> The landing page scores 99 Performance and 100 for Accessibility, Best Practices and SEO. The app scores 100 on the first three and 92 on SEO, because crawlers can't read content drawn on a GPU canvas.</li>
+                <li><strong>Lighthouse.</strong> The landing page scores 93 Performance on mobile (up from 30 after a November speed pass), 97 Accessibility and 100 for Best Practices and SEO.</li>
             </ul>
             <div class="sb-scroll-track">
                 <figure class="sb-scroll-item sb-scroll-item--phone">
@@ -521,14 +521,6 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     <p>The lore was the big piece: about 5,000 lines per language. Longer Spanish and Portuguese strings also broke layouts that fit in English, so the certificate stamp and footer had to be refitted for phones. To keep that from coming back, a screen smoke test checks every screen in each language at two viewport sizes, alongside the Vitest unit suite.</p>
                     <p>The store art followed. The screenshot pipeline takes a language flag, loads the app in that language and sets the headlines in it, so each translated listing gets the app the way those players see it: 120 localized screenshots across iPhone, iPad, Android and Mac.</p>
                     <div class="sb-scroll-track">
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/iphone-id-01-squish.webp" alt="Indonesian store screenshot: Pencet. Rasakan empuknya." width="520" height="1130" loading="lazy" decoding="async">
-                            <figcaption>Indonesian</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/iphone-es-03-reveal.webp" alt="Spanish store screenshot: Saca las raras, todas numeradas, with a Legendaria reveal" width="520" height="1130" loading="lazy" decoding="async">
-                            <figcaption>Spanish</figcaption>
-                        </figure>
                         <figure class="sb-scroll-item sb-scroll-item--phone">
                             <img src="assets/images/squishy-butter/store/iphone-pt-08-delivery.webp" alt="Portuguese store screenshot: Épica em até 30. Lendária em até 90." width="520" height="1130" loading="lazy" decoding="async">
                             <figcaption>Portuguese</figcaption>
@@ -600,14 +592,6 @@ return Math.max(6, Math.min(cap, affordable));</div>
                             <figcaption>The reveal</figcaption>
                         </figure>
                         <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/iphone-04-collection.webp" alt="Collect them all. The Cold Store collection filtered to Epic on iPhone" width="520" height="1130" loading="lazy" decoding="async">
-                            <figcaption>Your collection</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/iphone-05-certificate.webp" alt="One of a kind. Provably yours. Kintsugi certificate of authenticity on iPhone" width="520" height="1130" loading="lazy" decoding="async">
-                            <figcaption>Certificate of authenticity</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
                             <img src="assets/images/squishy-butter/store/iphone-06-card.webp" alt="Flex your rarest pulls. Galaxy Butter trading card on iPhone" width="520" height="1130" loading="lazy" decoding="async">
                             <figcaption>Every skin gets a trading card</figcaption>
                         </figure>
@@ -628,28 +612,12 @@ return Math.max(6, Math.min(cap, affordable));</div>
                             <figcaption>Real soft-body squish</figcaption>
                         </figure>
                         <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/android-02-skins.webp" alt="Every butter squishes different. Lava Butter on the Vaporwave stage on Android" width="480" height="853" loading="lazy" decoding="async">
-                            <figcaption>Every butter squishes differently</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
                             <img src="assets/images/squishy-butter/store/android-03-reveal.webp" alt="Pull rare, numbered butters. Stained Glass Legendary reveal, No. 0007 on Android" width="480" height="853" loading="lazy" decoding="async">
                             <figcaption>The reveal</figcaption>
                         </figure>
                         <figure class="sb-scroll-item sb-scroll-item--phone">
                             <img src="assets/images/squishy-butter/store/android-04-collection.webp" alt="Collect them all. The Cold Store collection filtered to Epic on Android" width="480" height="853" loading="lazy" decoding="async">
                             <figcaption>Your collection</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/android-05-certificate.webp" alt="One of a kind. Provably yours. Kintsugi certificate of authenticity on Android" width="480" height="853" loading="lazy" decoding="async">
-                            <figcaption>Certificate of authenticity</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/android-06-card.webp" alt="Flex your rarest pulls. Galaxy Butter trading card on Android" width="480" height="853" loading="lazy" decoding="async">
-                            <figcaption>Every skin gets a trading card</figcaption>
-                        </figure>
-                        <figure class="sb-scroll-item sb-scroll-item--phone">
-                            <img src="assets/images/squishy-butter/store/android-07-leaderboard.webp" alt="Out-squish everyone. The live squish leaderboard on Android" width="480" height="853" loading="lazy" decoding="async">
-                            <figcaption>Live leaderboards</figcaption>
                         </figure>
                         <figure class="sb-scroll-item sb-scroll-item--phone">
                             <img src="assets/images/squishy-butter/store/android-08-delivery.webp" alt="Epic within 30, Legendary in 90. Dairy Delivery with pity counters and drop rates on Android" width="480" height="853" loading="lazy" decoding="async">
@@ -715,7 +683,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     </div>
 
                     <h4>The Landing Page</h4>
-                    <p>The full product page - collection, mechanics, rarity tiers, and the order flow.</p>
+                    <p>The full product page - collection, mechanics, rarity tiers, and the coin packs.</p>
                     <div class="browser-mockup">
                         <div class="browser-bar">
                             <div class="browser-dots">
@@ -733,7 +701,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     <p class="iframe-note iframe-note-desktop"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
 
                     <h4>Mobile Experience</h4>
-                    <p>The landing page is fully responsive - the collection, rarity tiers, and order flow all work on a phone with no install required.</p>
+                    <p>The landing page is fully responsive - the collection, rarity tiers and coin packs all work on a phone with no install required.</p>
                     <div class="phone-showcase">
                         <div class="phone-mockup">
                             <div class="phone-btns-left"></div>
@@ -757,7 +725,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     <p class="iframe-note iframe-note-mobile"><a href="https://squishybutter.app/landing.html" target="_blank" rel="noopener noreferrer">Try the live page ↗</a></p>
 
                     <h4>Lighthouse &amp; Link Preview</h4>
-                    <p>Both pages were audited with Google Lighthouse. The landing page scores 99 Performance and 100 for Accessibility, Best Practices and SEO. The app scores 100 on the first three and 92 on SEO, because crawlers can't read content drawn on a GPU canvas. Shared links unfurl with a custom preview card:</p>
+                    <p>The landing page scores 93 Performance on mobile in PageSpeed Insights (Nov 22), up from 30 before a November speed pass, with 97 Accessibility and 100 for Best Practices and SEO. Shared links unfurl with a custom preview card:</p>
                     <a href="https://squishybutter.app/" class="og-card" target="_blank" rel="noopener noreferrer">
                         <img class="og-card-img" src="assets/images/squishy-butter/og.png" alt="Squishy Butter link preview image" loading="lazy" style="object-fit:contain;padding:2rem;" width="1680" height="886">
                         <div class="og-card-meta">
