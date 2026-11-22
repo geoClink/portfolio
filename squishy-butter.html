@@ -68,6 +68,9 @@
         .phone-screen-static img { height: auto; }
         .sb-preview { display: flex; justify-content: center; margin: 1.25em 0 0; padding: 1.5em; border-radius: 20px; border: 1px solid var(--color-border);
             background: radial-gradient(70% 70% at 50% 30%, rgba(240, 193, 75, 0.18), transparent 70%), var(--color-surface); }
+        .sb-phone { width: 280px; max-width: 100%; }
+        .sb-phone .phone-screen-static { border-radius: 36px; overflow: hidden; background: #1A1008; }
+        .sb-preview .sb-phone video { max-width: none; border-radius: 0; box-shadow: none; }
         .sb-preview video { width: 100%; max-width: 300px; height: auto; aspect-ratio: 444 / 962; display: block; border-radius: 18px; background: #1A1008; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.45); }
         .sb-vr { padding: 4rem 2.5rem; border-radius: 16px; }
         @media (max-width: 680px) { .sb-vr { padding: 2.5rem 1rem; margin: 0 -24px; border-radius: 0; } }
@@ -315,7 +318,12 @@
             <h3>See It Play</h3>
             <p>The App Store preview in 30 seconds: squish, switch skins, open a Dairy Delivery, reveal a numbered Legendary, then find it in the collection.</p>
             <div class="sb-preview">
-                <video class="lazy-video" data-src="assets/videos/squishy-butter/app-preview-iphone.mp4" poster="assets/videos/squishy-butter/app-preview-iphone.jpg" width="444" height="962" muted loop playsinline preload="none" aria-label="App Store preview on iPhone: pressing the butter leaves dents, a Lava skin, a Dairy Delivery pull, the delivery truck, a Legendary Stained Glass reveal, and the Cold Store collection"></video>
+                <div class="phone-mockup sb-phone">
+                    <div class="phone-btns-left"></div>
+                    <div class="phone-screen-static">
+                        <video class="lazy-video" data-src="assets/videos/squishy-butter/app-preview-iphone.mp4" poster="assets/videos/squishy-butter/app-preview-iphone.jpg" width="444" height="962" muted loop playsinline preload="none" aria-label="App Store preview on iPhone: pressing the butter leaves dents, a Lava skin, a Dairy Delivery pull, the delivery truck, a Legendary Stained Glass reveal, and the Cold Store collection"></video>
+                    </div>
+                </div>
             </div>
         </div>
 
