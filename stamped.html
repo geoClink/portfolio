@@ -162,6 +162,13 @@
         .stamped-shots .phone-mockup { width: auto; margin: 0 6px; }
         .stamped-hero-shots .phone-mockup, .stamped-shots .phone-mockup { border-radius: 30px; }
         .stamped-hero-shots .phone-mockup::after, .stamped-shots .phone-mockup::after { display: none; }
+        /* Small phones in the grids: a fixed 9px bezel reads thick at ~170px wide, so slim it to scale */
+        .stamped-shots .phone-mockup { padding: 2px 2px 3px; border-radius: 26px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 0 0 1px #5c5c61, 0 0 0 2px #111113, 0 0 0 3px #3e3e43, 0 6px 18px rgba(0,0,0,0.16); }
+        .stamped-shots .phone-screen-static { border-radius: 24px; }
+        .stamped-shots .phone-mockup::before, .stamped-shots .phone-btns-left { width: 2px; }
+        .stamped-shots .phone-mockup::before { right: -5px; } .stamped-shots .phone-btns-left { left: -5px; }
+        .stamped-shots .phone-btns-left::before, .stamped-shots .phone-btns-left::after { width: 2px; }
         .stamped-hero-shots .phone-screen-static, .stamped-shots .phone-screen-static { border-radius: 26px; overflow: hidden; }
         .stamped-hero-shots img, .stamped-shots img { display: block; width: 100%; height: auto; }
         .stamped-shots figcaption { font-size: 0.8em; color: var(--color-text-muted); margin-top: 0.9em; line-height: 1.45; }
