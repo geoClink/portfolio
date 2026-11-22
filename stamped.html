@@ -115,6 +115,8 @@
         /* What's New grid */
         .stamped-new-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75em; margin-top: 1.25em; }
         .stamped-new-item { background: var(--color-surface); border-radius: 8px; border-left: 3px solid var(--case-accent); padding: 1.1em 1.2em; }
+        /* An odd card out at the end of a two-column grid spans the full row */
+        .stamped-new-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
         .case-section .stamped-new-item h4 { font-size: 0.9em; margin: 0 0 0.35em; }
         .case-section .stamped-new-item p { font-size: 0.9em; line-height: 1.65; color: var(--color-text-muted); margin: 0; }
         /* "Coming in 2.9" label on a section for a version that isn't out yet */
@@ -705,7 +707,7 @@
         <section class="case-section" id="version-2-17">
             <span class="case-coming">2.14 to 2.17</span>
             <h3>Archives, a design pass and Vision Pro catching up</h3>
-            <p>Four releases in two weeks: getting to a landmark, real archive photos for Then &amp; Now, one visual system across every screen, and the passport on Apple Vision Pro. 2.17 is in App Review on iPhone, iPad, Mac and Vision Pro.</p>
+            <p>Four releases in two weeks: getting to a landmark, real archive photos for Then &amp; Now, one visual system across every screen, and the passport on Apple Vision Pro. 2.17 is live on iPhone, iPad and Mac, and in App Review for Vision Pro.</p>
             <div class="stamped-new-grid">
                 <div class="stamped-new-item">
                     <h4>Get There (2.14)</h4>
