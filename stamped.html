@@ -189,6 +189,25 @@
         .stamped-type .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.85em; font-weight: 800; letter-spacing: 0.14em; color: #E8621A; text-transform: uppercase; padding-top: 0.55em; }
         .stamped-type .rounded { font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 1.3em; font-weight: 700; }
         .stamped-type small { font-size: 0.78em; color: var(--color-text-muted); line-height: 1.45; display: block; }
+        /* Design system: spacing and radius tokens, real components cut from the app */
+        .stamped-tokens { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0.75em; margin-top: 0.75em; }
+        .stamped-tokens > div { border: 1px solid var(--color-border); border-radius: 12px; padding: 1em; background: var(--color-surface); }
+        .stamped-tokens b { display: block; color: var(--color-heading); font-size: 0.85em; margin-bottom: 0.7em; }
+        .stamped-space { display: flex; align-items: flex-end; gap: 0.9em; }
+        .stamped-space span { display: flex; flex-direction: column; align-items: center; gap: 0.35em; font: 600 0.7em/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--color-text-muted); }
+        .stamped-space i { display: block; width: calc(var(--s) * 1px); height: calc(var(--s) * 1px); background: var(--case-accent); border-radius: 2px; }
+        .stamped-radius { display: flex; gap: 0.9em; }
+        .stamped-radius span { display: flex; flex-direction: column; align-items: center; gap: 0.35em; font: 600 0.7em/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--color-text-muted); }
+        .stamped-radius i { display: block; width: 44px; height: 44px; border: 2px solid var(--case-accent); border-radius: calc(var(--r) * 1px); }
+        .stamped-components { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75em; margin-top: 0.75em; }
+        .stamped-components figure { margin: 0; border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; background: var(--color-surface); display: flex; flex-direction: column; }
+        .stamped-components .tile { flex: 1; display: grid; place-items: center; padding: 1em; background: #F2F2F7; min-height: 120px; }
+        .stamped-components .tile.dark { background: #1C1C1E; }
+        .stamped-components img { display: block; width: auto; max-width: 100%; height: auto; max-height: 190px; }
+        .stamped-components .wide { grid-column: span 2; }
+        .stamped-components figcaption { padding: 0.6em 0.75em; font-size: 0.78em; line-height: 1.4; color: var(--color-text-muted); }
+        .stamped-components figcaption b { display: block; color: var(--color-heading); font-size: 1.05em; }
+        @media (max-width: 736px) { .stamped-tokens { grid-template-columns: 1fr; } .stamped-components { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         .stamped-principles { margin: 1.25em 0 0; padding: 0; list-style: none; display: grid; gap: 0.6em; }
         .stamped-principles li { padding-left: 1.6em; position: relative; font-size: 0.95em; line-height: 1.6; }
         .stamped-principles li::before { content: ''; position: absolute; left: 0; top: 0.45em; width: 0.8em; height: 0.8em; border-radius: 50%; border: 2px dashed var(--case-accent); }
@@ -408,6 +427,23 @@
                 <div><span class="sample serif">Paris</span><small>Serif for destinations and stamps.</small></div>
                 <div><span class="sample mono">Passport Stamped</span><small>Monospaced labels, like a customs form.</small></div>
                 <div><span class="sample rounded">Plan a Trip</span><small>SF for everything you read and tap.</small></div>
+            </div>
+
+            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">Built from one system</h4>
+            <p>Every screen is put together from the same small set of parts, defined once in a single Swift file: spacing, corner radii, colors, type and shared components. That's how one person kept 166 cities and 122 campuses consistent.</p>
+            <div class="stamped-tokens">
+                <div><b>Spacing scale</b><div class="stamped-space"><span><i style="--s:4"></i>4</span><span><i style="--s:8"></i>8</span><span><i style="--s:12"></i>12</span><span><i style="--s:16"></i>16</span><span><i style="--s:24"></i>24</span><span><i style="--s:32"></i>32</span></div></div>
+                <div><b>Corner radius</b><div class="stamped-radius"><span><i style="--r:10"></i>10</span><span><i style="--r:16"></i>16</span><span><i style="--r:24"></i>24</span></div></div>
+            </div>
+            <div class="stamped-components">
+                <figure class="wide"><div class="tile"><img src="assets/images/stamped/app/ds-hero-card.webp" alt="An orange Exploration Progress card: 6 Cities Stamped, 4 of 122 campuses, with a progress bar" width="1240" height="424" loading="lazy"></div><figcaption><b>Progress card</b>The one bold orange surface on a screen.</figcaption></figure>
+                <figure><div class="tile"><img src="assets/images/stamped/app/ds-card.webp" alt="A white Plan a Trip card with an orange suitcase icon and the line Day by day" width="411" height="413" loading="lazy" style="max-height:150px"></div><figcaption><b>Card</b>Every tappable tile, one radius.</figcaption></figure>
+                <figure><div class="tile"><img src="assets/images/stamped/app/ds-chip.webp" alt="A Big Ten conference chip" width="225" height="95" loading="lazy" style="max-height:48px"></div><figcaption><b>Chip</b>Tags like a college's conference.</figcaption></figure>
+                <figure class="wide"><div class="tile"><img src="assets/images/stamped/app/ds-section-header.webp" alt="A Campuses section header with a graduation cap icon and the count 4 of 122" width="1240" height="80" loading="lazy"></div><figcaption><b>Section header</b>Icon, title and a running count.</figcaption></figure>
+                <figure class="wide"><div class="tile"><img src="assets/images/stamped/app/ds-progress.webp" alt="A 100 percent progress ring next to the rank Master Collector, 19 of 19 landmarks stamped" width="725" height="185" loading="lazy"></div><figcaption><b>Progress ring</b>Rank under every city.</figcaption></figure>
+                <figure class="wide"><div class="tile dark"><img src="assets/images/stamped/app/ds-button.webp" alt="An orange Add to Passport button" width="1155" height="165" loading="lazy" style="max-width:80%"></div><figcaption><b>Primary button</b>The main action, in Adventure Orange.</figcaption></figure>
+                <figure class="wide"><div class="tile" style="text-align:left;place-items:center start;"><p style="margin:0;font-size:0.92em;line-height:1.55;color:#3a3a3c;"><strong style="color:#1c1c1e;">One system, three platforms.</strong> The same parts run the iPhone app, the native Mac app and Apple Vision Pro, where cards turn to glass on their own. See <a href="#vision-pro">2.6</a> and <a href="#offline-mac">2.8</a>.</p></div><figcaption><b>Shared code</b>No separate design per device.</figcaption></figure>
+                <figure style="grid-column:1 / -1;"><div class="tile"><img src="assets/images/stamped/app/ds-stamp.webp" alt="A Paris passport stamp with a dashed orange border, a typewriter completion date and a fact about the Eiffel Tower" width="673" height="700" loading="lazy" style="max-height:260px"></div><figcaption><b>Passport stamp</b>The reward, built from the same tokens.</figcaption></figure>
             </div>
 
             <ul class="stamped-principles">
