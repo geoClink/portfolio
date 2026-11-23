@@ -645,7 +645,17 @@ p.ipad-item-label {
     }
     .phone-screen-static { border-radius: 17px; }
 
-    .ipad-mockup { border-radius: 10px; }
+    /* The iPad is ~320px wide here, so the fixed 13px frame read as thick: about 6px instead. */
+    .ipad-mockup {
+        border-radius: 10px;
+        padding: 4px;
+        box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,0.1),
+            0 0 0 1px #5c5c61,
+            0 0 0 2px #3e3e43,
+            0 6px 16px rgba(0,0,0,0.18);
+    }
+    .ipad-screen { border-radius: 6px; }
 
     /* iPad scroll — one item fills most of screen width so you see one at a time */
     .ipad-showcase-grid .ipad-item {
