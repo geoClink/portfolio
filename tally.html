@@ -111,6 +111,11 @@
         .tally-arch-integrations ul { list-style: none; margin: 0.55em 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4em; }
         .tally-arch-integrations li { margin: 0; padding: 0.3em 0.75em; font-size: 0.78em; font-weight: 500; color: var(--color-heading); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 99px; }
         .tally-arch figcaption { font-size: 0.78em; color: var(--color-text-muted); font-style: italic; text-align: center; margin-top: 0.9em; line-height: 1.5; }
+        .tally-ba { margin: 1.5em 0; display: grid; gap: 1em; }
+        .tally-ba-item { margin: 0; }
+        .tally-ba-label { display: inline-block; font-size: 0.7em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4em; }
+        .tally-ba img { display: block; width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: 10px; }
+        .tally-ba figcaption.case-caption { margin-top: 0; }
 
         @media (max-width: 736px) {
             .tally-demo { grid-template-columns: 1fr; padding: 1em; gap: 1em; }
@@ -248,6 +253,7 @@
                 <li><a href="#how-it-works">How it works</a></li>
                 <li><a href="#phone">On your phone</a></li>
                 <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#design">Design</a></li>
                 <li><a href="#hard">What was hard</a></li>
                 <li><a href="#research">User research</a></li>
                 <li><a href="#activation">Drop-off</a></li>
@@ -572,6 +578,34 @@
                 <li><strong>Security</strong>: row-level security on every table, integration tokens encrypted at rest, and client report links with unguessable tokens that can be turned off</li>
                 <li><strong>CI and local backend</strong>: GitHub Actions build the iPhone, Mac, visionOS and web apps, and a full Supabase stack runs in Docker so schema changes are tested as migrations first</li>
             </ul>
+        </div>
+
+        <div class="case-section" id="design">
+            <h3>One Design Across Platforms</h3>
+            <p>Tally is one product on the web, Android, iPhone, iPad, Mac, Apple Watch and Vision Pro. Built feature by feature, the screens had drifted: pages used different text sizes and widths, one toolbar had buttons and fields of three different heights, and the iPhone used the system blue while the website used Tally's.</p>
+            <p><strong>The approach: one brand, a native feel.</strong> Android runs the website with a Material 3 layer on top, so every web fix reaches Android too. The Apple apps stay in SwiftUI, so they behave like Apple apps, but they share the brand colour, most of the wording and the rules for what each colour means.</p>
+            <p><strong>Shared tokens.</strong> I pulled the web styles into design tokens and made the pages use them:</p>
+            <ul>
+                <li><strong>Type</strong>: six text sizes (12, 14, 16, 20, 24 and 32 px), with 225 CSS rules and 489 inline sizes moved onto the scale</li>
+                <li><strong>Controls</strong>: three heights (32, 36 and 44 px), so buttons, inputs and filters line up, with 44 px kept as the minimum on touch screens</li>
+                <li><strong>Layout</strong>: two page widths (wide for data, narrow for settings and forms) and one card padding</li>
+                <li><strong>Colour</strong>: theme tokens for status pills and charts, so light mode, dark mode and the theme switch all stay in step</li>
+            </ul>
+            <p><strong>The same brand on the Apple apps.</strong> The Apple apps got the web's blue as their accent colour (a lighter blue in dark mode, so white text stays readable), and all 151 system-blue uses were switched. Blue now means Start everywhere, and green means running or goal reached.</p>
+            <p><strong>Three review rounds.</strong> In November 2026 the product went through three design-review rounds. Signed-in pages were checked at desktop and phone widths, and in the last round a script flagged sideways overflow, text under 12 px, low contrast and small tap targets. The rounds fixed mixed capitalisation, an overdue invoice shown as "Sent", loading skeletons that didn't match the page, and a selection bar that scrolled away.</p>
+            <figure class="tally-ba" aria-labelledby="tally-ba-caption">
+                <div class="tally-ba-item">
+                    <span class="tally-ba-label">Before</span>
+                    <img src="assets/images/tallyios/app/design-invoices-before.webp" width="1200" height="517" loading="lazy" decoding="async" alt="Tally's Invoices page before the review: one Outstanding balance card, and an invoice 47 days late marked with a yellow Sent badge.">
+                </div>
+                <div class="tally-ba-item">
+                    <span class="tally-ba-label">After</span>
+                    <img src="assets/images/tallyios/app/design-invoices-after.webp" width="1200" height="517" loading="lazy" decoding="async" alt="The same Invoices page after the review: Outstanding, Overdue and Paid this month cards, an Overdue filter, and the late invoice marked Overdue · 47 days in red with a red rule on its card.">
+                </div>
+                <figcaption id="tally-ba-caption" class="case-caption">Round two: an invoice 47 days late still said "Sent". Now the badge, the summary cards, a new Overdue filter and the sidebar count all agree, and the pills use theme tokens so they work in dark mode.</figcaption>
+            </figure>
+
+            <p><strong>Bringing the iPhone in line.</strong> The third round compared the iPhone app with the web screen by screen and found it had fallen behind. Version 1.21 caught it up: a Sessions tab like the web's, hours and earnings at the top of Reports, hours in each day of the Activity calendar following the account's week-start setting, one-tap chips for recent clients under Start, the same goal wording, and a Premium card in the brand blue. What's left is small: a few secondary iPhone buttons still use Title Case where the web uses sentence case.</p>
         </div>
 
         <div class="case-section" id="hard">
