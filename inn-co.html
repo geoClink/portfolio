@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
@@ -60,7 +60,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -94,7 +94,7 @@
 
         <div class="case-hero">
             <img src="assets/images/crystal-lake/favicon.svg" alt="Crystal Lake Resort icon" class="case-hero-icon" />
-            <h2 class="case-title">Crystal Lake Resort</h2>
+            <h1 class="case-title">Crystal Lake Resort</h1>
             <p class="case-tagline">A real client - a Michigan lakefront resort with motel rooms and private weekly cottages, live and taking bookings on a platform I designed and built solo. Stripe deposit checkout, automated emails, and a no-code admin dashboard - built to eliminate OTA commissions entirely.</p>
         </div>
 
@@ -253,39 +253,39 @@
             <h3>What It Does</h3>
             <p>Guests browse a page per room, check dates, pay the deposit and get a confirmation by email. The site also covers what guests ask before they arrive: an FAQ, a map, a Street View walk of the grounds, and a booking lookup by email and check-in date with no account. Click any screenshot to enlarge it.</p>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5em;margin-top:1.25em;">
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-rooms.webp" alt="Room listings - individual suite pages with photos and booking" style="width:100%;display:block;" width="1600" height="1215" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-rooms.webp" alt="Room listings - individual suite pages with photos and booking" width="1600" height="1215" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Each room has its own page; booking from it pre-selects the room.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" style="width:100%;display:block;" width="3412" height="1968" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" width="3412" height="1968" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Confirmation shows the room, dates and total paid straight from Stripe.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar - tape-chart occupancy grid by room and date" style="width:100%;display:block;" width="1812" height="642" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar - tape-chart occupancy grid by room and date" width="1812" height="642" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">The occupancy grid: every room, every night of the month.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/crystal-lake/create-booking-inside-calendar.png" alt="Create booking form opened from calendar cell with room and date pre-filled" style="width:100%;display:block;" width="816" height="800" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/crystal-lake/create-booking-inside-calendar.png" alt="Create booking form opened from calendar cell with room and date pre-filled" width="816" height="800" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Click a cell to log a phone or Expedia booking.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/crystal-lake/hover-calendar-show-day-and-room.png" alt="Calendar hover tooltip showing room name and date for any cell" style="width:100%;display:block;" width="3078" height="1873" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/crystal-lake/hover-calendar-show-day-and-room.png" alt="Calendar hover tooltip showing room name and date for any cell" width="3078" height="1873" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">The post-launch readability fix: every cell names its room and date.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" style="width:100%;display:block;" width="2214" height="1488" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" width="2214" height="1488" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Live Google and TripAdvisor reviews on the homepage.</figcaption>
                 </figure>
@@ -295,57 +295,57 @@
                 <div class="tech-details-body">
                     <h4>Room Listings</h4>
                     <p>Every motel room and cottage is listed on one Rooms page with photos, beds, lake view and a filter. "Reserve This Room" opens the booking form with that room already picked, and sold-out rooms show live from the booking system. Each room type also has its own page, so guests arriving from search can land on the room they searched for.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-rooms.webp" alt="Room listings - individual suite pages with photos and booking" style="width:100%;display:block;" width="1600" height="1215" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-rooms.webp" alt="Room listings - individual suite pages with photos and booking" width="1600" height="1215" />
                     </div>
 
                     <h4>Availability Calendar</h4>
                     <p>The admin includes a tape-chart style occupancy grid — every room across every night of the month in a single view. Navigate by month to spot gaps, identify fully-booked nights, and block dates for maintenance or external bookings. No spreadsheet, no third-party channel manager.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar - tape-chart occupancy grid by room and date" style="width:100%;display:block;" width="1812" height="642" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-admin-calendar.png" alt="Admin availability calendar - tape-chart occupancy grid by room and date" width="1812" height="642" />
                     </div>
                     <p style="margin-top:1.25em;">After launch, the client flagged that the grid was hard to read — the day columns and room rows didn't have enough visual separation to track easily. I made three targeted changes: darkened cell borders from near-invisible <code>#f0eeee</code> to distinct values (columns lighter, rows heavier, so the eye tracks horizontally first); added alternating row shading so each room stripes consistently across the full horizontal scroll; and added a position tooltip to every cell — including empty ones — so hovering any cell shows "Room Name · Wed, Aug 26" instead of nothing. Small change, immediate clarity improvement. Shipping is not finishing.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
-                        <img loading="lazy" src="assets/images/crystal-lake/hover-calendar-show-day-and-room.png" alt="Calendar hover tooltip showing room name and date for any cell" style="width:100%;display:block;" width="3078" height="1873" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)" style="margin-top:1.25em;">
+                        <img class="u-block-full" loading="lazy" src="assets/images/crystal-lake/hover-calendar-show-day-and-room.png" alt="Calendar hover tooltip showing room name and date for any cell" width="3078" height="1873" />
                     </div>
                     <p style="margin-top:1.25em;">The calendar also doubles as a booking entry point. Clicking any cell opens a form to log a reservation directly — room and date pre-filled from the cell — so the owner can record phone-in bookings or OTA reservations from Expedia or Hotels.com without leaving the occupancy view. The grid stays the source of truth: book it here, it blocks immediately.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
-                        <img loading="lazy" src="assets/images/crystal-lake/create-booking-inside-calendar.png" alt="Create booking form opened from calendar cell with room and date pre-filled" style="width:100%;display:block;" width="816" height="800" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)" style="margin-top:1.25em;">
+                        <img class="u-block-full" loading="lazy" src="assets/images/crystal-lake/create-booking-inside-calendar.png" alt="Create booking form opened from calendar cell with room and date pre-filled" width="816" height="800" />
                     </div>
 
                     <h4>Booking Confirmation</h4>
                     <p>After payment, the confirmation page fetches live booking details using the Stripe session ID and displays the confirmed room, dates, and total paid — no polling, no waiting. Guests also receive a confirmation email immediately with a cancel link tied to their unique reservation token.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" style="width:100%;display:block;" width="3412" height="1968" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/bookingconfirm-desktop.png" alt="Booking confirmation page showing room, dates, nights, and total paid" width="3412" height="1968" />
                     </div>
 
                     <h4>Reviews</h4>
                     <p>Live Google and TripAdvisor review widgets pulled directly onto the homepage — guests see real ratings without leaving the site, and the owner doesn't maintain anything manually.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" style="width:100%;display:block;" width="2214" height="1488" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-reviews.png" alt="Google and TripAdvisor review widgets on the homepage" width="2214" height="1488" />
                     </div>
 
                     <h4>Explore the Inn</h4>
                     <p>A clear navigation section that gives first-time visitors an immediate path forward — browse rooms, visit The Dining Room (open to guests and the public), or learn about the property. Designed so a guest can orient themselves and get to booking without hunting through the nav.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-explore.png" alt="Explore section - rooms, menu, and about the inn" style="width:100%;display:block;" width="1440" height="839" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-explore.png" alt="Explore section - rooms, menu, and about the inn" width="1440" height="839" />
                     </div>
 
                     <h4>FAQ</h4>
                     <p>Three organized sections — Booking, Arrival, and Food — covering the questions guests actually ask before they show up. Structured around the guest's journey rather than a generic catch-all list.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-faq.png" alt="FAQ - Booking, Arrival, and Food sections" style="width:100%;display:block;" width="1440" height="811" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-faq.png" alt="FAQ - Booking, Arrival, and Food sections" width="1440" height="811" />
                     </div>
 
                     <h4>Find Us</h4>
                     <p>An embedded map section so guests can orient themselves before arrival — neighborhood, parking, and nearby landmarks at a glance without leaving the site.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/theinnco/screenshot-findus.webp" alt="Find Us - embedded map with inn location" style="width:100%;display:block;" width="1440" height="703" />
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/theinnco/screenshot-findus.webp" alt="Find Us - embedded map with inn location" width="1440" height="703" />
                     </div>
 
                     <h4>Explore the Area</h4>
                     <p>A Google Street View embed lets guests virtually walk the resort grounds and surrounding area before they arrive — click the arrows to move through the neighborhood, see the lake, and get a feel for the property. No screenshot could show this; it's interactive and live on the site.</p>
-                    <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:8px;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+                    <video class="u-block-full" autoplay muted loop playsinline style="border-radius:var(--radius-md);border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
                         <source src="assets/videos/crystal-lake/explore-area-street-view.mp4" type="video/mp4">
                     </video>
 
@@ -414,7 +414,7 @@
             <h3>Design: Built to Match the Building</h3>
             <p>The look comes from the resort itself: deep navy like the building's siding, lake-water blue for highlights, and a cool off-white page. A classic serif for headings and a clean sans for everything else keep it calm, so the photos of the lake do the selling. Corners are square throughout.</p>
 
-            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">Two blues, one page color</h4>
+            <h4 class="cs-subhead">Two blues, one page color</h4>
             <div class="cl-swatches">
                 <div class="cl-swatch"><i style="background:#2d3f63;"></i><div><b>Siding Navy</b>#2d3f63 · headings, header, forms</div></div>
                 <div class="cl-swatch"><i style="background:#3a6e9e;"></i><div><b>Lake Blue</b>#3a6e9e · buttons, prices, links</div></div>
@@ -426,10 +426,10 @@
                 <div><span class="sample sans">Reserve Your Stay</span><small>Inter for text, labels and buttons.</small></div>
             </div>
 
-            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">One file controls the look</h4>
+            <h4 class="cs-subhead">One file controls the look</h4>
             <p>Every color, font and layout size lives in one small stylesheet, so the whole site can be re-branded for another property by changing one file. In November 2026 I wrote these up as a design system: tokens, a short brand guide, and the site's buttons, room cards and form fields.</p>
 
-            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">A consistency pass</h4>
+            <h4 class="cs-subhead">A consistency pass</h4>
             <p>Writing the system showed where the site had drifted from it, so I cleaned those spots up:</p>
             <ul>
                 <li><strong>Leftover colors</strong>: warm grays and a gold hover left over from an earlier template now use the brand colors, and no stray color codes remain in the stylesheet</li>
@@ -473,7 +473,7 @@
             </a>
         </div>
 
-        <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
+        <div class="case-section" style="background:var(--color-surface);border-radius:var(--radius-md);padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
             <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
             <a href="contact.html" class="cta-btn">Let's talk →</a>
         </div>
