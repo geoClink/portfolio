@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Hoops Stats - Case Study | George Clinkscales Jr.</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://georgeclinkscalesdev.com/hoops-stats.html" />
+    <meta property="og:title" content="Hoops Stats - Case Study | George Clinkscales Jr." />
+    <meta property="og:description" content="Hoops Stats — a stats web app for a youth basketball team: live entry on a phone that works offline, reading a paper stat sheet from a photo with AI, player progress charts and a printable year-end report." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://georgeclinkscalesdev.com/hoops-stats.html" />
+    <meta property="og:image" content="https://georgeclinkscalesdev.com/assets/images/hoops-stats/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hoops Stats - Case Study | George Clinkscales Jr." />
+    <meta name="twitter:description" content="Hoops Stats — a stats web app for a youth basketball team: live entry on a phone that works offline, reading a paper stat sheet from a photo with AI, player progress charts and a printable year-end report." />
+    <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/hoops-stats/og.png" />
+    <meta name="description" content="Hoops Stats — a stats web app for a youth basketball team: live entry on a phone that works offline, reading a paper stat sheet from a photo with AI, player progress charts and a printable year-end report." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
+    <style>
+        :root { --case-accent: #c25515; }
+        .hs-browser img { width: 100%; height: auto; display: block; }
+        .hs-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25em; margin-top: 1.25em; }
+        .hs-shots figure, .hs-live figure { margin: 0; }
+        .hs-shots figcaption, .hs-live figcaption { font-size: 0.8em; color: var(--color-text-muted); margin-top: 0.6em; text-align: center; font-style: italic; line-height: 1.4; }
+        .hs-shots img { width: 100%; height: auto; display: block; border: 1px solid var(--color-border); border-radius: 8px; }
+        .hs-live { display: flex; gap: 2em; align-items: center; flex-wrap: wrap; }
+        .hs-live figure { flex: 0 0 260px; }
+        .hs-live img { width: 100%; height: auto; display: block; border-radius: 22px; border: 6px solid #1d2433; }
+        .hs-live .hs-live-text { flex: 1; min-width: 240px; }
+        .hs-demo-btn { display: inline-block; padding: 0.6em 1.2em; border-radius: 8px; background: var(--case-accent); color: #fff !important; font-weight: 600; text-decoration: none; }
+        .hs-demo-btn:hover { filter: brightness(0.92); }
+        @media (max-width: 640px) { .hs-shots { grid-template-columns: 1fr; } .hs-live figure { flex-basis: 100%; max-width: 280px; margin: 0 auto; } }
+    </style>
+    <script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "SoftwareApplication",
+       "name": "Hoops Stats",
+       "description": "A stats web app for a youth basketball team with offline live entry, AI stat-sheet scanning, progress charts and printable reports.",
+       "applicationCategory": "SportsApplication",
+       "operatingSystem": "Web",
+       "url": "https://georgeclinkscalesdev.com/hoops-stats.html",
+       "author": { "@type": "Person", "name": "George Clinkscales Jr.", "url": "https://georgeclinkscalesdev.com/" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgeclinkscalesdev.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://georgeclinkscalesdev.com/case-studies.html" },
+            { "@type": "ListItem", "position": 3, "name": "Hoops Stats", "item": "https://georgeclinkscalesdev.com/hoops-stats.html" }
+        ]
+    }
+    </script>
+<script src="assets/js/consent.js?v=2" defer></script>
+</head>
+<body class="is-preload">
+
+    <header id="header">
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
+        <button id="menuToggle" aria-label="Open menu" class="menu-btn">
+            <span class="menu-icon"><span></span></span>
+        </button>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="case-studies.html" class="button active" aria-current="page">Case Studies</a></li>
+                <li><a href="resume.html" class="button">Resume</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+        <aside id="sidebarMenu" class="sidebar-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div id="main" role="main">
+
+        <a href="case-studies.html" class="back-link">← Case Studies</a>
+
+        <div class="case-hero">
+            <img src="assets/images/hoops-stats/icon.svg" alt="Hoops Stats logo" class="case-hero-icon" width="1024" height="1024" />
+            <h1 class="case-title">Hoops Stats</h1>
+            <p class="case-tagline">Stats for a youth basketball team. They're entered live on a phone at the gym, even with no signal, or read from a photo of the paper stat sheet. Every player gets a page showing how they're improving, and families get a printable year-end report.</p>
+        </div>
+
+        <div class="case-links">
+            <a href="https://hoops-stats-hazel.vercel.app/?demo" class="hs-demo-btn" target="_blank" rel="noopener noreferrer">Try the live demo →</a>
+            <a href="https://github.com/geoClink/hoops-stats" target="_blank" rel="noopener noreferrer"><i class="icon brands fa-github" aria-hidden="true"></i> Code on GitHub</a>
+        </div>
+
+        <div class="case-meta">JavaScript · Node · Postgres (Neon) · Vercel · Claude vision API · Node test runner · 2026 · Live</div>
+        <div class="case-glance">
+            <div class="case-glance-item">
+                <div class="case-glance-label">Role</div>
+                <div class="case-glance-value">Solo: design, front end, API, database</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Users</div>
+                <div class="case-glance-value">Coach, scorekeeper and families</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">AI</div>
+                <div class="case-glance-value">Reads tally marks from a photo</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Offline</div>
+                <div class="case-glance-value">Live entry keeps working with no signal</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Testing</div>
+                <div class="case-glance-value">16 tests, run on every push</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Accessibility</div>
+                <div class="case-glance-value">WCAG AA contrast, keyboard and screen reader</div>
+            </div>
+            <div class="case-glance-item">
+                <div class="case-glance-label">Status</div>
+                <div class="case-glance-value">Live, with a public demo</div>
+            </div>
+        </div>
+
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#the-approach">The approach</a></li>
+                <li><a href="#what-was-hard">What was hard</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+                <li><a href="#what-s-next">What's next</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
+            <h3>The Problem</h3>
+            <p>Youth basketball stats live on a paper sheet. A volunteer tallies shots and rebounds at the scorer's table, and when the game ends the sheet goes in a bag and nobody sees it again. The coach can't tell who's improving, and families never see their kid's progress. Any fix had to be free to run, quick for a volunteer to use mid-game, work in a gym with bad signal, and keep each family's view limited to their own child.</p>
+        </div>
+
+        <div class="case-section" id="screenshots">
+            <h3>Screenshots</h3>
+            <div class="browser-mockup hs-browser">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="browser-dot close"></div>
+                        <div class="browser-dot minimize"></div>
+                        <div class="browser-dot maximize"></div>
+                    </div>
+                    <div class="browser-url">hoops-stats-hazel.vercel.app</div>
+                </div>
+                <img loading="lazy" src="assets/images/hoops-stats/season.webp" alt="Season page: team record, stat tiles and a points-per-game chart with a trend line" width="1600" height="1094" />
+            </div>
+            <div class="hs-shots">
+                <figure>
+                    <img loading="lazy" src="assets/images/hoops-stats/player.webp" alt="A player's page with badges and a progress chart" width="1600" height="1094" />
+                    <figcaption>Player page: milestone badges, a progress chart with a trend line, and early vs. late season.</figcaption>
+                </figure>
+                <figure>
+                    <img loading="lazy" src="assets/images/hoops-stats/report.webp" alt="Year-end report with team totals and every player's stats" width="1600" height="1094" />
+                    <figcaption>Year-end report: prints a team page plus one page per player, ready to send to families.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="case-section" id="live-entry">
+            <h3>Live Entry at the Gym</h3>
+            <div class="hs-live">
+                <figure>
+                    <img loading="lazy" src="assets/images/hoops-stats/live-entry.webp" alt="Live entry on a phone: marking who's here, then tapping made shots and rebounds" width="320" height="624" />
+                    <figcaption>Tap who's here, pick a player, tap what happened.</figcaption>
+                </figure>
+                <div class="hs-live-text">
+                    <p>The scorekeeper marks who showed up, picks a player and taps Made, Missed, Rebound or Steal. The score adds itself up, and Undo fixes a mis-tap.</p>
+                    <p>Every tap is saved on the phone first and sent to the server once there's a connection, so a dead spot in the gym never loses a stat. The status in the corner always shows whether everything is saved.</p>
+                    <p>Each button also tells a screen reader which player it's for, and every tap is read out as it's logged.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-section" id="the-approach">
+            <h3>The Approach</h3>
+            <p><strong>Reading the paper sheet.</strong> Some games will always be scored on paper, so the coach can take a photo of the filled-in sheet. The photo is shrunk on the phone, then sent to the Claude vision API with the team's roster and a strict JSON schema. The model returns each player's numbers plus a list of the boxes it wasn't sure about. Those boxes are highlighted for the coach to check, and the app warns if the players' points don't add up to the final score.</p>
+
+            <p><strong>Privacy enforced in the database.</strong> There are three kinds of login: coaches who can edit, helpers who can only view, and parents. A parent's limit is applied inside every SQL query, not hidden by the page, so their browser never even receives another child's stats. When the roster is copied into a new season, parents stay linked to their child automatically.</p>
+
+            <p><strong>Small on purpose.</strong> There's no framework and no build step: one JavaScript file, one stylesheet and a single Node API running as a Vercel function on Neon Postgres. Locally and in the tests, the same SQL runs on PGlite, an embedded Postgres, so setting it up is just <code>npm install</code>. The charts, including the trend lines, are hand-drawn SVG with no chart library.</p>
+
+            <p><strong>A demo that can't leak anything.</strong> The public demo runs a made-up team entirely in the browser. It never calls the server, so visitors can click everything, including live entry, without seeing real kids' data or running up the AI bill.</p>
+
+            <p><strong>Tested and accessible.</strong> 16 tests use Node's built-in runner and run on GitHub Actions on every push. The API tests run the real SQL on a throwaway database, checking login blocking, view-only limits and that a parent can never load another child's data. The stat tests cover points, percentages, badges, attendance and the early vs. late season comparison. The color palette meets WCAG AA contrast, with a separate darker orange for text and buttons.</p>
+        </div>
+
+        <div class="case-section" id="what-was-hard">
+            <h3>What Was Hard</h3>
+            <p>Designing for the people actually in the gym. A volunteer parent is scoring a fast elementary-school game, holding a phone with one bar of signal. That meant big tap targets, a running score they can check against the scoreboard, Undo instead of confirmation pop-ups, and saving to the phone first so nothing depends on the network. Scanning the paper sheet had a similar lesson: the AI is useful because it's honest about the boxes it can't read, and the coach stays in charge of the final numbers.</p>
+        </div>
+
+        <div class="case-section" id="the-outcome">
+            <h3>The Outcome</h3>
+            <p>One app now covers the whole season: entering stats live or from a photo, schedule and practice attendance, a progress page for every player, family logins limited to their own child, and a year-end report with a page per player. It's live on Vercel, and anyone can try the full app on a made-up team through the public demo.</p>
+        </div>
+
+        <div class="case-section" id="what-s-next">
+            <h3>What's Next</h3>
+            <p>A "forgot password" route so families don't need the coach to reset their login, a dark mode built on the existing color palette, and support for more than one team per account so a whole league could use it.</p>
+        </div>
+
+        <nav class="spec-nav" aria-label="Case study navigation">
+            <a href="stamped.html" class="spec-nav-btn">
+                <span class="spec-nav-label">Previous case study</span>
+                ← Stamped!
+            </a>
+            <a href="squishy-butter.html" class="spec-nav-btn next">
+                <span class="spec-nav-label">Next case study</span>
+                Squishy Butter →
+            </a>
+        </nav>
+    </div>
+
+    <!-- CTA Band -->
+    <div class="page-cta">
+        <span><span class="availability-dot"></span><strong>Available now for iOS, visionOS and full-stack roles (remote or Detroit) and select freelance work.</strong></span>
+        <a href="contact.html">Let's talk</a>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-name">
+                    <img src="favicon.svg" alt="" class="site-favicon footer-favicon" aria-hidden="true" />
+                    <div class="footer-name-text">
+                        <strong>George Clinkscales Jr.</strong>
+                        <span>iOS, visionOS and full-stack engineer in Detroit</span>
+                        <a class="footer-email" href="mailto:GeorgeClinkscalesDev@proton.me">GeorgeClinkscalesDev@proton.me</a>
+                    </div>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="about.html">About</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="links.html">Apps &amp; Beta Testing</a>
+                </nav>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/geoClink" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/george-clinkscales/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 George Clinkscales Jr.</span>
+                <a class="footer-legal" href="/privacy.html">Privacy Policy</a>
+                <a class="footer-legal" href="#" onclick="window.gcConsent&&gcConsent.open();return false;">Cookie settings</a>
+                <span class="footer-squishy">I also make <a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer">Squishy Butter</a>, a squishy collecting game with no forced ads.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
+    <!-- GoatCounter: cookie-free page counts, no banner needed -->
+    <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
