@@ -47,7 +47,12 @@
 .cl-type .serif { font-family: "Playfair Display", Georgia, serif; font-size: 1.6em; }
 .cl-type .sans { font-family: Inter, system-ui, sans-serif; font-size: 0.85em; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding-top: 0.6em; }
 .cl-type small { font-size: 0.78em; color: var(--color-text-muted); line-height: 1.45; display: block; }
-@media (max-width: 736px) { .cl-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cl-type { grid-template-columns: 1fr; } }
+.cl-ba { margin: 1.5em 0 0.5em; display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+.cl-ba figure { margin: 0; }
+.cl-ba-label { display: inline-block; font-size: 0.7em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4em; }
+.cl-ba img { display: block; width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: 10px; }
+.cl-ba-caption { font-size: 0.85em; color: var(--color-text-muted); margin-top: 0.25em; }
+@media (max-width: 736px) { .cl-ba { grid-template-columns: 1fr; } .cl-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cl-type { grid-template-columns: 1fr; } }
 </style>
 <script src="assets/js/consent.js?v=2" defer></script>
 </head>
@@ -428,9 +433,21 @@
             <p>Writing the system showed where the site had drifted from it, so I cleaned those spots up:</p>
             <ul>
                 <li><strong>Leftover colors</strong>: warm grays and a gold hover left over from an earlier template now use the brand colors, and no stray color codes remain in the stylesheet</li>
-                <li><strong>Readable everywhere</strong>: the sold-out button's text went from 2.4:1 to 4.6:1 contrast, and every text color now passes the 4.5:1 accessibility standard</li>
+                <li><strong>Readable everywhere</strong>: the "Not Available" button on sold-out rooms was faded twice over and hard to read; now only the photo fades and the button is a solid gray with 4.6:1 contrast. Every text color passes the 4.5:1 accessibility standard, and a test checks it on every change</li>
                 <li><strong>Type and buttons</strong>: near-identical text sizes merged (36 down to 28), and buttons share one letter-spacing and square corners</li>
+                <li><strong>Named steps</strong>: spacing and the common text sizes are now named steps in the same file as the colors, so the code and the design system use the same scale</li>
             </ul>
+            <div class="cl-ba">
+                <figure>
+                    <span class="cl-ba-label">Before</span>
+                    <img src="assets/images/crystal-lake/design-soldout-before.webp" width="1200" height="1105" loading="lazy" decoding="async" alt="Two room cards. The sold-out one on the right is washed out, and its Not Available button is pale blue with white text that is hard to read.">
+                </figure>
+                <figure>
+                    <span class="cl-ba-label">After</span>
+                    <img src="assets/images/crystal-lake/design-soldout-after.webp" width="1200" height="1105" loading="lazy" decoding="async" alt="The same two room cards. On the sold-out card only the photo is faded, the text is clear, and the Not Available button is solid gray with readable white text.">
+                </figure>
+            </div>
+            <p class="cl-ba-caption">A sold-out room, before and after.</p>
             <p>Before releasing it, I compared all 16 public pages before and after at desktop and phone widths, element by element. That caught one button that wrapped onto two lines on phones, and I kept it as it was.</p>
         </div>
 
