@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -61,7 +61,7 @@
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -94,7 +94,7 @@
 
         <div class="case-hero">
             <img src="assets/images/coastcast/coastcast-app-icon.webp" alt="CoastCast app icon" class="case-hero-icon" width="1024" height="1024" />
-            <h2 class="case-title">CoastCast</h2>
+            <h1 class="case-title">CoastCast</h1>
             <p class="case-tagline">A full-platform iOS app delivering real-time beach conditions for 54 Michigan beaches - with on-device ML crowd prediction, Siri Shortcuts, Live Activities, and a Python FastAPI backend.</p>
         </div>
 
@@ -135,12 +135,25 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#screenshots-app-experience">App experience</a></li>
+                <li><a href="#the-approach">The approach</a></li>
+                <li><a href="#what-was-hard">What was hard</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+                <li><a href="#what-s-next">What's next</a></li>
+                <li><a href="#designer-feedback">Designer feedback</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Michigan has 54 public beaches on four of the Great Lakes - and no single tool to answer the question every resident asks before heading out: <em>Is it worth going today?</em> Existing weather apps don't show water temperature, wave height, or crowd density. CoastCast solves this with one platform that pulls all of it together.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="screenshots-app-experience">
             <h3>Screenshots &amp; App Experience</h3>
             <div class="screenshot-scroll-track">
                 <div class="screenshot-scroll-item">
@@ -209,7 +222,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-approach">
             <h3>The Approach</h3>
             <p>Built as part of the MSU Apple Developer Academy program with a team of five - two developers, two designers, and a project manager - over March–April 2026. UI/UX design was led by <a href="https://www.linkedin.com/in/tamia-brezzell-2873251a2/" target="_blank" rel="noopener noreferrer">Tamia Brezzell</a> alongside designer <a href="https://www.linkedin.com/in/alexis-cardwell-510375b6/" target="_blank" rel="noopener noreferrer">Alexis Cardwell</a>, I co-developed the app with <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer">Jaiden Henley</a>, and <a href="https://www.linkedin.com/in/ada-mbonu-notary-public-chs-cta%E2%9C%A8-09b057165/" target="_blank" rel="noopener noreferrer">Ada Mbonu</a> was our project manager. The SwiftUI app covers the map, beach scoring engine, CoreML crowd prediction, App Intents, WidgetKit, Live Activities, and notifications. The Python FastAPI backend, deployed on Render, aggregates six data sources concurrently: NOAA buoy data, water quality, NWS weather alerts, TomTom traffic, holiday detection, and a holiday crowd signal.</p>
 
@@ -218,17 +231,17 @@
             <p>Beyond the core experience, the app ships with: a home screen WidgetKit widget that users can configure per beach, Live Activities and Dynamic Island showing crowd level and water temp while traveling, two App Intents for Siri, three-tier push notifications (daily best beach, score threshold, and NWS severe weather alerts), and a hand-built map clustering algorithm with no third-party dependencies.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="what-was-hard">
             <h3>What Was Hard</h3>
             <p>CoastCast was one of my first times building a product on a real team. My earlier work was in restaurants and a research lab, so sharing one product with two designers, another developer and a project manager was new to me. I adapted by owning my role as a developer and trusting everyone else to own theirs, and I took feedback on my work without taking it personally. That's a big part of why we shipped a successful app.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>CoastCast surfaces live beach intelligence across the app, home screen, Dynamic Island, and Siri - without opening anything. On-device CoreML means crowd predictions work offline, and the three-tier notification system covers daily alerts, score thresholds, and severe weather. Live on the App Store.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="what-s-next">
             <h3>What's Next</h3>
             <p>CoastCast currently covers Great Lakes beaches only - which makes it a summer app by nature. The roadmap tackles that from two directions: expanding to new states so the app stays useful across more seasons of the year, and adding inland lakes so people can check conditions on the water closest to them, not just the Great Lakes shoreline.</p>
         </div>
@@ -248,7 +261,7 @@
             </a>
         </div>
 
-        <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);">
+        <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);" id="designer-feedback">
             <h3>Designer Feedback</h3>
             <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
                 <p style="margin:0 0 0.75em;">"As I further develop my discipline as a UI/UX designer, the shared vision between the developers and the designers is imperative to create an amazing final product. After working with George, I can testify that he understands the importance of proper communication, research, and hard work. He would easily take any feedback I gave him and either implement it or offer me a new perspective on it. Working with him was a smooth process and I would definitely work with him again."</p>
@@ -307,38 +320,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/coastcast/coastcast-app-icon.webp';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

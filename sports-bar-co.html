@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -75,7 +75,7 @@
 
         <div class="case-hero">
             <img src="assets/images/thesportsbarco/favicon.svg" alt="The Sports Bar Co. icon" class="case-hero-icon" />
-            <h2 class="case-title">The Sports Bar Co.</h2>
+            <h1 class="case-title">The Sports Bar Co.</h1>
             <p class="case-tagline">A full-stack reservations and events platform for sports bars - live scores across seven leagues, table booking, a live events calendar, and a party inquiry form. Built for owners who want a custom web presence without paying OpenTable's per-cover fees or being locked into a generic site builder.</p>
         </div>
 
@@ -104,12 +104,26 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#live-scores">Live scores</a></li>
+                <li><a href="#what-s-live-today">What's live today</a></li>
+                <li><a href="#happy-hour-events">Happy hour &amp; events</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Sports bars run on events - game days, watch parties, private buyouts - but most manage reservations by phone and promote events through Instagram stories that disappear after 24 hours. OpenTable charges a per-cover fee on every booking and isn't built for the event-driven nature of sports bars. Generic site builders handle neither reservations nor events well, and leave the owner dependent on a platform they don't control. The goal was a custom site that makes reservations and events first-class features - one the owner controls completely, with no monthly platform fee and no commission per booking.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -130,7 +144,7 @@
             <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="live-scores">
             <h3>Live Scores</h3>
             <p>Seven leagues - NFL, MLB, NBA, NHL, CFB, CBB, and MLS - pulled live from ESPN's official API. The "What's On" board shows how many games are live right now, how many are coming up today, and a live countdown to the next tip-off. Guests can filter by day (up to 7 days ahead) and by sport. The board pulls fresh data on every load with no page refresh needed.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -138,7 +152,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="what-s-live-today">
             <h3>What's Live Today</h3>
             <p>The homepage surfaces what's happening at the bar right now - games currently on, upcoming tip-offs, and the day's full schedule at a glance. Built to give guests a reason to check the site before they show up.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -146,7 +160,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="happy-hour-events">
             <h3>Happy Hour &amp; Events</h3>
             <p>A live countdown to happy hour and a weekly events calendar pulled from Supabase - so the site always reflects what's actually happening at the bar that week. Recurring events (Trivia Night, Wing Night) always appear; one-off events like playoff watch parties or live acts drop off automatically the day after they pass. Private party and buyout inquiries come through a dedicated form routed straight to the owner's inbox - no lead sits unread in a platform dashboard.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -154,7 +168,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="menu">
             <h3>Menu</h3>
             <p>The full menu with client-side category filtering - guests can browse by section without a page reload.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -162,7 +176,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <div class="device-showcase-grid">
                 <div class="phone-label-item">
@@ -212,7 +226,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>A sports bar web presence that handles reservations, promotes events, and captures private party leads - all in one place, at a fraction of what off-the-shelf reservation platforms charge. The owner controls everything: add an event, update the menu, check incoming bookings - no developer required and no monthly platform fee. Designed and built solo. Part of the Small Business Platform Suite.</p>
         </div>
@@ -288,38 +302,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/thesportsbarco/favicon.svg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

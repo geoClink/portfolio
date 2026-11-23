@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -75,7 +75,7 @@
 
         <div class="case-hero">
             <img src="assets/images/thelandscapeco/favicon.svg" alt="The Landscape Co. icon" class="case-hero-icon" />
-            <h2 class="case-title">The Landscape Co.</h2>
+            <h1 class="case-title">The Landscape Co.</h1>
             <p class="case-tagline">A fully deployed spec website for a fictional Bay Area garden design and maintenance studio, built from scratch in vanilla HTML, CSS, and JavaScript, with a live contact form backed by the Small Business Suite API and 10 individual project detail pages.</p>
         </div>
 
@@ -104,12 +104,26 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#before-after">Before &amp; after</a></li>
+                <li><a href="#in-the-garden-now">In the garden now</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#contact-form">Contact form</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Garden design studios typically rely on Instagram or a single-page Squarespace site to represent their work - neither of which gives a serious business the presence it earns. The goal was to build a site that felt genuinely editorial and premium: photo-driven, typographically considered, and with enough depth (a real portfolio with individual project write-ups, a clear services breakdown, a team page, and a working contact form) to hold up against a professionally commissioned site. No framework, no template - hand-coded from scratch and wired to a live backend.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -130,7 +144,7 @@
             <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://yarrow-gardening.vercel.app" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="portfolio">
             <h3>Portfolio</h3>
             <p>The studio's primary sales tool - a gallery of ten past client projects that prospective clients can browse before reaching out. Each project has its own page with photos, a written account of the work, and specs like plant list, site conditions, and timeline. Filterable by service type so clients looking for a full install aren't scrolling through maintenance jobs.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -138,7 +152,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="before-after">
             <h3>Before &amp; After</h3>
             <p>The A Quarantine Patio project features an interactive drag slider comparing the space before installation against the finished native garden. Works on both desktop and mobile.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -147,7 +161,7 @@
             <p style="font-size:0.8em;color:var(--color-text-muted);margin:0.65em 0 0;text-align:left;font-style:italic;">Try the live slider at <a href="https://yarrow-gardening.vercel.app/portfolio/berkeley-hills.html" target="_blank" rel="noopener noreferrer">yarrow-gardening.vercel.app/portfolio/berkeley-hills.html ↗</a></p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="in-the-garden-now">
             <h3>In the Garden Now</h3>
             <p>The homepage includes a seasonal planting section that reads the current month with JavaScript and renders a different set of Bay Area plants depending on the season - winter shrubs in December, drought-adapted species in summer. No API call, no database, no build step. It updates itself four times a year automatically.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1em;">
@@ -155,7 +169,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <p>The full site is responsive from 320px up. On mobile, the nav collapses into a full-screen overlay triggered by a hamburger button - no library, just a CSS class toggle. The before/after slider and portfolio filter both work on touch. The contact form submits correctly on mobile with inline success and error states.</p>
             <div class="phone-showcase">
@@ -176,7 +190,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="contact-form">
             <h3>Contact Form</h3>
             <p>The contact form submits to the Small Business Suite API, which validates the payload, writes the submission to Supabase, and sends an email notification through Resend. The studio owner receives an email immediately. On the client side, the form shows an inline success message on completion and an error state if the request fails - no page reload, no third-party form service.</p>
             <video class="case-video" src="assets/videos/thelandscapeco/videoofsubmitingquoteform.mp4" autoplay loop muted playsinline></video>
@@ -222,7 +236,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>A site that holds up against professionally commissioned work - not because it uses a framework or template, but because every decision was made deliberately: the editorial dark-green testimonial layout instead of a card grid, the drag slider that works equally on mouse and touch, the seasonal planting feature that updates itself four times a year without a database. Designed and built solo in two weeks. Part of the Small Business Platform Suite.</p>
         </div>
@@ -298,7 +312,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <script>
         (function () {
             if (typeof gtag !== 'function') return;
@@ -367,37 +382,6 @@
                         gtag('event', 'video_progress', { label: 'contact_form_demo_50pct', page: 'landscape-co' });
                     }
                 });
-            }
-        })();
-    </script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/thelandscapeco/favicon.svg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
             }
         })();
     </script>

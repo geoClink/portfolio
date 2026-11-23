@@ -441,7 +441,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
     url = f"{SITE}/stamped-cities/{s}.html"
     n = len(landmarks)
     noun = "landmark" if n == 1 else "landmarks"
-    title = f"{city} Architecture: {n} Landmarks to See | Stamped!"
+    title = f"{city} Landmarks and Architecture: {n} {'Building' if n == 1 else 'Buildings'} to See | Stamped!"
     if n == 1:
         title = f"{city} Architecture: A Landmark to See | Stamped!"
     names = [l["name"] for l in landmarks]
@@ -477,7 +477,7 @@ def city_page(city, landmarks, details, siblings, photos, links=None):
         <div class="container">
             <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">City guides</a> <span aria-hidden="true">/</span> <a href="{slug(continent)}.html">{e(continent)}</a> <span aria-hidden="true">/</span> {e(country)}</nav>
             <p class="kicker">{e(details.get('nickname') or 'City guide')}</p>
-            <h1>{e(city)} architecture</h1>{coming_soon_note(city)}
+            <h1>{e(city)} landmarks and architecture</h1>{coming_soon_note(city)}
             <p class="lead">{e(details.get('funFact', ''))}</p>
             <ul class="stats">
                 <li><strong>{n}</strong><span>{noun.title()}</span></li>""")

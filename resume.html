@@ -20,12 +20,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
         .resume-title {
-            font-size: 2.4em;
+            font-size: var(--text-5xl);
             font-weight: 700;
             color: var(--color-heading);
             margin: 0 0 0.3em;
@@ -34,7 +34,7 @@
         }
 
         .resume-tagline {
-            font-size: 1.05em;
+            font-size: var(--text-body);
             color: var(--color-text-muted);
             margin: 0 0 1.75em;
             line-height: 1.6;
@@ -52,12 +52,12 @@
             align-items: center !important;
             height: auto !important;
             line-height: normal !important;
-            font-size: 0.9em !important;
+            font-size: var(--text-base) !important;
             font-weight: 600 !important;
             text-transform: none !important;
             letter-spacing: 0.04em !important;
             padding: 0.7em 1.2em !important;
-            border-radius: 4px !important;
+            border-radius: var(--radius-xs) !important;
             gap: 0.45em;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
         }
@@ -73,7 +73,7 @@
         }
 
         .resume-section h3 {
-            font-size: 0.75em;
+            font-size: var(--text-sm);
             font-weight: 700;
             letter-spacing: 0.13em;
             text-transform: uppercase;
@@ -108,7 +108,7 @@
             display: block;
             font-weight: 700;
             color: var(--color-heading);
-            font-size: 1em;
+            font-size: var(--text-body);
             overflow-wrap: break-word;
             word-break: break-word;
         }
@@ -123,7 +123,7 @@
         }
 
         .resume-item-meta {
-            font-size: 0.82em;
+            font-size: var(--text-md);
             color: var(--color-text-muted);
             margin-bottom: 0.35em;
             overflow-wrap: break-word;
@@ -131,7 +131,7 @@
         }
 
         .resume-item-note {
-            font-size: 0.82em;
+            font-size: var(--text-md);
             color: var(--color-text-muted);
             font-style: italic;
             margin-bottom: 0.35em;
@@ -145,7 +145,7 @@
         }
 
         .resume-item-links a {
-            font-size: 0.82em;
+            font-size: var(--text-md);
             color: var(--color-heading);
             text-decoration: none;
             border-bottom: 1.5px solid var(--color-heading);
@@ -174,12 +174,12 @@
             align-items: center !important;
             height: auto !important;
             line-height: normal !important;
-            font-size: 0.9em !important;
+            font-size: var(--text-base) !important;
             font-weight: 600 !important;
             text-transform: none !important;
             letter-spacing: 0.04em !important;
             padding: 0.7em 1.2em !important;
-            border-radius: 4px !important;
+            border-radius: var(--radius-xs) !important;
             box-shadow: inset 0 0 0 1.5px var(--color-border) !important;
             gap: 0.45em;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
@@ -207,11 +207,11 @@
         .resume-contact-links a[href*="github"] .icon {
             margin: 0 !important;
             padding: 0 !important;
-            font-size: 1em;
+            font-size: var(--text-body);
         }
 
         .resume-contact-email {
-            font-size: 0.88em;
+            font-size: var(--text-base);
             color: var(--color-text-muted);
             text-decoration: none;
             border-bottom: 1px solid var(--color-border);
@@ -261,7 +261,7 @@
         }
 
         .skill-group-label {
-            font-size: 0.75em;
+            font-size: var(--text-sm);
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -275,7 +275,7 @@
         }
 
         .skill-tag {
-            font-size: 0.88em;
+            font-size: var(--text-base);
             color: var(--color-text);
         }
 
@@ -334,7 +334,7 @@
 
         @media (max-width: 736px) {
             .resume-title {
-                font-size: 1.8em;
+                font-size: var(--text-3xl);
             }
 
             /* Force the list and every item to be true block elements */
@@ -586,7 +586,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -623,7 +623,7 @@
             <img id="print-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6AQAAAAAxdWpcAAABoUlEQVR4nM2YQY7DIAxFPzFSlyD1AD0KuVpuBjdylpWMPLLTzKozyzh/USVhwZf5PEyT4qvG8v07cMnATKaZkr3tCRj2Xq+ZHH8OFFXtpJoq5kszoKpy1eR/aLHiVGBfZV/zvgpw1C3alWlWkG4oG06Fusrnw5gZ8rx28uWfgaYMFH0wHtwyQKrxrvaU0gqM96u/63hXpJRysCuoS9BUu7IVytVjXUlRKd3sMYDm35qUaFdo5LX6rRIABLtaiA3pxOPtcZrVkh9NURjYuUlRYls+Un+4wQpK6V6fptyIbSkpOu3qcnuQ0m+SK2AAg7TnotjXWd1efK7U8X7wqpF2KRpdK4h3MihdAIu94TQ+V2Lk/ByFVi7LVfwe1E/UGzGIjfBqi3gHV434YwxWsfBcLdZ5lm2+HAho4i1E9B7M5JcceeLBFS9Oheezz2gyyPl7bD34ZpR7kEHtmmO8gjU24bmCH4JOTuMVXEbU6BPHRDwEzY8bszTDb6mnctksV36DDu/b5cjVAU9Yo2W0j+YVHFCzIlWnKOyKSBxbq3TL/2R+ABYQHPWXQ7stAAAAAElFTkSuQmCC" alt="Portfolio QR code" />
         </div>
 
-        <h2 class="resume-title">Resume</h2>
+        <h1 class="resume-title">Resume</h1>
         <p class="resume-tagline">iOS, visionOS &amp; full-stack engineer: 5 apps live on the App Store with 3,000+ downloads, plus production web platforms serving real clients.</p>
 
         <div class="resume-actions">
@@ -1096,7 +1096,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
     <script>
         document.querySelectorAll('.resume-accordion-header').forEach(function (header) {
             header.setAttribute('aria-expanded', 'false');

@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -75,7 +75,7 @@
 
         <div class="case-hero">
             <img src="assets/images/thebakeryco/favicon.svg" alt="The Bakery Co. icon" class="case-hero-icon" />
-            <h2 class="case-title">The Bakery Co.</h2>
+            <h1 class="case-title">The Bakery Co.</h1>
             <p class="case-tagline">A full-stack ordering platform for a bakery - customer website, admin dashboard, iOS POS, iOS customer app, and AI ordering via MCP. The owner updates their menu once and every surface reflects it instantly.</p>
         </div>
 
@@ -104,12 +104,30 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#admin-dashboard">Admin dashboard</a></li>
+                <li><a href="#item-badges">Item badges</a></li>
+                <li><a href="#you-might-like">You might like</a></li>
+                <li><a href="#empty-cart">Empty cart</a></li>
+                <li><a href="#gift-cards">Gift cards</a></li>
+                <li><a href="#loyalty-program">Loyalty program</a></li>
+                <li><a href="#subscriptions">Subscriptions</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#employee-scheduler">Employee scheduler</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Small bakeries take orders by phone or Instagram DM, lose track of them, and pay 15–30% commission to DoorDash or Uber Eats to get discovered online. There's no system, no paper trail, and no way to know which items are low on stock before the morning rush. Platforms like Square Online and Toast charge $200–500/month for what should be table stakes.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -130,32 +148,32 @@
             <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://the-bakery-co-platform.vercel.app/index.html" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="admin-dashboard">
             <h3>Admin Dashboard</h3>
             <p>The owner manages every aspect of the business from a protected dashboard - no code, no developer on call - and every change reflects instantly across the website and both iOS apps. Live read-only demo below, no login needed.</p>
 
             <div style="margin-top:1.25em;">
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Orders &amp; Revenue</p>
+                <p class="cs-kicker">Orders &amp; Revenue</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
                     <li>Orders - live queue with status tracking; one-click fulfill from the dashboard</li>
                     <li>Revenue - live charts with daily and weekly breakdowns</li>
                     <li>Prep List - auto-generated kitchen list from all pending orders</li>
                 </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Catalog</p>
+                <p class="cs-kicker">Catalog</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
                     <li>Menu CMS - add, edit, delete items with per-item image upload and drag-to-reorder</li>
                     <li>Inventory - stock tracking per item; low-stock flagged before the morning rush</li>
                     <li>Site Banner - toggleable promo banner linking directly to a product or checkout</li>
                     <li>Store Hours - hours editor; reflects live on the public hours page</li>
                 </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Monetization</p>
+                <p class="cs-kicker">Monetization</p>
                 <ul style="margin:0 0 1.4em;padding-left:1.2em;line-height:2;">
                     <li>Subscriptions - recurring order management with a site-wide toggle</li>
                     <li>Gift Cards - creation, redemption, and balance tracking</li>
                     <li>Loyalty Rewards - points per purchase, configurable reward tiers</li>
                     <li>Coupons - discount creation and management</li>
                 </ul>
-                <p style="font-weight:700;margin:0 0 0.3em;font-size:0.8em;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);">Business</p>
+                <p class="cs-kicker">Business</p>
                 <ul style="margin:0 0 0;padding-left:1.2em;line-height:2;">
                     <li>Staff - staff accounts with role-based permissions</li>
                     <li>Catering - private event and catering inquiry form with owner email routing</li>
@@ -181,55 +199,55 @@
             <p class="iframe-note desktop-only"><a href="https://webplatform-api.vercel.app/admin.html?demo=true&vertical=bakery" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="item-badges">
             <h3>Item Badges</h3>
             <p>The owner can tag any item from the admin dashboard - Best Seller, New, Staff Pick, Seasonal, Limited, and more. Badges are item-specific and update instantly across the site with no code change.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-badges.png" alt="Item badges - Best Seller, New, Staff Pick set in admin" style="width:100%;display:block;" width="1440" height="485" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-badges.png" alt="Item badges - Best Seller, New, Staff Pick set in admin" width="1440" height="485" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="you-might-like">
             <h3>You Might Like</h3>
             <p>Recommendations are pulled from an <code>item_pairs</code> table that tracks which items are frequently ordered together - ranked by pair count. The more customers order two items together, the higher that pair ranks. Falls back to same-category items, then trending items if no pairs exist yet.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-youmightlike.webp" alt="You might like - order-based item recommendations" style="width:100%;display:block;" width="1440" height="893" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-youmightlike.webp" alt="You might like - order-based item recommendations" width="1440" height="893" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="empty-cart">
             <h3>Empty Cart</h3>
             <p>Even an empty cart is a selling opportunity - it surfaces recommended items so customers who land on the cart page without adding anything have an immediate path to start browsing.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-emptycart.webp" alt="Empty cart state with item recommendations" style="width:100%;display:block;" width="1440" height="1512" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-emptycart.webp" alt="Empty cart state with item recommendations" width="1440" height="1512" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="gift-cards">
             <h3>Gift Cards</h3>
             <p>Customers can purchase and send gift cards directly through the site via Stripe. The recipient gets a unique code by email and can redeem it at checkout.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-giftcard.png" alt="Gift card purchase flow" style="width:100%;display:block;" width="1440" height="2068" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-giftcard.png" alt="Gift card purchase flow" width="1440" height="2068" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="loyalty-program">
             <h3>Loyalty Program</h3>
             <p>Creating an account unlocks a points-based loyalty program - 1 point per $1 spent, 100 points = $1 off your next order. Members also get birthday perks and a full order history. The sign-up page explains the benefits upfront to give customers a reason to create an account before they check out.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-loyalty.png" alt="Create account page with loyalty program incentive" style="width:100%;display:block;" width="1440" height="780" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-loyalty.png" alt="Create account page with loyalty program incentive" width="1440" height="780" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="subscriptions">
             <h3>Subscriptions</h3>
             <p>Customers can subscribe to their favorite items on a weekly or monthly cadence - every option is fully configurable from the admin dashboard, no code required. Recurring orders are a reliable revenue stream for the owner and a convenience for regulars who order the same thing every week.</p>
-            <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                <img src="assets/images/thebakeryco/screenshot-subscriptionoptions.webp" alt="Subscription options - weekly or monthly, fully admin-controlled" style="width:100%;display:block;" width="1440" height="1078" />
+            <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                <img class="u-block-full" src="assets/images/thebakeryco/screenshot-subscriptionoptions.webp" alt="Subscription options - weekly or monthly, fully admin-controlled" width="1440" height="1078" />
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <div class="device-showcase-grid">
                 <div class="phone-label-item">
@@ -273,7 +291,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="employee-scheduler">
             <h3>Employee Scheduler</h3>
             <p>The platform also ships a native iOS staff scheduling app - drag-and-drop schedules, clock-in/out, shift swaps, and real-time messaging. <a href="knotemployee.html?from=bakery">View case study →</a></p>
         </div>
@@ -300,7 +318,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>Zero commission per order versus 15–30% on delivery platforms. The admin dashboard - menu CMS, inventory, orders, revenue analytics, gift cards, subscriptions, loyalty rewards, coupons, prep list, and staff management - reflects live across the website and both iOS apps. The architecture is multi-tenant from day one: every table carries a <code>tenant_id</code>, so onboarding the next bakery client is one database row and a frontend deploy. Designed and built solo. Part of the Small Business Platform Suite.</p>
         </div>
@@ -320,8 +338,8 @@
             </a>
         </div>
 
-        <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
-            <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
+        <div class="case-section cs-callout">
+            <p class="cs-lead">Need a website for your business? I take on select freelance web projects.</p>
             <a href="contact.html" class="cta-btn">Let's talk →</a>
         </div>
 
@@ -376,38 +394,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/thebakeryco/favicon.svg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

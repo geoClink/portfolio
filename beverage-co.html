@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -75,7 +75,7 @@
 
         <div class="case-hero">
             <img src="assets/images/beverageco/favicon.png" alt="Botanical Archive icon" class="case-hero-icon" width="500" height="500" />
-            <h2 class="case-title">Botanical Archive</h2>
+            <h1 class="case-title">Botanical Archive</h1>
             <p class="case-tagline">A brand landing page pitched to a craft hemp beverage company preparing for a nationwide launch - built to attract wholesale partners, capture early orders, and signal "established brand" to investors.</p>
         </div>
 
@@ -104,12 +104,28 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#interactive-3d-model-viewer">3D model viewer</a></li>
+                <li><a href="#animated-parallax-background">Parallax background</a></li>
+                <li><a href="#scroll-shake-reveal">Scroll shake &amp; reveal</a></li>
+                <li><a href="#zine-style-editorial-design">Editorial design</a></li>
+                <li><a href="#ticker-bar-logo-animation">Ticker &amp; logo</a></li>
+                <li><a href="#email-capture-allocation-form">Email capture</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>The founder I was talking with was taking orders by hand - phone calls, farmers market walk-ups, DMs - with no web presence, no email capture, and nothing to show investors or wholesale partners. With a nationwide shipping launch planned and international licensing conversations already in motion, they needed a site that looked like an established premium brand, not a startup. No page builder. No template. It had to feel like it belonged.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -130,7 +146,7 @@
             <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://beverage-webpage.vercel.app" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <div class="device-showcase-grid">
                 <div class="phone-label-item">
@@ -155,24 +171,24 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="interactive-3d-model-viewer">
             <h3>Interactive 3D Model Viewer</h3>
             <p>The brand is pre-launch - no professional photography yet, no product shots. Rather than use placeholders, I built interactive Three.js 3D models for all three distribution formats: glass bottle, 12oz can, and draft keg. The goal was to be different. Most beverage sites show a flat hero image. This one lets you spin the product. It makes the page feel cutting-edge and signals to investors and partners that the brand is serious before a single can has been shot.</p>
             <video src="assets/videos/beverageco/3d-viewer-demo.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);display:block;margin-top:1.25em;"></video>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="animated-parallax-background">
             <h3>Animated Parallax Background</h3>
             <p>The background is a fixed full-viewport image that moves on scroll via a <code>mousemove</code> parallax offset. It also runs a continuous CSS breathing animation - slowly scaling and rotating between keyframes - so the page feels alive even when the user isn't interacting. The effect is tied to a filter pipeline (<code>contrast</code>, <code>brightness</code>, <code>saturate</code>) that shifts with the animation to enhance mood without overwhelming foreground content.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="scroll-shake-reveal">
             <h3>Scroll Shake &amp; Reveal</h3>
             <p>The page is dense - creator story, product formats, methodology, FAQ, licensing, two forms. On a page with that much content, a customer clicking a nav link needs to know exactly where they landed. The shake animation on each section answers that: when you click "Product Formats," the section rattles for half a second so your eye goes straight to it. No confusion, no hunting. Sections also fade and slide in on scroll via <code>IntersectionObserver</code>, so the page feels alive as you move through it rather than dumping everything at once.</p>
             <video src="assets/videos/beverageco/section-shake-demo.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);display:block;margin-top:1.25em;"></video>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="zine-style-editorial-design">
             <h3>Zine-Style Editorial Design</h3>
             <p>The visual language borrows from editorial print design - cards sit at slight rotations (<code>rotate(-0.8deg)</code>, <code>rotate(0.6deg)</code>), borders are heavy and dark, box-shadows are offset rather than diffused. The type pairing is DM Serif Display for headings and Space Mono for body text, both at home in a zine or magazine. The goal was to signal craft and intention without looking like a Shopify template.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
@@ -180,13 +196,13 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="ticker-bar-logo-animation">
             <h3>Ticker Bar &amp; Logo Animation</h3>
             <p>A continuous-scroll marquee at the top of the page surfaces key brand signals - solvent-free extraction, the upcoming launch, local availability - as the user loads the page. It uses a pure CSS <code>@keyframes</code> animation on a doubled element to create the seamless loop without JavaScript. On mobile, the nav logo plays a roll-in animation on load - a separate keyframe path tuned for the smaller breakpoint.</p>
             <video src="assets/videos/beverageco/ticker-demo.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);display:block;margin-top:1.25em;"></video>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="email-capture-allocation-form">
             <h3>Email Capture &amp; Allocation Form</h3>
             <p>Two forms serve different audiences: a newsletter form for early customers building anticipation for the launch, and an allocation/reservation form for wholesale partners and distributors to signal interest before inventory is committed. Both forms are positioned to convert the two main visitor types the client cared about most.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);margin-top:1.25em;">
@@ -213,7 +229,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>Built and deployed in 5 days - no framework, no template, no CMS. Three.js 3D model viewer, animated parallax background, scroll shake and reveal, a full zine design system, and two conversion forms targeting two different audiences. Designed and built solo as a pitch while I was in serious talks with the founder. The project didn't move forward, but the build shows how I approach a brand that has no photography yet: make the product itself the hero.</p>
         </div>
@@ -243,9 +259,8 @@
                 <span class="spec-nav-label">Previous case study</span>
                 ← The Sports Bar Co.
             </a>
-            <a href="detroit-sports-chatbot.html" class="spec-nav-btn next">
-                <span class="spec-nav-label">Next case study</span>
-                Detroit Sports Chatbot →
+            <a href="case-studies.html" class="spec-nav-btn next">
+                All case studies →
             </a>
         </nav>
     </div>
@@ -289,38 +304,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/beverageco/favicon.png';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -75,7 +75,7 @@
 
         <div class="case-hero">
             <img src="assets/images/thesalonco/favicon.svg" alt="The Salon Co. icon" class="case-hero-icon" />
-            <h2 class="case-title">The Salon Co.</h2>
+            <h1 class="case-title">The Salon Co.</h1>
             <p class="case-tagline">A 14-page luxury salon website with a full-stack booking engine - 4-step reservation flow, Stripe deposit checkout, real-time stylist availability from Supabase, Resend transactional email, and automated cancellation with a 48-hour refund policy. Owned outright with no monthly platform fee.</p>
         </div>
 
@@ -104,12 +104,26 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#admin-dashboard">Admin dashboard</a></li>
+                <li><a href="#meet-your-stylist">Meet your stylist</a></li>
+                <li><a href="#stylist-selection">Stylist selection</a></li>
+                <li><a href="#date-time-selection">Date &amp; time selection</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>Most salons are booked through platforms like Square Appointments, GlossGenius, or Vagaro that charge $25–100/month in perpetuity, impose their own branding on every customer-facing page, and in some cases take a cut of each transaction. The UX is generic by design - the same template used across thousands of salons - and the owner never fully controls the experience. The goal was a custom-branded presence built from scratch that feels genuinely luxury: a 4-step reservation flow with per-stylist availability, 25% deposit collection through Stripe, and automated email confirmation and cancellation - all owned outright with no subscription, no platform lock-in, and no commission per booking.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -130,7 +144,7 @@
             <p class="iframe-note iframe-note-mobile">You're on mobile - <a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer">open the full site ↗</a> for the best experience. Any display issues are caused by the embed, not the site itself.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="admin-dashboard">
             <h3>Admin Dashboard</h3>
             <p>Every booking, client, stylist, and piece of site content is managed from a purpose-built admin dashboard — no third-party tools, no monthly fee. The owner controls availability, services, reviews, SEO, Stripe keys, and more from one place. Try it below (demo mode — no login required).</p>
             <div class="browser-mockup">
@@ -151,7 +165,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="meet-your-stylist">
             <h3>Meet Your Stylist</h3>
             <p>Each stylist has a profile card with their photo, specialty, and bio - so clients know who they're booking before they sit down. Builds trust and reduces no-shows from uncertain first-timers.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -159,7 +173,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="stylist-selection">
             <h3>Stylist Selection</h3>
             <p>Step two of the booking flow only shows stylists who actually perform the selected service - so clients never see someone who can't help them. Smart filtering at the selection step, not an afterthought at checkout.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -167,7 +181,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="date-time-selection">
             <h3>Date &amp; Time Selection</h3>
             <p>Clients pick their appointment date and time from a live availability calendar - slots reflect the selected stylist's actual schedule.</p>
             <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
@@ -175,7 +189,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <div class="phone-showcase">
                 <div class="phone-mockup">
@@ -223,7 +237,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>A 14-page luxury salon presence the owner controls outright - no subscription, no commissions, no platform lock-in. Each of the four core services (precision cut, color highlights, blowout, keratin treatment) has its own SEO-optimized page with pricing, description, and a direct booking link. Clients can browse services, see stylist availability in real time, book and pay a deposit through Stripe, and cancel if needed - all from the same site. Designed and built solo. Part of the Small Business Platform Suite.</p>
         </div>
@@ -299,38 +313,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/thesalonco/favicon.svg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

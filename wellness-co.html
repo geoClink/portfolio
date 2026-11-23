@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -217,28 +217,28 @@
         <div class="case-section" id="features">
             <h3>What It Does</h3>
             <p>Clients compare services and session lengths, pick a time from the owner's live availability, and pay through Stripe, with a gift card or discount code if they have one. Click any screenshot to enlarge it.</p>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5em;margin-top:1.25em;">
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/wbh-service-panel.webp" alt="Auricular Acupuncture detail panel offering a 30-minute and a 60-minute session" style="width:100%;display:block;" width="2160" height="1350" />
+            <div class="cs-grid-2">
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/thewellnessco/wbh-service-panel.webp" alt="Auricular Acupuncture detail panel offering a 30-minute and a 60-minute session" width="2160" height="1350" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Each service opens a panel that explains it and lists its session lengths and prices.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/wbh-scheduler.webp" alt="Booking page with Reiki selected, a date picked and the 6:00 PM slot chosen, beside the booking summary" style="width:100%;display:block;" width="2160" height="1350" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/thewellnessco/wbh-scheduler.webp" alt="Booking page with Reiki selected, a date picked and the 6:00 PM slot chosen, beside the booking summary" width="2160" height="1350" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">The scheduler shows only the hours the owner has opened, with the total beside it.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/wbh-cancel.webp" alt="Cancel appointment page showing a 50% refund notice for an appointment about a day away" style="width:100%;display:block;" width="2160" height="1350" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/thewellnessco/wbh-cancel.webp" alt="Cancel appointment page showing a 50% refund notice for an appointment about a day away" width="2160" height="1350" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Inside 48 hours, clients see the partial refund before they confirm.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/wbh-gift-card.webp" alt="Gift card page with a balance check, preset amounts and the promo banner across the top" style="width:100%;display:block;" width="2160" height="1350" />
+                <figure class="u-m0">
+                    <div class="ss-clickable shot-frame" onclick="openLightbox(this)">
+                        <img class="u-block-full" loading="lazy" src="assets/images/thewellnessco/wbh-gift-card.webp" alt="Gift card page with a balance check, preset amounts and the promo banner across the top" width="2160" height="1350" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Gift cards are bought through Stripe and emailed with a code. The lime banner across the top is one the owner writes herself.</figcaption>
                 </figure>
@@ -313,22 +313,22 @@
             </ul>
             <p>I kept working on it after launch, based on real usage:</p>
             <ul style="margin:1.25em 0 0;padding-left:0;list-style:none;line-height:2.1;">
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>Booking notifications</strong> - the practitioner gets an email for every new booking, paid or free, so no appointment goes unnoticed.</li>
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>Date range blocking</strong> - she can take several days off at once instead of blocking each day.</li>
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>Fixed an XSS vulnerability</strong> - FAQ content from the API was going into <code>innerHTML</code> unescaped; all API content is now escaped.</li>
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>Search fixes</strong> - fixed three Search Console issues (self-referencing <code>.html</code> canonicals, crawlable <code>?service=</code> variants, a double slash in schema URLs) and wrote keyword-first titles for all 8 pages after GA4 showed 38 organic sessions and 8 key events in 28 days.</li>
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>LCP from 9.7s to 2.9s, layout shift eliminated</strong> - preloaded the hero portrait server-side, deferred Google Tag Manager to the load event, and fixed a late font swap and a non-composited shimmer animation.</li>
-                <li style="padding-left:1.6em;position:relative;"><span style="position:absolute;left:0;color:var(--case-accent);font-weight:700;">✓</span><strong>Lighthouse Accessibility 96 to 100</strong> - gave the service detail panel an accessible name.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>Booking notifications</strong> - the practitioner gets an email for every new booking, paid or free, so no appointment goes unnoticed.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>Date range blocking</strong> - she can take several days off at once instead of blocking each day.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>Fixed an XSS vulnerability</strong> - FAQ content from the API was going into <code>innerHTML</code> unescaped; all API content is now escaped.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>Search fixes</strong> - fixed three Search Console issues (self-referencing <code>.html</code> canonicals, crawlable <code>?service=</code> variants, a double slash in schema URLs) and wrote keyword-first titles for all 8 pages after GA4 showed 38 organic sessions and 8 key events in 28 days.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>LCP from 9.7s to 2.9s, layout shift eliminated</strong> - preloaded the hero portrait server-side, deferred Google Tag Manager to the load event, and fixed a late font swap and a non-composited shimmer animation.</li>
+                <li class="cs-step"><span class="cs-step-num">✓</span><strong>Lighthouse Accessibility 96 to 100</strong> - gave the service detail panel an accessible name.</li>
             </ul>
             <p style="margin-top:1.25em;">Designed and built solo in four weeks. Part of the Small Business Platform Suite. The fully populated spec deployment, The Wellness Co., is at <a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer">the-wellness-co.vercel.app ↗</a>.</p>
         </div>
 
-        <div class="case-section" id="feedback" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);">
+        <div class="case-section cs-divider" id="feedback">
             <h3>Client Feedback</h3>
-            <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
-            <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
+            <blockquote class="cs-quote">
+            <blockquote class="cs-quote">
                 <p style="margin:0 0 0.75em;">"My website is Beautiful! 🤩 Thank you George!"</p>
-                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">- <a href="https://www.facebook.com/p/White-Bear-Harmonics-100089805055422/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Karen Alexander</a>, Owner, White Bear Harmonics</footer>
+                <footer class="cs-quote-cite">- <a href="https://www.facebook.com/p/White-Bear-Harmonics-100089805055422/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Karen Alexander</a>, Owner, White Bear Harmonics</footer>
             </blockquote>
             </blockquote>
         </div>
@@ -347,8 +347,8 @@
             </a>
         </div>
 
-        <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
-            <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
+        <div class="case-section cs-callout">
+            <p class="cs-lead">Need a website for your business? I take on select freelance web projects.</p>
             <a href="contact.html" class="cta-btn">Let's talk →</a>
         </div>
 
@@ -403,7 +403,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
     <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

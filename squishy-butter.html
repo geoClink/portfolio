@@ -23,8 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -186,7 +186,7 @@
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -219,7 +219,7 @@
 
         <div class="case-hero">
             <img src="assets/images/squishy-butter/squishylogo.svg" alt="Squishy Butter logo" class="case-hero-icon" />
-            <h2 class="case-title">Squishy Butter</h2>
+            <h1 class="case-title">Squishy Butter</h1>
             <p class="case-tagline">Press and hold a stick of butter and watch it sink. Real soft-body physics, no install required. 531 collectibles (butters, snacks, objects and mechanical clickers), each with its own feel, sound and certificate of authenticity, in English, Indonesian, Spanish, Portuguese and Vietnamese.</p>
             <p class="case-tagline" style="margin-top:0.6em;font-weight:600;">Solo-built and shipped on web, iOS, Android and Mac: 2,900+ downloads with zero ad spend.</p>
         </div>
@@ -227,14 +227,14 @@
         <div class="case-links">
             <a href="https://squishybutter.app/" class="button" target="_blank" rel="noopener noreferrer">Try It ↗</a>
             <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
-                <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" width="122" height="36" style="display:block;"></a>
-                <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="108" height="36" style="display:block;"></a>
-                <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552?platform=mac" target="_blank" rel="noopener noreferrer"><img src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the Mac App Store" width="140" height="36" style="display:block;"></a>
-                <a href="https://apps.microsoft.com/detail/9PKHJKVG15R0?mode=direct" target="_blank" rel="noopener noreferrer"><img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft" height="36" style="display:block;width:auto;height:36px;"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.squishybutter.app" target="_blank" rel="noopener noreferrer"><img class="u-block" src="assets/images/site/google-play-badge.svg" alt="Get it on Google Play" width="122" height="36"></a>
+                <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552" target="_blank" rel="noopener noreferrer"><img class="u-block" src="assets/images/site/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="108" height="36"></a>
+                <a href="https://apps.apple.com/us/app/squishy-butter/id6801368552?platform=mac" target="_blank" rel="noopener noreferrer"><img class="u-block" src="assets/images/site/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the Mac App Store" width="140" height="36"></a>
+                <a href="https://apps.microsoft.com/detail/9PKHJKVG15R0?mode=direct" target="_blank" rel="noopener noreferrer"><img class="u-block" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft" height="36" style="width:auto;height:36px;"></a>
             </div>
         </div>
         <figure style="margin:0 0 var(--space-2);">
-            <video autoplay muted loop playsinline poster="assets/images/squishy-butter/squish-hero-poster.jpg" aria-label="The 3D butter being pressed, leaving dents that slowly recover, then switching to Galaxy and Kintsugi skins" style="width:100%;border-radius:10px;border:1px solid var(--color-border);display:block;background:#1A1008;">
+            <video class="u-block-full" autoplay muted loop playsinline poster="assets/images/squishy-butter/squish-hero-poster.jpg" aria-label="The 3D butter being pressed, leaving dents that slowly recover, then switching to Galaxy and Kintsugi skins" style="border-radius:var(--radius-lg);border:1px solid var(--color-border);background:#1A1008;">
                 <source src="assets/videos/squishy-butter/squish-hero.mp4" type="video/mp4">
             </video>
         </figure>
@@ -386,11 +386,11 @@ return Math.max(6, Math.min(cap, affordable));</div>
             </ul>
             <p>The models are built by headless Blender scripts rather than sculpted by hand, so a new shape or colourway is a code change that can be reviewed and rebuilt. When the 61 models reached 93 MB and pushed the Android bundle to 116 MB, I added Draco compression to the pipeline: <strong>93 MB down to 8.1 MB</strong>, with part names and transforms identical so every press and pop still worked. The decoder runs as plain JavaScript because the site's content security policy doesn't allow WebAssembly.</p>
             <figure style="margin:1.5em 0 0;">
-                <img src="assets/images/squishy-butter/thanksgiving-feast.webp" alt="Eight 3D Thanksgiving squishies: turkey leg, pumpkin pie slice, cornbread, a ridged cranberry sauce log with a slice, mashed potatoes in a rigid bowl, a sweet potato with a pat of butter, a dinner roll and corn on the cob" width="1600" height="800" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--color-border);">
+                <img class="u-img-fluid" src="assets/images/squishy-butter/thanksgiving-feast.webp" alt="Eight 3D Thanksgiving squishies: turkey leg, pumpkin pie slice, cornbread, a ridged cranberry sauce log with a slice, mashed potatoes in a rigid bowl, a sweet potato with a pat of butter, a dinner roll and corn on the cob" width="1600" height="800" loading="lazy" decoding="async" style="border-radius:var(--radius-lg);border:1px solid var(--color-border);">
                 <figcaption class="case-caption">The Thanksgiving Feast bundle, eight new models built by script and rendered in the game engine. Went on sale November 20.</figcaption>
             </figure>
             <figure style="margin:1.25em auto 0;max-width:520px;">
-                <img src="assets/images/squishy-butter/christmas-bundle.webp" alt="Nine 3D Christmas squishies in a grid: a wrapped gift box closed and with its lid popped open, a snowman, a Christmas tree with a gold star, a blue glass ornament, a stocking, a yule log, an eggnog mug and a Santa hat" width="1000" height="1000" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--color-border);">
+                <img class="u-img-fluid" src="assets/images/squishy-butter/christmas-bundle.webp" alt="Nine 3D Christmas squishies in a grid: a wrapped gift box closed and with its lid popped open, a snowman, a Christmas tree with a gold star, a blue glass ornament, a stocking, a yule log, an eggnog mug and a Santa hat" width="1000" height="1000" loading="lazy" decoding="async" style="border-radius:var(--radius-lg);border:1px solid var(--color-border);">
                 <figcaption class="case-caption">The Christmas bundle in progress. The gift box lid pops open on a press, and the tree's star and the ornament's cap are rigid parts.</figcaption>
             </figure>
         </div>
@@ -398,7 +398,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
         <div class="case-section" id="pulls">
             <h3>The Pull System and Its Economy</h3>
             <div style="margin-top:0.75em;">
-                <img src="assets/images/squishy-butter/coa-trading-card.webp" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy" style="float:left;width:260px;max-width:45%;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.14);margin:0 1.75em 1em 0;" width="1468" height="1382">
+                <img src="assets/images/squishy-butter/coa-trading-card.webp" alt="Tie-Dye Butter trading card and certificate of authenticity" loading="lazy" style="float:left;width:260px;max-width:45%;border-radius:var(--radius-lg);box-shadow:0 6px 28px rgba(0,0,0,0.14);margin:0 1.75em 1em 0;" width="1468" height="1382">
                 <p>Blind bags and mystery boxes were already dominating toy retail (Stanley cups, Sonny Angels, Pop Mart figures), and the same mechanic was proven in mobile games. Nobody had applied it to a browser-based tactile toy, and a butter you <em>discover</em> through a pull feels different from one you pick off a shelf.</p>
                 <p>You buy coins, then spend them on pulls that draw from the full rarity pool with published odds. Pulls skip butters you already own. An Epic or better is guaranteed within 30 pulls and a Legendary within 90. New accounts start with 300 coins, enough for three pulls, and each pull ends in a card reveal keyed to the rarity you got. Every skin carries a serial number, a provenance story, a certificate and a trading card.</p>
                 <div style="clear:both;"></div>
@@ -429,11 +429,11 @@ return Math.max(6, Math.min(cap, affordable));</div>
             <p>Pulls run entirely on the server. One Postgres transaction locks the player's row, deducts the coins, applies the pity counters, draws only from skins the player doesn't own, assigns the next serial and refuses the pull if a limited skin has sold out. All or nothing. The client doesn't decide what you get or how many coins you have.</p>
             <p>Before a release I audited the economy end to end and found real holes. A server-only function that credits purchases had never had its default public access revoked, so in principle anyone with the public API key could grant themselves coins. And because players could edit their own profile row, they could reset the last daily claim and collect the same reward again. One migration locked every coin-granting function to the server and turned the profile guard from a block-list into an allow-list. Purchases are now capped by what the store actually reports, so a fabricated transaction ID can't mint coins.</p>
             <div role="img" aria-label="Purchase flow: the app sends a purchase to a server function, which verifies it with the store, then a locked database function credits coins exactly once." style="display:flex;flex-wrap:wrap;gap:0.75em;margin:1.25em 0 1.5em;">
-                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Client</span><strong style="font-size:0.95em;">iOS · Android · Mac · Web</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Sign in before checkout. Doesn't decide coins or pulls.</span></div>
+                <div class="cs-stat-card"><span class="cs-eyebrow">Client</span><strong style="font-size:0.95em;">iOS · Android · Mac · Web</strong><span class="cs-note">Sign in before checkout. Doesn't decide coins or pulls.</span></div>
                 <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
-                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Edge functions</span><strong style="font-size:0.95em;">Verify the purchase</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">RevenueCat purchase count, Apple-signed StoreKit transactions, Stripe signatures. Fails closed.</span></div>
+                <div class="cs-stat-card"><span class="cs-eyebrow">Edge functions</span><strong style="font-size:0.95em;">Verify the purchase</strong><span class="cs-note">RevenueCat purchase count, Apple-signed StoreKit transactions, Stripe signatures. Fails closed.</span></div>
                 <div aria-hidden="true" style="align-self:center;color:var(--color-text-muted);font-size:1.2em;">&rarr;</div>
-                <div style="display:flex;flex-direction:column;gap:0.3em;padding:0.9em 1em;border:1px solid var(--color-border);border-radius:10px;flex:1 1 180px;min-width:0;"><span style="font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);">Postgres</span><strong style="font-size:0.95em;">Credit exactly once</strong><span style="font-size:0.82em;color:var(--color-text-muted);line-height:1.45;">Server-only functions, per-user lock, idempotent transaction IDs. Profile changes allow-listed.</span></div>
+                <div class="cs-stat-card"><span class="cs-eyebrow">Postgres</span><strong style="font-size:0.95em;">Credit exactly once</strong><span class="cs-note">Server-only functions, per-user lock, idempotent transaction IDs. Profile changes allow-listed.</span></div>
             </div>
             <p>The same pattern now covers more ways to pay. Every purchase, whether a Stripe checkout, a StoreKit transaction or a RevenueCat receipt, is verified on the server and credited inside one database transaction keyed by the store's transaction ID, so a retried webhook or a replayed receipt credits nothing twice. Limited holiday bundles grant their butters and coins in that same transaction and skip butters you already own. Refund take-backs are written and tested for the next payments release. Coin packs cost about half the US price in Indonesia, Brazil and the Philippines on both stores, where a large share of players live.</p>
             <p>To test all of this without touching real players, I rebuilt the backend so a complete local copy comes up with one command, seeded with the full catalogue and test accounts. Now 22 SQL test files with more than 400 checks cover pulls, payments, bundles, permissions, consent and account deletion, 219 Deno tests run the server functions against forged and replayed store receipts, and 1,053 Vitest tests cover the game code, including the time limits that keep a slow phone from stalling a reveal. One command runs every suite locally before each push. The tests found four more real bugs, all fixed and deployed the same day, each with the test that proves it: limited skins could sell past their supply cap, two players pulling at the same instant could get the same serial number, buying the same coin pack on Mac and then iPhone didn't credit the second one, and a web bank transfer was credited before the money arrived.</p>
@@ -537,7 +537,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     <h4>Beyond the Phone</h4>
                     <p>The same account follows you off the main screen: home-screen and Lock Screen widgets show your squish stats, the Apple Watch app keeps your count on your wrist, and 148 butters ship as iMessage stickers bundled with the app.</p>
                     <div style="display:flex;gap:1.5em;align-items:center;flex-wrap:wrap;margin-top:1.25em;">
-                        <img src="assets/images/squishy-butter/widget-background-and-widgets.webp" alt="All three Squishy Butter widgets - large, medium, and small" width="1538" height="759" loading="lazy" decoding="async" style="height:auto;flex:1 1 360px;min-width:0;width:100%;display:block;border-radius:12px;">
+                        <img class="u-img-fluid" src="assets/images/squishy-butter/widget-background-and-widgets.webp" alt="All three Squishy Butter widgets - large, medium, and small" width="1538" height="759" loading="lazy" decoding="async" style="flex:1 1 360px;min-width:0;border-radius:var(--radius-lg);">
                         <img src="assets/images/squishy-butter/squishy-watch.webp" alt="Squishy Butter Apple Watch app with the butter to tap and 12,847 squishes" width="275" height="450" loading="lazy" decoding="async" style="height:auto;flex:0 0 140px;width:140px;margin:0 auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,0.22));">
                     </div>
 
@@ -555,7 +555,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     <p>Headset view of each room, captured from the automated test running an emulated Quest 3.</p>
                     <p>The next step turns the room into the game. A shelf shows your collection 12 at a time and equips with a pinch, a Dairy Delivery box on the counter opens a real server pull, the daily spin wheel and the leaderboard (everyone or friends) stand beside the counter, and moving parts work by hand: pinch a joystick to tilt it, turn a lock dial or kitchen timer by the angle of your hand, flick the mouse wheel. All of it is a separate 38 kB chunk that loads only when you enter VR, so the flat game pays nothing for it. The emulated-headset test grew to 58 checks.</p>
                     <figure style="margin:1.25em 0 0;">
-                        <img src="assets/images/squishy-butter/vr/vr-room-features.webp" alt="Six headset views of the VR diner room: a My Butters shelf, floating squish, coin and level stats, a Dairy Delivery box revealing a Legendary, a daily spin wheel, and a leaderboard with Everyone and Friends tabs" width="1800" height="750" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--color-border);">
+                        <img class="u-img-fluid" src="assets/images/squishy-butter/vr/vr-room-features.webp" alt="Six headset views of the VR diner room: a My Butters shelf, floating squish, coin and level stats, a Dairy Delivery box revealing a Legendary, a daily spin wheel, and a leaderboard with Everyone and Friends tabs" width="1800" height="750" loading="lazy" decoding="async" style="border-radius:var(--radius-lg);border:1px solid var(--color-border);">
                         <figcaption class="case-caption">The VR room in the emulated Quest test, with test data.</figcaption>
                     </figure>
 
@@ -676,7 +676,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                     </div>
                     <div class="sb-tabpanel" role="tabpanel" id="sb-tab-mac-panel" aria-labelledby="sb-tab-mac" hidden>
                     <p>A lightweight native window around the web build, with StoreKit purchases, so your collection, coins and squish count match every other device.</p>
-                    <video class="lazy-video" data-src="assets/videos/squishy-butter/app-preview-mac.mp4" poster="assets/videos/squishy-butter/app-preview-mac.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Mac App Store preview: squishing the butter, a Dairy Delivery pull and the collection in a Mac window" style="width:100%;height:auto;display:block;margin-top:1.25em;border-radius:12px;border:1px solid var(--color-border);background:#1A1008;"></video>
+                    <video class="lazy-video u-img-fluid" data-src="assets/videos/squishy-butter/app-preview-mac.mp4" poster="assets/videos/squishy-butter/app-preview-mac.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Mac App Store preview: squishing the butter, a Dairy Delivery pull and the collection in a Mac window" style="margin-top:1.25em;border-radius:var(--radius-lg);border:1px solid var(--color-border);background:#1A1008;"></video>
                     <div class="sb-mac-grid">
                         <img src="assets/images/squishy-butter/store/mac-01-squish.webp" alt="Squishy Butter on Mac: Squish it. Feel it give. Classic Butter in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
                         <img src="assets/images/squishy-butter/store/mac-03-reveal.webp" alt="Squishy Butter on Mac: Pull rare, numbered butters. A Legendary reveal in a Mac window" width="1600" height="1000" loading="lazy" decoding="async">
@@ -697,7 +697,7 @@ return Math.max(6, Math.min(cap, affordable));</div>
                             <div class="browser-url">squishybutter.app/landing.html</div>
                         </div>
                         <div style="position:relative;">
-                            <video class="lazy-video" data-src="assets/videos/squishy-butter/landing-desktop.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-desktop-poster.jpg" aria-label="Recording of the Squishy Butter landing page scrolling through the hero, skin catalogue, drop rates and coin packs" style="display:block;width:100%;aspect-ratio:5/4;object-fit:cover;object-position:top;background:#F6EEDF;">
+                            <video class="lazy-video u-block-full" data-src="assets/videos/squishy-butter/landing-desktop.mp4" muted loop playsinline preload="none" poster="assets/images/squishy-butter/landing-desktop-poster.jpg" aria-label="Recording of the Squishy Butter landing page scrolling through the hero, skin catalogue, drop rates and coin packs" style="aspect-ratio:5/4;object-fit:cover;object-position:top;background:#F6EEDF;">
                             </video>
                         </div>
                     </div>
@@ -800,39 +800,8 @@ return Math.max(6, Math.min(cap, affordable));</div>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
     <script src="assets/js/case-toc.js" defer></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'sbf' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/squishy-butter/squishylogo.svg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
 <script>
 // Load and play recordings only when they scroll into view (keeps the page fast on mobile).
 (function () {

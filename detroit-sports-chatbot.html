@@ -21,8 +21,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
 <style>:root { --case-accent: #2563eb; }</style>
@@ -32,7 +32,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -63,7 +63,7 @@
 
         <a href="case-studies.html" class="back-link">← Case Studies</a>
 
-        <h2 class="case-title">Detroit Sports Chatbot</h2>
+        <h1 class="case-title">Detroit Sports Chatbot</h1>
         <p class="case-tagline">An AI agent that answers questions about Detroit sports with live data - not a chatbot wrapper, but a tool-calling agent that decides when to hit the ESPN API, fetches real scores and stats, and synthesizes an answer. Supports two AI providers (Claude Sonnet and Groq), voice input and output, and an automated eval pipeline that improved response quality 28% across four prompt iterations.</p>
 
         <div class="case-links">
@@ -91,12 +91,26 @@
         </div>
 
 
-        <div class="case-section">
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#problem">The problem</a></li>
+                <li><a href="#try-it">Try it</a></li>
+                <li><a href="#mobile-experience">Mobile experience</a></li>
+                <li><a href="#tool-architecture">Tool architecture</a></li>
+                <li><a href="#live-score-sidebar">Live score sidebar</a></li>
+                <li><a href="#provider-architecture">Provider architecture</a></li>
+                <li><a href="#prompt-engineering-eval-pipeline">Prompt evals</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+            </ul>
+        </nav>
+
+        <div class="case-section" id="problem">
             <h3>The Problem</h3>
             <p>General-purpose AI models have a hard cutoff - they can't tell you tonight's score, who's on the injury report, or what the standings look like after last night's games. Fans who want real-time answers have to cross-reference ESPN, team apps, and search results manually. The goal was an AI that could answer sports questions conversationally while pulling live data exactly when the question required it - and nothing else.</p>
         </div>
 
-        <div class="case-section desktop-only">
+        <div class="case-section desktop-only" id="try-it">
             <h3>Try It</h3>
             <div class="browser-mockup">
                 <div class="browser-bar">
@@ -116,7 +130,7 @@
             <p class="iframe-note iframe-note-desktop">No API key needed - a server-side Groq key powers the default model. Switch to Anthropic in the sidebar if you want to use your own Claude key. <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="mobile-experience">
             <h3>Mobile Experience</h3>
             <p>The chatbot is fully responsive - the sidebar collapses to a hamburger menu on small screens so the full chat area is usable. Voice input is especially useful on mobile: tap the mic in the sidebar, ask your question, and the answer streams back and plays as audio automatically. No typing required.</p>
             <div class="phone-showcase">
@@ -140,7 +154,7 @@
             <p class="case-caption">Mobile view - sidebar collapses, full chat area visible</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="tool-architecture">
             <h3>Tool Architecture</h3>
             <p>The agent has access to 16 live ESPN API tools covering all four Detroit teams - Lions, Tigers, Red Wings, and Pistons. The model decides which tool to call based on the question. A knowledge question like "who is the greatest Red Wing of all time?" hits no tools. A question like "what's the Lions score?" triggers a live NFL scoreboard fetch. A question like "what does the depth chart look like?" triggers a separate endpoint. The model only calls what the question actually needs.</p>
 
@@ -200,17 +214,17 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="live-score-sidebar">
             <h3>Live Score Sidebar</h3>
             <p>The sidebar shows live scores for any Detroit game happening today - Lions, Tigers, Red Wings, or Pistons - without the user needing to ask. All four ESPN scoreboards are checked on page load and the results are cached for 5 minutes so the API isn't hit on every Streamlit interaction. Only in-progress and final games are shown; scheduled future games are filtered out to avoid showing upcoming matchups as if they were live. A manual refresh button clears the cache if you want up-to-the-minute data during a close game.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="provider-architecture">
             <h3>Provider Architecture</h3>
             <p>Two AI providers - Claude Sonnet and Groq (GPT-OSS 120B) - run through a unified interface using the same tool-calling loop and system prompt. Switching providers swaps the underlying model without changing anything else. Groq is the default: a server-side key on Render means the live demo works for anyone without setup. Bring your own Claude key to compare - the same question through different models shows exactly how tool-calling behavior and response style differ.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="prompt-engineering-eval-pipeline">
             <h3>Prompt Engineering &amp; Eval Pipeline</h3>
             <p>Response quality was measured with an automated eval pipeline across four prompt iterations - eight test cases covering live data questions, knowledge questions, hallucination risks, and redirect behavior for non-Detroit questions. Each answer was graded 1–5 by Groq's GPT-OSS 120B with context injected so it could distinguish real ESPN tool output from fabricated responses. 28% improvement from v1 to v4, 3.2 to 4.1. Try it yourself below.</p>
         </div>
@@ -240,7 +254,7 @@
             </details>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>A deployed AI agent - not a demo, live at <a href="https://detroitsportchatbot.onrender.com" target="_blank" rel="noopener noreferrer">detroitsportchatbot.onrender.com</a> - that answers Detroit sports questions with real ESPN data. Response quality improved 28% through iterative prompt engineering measured by an automated eval pipeline, not guesswork. Voice input via Groq Whisper and voice output via gTTS make it usable on any device. The provider abstraction means the same agent runs on Claude or Groq with a single sidebar toggle.</p>
         </div>
@@ -296,38 +310,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/site/og-preview-2026-11.jpg';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

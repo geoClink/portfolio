@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -114,7 +114,7 @@
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -147,7 +147,7 @@
 
         <div class="case-hero">
             <img src="assets/images/tripsetta/appicon.png" alt="Tripsetta app icon" class="case-hero-icon" width="476" height="466" />
-            <h2 class="case-title">Tripsetta</h2>
+            <h1 class="case-title">Tripsetta</h1>
             <p class="case-tagline">Travel planning platform for solo travelers and travel agents - iOS, Android, and web.</p>
         </div>
 
@@ -181,13 +181,26 @@
         </div>
 
 
+        <nav class="case-toc" aria-label="On this page">
+            <div class="case-toc-label">On this page</div>
+            <ul>
+                <li><a href="#what-it-does">What it does</a></li>
+                <li><a href="#android">Android</a></li>
+                <li><a href="#ios">iOS</a></li>
+                <li><a href="#how-i-work">How I work</a></li>
+                <li><a href="#what-was-hard">What was hard</a></li>
+                <li><a href="#the-outcome">The outcome</a></li>
+                <li><a href="#client-feedback">Client feedback</a></li>
+            </ul>
+        </nav>
+
         <div class="case-section">
             <p>Tripsetta is a travel platform built for two audiences: solo travelers who want to plan and book trips in one place, and travel agents who manage clients, itineraries, and revenue through a dedicated Agent Mode. The app handles trip creation, bookings, task tracking, live travel news, messaging, and Tripi - an AI travel copilot that helps users plan itineraries, pack lists, and destinations on demand.</p>
             <p>For agents, Tripsetta doubles as a business tool: a built-in CRM tracks leads and clients, a reporting dashboard shows revenue, and a client portal lets travelers access their own trip details - all inside the same app.</p>
             <p>My role covers iOS (Swift), Android (Kotlin), and web (HTML, CSS, JavaScript) - three separate codebases against a shared backend.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="what-it-does">
             <h3>What It Does</h3>
             <div class="feature-grid">
                 <div class="feature-item">
@@ -217,7 +230,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="android">
             <h3>Android</h3>
             <div class="marketing-gallery">
                 <div class="marketing-gallery-item">
@@ -247,7 +260,7 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="ios">
             <h3>iOS</h3>
             <div class="marketing-gallery">
                 <div class="marketing-gallery-item">
@@ -283,17 +296,17 @@
             </div>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="how-i-work">
             <h3>How I Work</h3>
             <p>Tripsetta is a live product with real users, so every update has to ship across iOS, Android, and web without breaking what people already rely on. I work directly with the founder, taking a request from the first conversation through to a release on all three platforms.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="what-was-hard">
             <h3>What Was Hard</h3>
             <p>I came in as an iOS developer. Partway through the contract the Android app needed work, so I picked up Kotlin and Android from scratch while the product was live, learning the platform and the codebase at the same time and keeping releases moving without interruption.</p>
         </div>
 
-        <div class="case-section">
+        <div class="case-section" id="the-outcome">
             <h3>The Outcome</h3>
             <p>Tripsetta is live on the App Store, Google Play, and the web, and I've shipped updates across all three codebases since April 2026. Picking up Kotlin partway through meant Android releases kept moving without interruption. The contract is still active.</p>
         </div>
@@ -313,7 +326,7 @@
             </a>
         </div>
 
-        <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);">
+        <div class="case-section" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);" id="client-feedback">
             <h3>Client Feedback</h3>
             <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
                 <p style="margin:0 0 0.75em;">"George is fast, knowledgeable, proactive, and always willing to dig deeper than what's immediately in front of him. He consistently identifies opportunities for improvement, solves problems quickly, and helps keep our platform moving forward. A fantastic fit for any fast-growing company looking for a team that truly takes ownership and delivers results."</p>
@@ -370,38 +383,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/tripsetta/appicon.png';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
+    <script src="assets/js/case-toc.js" defer></script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

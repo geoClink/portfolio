@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
@@ -63,7 +63,7 @@
             padding: var(--space-2) var(--space-3);
             background: var(--color-surface);
             border: 1px solid var(--color-border);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             margin-bottom: 0.6rem;
             text-decoration: none;
             color: var(--color-text);
@@ -80,7 +80,7 @@
         .link-card-icon {
             width: 40px;
             height: 40px;
-            border-radius: 10px;
+            border-radius: var(--radius-lg);
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -93,7 +93,7 @@
         .link-card-icon img {
             width: 36px;
             height: 36px;
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             object-fit: cover;
         }
 
@@ -128,7 +128,7 @@
         .android-steps {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             padding: var(--space-3);
             margin-bottom: 0.6rem;
         }
@@ -169,7 +169,7 @@
             height: 24px;
             background: var(--color-heading);
             color: #fff;
-            border-radius: 50%;
+            border-radius: var(--radius-round);
             font-size: 0.72rem;
             font-weight: 700;
             display: flex;
@@ -204,7 +204,7 @@
             padding: var(--space-2) var(--space-3);
             background: var(--color-surface);
             border: 1px solid var(--color-border);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             margin-bottom: 0.6rem;
         }
 
@@ -222,7 +222,7 @@
             color: var(--color-heading);
             text-decoration: none;
             border: 1px solid var(--color-border);
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             padding: 0.3rem 0.6rem;
             white-space: nowrap;
             transition: background 0.15s, border-color 0.15s;
@@ -250,7 +250,7 @@
 <body>
 
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -495,7 +495,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
 
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

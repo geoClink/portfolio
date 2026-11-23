@@ -20,12 +20,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <style>
         .about-title {
-            font-size: 2.4em;
+            font-size: var(--text-5xl);
             font-weight: 700;
             color: var(--color-heading);
             margin: 0 0 0.3em;
@@ -34,7 +34,7 @@
         }
 
         .about-tagline {
-            font-size: 1.05em;
+            font-size: var(--text-body);
             color: var(--color-text-muted);
             margin: 0 0 3em;
             line-height: 1.6;
@@ -45,7 +45,7 @@
         }
 
         .about-section h3 {
-            font-size: 0.75em;
+            font-size: var(--text-sm);
             font-weight: 700;
             letter-spacing: 0.13em;
             text-transform: uppercase;
@@ -87,7 +87,7 @@
             display: block;
             width: 220px;
             height: 220px;
-            border-radius: 50%;
+            border-radius: var(--radius-round);
             object-fit: cover;
             object-position: top center;
             margin: 0 0 2em 0;
@@ -111,16 +111,16 @@
             display: block;
             height: 240px;
             width: auto;
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
         }
         .photo-strip figcaption {
-            font-size: 0.8em;
+            font-size: var(--text-md);
             color: var(--color-text-muted);
             margin-top: 0.4em;
             white-space: nowrap;
         }
         .photo-strip-hint {
-            font-size: 0.8em !important;
+            font-size: var(--text-md) !important;
             color: var(--color-text-muted) !important;
             margin: 0 0 1.5em !important;
         }
@@ -130,29 +130,29 @@
         .hf-video { margin: 1em 0 0; max-width: 240px; }
         .tl-clip { margin: 1em 0 0; max-width: 200px; }
         .tl-clip--wide { max-width: 360px; }
-        .tl-clip video { display: block; width: 100%; height: auto; border-radius: 12px; background: #000; }
-        .tl-clip figcaption { font-size: 0.85em; color: var(--color-text-muted); margin-top: 0.5em; }
+        .tl-clip video { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); background: #000; }
+        .tl-clip figcaption { font-size: var(--text-md); color: var(--color-text-muted); margin-top: 0.5em; }
         .hf-video video {
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             background: #000;
         }
         .hf-video figcaption {
-            font-size: 0.85em;
+            font-size: var(--text-md);
             color: var(--color-text-muted);
             margin-top: 0.5em;
         }
 
         @media (max-width: 600px) {
             .about-avatar { width: 160px; height: 160px; margin: 0 auto 1.75em; }
-            .about-title { font-size: 1.8em; }
+            .about-title { font-size: var(--text-3xl); }
         }
 
         /* Seeking callout */
         .seeking-callout {
-            font-size: 0.9em !important;
+            font-size: var(--text-base) !important;
             color: var(--color-text-muted) !important;
             border-left: 2px solid var(--color-heading);
             padding-left: 1em;
@@ -177,12 +177,12 @@
             align-items: center !important;
             height: auto !important;
             line-height: normal !important;
-            font-size: 0.9em !important;
+            font-size: var(--text-base) !important;
             font-weight: 600 !important;
             text-transform: none !important;
             letter-spacing: 0.04em !important;
             padding: 0.7em 1.2em !important;
-            border-radius: 4px !important;
+            border-radius: var(--radius-xs) !important;
             box-shadow: inset 0 0 0 1.5px var(--color-border) !important;
             gap: 0.45em;
             margin-top: 1.25em;
@@ -208,7 +208,7 @@
             align-items: flex-start;
             gap: 1em;
             background: var(--color-surface);
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             padding: 0.9em 2.5em 0.9em 0.9em;
             margin-bottom: 0.6em;
             cursor: pointer;
@@ -221,7 +221,7 @@
         }
 
         .timeline-icon {
-            font-size: 1.6em;
+            font-size: var(--text-2xl);
             flex-shrink: 0;
             line-height: 1;
             margin-top: 0.1em;
@@ -236,7 +236,7 @@
 
         .timeline-sub {
             color: var(--color-text-muted);
-            font-size: 0.88em;
+            font-size: var(--text-base);
             line-height: 1.5;
         }
 
@@ -244,7 +244,7 @@
             max-height: 0;
             overflow: hidden;
             opacity: 0;
-            font-size: 0.9em;
+            font-size: var(--text-base);
             color: var(--color-text);
             line-height: 1.7;
             transition: max-height 0.35s ease, opacity 0.25s ease;
@@ -283,7 +283,7 @@
             position: absolute;
             right: 0.9em;
             top: 0.9em;
-            font-size: 1.3em;
+            font-size: var(--text-xl);
             color: var(--color-text-muted);
             font-weight: 300;
             user-select: none;
@@ -308,7 +308,7 @@
         .belief-card {
             background: var(--color-surface);
             padding: 1.25em;
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             border-left: 2px solid var(--color-heading);
         }
 
@@ -342,13 +342,13 @@
         .badge-item img {
             width: 100px;
             height: auto;
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             display: block;
             margin: 0 auto 0.5em;
         }
 
         .badge-item span {
-            font-size: 0.85em;
+            font-size: var(--text-md);
             color: var(--color-text-muted);
             line-height: 1.4;
             display: block;
@@ -390,7 +390,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -419,7 +419,7 @@
 
     <div id="main" role="main">
 
-        <h2 class="about-title">About Me</h2>
+        <h1 class="about-title">About Me</h1>
         <p class="about-tagline">5 apps shipped to the App Store. Production platforms for real clients. Selected for the Apple Developer Academy's advanced Year 2 cohort — currently building a visionOS healthcare app on Apple Vision Pro for a surgeon at Henry Ford Health.</p>
         <img src="assets/images/site/myself.webp" alt="George Clinkscales Jr." class="about-avatar" width="800" height="1199" />
 
@@ -501,8 +501,8 @@
                             <strong>Certificate:</strong> <a href="assets/docs/MSU_Smart_Manufacturing_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Smart Manufacturing for American Business (PDF)</a><br>
                             <strong>Focus:</strong> Optimizing manufacturing processes to improve productivity, efficiency and quality across a company's supply chain.<br>
                             <strong>Skills:</strong> Manufacturing automation, manufacturing engineering, manufacturing processes, productivity, project management methodologies and quality improvement.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/smart-manufacturing-for-american-business.png" alt="Smart Manufacturing for American Business badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/go/QoaQ7Paa" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Smart Manufacturing for American Business</a></span>
                                 </div>
@@ -522,12 +522,12 @@
                             <strong>Issuer:</strong> Claris · Associate level<br>
                             <strong>AI Fundamentals I:</strong> Building AI-driven FileMaker apps - configuring AI connections, generating embeddings, building search logic, and performance testing.<br>
                             <strong>AI Fundamentals II:</strong> Using FileMaker with LLMs to generate text, search naturally, and run AI-driven SQL queries.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/ai-fundamentals-i-semantic-search-in-claris-filemaker.png" alt="AI Fundamentals I: Semantic Search in Claris FileMaker badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/badges/5740957b-0436-4b9f-a9d2-6306e6cef282/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">AI Fundamentals I: Semantic Search</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/ai-fundamentals-ii-using-llms-in-claris-filemaker.png" alt="AI Fundamentals II: Using LLMs in Claris FileMaker badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/badges/c66657dd-f62c-4847-8f62-29f171f4076b/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">AI Fundamentals II: Using LLMs</a></span>
                                 </div>
@@ -548,16 +548,16 @@
                             <strong>Associate:</strong> Developing FileMaker Pro custom apps - creating schema, data management, and layout design.<br>
                             <strong>Specialist:</strong> Developing FileMaker Pro custom apps - relationships, calculations, scripts, and reports.<br>
                             <strong>Expert:</strong> Advanced FileMaker Pro custom app development.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/app-developer-for-claris-filemaker-pro-associate.png" alt="App Developer for Claris FileMaker Pro Associate badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/badges/4c0b0afe-c5dc-4e4e-a24b-f9c3b6b175b1/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Associate</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/app-developer-for-claris-filemaker-pro-specialist.png" alt="App Developer for Claris FileMaker Pro Specialist badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/badges/02fd3d63-8355-49a0-bbc7-7a11f5824d7f/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Specialist</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/app-developer-for-claris-filemaker-pro-expert.png" alt="App Developer for Claris FileMaker Pro Expert badge" width="700" height="700" />
                                     <span><a href="https://www.credly.com/badges/0335bc21-1e06-47c0-88c2-6cd334fc1e97/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Expert</a></span>
                                 </div>
@@ -582,8 +582,8 @@
                                 <video src="assets/videos/henry-ford/cpr-training.mp4" poster="assets/videos/henry-ford/cpr-training-poster.jpg" controls playsinline preload="none" width="540" height="960" aria-label="Hands-on infant CPR practice on a training manikin"></video>
                                 <figcaption>Practicing Hands-Only CPR with the Detroit Fire Department.</figcaption>
                             </figure>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/detroit-fire-hands-only-cpr.webp" alt="Hands-Only CPR certificate of completion from the Detroit Fire Department, presented to George Clinkscales" width="900" height="706" loading="lazy" />
                                     <span>Hands-Only CPR certificate</span>
                                 </div>
@@ -608,8 +608,8 @@
                                 <video src="assets/videos/timeline/squishy-butter.mp4" poster="assets/videos/timeline/squishy-butter-poster.jpg" muted loop playsinline preload="none" aria-label="Squishy Butter: squishing a stick of butter"></video>
                                 <figcaption>The squish in action.</figcaption>
                             </figure>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/squishy-butter/landing-page.webp" alt="squishybutter.app landing page" width="1600" height="824" loading="lazy" />
                                     <span><a href="https://squishybutter.app" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">squishybutter.app</a></span>
                                 </div>
@@ -630,8 +630,8 @@
                             <strong>Project:</strong> Confidential — details not disclosed.<br>
                             <strong>Capstone:</strong> Now an MSU CSE senior capstone — I helped write the curriculum and advise the five-student team.<br>
                             <strong>Full circle:</strong> In Nov 2026 I completed the Apple Manufacturing Academy's Smart Manufacturing for American Business training myself.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/sort-tek/screenshot-home-800w.webp" alt="Sort-Tek Inspection Systems website home page, built by George" width="800" height="546" loading="lazy" />
                                     <span><a href="sort-tek.html" onclick="event.stopPropagation()">Sort-Tek website</a></span>
                                 </div>
@@ -651,8 +651,8 @@
                             <strong>Location:</strong> Frankfort, MI<br>
                             <strong>Platform:</strong> Small Business Suite - direct booking, Stripe payments, room management, and owner admin dashboard<br>
                             <strong>Significance:</strong> A live lakefront resort taking direct bookings and Stripe payments on the platform.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/crystal-lake/screenshot-home-800w.webp" alt="Crystal Lake Resort website home page" width="800" height="545" loading="lazy" />
                                     <span><a href="https://crystallakeresortmi.com/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Crystal Lake Resort</a></span>
                                 </div>
@@ -672,8 +672,8 @@
                             <strong>Location:</strong> Troy, Michigan<br>
                             <strong>Stack:</strong> Plain HTML, CSS, JavaScript - no framework, no template<br>
                             <strong>Significance:</strong> First time hired as a freelance web developer. Came through a referral. Delivered in five days and launched with 100/100 Lighthouse scores on mobile and desktop.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/sort-tek/screenshot-home-800w.webp" alt="Sort-Tek Inspection Systems website home page, built by George" width="800" height="546" loading="lazy" />
                                     <span><a href="sort-tek.html" onclick="event.stopPropagation()">Sort-Tek website</a></span>
                                 </div>
@@ -702,8 +702,8 @@
                                 <video src="assets/videos/timeline/tally.mp4" poster="assets/videos/timeline/tally-poster.jpg" muted loop playsinline preload="none" aria-label="Tally: picking a client and starting a timer on iPhone"></video>
                                 <figcaption>Starting a timer in Tally.</figcaption>
                             </figure>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/tallyios/tally-landing-desktop-poster.jpg" alt="tallytimetracker.com landing page" width="1280" height="800" loading="lazy" />
                                     <span><a href="https://www.tallytimetracker.com/?utm_source=portfolio&amp;utm_campaign=portfolio_about" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">tallytimetracker.com</a></span>
                                 </div>
@@ -723,8 +723,8 @@
                             <strong>Location:</strong> Upper Peninsula, Michigan<br>
                             <strong>Platform:</strong> Small Business Suite - custom booking, Stripe payments, and owner admin dashboard<br>
                             <strong>Significance:</strong> First paying client on the platform - went from zero online presence to a fully live booking business.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/site/collage/13-whitebear.webp" alt="White Bear Harmonics website home page" width="704" height="440" loading="lazy" />
                                     <span>White Bear Harmonics</span>
                                 </div>
@@ -744,8 +744,8 @@
                             <strong>Format:</strong> Online, three sessions a week for about a month.<br>
                             <strong>Covered:</strong> Figma, UX research, wireframing, prototyping, design systems, accessibility and visual design.<br>
                             <strong>Outcome:</strong> Designed a small project from research to prototype and presented it to the group.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/dexian-ux-ui-design-certificate.png" alt="Dexian UX/UI Design Course certificate of completion" width="800" height="618" />
                                     <span><a href="assets/docs/Dexian_UX_UI_Design_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">UX/UI Design Certificate</a></span>
                                 </div>
@@ -767,24 +767,24 @@
                             <strong>Year 2 selection:</strong> 25 accepted from ~240 first-year students across two cohorts of 120. Year 2 runs Sept 2026 – May 2027.<br>
                             <strong>Certificates:</strong> All 5 program badges, issued by Michigan State University and verifiable on Credly.<br>
                             <strong>Certificate PDFs:</strong> <a href="assets/docs/MSU_Intro_iOS_App_Development_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">iOS App Development</a> · <a href="assets/docs/MSU_Intro_UI_Design_Swift_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">UI Design &amp; Swift</a> · <a href="assets/docs/MSU_Intro_User_Centered_Development_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">User Centered Development</a> · <a href="assets/docs/MSU_Intro_Game_Development_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Game Development</a> · <a href="assets/docs/MSU_App_Store_Development_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">App Store Development</a>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-game-development.webp" alt="Introduction to Game Development badge" width="1200" height="1200" />
                                     <span><a href="https://www.credly.com/badges/71807870-f227-4a6d-ab5c-50dbbd6a62c3/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Introduction to Game Development</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-ios-app-development.webp" alt="Introduction to iOS App Development badge" width="1200" height="1200" />
                                     <span><a href="https://www.credly.com/badges/e9fcbac5-a3d4-4ce5-a811-9feff3d6c854/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Introduction to iOS App Development</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-ui-design-and-swift-fundamentals.webp" alt="UI Design and Swift Fundamentals badge" width="1200" height="1200" />
                                     <span><a href="https://www.credly.com/badges/64bee8a6-8c02-40ab-aeb9-48c2855fad25/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">UI Design &amp; Swift Fundamentals</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/introduction-to-user-centered-development.webp" alt="User Centered Development badge" width="600" height="600" />
                                     <span><a href="https://www.credly.com/badges/1df0ec8a-81d4-4a45-9ebd-f96dcc57cd16/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">User Centered Development</a></span>
                                 </div>
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/app-store-development.webp" alt="App Store Development badge" width="600" height="600" />
                                     <span><a href="https://www.credly.com/badges/7781afe8-3878-45d4-b35e-473d0a247697/public_url" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">App Store Development</a></span>
                                 </div>
@@ -810,8 +810,8 @@
                                 <li>Live beach conditions - E. coli alerts, water temp, UV, and hourly forecast</li>
                                 <li>Dynamic Island, home screen widget, and Siri integration</li>
                             </ul>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/site/collage/03-coastcastscreenshots6.webp" alt="CoastCast app screen" width="202" height="440" loading="lazy" />
                                     <span><a href="coastcast.html" onclick="event.stopPropagation()">CoastCast</a></span>
                                 </div>
@@ -832,8 +832,8 @@
                             <strong>Location:</strong> Detroit, MI &middot; Part-time contract<br>
                             <strong>About:</strong> Lead Android, web and backend for a live travel platform with an AI copilot, trip planning and CRM, and also ship iOS features, working directly with the founder.<br>
                             <strong>Significance:</strong> First paid software contract - first time being trusted to keep a real company's live products running for real users.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/tripsetta/screenshot-home-800w.webp" alt="Tripsetta marketing home page" width="800" height="406" loading="lazy" />
                                     <span><a href="https://www.tripsetta.com/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">tripsetta.com</a></span>
                                 </div>
@@ -879,8 +879,8 @@
                                 <video src="assets/videos/timeline/takeflight.mp4" poster="assets/videos/timeline/takeflight-poster.jpg" muted loop playsinline preload="none" aria-label="TakeFlight gameplay: flying a bird around the park"></video>
                                 <figcaption>TakeFlight gameplay.</figcaption>
                             </figure>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/takeflight/card-screens-800w.webp" alt="TakeFlight game screens" width="800" height="500" loading="lazy" />
                                     <span><a href="takeflight.html" onclick="event.stopPropagation()">TakeFlight</a></span>
                                 </div>
@@ -899,8 +899,8 @@
                             <strong>Certificate:</strong> <a href="assets/docs/Apple_Ads_Certificate.pdf" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Apple Ads Certification (PDF)</a> · <a href="https://certification-ads.apple.com/certificate/OneDvfXQCs" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Verify on Apple</a><br>
                             <strong>Focus:</strong> App Store marketing, campaign setup, optimization, and analytics.<br>
                             <strong>Outcome:</strong> Gained expertise in driving app growth and visibility through Apple Ads.
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/about/Apple_Ads_Certification.png" alt="Apple Ads Certification badge" width="600" height="600" />
                                 </div>
                             </div>
@@ -929,8 +929,8 @@
                                 <video src="assets/videos/timeline/stamped.mp4" poster="assets/videos/timeline/stamped-poster.jpg" muted loop playsinline preload="none" aria-label="Stamped: flying over 3D Manhattan to a landmark"></video>
                                 <figcaption>Flying over 3D New York in Stamped.</figcaption>
                             </figure>
-                            <div class="badge-grid" style="justify-content:flex-start;">
-                                <div class="badge-item" style="cursor:zoom-in;" onclick="openLightbox(this)" title="Click to expand">
+                            <div class="badge-grid u-justify-start">
+                                <div class="badge-item u-zoom-in" onclick="openLightbox(this)" title="Click to expand">
                                     <img src="assets/images/stamped/screenshot-home.webp" alt="Stamped! marketing page" width="1600" height="1089" loading="lazy" />
                                     <span><a href="stamped-app.html" onclick="event.stopPropagation()">Stamped! website</a></span>
                                 </div>
@@ -1022,10 +1022,10 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
 
     <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10030;cursor:zoom-out;align-items:center;justify-content:center;padding:1.5em;" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
+        <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:100%;border-radius:var(--radius-md);box-shadow:0 8px 40px rgba(0,0,0,0.5);" />
     </div>
     <style>
         #lightbox { display: none; }

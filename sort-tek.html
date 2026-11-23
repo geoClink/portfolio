@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23b" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -51,7 +51,7 @@
 <body class="is-preload">
 
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -84,7 +84,7 @@
 
         <div class="case-hero">
             <img src="assets/images/sort-tek/favicon.png" alt="Sort-Tek icon" class="case-hero-icon" width="114" height="105" />
-            <h2 class="case-title">Sort-Tek Inspection Systems</h2>
+            <h1 class="case-title">Sort-Tek Inspection Systems</h1>
             <p class="case-tagline">A bespoke 6-page marketing website for a Troy, Michigan fastener inspection company - built from scratch in plain HTML, CSS, and JavaScript. Launched with 100/100 Lighthouse across all four categories on both mobile and desktop. No framework, no build step, no template.</p>
         </div>
 
@@ -208,7 +208,7 @@
             </video>
             <p class="case-caption">Hero animation - camera reticle, scanline sweep, and PASS readout</p>
             <video class="case-video" autoplay muted loop playsinline>
-                <source src="assets/videos/sort-tek/sort-tek-laser-scan-correct.mov" type="video/mp4">
+                <source src="assets/videos/sort-tek/sort-tek-laser-scan.mp4" type="video/mp4">
             </video>
             <p class="case-caption">Laser inspection page - the client requested a green PASS readout after the scan completes, directly mirroring Sort-Tek's real work of scanning parts and clearing them as defect-free</p>
         </div>
@@ -266,9 +266,8 @@
                 <li>Created and submitted a video sitemap — Google discovered 2 facility videos within 24 hours</li>
                 <li>Enhanced Service schema to list all 10 individual services by name, enabling specific service-query matching</li>
                 <li>Updated page titles across all pages to lead with "automotive sorting" — the keyword prospects actually search</li>
-                <li>Deployed <a href="https://www.dealfront.com" target="_blank" rel="noopener noreferrer">Dealfront</a> B2B visitor identification on every page</li>
             </ul>
-            <p>Current metrics as of August 30, 2026 — 5 weeks live:</p>
+            <p>Metrics as of August 30, 2026 — 5 weeks live:</p>
             <ul>
                 <li><strong>6/6 pages indexed</strong> — every sitemap page confirmed in Google's index</li>
                 <li><strong>280 search impressions</strong> — doubled from 140 in the prior period as Google expands the site's query coverage</li>
@@ -280,10 +279,32 @@
                 <li>Referral traffic from <strong>ThomasNet</strong> — the primary B2B industrial supplier directory, where Sort-Tek is now discoverable alongside national competitors</li>
             </ul>
             <p>The site is indexed, approaching page 1 on multiple pages, and picking up organic traffic from multiple search engines — all on a domain that didn't exist 5 weeks ago.</p>
-            <blockquote style="margin:1.5em 0 0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
+            <blockquote style="margin:1.5em 0 0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:var(--radius-xs);font-style:italic;color:var(--color-text);">
                 <p style="margin:0 0 0.75em;">"Got my first lead from the website today and it's a good one. Meeting with them tomorrow to review the opportunity."</p>
-                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">— <a href="https://www.linkedin.com/in/rob-oda-52668811/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Rob Oda</a>, Owner, Sort-Tek Inspection Systems</footer>
+                <footer class="cs-quote-cite">— <a href="https://www.linkedin.com/in/rob-oda-52668811/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Rob Oda</a>, Owner, Sort-Tek Inspection Systems</footer>
             </blockquote>
+        </div>
+
+        <div class="case-section">
+            <h3>Months 2–4 — Turning Visits into Quotes</h3>
+            <p>Once the site was being found, the work shifted from getting traffic to turning it into quote requests. Between September and November 2026:</p>
+            <ul>
+                <li><strong>Quote form rebuilt around how sorting jobs are actually quoted</strong> - multi-service selection, part and quantity fields, a "what counts as a defect" question, start timing, an emergency call prompt for line-down situations, an email-a-photo prompt, and an urgency-tagged subject line so hot requests stand out in the inbox</li>
+                <li><strong>Lead tracking</strong> - GA4 events for quote requests, phone and email clicks, plus a "how did you hear about us" field, so every lead can be traced to its source</li>
+                <li><strong>On-page SEO round two</strong> - keyword-led H1s, shorter meta descriptions, internal links between services and capabilities, and fresh sitemap dates</li>
+                <li><strong>Richer structured data</strong> - every service, contact point, geo coordinates, images, and the name variants and "third-party sorting" wording buyers search for</li>
+                <li><strong>Behaviour fixes from Microsoft Clarity recordings</strong> - dead clicks removed with tap-to-play videos, a photo lightbox, and addresses that open Google Maps; Clarity itself now loads only after first interaction so it never slows the first paint</li>
+                <li><strong>Accessibility and polish</strong> - corrected heading order, mobile hero wrapping, a cleaner ISO 9001 certificate, and a 404 page that reports broken links to analytics</li>
+            </ul>
+            <p>Search performance over the last three months (Aug 22 – Nov 21, 2026, Google Search Console):</p>
+            <ul>
+                <li><strong>97 clicks from 1,730 impressions</strong> - about six times the impressions of the first five weeks</li>
+                <li><strong>5.6% average CTR</strong>, and <strong>7% on the homepage</strong> (91 clicks from 1,296 impressions, average position 10.2)</li>
+                <li><strong>All 6 pages earning impressions</strong> - the contact page averages position 6.6 and the about page 10.5</li>
+                <li><strong>"sorting companies near me" at position 2.3</strong> with a 22% CTR - the local signals from the structured data and directory clean-up are working</li>
+                <li><strong>Brand searches covered</strong> - "sort tek" ranks 1.2 with a 27% CTR, and misspellings like "sorttek", "sortek" and "sort tech" also find the site</li>
+            </ul>
+            <p>The next target is clear from the same data: "automotive sorting companies" (121 impressions, position 14.4) and "sorting company" (125 impressions, position 36) are being shown but not yet clicked, so the next round of content work aims to move those onto page one.</p>
         </div>
 
         <div class="case-section og-preview-section">
@@ -301,16 +322,16 @@
             </a>
         </div>
 
-        <div class="case-section" id="feedback" style="border-top:1px solid var(--color-border);padding-top:var(--space-5);margin-top:var(--space-2);">
+        <div class="case-section cs-divider" id="feedback">
             <h3>Client Feedback</h3>
-            <blockquote style="margin:0;padding:1.25em 1.5em;background:var(--color-surface);border-left:3px solid var(--color-heading);border-radius:4px;font-style:italic;color:var(--color-text);">
+            <blockquote class="cs-quote">
                 <p style="margin:0 0 0.75em;">"We needed a clean, professional web presence for Sort-Tek and George delivered exactly that. He was easy to work with, communicated well throughout the project, and the final result speaks for itself. Highly recommend."</p>
-                <footer style="font-style:normal;font-size:0.9em;color:var(--color-text-muted);">- <a href="https://www.linkedin.com/in/rob-oda-52668811/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Rob Oda</a>, Owner, Sort-Tek Inspection Systems</footer>
+                <footer class="cs-quote-cite">- <a href="https://www.linkedin.com/in/rob-oda-52668811/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Rob Oda</a>, Owner, Sort-Tek Inspection Systems</footer>
             </blockquote>
         </div>
 
-        <div class="case-section" style="background:var(--color-surface);border-radius:8px;padding:var(--space-5);margin-top:var(--space-5);text-align:center;">
-            <p style="font-size:1em;color:var(--color-text);font-weight:500;margin:0 0 1em;">Need a website for your business? I take on select freelance web projects.</p>
+        <div class="case-section cs-callout">
+            <p class="cs-lead">Need a website for your business? I take on select freelance web projects.</p>
             <a href="contact.html" class="cta-btn">Let's talk →</a>
         </div>
 
@@ -371,39 +392,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026-11-23"></script>
     <script src="assets/js/case-toc.js" defer></script>
-    <script>
-        (function () {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const style = document.createElement('style');
-            document.head.appendChild(style);
-            for (let i = 0; i < 11; i++) {
-                const id = 'lgo' + i;
-                const ltr = Math.random() > 0.5;
-                const y1 = (4 + Math.random() * 85).toFixed(1);
-                const y2 = (4 + Math.random() * 85).toFixed(1);
-                const xFrom = ltr ? '-80px' : 'calc(100vw + 80px)';
-                const xTo   = ltr ? 'calc(100vw + 80px)' : '-80px';
-                const r1 = ((Math.random() - 0.5) * 50).toFixed(1);
-                const r2 = (parseFloat(r1) + (Math.random() - 0.5) * 30).toFixed(1);
-                const op  = (0.35 + Math.random() * 0.2).toFixed(2);
-                const dur = (4 + Math.random() * 2.5).toFixed(2);
-                const del = (Math.random() * 0.9).toFixed(2);
-                const sz  = Math.round(24 + Math.random() * 32);
-                style.sheet.insertRule(
-                    `@keyframes ${id}{0%{transform:translate(${xFrom},${y1}vh) rotate(${r1}deg);opacity:0}10%{opacity:${op}}90%{opacity:${op}}100%{transform:translate(${xTo},${y2}vh) rotate(${r2}deg);opacity:0}}`,
-                    style.sheet.cssRules.length
-                );
-                const img = document.createElement('img');
-                img.src = 'assets/images/sort-tek/favicon.png';
-                img.setAttribute('aria-hidden', 'true');
-                img.style.cssText = `position:fixed;pointer-events:none;z-index:9998;width:${sz}px;top:0;left:0;border-radius:22%;animation:${id} ${dur}s ${del}s linear forwards;`;
-                document.body.appendChild(img);
-                setTimeout(() => img.remove(), (parseFloat(dur) + parseFloat(del) + 0.2) * 1000);
-            }
-        })();
-    </script>
     <!-- GoatCounter: cookie-free page counts, no banner needed -->
     <script data-goatcounter="https://georgeclinkscales.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
