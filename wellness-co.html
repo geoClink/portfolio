@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
-    <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2026-11-23b" />
+    <link rel="stylesheet" href="assets/css/case-study.css?v=2026-11-23" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/fontawesome-all.min.css" /></noscript>
     <script type="application/ld+json">
@@ -52,7 +52,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></h1>
+        <div class="site-title"><a href="index.html" aria-label="George Clinkscales Jr. - Home"><img src="favicon.svg" alt="" class="site-favicon" aria-hidden="true" /><span class="nav-name">George Clinkscales Jr.</span></a></div>
         <button id="menuToggle" aria-label="Open menu" class="menu-btn">
             <span class="menu-icon"><span></span></span>
         </button>
@@ -85,7 +85,7 @@
 
         <div class="case-hero">
             <img src="assets/images/thewellnessco/whitebear-logo.png" alt="White Bear Harmonics logo" class="case-hero-icon" width="512" height="512" />
-            <h2 class="case-title">White Bear Harmonics</h2>
+            <h1 class="case-title">White Bear Harmonics</h1>
             <p class="case-tagline">A real client - a Michigan energy healing and acupuncture practitioner - live and taking bookings on a full-stack platform I designed and built solo. Stripe checkout, tiered refunds, gift cards, self-serve branding, and a no-code admin dashboard built as a Mindbody alternative for solo practitioners.</p>
         </div>
 
@@ -137,7 +137,7 @@
             <h3>What the Real Client Changed</h3>
             <p>Two assumptions I built in during the spec phase turned out to be wrong once I was working with an actual practitioner.</p>
             <p><strong>Availability isn't a weekly template.</strong> The initial model gave practitioners one schedule that applied to every day of the week. White Bear Harmonics runs her practice alongside a full-time job - meaning weekday hours are evenings only, while weekends are completely open. A single schedule block couldn't express that. I rebuilt availability as per-day rules with independent start and end times, so Monday through Friday can be configured entirely separately from Saturday and Sunday.</p>
-            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way - "Acupuncture" isn't a single thing, it's a 30-minute community session, a 60-minute individual session, and a 90-minute deep treatment, each priced differently. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants - child records per offering under each parent service - and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
+            <p><strong>Services aren't flat items.</strong> The initial model assumed one service = one price = one duration. White Bear Harmonics' offerings don't work that way - Auricular Acupuncture comes as a 30-minute session at $60 or a 60-minute session at $120, and Biofield Tuning has its own lengths and prices. Showing just the service name with one price stripped out the information clients actually need to decide. I added service variants - child records per offering under each parent service - and surfaced them in a slide-out detail panel on the public site so clients can compare and select before booking.</p>
         </div>
 
         <div class="case-section desktop-only" id="live">
@@ -192,10 +192,9 @@
                     <ul>
                         <li>Appointments - one-click cancel + Stripe refund, private notes, CSV export</li>
                         <li>Availability - per-day rules with independent hours; weekdays and weekends configured separately</li>
-                        <li>Services - multiple variants per service with independent pricing and duration, drag-to-reorder</li>
-                        <li>Gift cards, session packages, and discount codes - all validated server-side, all managed from the dashboard</li>
+                        <li>Services - image upload, multiple variants per service with independent pricing and duration, drag-to-reorder</li>
                         <li>Appearance - 5 color palettes and 5 font combinations that apply to the live site instantly</li>
-                        <li>Content and SEO - hero, bio, FAQ, banner, and per-page meta tags all editable without code</li>
+                        <li>Content and SEO - hero, bio, FAQ, banner, and per-page title, description and Open Graph tags, all editable without code</li>
                         <li>Integrations - the owner pastes their own Stripe and Resend keys directly into the UI</li>
                         <li>Email automations - a post-appointment review request email fires automatically N days after each session; the owner sets the delay, the Google Review URL, and custom subject and body from the dashboard — no developer involvement</li>
                     </ul>
@@ -211,11 +210,6 @@
                         <li>Session Packages - bundles of sessions sold at a discounted rate; Stripe checkout issues a gift card code to the client by email, which they apply at booking; balance decrements per session until exhausted</li>
                         <li>Discount Codes - percent-off or fixed-dollar, usage limits, expiry dates, server-side validated</li>
                     </ul>
-                    <h4>Services &amp; Site Control</h4>
-                    <ul>
-                        <li>Services - image upload, drag-to-reorder, variants with independent pricing and duration</li>
-                        <li>SEO - custom meta title, description, and Open Graph tags per page</li>
-                    </ul>
                 </div>
             </details>
         </div>
@@ -226,67 +220,30 @@
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5em;margin-top:1.25em;">
                 <figure style="margin:0;">
                     <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-serviceselection.png" alt="Service selection page with variants and educational content" style="width:100%;display:block;" width="1440" height="2292" />
+                        <img loading="lazy" src="assets/images/thewellnessco/wbh-service-panel.webp" alt="Auricular Acupuncture detail panel offering a 30-minute and a 60-minute session" style="width:100%;display:block;" width="2160" height="1350" />
                     </div>
-                    <figcaption class="case-caption" style="margin:0.6em 0 0;">Each service explains what to expect and lists its variants.</figcaption>
+                    <figcaption class="case-caption" style="margin:0.6em 0 0;">Each service opens a panel that explains it and lists its session lengths and prices.</figcaption>
                 </figure>
                 <figure style="margin:0;">
                     <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-scheduler.png" alt="Booking scheduler showing live availability" style="width:100%;display:block;" width="1440" height="1457" />
+                        <img loading="lazy" src="assets/images/thewellnessco/wbh-scheduler.webp" alt="Booking page with Reiki selected, a date picked and the 6:00 PM slot chosen, beside the booking summary" style="width:100%;display:block;" width="2160" height="1350" />
                     </div>
-                    <figcaption class="case-caption" style="margin:0.6em 0 0;">The scheduler shows only the hours the owner has opened.</figcaption>
+                    <figcaption class="case-caption" style="margin:0.6em 0 0;">The scheduler shows only the hours the owner has opened, with the total beside it.</figcaption>
                 </figure>
-                <figure style="margin:0;grid-column:1/-1;">
+                <figure style="margin:0;">
                     <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/cancel-48hr.webp" alt="Cancel appointment page showing a 50% refund notice for cancellations inside 48 hours" style="width:100%;display:block;" width="3832" height="1906" />
+                        <img loading="lazy" src="assets/images/thewellnessco/wbh-cancel.webp" alt="Cancel appointment page showing a 50% refund notice for an appointment about a day away" style="width:100%;display:block;" width="2160" height="1350" />
                     </div>
                     <figcaption class="case-caption" style="margin:0.6em 0 0;">Inside 48 hours, clients see the partial refund before they confirm.</figcaption>
                 </figure>
-                <figure style="margin:0;grid-column:1/-1;">
+                <figure style="margin:0;">
                     <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-banneralert.png" alt="Customizable promotional banner linking to pre-selected checkout" style="width:100%;display:block;" width="1440" height="97" />
+                        <img loading="lazy" src="assets/images/thewellnessco/wbh-gift-card.webp" alt="Gift card page with a balance check, preset amounts and the promo banner across the top" style="width:100%;display:block;" width="2160" height="1350" />
                     </div>
-                    <figcaption class="case-caption" style="margin:0.6em 0 0;">A site-wide banner the owner writes, linking straight to a pre-selected checkout.</figcaption>
-                </figure>
-                <figure style="margin:0;grid-column:1/-1;">
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-giftcardbanner.png" alt="Gift card promotional banner" style="width:100%;display:block;" width="1440" height="160" />
-                    </div>
-                    <figcaption class="case-caption" style="margin:0.6em 0 0;">Gift cards are bought through Stripe and emailed with a unique code.</figcaption>
+                    <figcaption class="case-caption" style="margin:0.6em 0 0;">Gift cards are bought through Stripe and emailed with a code. The lime banner across the top is one the owner writes herself.</figcaption>
                 </figure>
             </div>
-            <details class="tech-details" style="margin-top:1.5em;">
-                <summary>Screen-by-screen walkthrough</summary>
-                <div class="tech-details-body">
-                    <h4>Promotional Banner</h4>
-                    <p>The owner can set a site-wide alert banner from the admin dashboard - custom text, custom destination. In this example it links directly to checkout with a 30-minute consultation pre-selected, so a visitor goes from seeing the offer to being one click from booking. No code change, no developer call.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-banneralert.png" alt="Customizable promotional banner linking to pre-selected checkout" style="width:100%;display:block;" width="1440" height="97" />
-                    </div>
-
-                    <h4>Gift Cards</h4>
-                    <p>Gift cards are a first-class feature - promoted on the site, purchased via Stripe, and delivered to the recipient by email with a unique code. Clients can check their remaining balance anytime and redeem at checkout.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-giftcardbanner.png" alt="Gift card promotional banner" style="width:100%;display:block;" width="1440" height="160" />
-                    </div>
-
-                    <h4>Gift Card Balance</h4>
-                    <p>Recipients can check their remaining balance at any time before redeeming - no account needed, just the code.</p>
-                    <video class="case-video" src="assets/videos/thewellnessco/giftcardbalancevideo.mp4" autoplay loop muted playsinline></video>
-
-                    <h4>Service Selection</h4>
-                    <p>Each service page does two things at once - lets the client choose from variants and session lengths, and educates them on what the service is and what to expect before they book. The owner controls all service offerings, descriptions, and pricing from the admin dashboard.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-serviceselection.png" alt="Service selection page with variants and educational content" style="width:100%;display:block;" width="1440" height="2292" />
-                    </div>
-
-                    <h4>Booking Scheduler</h4>
-                    <p>The booking calendar shows real-time availability based entirely on the schedule the owner sets in the admin dashboard - hours, blocked dates, and service durations. No developer needed to make changes. The owner updates their availability and the calendar reflects it immediately.</p>
-                    <div class="ss-clickable" onclick="openLightbox(this)" style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border);box-shadow:0 4px 20px rgba(0,0,0,0.07);">
-                        <img loading="lazy" src="assets/images/thewellnessco/screenshot-scheduler.png" alt="Booking scheduler showing live availability" style="width:100%;display:block;" width="1440" height="1457" />
-                    </div>
-
-                    <h4>Mobile Experience</h4>
+            <h4 style="margin-top:2em;">On a phone</h4>
                     <div class="phone-showcase">
                         <div class="phone-mockup">
                             <div class="phone-btns-left"></div>
@@ -305,8 +262,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </details>
         </div>
 
         <div class="case-section">
@@ -323,7 +278,7 @@
                     <p>A read-only demo mode makes the admin accessible from this portfolio without exposing write endpoints. Every mutating action is intercepted client-side and replaced with an informational toast - demo sessions never reach the API. The color palette and font combination cards remain interactive so visitors can experience the appearance system live.</p>
 
                     <h4>Cancellation &amp; Refunds</h4>
-                    <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link - no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier: full refund beyond 48 hours, 50% inside 48 hours, nothing for no-shows. Rescheduling always issues a full refund regardless of timing. All refunds are executed server-side through the Stripe API automatically.</p>
+                    <p>Each appointment is issued a UUID cancel token at insert time. The confirmation email carries that token in a link - no login required, and the URL can't be guessed or enumerated. When a client clicks the link, the server calculates time remaining and determines their refund tier using the rules above, so the policy can't be bypassed from the browser. All refunds are executed server-side through the Stripe API automatically.</p>
 
                     <h4>SEO</h4>
                     <p>Every page gets unique title, description, and Open Graph tags assembled from the database and injected server-side before the response leaves the server - search engines and social link previewers see complete, page-specific metadata with no client-side JavaScript involved. The practitioner controls all SEO copy from the admin dashboard. Footer contact data (phone, email, address) is injected server-side so crawlers see real business information rather than JavaScript-dependent placeholders. An <code>og:image</code> fallback ensures the branded social share image appears on every page even if the admin field is left blank.</p>
@@ -335,7 +290,7 @@
 
                     <h4>Gift Cards, Packages &amp; Discount Codes</h4>
                     <p>Session packages and gift cards share the same underlying system. A package purchase goes through a dedicated Stripe Checkout session - on completion, a webhook inserts a gift card record into the database and emails the buyer a unique code at the full package balance. The client applies that code at booking and the balance decrements per session until exhausted. This meant packages required no new checkout infrastructure - the gift card redemption, partial-balance, and cancellation-restore logic already handles them correctly.</p>
-                    <p>On completion, a webhook inserts the card into the database and emails the recipient a unique code. At booking time, the client enters the code - the server validates it and checks the remaining balance. If the balance covers the full price, the appointment is confirmed directly without a Stripe charge. If the balance is partial, the server creates a Stripe Checkout session for the difference only, with the gift card code and amount carried in the session metadata; the webhook deducts the gift card balance and stores both amounts on the appointment row once payment clears. If the appointment is later cancelled through the admin dashboard, the Stripe portion is refunded and the gift card balance is restored independently - both always happen regardless of which path was taken.</p>
+                    <p>Gift cards bought on their own follow the same path. At booking time, the client enters the code - the server validates it and checks the remaining balance. If the balance covers the full price, the appointment is confirmed directly without a Stripe charge. If the balance is partial, the server creates a Stripe Checkout session for the difference only, with the gift card code and amount carried in the session metadata; the webhook deducts the gift card balance and stores both amounts on the appointment row once payment clears. If the appointment is later cancelled through the admin dashboard, the Stripe portion is refunded and the gift card balance is restored independently - both always happen regardless of which path was taken.</p>
                     <p>Discount codes are validated and applied entirely server-side - the client sends the code and the server re-validates it independently before creating the Stripe session, so the frontend price display is never trusted. Usage count increments in the Stripe webhook after confirmed payment. Codes support percent-off or fixed-dollar discounts, optional per-tenant usage limits, and optional expiry dates. Both gift cards and discount codes are managed from the admin dashboard without developer involvement.</p>
 
                     <h4>Practitioner Notifications</h4>
@@ -351,10 +306,10 @@
             <h3>The Outcome</h3>
             <p><a href="https://whitebearharmonics.com" target="_blank" rel="noopener noreferrer"><strong>White Bear Harmonics</strong></a> is the first real client on the platform: a Michigan wellness practitioner who went from zero online presence to a live booking business. She connected her own Stripe account, configured Resend, set her branding and built out her services entirely through the dashboard, without writing any code. Search Console, GA4, a sitemap and a Google Business Profile on Maps were all set up as part of go-live.</p>
             <ul>
-                <li>The homepage ranks at an average position of 2.06 in Google organic search, with 10 clicks from 165 impressions in the trailing 28 days, in a low-volume local niche where most visitors arrive direct or by referral.</li>
+                <li>As of late October 2026, the homepage ranked at an average position of 2.06 in Google organic search, with 10 clicks from 165 impressions over the previous 28 days, in a low-volume local niche where most visitors arrive direct or by referral.</li>
                 <li>24 new users and 27 sessions came from social, all from Karen sharing her own site, with no paid promotion.</li>
                 <li>Active users from Canada, Sweden and France found the site organically.</li>
-                <li>Active users grew 237% in the most recent period.</li>
+                <li>Active users grew 237% over the same 28 days.</li>
             </ul>
             <p>I kept working on it after launch, based on real usage:</p>
             <ul style="margin:1.25em 0 0;padding-left:0;list-style:none;line-height:2.1;">
