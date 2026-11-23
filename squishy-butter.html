@@ -301,6 +301,7 @@
                 <li><a href="#mechanics">Clickers and models</a></li>
                 <li><a href="#pulls">Pulls and economy</a></li>
                 <li><a href="#retention">Bringing players back</a></li>
+                <li><a href="#design-system">Design system</a></li>
                 <li><a href="#hard">What was hard</a></li>
                 <li><a href="#results">Where it stands</a></li>
                 <li><a href="#also-built">Also built</a></li>
@@ -454,6 +455,15 @@ return Math.max(6, Math.min(cap, affordable));</div>
                 <li><strong>Celebrations sized to the moment.</strong> One shared component for pulls, level-ups, purchases and unlocks with three tiers of particles, sound and haptics, so a Legendary feels bigger than a daily spin. It respects reduced motion.</li>
                 <li><strong>A better notification ask.</strong> Instead of the system prompt on launch, the apps ask right after a good moment such as a first unlock or a level-up, and back off if the player says not now.</li>
             </ul>
+        </div>
+
+        <div class="case-section" id="design-system">
+            <h3>A Design System Under a Live Game</h3>
+            <p>Squishy grew one screen at a time, so the same gold was typed dozens of different ways and some labels failed contrast. I pulled it into one system with two grounds: <strong>Paper</strong> for browsing butters, square and stamped like a shop label, and <strong>Dark</strong> for quick panels, the account and money. Then I made the code actually use it. About 800 hard-coded colors and 600 font sizes became named tokens, every text color now reaches 4.5:1 (Paper legendary went from 3.5:1 to 4.6:1), and every size sits on a nine-step scale. Butter skins and drawings stay as art.</p>
+            <figure style="margin:1.5em 0 0;">
+                <img class="u-img-fluid" src="assets/images/squishy-butter/design-system-tokens.webp" alt="Squishy Butter design tokens. Left, the Paper theme: cream, ink, muted brown and accent gold swatches with contrast ratios, the five rarity labels, and the nine-step type scale from 36 to 10 pixels. Right, the Dark theme: surface, text, gold and butter swatches and a sample menu with a gold Pull button." width="1600" height="649" loading="lazy" decoding="async" style="border-radius:var(--radius-lg);border:1px solid var(--color-border);">
+                <figcaption class="case-caption">The two grounds and the type scale, rendered from the same tokens the app uses.</figcaption>
+            </figure>
         </div>
 
         <div class="case-section" id="hard" style="margin-top:3em;">
