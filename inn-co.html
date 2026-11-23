@@ -18,8 +18,8 @@
     <meta name="twitter:image" content="https://georgeclinkscalesdev.com/assets/images/crystal-lake/screenshot-home.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display&display=swap" /></noscript>
     <link rel="stylesheet" href="assets/css/main.css?v=2026-11-12" />
     <link rel="stylesheet" href="assets/css/case-study.css?v=6" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" media="print" onload="this.media='all'" />
@@ -35,7 +35,20 @@
         ]
     }
     </script>
-<style>:root { --case-accent: #0284c7; }</style>
+<style>:root { --case-accent: #0284c7; }
+.cl-swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75em; margin-top: 1.25em; }
+.cl-swatch { border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; background: var(--color-surface); }
+.cl-swatch i { display: block; height: 56px; }
+.cl-swatch div { padding: 0.6em 0.75em; font-size: 0.78em; line-height: 1.4; color: var(--color-text-muted); }
+.cl-swatch b { display: block; color: var(--color-heading); font-size: 1.05em; }
+.cl-type { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75em; margin-top: 0.75em; }
+.cl-type div { border: 1px solid var(--color-border); border-radius: 12px; padding: 1em; background: var(--color-surface); }
+.cl-type .sample { display: block; color: var(--color-heading); margin-bottom: 0.35em; line-height: 1.2; }
+.cl-type .serif { font-family: "Playfair Display", Georgia, serif; font-size: 1.6em; }
+.cl-type .sans { font-family: Inter, system-ui, sans-serif; font-size: 0.85em; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding-top: 0.6em; }
+.cl-type small { font-size: 0.78em; color: var(--color-text-muted); line-height: 1.45; display: block; }
+@media (max-width: 736px) { .cl-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cl-type { grid-template-columns: 1fr; } }
+</style>
 <script src="assets/js/consent.js?v=2" defer></script>
 </head>
 <body class="is-preload">
@@ -117,6 +130,7 @@
                 <li class="desktop-only"><a href="#try">Try it</a></li>
                 <li><a href="#decisions">Key decisions</a></li>
                 <li><a href="#features">What it does</a></li>
+                <li><a href="#design">Design</a></li>
                 <li><a href="#outcome">The outcome</a></li>
             </ul>
         </nav>
@@ -389,6 +403,35 @@
                     <p>Schema.org <code>Hotel</code> JSON-LD structured data on the homepage enables Google rich results. GA4 is wired to all public pages. Individual room pages have unique <code>&lt;title&gt;</code>, meta description, Open Graph, and canonical tags set dynamically per room. Verified passing in Google's Rich Results Test. Microsoft Clarity is deployed across all 16 public pages for session recordings and heatmaps — form inputs are masked by default so no guest data is captured. The privacy policy discloses both tools and the Stripe payment processor explicitly.</p>
                 </div>
             </details>
+        </div>
+
+        <div class="case-section" id="design">
+            <h3>Design: Built to Match the Building</h3>
+            <p>The look comes from the resort itself: deep navy like the building's siding, lake-water blue for highlights, and a cool off-white page. A classic serif for headings and a clean sans for everything else keep it calm, so the photos of the lake do the selling. Corners are square throughout.</p>
+
+            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">Two blues, one page color</h4>
+            <div class="cl-swatches">
+                <div class="cl-swatch"><i style="background:#2d3f63;"></i><div><b>Siding Navy</b>#2d3f63 · headings, header, forms</div></div>
+                <div class="cl-swatch"><i style="background:#3a6e9e;"></i><div><b>Lake Blue</b>#3a6e9e · buttons, prices, links</div></div>
+                <div class="cl-swatch"><i style="background:#1a2540;"></i><div><b>Deep Water</b>#1a2540 · footer only</div></div>
+                <div class="cl-swatch"><i style="background:#f5f7fa;border-bottom:1px solid var(--color-border);"></i><div><b>Off-White</b>#f5f7fa · page background</div></div>
+            </div>
+            <div class="cl-type">
+                <div><span class="sample serif">Your Getaway on Crystal Lake</span><small>Playfair Display for headings.</small></div>
+                <div><span class="sample sans">Reserve Your Stay</span><small>Inter for text, labels and buttons.</small></div>
+            </div>
+
+            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">One file controls the look</h4>
+            <p>Every color, font and layout size lives in one small stylesheet, so the whole site can be re-branded for another property by changing one file. In November 2026 I wrote these up as a design system: tokens, a short brand guide, and the site's buttons, room cards and form fields.</p>
+
+            <h4 style="font-size:0.95rem;font-weight:600;color:var(--color-heading);margin:2em 0 0.25em;">A consistency pass</h4>
+            <p>Writing the system showed where the site had drifted from it, so I cleaned those spots up:</p>
+            <ul>
+                <li><strong>Leftover colors</strong>: warm grays and a gold hover left over from an earlier template now use the brand colors, and no stray color codes remain in the stylesheet</li>
+                <li><strong>Readable everywhere</strong>: the sold-out button's text went from 2.4:1 to 4.6:1 contrast, and every text color now passes the 4.5:1 accessibility standard</li>
+                <li><strong>Type and buttons</strong>: near-identical text sizes merged (36 down to 28), and buttons share one letter-spacing and square corners</li>
+            </ul>
+            <p>Before releasing it, I compared all 16 public pages before and after at desktop and phone widths, element by element. That caught one button that wrapped onto two lines on phones, and I kept it as it was.</p>
         </div>
 
         <div class="case-section" id="outcome">
