@@ -745,6 +745,8 @@
     <script>
         (function () {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            // Only as an intro at the top: skip it when someone lands on a section link or partway down the page.
+            if (location.hash || window.scrollY > 200) return;
             const style = document.createElement('style');
             document.head.appendChild(style);
             for (let i = 0; i < 11; i++) {
