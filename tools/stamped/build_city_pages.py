@@ -39,11 +39,10 @@ APP_STORE = "https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336?
 
 # Places already in the app's data but not yet in the App Store version people can download.
 # Their pages, cards and list entries say "Coming in the next update". Empty both sets once that
-# version (2.10) is live. Campus names are the registry's own spelling.
-COMING_SOON_CITIES = {"Porto", "Kraków", "Granada", "Marseille", "Antwerp", "Riga", "Hiroshima", "Hanoi",
-                      "Milwaukee", "Tulsa"}
-COMING_SOON_CAMPUSES = {"Cranbrook Academy of Art", "University of California, San Diego", "University of Coimbra",
-                        "University of Salamanca", "University of Tokyo"}
+# version is live. Campus names are the registry's own spelling.
+# Empty now: every place in the app's data is in the live App Store version (2.18).
+COMING_SOON_CITIES = set()
+COMING_SOON_CAMPUSES = set()
 COMING_SOON = "Coming in the next update"
 
 
